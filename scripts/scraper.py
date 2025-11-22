@@ -48,7 +48,7 @@ def search_arxiv(query: str, max_results: int) -> List[Dict]:
         response = requests.get(ARXIV_API_URL, params=payload, timeout=10)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
-        print(f"❌ Errore nella richiesta API: {e}")
+        print(f"Errore nella richiesta API: {e}")
         return []
     
     # Parsa la risposta Atom/RSS
@@ -83,11 +83,11 @@ def download_pdf(article: Dict, output_dir: Path) -> bool:
     filepath = output_dir / filename
     
     if filepath.exists():
-        print(f"   ⏭️  {filename} (già presente)")
+        print(f"{filename} (già presente)")
         return True
     
     try:
-        print(f"   📥 Scaricando: {filename}", end=" ")
+        print(f"Scaricando: {filename}", end=" ")
         response = requests.get(article['pdf_url'], timeout=15)
         response.raise_for_status()
         
@@ -96,7 +96,7 @@ def download_pdf(article: Dict, output_dir: Path) -> bool:
         print("✓")
         return True
     except Exception as e:
-        print(f"❌ ({e})")
+        print(f"Errore nel download: {e}")
         return False
 
 
@@ -126,9 +126,9 @@ def save_metadata_csv(articles: List[Dict], filename: str = "articles_metadata.c
                     'html_url': article['html_url']
                 })
         
-        print(f"✅ Metadati salvati in: {csv_path}")
+        print(f"Metadati salvati in: {csv_path}")
     except Exception as e:
-        print(f"❌ Errore nel salvataggio CSV: {e}")
+        print(f"Errore nel salvataggio CSV: {e}")
 
 
 def save_metadata_json(articles: List[Dict], filename: str = "articles_metadata.json"):
@@ -143,38 +143,26 @@ def save_metadata_json(articles: List[Dict], filename: str = "articles_metadata.
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(articles, f, indent=2, ensure_ascii=False, default=str)
         
-        print(f"✅ Metadati salvati in: {json_path}")
+        print(f"Metadati salvati in: {json_path}")
     except Exception as e:
-        print(f"❌ Errore nel salvataggio JSON: {e}")
+        print(f"Errore nel salvataggio JSON: {e}")
 
 
 def main():
     """Funzione principale."""
     print("=" * 60)
-    print("🎓 ArXiv Article Scraper")
+    print("arXiv Article Scraper")
     print("=" * 60 + "\n")
     
     # Cerca articoli
     articles = search_arxiv(SEARCH_QUERY, MAX_RESULTS)
     
     if not articles:
-        print("❌ Nessun articolo trovato!")
+        print("Nessun articolo trovato.")
         return
     
-    print(f"\n✅ Trovati {len(articles)} articoli\n")
+    print(f"\nTrovati {len(articles)} articoli\n")
     
-    """ Mostra i risultati (inutile per adesso, troppo verboso)
-    print("📋 Articoli trovati:")
-    print("-" * 60)
-    for i, article in enumerate(articles, 1):
-        print(f"\n{i}. {article['title']}")
-        print(f"   🔗 ID: {article['id']}")
-        print(f"   📅 Data: {article['published'][:10]}")
-        print(f"   👥 Autori: {', '.join(article['authors'][:3])}")
-        if len(article['authors']) > 3:
-            print(f"      ... e {len(article['authors']) - 3} altri")
-        print(f"   📝 Abstract: {article['summary'][:150]}...")
-    """ 
 
     # Salva metadati
     print("\n" + "=" * 60)
@@ -183,7 +171,7 @@ def main():
     
     # Scarica i PDF
     print("\n" + "=" * 60)
-    print("📥 Download dei PDF...\n")
+    print("Download dei PDF...\n")
     
     for i, article in enumerate(articles, 1):
         print(f"[{i}/{len(articles)}]")
