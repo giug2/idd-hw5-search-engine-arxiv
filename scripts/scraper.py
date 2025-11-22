@@ -29,8 +29,8 @@ def search_arxiv(query: str, max_results: int) -> List[Dict]:
     Returns:
         Lista di dizionari con metadati degli articoli
     """
-    print(f"🔍 Ricerca su arXiv per: '{query}'")
-    print(f"📊 Limitato a {max_results} risultati\n")
+    print(f"Ricerca su arXiv per: '{query}'")
+    print(f"Limitato a {max_results} risultati\n")
     
     # Crea la query per l'API arXiv
     # Formato: (ti:"termine1" OR abs:"termine2")
