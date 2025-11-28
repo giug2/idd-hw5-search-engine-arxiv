@@ -6,7 +6,7 @@ In particolare si recuperano articoli:
 '''
 
 '''
-python arxiv_scraper.py "text to speech" 550
+python arxiv_scraper.py "text to speech" 500
 '''
 
 
@@ -214,6 +214,7 @@ if __name__ == '__main__':
     print(f"Tempo totale: {total_time:.2f} sec")
     if downloaded > 0:
         print(f"Tempo medio per articolo: {total_time / downloaded:.2f} sec")
+        
     print(f"Articoli trovati (esearch): {stats['processed']}")
     print(f"Articoli scaricati: {downloaded}")
     print(f"Errori: {errors}")
