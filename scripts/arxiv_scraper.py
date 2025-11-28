@@ -1,7 +1,13 @@
-#  Programma per recuperare articoli scientifici da https://arxiv.org
-# In particolare si recuperano articoli: 
-#   - disponibili in formato HTML 
-#   - che contengono specifiche parole chiave nel titolo o nell'abstract.
+'''
+Programma per recuperare articoli scientifici da https://arxiv.org
+In particolare si recuperano articoli: 
+  - disponibili in formato HTML 
+  - che contengono specifiche parole chiave nel titolo o nell'abstract.
+'''
+
+'''
+python arxiv_scraper.py "text to speech" 550
+'''
 
 
 # Importazione delle librerie necessarie
