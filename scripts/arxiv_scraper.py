@@ -7,10 +7,15 @@
 # Importazione delle librerie necessarie
 import os
 import sys
+import time
 import requests
 from lxml import etree
 
 BATCH_SIZE = 25  # Numero massimo di articoli da scaricare per ogni batch
+
+# Ottieni il percorso assoluto della directory in cui si trova lo script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, 'papers')
 
 
 def download_articles(query, k):
@@ -29,6 +34,7 @@ def download_articles(query, k):
     total_downloaded = 0
     total_processed = 0
     total_skipped = 0
+    total_errors = 0
 
     # Se k è minore o uguale a BATCH_SIZE, scarica tutto in una volta.
     if k <= BATCH_SIZE:
@@ -36,6 +42,7 @@ def download_articles(query, k):
         total_downloaded = stats['downloaded']
         total_processed = stats['processed']
         total_skipped = stats['skipped']
+        total_errors = stats['errors']
     
     # Altrimenti divide il lavoro in più batch per rispettare i limiti del server.
     else:
@@ -44,6 +51,7 @@ def download_articles(query, k):
             total_downloaded += stats['downloaded']
             total_processed += stats['processed']
             total_skipped += stats['skipped']
+            total_errors += stats['errors']
             if stats['downloaded'] == 0:
                 print(f"Nessun articolo trovato nel batch {i + 1}-{i + min(BATCH_SIZE, k - i)}")
     
@@ -51,7 +59,8 @@ def download_articles(query, k):
         'requested': k,
         'processed': total_processed,
         'downloaded': total_downloaded,
-        'skipped': total_skipped
+        'skipped': total_skipped,
+        'errors': total_errors
     }
 
 
@@ -83,11 +92,16 @@ def fetch_articles(query, start, k, batch_size):
 
         # Analisi del contenuto HTML della risposta
         root = etree.HTML(response.content)
+        
+        if root is None:
+            print("Errore: Impossibile analizzare il contenuto HTML della pagina di ricerca.")
+            return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
 
         # Contatori per le statistiche
         downloads = 0
         processed = 0
         skipped = 0
+        errors = 0
 
         # Estrazione degli URL degli articoli dalla pagina dei risultati usando XPath
         articles = root.xpath("//p[@class='list-title is-inline-block']/a/@href")
@@ -118,7 +132,7 @@ def fetch_articles(query, start, k, batch_size):
                     html_response.raise_for_status()
 
                     # Salva il contenuto HTML in un file
-                    file_name = f"./papers/{os.path.basename(href)}.html"
+                    file_name = f"{OUTPUT_DIR}/{os.path.basename(href)}.html"
                     with open(file_name, 'wb') as f:
                         f.write(html_response.content)
                     print(f"└── File HTML scaricato e salvato: {file_name}")
@@ -129,17 +143,19 @@ def fetch_articles(query, start, k, batch_size):
                     skipped += 1
             except requests.RequestException as e:
                 print(f"Errore nel recupero dell'articolo {article_url}: {e}")
+                errors += 1
             except Exception as e:
                 print(f"Errore nell'elaborazione dell'articolo {article_url}: {e}")
+                errors += 1
 
         print(f"Batch completato. Totale download riusciti in questo batch: {downloads}")
-        return {'downloaded': downloads, 'processed': processed, 'skipped': skipped}
+        return {'downloaded': downloads, 'processed': processed, 'skipped': skipped, 'errors': errors}
     except requests.RequestException as e:
         print(f"Errore nel recupero dei risultati di ricerca: {e}")
-        return {'downloaded': 0, 'processed': 0, 'skipped': 0}
+        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
     except Exception as e:
         print(f"Si è verificato un errore imprevisto: {e}")
-        return {'downloaded': 0, 'processed': 0, 'skipped': 0}
+        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
 
 
 # Funzione main
@@ -161,29 +177,45 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # Verifica che la directory 'papers' esista
-    if not os.path.exists('./papers'):
-        os.makedirs('./papers')
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+
+    start_time = time.time()
 
     # Esegue il download e raccoglie le statistiche
     stats = download_articles(query, k)
     
+    end_time = time.time()
+    total_time = end_time - start_time
+
+    # Calcolo dimensione cartella
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(OUTPUT_DIR):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            if not os.path.islink(fp):
+                total_size += os.path.getsize(fp)
+    stats['total_size_mb'] = total_size / (1024 * 1024)
+
+    downloaded = stats['downloaded']
+    errors = stats['errors']
+    
     # Stampa le statistiche finali
-    print("\n" + "="*60)
-    print("STATISTICHE FINALI")
-    print("="*60)
-    print(f"Query di ricerca: '{query}'")
-    print(f"Articoli richiesti: {stats['requested']}")
-    print(f"Articoli elaborati: {stats['processed']}")
-    print(f"Articoli scaricati con successo: {stats['downloaded']}")
-    print(f"Articoli senza HTML disponibile: {stats['skipped']}")
-    
-    if stats['processed'] > 0:
-        success_rate = (stats['downloaded'] / stats['processed']) * 100
-        print(f"\nTasso di successo: {success_rate:.1f}%")
-    
-    if stats['downloaded'] < stats['requested']:
-        print(f"\nScaricati solo {stats['downloaded']} su {stats['requested']} articoli richiesti")
-        if stats['skipped'] > 0:
-            print(f"   Motivo: {stats['skipped']} articoli non hanno la versione HTML disponibile")
-    
-    print("="*60)
+    print("\n==============================")
+    print("     STATISTICHE FINALI")
+    print("==============================")
+
+    print(f"Tempo totale: {total_time:.2f} sec")
+    if downloaded > 0:
+        print(f"Tempo medio per articolo: {total_time / downloaded:.2f} sec")
+    print(f"Articoli trovati (esearch): {stats['processed']}")
+    print(f"Articoli scaricati: {downloaded}")
+    print(f"Errori: {errors}")
+
+    if stats:
+        print(f"Dimensione totale cartella: {stats['total_size_mb']:.2f} MB")
+    else:
+        print("Nessun file HTML trovato, impossibile calcolare statistiche.")
+
+    print("\nCOMPLETATO! Articoli salvati in:", OUTPUT_DIR)
+    print("==============================\n")
