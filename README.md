@@ -11,6 +11,6 @@ Lo strumento esegue automaticamente il download degli articoli che corrispondono
 
 ## 🖊️ Autori
 [Gaglione Giulia](https://github.com/giug2)  
-[Pentimalli Gabriel](https://github.com/GabrielPentimalli)
-[Peroni Alessandro](https://github.com/smixale)
+[Pentimalli Gabriel](https://github.com/GabrielPentimalli)  
+[Peroni Alessandro](https://github.com/smixale)  
 [Tony Troy](https://github.com/troylion56)
