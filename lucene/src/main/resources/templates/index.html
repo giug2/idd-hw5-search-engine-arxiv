@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucene Search</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <div class="main-container">
+        
+        <h1>Ricerca file</h1>
+
+        <form action="/" method="post">
+            <input type="text" name="query" 
+                   placeholder='es. nome/contenuto "parole"'
+                   th:value="${query}">
+            <button type="submit">Cerca</button>
+        </form>
+
+        <!-- Legenda Ricerca -->
+        <div class="search-legend">
+            <p><strong>Sintassi Obbligatoria:</strong> <code>campo query</code></p>
+            <p>Esempi:</p>
+            <ul>
+                <li><code>title cancer</code> (Cerca "cancer" nel titolo)</li>
+                <li><code>authors Smith</code> (Cerca "Smith" tra gli autori)</li>
+                <li><code>paragraphs "lung cancer"</code> (Frase esatta nel testo)</li>
+            </ul>
+                        <p><strong>Campi disponibili:</strong></p>
+            <div class="fields-grid">
+                <code>title</code>, <code>authors</code>, <code>paragraphs</code>, <code>articleAbstract</code>, <code>publicationDate</code>
+            </div>
+        </div>
+
+        <!-- Messaggi di errore -->
+        </div>
+
+        <!-- Messaggi di errore -->
+        <div th:if="${error}" class="error-message" role="alert">
+            <strong>Errore: </strong>
+            <span th:text="${error}"></span>
+        </div>
+
+        <!-- Risultati -->
+        <div th:if="${results}" class="results-container">
+            <h2>Risultati:</h2>
+            
+            <ul>
+                <li th:each="r : ${results}">
+                    <div class="file-info">
+                        <div>
+                            <div class="filename" th:text="${r.title}">Titolo</div>
+                            <div style="font-size: 0.8rem; color: #666;">
+                                <span th:text="${r.fileName}">nomefile</span> | 
+                                <span th:text="${r.publicationDate}">Data</span>
+                            </div>
+                        </div>
+                        <span class="score">
+                            Score: <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
+                        </span>
+                    </div>
+
+                    <a class="open-link" th:href="@{'/view/' + ${r.fileName}}" target="_blank">Apri</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
