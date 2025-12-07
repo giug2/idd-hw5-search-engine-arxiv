@@ -1,0 +1,593 @@
+{
+    "S2.T1": {
+        "caption": "Table 1: Quantitative results of our talking face generation model compared with SOTA methods. The left part shows generation with real audio (and Wav2Vec2 features extracted from real audio for our model), while the right part shows generation with TTS-generated audio (and TTS-predicted features for our model).",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt\" colspan=\"6\"><span class=\"ltx_text\" style=\"font-size:80%;\">With Real Data</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"6\"><span class=\"ltx_text\" style=\"font-size:80%;\">With TTS Data</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">SSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m1\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">PSNR</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m2\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">FID</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m3\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-C</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m4\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-D</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m5\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">CSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m6\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">SSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m7\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">PSNR</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m8\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">FID</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m9\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-C</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m10\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-D</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m11\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">CSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T1.m12\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">Wav2Lip&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">26.53</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.05</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.59</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.75</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.84</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.94</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">30.71</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">10.85</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.18</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.12</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">TalkLip&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023seeing</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">26.11</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.94</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.53</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.08</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.75</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.84</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">24.33</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">12.81</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.05</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.21</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.76</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">IPLAP&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhong2023identity</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.87</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">29.67</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.10</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.49</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.16</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.82</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.88</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">28.27</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">11.47</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.51</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.08</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.83</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">AVTFG&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.95</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.27</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.51</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.95</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.30</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.80</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.94</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">32.98</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">13.67</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.19</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.16</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.88</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">PLGAN&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audiodriventalkingfacegeneration</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.95</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">32.64</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.83</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.41</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.03</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.79</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.94</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.21</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">12.01</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.30</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.99</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.87</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">Diff2Lip&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mukhopadhyay2024diff2lip</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite>\n</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.94</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.68</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.80</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.87</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.46</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.85</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.93</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">30.61</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">15.37</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.06</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.84</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.87</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">Ours</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.92</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">30.90</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.93</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.97</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.18</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.85</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.93</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.48</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">13.15</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.30</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.81</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.84</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "wav2lip",
+            "ttsgenerated",
+            "psnr↑uparrow",
+            "while",
+            "left",
+            "talklip",
+            "extracted",
+            "lsec↑uparrow",
+            "yaman2024audio",
+            "csim↑uparrow",
+            "lsed↓downarrow",
+            "our",
+            "mukhopadhyay2024diff2lip",
+            "wang2023seeing",
+            "ssim↑uparrow",
+            "tts",
+            "audio",
+            "face",
+            "generation",
+            "from",
+            "methods",
+            "fid↓downarrow",
+            "real",
+            "zhong2023identity",
+            "plgan",
+            "yaman2024audiodriventalkingfacegeneration",
+            "diff2lip",
+            "avtfg",
+            "results",
+            "ttspredicted",
+            "talking",
+            "wav2vec2",
+            "right",
+            "sota",
+            "ours",
+            "features",
+            "model",
+            "compared",
+            "prajwal2020lip",
+            "part",
+            "quantitative",
+            "iplap",
+            "shows",
+            "data",
+            "method"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Talking face generation.</span> Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> reports the quantitative results on the LRS2 test set mactched audio-video scenario, comparing our model with existing methods.\nWe consider two setups in this experiment.\nOn the left, videos are generated with the compared models using real audio, while our model uses Wav2Vec2 features extracted from the same audio.\nOn the right, audio is generated with our TTS model and provided to the compared models, whereas our model uses the corresponding TTS-predicted Wav2Vec2 features.\nIn terms of visual quality, our model achieves nearly state-of-the-art (SOTA) performance on SSIM, PSNR, and FID.\nFor identity preservation, measured by CSIM, we obtain the best score together with Diff2Lip.\nFor lip synchronization, our model outperforms most of the methods.</p>\n\n",
+            "<p class=\"ltx_p\">We further conduct a cross-test evaluation to assess the models under more challenging conditions, where audio and video are randomly paired, in contrast to the matched (GT) pairs used in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.\nThe results are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T2\" title=\"Table 2 &#8227; 2.2 Talking Face Generation Model &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.\nFor identity preservation, our model achieves SOTA performance, consistent with the matched scenario.\nIn terms of FID, our score is slightly below SOTA.\nFor lip synchronization, our model demonstrates moderate performance according to the LSE-C and LSE-D metrics.\nNote that the setup in this table follows the same protocol as Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> with respect to real and TTS data; the only difference is the use of mismatched audio&#8211;video pairs.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We propose a text-to-talking-face synthesis framework leveraging latent speech representations from HierSpeech++. A Text-to-Vec module generates Wav2Vec2 embeddings from text, which jointly condition speech and face generation. To handle distribution shifts between clean and TTS-predicted features, we adopt a two-stage training: pretraining on Wav2Vec2 embeddings and finetuning on TTS outputs. This enables tight audio-visual alignment, preserves speaker identity, and produces natural, expressive speech and synchronized facial motion without ground-truth audio at inference. Experiments show that conditioning on TTS-predicted latent features outperforms cascaded pipelines, improving both lip-sync and visual realism.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "tts",
+                    "audio",
+                    "face",
+                    "generation",
+                    "from",
+                    "ttspredicted",
+                    "wav2vec2"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nTalking face generation, Text-to-Speech, Text-to-audio-visual synthesis</p>\n\n",
+                "matched_terms": [
+                    "face",
+                    "talking",
+                    "generation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Generating realistic talking-face videos directly from text, while simultaneously producing high-quality speech, remains a challenging task for applications such as virtual avatars, face-dubbing&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">waibel2023face</span>]</cite>, and digital assistants. Traditional talking face generation (TFG) models trained on ground-truth audio often suffer from temporal misalignment and reduced performance when exposed to synthetic speech. Some existing pipelines adopt a cascaded approach, where text is first converted to speech and then the audio drives facial animation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023text</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2022text2video</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2023ada</span>]</cite>. While effective to some extent, these methods are prone to domain shift and error accumulation, as the talking-face model is not trained on TTS-generated audio.</p>\n\n",
+                "matched_terms": [
+                    "ttsgenerated",
+                    "while",
+                    "audio",
+                    "model",
+                    "face",
+                    "generation",
+                    "from",
+                    "methods",
+                    "talking"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Other approaches mitigate this issue by creating shared latent representations for text and audio&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mitsui2023uniflg</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">choi2024text</span>]</cite> or by using feature fusion techniques to incorporate text-enriched features into TFG&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">diao2025ft2tf</span>]</cite>. More recent works employ advanced generative models to jointly synthesize speech and talking faces&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jang2024faces</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025omnitalker</span>]</cite>, demonstrating the benefits of unified modeling for audio-visual coherence.</p>\n\n",
+                "matched_terms": [
+                    "talking",
+                    "audio",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our approach, we adopt a simple yet effective adaptation strategy. We leverage a Text-to-Vec (TTV) module to generate intermediate latent speech features directly from text. These features serve as a shared representation for both speech reconstruction and talking-face generation, ensuring tight audio-visual alignment. We then adapt the talking face generator to these intermediate TTS-predicted features, addressing the domain shift that occurs between clean, pretrained audio features and TTS outputs. By conditioning the generator on these predicted representations, we avoid the limitations of cascaded pipelines and enable existing TFG models to handle synthetic speech more effectively, improving both lip&#8211;speech synchronization and overall realism.\nOur contributions are as follows:\n(1) To the best of our knowledge, we present the first joint text-to-audio-visual synthesis for face dubbing.\n(2) We propose a two-stage training strategy for talking face generation that learns a shared latent space and adapts effectively to TTS-predicted features.\n(3) We conduct extensive experiments demonstrating that our method achieves competitive performance while enabling direct text-to-audio-video generation.\nThis is particularly important since generating audio and video in parallel from a joint space is crucial as it guarantees natural audio-lip synchronization and coherent audio-visual alignment.\nIt also eliminates the need for a cascaded system.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "while",
+                    "tts",
+                    "audio",
+                    "face",
+                    "generation",
+                    "from",
+                    "ttspredicted",
+                    "method",
+                    "talking",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to adapt the talking face generation model for text-to-speech outputs, we used Hierspeech++&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2025hierspeech++</span>]</cite> as the TTS backbone where we used the outputs from the text-to-vec module as inputs to the TFG module. Then TFG and speech synthesizer synthesize the speech and corresponding talking face. The overall architecture is shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.F1\" title=\"Figure 1 &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "model",
+                    "face",
+                    "generation",
+                    "from",
+                    "talking"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">HierSpeech++ is a hierarchical speech synthesis model that combines linguistic, acoustic, and prosodic representations to generate natural and expressive speech. Unlike conventional TTS systems that operate on mel-spectrograms, HierSpeech++ leverages hierarchical latent representations derived from the self-supervised speech model Wav2Vec2\n(W2V2)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span>]</cite>, trained on massively multilingual data&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratap2024scaling</span>]</cite>, and aligns them with text through a conditional variational autoencoder architecture. This design enables improved prosody modeling, robustness to out-of-domain text, and enhanced expressiveness.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "model",
+                    "data",
+                    "from",
+                    "wav2vec2"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our pipeline, we employ TTV and speech synthesizer modules. The TTV module is a variational autoencoder similar to VITS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2021conditional</span>]</cite>, trained to synthesize W2V2 embeddings and F0 from text. It consists of a text encoder for generating text embeddings, a W2V2 encoder-decoder for reconstructing W2V2 features, and a duration predictor that learns text-to-W2V2 alignment via monotonic alignment search (MAS). During training, we use the W2V2 encoder-decoder to reconstruct ground-truth W2V2 embeddings and employ the predicted embeddings to fine-tune the model for synthetic speech adaptation, ensuring that video&#8211;audio alignment from the original data is preserved, a critical factor for talking-face generation training.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "model",
+                    "generation",
+                    "data",
+                    "from",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, as ground-truth audio is unavailable, we generate W2V2 features from text using the predicted durations and feed these predicted features into the pipeline to jointly synthesize speech and the corresponding talking face. Reference audio is used for style conditioning, including speaker identity, while the hierarchical speech synthesizer generates the waveform. This approach enables tight synchronization between generated speech and facial motion while maintaining naturalness and speaker characteristics.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "while",
+                    "audio",
+                    "face",
+                    "from",
+                    "talking"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the GAN-based&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite> talking face generation model presented in <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audiodriventalkingfacegeneration</span>]</cite>.\nThe original model includes two image encoders responsible for processing the identity reference image and the input face sequence to generate embeddings, as well as an audio encoder that extracts audio embeddings from mel-spectrogram input.\nHowever, since our goal is to generate video from the same latent space as TTS, we remove the audio encoder from the architecture.\nInstead, we utilize features from the joint space and directly concatenate them with the visual embeddings.\nFinally, the face decoder generates the face sequence with synchronized lip movements.\nIn <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, it was also observed that the identity reference can occasionally harm training stability and the model&#8217;s lip-sync performance due to the lip leaking problem.\nTo address this, the authors proposed using an additional preprocessing network to modify the selected identity reference image and generate a silent-face image, representing a face with a stable, closed mouth.\nSince this approach improves both performance and training stability, we adopt the same strategy in training our model.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "tts",
+                    "yaman2024audiodriventalkingfacegeneration",
+                    "audio",
+                    "model",
+                    "face",
+                    "generation",
+                    "yaman2024audio",
+                    "from",
+                    "talking",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Two-stage training strategy.</span>\nWe propose a two-stage training strategy for our talking-face generation model to ensure tight synchronization with TTS-generated speech.\nIn the first stage, we extract audio features from pretrained W2V2 model&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://huggingface.co/facebook/mms-300m</span></span></span>\nthat match the output space of the TTV module from HierSpeech++. These features are used as audio conditions to train the model, providing a robust initial mapping from speech representations to facial motion.</p>\n\n",
+                "matched_terms": [
+                    "ttsgenerated",
+                    "features",
+                    "audio",
+                    "model",
+                    "generation",
+                    "from",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the second stage, we finetune the model using features predicted by the TTV decoder of the TTS model. This step is crucial for adapting to the distribution shift between clean, pretrained W2V2 features and the synthetic TTS-predicted vectors, which may have different statistics. Unlike traditional cascaded pipelines, raw audio is unavailable during inference; the face generator must rely on the same predicted features used for speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "tts",
+                    "audio",
+                    "model",
+                    "face",
+                    "ttspredicted"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Loss functions.</span>\nIn training our model, we employ the following loss functions:\n(1) Adversarial loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite>: A discriminator network is used to compute adversarial loss based on its output, guiding the model toward generating realistic outputs.\n(2) Perceptual loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">johnson2016perceptual</span>]</cite>: We adopt a pretrained VGG-19 model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">simonyan2014very</span>]</cite> to extract features from both the generated and GT faces, and compute the L2 distance between them.\nThis loss contributes to visual quality and identity preservation.\n(3) Pixel reconstruction loss: We compute the L1 distance between the generated and GT faces in pixel space, which helps preserve fine visual details.\n(4) Stabilized synchronization loss: Following <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, we use the stabilized synchronization loss, which outperforms vanilla lip-sync loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span>]</cite> and other lip-sync learning methods.\nHowever, during the second training stage, since the GT data may not be perfectly aligned with the predicted features, we employ vanilla lip-sync loss instead.\nGiven that our model has already learned lip synchronization in the first stage, we apply vanilla lip-sync with a small coefficient during the second stage of training.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "model",
+                    "prajwal2020lip",
+                    "data",
+                    "yaman2024audio",
+                    "from",
+                    "methods",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation.</span>\nWe train our talking face generation model on the LRS2 training set and evaluate it on the LRS2 test set.\nFor evaluation of talking face generation module, we follow the standard setup in the literature and employ widely used metrics.\nTo assess visual quality, we report SSIM&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2004image</span>]</cite>, PSNR, and FID&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">heusel2017gans</span>]</cite>.\nFor audio&#8211;lip synchronization, we use mouth landmark distance (LMD)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2019hierarchical</span>]</cite> and LSE-C &amp; LSE-D&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chung2017out</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span>]</cite>.\nLMD measures the distance between the mouth landmarks of the generated and GT faces, while LSE-C and LSE-D rely on the SyncNet model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chung2017out</span>]</cite> to extract audio&#8211;visual features and compute confidence and distance, respectively.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "while",
+                    "model",
+                    "prajwal2020lip",
+                    "face",
+                    "generation",
+                    "talking",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speech Synthesis.</span>\nThe evaluation results of HierSpeech++ outputs compared to ground-truth speech are reported in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T4\" title=\"Table 4 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The WER scores indicate that HierSpeech++ generates highly intelligible speech from text, even surpassing the performance on the ground-truth recordings, likely due to the dataset containing suboptimal recording conditions, whereas the TTS output is cleaner and less noisy. SECS results show that speaker identity is largely preserved, and UTMOS scores suggest that the synthesized speech maintains naturalness comparable to real speech.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "compared",
+                    "from",
+                    "results",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents the ablation study of our method.\nWe first evaluate the model trained only in the first stage, using Wav2Vec2 features extracted from real audio (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only w/ Real</span>).\nNext, we apply the same model with TTS-predicted features, reported as <span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only</span>.\nWe then evaluate a two-stage model in which the second stage is trained without any explicit lip-sync loss (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; two-stage, no sync.</span>).\nFinally, the last row corresponds to our full pipeline.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "ours",
+                    "features",
+                    "audio",
+                    "model",
+                    "extracted",
+                    "from",
+                    "ttspredicted",
+                    "method",
+                    "wav2vec2",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present a joint text-to-audio-visual synthesis framework using latent speech representations from HierSpeech++. By conditioning the talking-face generator on TTS-predicted Wav2Vec2 features, we achieve tight audio&#8211;visual alignment, preserve speaker identity, and generate natural speech with synchronized facial motion, compatible to other models. Limitations include reliance on high-quality latent features, which may reduce generalization to unseen languages or noisy TTS outputs, and the lack of explicit modeling for subtle facial expressions beyond lip movements.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "tts",
+                    "from",
+                    "ttspredicted",
+                    "wav2vec2"
+                ]
+            }
+        ]
+    },
+    "S2.T2": {
+        "caption": "Table 2: Cross-test evaluation of the models. Instead of using matching audio–video pairs, we randomly pair audio and video to create a mismatched test setup. As in Table 1, the left and right parts correspond to generation with real and TTS-generated data, respectively.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt\" colspan=\"6\"><span class=\"ltx_text\" style=\"font-size:80%;\">With Real Data</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"6\"><span class=\"ltx_text\" style=\"font-size:80%;\">With TTS Data</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">SSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m1\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">PSNR</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m2\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">FID</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m3\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-C</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m4\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-D</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m5\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">CSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m6\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">SSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m7\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">PSNR</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m8\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">FID</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m9\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-C</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m10\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">LSE-D</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m11\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:80%;\">CSIM</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m12\" intent=\":literal\"><semantics><mo mathsize=\"0.800em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">Wav2Lip</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.84</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">25.84</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.89</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.35</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.18</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.74</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.87</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">23.21</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">11.93</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.82</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.49</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.76</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">TalkLip</span></th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.85</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">25.70</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.04</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.04</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.21</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.74</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">24.65</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">12.64</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.41</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">9.54</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.74</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">IPLAP</span></th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">28.98</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.95</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.63</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">10.10</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.77</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.91</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">29.74</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">11.25</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.49</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">10.50</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.81</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">AVTFG</span></th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.85</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">26.43</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">5.78</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.84</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.90</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.72</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.89</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">26.99</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">16.07</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">5.83</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.58</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.73</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">PLGAN</span></th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.86</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">25.38</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.11</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.58</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.81</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.73</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.87</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">25.57</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">15.99</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.91</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.22</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.74</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">Diff2Lip</span></th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.92</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">30.32</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.59</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.71</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.26</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.83</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.93</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.11</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.05</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.21</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.36</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.85</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">Ours</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.92</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.35</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.97</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">4.39</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.72</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.83</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.93</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.37</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">15.06</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">5.38</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">8.68</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.84</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "pairs",
+            "models",
+            "ttsgenerated",
+            "psnr↑uparrow",
+            "wav2lip",
+            "parts",
+            "matching",
+            "setup",
+            "left",
+            "talklip",
+            "evaluation",
+            "lsec↑uparrow",
+            "csim↑uparrow",
+            "lsed↓downarrow",
+            "ssim↑uparrow",
+            "tts",
+            "randomly",
+            "audio",
+            "generation",
+            "test",
+            "fid↓downarrow",
+            "instead",
+            "real",
+            "plgan",
+            "pair",
+            "diff2lip",
+            "avtfg",
+            "mismatched",
+            "create",
+            "right",
+            "ours",
+            "respectively",
+            "crosstest",
+            "audio–video",
+            "video",
+            "iplap",
+            "data",
+            "method",
+            "correspond"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We further conduct a cross-test evaluation to assess the models under more challenging conditions, where audio and video are randomly paired, in contrast to the matched (GT) pairs used in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.\nThe results are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T2\" title=\"Table 2 &#8227; 2.2 Talking Face Generation Model &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.\nFor identity preservation, our model achieves SOTA performance, consistent with the matched scenario.\nIn terms of FID, our score is slightly below SOTA.\nFor lip synchronization, our model demonstrates moderate performance according to the LSE-C and LSE-D metrics.\nNote that the setup in this table follows the same protocol as Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> with respect to real and TTS data; the only difference is the use of mismatched audio&#8211;video pairs.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We propose a text-to-talking-face synthesis framework leveraging latent speech representations from HierSpeech++. A Text-to-Vec module generates Wav2Vec2 embeddings from text, which jointly condition speech and face generation. To handle distribution shifts between clean and TTS-predicted features, we adopt a two-stage training: pretraining on Wav2Vec2 embeddings and finetuning on TTS outputs. This enables tight audio-visual alignment, preserves speaker identity, and produces natural, expressive speech and synchronized facial motion without ground-truth audio at inference. Experiments show that conditioning on TTS-predicted latent features outperforms cascaded pipelines, improving both lip-sync and visual realism.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Generating realistic talking-face videos directly from text, while simultaneously producing high-quality speech, remains a challenging task for applications such as virtual avatars, face-dubbing&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">waibel2023face</span>]</cite>, and digital assistants. Traditional talking face generation (TFG) models trained on ground-truth audio often suffer from temporal misalignment and reduced performance when exposed to synthetic speech. Some existing pipelines adopt a cascaded approach, where text is first converted to speech and then the audio drives facial animation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023text</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2022text2video</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2023ada</span>]</cite>. While effective to some extent, these methods are prone to domain shift and error accumulation, as the talking-face model is not trained on TTS-generated audio.</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "models",
+                    "ttsgenerated",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Other approaches mitigate this issue by creating shared latent representations for text and audio&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mitsui2023uniflg</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">choi2024text</span>]</cite> or by using feature fusion techniques to incorporate text-enriched features into TFG&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">diao2025ft2tf</span>]</cite>. More recent works employ advanced generative models to jointly synthesize speech and talking faces&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jang2024faces</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025omnitalker</span>]</cite>, demonstrating the benefits of unified modeling for audio-visual coherence.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our approach, we adopt a simple yet effective adaptation strategy. We leverage a Text-to-Vec (TTV) module to generate intermediate latent speech features directly from text. These features serve as a shared representation for both speech reconstruction and talking-face generation, ensuring tight audio-visual alignment. We then adapt the talking face generator to these intermediate TTS-predicted features, addressing the domain shift that occurs between clean, pretrained audio features and TTS outputs. By conditioning the generator on these predicted representations, we avoid the limitations of cascaded pipelines and enable existing TFG models to handle synthetic speech more effectively, improving both lip&#8211;speech synchronization and overall realism.\nOur contributions are as follows:\n(1) To the best of our knowledge, we present the first joint text-to-audio-visual synthesis for face dubbing.\n(2) We propose a two-stage training strategy for talking face generation that learns a shared latent space and adapts effectively to TTS-predicted features.\n(3) We conduct extensive experiments demonstrating that our method achieves competitive performance while enabling direct text-to-audio-video generation.\nThis is particularly important since generating audio and video in parallel from a joint space is crucial as it guarantees natural audio-lip synchronization and coherent audio-visual alignment.\nIt also eliminates the need for a cascaded system.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "tts",
+                    "audio",
+                    "video",
+                    "generation",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to adapt the talking face generation model for text-to-speech outputs, we used Hierspeech++&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2025hierspeech++</span>]</cite> as the TTS backbone where we used the outputs from the text-to-vec module as inputs to the TFG module. Then TFG and speech synthesizer synthesize the speech and corresponding talking face. The overall architecture is shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.F1\" title=\"Figure 1 &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">HierSpeech++ is a hierarchical speech synthesis model that combines linguistic, acoustic, and prosodic representations to generate natural and expressive speech. Unlike conventional TTS systems that operate on mel-spectrograms, HierSpeech++ leverages hierarchical latent representations derived from the self-supervised speech model Wav2Vec2\n(W2V2)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span>]</cite>, trained on massively multilingual data&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratap2024scaling</span>]</cite>, and aligns them with text through a conditional variational autoencoder architecture. This design enables improved prosody modeling, robustness to out-of-domain text, and enhanced expressiveness.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our pipeline, we employ TTV and speech synthesizer modules. The TTV module is a variational autoencoder similar to VITS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2021conditional</span>]</cite>, trained to synthesize W2V2 embeddings and F0 from text. It consists of a text encoder for generating text embeddings, a W2V2 encoder-decoder for reconstructing W2V2 features, and a duration predictor that learns text-to-W2V2 alignment via monotonic alignment search (MAS). During training, we use the W2V2 encoder-decoder to reconstruct ground-truth W2V2 embeddings and employ the predicted embeddings to fine-tune the model for synthetic speech adaptation, ensuring that video&#8211;audio alignment from the original data is preserved, a critical factor for talking-face generation training.</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the GAN-based&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite> talking face generation model presented in <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audiodriventalkingfacegeneration</span>]</cite>.\nThe original model includes two image encoders responsible for processing the identity reference image and the input face sequence to generate embeddings, as well as an audio encoder that extracts audio embeddings from mel-spectrogram input.\nHowever, since our goal is to generate video from the same latent space as TTS, we remove the audio encoder from the architecture.\nInstead, we utilize features from the joint space and directly concatenate them with the visual embeddings.\nFinally, the face decoder generates the face sequence with synchronized lip movements.\nIn <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, it was also observed that the identity reference can occasionally harm training stability and the model&#8217;s lip-sync performance due to the lip leaking problem.\nTo address this, the authors proposed using an additional preprocessing network to modify the selected identity reference image and generate a silent-face image, representing a face with a stable, closed mouth.\nSince this approach improves both performance and training stability, we adopt the same strategy in training our model.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "audio",
+                    "video",
+                    "generation",
+                    "instead"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Two-stage training strategy.</span>\nWe propose a two-stage training strategy for our talking-face generation model to ensure tight synchronization with TTS-generated speech.\nIn the first stage, we extract audio features from pretrained W2V2 model&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://huggingface.co/facebook/mms-300m</span></span></span>\nthat match the output space of the TTV module from HierSpeech++. These features are used as audio conditions to train the model, providing a robust initial mapping from speech representations to facial motion.</p>\n\n",
+                "matched_terms": [
+                    "ttsgenerated",
+                    "generation",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the second stage, we finetune the model using features predicted by the TTV decoder of the TTS model. This step is crucial for adapting to the distribution shift between clean, pretrained W2V2 features and the synthetic TTS-predicted vectors, which may have different statistics. Unlike traditional cascaded pipelines, raw audio is unavailable during inference; the face generator must rely on the same predicted features used for speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Loss functions.</span>\nIn training our model, we employ the following loss functions:\n(1) Adversarial loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite>: A discriminator network is used to compute adversarial loss based on its output, guiding the model toward generating realistic outputs.\n(2) Perceptual loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">johnson2016perceptual</span>]</cite>: We adopt a pretrained VGG-19 model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">simonyan2014very</span>]</cite> to extract features from both the generated and GT faces, and compute the L2 distance between them.\nThis loss contributes to visual quality and identity preservation.\n(3) Pixel reconstruction loss: We compute the L1 distance between the generated and GT faces in pixel space, which helps preserve fine visual details.\n(4) Stabilized synchronization loss: Following <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, we use the stabilized synchronization loss, which outperforms vanilla lip-sync loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span>]</cite> and other lip-sync learning methods.\nHowever, during the second training stage, since the GT data may not be perfectly aligned with the predicted features, we employ vanilla lip-sync loss instead.\nGiven that our model has already learned lip synchronization in the first stage, we apply vanilla lip-sync with a small coefficient during the second stage of training.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "instead"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation.</span>\nWe train our talking face generation model on the LRS2 training set and evaluate it on the LRS2 test set.\nFor evaluation of talking face generation module, we follow the standard setup in the literature and employ widely used metrics.\nTo assess visual quality, we report SSIM&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2004image</span>]</cite>, PSNR, and FID&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">heusel2017gans</span>]</cite>.\nFor audio&#8211;lip synchronization, we use mouth landmark distance (LMD)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2019hierarchical</span>]</cite> and LSE-C &amp; LSE-D&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chung2017out</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span>]</cite>.\nLMD measures the distance between the mouth landmarks of the generated and GT faces, while LSE-C and LSE-D rely on the SyncNet model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chung2017out</span>]</cite> to extract audio&#8211;visual features and compute confidence and distance, respectively.</p>\n\n",
+                "matched_terms": [
+                    "respectively",
+                    "setup",
+                    "generation",
+                    "evaluation",
+                    "test"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Talking face generation.</span> Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> reports the quantitative results on the LRS2 test set mactched audio-video scenario, comparing our model with existing methods.\nWe consider two setups in this experiment.\nOn the left, videos are generated with the compared models using real audio, while our model uses Wav2Vec2 features extracted from the same audio.\nOn the right, audio is generated with our TTS model and provided to the compared models, whereas our model uses the corresponding TTS-predicted Wav2Vec2 features.\nIn terms of visual quality, our model achieves nearly state-of-the-art (SOTA) performance on SSIM, PSNR, and FID.\nFor identity preservation, measured by CSIM, we obtain the best score together with Diff2Lip.\nFor lip synchronization, our model outperforms most of the methods.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "tts",
+                    "audio",
+                    "left",
+                    "generation",
+                    "diff2lip",
+                    "right",
+                    "test",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speech Synthesis.</span>\nThe evaluation results of HierSpeech++ outputs compared to ground-truth speech are reported in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T4\" title=\"Table 4 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The WER scores indicate that HierSpeech++ generates highly intelligible speech from text, even surpassing the performance on the ground-truth recordings, likely due to the dataset containing suboptimal recording conditions, whereas the TTS output is cleaner and less noisy. SECS results show that speaker identity is largely preserved, and UTMOS scores suggest that the synthesized speech maintains naturalness comparable to real speech.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents the ablation study of our method.\nWe first evaluate the model trained only in the first stage, using Wav2Vec2 features extracted from real audio (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only w/ Real</span>).\nNext, we apply the same model with TTS-predicted features, reported as <span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only</span>.\nWe then evaluate a two-stage model in which the second stage is trained without any explicit lip-sync loss (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; two-stage, no sync.</span>).\nFinally, the last row corresponds to our full pipeline.</p>\n\n",
+                "matched_terms": [
+                    "ours",
+                    "audio",
+                    "method",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present a joint text-to-audio-visual synthesis framework using latent speech representations from HierSpeech++. By conditioning the talking-face generator on TTS-predicted Wav2Vec2 features, we achieve tight audio&#8211;visual alignment, preserve speaker identity, and generate natural speech with synchronized facial motion, compatible to other models. Limitations include reliance on high-quality latent features, which may reduce generalization to unseen languages or noisy TTS outputs, and the lack of explicit modeling for subtle facial expressions beyond lip movements.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "tts"
+                ]
+            }
+        ]
+    },
+    "S3.T3": {
+        "caption": "Table 3: Ablation study evaluating the impact of the proposed training strategy.",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\">Method</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">SSIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">PSNR<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">FID<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">LSE-C<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">LSE-D<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">CSIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Ours - first stage only w/ Real</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.91</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">29.78</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7.29</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8.39</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.92</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.84</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">Ours - first stage only</th>\n<td class=\"ltx_td ltx_align_center\">0.92</td>\n<td class=\"ltx_td ltx_align_center\">30.42</td>\n<td class=\"ltx_td ltx_align_center\">9.09</td>\n<td class=\"ltx_td ltx_align_center\">3.24</td>\n<td class=\"ltx_td ltx_align_center\">11.12</td>\n<td class=\"ltx_td ltx_align_center\">0.84</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">Ours - two-stage, no sync</th>\n<td class=\"ltx_td ltx_align_center\">0.92</td>\n<td class=\"ltx_td ltx_align_center\">31.21</td>\n<td class=\"ltx_td ltx_align_center\">7.47</td>\n<td class=\"ltx_td ltx_align_center\">3.31</td>\n<td class=\"ltx_td ltx_align_center\">10.81</td>\n<td class=\"ltx_td ltx_align_center\">0.84</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r\">Ours - full</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">31.48</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">5.31</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">4.14</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">10.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.84</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "psnr↑uparrow",
+            "full",
+            "twostage",
+            "strategy",
+            "lsec↑uparrow",
+            "csim↑uparrow",
+            "lsed↓downarrow",
+            "evaluating",
+            "ssim↑uparrow",
+            "study",
+            "stage",
+            "ablation",
+            "training",
+            "sync",
+            "fid↓downarrow",
+            "first",
+            "real",
+            "only",
+            "impact",
+            "ours",
+            "proposed",
+            "method"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents the ablation study of our method.\nWe first evaluate the model trained only in the first stage, using Wav2Vec2 features extracted from real audio (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only w/ Real</span>).\nNext, we apply the same model with TTS-predicted features, reported as <span class=\"ltx_text ltx_font_italic\">Ours &#8211; first stage only</span>.\nWe then evaluate a two-stage model in which the second stage is trained without any explicit lip-sync loss (<span class=\"ltx_text ltx_font_italic\">Ours &#8211; two-stage, no sync.</span>).\nFinally, the last row corresponds to our full pipeline.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We propose a text-to-talking-face synthesis framework leveraging latent speech representations from HierSpeech++. A Text-to-Vec module generates Wav2Vec2 embeddings from text, which jointly condition speech and face generation. To handle distribution shifts between clean and TTS-predicted features, we adopt a two-stage training: pretraining on Wav2Vec2 embeddings and finetuning on TTS outputs. This enables tight audio-visual alignment, preserves speaker identity, and produces natural, expressive speech and synchronized facial motion without ground-truth audio at inference. Experiments show that conditioning on TTS-predicted latent features outperforms cascaded pipelines, improving both lip-sync and visual realism.</p>\n\n",
+                "matched_terms": [
+                    "twostage",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our approach, we adopt a simple yet effective adaptation strategy. We leverage a Text-to-Vec (TTV) module to generate intermediate latent speech features directly from text. These features serve as a shared representation for both speech reconstruction and talking-face generation, ensuring tight audio-visual alignment. We then adapt the talking face generator to these intermediate TTS-predicted features, addressing the domain shift that occurs between clean, pretrained audio features and TTS outputs. By conditioning the generator on these predicted representations, we avoid the limitations of cascaded pipelines and enable existing TFG models to handle synthetic speech more effectively, improving both lip&#8211;speech synchronization and overall realism.\nOur contributions are as follows:\n(1) To the best of our knowledge, we present the first joint text-to-audio-visual synthesis for face dubbing.\n(2) We propose a two-stage training strategy for talking face generation that learns a shared latent space and adapts effectively to TTS-predicted features.\n(3) We conduct extensive experiments demonstrating that our method achieves competitive performance while enabling direct text-to-audio-video generation.\nThis is particularly important since generating audio and video in parallel from a joint space is crucial as it guarantees natural audio-lip synchronization and coherent audio-visual alignment.\nIt also eliminates the need for a cascaded system.</p>\n\n",
+                "matched_terms": [
+                    "twostage",
+                    "strategy",
+                    "training",
+                    "method",
+                    "first"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the GAN-based&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite> talking face generation model presented in <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audiodriventalkingfacegeneration</span>]</cite>.\nThe original model includes two image encoders responsible for processing the identity reference image and the input face sequence to generate embeddings, as well as an audio encoder that extracts audio embeddings from mel-spectrogram input.\nHowever, since our goal is to generate video from the same latent space as TTS, we remove the audio encoder from the architecture.\nInstead, we utilize features from the joint space and directly concatenate them with the visual embeddings.\nFinally, the face decoder generates the face sequence with synchronized lip movements.\nIn <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, it was also observed that the identity reference can occasionally harm training stability and the model&#8217;s lip-sync performance due to the lip leaking problem.\nTo address this, the authors proposed using an additional preprocessing network to modify the selected identity reference image and generate a silent-face image, representing a face with a stable, closed mouth.\nSince this approach improves both performance and training stability, we adopt the same strategy in training our model.</p>\n\n",
+                "matched_terms": [
+                    "proposed",
+                    "strategy",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Two-stage training strategy.</span>\nWe propose a two-stage training strategy for our talking-face generation model to ensure tight synchronization with TTS-generated speech.\nIn the first stage, we extract audio features from pretrained W2V2 model&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://huggingface.co/facebook/mms-300m</span></span></span>\nthat match the output space of the TTV module from HierSpeech++. These features are used as audio conditions to train the model, providing a robust initial mapping from speech representations to facial motion.</p>\n\n",
+                "matched_terms": [
+                    "stage",
+                    "twostage",
+                    "strategy",
+                    "training",
+                    "first"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Loss functions.</span>\nIn training our model, we employ the following loss functions:\n(1) Adversarial loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">goodfellow2014generative</span>]</cite>: A discriminator network is used to compute adversarial loss based on its output, guiding the model toward generating realistic outputs.\n(2) Perceptual loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">johnson2016perceptual</span>]</cite>: We adopt a pretrained VGG-19 model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">simonyan2014very</span>]</cite> to extract features from both the generated and GT faces, and compute the L2 distance between them.\nThis loss contributes to visual quality and identity preservation.\n(3) Pixel reconstruction loss: We compute the L1 distance between the generated and GT faces in pixel space, which helps preserve fine visual details.\n(4) Stabilized synchronization loss: Following <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yaman2024audio</span>]</cite>, we use the stabilized synchronization loss, which outperforms vanilla lip-sync loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">prajwal2020lip</span>]</cite> and other lip-sync learning methods.\nHowever, during the second training stage, since the GT data may not be perfectly aligned with the predicted features, we employ vanilla lip-sync loss instead.\nGiven that our model has already learned lip synchronization in the first stage, we apply vanilla lip-sync with a small coefficient during the second stage of training.</p>\n\n",
+                "matched_terms": [
+                    "stage",
+                    "first",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We further conduct a cross-test evaluation to assess the models under more challenging conditions, where audio and video are randomly paired, in contrast to the matched (GT) pairs used in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.\nThe results are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T2\" title=\"Table 2 &#8227; 2.2 Talking Face Generation Model &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.\nFor identity preservation, our model achieves SOTA performance, consistent with the matched scenario.\nIn terms of FID, our score is slightly below SOTA.\nFor lip synchronization, our model demonstrates moderate performance according to the LSE-C and LSE-D metrics.\nNote that the setup in this table follows the same protocol as Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.T1\" title=\"Table 1 &#8227; 2.1 TTS Module &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> with respect to real and TTS data; the only difference is the use of mismatched audio&#8211;video pairs.</p>\n\n",
+                "matched_terms": [
+                    "only",
+                    "real"
+                ]
+            }
+        ]
+    },
+    "S3.T4": {
+        "caption": "Table 4: Quantitative evaluation of the synthesized speech.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">WER</span><math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T4.m1\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">SECS</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T4.m2\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">UTMOS</span><math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T4.m3\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">GT</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">4.47%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">-</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">3.05</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\"><span class=\"ltx_text\" style=\"font-size:90%;\">HierSpeech++</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text\" style=\"font-size:90%;\">1.51%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text\" style=\"font-size:90%;\">72%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text\" style=\"font-size:90%;\">4.22</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "wer↓downarrow",
+            "hierspeech",
+            "synthesized",
+            "quantitative",
+            "evaluation",
+            "method",
+            "speech",
+            "secs↑uparrow",
+            "utmos↑uparrow"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speech Synthesis.</span>\nThe evaluation results of HierSpeech++ outputs compared to ground-truth speech are reported in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S3.T4\" title=\"Table 4 &#8227; 3.1 Results &#8227; 3 Experimental Results &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The WER scores indicate that HierSpeech++ generates highly intelligible speech from text, even surpassing the performance on the ground-truth recordings, likely due to the dataset containing suboptimal recording conditions, whereas the TTS output is cleaner and less noisy. SECS results show that speaker identity is largely preserved, and UTMOS scores suggest that the synthesized speech maintains naturalness comparable to real speech.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We propose a text-to-talking-face synthesis framework leveraging latent speech representations from HierSpeech++. A Text-to-Vec module generates Wav2Vec2 embeddings from text, which jointly condition speech and face generation. To handle distribution shifts between clean and TTS-predicted features, we adopt a two-stage training: pretraining on Wav2Vec2 embeddings and finetuning on TTS outputs. This enables tight audio-visual alignment, preserves speaker identity, and produces natural, expressive speech and synchronized facial motion without ground-truth audio at inference. Experiments show that conditioning on TTS-predicted latent features outperforms cascaded pipelines, improving both lip-sync and visual realism.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "hierspeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our approach, we adopt a simple yet effective adaptation strategy. We leverage a Text-to-Vec (TTV) module to generate intermediate latent speech features directly from text. These features serve as a shared representation for both speech reconstruction and talking-face generation, ensuring tight audio-visual alignment. We then adapt the talking face generator to these intermediate TTS-predicted features, addressing the domain shift that occurs between clean, pretrained audio features and TTS outputs. By conditioning the generator on these predicted representations, we avoid the limitations of cascaded pipelines and enable existing TFG models to handle synthetic speech more effectively, improving both lip&#8211;speech synchronization and overall realism.\nOur contributions are as follows:\n(1) To the best of our knowledge, we present the first joint text-to-audio-visual synthesis for face dubbing.\n(2) We propose a two-stage training strategy for talking face generation that learns a shared latent space and adapts effectively to TTS-predicted features.\n(3) We conduct extensive experiments demonstrating that our method achieves competitive performance while enabling direct text-to-audio-video generation.\nThis is particularly important since generating audio and video in parallel from a joint space is crucial as it guarantees natural audio-lip synchronization and coherent audio-visual alignment.\nIt also eliminates the need for a cascaded system.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to adapt the talking face generation model for text-to-speech outputs, we used Hierspeech++&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2025hierspeech++</span>]</cite> as the TTS backbone where we used the outputs from the text-to-vec module as inputs to the TFG module. Then TFG and speech synthesizer synthesize the speech and corresponding talking face. The overall architecture is shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05432v1#S2.F1\" title=\"Figure 1 &#8227; 2 METHOD &#8227; SHARED LATENT REPRESENTATION FOR JOINT TEXT-TO-AUDIO-VISUAL SYNTHESIS\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "hierspeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">HierSpeech++ is a hierarchical speech synthesis model that combines linguistic, acoustic, and prosodic representations to generate natural and expressive speech. Unlike conventional TTS systems that operate on mel-spectrograms, HierSpeech++ leverages hierarchical latent representations derived from the self-supervised speech model Wav2Vec2\n(W2V2)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span>]</cite>, trained on massively multilingual data&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratap2024scaling</span>]</cite>, and aligns them with text through a conditional variational autoencoder architecture. This design enables improved prosody modeling, robustness to out-of-domain text, and enhanced expressiveness.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "hierspeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Two-stage training strategy.</span>\nWe propose a two-stage training strategy for our talking-face generation model to ensure tight synchronization with TTS-generated speech.\nIn the first stage, we extract audio features from pretrained W2V2 model&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://huggingface.co/facebook/mms-300m</span></span></span>\nthat match the output space of the TTV module from HierSpeech++. These features are used as audio conditions to train the model, providing a robust initial mapping from speech representations to facial motion.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "hierspeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present a joint text-to-audio-visual synthesis framework using latent speech representations from HierSpeech++. By conditioning the talking-face generator on TTS-predicted Wav2Vec2 features, we achieve tight audio&#8211;visual alignment, preserve speaker identity, and generate natural speech with synchronized facial motion, compatible to other models. Limitations include reliance on high-quality latent features, which may reduce generalization to unseen languages or noisy TTS outputs, and the lack of explicit modeling for subtle facial expressions beyond lip movements.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "hierspeech"
+                ]
+            }
+        ]
+    }
+}

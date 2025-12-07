@@ -1,0 +1,1291 @@
+{
+    "Sx3.T1": {
+        "caption": "Table 1: Main experimental results comparing our proposed W3AR method with the baseline CoSyVoice model. We report both objective and subjective metrics on In-Domain and Out-of-Domain test sets. The arrows (↑/↓) indicate whether higher or lower values are better. For MOS scores, we report the 95% confidence intervals. Our method demonstrates significant improvements across all metrics, especially on the out-of-domain data.",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"3\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Subjective Metrics</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">WER</span> (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">SECS</span> (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">BC</span> (%) (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">MOS-N</span> (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">MOS-S</span> (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\">In-Domain (LibriTTS)</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Baseline</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">10.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.07 <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m6\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.06</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.21 <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m7\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.05</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">W3AR</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.21</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.71</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.71</span></td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">4.38</span> <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m8\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.05</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">4.32</span> <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m9\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.04</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">GroundTruth</th>\n<td class=\"ltx_td ltx_align_center\">2.19</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td\"/>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\" rowspan=\"3\">Out-of-Domain (Emilia/GigaSpeech)</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Baseline</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8.92</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">15.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.81 <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m10\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.12 <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m11\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.06</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">W3AR</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.54</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.69</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">8.14</span></td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">4.15</span> <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m12\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.06</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">4.21</span> <math alttext=\"\\pm\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m13\" intent=\":literal\"><semantics><mo>&#177;</mo><annotation encoding=\"application/x-tex\">\\pm</annotation></semantics></math> 0.05</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">GroundTruth</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">3.87</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">-</td>\n<td class=\"ltx_td ltx_border_bb\"/>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "mosn",
+            "outofdomain",
+            "significant",
+            "wer",
+            "↓downarrow",
+            "experimental",
+            "our",
+            "mos",
+            "groundtruth",
+            "objective",
+            "test",
+            "cosyvoice",
+            "scores",
+            "especially",
+            "indomain",
+            "across",
+            "comparing",
+            "indicate",
+            "main",
+            "report",
+            "sets",
+            "metrics",
+            "demonstrates",
+            "dataset",
+            "higher",
+            "both",
+            "results",
+            "lower",
+            "confidence",
+            "arrows",
+            "values",
+            "w3ar",
+            "secs",
+            "↑uparrow",
+            "proposed",
+            "intervals",
+            "model",
+            "better",
+            "all",
+            "±pm",
+            "data",
+            "libritts",
+            "whether",
+            "method",
+            "improvements",
+            "subjective",
+            "baseline",
+            "emiliagigaspeech",
+            "moss"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The qualitative results are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx3.T1\" title=\"Table 1 &#8227; Optimization Objective. &#8227; Policy Optimization &#8227; Method &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, demonstrating the clear superiority and robustness of our proposed W3AR method. On the In-Domain (LibriTTS) test set, W3AR significantly reduces the Word Error Rate (WER) by 38.9% relative to the baseline (from 5.25 to 3.21), indicating a substantial improvement in articulatory precision. This is corroborated by subjective evaluations, where our method achieves a notable increase in both Mean Opinion Scores for Naturalness (MOS-N) and Speaker Similarity (MOS-S). The effectiveness of W3AR is particularly pronounced on the more challenging Out-of-Domain (Emilia/GigaSpeech) set. Here, our method nearly halves the WER (from 8.92 to 4.54) and brings the MOS-N for these unseen speakers (4.15) to a level on par with that of the baseline on in-domain data. This highlights our method&#8217;s strong generalization capability and its effectiveness in mitigating quality degradation for novel voices.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in Text-to-Speech (TTS) technology have been remarkable, enabling current models to clone arbitrary unseen speakers and synthesize high-quality, natural-sounding speech. However, corresponding evaluation techniques appear to be lagging: Existing Mean Opinion Score (MOS) estimation models typically perform regression-based scoring on entire speech segments&#8211;while a failed synthesized speech usually contains problematic elements in only a few isolated words rather than throughout the entire utterance. In this context, we presents an intriguing finding: encoder-decoder ASR models, such as Whisper, leverage their extensive pre-training to precisely capture word-level mismatches between speech and text within their cross-attention mechanisms, thereby providing a fine-grained reward signal. Building upon this insight, we propose a novel TTS optimization method, which we term <span class=\"ltx_text ltx_font_bold\">W</span>ord-level TTS <span class=\"ltx_text ltx_font_bold\">A</span>lignment by <span class=\"ltx_text ltx_font_bold\">A</span>SR-driven <span class=\"ltx_text ltx_font_bold\">A</span>ttentive <span class=\"ltx_text ltx_font_bold\">R</span>eward (W3AR). Instead of relying on any explicit reward annotations, W3AR leverages the attention information within a pre-trained ASR model, enabling finer-grained alignment and optimization of the sequences predicted by the TTS model. Experimental results demonstrate that W3AR not only effectively improves the TTS generation quality of existing models but also further enhances zero-shot robustness based on both in-domain and out-of-domain prompt speakers. Additionally, our findings and proposed methodology offer a new insight for generative tasks: understanding models can potentially serve as evaluators, providing highly fine-grained and valuable feedback for generation.</p>\n\n",
+                "matched_terms": [
+                    "mos",
+                    "indomain",
+                    "w3ar",
+                    "outofdomain",
+                    "proposed",
+                    "experimental",
+                    "model",
+                    "both",
+                    "results",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some existing efforts have explored RL as a potential avenue for posterior optimization in TTS, demonstrating its promise in refining generated speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. However, the most primary challenge in this paradigm lies in obtaining a suitable reward signal. Standard TTS evaluation metrics, such as Mean Opinion Score (MOS) estimation, provide a holistic judgment for an entire utterance, lacking the fine-grained granularity required for effective RL. For instance, if only a short segment (e.g., 1 or 2 words) of an otherwise high-quality speech sequence contains an artifact, penalizing the entire sequence&#8217;s probability will inevitably diminish optimization efficiency&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>. Consequently, our research addresses the critical question of how to precisely locate these problematic segments to provide more effective and targeted optimization.</p>\n\n",
+                "matched_terms": [
+                    "mos",
+                    "metrics",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Considering that ASR models are inherently designed to learn the &#8220;alignment&#8221; between two disparate modalities, i.e., speech and text, of varying lengths, we posit a direct hypothesis: can this alignment serve as a word-level evaluation metric to reflect the quality of synthesized spoken words? Prior research has already demonstrated the rich information embedded within the attention matrices of large pre-trained models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ben2024attend</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024self</span>)</cite>. Building on this, we propose a novel metric based on the cross-attention mechanism within ASR models to assess the word-level alignment between generated speech and the given text from an ASR perspective. It is crucial to note that such a metric offers more comprehensive information than a simple Word Error Rate (WER). Even for ambiguously generated speech segments, an ASR model can often provide a robust interpretation by leveraging contextual information, which a simple WER might misclassify as an error.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To this end, we introduce W3AR, a novel framework for Word-level, Whisper-guided Audio Refinement using Adversarial Rewards. Our approach operationalizes the ASR alignment hypothesis by defining two fine-grained quality metrics. The first, Attention Purity, evaluates the articulatory clarity of individual words by assessing whether the ASR model&#8217;s attention is sharply focused on a compact audio segment or diffusely scattered, indicating ambiguity. The second, Alignment Monotonicity, assesses the prosodic fluency of the utterance by ensuring the ASR&#8217;s attention focus progresses smoothly forward in time, penalizing unnatural stalls or regressions that correspond to stutters or awkward pauses. These metrics are combined into a word-level reward signal that guides the optimization of the TTS model within a stable, group-relative policy optimization framework, directly targeting and correcting specific generation artifacts.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "model",
+                    "metrics",
+                    "whether",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our extensive experiments demonstrate the effectiveness and generality of W3AR. When applied to the state-of-the-art CoSyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>)</cite> model, our method yields significant reductions in Word Error Rate and notable increases in both objective speaker similarity and subjective Mean Opinion Scores for naturalness. Crucially, we show that these improvements hold not only for speakers within the training distribution but also for challenging out-of-domain speakers, confirming the robustness of our approach. Furthermore, we validate the model-agnostic nature of W3AR by successfully applying it to other diverse TTS architectures, including VoiceCraft and MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>, achieving consistent performance gains. Ablation studies confirm that both the purity and monotonicity components are essential for achieving optimal results.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "outofdomain",
+                    "significant",
+                    "model",
+                    "objective",
+                    "scores",
+                    "both",
+                    "results",
+                    "method",
+                    "improvements",
+                    "subjective",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In summary, our main contributions are threefold: (1) We propose a novel, fine-grained reward function for TTS based on analyzing the purity and monotonicity of cross-attention maps from a pre-trained ASR model. (2) We design an effective and stable policy optimization framework, W3AR, that leverages this reward to directly correct word-level defects in synthesized speech. (3) We provide a comprehensive empirical validation of our method&#8217;s effectiveness and generality, demonstrating significant improvements across multiple state-of-the-art TTS models and on both in-domain and out-of-domain datasets.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "across",
+                    "w3ar",
+                    "outofdomain",
+                    "significant",
+                    "main",
+                    "model",
+                    "both",
+                    "improvements",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in large-scale generative modeling have catalyzed a significant paradigm shift within the field of text-to-speech (TTS). A prevailing trend involves reformulating speech synthesis as a next-token prediction problem&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, mirroring the successes observed with LLMs in the text domain&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite>. This approach fundamentally relies on the use of a neural audio codec to discretize continuous speech waveforms into a sequence of discrete tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zeghidour2021soundstream</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023audiodec</span>)</cite>. A powerful decoder-only language model is then conditioned on phonetic or textual inputs to autoregressively predict this stream of acoustic tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2025vall</span>)</cite>. Pioneering work in this area, notably VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, first demonstrated the profound potential of this methodology. This generative framework has proven to be exceptionally scalable, demonstrating that increasing model and dataset size yields substantial gains in output quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite>, robustness&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>)</cite>, and the ability to capture nuanced prosodic details for any target voice without explicit fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "significant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast to its maturity in NLP, the application of RLHF to TTS is a more nascent yet rapidly advancing frontier. Initial explorations like SpeechAlign&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite> first adapted preference alignment to TTS using paired comparison data. Subsequent research has broadened this scope; for instance, UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite> and RIO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024robust</span>)</cite> were developed to handle more complex, unpaired preference datasets by accounting for annotation uncertainties and employing Bayesian-inspired data selection strategies, respectively. While empirical studies and applications like Seed-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite> have validated the efficacy of RLHF for enhancing the quality of LM-based TTS during post-training, a significant limitation persists. The predominant focus of current methodologies remains on coarse, utterance-level preference optimization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025preference</span>)</cite>, largely overlooking the substantial potential that lies in achieving more fine-grained acoustic alignment.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "significant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model Training.</span>\nThe model <math alttext=\"\\mathcal{M}_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\theta}</annotation></semantics></math> is trained to predict the acoustic token sequence <math alttext=\"\\mathbf{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m2\" intent=\":literal\"><semantics><mi>&#119834;</mi><annotation encoding=\"application/x-tex\">\\mathbf{a}</annotation></semantics></math> conditioned on the corresponding input text sequence <math alttext=\"\\mathbf{y}=(y_{1},\\dots,y_{T_{y}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m3\" intent=\":literal\"><semantics><mrow><mi>&#119858;</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>y</mi><msub><mi>T</mi><mi>y</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{y}=(y_{1},\\dots,y_{T_{y}})</annotation></semantics></math>. For a given training pair <math alttext=\"(\\mathbf{y},\\mathbf{a})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>&#119858;</mi><mo>,</mo><mi>&#119834;</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(\\mathbf{y},\\mathbf{a})</annotation></semantics></math> from a large, multi-speaker dataset <math alttext=\"\\mathcal{D}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m5\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119967;</mi><annotation encoding=\"application/x-tex\">\\mathcal{D}</annotation></semantics></math>, the model is optimized to maximize the likelihood of the acoustic sequence via a standard cross-entropy loss:</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Zero-Shot Voice Cloning via In-Context Learning.</span>\nTo enable zero-shot capabilities, we frame the task as speech continuation. During training, we define an acoustic prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{p}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m1\" intent=\":literal\"><semantics><mrow><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#119834;</mi><msub><mi>T</mi><mi>p</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{p}})</annotation></semantics></math>, which is a short prefix (e.g., 3 seconds) of the full acoustic sequence <math alttext=\"\\mathbf{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m2\" intent=\":literal\"><semantics><mi>&#119834;</mi><annotation encoding=\"application/x-tex\">\\mathbf{a}</annotation></semantics></math>. The model is then trained to predict the remainder of the sequence, <math alttext=\"\\mathbf{a}_{\\text{target}}=(\\mathbf{a}_{T_{p}+1},\\dots,\\mathbf{a}_{T_{a}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#119834;</mi><mtext>target</mtext></msub><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mrow><msub><mi>T</mi><mi>p</mi></msub><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#119834;</mi><msub><mi>T</mi><mi>a</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{target}}=(\\mathbf{a}_{T_{p}+1},\\dots,\\mathbf{a}_{T_{a}})</annotation></semantics></math>, conditioned on both the text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m4\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math> and the prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m5\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math>. The objective implicitly teaches the model to infer the vocal characteristics from the prompt and maintain them throughout the subsequent generation. During inference, we provide the model with a prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m6\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math> from any unseen target speaker and a new text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m7\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math>. The model autoregressively generates the acoustic sequence <math alttext=\"\\mathbf{a}_{\\text{gen}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m8\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>gen</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{gen}}</annotation></semantics></math> by sampling from the learned distribution <math alttext=\"p(\\cdot\\mid\\mathbf{a}_{\\text{prompt}},\\mathbf{y};\\theta)\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p4.m9\" intent=\":literal\"><semantics><mrow><mi>p</mi><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo lspace=\"0em\" rspace=\"0.167em\">&#8739;</mo><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo>,</mo><mi>&#119858;</mi><mo>;</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">p(\\cdot\\mid\\mathbf{a}_{\\text{prompt}},\\mathbf{y};\\theta)</annotation></semantics></math>. The self-attention mechanism of the Transformer enables the model to attend to the acoustic properties embedded in the prompt, thus achieving zero-shot voice cloning even without speaker-specific fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "model",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To quantitatively assess the quality of the synthesized speech, we employ a pre-trained, frozen encoder-decoder ASR model, <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math>, architecturally similar to Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite>. This model serves as an objective evaluator, providing a fine-grained reward signal derived from its internal cross-attention mechanism.</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathbf{q}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m7\" intent=\":literal\"><semantics><msub><mi>&#119850;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{q}_{t}</annotation></semantics></math> is the decoder&#8217;s query vector for token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m8\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>, and <math alttext=\"\\mathbf{K}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m9\" intent=\":literal\"><semantics><mi>&#119818;</mi><annotation encoding=\"application/x-tex\">\\mathbf{K}</annotation></semantics></math> are the key vectors derived from <math alttext=\"\\mathbf{H}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m10\" intent=\":literal\"><semantics><mi>&#119815;</mi><annotation encoding=\"application/x-tex\">\\mathbf{H}</annotation></semantics></math>. The weight vector <math alttext=\"\\boldsymbol{\\alpha}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m11\" intent=\":literal\"><semantics><msub><mi>&#120630;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}</annotation></semantics></math> indicates which audio frames the model considers most relevant for transcribing token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m12\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>. By feeding our synthesized audio to <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m13\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math> and using the ground-truth text for teacher-forcing, we extract the full attention map <math alttext=\"\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m14\" intent=\":literal\"><semantics><mrow><mi>&#119808;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>T</mi><mi>y</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>T</mi><mi>h</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}</annotation></semantics></math>, where each row <math alttext=\"\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m15\" intent=\":literal\"><semantics><mrow><msub><mi>&#120630;</mi><mi>t</mi></msub><mo>=</mo><msub><mi>&#119808;</mi><mrow><mi>t</mi><mo>,</mo><mo>:</mo></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}</annotation></semantics></math>. This map provides the basis for our quality metrics.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "groundtruth",
+                    "metrics",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To provide a holistic quality score for each synthesized word, we combine our two metrics into a single word-level reward, <math alttext=\"\\mathcal{R}(y_{t})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mi>t</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{R}(y_{t})</annotation></semantics></math>. This reward captures both local articulatory clarity (purity) and global prosodic fluency (monotonicity). The final reward is a weighted sum:</p>\n\n",
+                "matched_terms": [
+                    "metrics",
+                    "both",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\lambda_{\\text{purity}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>purity</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>mono</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}</annotation></semantics></math> are scalar weights that balance the contribution of each component. This reward signal is then used to optimize our TTS model <math alttext=\"\\mathcal{M}_{\\text{TTS}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>TTS</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{TTS}}</annotation></semantics></math> within a reinforcement learning framework.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We refine the baseline TTS model <math alttext=\"\\mathcal{M}_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\theta}</annotation></semantics></math> by treating it as a policy in a reinforcement learning framework. The optimization process uses the word-level reward signal from the ASR model to directly guide the policy towards generating higher-quality speech. Our approach is inspired by group-based optimization methods, which have proven effective in generation tasks.</p>\n\n",
+                "matched_terms": [
+                    "baseline",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The core of the method involves comparing a group of candidate samples generated from the same input. For a given text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math> and acoustic prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math>, we use the current TTS policy, <math alttext=\"\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#960;</mi><mi>&#952;</mi></msub><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo lspace=\"0em\" rspace=\"0.167em\">&#8739;</mo><mi>&#119858;</mi><mo>,</mo><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})</annotation></semantics></math>, to generate a group of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> distinct acoustic sequences, <math alttext=\"\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mi>N</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}</annotation></semantics></math>, by employing nucleus or temperature-controlled sampling.</p>\n\n",
+                "matched_terms": [
+                    "comparing",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Instead of using the absolute reward values, which can have high variance, we define a fine-grained advantage function that normalizes rewards within the generated group. The advantage of the pronunciation of a word <math alttext=\"y_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">y_{i}</annotation></semantics></math> in sample <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> is calculated as its reward relative to the average reward for that same word across all <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> samples. This effectively uses the group&#8217;s average performance as a dynamic baseline.</p>\n\n",
+                "matched_terms": [
+                    "all",
+                    "across",
+                    "baseline",
+                    "values"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our goal is to update the policy <math alttext=\"\\pi_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\pi_{\\theta}</annotation></semantics></math> to increase the likelihood of acoustic sequences that correspond to positive advantages. We formulate a policy gradient-style objective function, where the word-level advantage modulates the learning signal for each corresponding acoustic token. Let <math alttext=\"w(t)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">w(t)</annotation></semantics></math> be a function that maps an acoustic token index <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> to its corresponding word index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>. The RL loss is defined as:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Intuition:</span> This objective function directly steers the generative process. When a word is synthesized well (positive advantage), the loss encourages the model to increase the probability of the acoustic tokens that produced it. Conversely, if a word is synthesized poorly (negative advantage), the model is discouraged from generating those specific acoustic tokens in the future. This provides a tight feedback loop that addresses specific articulatory and prosodic failures, pushing the overall distribution of the policy towards generating speech that is consistently rated higher by the ASR-based evaluator. To stabilize training, we add a small weight of KL constrain <math alttext=\"\\mathcal{L}_{\\text{kl}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p3.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>kl</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{kl}}</annotation></semantics></math> that is computed by the logits of a frozen reference model <math alttext=\"\\pi_{\\text{ref}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p3.m2\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><mtext>ref</mtext></msub><annotation encoding=\"application/x-tex\">\\pi_{\\text{ref}}</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "higher",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our primary experiments optimized <span class=\"ltx_text ltx_font_bold\">CosyVoice</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>, a robust TTS model trained on an extensive dataset of approximately 170k hours of audio. To rigorously validate the generality of our proposed method, we also extend our optimization to include other representative TTS architectures, namely <span class=\"ltx_text ltx_font_bold\">VoiceCraft</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite> and <span class=\"ltx_text ltx_font_bold\">MaskGCT</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>. It is noted that the architectural distinctions among these models: CosyVoice and MaskGCT both employ an autoregressive prediction of single-layer semantic tokens, subsequently reconstructing speech via flow-matching and non-autoregressive methods, respectively. In contrast, VoiceCraft directly predicts multi-layer audio codecs to achieve speech synthesis. For the ASR model, we choose Whisper-large-v2 due to its popularity.</p>\n\n",
+                "matched_terms": [
+                    "proposed",
+                    "model",
+                    "both",
+                    "method",
+                    "dataset",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given that our optimization method operates without the need for supervised data, we utilized text from LibriTTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zen2019libritts</span>)</cite>. For prompts, we sampled 2,500 short utterances, ranging from 3 to 6 seconds in length, from the LibriTTS training set: 2,000 for optimization and 500 for evaluation. Furthermore, because CoSyVoice&#8217;s training data includes LibriTTS, we extracted an additional 2,500 speech samples from Emilia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2024emilia</span>)</cite> and GigaSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021gigaspeech</span>)</cite> to serve as an out-of-domain speaker library.</p>\n\n",
+                "matched_terms": [
+                    "outofdomain",
+                    "libritts",
+                    "data",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our autoregressive TTS model, which was pre-trained on a large-scale multi-speaker corpus, is fine-tuned using our proposed ASR-guided policy optimization method. The optimization is performed using the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math>, <math alttext=\"\\beta_{1}=0.9\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{1}=0.9</annotation></semantics></math>, <math alttext=\"\\beta_{2}=0.98\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>2</mn></msub><mo>=</mo><mn>0.98</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{2}=0.98</annotation></semantics></math>, and an epsilon of <math alttext=\"10^{-9}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>9</mn></mrow></msup><annotation encoding=\"application/x-tex\">10^{-9}</annotation></semantics></math>. We employ a cosine learning rate decay schedule with a warm-up phase of 2,000 steps. The model is trained using 2 NVIDIA A100 GPUs. For the core of our proposed algorithm, we set the group size for candidate generation to <math alttext=\"N=8\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">N=8</annotation></semantics></math>. The total loss is a combination of the KL loss and the RL loss, weighted by <math alttext=\"\\gamma=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m6\" intent=\":literal\"><semantics><mrow><mi>&#947;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\gamma=0.1</annotation></semantics></math>. The word-level reward function is calculated with its own set of hyperparameters: the attention purity window is set to <math alttext=\"W=6\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m7\" intent=\":literal\"><semantics><mrow><mi>W</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">W=6</annotation></semantics></math>, the alignment monotonicity scaling factor is set to <math alttext=\"\\beta=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\beta=0.1</annotation></semantics></math>, and the two reward components are balanced with equal weights, where <math alttext=\"\\lambda_{\\text{purity}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m9\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>purity</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}=0.5</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m10\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>mono</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}=0.5</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "proposed",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate our system objectively, we assess speaker similarity using the speaker embedding cosine similarity (SECS) metric, computed via pre-trained speaker verification models&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://github.com/microsoft/UniSpeech</span></span></span>. Robustness is measured using word error rate (WER), with transcripts generated by Whisper-medium to compare with other works. In terms of speech naturalness, we utilize a neural-network-based estimator to predict mean opinion scores (UTMOS)&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/sarulab-speech/UTMOS22</span></span></span>. Following prior work&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>, we also report the bad case ratio (BC), defined as the percentage of samples with either UTMOS below 3 or WER above 20%, to reflect model robustness across varying conditions.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "secs",
+                    "wer",
+                    "report",
+                    "model",
+                    "scores",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the naturalness mean opinion score (MOS-N) and similarity mean opinion score (MOS-S) to evaluate the naturalness of the generated samples from 20 English native speakers. To evaluate the perceived quality of the synthesized audio, we conducted two subjective listening tests. First, the naturalness and similarity of 100 samples are assessed using a 5-point Mean Opinion Score (MOS) scale, where a rating of 1 indicated &#8220;very unnatural&#8221; and 5 indicated &#8220;completely natural&#8221;, a rating of 1 indicated &#8220;very similar&#8221; and 5 indicated &#8220;completely same&#8221;. Additionally, a paired-comparison AB test was performed to determine relative preference. In this test, participants listened to 100 pairs of samples generated from identical input text by two competing models and were instructed to select the sample they perceived as more natural. A &#8220;no preference&#8221; (tie) option was provided for cases where the samples were not clearly distinguishable.</p>\n\n",
+                "matched_terms": [
+                    "mosn",
+                    "mos",
+                    "test",
+                    "subjective",
+                    "moss"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech-Align&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. An utterance-level TTS optimization method that employs ground-truth speech as positive samples, while generated acoustic sequence is negative. This method needs the speech label for optimization, leading to unfair comparison.</p>\n\n",
+                "matched_terms": [
+                    "groundtruth",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>: An utterance-level TTS optimization method that also consider the uncertainty in MOS estimation. Since the related model is not open-sourced, we skip the uncertainty coefficient with constant.</p>\n\n",
+                "matched_terms": [
+                    "mos",
+                    "model",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To comprehensively evaluate the effectiveness, robustness, and generality of our proposed method, W3AR, we conduct a series of extensive experiments. Our evaluation is structured into three main parts. First, we present the main results by applying W3AR to the state-of-the-art CoSyVoice model, comparing it against the baseline on both in-domain and challenging out-of-domain speakers to validate its core performance and generalization capabilities. Second, we conduct detailed ablation studies to dissect the contribution of each key component within our framework, and compere W3AR with other competetive TTS optimization methods. Finally, we perform generalization and visualization analyses to demonstrate the model-agnostic nature and provide intuitive insights into our approach.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "comparing",
+                    "outofdomain",
+                    "proposed",
+                    "main",
+                    "model",
+                    "both",
+                    "results",
+                    "method",
+                    "baseline",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further validate these findings from a human-centric perspective, we conducted a head-to-head AB preference test, with the results displayed in Figure 2. For In-Domain speakers, listeners showed a clear preference for speech generated by W3AR, selecting it in 39.2% of comparisons, compared to only 29.7% for the baseline. This preference becomes even more decisive for Out-of-Domain speakers, where W3AR&#8217;s win rate increases to 42.0%. Critically, the percentage of &#8221;Tie&#8221; results drops from 31.1% in the in-domain scenario to 23.6% in the out-of-domain one. This reduction suggests that the quality improvements offered by W3AR are not only significant but also more readily and consistently perceivable by human listeners on more challenging voices, where the baseline model is more likely to produce discernible artifacts.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "outofdomain",
+                    "significant",
+                    "model",
+                    "results",
+                    "test",
+                    "improvements",
+                    "baseline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate the contributions of our proposed components, we conducted a thorough ablation study, with results presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. The full W3AR model demonstrates a significant performance gain over the baseline, establishing a strong reference for comparison. The removal of either the Purity or Monotonicity rewards results in a clear degradation across all metrics, particularly in WER and the predicted UTMOS, which confirms their complementary roles in enhancing articulatory clarity and prosodic fluency. Most notably, disabling the Group-Relative Optimization strategy leads to the most severe performance drop, especially in the challenging out-of-domain scenario where the WER increases from 4.54 to 7.23. This result underscores the critical function of our optimization strategy in ensuring stable and effective policy updates for robust generalization</p>\n\n",
+                "matched_terms": [
+                    "especially",
+                    "across",
+                    "w3ar",
+                    "outofdomain",
+                    "proposed",
+                    "wer",
+                    "significant",
+                    "metrics",
+                    "demonstrates",
+                    "model",
+                    "all",
+                    "results",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We further benchmark W3AR against several recent TTS optimization methods to contextualize its performance. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our W3AR framework is highly competitive. While FPO achieves a marginally lower WER on the in-domain set, our W3AR model attains superior speaker similarity (SECS) and the highest perceived quality (UTMOS). More importantly, W3AR demonstrates a significant advantage in generalization. It achieves a substantially lower WER (4.54) and a higher UTMOS (3.95) on the out-of-domain set compared to all other methods, including FPO (5.94 WER, 3.78 UTMOS). This superior performance on unseen speakers positions W3AR as a more robust and practical solution for improving the reliability of zero-shot TTS systems.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "secs",
+                    "outofdomain",
+                    "wer",
+                    "significant",
+                    "demonstrates",
+                    "model",
+                    "all",
+                    "higher",
+                    "lower",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Model-Agnostic Generalization. To verify the universality of our proposed W3AR framework, we applied it to two additional state-of-the-art TTS models with distinct architectures: VoiceCraft and MaskGCT. The results, presented in Table 3, confirm that our method is not limited to a single model family. When applied to VoiceCraft, W3AR yields a dramatic relative WER reduction of 41.7% (from 8.55 to 4.98) and a corresponding significant increase in the predicted quality score (UTMOS). Furthermore, despite the already strong performance of the MaskGCT baseline (2.92 WER), our method still manages to reduce its error rate and improve its UTMOS score. These experiments demonstrate that W3AR functions as a versatile and effective post-optimization layer, capable of enhancing a wide range of modern TTS systems regardless of their underlying generative mechanism.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "proposed",
+                    "wer",
+                    "significant",
+                    "model",
+                    "results",
+                    "method",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we address the challenge of fine-grained optimization for autoregressive TTS by introducing W3AR, a novel framework that uses a pre-trained ASR model to provide word-level rewards. W3AR derives these rewards by analyzing the Attention Purity and Alignment Monotonicity of an ASR cross-attention map, effectively assessing both articulatory clarity and prosodic fluency. This signal then guides a stable group-relative policy optimization process to directly correct specific generation artifacts. Our experiments show W3AR significantly improves state-of-the-art TTS models, demonstrating superior performance and generalization on both out-of-domain speakers and across different model architectures. Our work establishes a powerful paradigm for generative AI refinement, demonstrating that the internal &#8221;perception&#8221; of one expert model can be distilled into a fine-grained, interpretable reward to systematically enhance the quality and robustness of another.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "w3ar",
+                    "outofdomain",
+                    "model",
+                    "both",
+                    "our"
+                ]
+            }
+        ]
+    },
+    "Sx5.T2": {
+        "caption": "Table 2: Ablation study of our proposed W3AR method and comparison with recent TTS optimization baselines. We report objective metrics: WER, SECS, and UTMOS. The results demonstrate that each component of W3AR contributes positively and that W3AR is highly competitive, especially in out-of-domain generalization.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"3\"><span class=\"ltx_text ltx_font_bold\">In-Domain (LibriTTS)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"3\"><span class=\"ltx_text ltx_font_bold\">Out-of-Domain (Emilia/GigaSpeech)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\">WER (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">SECS (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">UTMOS (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">WER (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">SECS (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">UTMOS (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice (Baseline)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.91</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8.92</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"7\"><span class=\"ltx_text ltx_font_italic\">Ablation Study of W3AR Components</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">W3AR</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.21</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.71</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.10</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.54</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.69</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.99</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">&#8194;&#8202;&#8195;w/o Purity Reward</th>\n<td class=\"ltx_td ltx_align_center\">4.15</td>\n<td class=\"ltx_td ltx_align_center\">0.69</td>\n<td class=\"ltx_td ltx_align_center\">4.02</td>\n<td class=\"ltx_td ltx_align_center\">5.62</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.69</span></td>\n<td class=\"ltx_td ltx_align_center\">3.83</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">&#8194;&#8202;&#8195;w/o Monotonicity Reward</th>\n<td class=\"ltx_td ltx_align_center\">4.98</td>\n<td class=\"ltx_td ltx_align_center\">0.71</td>\n<td class=\"ltx_td ltx_align_center\">3.95</td>\n<td class=\"ltx_td ltx_align_center\">5.98</td>\n<td class=\"ltx_td ltx_align_center\">0.68</td>\n<td class=\"ltx_td ltx_align_center\">3.75</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">&#8194;&#8202;&#8195;w/o Group-Relative Opt.</th>\n<td class=\"ltx_td ltx_align_center\">4.41</td>\n<td class=\"ltx_td ltx_align_center\">0.69</td>\n<td class=\"ltx_td ltx_align_center\">3.90</td>\n<td class=\"ltx_td ltx_align_center\">7.23</td>\n<td class=\"ltx_td ltx_align_center\">0.66</td>\n<td class=\"ltx_td ltx_align_center\">3.79</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"7\"><span class=\"ltx_text ltx_font_italic\">Comparison with other optimization methods</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">SpeechAlign&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.80</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.02</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.68</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">3.92</td>\n<td class=\"ltx_td ltx_align_center\">0.69</td>\n<td class=\"ltx_td ltx_align_center\">3.98</td>\n<td class=\"ltx_td ltx_align_center\">6.72</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.69</span></td>\n<td class=\"ltx_td ltx_align_center\">3.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">FPO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.15</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.68</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">4.05</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">5.94</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">3.78</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "utmos",
+            "outofdomain",
+            "wer",
+            "competitive",
+            "recent",
+            "purity",
+            "baselines",
+            "positively",
+            "each",
+            "monotonicity",
+            "↓downarrow",
+            "comparison",
+            "our",
+            "highly",
+            "tts",
+            "study",
+            "optimization",
+            "ablation",
+            "objective",
+            "methods",
+            "demonstrate",
+            "yao2025fine",
+            "speechalign",
+            "cosyvoice",
+            "especially",
+            "component",
+            "indomain",
+            "zhang2024speechalign",
+            "report",
+            "reward",
+            "metrics",
+            "contributes",
+            "results",
+            "chen2024enhancing",
+            "w3ar",
+            "secs",
+            "↑uparrow",
+            "proposed",
+            "components",
+            "fpo",
+            "grouprelative",
+            "libritts",
+            "other",
+            "method",
+            "generalization",
+            "baseline",
+            "emiliagigaspeech",
+            "opt"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To validate the contributions of our proposed components, we conducted a thorough ablation study, with results presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. The full W3AR model demonstrates a significant performance gain over the baseline, establishing a strong reference for comparison. The removal of either the Purity or Monotonicity rewards results in a clear degradation across all metrics, particularly in WER and the predicted UTMOS, which confirms their complementary roles in enhancing articulatory clarity and prosodic fluency. Most notably, disabling the Group-Relative Optimization strategy leads to the most severe performance drop, especially in the challenging out-of-domain scenario where the WER increases from 4.54 to 7.23. This result underscores the critical function of our optimization strategy in ensuring stable and effective policy updates for robust generalization</p>\n\n",
+            "<p class=\"ltx_p\">We further benchmark W3AR against several recent TTS optimization methods to contextualize its performance. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our W3AR framework is highly competitive. While FPO achieves a marginally lower WER on the in-domain set, our W3AR model attains superior speaker similarity (SECS) and the highest perceived quality (UTMOS). More importantly, W3AR demonstrates a significant advantage in generalization. It achieves a substantially lower WER (4.54) and a higher UTMOS (3.95) on the out-of-domain set compared to all other methods, including FPO (5.94 WER, 3.78 UTMOS). This superior performance on unseen speakers positions W3AR as a more robust and practical solution for improving the reliability of zero-shot TTS systems.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in Text-to-Speech (TTS) technology have been remarkable, enabling current models to clone arbitrary unseen speakers and synthesize high-quality, natural-sounding speech. However, corresponding evaluation techniques appear to be lagging: Existing Mean Opinion Score (MOS) estimation models typically perform regression-based scoring on entire speech segments&#8211;while a failed synthesized speech usually contains problematic elements in only a few isolated words rather than throughout the entire utterance. In this context, we presents an intriguing finding: encoder-decoder ASR models, such as Whisper, leverage their extensive pre-training to precisely capture word-level mismatches between speech and text within their cross-attention mechanisms, thereby providing a fine-grained reward signal. Building upon this insight, we propose a novel TTS optimization method, which we term <span class=\"ltx_text ltx_font_bold\">W</span>ord-level TTS <span class=\"ltx_text ltx_font_bold\">A</span>lignment by <span class=\"ltx_text ltx_font_bold\">A</span>SR-driven <span class=\"ltx_text ltx_font_bold\">A</span>ttentive <span class=\"ltx_text ltx_font_bold\">R</span>eward (W3AR). Instead of relying on any explicit reward annotations, W3AR leverages the attention information within a pre-trained ASR model, enabling finer-grained alignment and optimization of the sequences predicted by the TTS model. Experimental results demonstrate that W3AR not only effectively improves the TTS generation quality of existing models but also further enhances zero-shot robustness based on both in-domain and out-of-domain prompt speakers. Additionally, our findings and proposed methodology offer a new insight for generative tasks: understanding models can potentially serve as evaluators, providing highly fine-grained and valuable feedback for generation.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "indomain",
+                    "w3ar",
+                    "outofdomain",
+                    "tts",
+                    "proposed",
+                    "reward",
+                    "recent",
+                    "optimization",
+                    "results",
+                    "method",
+                    "demonstrate",
+                    "highly"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The current wave of Artificial Intelligence-Generated Content (AIGC) has profoundly impacted various domains, with Text-to-Speech (TTS) technology standing out as a pivotal component&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cao2025survey</span>)</cite>. However, generating high-fidelity, high-sampling-rate signals such as human speech presents unique and substantial challenges&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qian2014training</span>)</cite>. In recent years, remarkable progress has been achieved, largely attributable to advancements in speech tokenization techniques and the availability of speech-text paired datasets&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>. Existing TTS models now exhibit impressive zero-shot capabilities, notably the ability to perform voice cloning, synthesizing high-quality speech content in the voice of any unseen speaker&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024vall</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "component",
+                    "recent",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The recent breakthroughs in TTS can largely be attributed to two primary technical paradigms: diffusion-based models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">popov2021grad</span>)</cite> and autoregressive models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>. Despite of both remarkable performance, this paper primarily focuses on the latter due to its inherent advantages. Autoregressive models generate speech sequences by sequentially predicting tokens, allowing for dynamic determination of output length and generally supporting faster, streaming inference&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>)</cite>. Furthermore, the discrete tokens generated by these models can be subsequently refined with richer acoustic details, often through techniques like flow matching&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>. However, despite their strengths, autoregressive TTS systems are prone to certain generation artifacts. Specifically, synthesized speech segments can sometimes suffer from misspoken words, word repetitions, or acoustic distortions&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xin2024rall</span>)</cite>. These issues often stem from the cumulative error propagation inherent in sequential generation, where errors in early token predictions can cascade and amplify through the sequence, leading to noticeable imperfections in the final utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">neekhara2024improving</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "recent",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some existing efforts have explored RL as a potential avenue for posterior optimization in TTS, demonstrating its promise in refining generated speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. However, the most primary challenge in this paradigm lies in obtaining a suitable reward signal. Standard TTS evaluation metrics, such as Mean Opinion Score (MOS) estimation, provide a holistic judgment for an entire utterance, lacking the fine-grained granularity required for effective RL. For instance, if only a short segment (e.g., 1 or 2 words) of an otherwise high-quality speech sequence contains an artifact, penalizing the entire sequence&#8217;s probability will inevitably diminish optimization efficiency&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>. Consequently, our research addresses the critical question of how to precisely locate these problematic segments to provide more effective and targeted optimization.</p>\n\n",
+                "matched_terms": [
+                    "zhang2024speechalign",
+                    "tts",
+                    "reward",
+                    "optimization",
+                    "metrics",
+                    "yao2025fine",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To this end, we introduce W3AR, a novel framework for Word-level, Whisper-guided Audio Refinement using Adversarial Rewards. Our approach operationalizes the ASR alignment hypothesis by defining two fine-grained quality metrics. The first, Attention Purity, evaluates the articulatory clarity of individual words by assessing whether the ASR model&#8217;s attention is sharply focused on a compact audio segment or diffusely scattered, indicating ambiguity. The second, Alignment Monotonicity, assesses the prosodic fluency of the utterance by ensuring the ASR&#8217;s attention focus progresses smoothly forward in time, penalizing unnatural stalls or regressions that correspond to stutters or awkward pauses. These metrics are combined into a word-level reward signal that guides the optimization of the TTS model within a stable, group-relative policy optimization framework, directly targeting and correcting specific generation artifacts.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "tts",
+                    "reward",
+                    "optimization",
+                    "purity",
+                    "metrics",
+                    "grouprelative",
+                    "monotonicity",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our extensive experiments demonstrate the effectiveness and generality of W3AR. When applied to the state-of-the-art CoSyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>)</cite> model, our method yields significant reductions in Word Error Rate and notable increases in both objective speaker similarity and subjective Mean Opinion Scores for naturalness. Crucially, we show that these improvements hold not only for speakers within the training distribution but also for challenging out-of-domain speakers, confirming the robustness of our approach. Furthermore, we validate the model-agnostic nature of W3AR by successfully applying it to other diverse TTS architectures, including VoiceCraft and MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>, achieving consistent performance gains. Ablation studies confirm that both the purity and monotonicity components are essential for achieving optimal results.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "components",
+                    "tts",
+                    "outofdomain",
+                    "purity",
+                    "ablation",
+                    "objective",
+                    "other",
+                    "monotonicity",
+                    "results",
+                    "method",
+                    "demonstrate",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In summary, our main contributions are threefold: (1) We propose a novel, fine-grained reward function for TTS based on analyzing the purity and monotonicity of cross-attention maps from a pre-trained ASR model. (2) We design an effective and stable policy optimization framework, W3AR, that leverages this reward to directly correct word-level defects in synthesized speech. (3) We provide a comprehensive empirical validation of our method&#8217;s effectiveness and generality, demonstrating significant improvements across multiple state-of-the-art TTS models and on both in-domain and out-of-domain datasets.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "tts",
+                    "outofdomain",
+                    "reward",
+                    "optimization",
+                    "purity",
+                    "monotonicity",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in large-scale generative modeling have catalyzed a significant paradigm shift within the field of text-to-speech (TTS). A prevailing trend involves reformulating speech synthesis as a next-token prediction problem&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, mirroring the successes observed with LLMs in the text domain&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite>. This approach fundamentally relies on the use of a neural audio codec to discretize continuous speech waveforms into a sequence of discrete tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zeghidour2021soundstream</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023audiodec</span>)</cite>. A powerful decoder-only language model is then conditioned on phonetic or textual inputs to autoregressively predict this stream of acoustic tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2025vall</span>)</cite>. Pioneering work in this area, notably VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, first demonstrated the profound potential of this methodology. This generative framework has proven to be exceptionally scalable, demonstrating that increasing model and dataset size yields substantial gains in output quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite>, robustness&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>)</cite>, and the ability to capture nuanced prosodic details for any target voice without explicit fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "recent",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The alignment of generative models with human preferences has become a cornerstone of contemporary AI research, with Reinforcement Learning from Human Feedback (RLHF) emerging as an instrumental technology&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zheng2023secrets</span>)</cite>. This paradigm was first prominently established in Natural Language Processing (NLP)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kaufmann2024survey</span>)</cite>, where preference optimization conventionally involves maximizing a reward signal produced by a separately trained reward model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2023rlaif</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023fine</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "optimization"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast to its maturity in NLP, the application of RLHF to TTS is a more nascent yet rapidly advancing frontier. Initial explorations like SpeechAlign&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite> first adapted preference alignment to TTS using paired comparison data. Subsequent research has broadened this scope; for instance, UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite> and RIO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024robust</span>)</cite> were developed to handle more complex, unpaired preference datasets by accounting for annotation uncertainties and employing Bayesian-inspired data selection strategies, respectively. While empirical studies and applications like Seed-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite> have validated the efficacy of RLHF for enhancing the quality of LM-based TTS during post-training, a significant limitation persists. The predominant focus of current methodologies remains on coarse, utterance-level preference optimization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025preference</span>)</cite>, largely overlooking the substantial potential that lies in achieving more fine-grained acoustic alignment.</p>\n\n",
+                "matched_terms": [
+                    "zhang2024speechalign",
+                    "tts",
+                    "optimization",
+                    "chen2024enhancing",
+                    "speechalign",
+                    "comparison"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Discrete Speech Representation.</span> We utilize a pre-trained neural audio codec, denoted by <math alttext=\"\\mathcal{C}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m1\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119966;</mi><annotation encoding=\"application/x-tex\">\\mathcal{C}</annotation></semantics></math>, to transform a continuous audio waveform <math alttext=\"\\mathbf{x}\\in\\mathbb{R}^{T_{u}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m2\" intent=\":literal\"><semantics><mrow><mi>&#119857;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><msub><mi>T</mi><mi>u</mi></msub></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{x}\\in\\mathbb{R}^{T_{u}}</annotation></semantics></math> into a sequence of discrete acoustic tokens <math alttext=\"\\mathbf{a}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{a}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m3\" intent=\":literal\"><semantics><mrow><mi>&#119834;</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#119834;</mi><msub><mi>T</mi><mi>a</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{a}})</annotation></semantics></math>. The codec&#8217;s quantizer employs <math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m4\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> hierarchical codebooks, so each token <math alttext=\"\\mathbf{a}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m5\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{t}</annotation></semantics></math> is a stack of <math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m6\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> integer indices: <math alttext=\"\\mathbf{a}_{t}=(a_{t}^{1},\\dots,a_{t}^{K})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m7\" intent=\":literal\"><semantics><mrow><msub><mi>&#119834;</mi><mi>t</mi></msub><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msubsup><mi>a</mi><mi>t</mi><mn>1</mn></msubsup><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msubsup><mi>a</mi><mi>t</mi><mi>K</mi></msubsup><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}_{t}=(a_{t}^{1},\\dots,a_{t}^{K})</annotation></semantics></math>, where <math alttext=\"a_{t}^{k}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m8\" intent=\":literal\"><semantics><msubsup><mi>a</mi><mi>t</mi><mi>k</mi></msubsup><annotation encoding=\"application/x-tex\">a_{t}^{k}</annotation></semantics></math> is an index from the <math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m9\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math>-th codebook. The codec&#8217;s parameters are frozen throughout our experiments.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To quantitatively assess the quality of the synthesized speech, we employ a pre-trained, frozen encoder-decoder ASR model, <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math>, architecturally similar to Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite>. This model serves as an objective evaluator, providing a fine-grained reward signal derived from its internal cross-attention mechanism.</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathbf{q}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m7\" intent=\":literal\"><semantics><msub><mi>&#119850;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{q}_{t}</annotation></semantics></math> is the decoder&#8217;s query vector for token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m8\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>, and <math alttext=\"\\mathbf{K}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m9\" intent=\":literal\"><semantics><mi>&#119818;</mi><annotation encoding=\"application/x-tex\">\\mathbf{K}</annotation></semantics></math> are the key vectors derived from <math alttext=\"\\mathbf{H}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m10\" intent=\":literal\"><semantics><mi>&#119815;</mi><annotation encoding=\"application/x-tex\">\\mathbf{H}</annotation></semantics></math>. The weight vector <math alttext=\"\\boldsymbol{\\alpha}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m11\" intent=\":literal\"><semantics><msub><mi>&#120630;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}</annotation></semantics></math> indicates which audio frames the model considers most relevant for transcribing token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m12\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>. By feeding our synthesized audio to <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m13\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math> and using the ground-truth text for teacher-forcing, we extract the full attention map <math alttext=\"\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m14\" intent=\":literal\"><semantics><mrow><mi>&#119808;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>T</mi><mi>y</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>T</mi><mi>h</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}</annotation></semantics></math>, where each row <math alttext=\"\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m15\" intent=\":literal\"><semantics><mrow><msub><mi>&#120630;</mi><mi>t</mi></msub><mo>=</mo><msub><mi>&#119808;</mi><mrow><mi>t</mi><mo>,</mo><mo>:</mo></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}</annotation></semantics></math>. This map provides the basis for our quality metrics.</p>\n\n",
+                "matched_terms": [
+                    "metrics",
+                    "each",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We define <span class=\"ltx_text ltx_font_italic\">Attention Purity</span> as the amount of attention mass concentrated around the attention peak. First, we identify the audio frame with the maximum attention for text token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px1.p2.m1\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>: <math alttext=\"j_{t}^{*}=\\arg\\max_{j}A_{t,j}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px1.p2.m2\" intent=\":literal\"><semantics><mrow><msubsup><mi>j</mi><mi>t</mi><mo>&#8727;</mo></msubsup><mo>=</mo><mrow><mi>arg</mi><mo lspace=\"0.167em\">&#8289;</mo><mrow><msub><mi>max</mi><mi>j</mi></msub><mo lspace=\"0.167em\">&#8289;</mo><msub><mi>A</mi><mrow><mi>t</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">j_{t}^{*}=\\arg\\max_{j}A_{t,j}</annotation></semantics></math>. The purity reward, <math alttext=\"\\mathcal{R}_{\\text{purity}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px1.p2.m3\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mtext>purity</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{R}_{\\text{purity}}</annotation></semantics></math>, is the sum of attention weights within a small window of width <math alttext=\"W\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px1.p2.m4\" intent=\":literal\"><semantics><mi>W</mi><annotation encoding=\"application/x-tex\">W</annotation></semantics></math> centered at <math alttext=\"j_{t}^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px1.p2.m5\" intent=\":literal\"><semantics><msubsup><mi>j</mi><mi>t</mi><mo>&#8727;</mo></msubsup><annotation encoding=\"application/x-tex\">j_{t}^{*}</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "purity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We measure the forward progression of the attention peak location <math alttext=\"j_{t}^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px2.p2.m1\" intent=\":literal\"><semantics><msubsup><mi>j</mi><mi>t</mi><mo>&#8727;</mo></msubsup><annotation encoding=\"application/x-tex\">j_{t}^{*}</annotation></semantics></math> relative to the previous token&#8217;s peak <math alttext=\"j_{t-1}^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>j</mi><mrow><mi>t</mi><mo>&#8722;</mo><mn>1</mn></mrow><mo>&#8727;</mo></msubsup><annotation encoding=\"application/x-tex\">j_{t-1}^{*}</annotation></semantics></math>. The <span class=\"ltx_text ltx_font_italic\">alignment monotonicity</span> reward, <math alttext=\"\\mathcal{R}_{\\text{mono}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px2.p2.m3\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mtext>mono</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{R}_{\\text{mono}}</annotation></semantics></math>, is defined as:</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "monotonicity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To provide a holistic quality score for each synthesized word, we combine our two metrics into a single word-level reward, <math alttext=\"\\mathcal{R}(y_{t})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mi>t</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{R}(y_{t})</annotation></semantics></math>. This reward captures both local articulatory clarity (purity) and global prosodic fluency (monotonicity). The final reward is a weighted sum:</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "purity",
+                    "metrics",
+                    "monotonicity",
+                    "each",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\lambda_{\\text{purity}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>purity</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>mono</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}</annotation></semantics></math> are scalar weights that balance the contribution of each component. This reward signal is then used to optimize our TTS model <math alttext=\"\\mathcal{M}_{\\text{TTS}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>TTS</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{TTS}}</annotation></semantics></math> within a reinforcement learning framework.</p>\n\n",
+                "matched_terms": [
+                    "component",
+                    "tts",
+                    "reward",
+                    "each",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We refine the baseline TTS model <math alttext=\"\\mathcal{M}_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\theta}</annotation></semantics></math> by treating it as a policy in a reinforcement learning framework. The optimization process uses the word-level reward signal from the ASR model to directly guide the policy towards generating higher-quality speech. Our approach is inspired by group-based optimization methods, which have proven effective in generation tasks.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "reward",
+                    "optimization",
+                    "methods",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The core of the method involves comparing a group of candidate samples generated from the same input. For a given text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math> and acoustic prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math>, we use the current TTS policy, <math alttext=\"\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#960;</mi><mi>&#952;</mi></msub><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo lspace=\"0em\" rspace=\"0.167em\">&#8739;</mo><mi>&#119858;</mi><mo>,</mo><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})</annotation></semantics></math>, to generate a group of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> distinct acoustic sequences, <math alttext=\"\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mi>N</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}</annotation></semantics></math>, by employing nucleus or temperature-controlled sampling.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Instead of using the absolute reward values, which can have high variance, we define a fine-grained advantage function that normalizes rewards within the generated group. The advantage of the pronunciation of a word <math alttext=\"y_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">y_{i}</annotation></semantics></math> in sample <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> is calculated as its reward relative to the average reward for that same word across all <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> samples. This effectively uses the group&#8217;s average performance as a dynamic baseline.</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "baseline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our goal is to update the policy <math alttext=\"\\pi_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\pi_{\\theta}</annotation></semantics></math> to increase the likelihood of acoustic sequences that correspond to positive advantages. We formulate a policy gradient-style objective function, where the word-level advantage modulates the learning signal for each corresponding acoustic token. Let <math alttext=\"w(t)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">w(t)</annotation></semantics></math> be a function that maps an acoustic token index <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> to its corresponding word index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>. The RL loss is defined as:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "each",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our primary experiments optimized <span class=\"ltx_text ltx_font_bold\">CosyVoice</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>, a robust TTS model trained on an extensive dataset of approximately 170k hours of audio. To rigorously validate the generality of our proposed method, we also extend our optimization to include other representative TTS architectures, namely <span class=\"ltx_text ltx_font_bold\">VoiceCraft</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite> and <span class=\"ltx_text ltx_font_bold\">MaskGCT</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>. It is noted that the architectural distinctions among these models: CosyVoice and MaskGCT both employ an autoregressive prediction of single-layer semantic tokens, subsequently reconstructing speech via flow-matching and non-autoregressive methods, respectively. In contrast, VoiceCraft directly predicts multi-layer audio codecs to achieve speech synthesis. For the ASR model, we choose Whisper-large-v2 due to its popularity.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "proposed",
+                    "optimization",
+                    "other",
+                    "method",
+                    "methods",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given that our optimization method operates without the need for supervised data, we utilized text from LibriTTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zen2019libritts</span>)</cite>. For prompts, we sampled 2,500 short utterances, ranging from 3 to 6 seconds in length, from the LibriTTS training set: 2,000 for optimization and 500 for evaluation. Furthermore, because CoSyVoice&#8217;s training data includes LibriTTS, we extracted an additional 2,500 speech samples from Emilia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2024emilia</span>)</cite> and GigaSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021gigaspeech</span>)</cite> to serve as an out-of-domain speaker library.</p>\n\n",
+                "matched_terms": [
+                    "outofdomain",
+                    "optimization",
+                    "libritts",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our autoregressive TTS model, which was pre-trained on a large-scale multi-speaker corpus, is fine-tuned using our proposed ASR-guided policy optimization method. The optimization is performed using the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math>, <math alttext=\"\\beta_{1}=0.9\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{1}=0.9</annotation></semantics></math>, <math alttext=\"\\beta_{2}=0.98\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>2</mn></msub><mo>=</mo><mn>0.98</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{2}=0.98</annotation></semantics></math>, and an epsilon of <math alttext=\"10^{-9}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>9</mn></mrow></msup><annotation encoding=\"application/x-tex\">10^{-9}</annotation></semantics></math>. We employ a cosine learning rate decay schedule with a warm-up phase of 2,000 steps. The model is trained using 2 NVIDIA A100 GPUs. For the core of our proposed algorithm, we set the group size for candidate generation to <math alttext=\"N=8\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">N=8</annotation></semantics></math>. The total loss is a combination of the KL loss and the RL loss, weighted by <math alttext=\"\\gamma=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m6\" intent=\":literal\"><semantics><mrow><mi>&#947;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\gamma=0.1</annotation></semantics></math>. The word-level reward function is calculated with its own set of hyperparameters: the attention purity window is set to <math alttext=\"W=6\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m7\" intent=\":literal\"><semantics><mrow><mi>W</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">W=6</annotation></semantics></math>, the alignment monotonicity scaling factor is set to <math alttext=\"\\beta=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\beta=0.1</annotation></semantics></math>, and the two reward components are balanced with equal weights, where <math alttext=\"\\lambda_{\\text{purity}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m9\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>purity</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}=0.5</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m10\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>mono</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}=0.5</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "components",
+                    "tts",
+                    "proposed",
+                    "reward",
+                    "optimization",
+                    "purity",
+                    "monotonicity",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate our system objectively, we assess speaker similarity using the speaker embedding cosine similarity (SECS) metric, computed via pre-trained speaker verification models&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://github.com/microsoft/UniSpeech</span></span></span>. Robustness is measured using word error rate (WER), with transcripts generated by Whisper-medium to compare with other works. In terms of speech naturalness, we utilize a neural-network-based estimator to predict mean opinion scores (UTMOS)&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/sarulab-speech/UTMOS22</span></span></span>. Following prior work&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>, we also report the bad case ratio (BC), defined as the percentage of samples with either UTMOS below 3 or WER above 20%, to reflect model robustness across varying conditions.</p>\n\n",
+                "matched_terms": [
+                    "utmos",
+                    "secs",
+                    "wer",
+                    "report",
+                    "other",
+                    "chen2024enhancing",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We reproduce the following baselines to optimize CosyVoice:</p>\n\n",
+                "matched_terms": [
+                    "baselines",
+                    "cosyvoice"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech-Align&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. An utterance-level TTS optimization method that employs ground-truth speech as positive samples, while generated acoustic sequence is negative. This method needs the speech label for optimization, leading to unfair comparison.</p>\n\n",
+                "matched_terms": [
+                    "zhang2024speechalign",
+                    "tts",
+                    "optimization",
+                    "method",
+                    "speechalign",
+                    "comparison"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>: An utterance-level TTS optimization method that also consider the uncertainty in MOS estimation. Since the related model is not open-sourced, we skip the uncertainty coefficient with constant.</p>\n\n",
+                "matched_terms": [
+                    "chen2024enhancing",
+                    "optimization",
+                    "tts",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">FPO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>: The first work that consider fine-grained reward in TTS optimization. It analyzes the types of issues in generated samples, categorize them into two groups, and propose a selective training loss strategy to optimize preferences based on issue type.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "reward",
+                    "optimization",
+                    "fpo",
+                    "yao2025fine"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To comprehensively evaluate the effectiveness, robustness, and generality of our proposed method, W3AR, we conduct a series of extensive experiments. Our evaluation is structured into three main parts. First, we present the main results by applying W3AR to the state-of-the-art CoSyVoice model, comparing it against the baseline on both in-domain and challenging out-of-domain speakers to validate its core performance and generalization capabilities. Second, we conduct detailed ablation studies to dissect the contribution of each key component within our framework, and compere W3AR with other competetive TTS optimization methods. Finally, we perform generalization and visualization analyses to demonstrate the model-agnostic nature and provide intuitive insights into our approach.</p>\n\n",
+                "matched_terms": [
+                    "component",
+                    "indomain",
+                    "w3ar",
+                    "tts",
+                    "outofdomain",
+                    "proposed",
+                    "optimization",
+                    "ablation",
+                    "other",
+                    "each",
+                    "results",
+                    "methods",
+                    "demonstrate",
+                    "method",
+                    "generalization",
+                    "baseline",
+                    "cosyvoice",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The qualitative results are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx3.T1\" title=\"Table 1 &#8227; Optimization Objective. &#8227; Policy Optimization &#8227; Method &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, demonstrating the clear superiority and robustness of our proposed W3AR method. On the In-Domain (LibriTTS) test set, W3AR significantly reduces the Word Error Rate (WER) by 38.9% relative to the baseline (from 5.25 to 3.21), indicating a substantial improvement in articulatory precision. This is corroborated by subjective evaluations, where our method achieves a notable increase in both Mean Opinion Scores for Naturalness (MOS-N) and Speaker Similarity (MOS-S). The effectiveness of W3AR is particularly pronounced on the more challenging Out-of-Domain (Emilia/GigaSpeech) set. Here, our method nearly halves the WER (from 8.92 to 4.54) and brings the MOS-N for these unseen speakers (4.15) to a level on par with that of the baseline on in-domain data. This highlights our method&#8217;s strong generalization capability and its effectiveness in mitigating quality degradation for novel voices.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "outofdomain",
+                    "proposed",
+                    "wer",
+                    "libritts",
+                    "results",
+                    "method",
+                    "generalization",
+                    "baseline",
+                    "emiliagigaspeech",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further validate these findings from a human-centric perspective, we conducted a head-to-head AB preference test, with the results displayed in Figure 2. For In-Domain speakers, listeners showed a clear preference for speech generated by W3AR, selecting it in 39.2% of comparisons, compared to only 29.7% for the baseline. This preference becomes even more decisive for Out-of-Domain speakers, where W3AR&#8217;s win rate increases to 42.0%. Critically, the percentage of &#8221;Tie&#8221; results drops from 31.1% in the in-domain scenario to 23.6% in the out-of-domain one. This reduction suggests that the quality improvements offered by W3AR are not only significant but also more readily and consistently perceivable by human listeners on more challenging voices, where the baseline model is more likely to produce discernible artifacts.</p>\n\n",
+                "matched_terms": [
+                    "indomain",
+                    "w3ar",
+                    "outofdomain",
+                    "results",
+                    "baseline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Model-Agnostic Generalization. To verify the universality of our proposed W3AR framework, we applied it to two additional state-of-the-art TTS models with distinct architectures: VoiceCraft and MaskGCT. The results, presented in Table 3, confirm that our method is not limited to a single model family. When applied to VoiceCraft, W3AR yields a dramatic relative WER reduction of 41.7% (from 8.55 to 4.98) and a corresponding significant increase in the predicted quality score (UTMOS). Furthermore, despite the already strong performance of the MaskGCT baseline (2.92 WER), our method still manages to reduce its error rate and improve its UTMOS score. These experiments demonstrate that W3AR functions as a versatile and effective post-optimization layer, capable of enhancing a wide range of modern TTS systems regardless of their underlying generative mechanism.</p>\n\n",
+                "matched_terms": [
+                    "utmos",
+                    "w3ar",
+                    "tts",
+                    "proposed",
+                    "wer",
+                    "results",
+                    "method",
+                    "demonstrate",
+                    "generalization",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we address the challenge of fine-grained optimization for autoregressive TTS by introducing W3AR, a novel framework that uses a pre-trained ASR model to provide word-level rewards. W3AR derives these rewards by analyzing the Attention Purity and Alignment Monotonicity of an ASR cross-attention map, effectively assessing both articulatory clarity and prosodic fluency. This signal then guides a stable group-relative policy optimization process to directly correct specific generation artifacts. Our experiments show W3AR significantly improves state-of-the-art TTS models, demonstrating superior performance and generalization on both out-of-domain speakers and across different model architectures. Our work establishes a powerful paradigm for generative AI refinement, demonstrating that the internal &#8221;perception&#8221; of one expert model can be distilled into a fine-grained, interpretable reward to systematically enhance the quality and robustness of another.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "tts",
+                    "outofdomain",
+                    "reward",
+                    "optimization",
+                    "purity",
+                    "grouprelative",
+                    "monotonicity",
+                    "generalization",
+                    "our"
+                ]
+            }
+        ]
+    },
+    "Sx5.T3": {
+        "caption": "Table 3: Cross-model generalization results. We apply our W3AR optimization method to two other representative TTS models, VoiceCraft and MaskGCT. Objective metrics are reported on the LibriTTS test set. The results show that W3AR consistently improves performance across different model architectures, demonstrating its universality.",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Base Model</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">WER</span> (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">UTMOS</span> (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"2\">VoiceCraft</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Baseline</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8.55</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.62</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ W3AR (Ours)</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.98</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.95</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\" rowspan=\"2\">MaskGCT</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Baseline</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.92</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.11</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">+ W3AR (Ours)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">2.71</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.23</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "apply",
+            "representative",
+            "models",
+            "utmos",
+            "crossmodel",
+            "wer",
+            "↓downarrow",
+            "two",
+            "our",
+            "its",
+            "tts",
+            "base",
+            "optimization",
+            "objective",
+            "reported",
+            "show",
+            "consistently",
+            "test",
+            "demonstrating",
+            "performance",
+            "across",
+            "universality",
+            "metrics",
+            "maskgct",
+            "architectures",
+            "results",
+            "set",
+            "ours",
+            "w3ar",
+            "↑uparrow",
+            "model",
+            "voicecraft",
+            "improves",
+            "other",
+            "libritts",
+            "method",
+            "generalization",
+            "baseline",
+            "different"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in Text-to-Speech (TTS) technology have been remarkable, enabling current models to clone arbitrary unseen speakers and synthesize high-quality, natural-sounding speech. However, corresponding evaluation techniques appear to be lagging: Existing Mean Opinion Score (MOS) estimation models typically perform regression-based scoring on entire speech segments&#8211;while a failed synthesized speech usually contains problematic elements in only a few isolated words rather than throughout the entire utterance. In this context, we presents an intriguing finding: encoder-decoder ASR models, such as Whisper, leverage their extensive pre-training to precisely capture word-level mismatches between speech and text within their cross-attention mechanisms, thereby providing a fine-grained reward signal. Building upon this insight, we propose a novel TTS optimization method, which we term <span class=\"ltx_text ltx_font_bold\">W</span>ord-level TTS <span class=\"ltx_text ltx_font_bold\">A</span>lignment by <span class=\"ltx_text ltx_font_bold\">A</span>SR-driven <span class=\"ltx_text ltx_font_bold\">A</span>ttentive <span class=\"ltx_text ltx_font_bold\">R</span>eward (W3AR). Instead of relying on any explicit reward annotations, W3AR leverages the attention information within a pre-trained ASR model, enabling finer-grained alignment and optimization of the sequences predicted by the TTS model. Experimental results demonstrate that W3AR not only effectively improves the TTS generation quality of existing models but also further enhances zero-shot robustness based on both in-domain and out-of-domain prompt speakers. Additionally, our findings and proposed methodology offer a new insight for generative tasks: understanding models can potentially serve as evaluators, providing highly fine-grained and valuable feedback for generation.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "w3ar",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "improves",
+                    "results",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The current wave of Artificial Intelligence-Generated Content (AIGC) has profoundly impacted various domains, with Text-to-Speech (TTS) technology standing out as a pivotal component&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cao2025survey</span>)</cite>. However, generating high-fidelity, high-sampling-rate signals such as human speech presents unique and substantial challenges&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qian2014training</span>)</cite>. In recent years, remarkable progress has been achieved, largely attributable to advancements in speech tokenization techniques and the availability of speech-text paired datasets&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>. Existing TTS models now exhibit impressive zero-shot capabilities, notably the ability to perform voice cloning, synthesizing high-quality speech content in the voice of any unseen speaker&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024vall</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The recent breakthroughs in TTS can largely be attributed to two primary technical paradigms: diffusion-based models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">popov2021grad</span>)</cite> and autoregressive models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>. Despite of both remarkable performance, this paper primarily focuses on the latter due to its inherent advantages. Autoregressive models generate speech sequences by sequentially predicting tokens, allowing for dynamic determination of output length and generally supporting faster, streaming inference&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>)</cite>. Furthermore, the discrete tokens generated by these models can be subsequently refined with richer acoustic details, often through techniques like flow matching&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>. However, despite their strengths, autoregressive TTS systems are prone to certain generation artifacts. Specifically, synthesized speech segments can sometimes suffer from misspoken words, word repetitions, or acoustic distortions&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xin2024rall</span>)</cite>. These issues often stem from the cumulative error propagation inherent in sequential generation, where errors in early token predictions can cascade and amplify through the sequence, leading to noticeable imperfections in the final utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">neekhara2024improving</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "its",
+                    "tts",
+                    "two",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some existing efforts have explored RL as a potential avenue for posterior optimization in TTS, demonstrating its promise in refining generated speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. However, the most primary challenge in this paradigm lies in obtaining a suitable reward signal. Standard TTS evaluation metrics, such as Mean Opinion Score (MOS) estimation, provide a holistic judgment for an entire utterance, lacking the fine-grained granularity required for effective RL. For instance, if only a short segment (e.g., 1 or 2 words) of an otherwise high-quality speech sequence contains an artifact, penalizing the entire sequence&#8217;s probability will inevitably diminish optimization efficiency&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>. Consequently, our research addresses the critical question of how to precisely locate these problematic segments to provide more effective and targeted optimization.</p>\n\n",
+                "matched_terms": [
+                    "its",
+                    "tts",
+                    "optimization",
+                    "metrics",
+                    "demonstrating",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Considering that ASR models are inherently designed to learn the &#8220;alignment&#8221; between two disparate modalities, i.e., speech and text, of varying lengths, we posit a direct hypothesis: can this alignment serve as a word-level evaluation metric to reflect the quality of synthesized spoken words? Prior research has already demonstrated the rich information embedded within the attention matrices of large pre-trained models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ben2024attend</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024self</span>)</cite>. Building on this, we propose a novel metric based on the cross-attention mechanism within ASR models to assess the word-level alignment between generated speech and the given text from an ASR perspective. It is crucial to note that such a metric offers more comprehensive information than a simple Word Error Rate (WER). Even for ambiguously generated speech segments, an ASR model can often provide a robust interpretation by leveraging contextual information, which a simple WER might misclassify as an error.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "model",
+                    "two",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To this end, we introduce W3AR, a novel framework for Word-level, Whisper-guided Audio Refinement using Adversarial Rewards. Our approach operationalizes the ASR alignment hypothesis by defining two fine-grained quality metrics. The first, Attention Purity, evaluates the articulatory clarity of individual words by assessing whether the ASR model&#8217;s attention is sharply focused on a compact audio segment or diffusely scattered, indicating ambiguity. The second, Alignment Monotonicity, assesses the prosodic fluency of the utterance by ensuring the ASR&#8217;s attention focus progresses smoothly forward in time, penalizing unnatural stalls or regressions that correspond to stutters or awkward pauses. These metrics are combined into a word-level reward signal that guides the optimization of the TTS model within a stable, group-relative policy optimization framework, directly targeting and correcting specific generation artifacts.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "tts",
+                    "optimization",
+                    "metrics",
+                    "model",
+                    "two",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our extensive experiments demonstrate the effectiveness and generality of W3AR. When applied to the state-of-the-art CoSyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>)</cite> model, our method yields significant reductions in Word Error Rate and notable increases in both objective speaker similarity and subjective Mean Opinion Scores for naturalness. Crucially, we show that these improvements hold not only for speakers within the training distribution but also for challenging out-of-domain speakers, confirming the robustness of our approach. Furthermore, we validate the model-agnostic nature of W3AR by successfully applying it to other diverse TTS architectures, including VoiceCraft and MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>, achieving consistent performance gains. Ablation studies confirm that both the purity and monotonicity components are essential for achieving optimal results.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "w3ar",
+                    "tts",
+                    "model",
+                    "maskgct",
+                    "architectures",
+                    "objective",
+                    "show",
+                    "voicecraft",
+                    "other",
+                    "results",
+                    "method",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In summary, our main contributions are threefold: (1) We propose a novel, fine-grained reward function for TTS based on analyzing the purity and monotonicity of cross-attention maps from a pre-trained ASR model. (2) We design an effective and stable policy optimization framework, W3AR, that leverages this reward to directly correct word-level defects in synthesized speech. (3) We provide a comprehensive empirical validation of our method&#8217;s effectiveness and generality, demonstrating significant improvements across multiple state-of-the-art TTS models and on both in-domain and out-of-domain datasets.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "across",
+                    "w3ar",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "demonstrating",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in large-scale generative modeling have catalyzed a significant paradigm shift within the field of text-to-speech (TTS). A prevailing trend involves reformulating speech synthesis as a next-token prediction problem&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, mirroring the successes observed with LLMs in the text domain&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite>. This approach fundamentally relies on the use of a neural audio codec to discretize continuous speech waveforms into a sequence of discrete tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zeghidour2021soundstream</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023audiodec</span>)</cite>. A powerful decoder-only language model is then conditioned on phonetic or textual inputs to autoregressively predict this stream of acoustic tokens&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2025vall</span>)</cite>. Pioneering work in this area, notably VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, first demonstrated the profound potential of this methodology. This generative framework has proven to be exceptionally scalable, demonstrating that increasing model and dataset size yields substantial gains in output quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite>, robustness&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>)</cite>, and the ability to capture nuanced prosodic details for any target voice without explicit fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "demonstrating",
+                    "model",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The alignment of generative models with human preferences has become a cornerstone of contemporary AI research, with Reinforcement Learning from Human Feedback (RLHF) emerging as an instrumental technology&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zheng2023secrets</span>)</cite>. This paradigm was first prominently established in Natural Language Processing (NLP)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kaufmann2024survey</span>)</cite>, where preference optimization conventionally involves maximizing a reward signal produced by a separately trained reward model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2023rlaif</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023fine</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "optimization",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast to its maturity in NLP, the application of RLHF to TTS is a more nascent yet rapidly advancing frontier. Initial explorations like SpeechAlign&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite> first adapted preference alignment to TTS using paired comparison data. Subsequent research has broadened this scope; for instance, UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite> and RIO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024robust</span>)</cite> were developed to handle more complex, unpaired preference datasets by accounting for annotation uncertainties and employing Bayesian-inspired data selection strategies, respectively. While empirical studies and applications like Seed-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite> have validated the efficacy of RLHF for enhancing the quality of LM-based TTS during post-training, a significant limitation persists. The predominant focus of current methodologies remains on coarse, utterance-level preference optimization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025preference</span>)</cite>, largely overlooking the substantial potential that lies in achieving more fine-grained acoustic alignment.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "its",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We build upon a modern zero-shot TTS framework that typically leverages autoregressive language model to generate speech from discrete acoustic representations. This approach enables voice cloning from a short, unseen audio prompt without requiring speaker-specific fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Zero-Shot Voice Cloning via In-Context Learning.</span>\nTo enable zero-shot capabilities, we frame the task as speech continuation. During training, we define an acoustic prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{p}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m1\" intent=\":literal\"><semantics><mrow><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#119834;</mi><msub><mi>T</mi><mi>p</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}=(\\mathbf{a}_{1},\\dots,\\mathbf{a}_{T_{p}})</annotation></semantics></math>, which is a short prefix (e.g., 3 seconds) of the full acoustic sequence <math alttext=\"\\mathbf{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m2\" intent=\":literal\"><semantics><mi>&#119834;</mi><annotation encoding=\"application/x-tex\">\\mathbf{a}</annotation></semantics></math>. The model is then trained to predict the remainder of the sequence, <math alttext=\"\\mathbf{a}_{\\text{target}}=(\\mathbf{a}_{T_{p}+1},\\dots,\\mathbf{a}_{T_{a}})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#119834;</mi><mtext>target</mtext></msub><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mrow><msub><mi>T</mi><mi>p</mi></msub><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#119834;</mi><msub><mi>T</mi><mi>a</mi></msub></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{target}}=(\\mathbf{a}_{T_{p}+1},\\dots,\\mathbf{a}_{T_{a}})</annotation></semantics></math>, conditioned on both the text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m4\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math> and the prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m5\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math>. The objective implicitly teaches the model to infer the vocal characteristics from the prompt and maintain them throughout the subsequent generation. During inference, we provide the model with a prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m6\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math> from any unseen target speaker and a new text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m7\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math>. The model autoregressively generates the acoustic sequence <math alttext=\"\\mathbf{a}_{\\text{gen}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p4.m8\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>gen</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{gen}}</annotation></semantics></math> by sampling from the learned distribution <math alttext=\"p(\\cdot\\mid\\mathbf{a}_{\\text{prompt}},\\mathbf{y};\\theta)\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p4.m9\" intent=\":literal\"><semantics><mrow><mi>p</mi><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo lspace=\"0em\" rspace=\"0.167em\">&#8739;</mo><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo>,</mo><mi>&#119858;</mi><mo>;</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">p(\\cdot\\mid\\mathbf{a}_{\\text{prompt}},\\mathbf{y};\\theta)</annotation></semantics></math>. The self-attention mechanism of the Transformer enables the model to attend to the acoustic properties embedded in the prompt, thus achieving zero-shot voice cloning even without speaker-specific fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To quantitatively assess the quality of the synthesized speech, we employ a pre-trained, frozen encoder-decoder ASR model, <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math>, architecturally similar to Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite>. This model serves as an objective evaluator, providing a fine-grained reward signal derived from its internal cross-attention mechanism.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "objective",
+                    "its"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathbf{q}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m7\" intent=\":literal\"><semantics><msub><mi>&#119850;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{q}_{t}</annotation></semantics></math> is the decoder&#8217;s query vector for token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m8\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>, and <math alttext=\"\\mathbf{K}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m9\" intent=\":literal\"><semantics><mi>&#119818;</mi><annotation encoding=\"application/x-tex\">\\mathbf{K}</annotation></semantics></math> are the key vectors derived from <math alttext=\"\\mathbf{H}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m10\" intent=\":literal\"><semantics><mi>&#119815;</mi><annotation encoding=\"application/x-tex\">\\mathbf{H}</annotation></semantics></math>. The weight vector <math alttext=\"\\boldsymbol{\\alpha}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m11\" intent=\":literal\"><semantics><msub><mi>&#120630;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}</annotation></semantics></math> indicates which audio frames the model considers most relevant for transcribing token <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m12\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math>. By feeding our synthesized audio to <math alttext=\"\\mathcal{M}_{\\text{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m13\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>ASR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{ASR}}</annotation></semantics></math> and using the ground-truth text for teacher-forcing, we extract the full attention map <math alttext=\"\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m14\" intent=\":literal\"><semantics><mrow><mi>&#119808;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>T</mi><mi>y</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>T</mi><mi>h</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{A}\\in\\mathbb{R}^{T_{y}\\times T_{h}}</annotation></semantics></math>, where each row <math alttext=\"\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p2.m15\" intent=\":literal\"><semantics><mrow><msub><mi>&#120630;</mi><mi>t</mi></msub><mo>=</mo><msub><mi>&#119808;</mi><mrow><mi>t</mi><mo>,</mo><mo>:</mo></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\boldsymbol{\\alpha}_{t}=\\mathbf{A}_{t,:}</annotation></semantics></math>. This map provides the basis for our quality metrics.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "metrics",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To provide a holistic quality score for each synthesized word, we combine our two metrics into a single word-level reward, <math alttext=\"\\mathcal{R}(y_{t})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mi>t</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{R}(y_{t})</annotation></semantics></math>. This reward captures both local articulatory clarity (purity) and global prosodic fluency (monotonicity). The final reward is a weighted sum:</p>\n\n",
+                "matched_terms": [
+                    "metrics",
+                    "two",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\lambda_{\\text{purity}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>purity</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mtext>mono</mtext></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}</annotation></semantics></math> are scalar weights that balance the contribution of each component. This reward signal is then used to optimize our TTS model <math alttext=\"\\mathcal{M}_{\\text{TTS}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mtext>TTS</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\text{TTS}}</annotation></semantics></math> within a reinforcement learning framework.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "tts",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We refine the baseline TTS model <math alttext=\"\\mathcal{M}_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\theta}</annotation></semantics></math> by treating it as a policy in a reinforcement learning framework. The optimization process uses the word-level reward signal from the ASR model to directly guide the policy towards generating higher-quality speech. Our approach is inspired by group-based optimization methods, which have proven effective in generation tasks.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "optimization",
+                    "model",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The core of the method involves comparing a group of candidate samples generated from the same input. For a given text <math alttext=\"\\mathbf{y}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mi>&#119858;</mi><annotation encoding=\"application/x-tex\">\\mathbf{y}</annotation></semantics></math> and acoustic prompt <math alttext=\"\\mathbf{a}_{\\text{prompt}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{\\text{prompt}}</annotation></semantics></math>, we use the current TTS policy, <math alttext=\"\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#960;</mi><mi>&#952;</mi></msub><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo lspace=\"0em\" rspace=\"0.167em\">&#8739;</mo><mi>&#119858;</mi><mo>,</mo><msub><mi>&#119834;</mi><mtext>prompt</mtext></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\pi_{\\theta}(\\cdot\\mid\\mathbf{y},\\mathbf{a}_{\\text{prompt}})</annotation></semantics></math>, to generate a group of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> distinct acoustic sequences, <math alttext=\"\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo></mrow></msup><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msup><mi>&#119834;</mi><mrow><mo stretchy=\"false\">(</mo><mi>N</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{\\mathbf{a}^{(1)},\\mathbf{a}^{(2)},\\dots,\\mathbf{a}^{(N)}\\}</annotation></semantics></math>, by employing nucleus or temperature-controlled sampling.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Instead of using the absolute reward values, which can have high variance, we define a fine-grained advantage function that normalizes rewards within the generated group. The advantage of the pronunciation of a word <math alttext=\"y_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">y_{i}</annotation></semantics></math> in sample <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> is calculated as its reward relative to the average reward for that same word across all <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> samples. This effectively uses the group&#8217;s average performance as a dynamic baseline.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "baseline",
+                    "its",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our goal is to update the policy <math alttext=\"\\pi_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">\\pi_{\\theta}</annotation></semantics></math> to increase the likelihood of acoustic sequences that correspond to positive advantages. We formulate a policy gradient-style objective function, where the word-level advantage modulates the learning signal for each corresponding acoustic token. Let <math alttext=\"w(t)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">w(t)</annotation></semantics></math> be a function that maps an acoustic token index <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> to its corresponding word index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>. The RL loss is defined as:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "its",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Intuition:</span> This objective function directly steers the generative process. When a word is synthesized well (positive advantage), the loss encourages the model to increase the probability of the acoustic tokens that produced it. Conversely, if a word is synthesized poorly (negative advantage), the model is discouraged from generating those specific acoustic tokens in the future. This provides a tight feedback loop that addresses specific articulatory and prosodic failures, pushing the overall distribution of the policy towards generating speech that is consistently rated higher by the ASR-based evaluator. To stabilize training, we add a small weight of KL constrain <math alttext=\"\\mathcal{L}_{\\text{kl}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p3.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>kl</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{kl}}</annotation></semantics></math> that is computed by the logits of a frozen reference model <math alttext=\"\\pi_{\\text{ref}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.SSS0.Px3.p3.m2\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><mtext>ref</mtext></msub><annotation encoding=\"application/x-tex\">\\pi_{\\text{ref}}</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "model",
+                    "consistently"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our primary experiments optimized <span class=\"ltx_text ltx_font_bold\">CosyVoice</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>, a robust TTS model trained on an extensive dataset of approximately 170k hours of audio. To rigorously validate the generality of our proposed method, we also extend our optimization to include other representative TTS architectures, namely <span class=\"ltx_text ltx_font_bold\">VoiceCraft</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span>)</cite> and <span class=\"ltx_text ltx_font_bold\">MaskGCT</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>. It is noted that the architectural distinctions among these models: CosyVoice and MaskGCT both employ an autoregressive prediction of single-layer semantic tokens, subsequently reconstructing speech via flow-matching and non-autoregressive methods, respectively. In contrast, VoiceCraft directly predicts multi-layer audio codecs to achieve speech synthesis. For the ASR model, we choose Whisper-large-v2 due to its popularity.</p>\n\n",
+                "matched_terms": [
+                    "representative",
+                    "models",
+                    "its",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "maskgct",
+                    "architectures",
+                    "voicecraft",
+                    "other",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given that our optimization method operates without the need for supervised data, we utilized text from LibriTTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zen2019libritts</span>)</cite>. For prompts, we sampled 2,500 short utterances, ranging from 3 to 6 seconds in length, from the LibriTTS training set: 2,000 for optimization and 500 for evaluation. Furthermore, because CoSyVoice&#8217;s training data includes LibriTTS, we extracted an additional 2,500 speech samples from Emilia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2024emilia</span>)</cite> and GigaSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021gigaspeech</span>)</cite> to serve as an out-of-domain speaker library.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "optimization",
+                    "libritts",
+                    "method",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our autoregressive TTS model, which was pre-trained on a large-scale multi-speaker corpus, is fine-tuned using our proposed ASR-guided policy optimization method. The optimization is performed using the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math>, <math alttext=\"\\beta_{1}=0.9\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{1}=0.9</annotation></semantics></math>, <math alttext=\"\\beta_{2}=0.98\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>2</mn></msub><mo>=</mo><mn>0.98</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{2}=0.98</annotation></semantics></math>, and an epsilon of <math alttext=\"10^{-9}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m4\" intent=\":literal\"><semantics><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>9</mn></mrow></msup><annotation encoding=\"application/x-tex\">10^{-9}</annotation></semantics></math>. We employ a cosine learning rate decay schedule with a warm-up phase of 2,000 steps. The model is trained using 2 NVIDIA A100 GPUs. For the core of our proposed algorithm, we set the group size for candidate generation to <math alttext=\"N=8\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m5\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">N=8</annotation></semantics></math>. The total loss is a combination of the KL loss and the RL loss, weighted by <math alttext=\"\\gamma=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m6\" intent=\":literal\"><semantics><mrow><mi>&#947;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\gamma=0.1</annotation></semantics></math>. The word-level reward function is calculated with its own set of hyperparameters: the attention purity window is set to <math alttext=\"W=6\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m7\" intent=\":literal\"><semantics><mrow><mi>W</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">W=6</annotation></semantics></math>, the alignment monotonicity scaling factor is set to <math alttext=\"\\beta=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\beta=0.1</annotation></semantics></math>, and the two reward components are balanced with equal weights, where <math alttext=\"\\lambda_{\\text{purity}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m9\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>purity</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{purity}}=0.5</annotation></semantics></math> and <math alttext=\"\\lambda_{\\text{mono}}=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p1.m10\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mtext>mono</mtext></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\text{mono}}=0.5</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "its",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "method",
+                    "two",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate our system objectively, we assess speaker similarity using the speaker embedding cosine similarity (SECS) metric, computed via pre-trained speaker verification models&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://github.com/microsoft/UniSpeech</span></span></span>. Robustness is measured using word error rate (WER), with transcripts generated by Whisper-medium to compare with other works. In terms of speech naturalness, we utilize a neural-network-based estimator to predict mean opinion scores (UTMOS)&#160;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/sarulab-speech/UTMOS22</span></span></span>. Following prior work&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>, we also report the bad case ratio (BC), defined as the percentage of samples with either UTMOS below 3 or WER above 20%, to reflect model robustness across varying conditions.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "utmos",
+                    "across",
+                    "wer",
+                    "model",
+                    "other",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the naturalness mean opinion score (MOS-N) and similarity mean opinion score (MOS-S) to evaluate the naturalness of the generated samples from 20 English native speakers. To evaluate the perceived quality of the synthesized audio, we conducted two subjective listening tests. First, the naturalness and similarity of 100 samples are assessed using a 5-point Mean Opinion Score (MOS) scale, where a rating of 1 indicated &#8220;very unnatural&#8221; and 5 indicated &#8220;completely natural&#8221;, a rating of 1 indicated &#8220;very similar&#8221; and 5 indicated &#8220;completely same&#8221;. Additionally, a paired-comparison AB test was performed to determine relative preference. In this test, participants listened to 100 pairs of samples generated from identical input text by two competing models and were instructed to select the sample they perceived as more natural. A &#8220;no preference&#8221; (tie) option was provided for cases where the samples were not clearly distinguishable.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "two",
+                    "test"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech-Align&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024speechalign</span>)</cite>. An utterance-level TTS optimization method that employs ground-truth speech as positive samples, while generated acoustic sequence is negative. This method needs the speech label for optimization, leading to unfair comparison.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "tts",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">UNO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite>: An utterance-level TTS optimization method that also consider the uncertainty in MOS estimation. Since the related model is not open-sourced, we skip the uncertainty coefficient with constant.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "model",
+                    "tts",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">FPO&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2025fine</span>)</cite>: The first work that consider fine-grained reward in TTS optimization. It analyzes the types of issues in generated samples, categorize them into two groups, and propose a selective training loss strategy to optimize preferences based on issue type.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "tts",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To comprehensively evaluate the effectiveness, robustness, and generality of our proposed method, W3AR, we conduct a series of extensive experiments. Our evaluation is structured into three main parts. First, we present the main results by applying W3AR to the state-of-the-art CoSyVoice model, comparing it against the baseline on both in-domain and challenging out-of-domain speakers to validate its core performance and generalization capabilities. Second, we conduct detailed ablation studies to dissect the contribution of each key component within our framework, and compere W3AR with other competetive TTS optimization methods. Finally, we perform generalization and visualization analyses to demonstrate the model-agnostic nature and provide intuitive insights into our approach.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "w3ar",
+                    "its",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "other",
+                    "results",
+                    "method",
+                    "generalization",
+                    "baseline",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The qualitative results are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx3.T1\" title=\"Table 1 &#8227; Optimization Objective. &#8227; Policy Optimization &#8227; Method &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, demonstrating the clear superiority and robustness of our proposed W3AR method. On the In-Domain (LibriTTS) test set, W3AR significantly reduces the Word Error Rate (WER) by 38.9% relative to the baseline (from 5.25 to 3.21), indicating a substantial improvement in articulatory precision. This is corroborated by subjective evaluations, where our method achieves a notable increase in both Mean Opinion Scores for Naturalness (MOS-N) and Speaker Similarity (MOS-S). The effectiveness of W3AR is particularly pronounced on the more challenging Out-of-Domain (Emilia/GigaSpeech) set. Here, our method nearly halves the WER (from 8.92 to 4.54) and brings the MOS-N for these unseen speakers (4.15) to a level on par with that of the baseline on in-domain data. This highlights our method&#8217;s strong generalization capability and its effectiveness in mitigating quality degradation for novel voices.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "w3ar",
+                    "its",
+                    "wer",
+                    "generalization",
+                    "libritts",
+                    "results",
+                    "test",
+                    "method",
+                    "demonstrating",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further validate these findings from a human-centric perspective, we conducted a head-to-head AB preference test, with the results displayed in Figure 2. For In-Domain speakers, listeners showed a clear preference for speech generated by W3AR, selecting it in 39.2% of comparisons, compared to only 29.7% for the baseline. This preference becomes even more decisive for Out-of-Domain speakers, where W3AR&#8217;s win rate increases to 42.0%. Critically, the percentage of &#8221;Tie&#8221; results drops from 31.1% in the in-domain scenario to 23.6% in the out-of-domain one. This reduction suggests that the quality improvements offered by W3AR are not only significant but also more readily and consistently perceivable by human listeners on more challenging voices, where the baseline model is more likely to produce discernible artifacts.</p>\n\n",
+                "matched_terms": [
+                    "w3ar",
+                    "model",
+                    "consistently",
+                    "results",
+                    "test",
+                    "baseline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate the contributions of our proposed components, we conducted a thorough ablation study, with results presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. The full W3AR model demonstrates a significant performance gain over the baseline, establishing a strong reference for comparison. The removal of either the Purity or Monotonicity rewards results in a clear degradation across all metrics, particularly in WER and the predicted UTMOS, which confirms their complementary roles in enhancing articulatory clarity and prosodic fluency. Most notably, disabling the Group-Relative Optimization strategy leads to the most severe performance drop, especially in the challenging out-of-domain scenario where the WER increases from 4.54 to 7.23. This result underscores the critical function of our optimization strategy in ensuring stable and effective policy updates for robust generalization</p>\n\n",
+                "matched_terms": [
+                    "utmos",
+                    "across",
+                    "w3ar",
+                    "wer",
+                    "optimization",
+                    "metrics",
+                    "model",
+                    "performance",
+                    "results",
+                    "generalization",
+                    "baseline",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We further benchmark W3AR against several recent TTS optimization methods to contextualize its performance. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.17555v1#Sx5.T2\" title=\"Table 2 &#8227; Main Result &#8227; Result and Analysis &#8227; Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our W3AR framework is highly competitive. While FPO achieves a marginally lower WER on the in-domain set, our W3AR model attains superior speaker similarity (SECS) and the highest perceived quality (UTMOS). More importantly, W3AR demonstrates a significant advantage in generalization. It achieves a substantially lower WER (4.54) and a higher UTMOS (3.95) on the out-of-domain set compared to all other methods, including FPO (5.94 WER, 3.78 UTMOS). This superior performance on unseen speakers positions W3AR as a more robust and practical solution for improving the reliability of zero-shot TTS systems.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "utmos",
+                    "w3ar",
+                    "its",
+                    "tts",
+                    "wer",
+                    "optimization",
+                    "model",
+                    "other",
+                    "performance",
+                    "generalization",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Model-Agnostic Generalization. To verify the universality of our proposed W3AR framework, we applied it to two additional state-of-the-art TTS models with distinct architectures: VoiceCraft and MaskGCT. The results, presented in Table 3, confirm that our method is not limited to a single model family. When applied to VoiceCraft, W3AR yields a dramatic relative WER reduction of 41.7% (from 8.55 to 4.98) and a corresponding significant increase in the predicted quality score (UTMOS). Furthermore, despite the already strong performance of the MaskGCT baseline (2.92 WER), our method still manages to reduce its error rate and improve its UTMOS score. These experiments demonstrate that W3AR functions as a versatile and effective post-optimization layer, capable of enhancing a wide range of modern TTS systems regardless of their underlying generative mechanism.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "utmos",
+                    "w3ar",
+                    "its",
+                    "tts",
+                    "universality",
+                    "wer",
+                    "model",
+                    "maskgct",
+                    "architectures",
+                    "voicecraft",
+                    "performance",
+                    "results",
+                    "method",
+                    "generalization",
+                    "baseline",
+                    "two",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we address the challenge of fine-grained optimization for autoregressive TTS by introducing W3AR, a novel framework that uses a pre-trained ASR model to provide word-level rewards. W3AR derives these rewards by analyzing the Attention Purity and Alignment Monotonicity of an ASR cross-attention map, effectively assessing both articulatory clarity and prosodic fluency. This signal then guides a stable group-relative policy optimization process to directly correct specific generation artifacts. Our experiments show W3AR significantly improves state-of-the-art TTS models, demonstrating superior performance and generalization on both out-of-domain speakers and across different model architectures. Our work establishes a powerful paradigm for generative AI refinement, demonstrating that the internal &#8221;perception&#8221; of one expert model can be distilled into a fine-grained, interpretable reward to systematically enhance the quality and robustness of another.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "across",
+                    "w3ar",
+                    "tts",
+                    "optimization",
+                    "model",
+                    "architectures",
+                    "show",
+                    "improves",
+                    "performance",
+                    "generalization",
+                    "demonstrating",
+                    "different",
+                    "our"
+                ]
+            }
+        ]
+    }
+}

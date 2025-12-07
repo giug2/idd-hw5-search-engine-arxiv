@@ -1,0 +1,715 @@
+{
+    "S4.T1": {
+        "caption": "Table 1: BLEU score results on CoVoST2 test set. The table shows that CMOT, DTW-Align, and DTW-Align-Discrete achieve the best results against other baselines. †: indicates results reported in the original work (the rest of the baselines are trained in this study)",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-De</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-Ca</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-Ar</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">De-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Fr-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Es-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg.</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Revist-ST (<cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib26\" title=\"\">2022</a>)</cite>)&#8224;</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">17.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">22.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">12.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">14.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">26.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">15.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">U2TT (Large) <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib28\" title=\"\">2023a</a>)</cite>&#8224;</th>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">16.7</td>\n<td class=\"ltx_td ltx_align_center\">27.4</td>\n<td class=\"ltx_td ltx_align_center\">28.1</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">DUB (Large) <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib28\" title=\"\">2023a</a>)</cite>&#8224;</th>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">19.5</td>\n<td class=\"ltx_td ltx_align_center\">29.5</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">30.9</span></td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">SRPSE <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib27\" title=\"\">2025</a>)</cite>&#8224;</th>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">21.4</td>\n<td class=\"ltx_td ltx_align_center\">29.3</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">CoVoST-2 <cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib23\" title=\"\">2020</a>)</cite>&#8224;</th>\n<td class=\"ltx_td ltx_align_center\">18.4</td>\n<td class=\"ltx_td ltx_align_center\">23.6</td>\n<td class=\"ltx_td ltx_align_center\">13.9</td>\n<td class=\"ltx_td ltx_align_center\">18.9</td>\n<td class=\"ltx_td ltx_align_center\">27.0</td>\n<td class=\"ltx_td ltx_align_center\">28.0</td>\n<td class=\"ltx_td ltx_align_center\">21.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">CTC+OT <cite class=\"ltx_cite ltx_citemacro_cite\">Le et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib10\" title=\"\">2023</a>)</cite>&#8224;</th>\n<td class=\"ltx_td ltx_align_center\">20.6</td>\n<td class=\"ltx_td ltx_align_center\">26.5</td>\n<td class=\"ltx_td ltx_align_center\">15.3</td>\n<td class=\"ltx_td ltx_align_center\">20.4</td>\n<td class=\"ltx_td ltx_align_center\">28.4</td>\n<td class=\"ltx_td ltx_align_center\">29.2</td>\n<td class=\"ltx_td ltx_align_center\">23.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">HuBERT-Transformer</th>\n<td class=\"ltx_td ltx_align_center\">21.4</td>\n<td class=\"ltx_td ltx_align_center\">27.4</td>\n<td class=\"ltx_td ltx_align_center\">15.7</td>\n<td class=\"ltx_td ltx_align_center\">21.8</td>\n<td class=\"ltx_td ltx_align_center\">28.4</td>\n<td class=\"ltx_td ltx_align_center\">28.0</td>\n<td class=\"ltx_td ltx_align_center\">23.8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">CMOT</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">21.8</span></td>\n<td class=\"ltx_td ltx_align_center\">28.2</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">16.2</span></td>\n<td class=\"ltx_td ltx_align_center\">23.6</td>\n<td class=\"ltx_td ltx_align_center\">30.9</td>\n<td class=\"ltx_td ltx_align_center\">29.6</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">25.0</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">NFA-Align</th>\n<td class=\"ltx_td ltx_align_center\">21.4</td>\n<td class=\"ltx_td ltx_align_center\">28.1</td>\n<td class=\"ltx_td ltx_align_center\">16.0</td>\n<td class=\"ltx_td ltx_align_center\">23.5</td>\n<td class=\"ltx_td ltx_align_center\">30.9</td>\n<td class=\"ltx_td ltx_align_center\">29.8</td>\n<td class=\"ltx_td ltx_align_center\">24.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">DTW-Align-Discrete</th>\n<td class=\"ltx_td ltx_align_center\">21.7</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">28.3</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">16.2</span></td>\n<td class=\"ltx_td ltx_align_center\">23.5</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">31.0</span></td>\n<td class=\"ltx_td ltx_align_center\">29.4</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">25.0</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">DTW-Align</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">21.8</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">28.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">16.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">23.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">30.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">29.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">25.0</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "huberttransformer",
+            "original",
+            "dub",
+            "dtwaligndiscrete",
+            "baselines",
+            "srpse",
+            "dtwalign",
+            "ende",
+            "study",
+            "covost2",
+            "against",
+            "revistst",
+            "2025†",
+            "reported",
+            "deen",
+            "test",
+            "trained",
+            "achieve",
+            "2023a†",
+            "avg",
+            "enar",
+            "zhang",
+            "u2tt",
+            "cmot",
+            "rest",
+            "results",
+            "indicates",
+            "2022†",
+            "2020†",
+            "fren",
+            "set",
+            "esen",
+            "score",
+            "enca",
+            "2023†",
+            "nfaalign",
+            "model",
+            "large",
+            "best",
+            "work",
+            "shows",
+            "other",
+            "ctcot",
+            "wang",
+            "bleu"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S4.T1\" title=\"Table 1 &#8227; 4.3 Main Results &#8227; 4 Experiments &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the results of our method and baselines, and results of previous work that was evaluated on the CoVoST2 dataset. The results show that consistent with previous studies <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, the baseline HuBERT-Transformer remains a competitive baseline, even outperforming previous work that uses more complex techniques. Furthermore, CMOT, DTW-Align-Discrete and DTW-Align achieve the best results overall. Although we train under similar settings and we do not optimize our method differently, we achieve similar results to CMOT. Surprisingly, NFA-Align which uses NFA to align speech and text lags slightly behind on average (i.e. 0.1 BLEU), this suggests that in a high resource setting, and with a low mixup probability the effect of noise in the alignment is less evident.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">End-to-End Speech Translation (E2E-ST) is the task of translating source speech directly into target text bypassing the intermediate transcription step. The representation discrepancy between the speech and text modalities has motivated research on what is known as <span class=\"ltx_text ltx_font_italic\">bridging the modality gap</span>. State-of-the-art methods addressed this by aligning speech and text representations on the word or token level. Unfortunately, this requires an alignment tool that is not available for all languages. Although this issue has been addressed by aligning speech and text embeddings using nearest-neighbor similarity search, it does not lead to accurate alignments. In this work, we adapt Dynamic Time Warping (DTW) for aligning speech and text embeddings during training. Our experiments demonstrate the effectiveness of our method in bridging the modality gap in E2E-ST. Compared to previous work, our method produces more accurate alignments and achieves comparable E2E-ST results while being significantly faster. Furthermore, our method outperforms previous work in low resource settings on 5 out of 6 language directions. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/issam9/DTW-Align\" title=\"\">https://github.com/issam9/DTW-Align</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, training E2E-ST models is not straightforward due to the representation discrepancy between the speech and text modalities. Previous work has achieved state-of-the-art results by aligning speech and text representations at the word or token level, either using an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite> or by generating the alignment automatically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>); Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>)</cite>. The closest to our work is Cross-modal Mixup via Optimal Transport (CMOT), which uses optimal transport for finding speech and text alignments. Although CMOT achieves state-of-the-art results, it does not guarantee producing monotonic alignments or ensure that each text token is assigned to at least one frame. This contradicts the expected structure of speech-text alignment and can lead to noisy alignments. Furthermore, CMOT introduces a significant training time overhead.</p>\n\n",
+                "matched_terms": [
+                    "cmot",
+                    "work",
+                    "zhang",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce <span class=\"ltx_text ltx_font_bold\">DTW-Align</span>, a method for aligning speech and text embeddings during training using an adaptation of Dynamic Time Warping <cite class=\"ltx_cite ltx_citemacro_cite\">Sakoe and Chiba (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib21\" title=\"\">1978</a>)</cite>. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows an example alignment generated using DTW-Align and CMOT, which illustrates that our method generates monotonic alignments and guarantees that all tokens are aligned, while CMOT does not. We demonstrate the effectiveness of our method in bridging the modality gap with mixup training <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>. Similarly to previous work <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, we train on a mixup of aligned speech and text representations, however, instead of discretely selecting either a speech or a text embedding, we linearly interpolate speech and text embeddings <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib30\" title=\"\">2018</a>)</cite>. Our experiments show that our method is faster and produces more accurate alignments. Furthermore, it achieves comparable results to CMOT on 6 language directions from the CoVoST2 dataset, while training significantly faster. We also evaluate our method in a low resource setting where training can be more vulnerable to alignment noise, and we show that our method leads to a statistically significant improvement over CMOT in 5 out of 6 language directions.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "zhang",
+                    "cmot",
+                    "work",
+                    "shows",
+                    "results",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bridging the Modality Gap</span>:\nThe discrepancy between the source and target modalities (i.e. speech and text respectively) has motivated multiple works on what is termed bridging the modality gap <cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib11\" title=\"\">2019</a>); Han et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib4\" title=\"\">2021</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, where the goal is to build a shared semantic space between the speech and text modalities. Aligning speech and text either based on an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>)</cite> or dynamically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> was shown to achieve state-of-the-art results. Our work goes in this direction, by improving the accuracy and speed of aligning speech and text during training.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "achieve",
+                    "zhang",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Mixup:</span>\nMixup is a common data augmentation strategy <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib30\" title=\"\">2018</a>); Jin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib6\" title=\"\">2025</a>)</cite>. In E2E-ST, it is applied for bridging the modality gap <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, where the model is trained on a discrete mixup of speech and text representations. Mixup training in E2E-ST requires an alignment between speech and text that can be generated using an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> alleviate the need for an alignment tool by aligning speech and text representations using optimal transport. Our approach is similar to <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, where we generate the alignments dynamically during training. However, instead of discretely mixing speech and text representations, we apply mixup as a linear interpolation.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "trained",
+                    "zhang"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">DTW:</span>\nDTW is an algorithm for measuring similarity between two sequences of varying length <cite class=\"ltx_cite ltx_citemacro_cite\">Sakoe and Chiba (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib21\" title=\"\">1978</a>)</cite>. Due to this property, it has been widely applied to speech data <cite class=\"ltx_cite ltx_citemacro_cite\">Juang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib7\" title=\"\">1984</a>); Furtuna (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib3\" title=\"\">2008</a>); Muda et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib12\" title=\"\">2010</a>)</cite>, and also more specifically in the context of aligning speech and text sequences (i.e. forced alignment). For example, Aeneas <cite class=\"ltx_cite ltx_citemacro_cite\">Pettarin (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib17\" title=\"\">2017</a>)</cite> aligns speech and text utterances by transforming the text utterances into speech, then uses DTW to align the synthetic and original speech sequences. <cite class=\"ltx_cite ltx_citemacro_citet\">K&#252;rzinger et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib9\" title=\"\">2020</a>)</cite> uses an algorithm that resembles DTW by using dynamic programming and backtracking to find the optimal alignment based on Connectionist Temporal Classification (CTC) probabilities. In this work, we adapt DTW to dynamically align speech and text based on their embeddings.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "original"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Inspired by previous work in E2E-ST <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, our model consists of two main components, a speech encoder, and a translation encoder-decoder. The translation encoder-decoder is a standard transformer model that can be decomposed into 3 components: a text embedding layer, an encoder that inputs either speech or text embeddings, and a decoder that generates the target sentence.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We argue that interpolation mixup can be more robust to alignment noise since the speech embeddings are not entirely replaced as in discrete mixup, but they are softly down-weighted. Therefore, even in the presence of alignment noise, the model still has access to the correct speech embeddings. Furthermore, it can be more data efficient, since all the speech and text token embeddings are included in training, rather than selecting one or the other.</p>\n\n",
+                "matched_terms": [
+                    "other",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct our experiments on CoVoST-2 dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib23\" title=\"\">2020</a>)</cite>, a large multilingual ST dataset that is based on Common Voice project <cite class=\"ltx_cite ltx_citemacro_cite\">Ardila et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib1\" title=\"\">2020</a>)</cite>. CoVoST-2 covers translation from 21 source languages to English and from English to 15 target languages, and it contains speech, transcription and translation triplets. In this work, due to computational resources, we focus on 6 language directions: En-De, En-Ca, En-Ar, De-En, Fr-En, and Es-En. These directions are selected to ensure a balanced number of En-X and X-En directions. Furthermore, all languages selected are high resource with a minimum of 97 hours of training data and are of varying linguistic distance from English.</p>\n\n",
+                "matched_terms": [
+                    "esen",
+                    "enca",
+                    "ende",
+                    "enar",
+                    "covost2",
+                    "large",
+                    "work",
+                    "deen",
+                    "wang",
+                    "fren"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training:</span>\n<br class=\"ltx_break\"/>We train our model in two stages, first we pre-train the translation encoder-decoder on CoVoST2 transcription-translation pairs. We train with a learning rate of 1e-4, a maximum of 33k tokens per batch, and for a maximum 100k steps. We early stop training if the loss doesn&#8217;t decrease for 10 epochs. During the second stage, we fine-tune the speech encoder and translation encoder-decoder with a learning rate of 1e-4, a maximum of 16M audio frames per batch, and we train for 40k steps. For CMOT, NFA-Align and DTW-Align, we train with a mixup probability <math alttext=\"p^{*}=0.2\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m1\" intent=\":literal\"><semantics><mrow><msup><mi>p</mi><mo>&#8727;</mo></msup><mo>=</mo><mn>0.2</mn></mrow><annotation encoding=\"application/x-tex\">p^{*}=0.2</annotation></semantics></math> and a KL weight <math alttext=\"\\lambda=2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m2\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=2.0</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "nfaalign",
+                    "model",
+                    "cmot",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation:</span>\n<br class=\"ltx_break\"/>We average the last 10 epoch checkpoints for evaluation, and generate with a beam size of 5. We use SacreBLEU <cite class=\"ltx_cite ltx_citemacro_cite\">Post (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib18\" title=\"\">2018</a>)</cite> to compute detokenized case-sensitive BLEU score <cite class=\"ltx_cite ltx_citemacro_cite\">Papineni et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib16\" title=\"\">2002</a>)</cite>. We also use SacreBLEU to measure statistical significance using paired approximate randomization <cite class=\"ltx_cite ltx_citemacro_cite\">Riezler and Maxwell (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib20\" title=\"\">2005</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "score",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Baselines:</span>\n<br class=\"ltx_break\"/>We experiment with the following models:\n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">HuBERT-Transformer:<span class=\"ltx_text ltx_font_medium\"> </span></span>\nComposed of speech encoder and translation encoder-decoder trained for ST. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">CMOT:</span>\nHuBERT-Transformer trained by using CMOT alignment for discrete mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">NFA-Align:</span>\nUsing word level alignments from NeMo Forced Aligner (NFA) <span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner\" title=\"\">https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner</a></span></span></span> which was shown to achieve state-of-the-art results in terms of alignment accuracy <cite class=\"ltx_cite ltx_citemacro_cite\">Rastorgueva et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib19\" title=\"\">2023</a>)</cite> for mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align-Discrete (Ours):</span>\nUsing DTW for generating alignments and training with discrete mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E3\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) similar to CMOT. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align (Ours):</span>\nUsing DTW for generating alignments and training with interpolation mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E4\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). \n<br class=\"ltx_break\"/></p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "achieve",
+                    "nfaalign",
+                    "dtwaligndiscrete",
+                    "baselines",
+                    "cmot",
+                    "results",
+                    "trained",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S5.T2\" title=\"Table 2 &#8227; 5.1 Alignment Accuracy and Training time &#8227; 5 Results and Discussion &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that our method produces more accurate alignments with a significant increase of 19% in alignment accuracy. Furthermore, our method is more than 33 times faster in terms of execution time, which is concretely manifested in the staggering difference in training time between CMOT and DTW-Align (i.e. 14:20:53 and 6:48:14 respectively). As a reference, HuBERT-Transformer baseline training time is 6:32:53, which means that our method improves the performance over this baseline (by an average of 1.2 BLEU points) without the drawbacks of the significant training time overhead that CMOT suffers from. Therefore, although our method achieves similar results to state-of-the-art CMOT in high resource settings, it offers a significant advantage in terms of training time. In Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we show that due to the improved alignment accuracy, our method is more robust both in low resource settings and under higher mixup probability values.</p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "cmot",
+                    "shows",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although our method substantially outperfroms CMOT in terms of alignment accuracy, it does not yield improvements in ST performance. We attribute this to two factors: the amount of training data, which makes training more robust under noise and the low mixup probability value, which is set to 0.2. In &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS1\" title=\"6.1 Low Resource Setting &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.1</span></a> we measure the performance of CMOT, DTW-Align-Discrete and DTW-Align in a simulated low resource scenario of 10h per language direction, and in &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS2\" title=\"6.2 Mixup Probability &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.2</span></a> we ablate the mixup probability value.</p>\n\n",
+                "matched_terms": [
+                    "cmot",
+                    "dtwaligndiscrete",
+                    "set",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Models can be more vulnerable to the negative effects of alignment noise in low resource scenarios. To study this, we compare the performance of CMOT, DTW-Align-Discrete and DTW-Align in a low resource setting of 10h of ST training data and 1h of development data. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.T3\" title=\"Table 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the results over the 6 language directions in our experiments. Overall, DTW-Align-Discrete achieves better results than CMOT, with the improvements on En-De and Es-En being statistically significant. Furthermore, DTW-Align achieves the best results, with statistically significant improvement over CMOT on 5 language directions out of 6. These results show that combining the alignment accuracy of DTW and the robustness of interpolation mixup yields the best performance in low resource settings. Although our method performs on par with CMOT in high-resource settings, it offers an increase in performance in low resource ones, where effects of noise on CMOT are more pronounced. Finally, we find that the improvement of DTW-Align over HuBERT-Transformer has doubled (i.e. from 1.2 to 2.4 BLEU points), which demonstrates the advantage of mixup training in low resource settings.</p>\n\n",
+                "matched_terms": [
+                    "esen",
+                    "huberttransformer",
+                    "ende",
+                    "study",
+                    "dtwaligndiscrete",
+                    "cmot",
+                    "best",
+                    "shows",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform an ablation study on the effect of increasing the mixup probability <math alttext=\"p^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p1.m1\" intent=\":literal\"><semantics><msup><mi>p</mi><mo>&#8727;</mo></msup><annotation encoding=\"application/x-tex\">p^{*}</annotation></semantics></math> of CMOT, DTW-Align-Discrete and DTW-Align as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> on En-De in high (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf1\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>) and low resource setting (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf2\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a>). Results indicate that higher mixup probabilities lead to lower performance but the performance degradation is more significant in the case of CMOT, especially in the low resource setting, where training is more vulnerable to noise. This demonstrates that using DTW for aligning speech and text representations is more robust to the mixup probability hyperparameter, especially in low resource scenarios.</p>\n\n",
+                "matched_terms": [
+                    "ende",
+                    "study",
+                    "dtwaligndiscrete",
+                    "cmot",
+                    "results",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce a method that eliminates the requirement for an external forced alignment tool by dynamically aligning speech and text embeddings during training based on Dynamic Time Warping (DTW). Compared to state-of-the-art approaches, our method matches or exceeds BLEU score results while being significantly faster. We further demonstrate that using DTW-Align is more robust and data efficient in low resource settings. In addition, compared to HuBERT-Transformer baseline, our method improves performance by 1.2 and 2.4 BLEU points in high and low resource settings respectively with minimal overhead in the training time. Finally, unlike CMOT, our method can produce both token and word level alignments, which makes it compatible with previous work that requires word level alignments <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Nguyen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib13\" title=\"\">2025</a>)</cite>, therefore, it can bring a boost to the ongoing efforts on bridging the modality gap in E2E-ST or other speech-to-text tasks.</p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "score",
+                    "cmot",
+                    "work",
+                    "other",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous work shows that using external MT data for pretraining the translation encoder-decoder improves downstream ST performance. In our experiments, however, we only use internal CoVoST2 data for pretraining because of resource limitations.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "covost2",
+                    "shows"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Moreover, our work requires speech transcriptions, which might not be available for all languages. Future work can explore using transcriptions from an ASR model potentially extending the method&#8217;s applicability to a wider range of languages.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, CoVoST2 is an English centric dataset with English as the source or target language in all directions. Evaluating the accuracy and effect of speech and text alignment on other language directions would be valuable for future research.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "other"
+                ]
+            }
+        ]
+    },
+    "S5.T2": {
+        "caption": "Table 2: We show the accuracy of alignments against NFA, and the execution time on CoVoST2 En-De dev set, plus the training time on En-De train set. DTW-Align is significantly faster and more accurate than CMOT.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">Accuracy</span> <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">Execution Time</span> <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">Train Time</span> <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CMOT</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">26%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">97.89</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">14:20:53</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">DTW-Align</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">45%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">2.91</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">6:48:14</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "execution",
+            "plus",
+            "↓downarrow",
+            "dtwalign",
+            "time",
+            "ende",
+            "against",
+            "covost2",
+            "show",
+            "training",
+            "accuracy",
+            "nfa",
+            "than",
+            "alignments",
+            "faster",
+            "accurate",
+            "dev",
+            "cmot",
+            "set",
+            "↑uparrow",
+            "train",
+            "more",
+            "method",
+            "significantly"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S5.T2\" title=\"Table 2 &#8227; 5.1 Alignment Accuracy and Training time &#8227; 5 Results and Discussion &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that our method produces more accurate alignments with a significant increase of 19% in alignment accuracy. Furthermore, our method is more than 33 times faster in terms of execution time, which is concretely manifested in the staggering difference in training time between CMOT and DTW-Align (i.e. 14:20:53 and 6:48:14 respectively). As a reference, HuBERT-Transformer baseline training time is 6:32:53, which means that our method improves the performance over this baseline (by an average of 1.2 BLEU points) without the drawbacks of the significant training time overhead that CMOT suffers from. Therefore, although our method achieves similar results to state-of-the-art CMOT in high resource settings, it offers a significant advantage in terms of training time. In Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we show that due to the improved alignment accuracy, our method is more robust both in low resource settings and under higher mixup probability values.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">End-to-End Speech Translation (E2E-ST) is the task of translating source speech directly into target text bypassing the intermediate transcription step. The representation discrepancy between the speech and text modalities has motivated research on what is known as <span class=\"ltx_text ltx_font_italic\">bridging the modality gap</span>. State-of-the-art methods addressed this by aligning speech and text representations on the word or token level. Unfortunately, this requires an alignment tool that is not available for all languages. Although this issue has been addressed by aligning speech and text embeddings using nearest-neighbor similarity search, it does not lead to accurate alignments. In this work, we adapt Dynamic Time Warping (DTW) for aligning speech and text embeddings during training. Our experiments demonstrate the effectiveness of our method in bridging the modality gap in E2E-ST. Compared to previous work, our method produces more accurate alignments and achieves comparable E2E-ST results while being significantly faster. Furthermore, our method outperforms previous work in low resource settings on 5 out of 6 language directions. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/issam9/DTW-Align\" title=\"\">https://github.com/issam9/DTW-Align</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "alignments",
+                    "faster",
+                    "accurate",
+                    "more",
+                    "training",
+                    "method",
+                    "significantly"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">\n  <span class=\"ltx_text ltx_font_bold\">DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment</span>\n</p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, training E2E-ST models is not straightforward due to the representation discrepancy between the speech and text modalities. Previous work has achieved state-of-the-art results by aligning speech and text representations at the word or token level, either using an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite> or by generating the alignment automatically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>); Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>)</cite>. The closest to our work is Cross-modal Mixup via Optimal Transport (CMOT), which uses optimal transport for finding speech and text alignments. Although CMOT achieves state-of-the-art results, it does not guarantee producing monotonic alignments or ensure that each text token is assigned to at least one frame. This contradicts the expected structure of speech-text alignment and can lead to noisy alignments. Furthermore, CMOT introduces a significant training time overhead.</p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "alignments",
+                    "training",
+                    "cmot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce <span class=\"ltx_text ltx_font_bold\">DTW-Align</span>, a method for aligning speech and text embeddings during training using an adaptation of Dynamic Time Warping <cite class=\"ltx_cite ltx_citemacro_cite\">Sakoe and Chiba (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib21\" title=\"\">1978</a>)</cite>. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows an example alignment generated using DTW-Align and CMOT, which illustrates that our method generates monotonic alignments and guarantees that all tokens are aligned, while CMOT does not. We demonstrate the effectiveness of our method in bridging the modality gap with mixup training <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>. Similarly to previous work <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, we train on a mixup of aligned speech and text representations, however, instead of discretely selecting either a speech or a text embedding, we linearly interpolate speech and text embeddings <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib30\" title=\"\">2018</a>)</cite>. Our experiments show that our method is faster and produces more accurate alignments. Furthermore, it achieves comparable results to CMOT on 6 language directions from the CoVoST2 dataset, while training significantly faster. We also evaluate our method in a low resource setting where training can be more vulnerable to alignment noise, and we show that our method leads to a statistically significant improvement over CMOT in 5 out of 6 language directions.</p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "covost2",
+                    "alignments",
+                    "faster",
+                    "accurate",
+                    "train",
+                    "cmot",
+                    "more",
+                    "show",
+                    "training",
+                    "method",
+                    "significantly",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bridging the Modality Gap</span>:\nThe discrepancy between the source and target modalities (i.e. speech and text respectively) has motivated multiple works on what is termed bridging the modality gap <cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib11\" title=\"\">2019</a>); Han et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib4\" title=\"\">2021</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, where the goal is to build a shared semantic space between the speech and text modalities. Aligning speech and text either based on an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>)</cite> or dynamically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> was shown to achieve state-of-the-art results. Our work goes in this direction, by improving the accuracy and speed of aligning speech and text during training.</p>\n\n",
+                "matched_terms": [
+                    "accuracy",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Mixup:</span>\nMixup is a common data augmentation strategy <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib30\" title=\"\">2018</a>); Jin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib6\" title=\"\">2025</a>)</cite>. In E2E-ST, it is applied for bridging the modality gap <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, where the model is trained on a discrete mixup of speech and text representations. Mixup training in E2E-ST requires an alignment between speech and text that can be generated using an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> alleviate the need for an alignment tool by aligning speech and text representations using optimal transport. Our approach is similar to <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, where we generate the alignments dynamically during training. However, instead of discretely mixing speech and text representations, we apply mixup as a linear interpolation.</p>\n\n",
+                "matched_terms": [
+                    "alignments",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We argue that interpolation mixup can be more robust to alignment noise since the speech embeddings are not entirely replaced as in discrete mixup, but they are softly down-weighted. Therefore, even in the presence of alignment noise, the model still has access to the correct speech embeddings. Furthermore, it can be more data efficient, since all the speech and text token embeddings are included in training, rather than selecting one or the other.</p>\n\n",
+                "matched_terms": [
+                    "than",
+                    "more",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We train with similar training objectives as CMOT <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> to ensure fair comparison. The ST training corpus is denoted as <math alttext=\"D={(s,x,y)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><mi>s</mi><mo>,</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">D={(s,x,y)}</annotation></semantics></math>, where <math alttext=\"s\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><mi>s</mi><annotation encoding=\"application/x-tex\">s</annotation></semantics></math> is the speech input, <math alttext=\"x\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><mi>x</mi><annotation encoding=\"application/x-tex\">x</annotation></semantics></math> is the transcription, and <math alttext=\"y\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><mi>y</mi><annotation encoding=\"application/x-tex\">y</annotation></semantics></math> is the translation. In the first stage, the translation encoder-decoder is pre-trained on transcription-translation pairs using cross entropy:</p>\n\n",
+                "matched_terms": [
+                    "cmot",
+                    "train",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct our experiments on CoVoST-2 dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib23\" title=\"\">2020</a>)</cite>, a large multilingual ST dataset that is based on Common Voice project <cite class=\"ltx_cite ltx_citemacro_cite\">Ardila et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib1\" title=\"\">2020</a>)</cite>. CoVoST-2 covers translation from 21 source languages to English and from English to 15 target languages, and it contains speech, transcription and translation triplets. In this work, due to computational resources, we focus on 6 language directions: En-De, En-Ca, En-Ar, De-En, Fr-En, and Es-En. These directions are selected to ensure a balanced number of En-X and X-En directions. Furthermore, all languages selected are high resource with a minimum of 97 hours of training data and are of varying linguistic distance from English.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "ende",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training:</span>\n<br class=\"ltx_break\"/>We train our model in two stages, first we pre-train the translation encoder-decoder on CoVoST2 transcription-translation pairs. We train with a learning rate of 1e-4, a maximum of 33k tokens per batch, and for a maximum 100k steps. We early stop training if the loss doesn&#8217;t decrease for 10 epochs. During the second stage, we fine-tune the speech encoder and translation encoder-decoder with a learning rate of 1e-4, a maximum of 16M audio frames per batch, and we train for 40k steps. For CMOT, NFA-Align and DTW-Align, we train with a mixup probability <math alttext=\"p^{*}=0.2\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m1\" intent=\":literal\"><semantics><mrow><msup><mi>p</mi><mo>&#8727;</mo></msup><mo>=</mo><mn>0.2</mn></mrow><annotation encoding=\"application/x-tex\">p^{*}=0.2</annotation></semantics></math> and a KL weight <math alttext=\"\\lambda=2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m2\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=2.0</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "train",
+                    "cmot",
+                    "training",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Low Resource Setting:</span>\n<br class=\"ltx_break\"/>All the languages in our experiments are considered high resource with at least 97 hours of training data, therefore, to evaluate our method in a low resource setting, we simulate a low resource scenario by sampling 10 hours of ST training data and 1 hour of development data for each language directions. During training, we use the same hyperparameters but we early stop if the loss did not decrease on the development set for 10 epochs. Our goal is to demonstrate how noise in the alignment has a more pronounced effect in low-resource ST scenarios. Therefore, we use a simulated low-resource setting with the same languages and training setup to avoid any confounding effects that would arise from using a different dataset.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "more",
+                    "training",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Baselines:</span>\n<br class=\"ltx_break\"/>We experiment with the following models:\n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">HuBERT-Transformer:<span class=\"ltx_text ltx_font_medium\"> </span></span>\nComposed of speech encoder and translation encoder-decoder trained for ST. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">CMOT:</span>\nHuBERT-Transformer trained by using CMOT alignment for discrete mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">NFA-Align:</span>\nUsing word level alignments from NeMo Forced Aligner (NFA) <span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner\" title=\"\">https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner</a></span></span></span> which was shown to achieve state-of-the-art results in terms of alignment accuracy <cite class=\"ltx_cite ltx_citemacro_cite\">Rastorgueva et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib19\" title=\"\">2023</a>)</cite> for mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align-Discrete (Ours):</span>\nUsing DTW for generating alignments and training with discrete mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E3\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) similar to CMOT. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align (Ours):</span>\nUsing DTW for generating alignments and training with interpolation mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E4\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). \n<br class=\"ltx_break\"/></p>\n\n",
+                "matched_terms": [
+                    "nfa",
+                    "alignments",
+                    "cmot",
+                    "training",
+                    "accuracy",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S4.T1\" title=\"Table 1 &#8227; 4.3 Main Results &#8227; 4 Experiments &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the results of our method and baselines, and results of previous work that was evaluated on the CoVoST2 dataset. The results show that consistent with previous studies <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, the baseline HuBERT-Transformer remains a competitive baseline, even outperforming previous work that uses more complex techniques. Furthermore, CMOT, DTW-Align-Discrete and DTW-Align achieve the best results overall. Although we train under similar settings and we do not optimize our method differently, we achieve similar results to CMOT. Surprisingly, NFA-Align which uses NFA to align speech and text lags slightly behind on average (i.e. 0.1 BLEU), this suggests that in a high resource setting, and with a low mixup probability the effect of noise in the alignment is less evident.</p>\n\n",
+                "matched_terms": [
+                    "nfa",
+                    "covost2",
+                    "train",
+                    "cmot",
+                    "more",
+                    "show",
+                    "method",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although our method substantially outperfroms CMOT in terms of alignment accuracy, it does not yield improvements in ST performance. We attribute this to two factors: the amount of training data, which makes training more robust under noise and the low mixup probability value, which is set to 0.2. In &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS1\" title=\"6.1 Low Resource Setting &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.1</span></a> we measure the performance of CMOT, DTW-Align-Discrete and DTW-Align in a simulated low resource scenario of 10h per language direction, and in &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS2\" title=\"6.2 Mixup Probability &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.2</span></a> we ablate the mixup probability value.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "cmot",
+                    "more",
+                    "training",
+                    "method",
+                    "accuracy",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Models can be more vulnerable to the negative effects of alignment noise in low resource scenarios. To study this, we compare the performance of CMOT, DTW-Align-Discrete and DTW-Align in a low resource setting of 10h of ST training data and 1h of development data. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.T3\" title=\"Table 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the results over the 6 language directions in our experiments. Overall, DTW-Align-Discrete achieves better results than CMOT, with the improvements on En-De and Es-En being statistically significant. Furthermore, DTW-Align achieves the best results, with statistically significant improvement over CMOT on 5 language directions out of 6. These results show that combining the alignment accuracy of DTW and the robustness of interpolation mixup yields the best performance in low resource settings. Although our method performs on par with CMOT in high-resource settings, it offers an increase in performance in low resource ones, where effects of noise on CMOT are more pronounced. Finally, we find that the improvement of DTW-Align over HuBERT-Transformer has doubled (i.e. from 1.2 to 2.4 BLEU points), which demonstrates the advantage of mixup training in low resource settings.</p>\n\n",
+                "matched_terms": [
+                    "ende",
+                    "than",
+                    "cmot",
+                    "more",
+                    "show",
+                    "training",
+                    "method",
+                    "accuracy",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform an ablation study on the effect of increasing the mixup probability <math alttext=\"p^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p1.m1\" intent=\":literal\"><semantics><msup><mi>p</mi><mo>&#8727;</mo></msup><annotation encoding=\"application/x-tex\">p^{*}</annotation></semantics></math> of CMOT, DTW-Align-Discrete and DTW-Align as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> on En-De in high (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf1\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>) and low resource setting (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf2\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a>). Results indicate that higher mixup probabilities lead to lower performance but the performance degradation is more significant in the case of CMOT, especially in the low resource setting, where training is more vulnerable to noise. This demonstrates that using DTW for aligning speech and text representations is more robust to the mixup probability hyperparameter, especially in low resource scenarios.</p>\n\n",
+                "matched_terms": [
+                    "ende",
+                    "cmot",
+                    "more",
+                    "training",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce a method that eliminates the requirement for an external forced alignment tool by dynamically aligning speech and text embeddings during training based on Dynamic Time Warping (DTW). Compared to state-of-the-art approaches, our method matches or exceeds BLEU score results while being significantly faster. We further demonstrate that using DTW-Align is more robust and data efficient in low resource settings. In addition, compared to HuBERT-Transformer baseline, our method improves performance by 1.2 and 2.4 BLEU points in high and low resource settings respectively with minimal overhead in the training time. Finally, unlike CMOT, our method can produce both token and word level alignments, which makes it compatible with previous work that requires word level alignments <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Nguyen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib13\" title=\"\">2025</a>)</cite>, therefore, it can bring a boost to the ongoing efforts on bridging the modality gap in E2E-ST or other speech-to-text tasks.</p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "alignments",
+                    "faster",
+                    "cmot",
+                    "more",
+                    "training",
+                    "method",
+                    "significantly",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, CoVoST2 is an English centric dataset with English as the source or target language in all directions. Evaluating the accuracy and effect of speech and text alignment on other language directions would be valuable for future research.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "accuracy"
+                ]
+            }
+        ]
+    },
+    "S6.T3": {
+        "caption": "Table 3: BLEU score results on CoVoST2 test set in the low resource setting. The table shows that on overall DTW-Align-Discrete and DTW-Align on overall achieve better results than CMOT, with DTW-Align achieving the best results overall. *, ** indicate whether the improvement over CMOT is statistically significant with p<0.05p<0.05 and p<0.01p<0.01 respectively.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-De</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-Ca</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">En-Ar</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">De-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Fr-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Es-En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg.</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">HuBERT-Transformer</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">6.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">CMOT</th>\n<td class=\"ltx_td ltx_align_center\">6.6</td>\n<td class=\"ltx_td ltx_align_center\">9.6</td>\n<td class=\"ltx_td ltx_align_center\">2.7</td>\n<td class=\"ltx_td ltx_align_center\">2.8</td>\n<td class=\"ltx_td ltx_align_center\">8.5</td>\n<td class=\"ltx_td ltx_align_center\">7.5</td>\n<td class=\"ltx_td ltx_align_center\">6.3</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">DTW-Align-Discrete</th>\n<td class=\"ltx_td ltx_align_center\">6.8**</td>\n<td class=\"ltx_td ltx_align_center\">9.6</td>\n<td class=\"ltx_td ltx_align_center\">2.8</td>\n<td class=\"ltx_td ltx_align_center\">2.7</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">8.6</span></td>\n<td class=\"ltx_td ltx_align_center\">7.9**</td>\n<td class=\"ltx_td ltx_align_center\">6.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">DTW-Align</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">7.0**</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">9.8**</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.1**</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">2.9*</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">8.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">8.0**</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">6.6</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "huberttransformer",
+            "significant",
+            "dtwaligndiscrete",
+            "setting",
+            "overall",
+            "dtwalign",
+            "p001p001",
+            "ende",
+            "statistically",
+            "covost2",
+            "low",
+            "p005p005",
+            "deen",
+            "test",
+            "achieve",
+            "over",
+            "avg",
+            "indicate",
+            "enar",
+            "than",
+            "improvement",
+            "resource",
+            "cmot",
+            "results",
+            "fren",
+            "set",
+            "respectively",
+            "score",
+            "enca",
+            "esen",
+            "model",
+            "better",
+            "achieving",
+            "best",
+            "shows",
+            "whether",
+            "bleu"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Models can be more vulnerable to the negative effects of alignment noise in low resource scenarios. To study this, we compare the performance of CMOT, DTW-Align-Discrete and DTW-Align in a low resource setting of 10h of ST training data and 1h of development data. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.T3\" title=\"Table 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the results over the 6 language directions in our experiments. Overall, DTW-Align-Discrete achieves better results than CMOT, with the improvements on En-De and Es-En being statistically significant. Furthermore, DTW-Align achieves the best results, with statistically significant improvement over CMOT on 5 language directions out of 6. These results show that combining the alignment accuracy of DTW and the robustness of interpolation mixup yields the best performance in low resource settings. Although our method performs on par with CMOT in high-resource settings, it offers an increase in performance in low resource ones, where effects of noise on CMOT are more pronounced. Finally, we find that the improvement of DTW-Align over HuBERT-Transformer has doubled (i.e. from 1.2 to 2.4 BLEU points), which demonstrates the advantage of mixup training in low resource settings.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">End-to-End Speech Translation (E2E-ST) is the task of translating source speech directly into target text bypassing the intermediate transcription step. The representation discrepancy between the speech and text modalities has motivated research on what is known as <span class=\"ltx_text ltx_font_italic\">bridging the modality gap</span>. State-of-the-art methods addressed this by aligning speech and text representations on the word or token level. Unfortunately, this requires an alignment tool that is not available for all languages. Although this issue has been addressed by aligning speech and text embeddings using nearest-neighbor similarity search, it does not lead to accurate alignments. In this work, we adapt Dynamic Time Warping (DTW) for aligning speech and text embeddings during training. Our experiments demonstrate the effectiveness of our method in bridging the modality gap in E2E-ST. Compared to previous work, our method produces more accurate alignments and achieves comparable E2E-ST results while being significantly faster. Furthermore, our method outperforms previous work in low resource settings on 5 out of 6 language directions. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/issam9/DTW-Align\" title=\"\">https://github.com/issam9/DTW-Align</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "low",
+                    "resource"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, training E2E-ST models is not straightforward due to the representation discrepancy between the speech and text modalities. Previous work has achieved state-of-the-art results by aligning speech and text representations at the word or token level, either using an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite> or by generating the alignment automatically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>); Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>)</cite>. The closest to our work is Cross-modal Mixup via Optimal Transport (CMOT), which uses optimal transport for finding speech and text alignments. Although CMOT achieves state-of-the-art results, it does not guarantee producing monotonic alignments or ensure that each text token is assigned to at least one frame. This contradicts the expected structure of speech-text alignment and can lead to noisy alignments. Furthermore, CMOT introduces a significant training time overhead.</p>\n\n",
+                "matched_terms": [
+                    "cmot",
+                    "results",
+                    "significant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce <span class=\"ltx_text ltx_font_bold\">DTW-Align</span>, a method for aligning speech and text embeddings during training using an adaptation of Dynamic Time Warping <cite class=\"ltx_cite ltx_citemacro_cite\">Sakoe and Chiba (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib21\" title=\"\">1978</a>)</cite>. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows an example alignment generated using DTW-Align and CMOT, which illustrates that our method generates monotonic alignments and guarantees that all tokens are aligned, while CMOT does not. We demonstrate the effectiveness of our method in bridging the modality gap with mixup training <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>. Similarly to previous work <cite class=\"ltx_cite ltx_citemacro_cite\">Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite>, we train on a mixup of aligned speech and text representations, however, instead of discretely selecting either a speech or a text embedding, we linearly interpolate speech and text embeddings <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib30\" title=\"\">2018</a>)</cite>. Our experiments show that our method is faster and produces more accurate alignments. Furthermore, it achieves comparable results to CMOT on 6 language directions from the CoVoST2 dataset, while training significantly faster. We also evaluate our method in a low resource setting where training can be more vulnerable to alignment noise, and we show that our method leads to a statistically significant improvement over CMOT in 5 out of 6 language directions.</p>\n\n",
+                "matched_terms": [
+                    "over",
+                    "statistically",
+                    "significant",
+                    "covost2",
+                    "low",
+                    "improvement",
+                    "setting",
+                    "resource",
+                    "cmot",
+                    "shows",
+                    "results",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bridging the Modality Gap</span>:\nThe discrepancy between the source and target modalities (i.e. speech and text respectively) has motivated multiple works on what is termed bridging the modality gap <cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib11\" title=\"\">2019</a>); Han et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib4\" title=\"\">2021</a>); Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, where the goal is to build a shared semantic space between the speech and text modalities. Aligning speech and text either based on an alignment tool <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>)</cite> or dynamically during training <cite class=\"ltx_cite ltx_citemacro_cite\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib29\" title=\"\">2023b</a>); Zhou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib32\" title=\"\">2023</a>)</cite> was shown to achieve state-of-the-art results. Our work goes in this direction, by improving the accuracy and speed of aligning speech and text during training.</p>\n\n",
+                "matched_terms": [
+                    "achieve",
+                    "respectively",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We argue that interpolation mixup can be more robust to alignment noise since the speech embeddings are not entirely replaced as in discrete mixup, but they are softly down-weighted. Therefore, even in the presence of alignment noise, the model still has access to the correct speech embeddings. Furthermore, it can be more data efficient, since all the speech and text token embeddings are included in training, rather than selecting one or the other.</p>\n\n",
+                "matched_terms": [
+                    "than",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct our experiments on CoVoST-2 dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib23\" title=\"\">2020</a>)</cite>, a large multilingual ST dataset that is based on Common Voice project <cite class=\"ltx_cite ltx_citemacro_cite\">Ardila et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib1\" title=\"\">2020</a>)</cite>. CoVoST-2 covers translation from 21 source languages to English and from English to 15 target languages, and it contains speech, transcription and translation triplets. In this work, due to computational resources, we focus on 6 language directions: En-De, En-Ca, En-Ar, De-En, Fr-En, and Es-En. These directions are selected to ensure a balanced number of En-X and X-En directions. Furthermore, all languages selected are high resource with a minimum of 97 hours of training data and are of varying linguistic distance from English.</p>\n\n",
+                "matched_terms": [
+                    "esen",
+                    "enca",
+                    "ende",
+                    "enar",
+                    "covost2",
+                    "resource",
+                    "deen",
+                    "fren"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Pre-processing:</span>\n<br class=\"ltx_break\"/>For speech input, we use the raw 16 bit 16kHz mono-channel audio. We filter out examples with a number of frames higher than 480k or less than 1k. For the text input, we remove punctuation, then we tokenize using a uni-gram SentencePiece model <cite class=\"ltx_cite ltx_citemacro_cite\">Kudo and Richardson (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib8\" title=\"\">2018</a>)</cite> with a vocabulary of 10k that is shared between the source and target languages.</p>\n\n",
+                "matched_terms": [
+                    "than",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model:</span>\n<br class=\"ltx_break\"/>Our model is composed of a speech encoder and a translation encoder-decoder. For the speech encoder, we use a pre-trained base HuBERT model <cite class=\"ltx_cite ltx_citemacro_cite\">Hsu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib5\" title=\"\">2021</a>)</cite> for En-X language directions, and mHuBERT-147 <cite class=\"ltx_cite ltx_citemacro_cite\">Zanon&#160;Boito et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib25\" title=\"\">2024</a>)</cite> (a multilingual version of HuBERT base model) for X-En language directions. To shrink the audio representations over the time axis, we stack 2 1-dimensional convolution layers of kernel size 5, stride size 2, padding 2, and hidden dimension 1024. For the translation encoder, we use 6 transformer encoder layers. For the translation decoder, we use 6 transformer decoder layers. Each transformer layer is comprised of 512 hidden units, 8 attention heads, and 2048 feed-forward hidden units.</p>\n\n",
+                "matched_terms": [
+                    "over",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training:</span>\n<br class=\"ltx_break\"/>We train our model in two stages, first we pre-train the translation encoder-decoder on CoVoST2 transcription-translation pairs. We train with a learning rate of 1e-4, a maximum of 33k tokens per batch, and for a maximum 100k steps. We early stop training if the loss doesn&#8217;t decrease for 10 epochs. During the second stage, we fine-tune the speech encoder and translation encoder-decoder with a learning rate of 1e-4, a maximum of 16M audio frames per batch, and we train for 40k steps. For CMOT, NFA-Align and DTW-Align, we train with a mixup probability <math alttext=\"p^{*}=0.2\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m1\" intent=\":literal\"><semantics><mrow><msup><mi>p</mi><mo>&#8727;</mo></msup><mo>=</mo><mn>0.2</mn></mrow><annotation encoding=\"application/x-tex\">p^{*}=0.2</annotation></semantics></math> and a KL weight <math alttext=\"\\lambda=2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m2\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=2.0</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "cmot",
+                    "covost2",
+                    "model",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation:</span>\n<br class=\"ltx_break\"/>We average the last 10 epoch checkpoints for evaluation, and generate with a beam size of 5. We use SacreBLEU <cite class=\"ltx_cite ltx_citemacro_cite\">Post (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib18\" title=\"\">2018</a>)</cite> to compute detokenized case-sensitive BLEU score <cite class=\"ltx_cite ltx_citemacro_cite\">Papineni et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib16\" title=\"\">2002</a>)</cite>. We also use SacreBLEU to measure statistical significance using paired approximate randomization <cite class=\"ltx_cite ltx_citemacro_cite\">Riezler and Maxwell (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib20\" title=\"\">2005</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "score",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Low Resource Setting:</span>\n<br class=\"ltx_break\"/>All the languages in our experiments are considered high resource with at least 97 hours of training data, therefore, to evaluate our method in a low resource setting, we simulate a low resource scenario by sampling 10 hours of ST training data and 1 hour of development data for each language directions. During training, we use the same hyperparameters but we early stop if the loss did not decrease on the development set for 10 epochs. Our goal is to demonstrate how noise in the alignment has a more pronounced effect in low-resource ST scenarios. Therefore, we use a simulated low-resource setting with the same languages and training setup to avoid any confounding effects that would arise from using a different dataset.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "low",
+                    "setting",
+                    "resource"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Baselines:</span>\n<br class=\"ltx_break\"/>We experiment with the following models:\n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">HuBERT-Transformer:<span class=\"ltx_text ltx_font_medium\"> </span></span>\nComposed of speech encoder and translation encoder-decoder trained for ST. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">CMOT:</span>\nHuBERT-Transformer trained by using CMOT alignment for discrete mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">NFA-Align:</span>\nUsing word level alignments from NeMo Forced Aligner (NFA) <span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner\" title=\"\">https://github.com/NVIDIA/NeMo/tree/main/tools/nemo_forced_aligner</a></span></span></span> which was shown to achieve state-of-the-art results in terms of alignment accuracy <cite class=\"ltx_cite ltx_citemacro_cite\">Rastorgueva et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib19\" title=\"\">2023</a>)</cite> for mixup training. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align-Discrete (Ours):</span>\nUsing DTW for generating alignments and training with discrete mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E3\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) similar to CMOT. \n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_bold ltx_font_italic\">DTW-Align (Ours):</span>\nUsing DTW for generating alignments and training with interpolation mixup (Equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S3.E4\" title=\"In 3.3 Mixup Training &#8227; 3 Method &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). \n<br class=\"ltx_break\"/></p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "achieve",
+                    "dtwaligndiscrete",
+                    "cmot",
+                    "results",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S4.T1\" title=\"Table 1 &#8227; 4.3 Main Results &#8227; 4 Experiments &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the results of our method and baselines, and results of previous work that was evaluated on the CoVoST2 dataset. The results show that consistent with previous studies <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>)</cite>, the baseline HuBERT-Transformer remains a competitive baseline, even outperforming previous work that uses more complex techniques. Furthermore, CMOT, DTW-Align-Discrete and DTW-Align achieve the best results overall. Although we train under similar settings and we do not optimize our method differently, we achieve similar results to CMOT. Surprisingly, NFA-Align which uses NFA to align speech and text lags slightly behind on average (i.e. 0.1 BLEU), this suggests that in a high resource setting, and with a low mixup probability the effect of noise in the alignment is less evident.</p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "achieve",
+                    "covost2",
+                    "dtwaligndiscrete",
+                    "low",
+                    "setting",
+                    "resource",
+                    "overall",
+                    "cmot",
+                    "best",
+                    "shows",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S5.T2\" title=\"Table 2 &#8227; 5.1 Alignment Accuracy and Training time &#8227; 5 Results and Discussion &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that our method produces more accurate alignments with a significant increase of 19% in alignment accuracy. Furthermore, our method is more than 33 times faster in terms of execution time, which is concretely manifested in the staggering difference in training time between CMOT and DTW-Align (i.e. 14:20:53 and 6:48:14 respectively). As a reference, HuBERT-Transformer baseline training time is 6:32:53, which means that our method improves the performance over this baseline (by an average of 1.2 BLEU points) without the drawbacks of the significant training time overhead that CMOT suffers from. Therefore, although our method achieves similar results to state-of-the-art CMOT in high resource settings, it offers a significant advantage in terms of training time. In Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we show that due to the improved alignment accuracy, our method is more robust both in low resource settings and under higher mixup probability values.</p>\n\n",
+                "matched_terms": [
+                    "over",
+                    "huberttransformer",
+                    "respectively",
+                    "significant",
+                    "than",
+                    "low",
+                    "resource",
+                    "cmot",
+                    "shows",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although our method substantially outperfroms CMOT in terms of alignment accuracy, it does not yield improvements in ST performance. We attribute this to two factors: the amount of training data, which makes training more robust under noise and the low mixup probability value, which is set to 0.2. In &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS1\" title=\"6.1 Low Resource Setting &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.1</span></a> we measure the performance of CMOT, DTW-Align-Discrete and DTW-Align in a simulated low resource scenario of 10h per language direction, and in &#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.SS2\" title=\"6.2 Mixup Probability &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">6.2</span></a> we ablate the mixup probability value.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "dtwaligndiscrete",
+                    "low",
+                    "resource",
+                    "cmot",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform an ablation study on the effect of increasing the mixup probability <math alttext=\"p^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p1.m1\" intent=\":literal\"><semantics><msup><mi>p</mi><mo>&#8727;</mo></msup><annotation encoding=\"application/x-tex\">p^{*}</annotation></semantics></math> of CMOT, DTW-Align-Discrete and DTW-Align as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3\" title=\"Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> on En-De in high (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf1\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>) and low resource setting (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#S6.F3.sf2\" title=\"In Figure 3 &#8227; 6 Analysis &#8227; DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a>). Results indicate that higher mixup probabilities lead to lower performance but the performance degradation is more significant in the case of CMOT, especially in the low resource setting, where training is more vulnerable to noise. This demonstrates that using DTW for aligning speech and text representations is more robust to the mixup probability hyperparameter, especially in low resource scenarios.</p>\n\n",
+                "matched_terms": [
+                    "ende",
+                    "indicate",
+                    "significant",
+                    "dtwaligndiscrete",
+                    "low",
+                    "setting",
+                    "resource",
+                    "cmot",
+                    "results",
+                    "dtwalign"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce a method that eliminates the requirement for an external forced alignment tool by dynamically aligning speech and text embeddings during training based on Dynamic Time Warping (DTW). Compared to state-of-the-art approaches, our method matches or exceeds BLEU score results while being significantly faster. We further demonstrate that using DTW-Align is more robust and data efficient in low resource settings. In addition, compared to HuBERT-Transformer baseline, our method improves performance by 1.2 and 2.4 BLEU points in high and low resource settings respectively with minimal overhead in the training time. Finally, unlike CMOT, our method can produce both token and word level alignments, which makes it compatible with previous work that requires word level alignments <cite class=\"ltx_cite ltx_citemacro_cite\">Fang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib2\" title=\"\">2022</a>); Ouyang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib15\" title=\"\">2023</a>); Nguyen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.18987v1#bib.bib13\" title=\"\">2025</a>)</cite>, therefore, it can bring a boost to the ongoing efforts on bridging the modality gap in E2E-ST or other speech-to-text tasks.</p>\n\n",
+                "matched_terms": [
+                    "huberttransformer",
+                    "respectively",
+                    "score",
+                    "low",
+                    "resource",
+                    "cmot",
+                    "results",
+                    "dtwalign",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous work shows that using external MT data for pretraining the translation encoder-decoder improves downstream ST performance. In our experiments, however, we only use internal CoVoST2 data for pretraining because of resource limitations.</p>\n\n",
+                "matched_terms": [
+                    "covost2",
+                    "shows",
+                    "resource"
+                ]
+            }
+        ]
+    }
+}

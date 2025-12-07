@@ -14,6 +14,11 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true) // Evita errori se aggiungi campi futuri nel JSON
 public class Table {
 
+    /*costruttore */
+    public Table(String uniqueId, String caption2, String bodyHtml, String cleanHtml, List<String> mentions,
+            List<String> contextParagraphs, List<String> terms, String paperId, String htmlBody) {
+    }
+
     // --- Metadati (Non nel JSON, da popolare a runtime) ---
     
     // Lucene: StringField (Store.YES, Index.NOT_ANALYZED) - ID univoco (es. "S4.T1")

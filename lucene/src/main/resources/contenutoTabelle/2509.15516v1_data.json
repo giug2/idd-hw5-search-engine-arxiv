@@ -1,0 +1,712 @@
+{
+    "S2.T1": {
+        "caption": "Table 1: WER (%) comparison of different training strategies. Best results for each n-shot condition and dataset are in bold.",
+        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Euphonia &amp; SAP; 10-shot, 0-shot (20k each)</span></td>\n</tr>\n</table>\n\n",
+        "informative_terms_identified": [
+            "0shot",
+            "condition",
+            "wer",
+            "10shot",
+            "strategies",
+            "nshot",
+            "euphonia",
+            "bold",
+            "sap",
+            "best",
+            "each",
+            "training",
+            "results",
+            "20k",
+            "dataset",
+            "different",
+            "comparison"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Our primary experiments, detailed in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, evaluate the efficacy of different training strategies. The results demonstrate the superiority of a mixed-objective approach.</span>\n</p>\n\n",
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Given the impracticality of requiring numerous enrollment examples, we explored potential value of curation strategies to demonstrate their importance on the best model from Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we tested several methods, including an &#8217;oracle&#8217; benchmark based on textual similarity to the query (as described in Section 2.5). While this specific method is not feasible in deployment, its 5-shot performance (9.9% WER) nearly matched the 19-shot random baseline (9.5% WER). This result&#8217;s primary importance is its demonstration of curation&#8217;s potential efficiency&#8212;showing 5 well-chosen examples could replace 19 random ones&#8212;and establishing it as a critical area for improving the on-the-fly experience.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Personalizing Automatic Speech Recognition (ASR) for dysarthric speech is crucial but challenging due to training and storing of individual user adapters. We propose a hybrid meta-training method for a single model, excelling in zero-shot and few-shot on-the-fly personalization via in-context learning (ICL). Measuring Word Error Rate (WER) on state-of-the-art subsets, the model achieves 13.9% WER on Euphonia which surpasses speaker-independent baselines (17.5% WER) and rivals user-specific personalized models. On SAP Test 1, its 5.3% WER significantly bests the 8% from even personalized adapters. We also demonstrate the importance of example curation, where an oracle text-similarity method shows 5 curated examples can achieve performance similar to 19 randomly selected ones, highlighting a key area for future efficiency gains. Finally, we conduct data ablations to measure the data efficiency of this approach. This work presents a practical, scalable, and personalized solution.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "euphonia",
+                    "sap",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The acoustic variability and reduced intelligibility of dysarthric speech presents significant challenges for Automatic Speech Recognition (ASR) systems&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib1\" title=\"\">1</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While personalization is a critical step to bridge this performance gap, conventional approaches are often burdensome. Methods like user-speaker fine-tuning or deploying parameter-efficient adapters&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib2\" title=\"\">2</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while effective, require training and storing separate models for each user, posing significant complexities for large-scale deployment and maintenance.\nIn-context learning (ICL) has emerged as a paradigm shift, enabling personalization&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib3\" title=\"\">3</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> purely at inference time by providing a few user-specific examples. Specifically for ASR, we would include many audio-text examples (&#8220;shots&#8221;) to support the query example. This eliminates the need for per-user training, motivating the search for a truly universal model that can serve and personalize to any speaker on-the-fly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As discussed, Dysarthric ASR (DSR) research has explored fine-tuning and parameter-efficient methods like LoRA for individual speaker adaptation, with studies demonstrating personalization is possible even with small datasets (e.g., &#160;250 phrases per user in&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">). Recent advancements include personalized RNN-T&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib5\" title=\"\">5</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> approaches outperforming speaker-independent models by 35%&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on Euphonia&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib7\" title=\"\">7</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and AdaLoRA&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> improving over fine-tuning by 24%&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on the Speech Accessibility Project dataset&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nWhile these methods have pushed the state-of-the-art (SOTA), reducing the memory overheads in adapters is an active area of research&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "euphonia"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">A Novel Hybrid Training Strategy:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We propose and validate a mixed training setup using both 0-shot (query only) and 10-shot (support + query) examples, resulting in a model that excels in all evaluation scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Scalable Across Diverse Datasets:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> First to demonstrate the effectiveness of this approach on both &#8211; Euphonia and Speech Accessibility Project (SAP). We establish new SOTA benchmarks and prove the scalability of this technique to different speech impairments.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "different",
+                    "euphonia",
+                    "sap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Google&#8217;s Euphonia Project</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A large-scale research initiative containing audio samples from more than 2,000 speakers with diverse etiologies (e.g., ALS, Parkinson&#8217;s, vocal cord paralysis). For our experiments we have limited to using approx 300k utterances (about a third) in the training dataset. The test-set contains 5,684 utterances from over 350 speakers, reviewed by speech-language pathologists. For fair SOTA comparisons, we use a subset of 1,740 utterances.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "euphonia",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Speech Accessibility Project (SAP)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A collaboration led by the University of Illinois Urbana-Champaign and major tech companies to create a shared dataset for research. The training set contains 240k utterances, and the two distinct test sets (Test1 and Test2) have approximately 35k utterances each. For SOTA evaluation conditions, we have a subset of roughly 17k utterances from Test1 to match the dataset used for Interspeech 2025&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "each",
+                    "sap",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0-Shot Trained (SFT):</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis approach represents the baseline traditional way of training a LLM-based ASR model without explicitly teaching it to use context examples. We train on a large corpus of speech (200k examples). Each example consists of a single audio-text pair, </span>\n  <math alttext=\"(a_{q},t_{q})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I3.i2.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">(</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">a</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo mathsize=\"0.900em\">,</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">t</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">)</mo>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">(a_{q},t_{q})</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "each",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">10-Shot Meta-Trained:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nHere we train on 20k ICL-formatted examples. Each example contains a query utterance and an additional support set of 10 audio-text pairs, all from the same speaker. This explicitly trains the model to utilize the provided context.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "10shot",
+                    "each",
+                    "20k"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Mixed-Objective (0+10 Shot) Trained:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis is our proposed solution. We train the model on a mixture of 10-shot and 0-shot (upto 40k each) examples. We hypothesize that this model learns both to perform high-quality zero-shot transcription and to effectively utilize contextual examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sorted by Uncertainty</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Uses active learning concepts to select challenging utterances as ICL examples. Performs 0-shot evaluation, then selects utterances with the highest WER.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">When training exclusively on Euphonia, we observe a clear trade-off with single-objective models. The 0-shot model is trained on 200k examples with 1 utterance each, compared to 20k examples with 11 utterances each for 10-shot. The 0-shot model achieves a 0-shot relative reduction of over 52% from baseline in WER but is unreliable at leveraging ICL examples, with performance degrading from 5-shot to 10-shot. Conversely, the 10-shot only model excels at personalization, reaching an impressive 9.9% WER at 19 shots, but it&#8217;s 0-shot WER of 24.4% is significantly weaker. This highlights that single objective models are not optimal for both scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "euphonia",
+                    "each",
+                    "training",
+                    "20k",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The next model, Euphonia based mixed-objective model, extends the 10-shot model with additional 20k examples for 0-shot . Successfully resolving the trade-off, it achieves a strong 0-shot WER of 17.1%, nearly matching the 200k 0-shot only model, while having excellent and consistent few-shot performance (9.8% at 19 shots). The model generalizes impressively, reducing the SAP-Test1 0-shot WER by 36.6% without training on it. Also, the consistent N-shot performance shows we don&#8217;t need to train on varying count of support examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "nshot",
+                    "euphonia",
+                    "20k",
+                    "training",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The advantages are further amplified when incorporating SAP data into the training mix in our final model, achieving the best results across all conditions. On Euphonia, the 0-shot WER improves to 16.3% and the 19-shot WER to 9.5%. Similar improvements on SAP, with the SAP-Test1 0-shot WER plummeting to 11.5% and the 10-shot WER to 8.8%. This demonstrates that a mixed-objective, mixed-dataset approach yields the most robust and personalized DSR system.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "euphonia",
+                    "sap",
+                    "best",
+                    "training",
+                    "results",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our best model significantly advances the SOTA on standardized subsets. On Euphonia, we achieve dramatic WER reductions across all severity levels compared to the USM&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib20\" title=\"\">20</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> SI-ASR speaker-independent baseline&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, with WER for moderate dysarthria dropping from 19.6% to just 11.2%. On SAP Test1, our model is a clear leader, achieving a 5.3% WER with 10 shots, outperforming even personalized SOTA methods of AdaLORA (8%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While a fully personalized RNN-T model still achieves a lower WER on the Euphonia subset (11.3%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our model (13.9%) surpasses speaker-independent baselines (17.5% WER). Reinforcing that our approach offers competitive performance from a single, universal model with zero user-specific training.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "euphonia",
+                    "sap",
+                    "best",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To understand the learning dynamics of our mixed-objective approach, we conducted a data ablation study, with total data of 40k 10-shot data and 10k 0-shot. Our study (Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) reveals a highly front-loaded learning curve. The initial 2% of training data providing over 70% of the total possible WER reduction. This rapid learning stems from the data-rich meta-learning format; while the loss is only calculated on the single query utterance, the model learns crucial speaker traits from the 10 support examples during the forward pass.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot",
+                    "training",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This paper presents a robust and scalable solution for on-the-fly personalization of dysarthric speech recognition. Our key contribution is a novel mixed-objective meta-learning strategy that fine-tunes a multi-modal LLM to excel at both zero-shot transcription and few-shot, in-context personalization. We empirically prove the superiority of this hybrid approach over single-objective methods and establish new state-of-the-art benchmarks on the diverse Euphonia and SAP datasets, surpassing prior work that relies on complex, per-user personalized models. Our investigation into enrollment curation&#8212;showing that 5 examples selected with an oracle method can match the performance of 19 random ones&#8212;underscores the potential for high efficiency. This finding strongly motivates future work in developing deployable curation methods, such as those based on acoustic similarity, to make on-the-fly personalization even more practical. Lastly, our findings from the data ablation study show an efficient, front-loaded learning curve where just 2% of training data delivered over 70% of the performance gains. By eliminating the need for separate model training and storage, this work offers a clear and effective path toward more accessible and easily deployable ASR systems that can adapt to any user instantly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "euphonia",
+                    "sap",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The authors would like to acknowledge the providers of the Euphonia dataset (Google Research and collaborators) and the Speech Accessibility Project dataset (led by UIUC) for making such valuable resources available to the research community; and thank Jimmy Tobin, Subhashini Venugopalan, Rohit Prabhavalkar, Dana Alon, and Kurt Partridge for the helpful discussions.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "euphonia"
+                ]
+            }
+        ]
+    },
+    "S2.T2": {
+        "caption": "Table 2: SOTA Comparison on Euphonia and SAP published benchmark subsets. All results are WER (%). Lower is better.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Evaluation Set</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Split</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Our Model (N-shot ICL)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Non-personalized SOTA</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Personalized SOTA</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Euphonia (Severity)</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">(Mild, Moderate, Severe)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(4.2, 11.2, 26.7)</span><span class=\"ltx_text\" style=\"font-size:90%;\"> (19-shot)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">(7.3, 19.6, 31.3) (USM SI-ASR)&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">-</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Euphonia (Subset)</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Overall</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">14.4 (10-shot);13.9 (19-shot)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">17.5 (USM SI-ASR)&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">11.3</span><span class=\"ltx_text\" style=\"font-size:90%;\"> (RNN-T )&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">SAP Test1 (Subset)</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Overall</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">7.5 (0-shot); </span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">5.3</span><span class=\"ltx_text\" style=\"font-size:90%;\"> (10-shot)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">10.6 (FFT)&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">8 (AdaLORA)&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">SAP Test2 (Subset)</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Overall</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">10.1 (10-shot)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">10.0</span><span class=\"ltx_text\" style=\"font-size:90%;\"> (Whisper Self-Training)&#160;</span><cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib17\" title=\"\">17</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">-</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "usm",
+            "wer",
+            "euphonia",
+            "test2",
+            "overall",
+            "subsets",
+            "evaluation",
+            "mild",
+            "siasr",
+            "comparison",
+            "our",
+            "19shot",
+            "moderate",
+            "test1",
+            "10shot139",
+            "sap",
+            "severe",
+            "icl",
+            "nonpersonalized",
+            "personalized",
+            "published",
+            "nshot",
+            "selftraining",
+            "results",
+            "lower",
+            "severity",
+            "rnnt",
+            "sota",
+            "benchmark",
+            "set",
+            "0shot",
+            "adalora",
+            "model",
+            "better",
+            "all",
+            "fft",
+            "whisper",
+            "subset",
+            "split",
+            "10shot"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our best model significantly advances the SOTA on standardized subsets. On Euphonia, we achieve dramatic WER reductions across all severity levels compared to the USM&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib20\" title=\"\">20</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> SI-ASR speaker-independent baseline&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, with WER for moderate dysarthria dropping from 19.6% to just 11.2%. On SAP Test1, our model is a clear leader, achieving a 5.3% WER with 10 shots, outperforming even personalized SOTA methods of AdaLORA (8%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While a fully personalized RNN-T model still achieves a lower WER on the Euphonia subset (11.3%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our model (13.9%) surpasses speaker-independent baselines (17.5% WER). Reinforcing that our approach offers competitive performance from a single, universal model with zero user-specific training.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Personalizing Automatic Speech Recognition (ASR) for dysarthric speech is crucial but challenging due to training and storing of individual user adapters. We propose a hybrid meta-training method for a single model, excelling in zero-shot and few-shot on-the-fly personalization via in-context learning (ICL). Measuring Word Error Rate (WER) on state-of-the-art subsets, the model achieves 13.9% WER on Euphonia which surpasses speaker-independent baselines (17.5% WER) and rivals user-specific personalized models. On SAP Test 1, its 5.3% WER significantly bests the 8% from even personalized adapters. We also demonstrate the importance of example curation, where an oracle text-similarity method shows 5 curated examples can achieve performance similar to 19 randomly selected ones, highlighting a key area for future efficiency gains. Finally, we conduct data ablations to measure the data efficiency of this approach. This work presents a practical, scalable, and personalized solution.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "personalized",
+                    "euphonia",
+                    "sap",
+                    "model",
+                    "subsets",
+                    "icl"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The acoustic variability and reduced intelligibility of dysarthric speech presents significant challenges for Automatic Speech Recognition (ASR) systems&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib1\" title=\"\">1</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While personalization is a critical step to bridge this performance gap, conventional approaches are often burdensome. Methods like user-speaker fine-tuning or deploying parameter-efficient adapters&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib2\" title=\"\">2</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while effective, require training and storing separate models for each user, posing significant complexities for large-scale deployment and maintenance.\nIn-context learning (ICL) has emerged as a paradigm shift, enabling personalization&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib3\" title=\"\">3</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> purely at inference time by providing a few user-specific examples. Specifically for ASR, we would include many audio-text examples (&#8220;shots&#8221;) to support the query example. This eliminates the need for per-user training, motivating the search for a truly universal model that can serve and personalize to any speaker on-the-fly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "icl",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As discussed, Dysarthric ASR (DSR) research has explored fine-tuning and parameter-efficient methods like LoRA for individual speaker adaptation, with studies demonstrating personalization is possible even with small datasets (e.g., &#160;250 phrases per user in&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">). Recent advancements include personalized RNN-T&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib5\" title=\"\">5</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> approaches outperforming speaker-independent models by 35%&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on Euphonia&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib7\" title=\"\">7</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and AdaLoRA&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> improving over fine-tuning by 24%&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on the Speech Accessibility Project dataset&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nWhile these methods have pushed the state-of-the-art (SOTA), reducing the memory overheads in adapters is an active area of research&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sota",
+                    "personalized",
+                    "adalora",
+                    "euphonia",
+                    "rnnt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This paper introduces a hybrid meta-training strategy to create a single, universal model that achieves SOTA performance and is highly practical to deploy. Our key contributions are:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sota",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">A Novel Hybrid Training Strategy:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We propose and validate a mixed training setup using both 0-shot (query only) and 10-shot (support + query) examples, resulting in a model that excels in all evaluation scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "model",
+                    "all",
+                    "evaluation",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Scalable Across Diverse Datasets:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> First to demonstrate the effectiveness of this approach on both &#8211; Euphonia and Speech Accessibility Project (SAP). We establish new SOTA benchmarks and prove the scalability of this technique to different speech impairments.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sota",
+                    "euphonia",
+                    "sap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Our work utilizes the Gemini 2.5 Flash model&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib15\" title=\"\">15</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a multimodal LLM with advanced audio understanding and instruction-following capabilities. Its strong baseline instruction following performance aids the model to have strong capacity to learn with meta-learning fine-tuning.\nWe only train the LLM layers while using the frozen audio tokenizer. The base model has not been trained on dysarthric speech.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We frame the personalization task as a meta-learning problem. The goal is to train a single model that, at inference time, can learn to recognize a specific user&#8217;s speech patterns from a small set of support examples provided in the prompt. An inference-time prompt consists of:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Google&#8217;s Euphonia Project</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A large-scale research initiative containing audio samples from more than 2,000 speakers with diverse etiologies (e.g., ALS, Parkinson&#8217;s, vocal cord paralysis). For our experiments we have limited to using approx 300k utterances (about a third) in the training dataset. The test-set contains 5,684 utterances from over 350 speakers, reviewed by speech-language pathologists. For fair SOTA comparisons, we use a subset of 1,740 utterances.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sota",
+                    "euphonia",
+                    "subset",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Speech Accessibility Project (SAP)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A collaboration led by the University of Illinois Urbana-Champaign and major tech companies to create a shared dataset for research. The training set contains 240k utterances, and the two distinct test sets (Test1 and Test2) have approximately 35k utterances each. For SOTA evaluation conditions, we have a subset of roughly 17k utterances from Test1 to match the dataset used for Interspeech 2025&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sota",
+                    "set",
+                    "test1",
+                    "sap",
+                    "test2",
+                    "evaluation",
+                    "subset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Datasets vary in dysarthria etiology and severity distributions. Performance is reported as Word Error Rate (WER %).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "severity",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0-Shot Trained (SFT):</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis approach represents the baseline traditional way of training a LLM-based ASR model without explicitly teaching it to use context examples. We train on a large corpus of speech (200k examples). Each example consists of a single audio-text pair, </span>\n  <math alttext=\"(a_{q},t_{q})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I3.i2.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">(</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">a</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo mathsize=\"0.900em\">,</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">t</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">)</mo>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">(a_{q},t_{q})</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">10-Shot Meta-Trained:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nHere we train on 20k ICL-formatted examples. Each example contains a query utterance and an additional support set of 10 audio-text pairs, all from the same speaker. This explicitly trains the model to utilize the provided context.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "model",
+                    "10shot",
+                    "all"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Mixed-Objective (0+10 Shot) Trained:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis is our proposed solution. We train the model on a mixture of 10-shot and 0-shot (upto 40k each) examples. We hypothesize that this model learns both to perform high-quality zero-shot transcription and to effectively utilize contextual examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Our default method uses random utterances from the speaker to be used as support examples. Inspired by machine translation work&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib18\" title=\"\">18</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we explore if curating ICL examples using text-based methods improves the efficiency of meta-learned ASR models. First, we obtain sentence embeddings of transcripts, using the publicly available Universal Sentence Encoder model&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib19\" title=\"\">19</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Based on these sentence embeddings, we compare the below sampling methods:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "icl",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sorted by Uncertainty</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Uses active learning concepts to select challenging utterances as ICL examples. Performs 0-shot evaluation, then selects utterances with the highest WER.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "evaluation",
+                    "icl",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Our primary experiments, detailed in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, evaluate the efficacy of different training strategies. The results demonstrate the superiority of a mixed-objective approach.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">When training exclusively on Euphonia, we observe a clear trade-off with single-objective models. The 0-shot model is trained on 200k examples with 1 utterance each, compared to 20k examples with 11 utterances each for 10-shot. The 0-shot model achieves a 0-shot relative reduction of over 52% from baseline in WER but is unreliable at leveraging ICL examples, with performance degrading from 5-shot to 10-shot. Conversely, the 10-shot only model excels at personalization, reaching an impressive 9.9% WER at 19 shots, but it&#8217;s 0-shot WER of 24.4% is significantly weaker. This highlights that single objective models are not optimal for both scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "model",
+                    "euphonia",
+                    "icl",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The next model, Euphonia based mixed-objective model, extends the 10-shot model with additional 20k examples for 0-shot . Successfully resolving the trade-off, it achieves a strong 0-shot WER of 17.1%, nearly matching the 200k 0-shot only model, while having excellent and consistent few-shot performance (9.8% at 19 shots). The model generalizes impressively, reducing the SAP-Test1 0-shot WER by 36.6% without training on it. Also, the consistent N-shot performance shows we don&#8217;t need to train on varying count of support examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "nshot",
+                    "model",
+                    "euphonia",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The advantages are further amplified when incorporating SAP data into the training mix in our final model, achieving the best results across all conditions. On Euphonia, the 0-shot WER improves to 16.3% and the 19-shot WER to 9.5%. Similar improvements on SAP, with the SAP-Test1 0-shot WER plummeting to 11.5% and the 10-shot WER to 8.8%. This demonstrates that a mixed-objective, mixed-dataset approach yields the most robust and personalized DSR system.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "19shot",
+                    "wer",
+                    "personalized",
+                    "euphonia",
+                    "sap",
+                    "model",
+                    "all",
+                    "results",
+                    "10shot",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Given the impracticality of requiring numerous enrollment examples, we explored potential value of curation strategies to demonstrate their importance on the best model from Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we tested several methods, including an &#8217;oracle&#8217; benchmark based on textual similarity to the query (as described in Section 2.5). While this specific method is not feasible in deployment, its 5-shot performance (9.9% WER) nearly matched the 19-shot random baseline (9.5% WER). This result&#8217;s primary importance is its demonstration of curation&#8217;s potential efficiency&#8212;showing 5 well-chosen examples could replace 19 random ones&#8212;and establishing it as a critical area for improving the on-the-fly experience.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "benchmark",
+                    "19shot",
+                    "model",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To understand the learning dynamics of our mixed-objective approach, we conducted a data ablation study, with total data of 40k 10-shot data and 10k 0-shot. Our study (Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) reveals a highly front-loaded learning curve. The initial 2% of training data providing over 70% of the total possible WER reduction. This rapid learning stems from the data-rich meta-learning format; while the loss is only calculated on the single query utterance, the model learns crucial speaker traits from the 10 support examples during the forward pass.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "model",
+                    "10shot",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We also observe diminishing returns, with gains slowing after the 40% data mark. This suggests that near-SOTA performance is achievable with less than half the training set, highlighting that our model learns from MetaICL quickly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This paper presents a robust and scalable solution for on-the-fly personalization of dysarthric speech recognition. Our key contribution is a novel mixed-objective meta-learning strategy that fine-tunes a multi-modal LLM to excel at both zero-shot transcription and few-shot, in-context personalization. We empirically prove the superiority of this hybrid approach over single-objective methods and establish new state-of-the-art benchmarks on the diverse Euphonia and SAP datasets, surpassing prior work that relies on complex, per-user personalized models. Our investigation into enrollment curation&#8212;showing that 5 examples selected with an oracle method can match the performance of 19 random ones&#8212;underscores the potential for high efficiency. This finding strongly motivates future work in developing deployable curation methods, such as those based on acoustic similarity, to make on-the-fly personalization even more practical. Lastly, our findings from the data ablation study show an efficient, front-loaded learning curve where just 2% of training data delivered over 70% of the performance gains. By eliminating the need for separate model training and storage, this work offers a clear and effective path toward more accessible and easily deployable ASR systems that can adapt to any user instantly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "personalized",
+                    "model",
+                    "euphonia",
+                    "sap",
+                    "our"
+                ]
+            }
+        ]
+    },
+    "S2.T3": {
+        "caption": "Table 3: Comparison of 5-shot curation strategies against random curated 19-shot on Euphonia. Metric: WER (%).",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Curation Strategies (5-shot)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">WER (%)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">Random</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.3</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Diversity (Cluster Centroid)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.0</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Sorted (desc.) by Uncertainty</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.4</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Sorted (desc.) by Similarity</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">9.9</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">19-shot Random Baseline</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">9.5</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "wer",
+            "curated",
+            "euphonia",
+            "centroid",
+            "curation",
+            "comparison",
+            "19shot",
+            "similarity",
+            "strategies",
+            "against",
+            "5shot",
+            "diversity",
+            "cluster",
+            "desc",
+            "sorted",
+            "uncertainty",
+            "metric",
+            "random",
+            "baseline"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Given the impracticality of requiring numerous enrollment examples, we explored potential value of curation strategies to demonstrate their importance on the best model from Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we tested several methods, including an &#8217;oracle&#8217; benchmark based on textual similarity to the query (as described in Section 2.5). While this specific method is not feasible in deployment, its 5-shot performance (9.9% WER) nearly matched the 19-shot random baseline (9.5% WER). This result&#8217;s primary importance is its demonstration of curation&#8217;s potential efficiency&#8212;showing 5 well-chosen examples could replace 19 random ones&#8212;and establishing it as a critical area for improving the on-the-fly experience.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Personalizing Automatic Speech Recognition (ASR) for dysarthric speech is crucial but challenging due to training and storing of individual user adapters. We propose a hybrid meta-training method for a single model, excelling in zero-shot and few-shot on-the-fly personalization via in-context learning (ICL). Measuring Word Error Rate (WER) on state-of-the-art subsets, the model achieves 13.9% WER on Euphonia which surpasses speaker-independent baselines (17.5% WER) and rivals user-specific personalized models. On SAP Test 1, its 5.3% WER significantly bests the 8% from even personalized adapters. We also demonstrate the importance of example curation, where an oracle text-similarity method shows 5 curated examples can achieve performance similar to 19 randomly selected ones, highlighting a key area for future efficiency gains. Finally, we conduct data ablations to measure the data efficiency of this approach. This work presents a practical, scalable, and personalized solution.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "curated",
+                    "curation",
+                    "euphonia",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Diversity (Centroid)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Builds clusters based on transcript sentence embeddings. For 5-shot, uses 5 cluster centroids as the representative ICL examples for the user to provide diverse phonetic and lexical range.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "centroid",
+                    "cluster",
+                    "diversity",
+                    "5shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sorted by Uncertainty</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Uses active learning concepts to select challenging utterances as ICL examples. Performs 0-shot evaluation, then selects utterances with the highest WER.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "sorted",
+                    "uncertainty",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sorted by Similarity</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Finds utterances most textually similar to the current query by computing cosine similarity between sentence embeddings, then selects those with the highest similarity. We include this method as an oracle experiment. Since it requires the query&#8217;s transcript, it is not viable for real-world deployment. Its purpose is to demonstrate the potential upper bound of curation, motivating future work into practical alternatives like acoustic embedding similarity.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "curation",
+                    "sorted",
+                    "similarity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">When training exclusively on Euphonia, we observe a clear trade-off with single-objective models. The 0-shot model is trained on 200k examples with 1 utterance each, compared to 20k examples with 11 utterances each for 10-shot. The 0-shot model achieves a 0-shot relative reduction of over 52% from baseline in WER but is unreliable at leveraging ICL examples, with performance degrading from 5-shot to 10-shot. Conversely, the 10-shot only model excels at personalization, reaching an impressive 9.9% WER at 19 shots, but it&#8217;s 0-shot WER of 24.4% is significantly weaker. This highlights that single objective models are not optimal for both scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "5shot",
+                    "baseline",
+                    "euphonia",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The next model, Euphonia based mixed-objective model, extends the 10-shot model with additional 20k examples for 0-shot . Successfully resolving the trade-off, it achieves a strong 0-shot WER of 17.1%, nearly matching the 200k 0-shot only model, while having excellent and consistent few-shot performance (9.8% at 19 shots). The model generalizes impressively, reducing the SAP-Test1 0-shot WER by 36.6% without training on it. Also, the consistent N-shot performance shows we don&#8217;t need to train on varying count of support examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "euphonia",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The advantages are further amplified when incorporating SAP data into the training mix in our final model, achieving the best results across all conditions. On Euphonia, the 0-shot WER improves to 16.3% and the 19-shot WER to 9.5%. Similar improvements on SAP, with the SAP-Test1 0-shot WER plummeting to 11.5% and the 10-shot WER to 8.8%. This demonstrates that a mixed-objective, mixed-dataset approach yields the most robust and personalized DSR system.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "19shot",
+                    "euphonia",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our best model significantly advances the SOTA on standardized subsets. On Euphonia, we achieve dramatic WER reductions across all severity levels compared to the USM&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib20\" title=\"\">20</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> SI-ASR speaker-independent baseline&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, with WER for moderate dysarthria dropping from 19.6% to just 11.2%. On SAP Test1, our model is a clear leader, achieving a 5.3% WER with 10 shots, outperforming even personalized SOTA methods of AdaLORA (8%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While a fully personalized RNN-T model still achieves a lower WER on the Euphonia subset (11.3%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our model (13.9%) surpasses speaker-independent baselines (17.5% WER). Reinforcing that our approach offers competitive performance from a single, universal model with zero user-specific training.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "baseline",
+                    "euphonia",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Interestingly, strategies based on diversity and uncertainty did not yield strong improvements. This may suggest that for a given speaker, the semantic content within their enrollment utterances lacks sufficient diversity for a clustering approach to be beneficial.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "strategies",
+                    "diversity",
+                    "uncertainty"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This paper presents a robust and scalable solution for on-the-fly personalization of dysarthric speech recognition. Our key contribution is a novel mixed-objective meta-learning strategy that fine-tunes a multi-modal LLM to excel at both zero-shot transcription and few-shot, in-context personalization. We empirically prove the superiority of this hybrid approach over single-objective methods and establish new state-of-the-art benchmarks on the diverse Euphonia and SAP datasets, surpassing prior work that relies on complex, per-user personalized models. Our investigation into enrollment curation&#8212;showing that 5 examples selected with an oracle method can match the performance of 19 random ones&#8212;underscores the potential for high efficiency. This finding strongly motivates future work in developing deployable curation methods, such as those based on acoustic similarity, to make on-the-fly personalization even more practical. Lastly, our findings from the data ablation study show an efficient, front-loaded learning curve where just 2% of training data delivered over 70% of the performance gains. By eliminating the need for separate model training and storage, this work offers a clear and effective path toward more accessible and easily deployable ASR systems that can adapt to any user instantly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "similarity",
+                    "curation",
+                    "euphonia",
+                    "random"
+                ]
+            }
+        ]
+    },
+    "S2.T4": {
+        "caption": "Table 4: Data ablation: Euphonia WER (%) vs increasing data",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Training data</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0-shot</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">5-shot</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">10-shot</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">19-shot</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.0%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">35.8</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">31.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">29.1</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">26.8</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.0%</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">22.6</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">16.1</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">14.8</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">15.1</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">20.0%</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">19.9</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">12.8</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.5</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">10.7</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">40.0%</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">17.8</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">12.1</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.2</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">10.1</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">60.0%</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">17.5</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">13.5</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.0</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">10.2</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">100.0%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">17.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">10.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">9.8</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "0shot",
+            "19shot",
+            "wer",
+            "euphonia",
+            "ablation",
+            "5shot",
+            "data",
+            "training",
+            "increasing",
+            "10shot"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To understand the learning dynamics of our mixed-objective approach, we conducted a data ablation study, with total data of 40k 10-shot data and 10k 0-shot. Our study (Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) reveals a highly front-loaded learning curve. The initial 2% of training data providing over 70% of the total possible WER reduction. This rapid learning stems from the data-rich meta-learning format; while the loss is only calculated on the single query utterance, the model learns crucial speaker traits from the 10 support examples during the forward pass.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Personalizing Automatic Speech Recognition (ASR) for dysarthric speech is crucial but challenging due to training and storing of individual user adapters. We propose a hybrid meta-training method for a single model, excelling in zero-shot and few-shot on-the-fly personalization via in-context learning (ICL). Measuring Word Error Rate (WER) on state-of-the-art subsets, the model achieves 13.9% WER on Euphonia which surpasses speaker-independent baselines (17.5% WER) and rivals user-specific personalized models. On SAP Test 1, its 5.3% WER significantly bests the 8% from even personalized adapters. We also demonstrate the importance of example curation, where an oracle text-similarity method shows 5 curated examples can achieve performance similar to 19 randomly selected ones, highlighting a key area for future efficiency gains. Finally, we conduct data ablations to measure the data efficiency of this approach. This work presents a practical, scalable, and personalized solution.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "euphonia",
+                    "training",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">A Novel Hybrid Training Strategy:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We propose and validate a mixed training setup using both 0-shot (query only) and 10-shot (support + query) examples, resulting in a model that excels in all evaluation scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Data Ablation Study:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We explore the learning dynamics of our approach, with majority of performance gains coming from a fraction of data.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "ablation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Google&#8217;s Euphonia Project</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A large-scale research initiative containing audio samples from more than 2,000 speakers with diverse etiologies (e.g., ALS, Parkinson&#8217;s, vocal cord paralysis). For our experiments we have limited to using approx 300k utterances (about a third) in the training dataset. The test-set contains 5,684 utterances from over 350 speakers, reviewed by speech-language pathologists. For fair SOTA comparisons, we use a subset of 1,740 utterances.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "euphonia",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0-Shot Trained (SFT):</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis approach represents the baseline traditional way of training a LLM-based ASR model without explicitly teaching it to use context examples. We train on a large corpus of speech (200k examples). Each example consists of a single audio-text pair, </span>\n  <math alttext=\"(a_{q},t_{q})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I3.i2.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">(</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">a</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo mathsize=\"0.900em\">,</mo>\n        <msub>\n          <mi mathsize=\"0.900em\">t</mi>\n          <mi mathsize=\"0.900em\">q</mi>\n        </msub>\n        <mo maxsize=\"0.900em\" minsize=\"0.900em\">)</mo>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">(a_{q},t_{q})</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Mixed-Objective (0+10 Shot) Trained:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nThis is our proposed solution. We train the model on a mixture of 10-shot and 0-shot (upto 40k each) examples. We hypothesize that this model learns both to perform high-quality zero-shot transcription and to effectively utilize contextual examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sorted by Uncertainty</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Uses active learning concepts to select challenging utterances as ICL examples. Performs 0-shot evaluation, then selects utterances with the highest WER.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">When training exclusively on Euphonia, we observe a clear trade-off with single-objective models. The 0-shot model is trained on 200k examples with 1 utterance each, compared to 20k examples with 11 utterances each for 10-shot. The 0-shot model achieves a 0-shot relative reduction of over 52% from baseline in WER but is unreliable at leveraging ICL examples, with performance degrading from 5-shot to 10-shot. Conversely, the 10-shot only model excels at personalization, reaching an impressive 9.9% WER at 19 shots, but it&#8217;s 0-shot WER of 24.4% is significantly weaker. This highlights that single objective models are not optimal for both scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "euphonia",
+                    "5shot",
+                    "training",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The next model, Euphonia based mixed-objective model, extends the 10-shot model with additional 20k examples for 0-shot . Successfully resolving the trade-off, it achieves a strong 0-shot WER of 17.1%, nearly matching the 200k 0-shot only model, while having excellent and consistent few-shot performance (9.8% at 19 shots). The model generalizes impressively, reducing the SAP-Test1 0-shot WER by 36.6% without training on it. Also, the consistent N-shot performance shows we don&#8217;t need to train on varying count of support examples.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "wer",
+                    "euphonia",
+                    "training",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The advantages are further amplified when incorporating SAP data into the training mix in our final model, achieving the best results across all conditions. On Euphonia, the 0-shot WER improves to 16.3% and the 19-shot WER to 9.5%. Similar improvements on SAP, with the SAP-Test1 0-shot WER plummeting to 11.5% and the 10-shot WER to 8.8%. This demonstrates that a mixed-objective, mixed-dataset approach yields the most robust and personalized DSR system.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "0shot",
+                    "19shot",
+                    "wer",
+                    "euphonia",
+                    "data",
+                    "training",
+                    "10shot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our best model significantly advances the SOTA on standardized subsets. On Euphonia, we achieve dramatic WER reductions across all severity levels compared to the USM&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib20\" title=\"\">20</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> SI-ASR speaker-independent baseline&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, with WER for moderate dysarthria dropping from 19.6% to just 11.2%. On SAP Test1, our model is a clear leader, achieving a 5.3% WER with 10 shots, outperforming even personalized SOTA methods of AdaLORA (8%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. While a fully personalized RNN-T model still achieves a lower WER on the Euphonia subset (11.3%)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our model (13.9%) surpasses speaker-independent baselines (17.5% WER). Reinforcing that our approach offers competitive performance from a single, universal model with zero user-specific training.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "euphonia",
+                    "training",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Given the impracticality of requiring numerous enrollment examples, we explored potential value of curation strategies to demonstrate their importance on the best model from Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Datasets and Evaluation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. As shown in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.15516v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.5 Text-based Enrollment Curation &#8227; 2 Methodology &#8227; State-of-the-Art Dysarthric Speech Recognition with MetaICL for on-the-fly Personalization\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we tested several methods, including an &#8217;oracle&#8217; benchmark based on textual similarity to the query (as described in Section 2.5). While this specific method is not feasible in deployment, its 5-shot performance (9.9% WER) nearly matched the 19-shot random baseline (9.5% WER). This result&#8217;s primary importance is its demonstration of curation&#8217;s potential efficiency&#8212;showing 5 well-chosen examples could replace 19 random ones&#8212;and establishing it as a critical area for improving the on-the-fly experience.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "19shot",
+                    "5shot",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We also observe diminishing returns, with gains slowing after the 40% data mark. This suggests that near-SOTA performance is achievable with less than half the training set, highlighting that our model learns from MetaICL quickly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This paper presents a robust and scalable solution for on-the-fly personalization of dysarthric speech recognition. Our key contribution is a novel mixed-objective meta-learning strategy that fine-tunes a multi-modal LLM to excel at both zero-shot transcription and few-shot, in-context personalization. We empirically prove the superiority of this hybrid approach over single-objective methods and establish new state-of-the-art benchmarks on the diverse Euphonia and SAP datasets, surpassing prior work that relies on complex, per-user personalized models. Our investigation into enrollment curation&#8212;showing that 5 examples selected with an oracle method can match the performance of 19 random ones&#8212;underscores the potential for high efficiency. This finding strongly motivates future work in developing deployable curation methods, such as those based on acoustic similarity, to make on-the-fly personalization even more practical. Lastly, our findings from the data ablation study show an efficient, front-loaded learning curve where just 2% of training data delivered over 70% of the performance gains. By eliminating the need for separate model training and storage, this work offers a clear and effective path toward more accessible and easily deployable ASR systems that can adapt to any user instantly.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "euphonia",
+                    "training",
+                    "ablation"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,727 @@
+{
+    "S4.T1": {
+        "caption": "Table 1: WER (%) on classroom test data for models trained on non-classroom corpora. ”Online Lectures” refers to data from OCW and Khan Academy YouTube channels. RealClass outperforms all alternatives, showing the value of synthetic classroom simulation.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Training Data</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">WER (%)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">LibriSpeech</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">40.64</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Online Lectures</th>\n<td class=\"ltx_td ltx_align_center\">38.33</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">MyST</th>\n<td class=\"ltx_td ltx_align_center\">45.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Online Lectures + MyST</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">37.55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">RealClass</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">35.52</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "models",
+            "wer",
+            "simulation",
+            "librispeech",
+            "outperforms",
+            "channels",
+            "lectures”",
+            "classroom",
+            "khan",
+            "showing",
+            "alternatives",
+            "realclass",
+            "from",
+            "training",
+            "test",
+            "value",
+            "trained",
+            "corpora",
+            "lectures",
+            "nonclassroom",
+            "myst",
+            "online",
+            "youtube",
+            "ocw",
+            "all",
+            "data",
+            "academy",
+            "”online",
+            "refers",
+            "synthetic"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To contextualize the performance of our proposed RealClass dataset, we compare against Librispeech, a non-classroom baseline that is commonly used in ASR research, as well as the individual components of RealClass. In addition, we evaluate simple data combinations of these components, as well as our proposed semantic pairing method that aligns adult and child speech into synthetic dialogues. Results are in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T1\" title=\"Table 1 &#8227; 4.1 Comparison with Non-Classroom Baselines &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">1</span></a></p>\n\n",
+            "<p class=\"ltx_p\">Training only on instructional lecture data from OCW and Khan Academy (referred to as <span class=\"ltx_text ltx_font_italic\">&#8221;Online Lectures&#8221; </span> in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T1\" title=\"Table 1 &#8227; 4.1 Comparison with Non-Classroom Baselines &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) provides some improvement over LibriSpeech. This is likely due to a closer match in speaking style and domain vocabulary, as these lectures often resemble teacher discourse in classrooms. Although almost entirely dominated by teacher speech, incidental multi-speaker events (e.g., students asking questions) and the room acoustics present in the recordings introduce variability that overlaps with classroom conditions.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The scarcity of large-scale classroom speech data has hindered the development of AI-driven speech models for education. Classroom datasets remain limited and not publicly available, and the absence of dedicated classroom noise or Room Impulse Response (RIR) corpora prevents the use of standard data augmentation techniques.</p>\n\n",
+                "matched_terms": [
+                    "corpora",
+                    "models",
+                    "data",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduce a scalable methodology for synthesizing classroom noise and RIRs using game engines, a versatile framework that can extend to other domains beyond the classroom. Building on this methodology, we present RealClass, a dataset that combines a synthesized classroom noise corpus with a classroom speech dataset compiled from publicly available corpora. The speech data pairs a children&#8217;s speech corpus with instructional speech extracted from YouTube videos to approximate real classroom interactions in clean conditions. Experiments on clean and noisy speech show that RealClass closely approximates real classroom speech, making it a valuable asset in the absence of abundant real classroom speech.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "corpora",
+                    "realclass",
+                    "data",
+                    "from",
+                    "youtube"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nClassroom speech, Educational speech data, Noise simulation, Room impulse response (RIR), Automatic speech recognition (ASR), Robust speech processing</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "classroom",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The performance of AI models is defined by its training data, and the model&#8217;s ability to learn from this data. Speech models are no exception. For instance, Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib1\" title=\"\">1</a>]</cite> was able to achieve state-of-the-art performance in the Automatic Speech Recognition (ASR) task by training on more than half a million hours of transcribed speech scrapped from the internet.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "data",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Naturally, this scalability does not apply to low-resource settings. For the same ASR task, low-resource languages lag behind English and other high-resource languages precisely due to the lack of high-quality labeled data for these languages <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib3\" title=\"\">3</a>]</cite>. Beyond linguistic variability, even some English language tasks suffer from data scarcity. Challenging acoustic conditions like high background noise and multi-speaker environments usually require more training data for robust performance. However, for some domains, like classroom speech and children&#8217;s speech, there is a severe data scarcity, since children are considered a protected class and speech is considered Personally Identifiable Information (PII) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib4\" title=\"\">4</a>]</cite>. As a consequence, releasing public datasets including children&#8217;s speech is complicated.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "from",
+                    "classroom",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Prior research into developing classroom and children ASR tools identified data scarcity as a major hurdle to improving performance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib6\" title=\"\">6</a>]</cite>. While there are some children ASR datasets that are public <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib8\" title=\"\">8</a>]</cite>, most classroom corpora are not. As a result, different researchers working on the same problem often work with different datasets. Getting access to protected classroom speech corpora is a complicated task, so each research group tends to collect their own data, but cannot publish it <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib9\" title=\"\">9</a>]</cite>. This lack of dataset exchange negatively affects the progress of research and reproducibility of research.</p>\n\n",
+                "matched_terms": [
+                    "corpora",
+                    "data",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some prior research has investigated data augmentation methods that adjust the acoustic properties of adult speech to match that of children, such as pitch perturbation <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib10\" title=\"\">10</a>]</cite>. While these methods are helpful in mimicking the acoustic properties of children speech, they do not capture their unique linguistic properties <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib11\" title=\"\">11</a>]</cite>. They also do not address the main defining challenges of classroom speech. Primarily, classroom speech suffers from a high level of children&#8217;s babble noise, which is the type of noise resulting from multiple background speakers overlayed with speech from the target speaker. While adult babble noise corpora exist <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib13\" title=\"\">13</a>]</cite>, no such corpus exists for children&#8217;s babble noise.</p>\n\n",
+                "matched_terms": [
+                    "corpora",
+                    "data",
+                    "from",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we present our novel dataset curation framework that aims to solve both issues: the scarcity of classroom data and the lack of children&#8217;s babble noise corpora. We create a clean classroom noise corpus by combining the My Science Tutor (MyST) corpus with instructional adult speech from lectures from MIT OpenCourseWare (OCW) and Khan Academy. These channels&#8217; videos are licensed under Creative Commons BY-NC-SA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib14\" title=\"\">14</a>]</cite>, which permits non-commercial use, adaptation, and redistribution with proper attribution. In addition, since classroom speech is noisy by nature, we synthesize classroom noise, primarily children&#8217;s babble, through the Unity Game Engine. The Unity Game Engine provides high-fidelity audio simulation in 3D virtual space, which accurately simulates the acoustic characteristics of the classroom environment, as well as the spatial characteristics of different audio sources. We use the same software to calculate Room Impulse Responses (RIRs) from the virtual classrooms to create the first classroom-specific RIR bank.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "simulation",
+                    "corpora",
+                    "khan",
+                    "ocw",
+                    "lectures",
+                    "data",
+                    "from",
+                    "academy",
+                    "myst"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We call our dataset <span class=\"ltx_text ltx_font_bold\">RealClass<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><span class=\"ltx_text ltx_font_medium\">In a previous preprint, we called a predecessor to this dataset SimClass. We opted to rename the dataset to emphasize that the speech in this dataset is not generative, and to avoid confusion with other techniques that share the same name.</span></span></span></span></span>. We plan to make RealClass and the tools developed to create it publicly available at no cost to researchers. RealClass is the largest and only public classroom speech dataset. In addition, the existence of a clean and noisy version of the dataset, which is not possible with real classroom recordings with naturally occurring noise, opens the door to many tasks that were not possible, such as speech enhancement. The reason for that is that, unlike real noisy data, RealClass provides clean-noisy pairs for the same audio, required to train speech enhancement model. RealClass mainly simulates elementary school STEM classes as a result of its constituting data, but our methodology outlined in this paper paves the way for simulating other kinds of classrooms given different kinds of data.</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "data",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work is the first to demonstrate that classroom noise and RIRs can be synthesized at scale, validated through ASR experiments, and released publicly, filling a gap that neither augmentation nor private corpora can address.</p>\n\n",
+                "matched_terms": [
+                    "corpora",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The MyST corpus is the largest publicly available children&#8217;s speech corpus. It consists of 393 hours of conversational children&#8217;s speech, recorded from virtual tutoring sessions in physics, geography, biology. The corpus spans 1,371 third, fourth, and fifth-grade students. Around 210 hours of the corpus were accurately transcribed after filtering out weak, inaccurate transcriptions following the method outlined our prior work <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib11\" title=\"\">11</a>]</cite>. We utilize the transcribed portions of the children&#8217;s speech for our clean speech base. We use the speech from the untranscribed portion for noise simulation.</p>\n\n",
+                "matched_terms": [
+                    "myst",
+                    "from",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Khan Academy is a popular YouTube channel hosting thousands of educational videos targeted at different school-age grades. Although Khan Academy videos provide a good match in both topic and target audience, as there is a variety of elementary STEM playlists, they mainly have the same primary speaker, which can limit the diversity of the data. However, to benefit from the agreement on the subject matter and topics, we include videos from this channel in our dataset.</p>\n\n",
+                "matched_terms": [
+                    "khan",
+                    "data",
+                    "from",
+                    "academy",
+                    "youtube"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">MIT OCW <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib15\" title=\"\">15</a>]</cite> is an online repository of recorded lectures from 2,500 MIT courses. Although the classes in OCW are college-level and graduate-level classes, they still provide a useful resource for elementary school STEM classes, as the acoustic properties of instructional speech are evident in the videos. However, to help bridge the gap between the linguistic components of college-level courses and STEM classes, we picked videos from 10 courses in calculus and linear algebra, totaling around 174 hours.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "online",
+                    "ocw",
+                    "lectures"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The NCTE dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib16\" title=\"\">16</a>]</cite> is a collection of video and audio recordings of 2128 4th and 5th-grade mathematics classrooms. Out of these recordings, only 17 are transcribed, highlighting the difficulty of large-scale human transcription. These recordings amount to 12.8 hours of speech. We set aside 4 classroom recordings for a 2.9-hour test/validation set, and use the rest for training a benchmark model that represents the performance using existing classroom data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "classroom",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To create the clean version of RealClass, we combine individual tracks from the adult corpora with tracks from the MyST dataset. To make the resultant tracks more semantically robust, we perform semantic matching between the adult and child corpora. Specifically, we encode the transcripts from both datasets with the SentenceTransformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib17\" title=\"\">17</a>]</cite> model<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\" title=\"\">https://huggingface.co/sentence-transformers/all-mpnet-base-v2</a></span></span></span>, and normalize the embeddings for similarity search. A FAISS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib18\" title=\"\">18</a>]</cite> index greedily matches children-adult utterance pairs based on semantic similarity. This process produces semantically consistent clean speech pairs that approximate realistic classroom interactions. Below is an example of a semantically matched transcription:</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "corpora",
+                    "realclass",
+                    "from",
+                    "myst"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The total duration of the RealClass dataset is 391 hours, making it the largest classroom speech corpus and the only publicly available one. As for the train/test/validation partition, we partitioned each constituent dataset before the combination. We follow the splits created by the authors of the MyST dataset, which ensures that no speaker exists in two splits. For the YouTube datasets, we partitioned them by channels to create a roughly 80/10/10 partition across both OCW and Khan Academy. As a result, we ended up with 313 hours of training data, 37 hours of development data, and 41 hours of test data.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "khan",
+                    "youtube",
+                    "ocw",
+                    "realclass",
+                    "data",
+                    "training",
+                    "academy",
+                    "test",
+                    "myst",
+                    "channels"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To create our classroom babble noise, we use the Unity Game Engine. While game engines are typically associated with graphics, modern frameworks like Unity also support advanced acoustic simulations through plug-ins such as Steam Audio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib19\" title=\"\">19</a>]</cite>. By leveraging the environment&#8217;s geometry, Steam Audio models effects such as diffraction, occlusion, and reverberation, and supports &#8220;acoustic materials&#8221; that define surface properties, such as absorption, transmission, scattering, for objects in the scene <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib20\" title=\"\">20</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We design a classroom environment by acoustically modeling all objects and surfaces, including chairs, desks, doors, windows, ceilings, and carpets. Within the classroom, we place 25 spatially directive audio sources playing tracks from the non-transcribed portion of the MyST Tutor dataset, representing 25 students. Each source has its own orientation and emission pattern, creating realistic overlapping speech that captures the character of children&#8217;s babble. To add further realism, we include randomly placed chair noises and ambient playground sounds, sourced from YouTube, at random intervals. Noise is captured using a moving virtual microphone (&#8220;audio listener&#8221;) to record from different angles, resulting in 50 hours of physically simulated classroom noise.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "all",
+                    "from",
+                    "myst",
+                    "youtube"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">An RIR characterizes how an acoustic environment transforms sound. Convolving an RIR with a clean audio signal produces a realistic rendering of how the signal would be perceived within that space. Building on this principle, we construct, to the best of our knowledge, the first dataset of classroom RIRs using a Unity-based simulation framework. This approach offers key advantages over directly re-recording audio in virtual environments: convolution is highly efficient, enabling hundreds of hours of audio to be simulated within minutes, and the resulting RIRs are easily shareable, allowing flexible reuse across diverse signals.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we validate our dataset through experiments on the classroom ASR benchmark. We use the Fairseq implementation of Wav2Vec2.0. Unless otherwise noted, models are initialized from the Robust-Wav2vec2.0<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib22\" title=\"\">22</a>]</cite> checkpoint. We also use our Wav2vec2.0 model, specifically pre-trained for classroom speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>]</cite> through Continued Pre-training (CPT) on unlabeled classroom speech. We reserve the CPT model for training our final models that are compared to training on real classroom data.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "classroom",
+                    "data",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As expected, training on LibriSpeech yields the worst performance on classroom speech, with a WER of roughly 40%. This result highlights the severe domain mismatch: although LibriSpeech is a large and clean corpus, it lacks the overlapping speech, noisy conditions, and mixed child&#8211;adult speech distributions that characterize real classrooms.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "librispeech",
+                    "classroom",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Training exclusively on MyST, a corpus composed entirely of children&#8217;s speech, results in worse performance than LibriSpeech. This outcome is intuitive: although children&#8217;s speech is part of the classroom domain, MyST consists of single-speaker tutoring sessions and lacks the adult-dominated discourse that characterizes most classroom speech. Thus, training on children&#8217;s speech alone yields poor generalization to classroom test data. However, by simply concatenating instructional speech with MyST, performance imporoves over either dataset alone, as well as over LibriSpeech. This result suggests that combining adult instructional data with children&#8217;s speech provides a more balanced proxy for classroom conditions. Taking it a step further, our proposed RealClass methodology further improves performance by semantically pairing utterances from adult and child datasets into synthetic dialogues, with randomized overlaps to mimic interruptions. This curation process not only balances the linguistic roles of adults and children but also more closely approximates the turn-taking dynamics of real classrooms. RealClass serves as a strong baseline for the subsequent addition of simulated room acoustics and noise, validating our approach to dataset construction.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "librispeech",
+                    "realclass",
+                    "data",
+                    "from",
+                    "training",
+                    "test",
+                    "myst",
+                    "synthetic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section examines both the individual contributions of synthetic realism (RIR, noise) and the cumulative contributions when combining synthetic and real classroom data. Results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T2\" title=\"Table 2 &#8227; 4.2 Ablation Studies &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "synthetic",
+                    "data",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Table 2, convolving RealClass with simulated room impulse responses (RIRs) reduces WER by about 2% absolute, indicating that the addition of classroom-like acoustics makes the synthetic data more consistent with the test conditions. Similarly, adding simulated classroom babble noise improves WER by about 3%, highlighting the effectiveness of modeling the noisy conditions typical of real classrooms. These results suggest that both acoustics and noise individually push the synthetic data closer to real classroom distributions. However, when RIR and noise are combined, performance slightly degrades. We attribute this to an artifact of the current pipeline: the clean speech is first convolved with an RIR, while the noise track already contains reverberation from the Unity simulator. Mixing the two may produce mismatched acoustics, which may affect the performance. We treat this as a current limitation of the dataset and leave matched-acoustics rendering for future work.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "wer",
+                    "realclass",
+                    "data",
+                    "from",
+                    "test",
+                    "synthetic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When switching from the robust Wav2Vec2.0 model to our continued pretraining (CPT) model, which has been adapted to classroom data in prior work, performance improves substantially (from 32.76% to 26.24% WER). This confirms earlier findings that CPT is the most effective initialization for classroom ASR and underscores why we kept earlier ablations fixed to the robust model, to isolate the effect of CPT. Comparing against the NCTE baseline, RealClass+RIR+Noise+CPT achieves 26.24% WER, while NCTE training achieves 21.12% WER. RealClass provides a strong approximation when such data is unavailable.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "wer",
+                    "realclass",
+                    "data",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, combining RealClass with NCTE yields the best performance of 19.98% WER, surpassing the use of NCTE alone. This demonstrates a second use case for our dataset: not only can it serve as a standalone substitute when real classroom data is scarce, but it can also act as a complementary resource to real data, further enhancing performance when the two are combined.</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "data",
+                    "classroom",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduced RealClass, a simulated classroom dataset that integrates clean adult and child speech with room impulse responses and classroom noise. Our experiments demonstrate that these components, when combined, provide a strong approximation to real classroom speech.</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results highlight two key use cases. (1) In the absence of real classroom data, which is a common challenge due to privacy constraints and collection costs, RealClass serves as a close analog, achieving performance comparable to models trained on real data. (2) In scenarios where limited classroom data is available, combining RealClass with real classroom recordings yields further improvements, surpassing training on the real data alone. This establishes RealClass as a valuable companion resource to mitigate data scarcity.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "classroom",
+                    "realclass",
+                    "data",
+                    "training",
+                    "trained"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We aim to make RealClass publicly available to support the research community and enable further advances in robust classroom speech technologies.</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "classroom"
+                ]
+            }
+        ]
+    },
+    "S4.T2": {
+        "caption": "Table 2: Ablation study of RealClass with synthetic realism and continued pretraining.\nΔ\\DeltaWER (abs.) is the absolute WER reduction compared to RealClass alone. The top block reports independent ablations of RealClass with RIR, additive noise, or both, while the bottom block reports cumulative improvements when further adding real classroom data (NCTE) to the training data and using the CPT Wav2vec2.0 model from [5]",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">System</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">WER (%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<math alttext=\"\\Delta\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m3\" intent=\":literal\"><semantics><mi mathvariant=\"normal\">&#916;</mi><annotation encoding=\"application/x-tex\">\\Delta</annotation></semantics></math><span class=\"ltx_text ltx_font_bold\"> WER (abs.)</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">RealClass</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">35.52</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">RealClass + Room Acoustics (RIR)</th>\n<td class=\"ltx_td ltx_align_center\">33.52</td>\n<td class=\"ltx_td ltx_align_center\">2.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">RealClass + Children Babble Noise</th>\n<td class=\"ltx_td ltx_align_center\">32.51</td>\n<td class=\"ltx_td ltx_align_center\">3.01</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">RealClass + RIR + Noise</th>\n<td class=\"ltx_td ltx_align_center\">32.76</td>\n<td class=\"ltx_td ltx_align_center\">2.76</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" colspan=\"3\"><span class=\"ltx_text ltx_font_italic\">Cumulative additions:</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ CPT</th>\n<td class=\"ltx_td ltx_align_center\">26.24</td>\n<td class=\"ltx_td ltx_align_center\">9.28</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ Additive Real Classroom Data (NCTE)</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">19.98</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">15.53</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_italic\">Baseline: Only Real Classroom Data (NCTE)</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_italic\">21.12</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_italic\">14.40</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "additions",
+            "abs",
+            "reduction",
+            "noise",
+            "while",
+            "wer",
+            "absolute",
+            "additive",
+            "rir",
+            "ncte",
+            "when",
+            "adding",
+            "realism",
+            "cumulative",
+            "classroom",
+            "babble",
+            "study",
+            "independent",
+            "ablation",
+            "realclass",
+            "pretraining",
+            "from",
+            "training",
+            "system",
+            "continued",
+            "real",
+            "δdelta",
+            "top",
+            "bottom",
+            "block",
+            "δdeltawer",
+            "ablations",
+            "cpt",
+            "alone",
+            "both",
+            "further",
+            "only",
+            "children",
+            "wav2vec20",
+            "reports",
+            "compared",
+            "model",
+            "acoustics",
+            "room",
+            "data",
+            "improvements",
+            "baseline",
+            "synthetic"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">This section examines both the individual contributions of synthetic realism (RIR, noise) and the cumulative contributions when combining synthetic and real classroom data. Results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T2\" title=\"Table 2 &#8227; 4.2 Ablation Studies &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The scarcity of large-scale classroom speech data has hindered the development of AI-driven speech models for education. Classroom datasets remain limited and not publicly available, and the absence of dedicated classroom noise or Room Impulse Response (RIR) corpora prevents the use of standard data augmentation techniques.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "room",
+                    "rir",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduce a scalable methodology for synthesizing classroom noise and RIRs using game engines, a versatile framework that can extend to other domains beyond the classroom. Building on this methodology, we present RealClass, a dataset that combines a synthesized classroom noise corpus with a classroom speech dataset compiled from publicly available corpora. The speech data pairs a children&#8217;s speech corpus with instructional speech extracted from YouTube videos to approximate real classroom interactions in clean conditions. Experiments on clean and noisy speech show that RealClass closely approximates real classroom speech, making it a valuable asset in the absence of abundant real classroom speech.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "realclass",
+                    "data",
+                    "from",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nClassroom speech, Educational speech data, Noise simulation, Room impulse response (RIR), Automatic speech recognition (ASR), Robust speech processing</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "room",
+                    "rir",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The performance of AI models is defined by its training data, and the model&#8217;s ability to learn from this data. Speech models are no exception. For instance, Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib1\" title=\"\">1</a>]</cite> was able to achieve state-of-the-art performance in the Automatic Speech Recognition (ASR) task by training on more than half a million hours of transcribed speech scrapped from the internet.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Naturally, this scalability does not apply to low-resource settings. For the same ASR task, low-resource languages lag behind English and other high-resource languages precisely due to the lack of high-quality labeled data for these languages <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib3\" title=\"\">3</a>]</cite>. Beyond linguistic variability, even some English language tasks suffer from data scarcity. Challenging acoustic conditions like high background noise and multi-speaker environments usually require more training data for robust performance. However, for some domains, like classroom speech and children&#8217;s speech, there is a severe data scarcity, since children are considered a protected class and speech is considered Personally Identifiable Information (PII) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib4\" title=\"\">4</a>]</cite>. As a consequence, releasing public datasets including children&#8217;s speech is complicated.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "data",
+                    "from",
+                    "training",
+                    "children"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Prior research into developing classroom and children ASR tools identified data scarcity as a major hurdle to improving performance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib6\" title=\"\">6</a>]</cite>. While there are some children ASR datasets that are public <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib8\" title=\"\">8</a>]</cite>, most classroom corpora are not. As a result, different researchers working on the same problem often work with different datasets. Getting access to protected classroom speech corpora is a complicated task, so each research group tends to collect their own data, but cannot publish it <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib9\" title=\"\">9</a>]</cite>. This lack of dataset exchange negatively affects the progress of research and reproducibility of research.</p>\n\n",
+                "matched_terms": [
+                    "children",
+                    "data",
+                    "while",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some prior research has investigated data augmentation methods that adjust the acoustic properties of adult speech to match that of children, such as pitch perturbation <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib10\" title=\"\">10</a>]</cite>. While these methods are helpful in mimicking the acoustic properties of children speech, they do not capture their unique linguistic properties <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib11\" title=\"\">11</a>]</cite>. They also do not address the main defining challenges of classroom speech. Primarily, classroom speech suffers from a high level of children&#8217;s babble noise, which is the type of noise resulting from multiple background speakers overlayed with speech from the target speaker. While adult babble noise corpora exist <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib13\" title=\"\">13</a>]</cite>, no such corpus exists for children&#8217;s babble noise.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "noise",
+                    "classroom",
+                    "babble",
+                    "data",
+                    "from",
+                    "children"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we present our novel dataset curation framework that aims to solve both issues: the scarcity of classroom data and the lack of children&#8217;s babble noise corpora. We create a clean classroom noise corpus by combining the My Science Tutor (MyST) corpus with instructional adult speech from lectures from MIT OpenCourseWare (OCW) and Khan Academy. These channels&#8217; videos are licensed under Creative Commons BY-NC-SA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib14\" title=\"\">14</a>]</cite>, which permits non-commercial use, adaptation, and redistribution with proper attribution. In addition, since classroom speech is noisy by nature, we synthesize classroom noise, primarily children&#8217;s babble, through the Unity Game Engine. The Unity Game Engine provides high-fidelity audio simulation in 3D virtual space, which accurately simulates the acoustic characteristics of the classroom environment, as well as the spatial characteristics of different audio sources. We use the same software to calculate Room Impulse Responses (RIRs) from the virtual classrooms to create the first classroom-specific RIR bank.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "babble",
+                    "room",
+                    "rir",
+                    "data",
+                    "from",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We call our dataset <span class=\"ltx_text ltx_font_bold\">RealClass<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><span class=\"ltx_text ltx_font_medium\">In a previous preprint, we called a predecessor to this dataset SimClass. We opted to rename the dataset to emphasize that the speech in this dataset is not generative, and to avoid confusion with other techniques that share the same name.</span></span></span></span></span>. We plan to make RealClass and the tools developed to create it publicly available at no cost to researchers. RealClass is the largest and only public classroom speech dataset. In addition, the existence of a clean and noisy version of the dataset, which is not possible with real classroom recordings with naturally occurring noise, opens the door to many tasks that were not possible, such as speech enhancement. The reason for that is that, unlike real noisy data, RealClass provides clean-noisy pairs for the same audio, required to train speech enhancement model. RealClass mainly simulates elementary school STEM classes as a result of its constituting data, but our methodology outlined in this paper paves the way for simulating other kinds of classrooms given different kinds of data.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "model",
+                    "realclass",
+                    "data",
+                    "only",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work is the first to demonstrate that classroom noise and RIRs can be synthesized at scale, validated through ASR experiments, and released publicly, filling a gap that neither augmentation nor private corpora can address.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The MyST corpus is the largest publicly available children&#8217;s speech corpus. It consists of 393 hours of conversational children&#8217;s speech, recorded from virtual tutoring sessions in physics, geography, biology. The corpus spans 1,371 third, fourth, and fifth-grade students. Around 210 hours of the corpus were accurately transcribed after filtering out weak, inaccurate transcriptions following the method outlined our prior work <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib11\" title=\"\">11</a>]</cite>. We utilize the transcribed portions of the children&#8217;s speech for our clean speech base. We use the speech from the untranscribed portion for noise simulation.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Khan Academy is a popular YouTube channel hosting thousands of educational videos targeted at different school-age grades. Although Khan Academy videos provide a good match in both topic and target audience, as there is a variety of elementary STEM playlists, they mainly have the same primary speaker, which can limit the diversity of the data. However, to benefit from the agreement on the subject matter and topics, we include videos from this channel in our dataset.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "from",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The NCTE dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib16\" title=\"\">16</a>]</cite> is a collection of video and audio recordings of 2128 4th and 5th-grade mathematics classrooms. Out of these recordings, only 17 are transcribed, highlighting the difficulty of large-scale human transcription. These recordings amount to 12.8 hours of speech. We set aside 4 classroom recordings for a 2.9-hour test/validation set, and use the rest for training a benchmark model that represents the performance using existing classroom data.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "model",
+                    "data",
+                    "ncte",
+                    "training",
+                    "only"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To create the clean version of RealClass, we combine individual tracks from the adult corpora with tracks from the MyST dataset. To make the resultant tracks more semantically robust, we perform semantic matching between the adult and child corpora. Specifically, we encode the transcripts from both datasets with the SentenceTransformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib17\" title=\"\">17</a>]</cite> model<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\" title=\"\">https://huggingface.co/sentence-transformers/all-mpnet-base-v2</a></span></span></span>, and normalize the embeddings for similarity search. A FAISS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib18\" title=\"\">18</a>]</cite> index greedily matches children-adult utterance pairs based on semantic similarity. This process produces semantically consistent clean speech pairs that approximate realistic classroom interactions. Below is an example of a semantically matched transcription:</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "both",
+                    "from",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The total duration of the RealClass dataset is 391 hours, making it the largest classroom speech corpus and the only publicly available one. As for the train/test/validation partition, we partitioned each constituent dataset before the combination. We follow the splits created by the authors of the MyST dataset, which ensures that no speaker exists in two splits. For the YouTube datasets, we partitioned them by channels to create a roughly 80/10/10 partition across both OCW and Khan Academy. As a result, we ended up with 313 hours of training data, 37 hours of development data, and 41 hours of test data.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "realclass",
+                    "data",
+                    "both",
+                    "training",
+                    "only"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To create our classroom babble noise, we use the Unity Game Engine. While game engines are typically associated with graphics, modern frameworks like Unity also support advanced acoustic simulations through plug-ins such as Steam Audio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib19\" title=\"\">19</a>]</cite>. By leveraging the environment&#8217;s geometry, Steam Audio models effects such as diffraction, occlusion, and reverberation, and supports &#8220;acoustic materials&#8221; that define surface properties, such as absorption, transmission, scattering, for objects in the scene <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib20\" title=\"\">20</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "noise",
+                    "classroom",
+                    "babble"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We design a classroom environment by acoustically modeling all objects and surfaces, including chairs, desks, doors, windows, ceilings, and carpets. Within the classroom, we place 25 spatially directive audio sources playing tracks from the non-transcribed portion of the MyST Tutor dataset, representing 25 students. Each source has its own orientation and emission pattern, creating realistic overlapping speech that captures the character of children&#8217;s babble. To add further realism, we include randomly placed chair noises and ambient playground sounds, sourced from YouTube, at random intervals. Noise is captured using a moving virtual microphone (&#8220;audio listener&#8221;) to record from different angles, resulting in 50 hours of physically simulated classroom noise.</p>\n\n",
+                "matched_terms": [
+                    "realism",
+                    "noise",
+                    "classroom",
+                    "babble",
+                    "from",
+                    "further"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">An RIR characterizes how an acoustic environment transforms sound. Convolving an RIR with a clean audio signal produces a realistic rendering of how the signal would be perceived within that space. Building on this principle, we construct, to the best of our knowledge, the first dataset of classroom RIRs using a Unity-based simulation framework. This approach offers key advantages over directly re-recording audio in virtual environments: convolution is highly efficient, enabling hundreds of hours of audio to be simulated within minutes, and the resulting RIRs are easily shareable, allowing flexible reuse across diverse signals.</p>\n\n",
+                "matched_terms": [
+                    "rir",
+                    "classroom"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We follow the Exponential Sine Sweep (ESS) technique <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib21\" title=\"\">21</a>]</cite> to calculate RIRs. The system is excited with a sinusoidal signal whose frequency increases exponentially across the audible range (20 Hz&#8211;20 kHz). The response is recorded and then deconvolved with the inverse of the excitation signal to obtain the RIR.</p>\n\n",
+                "matched_terms": [
+                    "rir",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To construct a diverse RIR bank, we simulate eight distinct classroom environments. In each room, five source positions are selected (center and corners), and for each source, we record responses at the remaining positions. This source&#8211;receiver pairing yields 20 unique RIRs per room (160 in total), capturing variability in both sound emission and listening position.</p>\n\n",
+                "matched_terms": [
+                    "rir",
+                    "both",
+                    "classroom",
+                    "room"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we validate our dataset through experiments on the classroom ASR benchmark. We use the Fairseq implementation of Wav2Vec2.0. Unless otherwise noted, models are initialized from the Robust-Wav2vec2.0<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib22\" title=\"\">22</a>]</cite> checkpoint. We also use our Wav2vec2.0 model, specifically pre-trained for classroom speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#bib.bib5\" title=\"\">5</a>]</cite> through Continued Pre-training (CPT) on unlabeled classroom speech. We reserve the CPT model for training our final models that are compared to training on real classroom data.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "model",
+                    "compared",
+                    "wav2vec20",
+                    "cpt",
+                    "pretraining",
+                    "from",
+                    "training",
+                    "data",
+                    "continued",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To contextualize the performance of our proposed RealClass dataset, we compare against Librispeech, a non-classroom baseline that is commonly used in ASR research, as well as the individual components of RealClass. In addition, we evaluate simple data combinations of these components, as well as our proposed semantic pairing method that aligns adult and child speech into synthetic dialogues. Results are in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T1\" title=\"Table 1 &#8227; 4.1 Comparison with Non-Classroom Baselines &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">1</span></a></p>\n\n",
+                "matched_terms": [
+                    "synthetic",
+                    "realclass",
+                    "data",
+                    "baseline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As expected, training on LibriSpeech yields the worst performance on classroom speech, with a WER of roughly 40%. This result highlights the severe domain mismatch: although LibriSpeech is a large and clean corpus, it lacks the overlapping speech, noisy conditions, and mixed child&#8211;adult speech distributions that characterize real classrooms.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "real",
+                    "classroom",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Training only on instructional lecture data from OCW and Khan Academy (referred to as <span class=\"ltx_text ltx_font_italic\">&#8221;Online Lectures&#8221; </span> in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.01462v1#S4.T1\" title=\"Table 1 &#8227; 4.1 Comparison with Non-Classroom Baselines &#8227; 4 Validation &#8227; RealClass: A Framework for Classroom Speech Simulation with Public Datasets and Game Engines\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) provides some improvement over LibriSpeech. This is likely due to a closer match in speaking style and domain vocabulary, as these lectures often resemble teacher discourse in classrooms. Although almost entirely dominated by teacher speech, incidental multi-speaker events (e.g., students asking questions) and the room acoustics present in the recordings introduce variability that overlaps with classroom conditions.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "acoustics",
+                    "room",
+                    "data",
+                    "from",
+                    "training",
+                    "only"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Training exclusively on MyST, a corpus composed entirely of children&#8217;s speech, results in worse performance than LibriSpeech. This outcome is intuitive: although children&#8217;s speech is part of the classroom domain, MyST consists of single-speaker tutoring sessions and lacks the adult-dominated discourse that characterizes most classroom speech. Thus, training on children&#8217;s speech alone yields poor generalization to classroom test data. However, by simply concatenating instructional speech with MyST, performance imporoves over either dataset alone, as well as over LibriSpeech. This result suggests that combining adult instructional data with children&#8217;s speech provides a more balanced proxy for classroom conditions. Taking it a step further, our proposed RealClass methodology further improves performance by semantically pairing utterances from adult and child datasets into synthetic dialogues, with randomized overlaps to mimic interruptions. This curation process not only balances the linguistic roles of adults and children but also more closely approximates the turn-taking dynamics of real classrooms. RealClass serves as a strong baseline for the subsequent addition of simulated room acoustics and noise, validating our approach to dataset construction.</p>\n\n",
+                "matched_terms": [
+                    "synthetic",
+                    "baseline",
+                    "noise",
+                    "classroom",
+                    "acoustics",
+                    "room",
+                    "realclass",
+                    "data",
+                    "from",
+                    "training",
+                    "alone",
+                    "further",
+                    "only",
+                    "children",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Table 2, convolving RealClass with simulated room impulse responses (RIRs) reduces WER by about 2% absolute, indicating that the addition of classroom-like acoustics makes the synthetic data more consistent with the test conditions. Similarly, adding simulated classroom babble noise improves WER by about 3%, highlighting the effectiveness of modeling the noisy conditions typical of real classrooms. These results suggest that both acoustics and noise individually push the synthetic data closer to real classroom distributions. However, when RIR and noise are combined, performance slightly degrades. We attribute this to an artifact of the current pipeline: the clean speech is first convolved with an RIR, while the noise track already contains reverberation from the Unity simulator. Mixing the two may produce mismatched acoustics, which may affect the performance. We treat this as a current limitation of the dataset and leave matched-acoustics rendering for future work.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "noise",
+                    "classroom",
+                    "wer",
+                    "babble",
+                    "absolute",
+                    "acoustics",
+                    "room",
+                    "rir",
+                    "realclass",
+                    "data",
+                    "from",
+                    "both",
+                    "when",
+                    "adding",
+                    "synthetic",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When switching from the robust Wav2Vec2.0 model to our continued pretraining (CPT) model, which has been adapted to classroom data in prior work, performance improves substantially (from 32.76% to 26.24% WER). This confirms earlier findings that CPT is the most effective initialization for classroom ASR and underscores why we kept earlier ablations fixed to the robust model, to isolate the effect of CPT. Comparing against the NCTE baseline, RealClass+RIR+Noise+CPT achieves 26.24% WER, while NCTE training achieves 21.12% WER. RealClass provides a strong approximation when such data is unavailable.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "classroom",
+                    "wer",
+                    "model",
+                    "ablations",
+                    "realclass",
+                    "pretraining",
+                    "ncte",
+                    "from",
+                    "when",
+                    "training",
+                    "cpt",
+                    "data",
+                    "baseline",
+                    "continued",
+                    "wav2vec20"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, combining RealClass with NCTE yields the best performance of 19.98% WER, surpassing the use of NCTE alone. This demonstrates a second use case for our dataset: not only can it serve as a standalone substitute when real classroom data is scarce, but it can also act as a complementary resource to real data, further enhancing performance when the two are combined.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "wer",
+                    "realclass",
+                    "data",
+                    "ncte",
+                    "alone",
+                    "when",
+                    "further",
+                    "only",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduced RealClass, a simulated classroom dataset that integrates clean adult and child speech with room impulse responses and classroom noise. Our experiments demonstrate that these components, when combined, provide a strong approximation to real classroom speech.</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "classroom",
+                    "room",
+                    "realclass",
+                    "when",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results highlight two key use cases. (1) In the absence of real classroom data, which is a common challenge due to privacy constraints and collection costs, RealClass serves as a close analog, achieving performance comparable to models trained on real data. (2) In scenarios where limited classroom data is available, combining RealClass with real classroom recordings yields further improvements, surpassing training on the real data alone. This establishes RealClass as a valuable companion resource to mitigate data scarcity.</p>\n\n",
+                "matched_terms": [
+                    "classroom",
+                    "realclass",
+                    "data",
+                    "alone",
+                    "training",
+                    "further",
+                    "improvements",
+                    "real"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We aim to make RealClass publicly available to support the research community and enable further advances in robust classroom speech technologies.</p>\n\n",
+                "matched_terms": [
+                    "realclass",
+                    "classroom",
+                    "further"
+                ]
+            }
+        ]
+    }
+}

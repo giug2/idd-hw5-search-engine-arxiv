@@ -198,32 +198,40 @@ if __name__ == '__main__':
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
     # 2. Identifica la cartella genitore (es. .../Progetto)
-    #    Saliamo di un livello rispetto a 'script'
+    #    Saliamo di un livello rispetto a 'scripts' usando dirname
+    #    NOTA CORREZIONE: dirname accetta un solo argomento.
     PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
     # 3. Definisci i percorsi relativi alla radice del progetto
-    #    input sta in .../Progetto/input
-    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input')                                                                                #percorso della cartella di input
+    #    Usiamo join per scendere nella struttura delle cartelle: lucene -> src -> main -> resources
+    RESOURCES_DIR = os.path.join(PROJECT_ROOT, 'lucene', 'src', 'main', 'resources')
+
+    #    input sta in .../resources/input
+    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'papers')                         #AGGIORNARE PER UNIFICARE I PERCORSI DEI FILE HTML                                                         #percorso della cartella di input
     
-    #    output lo mettiamo in .../Progetto/output (così è pulito)
-    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'output')                                                                               #Cartella dove salvare i JSON risultanti
+    #    output lo mettiamo in .../resources/contenutoTabelle
+    OUTPUT_DIRECTORY = os.path.join(RESOURCES_DIR, 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
 
     # NUOVA FEATURE: Numero massimo di file da processare.
     # Imposta un numero intero (es. 1, 5, 20) per limitare l'esecuzione.
     # Imposta su None (o 0 o un numero negativo) per processare TUTTI i file nella cartella.
-    NUM_FILES_TO_PROCESS = None                                                                                                           #numero di file di cui eseguire il parcing
+    NUM_FILES_TO_PROCESS = None                                                                                                       #numero di file di cui eseguire il parcing
     
     # -----------------------------------------------------
     # LOGICA DI ESECUZIONE SU CARTELLA
     # -----------------------------------------------------
     
-    print(f"Root Progetto: {PROJECT_ROOT}")
-    print(f"Input Folder:  {SOURCE_DIRECTORY}")
-    print(f"Output Folder: {OUTPUT_DIRECTORY}")
+    print("-" * 60)
+    print(f"Script Directory: {SCRIPT_DIR}")
+    print(f"Project Root:     {PROJECT_ROOT}")
+    print(f"Resources Dir:    {RESOURCES_DIR}")
+    print(f"Input Folder:     {SOURCE_DIRECTORY}")
+    print(f"Output Folder:    {OUTPUT_DIRECTORY}")
+    print("-" * 60)
 
     if not os.path.exists(SOURCE_DIRECTORY):
         print(f"ERRORE: La cartella 'input' non esiste nel percorso atteso: {SOURCE_DIRECTORY}")
-        print("Verifica che la cartella 'input' sia allo stesso livello della cartella 'script'.")
+        print("Verifica che la cartella 'input' sia dentro 'lucene/src/main/resources/'.")
     else:
         # 1. Recupera tutti i file nella cartella che finiscono con .html
         all_files = [f for f in os.listdir(SOURCE_DIRECTORY) if f.endswith(".html")]

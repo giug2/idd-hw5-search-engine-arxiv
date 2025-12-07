@@ -1,0 +1,347 @@
+{
+    "S3.T1": {
+        "caption": "Table 1: Target (audio emotion) and proxy (semantic content emotion) accuracy scores achieved by each SLM, as well as the baseline SER system, under each semantic category defined in 3.1. SLMs’ target accuracies are consistently low across conditions, whereas the modality-specific baseline SER exhibits superior performance. SLMs predict proxy emotions more consistently in the explicit semantic condition and show distinct patterns of behavior in implicit and neutral conditions.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row ltx_border_tt\" colspan=\"2\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Explicit Category</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Implicit Category</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Neutral Category</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row\"><span class=\"ltx_text ltx_font_bold\">SLM</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row\"><span class=\"ltx_text ltx_font_bold\">TTS</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Acc. (%)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Proxy Acc. (%)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Acc. (%)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Proxy Acc. (%)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Acc. (%)</span></th>\n<th class=\"ltx_td ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Proxy Acc. (%)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\">DeSTA2</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">25.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">95.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">30.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">89.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">34.6</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\">8.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">F5-TTS</th>\n<td class=\"ltx_td ltx_align_center\">25.6</td>\n<td class=\"ltx_td ltx_align_center\">95.5</td>\n<td class=\"ltx_td ltx_align_center\">25.0</td>\n<td class=\"ltx_td ltx_align_center\">89.7</td>\n<td class=\"ltx_td ltx_align_center\">29.8</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">10.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">StyleTTS2</th>\n<td class=\"ltx_td ltx_align_center\">25.6</td>\n<td class=\"ltx_td ltx_align_center\">97.4</td>\n<td class=\"ltx_td ltx_align_center\">28.2</td>\n<td class=\"ltx_td ltx_align_center\">91.6</td>\n<td class=\"ltx_td ltx_align_center\">38.4</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">7.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\">Audio Flamingo3</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">93.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">37.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">66.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">41.3</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\">76.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">F5-TTS</th>\n<td class=\"ltx_td ltx_align_center\">26.2</td>\n<td class=\"ltx_td ltx_align_center\">98.7</td>\n<td class=\"ltx_td ltx_align_center\">31.4</td>\n<td class=\"ltx_td ltx_align_center\">82.6</td>\n<td class=\"ltx_td ltx_align_center\">38.4</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">86.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">StyleTTS2</th>\n<td class=\"ltx_td ltx_align_center\">25.0</td>\n<td class=\"ltx_td ltx_align_center\">100.0</td>\n<td class=\"ltx_td ltx_align_center\">30.1</td>\n<td class=\"ltx_td ltx_align_center\">82.0</td>\n<td class=\"ltx_td ltx_align_center\">37.5</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">82.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\">Qwen2Audio</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">26.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">96.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">30.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">69.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">21.1</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\">11.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">F5-TTS</th>\n<td class=\"ltx_td ltx_align_center\">26.2</td>\n<td class=\"ltx_td ltx_align_center\">98.7</td>\n<td class=\"ltx_td ltx_align_center\">29.4</td>\n<td class=\"ltx_td ltx_align_center\">75.6</td>\n<td class=\"ltx_td ltx_align_center\">26.9</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">9.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">StyleTTS2</th>\n<td class=\"ltx_td ltx_align_center\">25.6</td>\n<td class=\"ltx_td ltx_align_center\">99.3</td>\n<td class=\"ltx_td ltx_align_center\">29.4</td>\n<td class=\"ltx_td ltx_align_center\">73.0</td>\n<td class=\"ltx_td ltx_align_center\">26.9</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">6.7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\">SALMONN</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">80.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">25.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">21.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">25.9</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\">89.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">F5-TTS</th>\n<td class=\"ltx_td ltx_align_center\">26.9</td>\n<td class=\"ltx_td ltx_align_center\">80.9</td>\n<td class=\"ltx_td ltx_align_center\">33.3</td>\n<td class=\"ltx_td ltx_align_center\">23.7</td>\n<td class=\"ltx_td ltx_align_center\">26.9</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">92.3</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">StyleTTS2</th>\n<td class=\"ltx_td ltx_align_center\">27.2</td>\n<td class=\"ltx_td ltx_align_center\">89.6</td>\n<td class=\"ltx_td ltx_align_center\">26.2</td>\n<td class=\"ltx_td ltx_align_center\">30.1</td>\n<td class=\"ltx_td ltx_align_center\">36.5</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">71.1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"3\"><span class=\"ltx_text ltx_font_bold\">Baseline SER</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">CosyVoice2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">52.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">31.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">53.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">33.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">47.1</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\">9.0</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">F5-TTS</th>\n<td class=\"ltx_td ltx_align_center\">48.0</td>\n<td class=\"ltx_td ltx_align_center\">31.4</td>\n<td class=\"ltx_td ltx_align_center\">46.1</td>\n<td class=\"ltx_td ltx_align_center\">33.3</td>\n<td class=\"ltx_td ltx_align_center\">50.0</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">8.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">StyleTTS2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">50.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">26.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">47.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">30.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">49.0</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_bb\">1.0</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "content",
+            "defined",
+            "behavior",
+            "emotions",
+            "semantic",
+            "exhibits",
+            "each",
+            "flamingo3",
+            "proxy",
+            "qwen2audio",
+            "whereas",
+            "distinct",
+            "tts",
+            "implicit",
+            "audio",
+            "slm",
+            "low",
+            "predict",
+            "desta2",
+            "consistently",
+            "show",
+            "target",
+            "category",
+            "styletts2",
+            "system",
+            "conditions",
+            "accuracy",
+            "slms",
+            "scores",
+            "performance",
+            "across",
+            "condition",
+            "explicit",
+            "patterns",
+            "well",
+            "accuracies",
+            "cosyvoice2",
+            "under",
+            "f5tts",
+            "emotion",
+            "slms’",
+            "ser",
+            "achieved",
+            "neutral",
+            "more",
+            "modalityspecific",
+            "acc",
+            "baseline",
+            "superior",
+            "salmonn"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Once the experimental setup was validated, we proceeded to evaluate the SLMs. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#S3.T1\" title=\"Table 1 &#8227; 3.1 Generating Speech Samples &#8227; 3 Methods &#8227; Evaluating Emotion Recognition in Spoken Language Models on Emotionally Incongruent Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows accuracy scores achieved by each SLM for predicting both the target (audio) and proxy (semantic content) emotion labels. For comparison, the performance of the baseline SER system is also reported. Accuracy scores relative to target audio emotions approach those of a random classifier (25% for a four-class setting), whereas those relative to proxy labels are considerably higher under most conditions. There are substantial gaps between SLMs&#8217; target and proxy accuracies across all semantic categories, most pronounced in the explicit case, in which Audio Flamingo3 notably displays a categorical pattern, always predicting the proxy label when classifying StyleTTS2 samples.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Advancements in spoken language processing have driven the development of spoken language models (SLMs), designed to achieve universal audio understanding by jointly learning text and audio representations for a wide range of tasks. Although promising results have been achieved, there is growing discussion regarding these models&#8217; generalization capabilities and the extent to which they truly integrate audio and text modalities in their internal representations. In this work, we evaluate four SLMs on the task of speech emotion recognition using a dataset of emotionally incongruent speech samples, a condition under which the semantic content of the spoken utterance conveys one emotion while speech expressiveness conveys another. Our results indicate that SLMs rely predominantly on textual semantics rather than speech emotion to perform the task, indicating that text-related representations largely dominate over acoustic representations. We release both the code and the Emotionally Incongruent Synthetic Speech dataset (EMIS) to the community.</p>\n\n",
+                "matched_terms": [
+                    "condition",
+                    "content",
+                    "audio",
+                    "achieved",
+                    "semantic",
+                    "under",
+                    "slms",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Spoken language technologies are increasingly relying on spoken language models (SLMs) that combine acoustic and semantic information within a unified framework&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib1\" title=\"\">1</a>]</cite>. Unlike conventional pipelines that integrate automatic speech recognition, large language models (LLMs), and text-to-speech (TTS) modules, recent SLMs aim for end-to-end modeling. They capture not only semantic content, but also prosody, timbre, and other paralinguistic cues essential for a better world understanding.\nThis path mirrors the evolution of text-based natural language processing, which advanced from task-specific models to universal LLMs. However, SLMs last at an earlier stage. Current approaches are categorized as pure speech models trained in tokenized audio, joint speech&#8211;text models that exploit paired data, and speech-aware SLMs that combine speech encoders with pretrained LLMs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib1\" title=\"\">1</a>]</cite>. The latter (henceforth referred to as SLMs) are the focus of this work. These models receive speech and text as input and, as output, an answer in text format by using the instruction-following capabilities of LLMs. Despite progress, it is unclear whether SLMs actually retain information from acoustic-prosodic signals or default to semantic information, highlighting the need for systematic investigation of their decision processes&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib2\" title=\"\">2</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "content",
+                    "audio",
+                    "semantic",
+                    "slms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Emotion recognition provides a probe to address this question, as semantic and prosodic channels are not always aligned&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib3\" title=\"\">3</a>]</cite>. Most SLM evaluations focus on congruent examples, where both channels convey the same emotion (e.g., &#8220;<span class=\"ltx_text ltx_font_italic\">I am sad</span>&#8221; spoken in a sad tone)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib4\" title=\"\">4</a>]</cite>. In such settings, models may detect explicit or implied emotion from words alone, bypassing paralinguistic cues such as pitch, intensity, and rhythm. In contrast, incongruent cases, where semantic content and prosody conflict (e.g., &#8220;<span class=\"ltx_text ltx_font_italic\">I am sad</span>&#8221; but spoken happily despite conveying a negative sentiment), are rarely evaluated. Previous studies show that prosody and semantic content can exert competing influences under incongruence, reinforcing the need for benchmarks that separate these channels&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib3\" title=\"\">3</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "explicit",
+                    "content",
+                    "slm",
+                    "semantic",
+                    "show",
+                    "under",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We address this gap by designing a controlled evaluation in which semantic and prosodic cues can be explicitly aligned or placed in conflict. Synthetic speech samples, both congruent and incongruent, are generated with state-of-the-art (SoTA) TTS systems conditioned on emotional reference recordings. These samples cover the case when the emotion tag is stated directly in the utterance, when sentiment is implied through context, and when it is neutral. This setup enables the disentanglement of acoustic and semantic contributions in SLM decisions by testing whether their predictions are based on speech expressiveness or on semantic content.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "content",
+                    "slm",
+                    "semantic",
+                    "neutral",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our contributions are (i) the observation that evaluated SLMs rely predominantly on semantic content rather than speech expressiveness to perform emotion recognition, using an evaluation protocol that contrasts SLMs with a baseline acoustic speech emotion recognition system (SER) and human listeners, and (ii) the creation of the Emotionally Incongruent Synthetic Speech dataset (EMIS)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href\" href=\"https://ieee-dataport.org/documents/emotionally-incongruent-synthetic-speech-dataset-emis\" title=\"\">Emotionally Incongruent Synthetic Speech dataset (EMIS)</a></span></span></span>. Code in Github<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/AI-Unicamp/SLM-ER-Evaluation\" title=\"\">Github Repository</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "content",
+                    "ser",
+                    "semantic",
+                    "system",
+                    "slms",
+                    "baseline",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SLMs extend instruction-following LLMs to operate on speech by mapping audio into compact representations interpretable by the language model. Recent systems are trained on multiple tasks, including emotion recognition, and differ in scope and training strategy: SALMONN&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib5\" title=\"\">5</a>]</cite> targets speech, general audio, and music, arguing that joint training across heterogeneous audio domains yields broad capabilities and introducing techniques to preserve emergent abilities after instruction tuning; DeSTA2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib6\" title=\"\">6</a>]</cite> forgoes speech instruction-tuning by supervising with automatically generated, domain-agnostic speech captions, aiming to retain the base LLM&#8217;s reasoning; Qwen2-Audio&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib7\" title=\"\">7</a>]</cite> follows a three-stage alignment pipeline to strengthen instruction following and user-aligned behavior over audio inputs; and Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib8\" title=\"\">8</a>]</cite> emphasizes general-audio use cases with long-context interaction, multi-audio dialogue, and chain-of-thought prompting, trained via a multi-stage curriculum on open data.</p>\n\n",
+                "matched_terms": [
+                    "qwen2audio",
+                    "across",
+                    "audio",
+                    "behavior",
+                    "desta2",
+                    "salmonn",
+                    "slms",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast, acoustic SER systems estimate emotion from the signal alone, relying on prosodic evidence&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib9\" title=\"\">9</a>]</cite>. This makes SER a prosody-centric reference for interpreting the behavior of SLM under semantic-prosodic incongruence. Fair analysis requires decoupling semantic content and speech expressiveness during evaluation.\nChi et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib2\" title=\"\">2</a>]</cite> propose isolating prosodic and semantic information in spoken question-answer by low-pass filtering the audio signal (prosody) and by flattening pitch and intensity (lexical), finding that models perform reasonably well with prosody alone, but predominantly rely on semantic cues when text is present. Furthermore, Kikutani&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib3\" title=\"\">3</a>]</cite> analyzes human judgments of speech expressing incongruent emotional cues through voice and content, revealing that cue dominance varies across languages and modalities.\nWe therefore bring the test to emotion recognition, but instead of removing the semantic content of the signal, we induce a controlled semantic-prosodic incongruence.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "content",
+                    "audio",
+                    "behavior",
+                    "slm",
+                    "ser",
+                    "semantic",
+                    "well",
+                    "under",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed evaluation protocol (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#S3.F1\" title=\"Figure 1 &#8227; 3 Methods &#8227; Evaluating Emotion Recognition in Spoken Language Models on Emotionally Incongruent Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) consists of first generating emotion-rich sentences using an LLM, then generating synthetic speech samples by providing TTS systems with these sentences alongside emotional reference speech. We assess the quality of the synthetic speech by employing a baseline SER model and conducting a human perceptual evaluation to verify if the reference emotions are correctly identified in each generated sample. Finally, we prompt the SLMs to perform the emotion recognition task on the generated speech samples, extract, and analyze the results.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "ser",
+                    "emotions",
+                    "each",
+                    "slms",
+                    "baseline",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ GPT-4.5 to generate 104 emotion-rich sentences divided into 4 distinct emotions: angry, happy, neutral, and sad.\nEmotion-rich sentences can be defined as natural language text that refers the reader back to a sentiment. We divide these emotion classes into two categories each: explicit and implicit. Explicit samples contain the exact emotion tag (e.g., &#8220;<span class=\"ltx_text ltx_font_italic\">I&#8217;m so happy we finally adopted a puppy!</span>&#8221;), whereas implicit samples do not contain the tag, conveying emotion from the context (e.g., &#8220;<span class=\"ltx_text ltx_font_italic\">I can&#8217;t stop smiling after our date last night.</span>&#8221;). This distinction doesn&#8217;t apply to neutral sentences since there&#8217;s no conveyed emotion; thus, we analyze them as a separate condition in our experiments.</p>\n\n",
+                "matched_terms": [
+                    "whereas",
+                    "distinct",
+                    "condition",
+                    "explicit",
+                    "implicit",
+                    "defined",
+                    "emotions",
+                    "neutral",
+                    "each",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in zero-shot expressive TTS have made it possible to synthesize speech with controllable emotional styles by extracting expressiveness from short reference recordings and transferring it to the generated output. Beyond improving naturalness, these systems allow the generation of stimuli where semantic content and prosodic realization can be independently manipulated, creating congruent and incongruent pairs at scale. This capability enables the experimental foundation of this work.</p>\n\n",
+                "matched_terms": [
+                    "content",
+                    "tts",
+                    "semantic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ three distinct SoTA TTS models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib12\" title=\"\">12</a>]</cite> to generate four speech samples for each of the 104 emotion-rich sentences, each sample corresponding to one of the four emotions. Thus, the resulting dataset (EMIS) contains one emotionally congruent and three incongruent speech samples for each emotion-rich sentence. In the incongruent condition, we treat the emotion conveyed by the speech signal as the target label for the emotion recognition task and the one conveyed by the semantic content as the proxy label.</p>\n\n",
+                "matched_terms": [
+                    "distinct",
+                    "condition",
+                    "tts",
+                    "content",
+                    "emotions",
+                    "semantic",
+                    "target",
+                    "each",
+                    "proxy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since all three systems require reference audios for inference, we extract them from English speakers in The Emotional Speech Database (ESD)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib13\" title=\"\">13</a>]</cite>. ESD comprises 10 English speakers with 350 utterances per emotion. To extract reference samples, we randomly select a speaker, then select and concatenate their 7 longest utterances to create longer reference audios with approximately 30 seconds (mean and standard deviation are 32.2 and 3.5 seconds, respectively). Each TTS generates 416 samples (Angry, Happy, Neutral, and Sad emotions for each of the 104 emotion-rich sentences), resulting in the EMIS dataset with a total of 1248 speech samples.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "emotions",
+                    "neutral",
+                    "each",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ four SLMs (Audio Flamingo-3, DeSTA2, Qwen-2-Audio, and SALMONN) to be evaluated on the task of emotion recognition with synthetic speech samples&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib5\" title=\"\">5</a>]</cite>. Since SLMs have LLMs as their backbones, these models are very prompt-sensitive. For this reason, we carefully build a single text prompt to instruct all models in the task: &#8220;<span class=\"ltx_text ltx_font_italic\">Using tone of voice only (prosody: pitch, rhythm, loudness, timbre). Ignore word meaning; do not transcribe. Reply with exactly one: angry &#8212; happy &#8212; sad &#8212; neutral</span>&#8221;. This prompt was constructed to guide the model to avoid generating different emotions other than the chosen four, as well as to instruct the model to extract information solely from the acoustic expressiveness of the voice, and not the semantic content. During inference, we relied on each spoken language model&#8217;s default hyperparameter configuration, due to the values being similar across models, and to avoid altering settings optimized during their development.</p>\n\n",
+                "matched_terms": [
+                    "qwen2audio",
+                    "across",
+                    "content",
+                    "audio",
+                    "emotions",
+                    "semantic",
+                    "well",
+                    "desta2",
+                    "salmonn",
+                    "each",
+                    "flamingo3",
+                    "slms",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To objectively measure our evaluation results, we employ metrics to assess model bias towards semantic information on the emotion recognition task. Each SLM sequentially receives as input all samples from the EMIS dataset alongside the textual instruction prompt. We compare the models&#8217; outputs with respect to the investigated conditions (congruency and semantic emotion explicitness) by analyzing accuracy scores relative to the target and proxy labels and performing statistical chi-square hypothesis tests.</p>\n\n",
+                "matched_terms": [
+                    "conditions",
+                    "slm",
+                    "semantic",
+                    "emotion",
+                    "target",
+                    "each",
+                    "proxy",
+                    "accuracy",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In addition, we also finetune a Speech Emotion Recognition (SER) model on a subset of the ESD dataset to validate the quality of the TTS-generated synthetic speech samples <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#bib.bib9\" title=\"\">9</a>]</cite>. Since we use these samples to conduct our main evaluation, we first verify their reliability regarding the emotion conveyed by speech expressiveness.</p>\n\n",
+                "matched_terms": [
+                    "ser",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conducted two chi-squared tests of independence to investigate whether the distribution of model predictions depends on the target and proxy labels. The tests compare observed frequencies of model predictions against frequencies expected under statistical independence. For each analysis, we constructed contingency tables from 4,978 samples, with nine degrees of freedom, given the four emotion classes. The null hypothesis stated that no significant association exists between the observed variables, while the alternative hypothesis posited a significant association. We also calculate the effect size for each test using Cram&#233;r&#8217;s V statistic.</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "target",
+                    "each",
+                    "proxy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further assess the reliability of the generated speech samples, we conduct a human perceptual evaluation as an additional validation step. By asking participants to identify emotion conveyed in synthetic speech expressiveness, we can verify consistency between the labeled reference emotions and those detected by humans. The perceptual evaluation was conducted with 40 participants on a balanced subset of the EMIS dataset. The results of users&#8217; accuracy are divided between TTS systems and ground-truth samples. They are summarized as: <math alttext=\"39.4\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m1\" intent=\":literal\"><semantics><mrow><mn>39.4</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">39.4\\%</annotation></semantics></math> for StyleTTS2, <math alttext=\"58.1\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m2\" intent=\":literal\"><semantics><mrow><mn>58.1</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">58.1\\%</annotation></semantics></math> for CosyVoice2, <math alttext=\"62.0\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m3\" intent=\":literal\"><semantics><mrow><mn>62.0</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">62.0\\%</annotation></semantics></math> for F5-TTS, and <math alttext=\"70.8\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m4\" intent=\":literal\"><semantics><mrow><mn>70.8</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">70.8\\%</annotation></semantics></math> for ground-truth.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "emotions",
+                    "cosyvoice2",
+                    "styletts2",
+                    "f5tts",
+                    "accuracy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the neutral category, accuracies remained stable for Qwen2Audio and SALMONN, but improved for DeSTA2 and Flamingo3 when compared with explicit and implicit categories. These results indicate that in the absence of emotional cues from semantic content, some SLMs appear to more effectively leverage acoustic information to perform emotion recognition. Moreover, this category led DeSTA2 and Qwen2Audio to perform significantly worse in proxy accuracy, whereas SALMONN performed slightly better, which can be associated with the text sentiment analysis capabilities of each model. In contrast, the modality-specific baseline SER consistently achieves higher target and lower proxy accuracies, indicating a focus on prosody cues, the desired behavior for this validation model. These results support the argument that SLMs have a strong tendency to prioritize information present in the semantic content rather than speech acoustics to perform the task, especially when the semantic content is not neutral.</p>\n\n",
+                "matched_terms": [
+                    "content",
+                    "behavior",
+                    "semantic",
+                    "each",
+                    "flamingo3",
+                    "proxy",
+                    "qwen2audio",
+                    "whereas",
+                    "implicit",
+                    "desta2",
+                    "consistently",
+                    "target",
+                    "category",
+                    "accuracy",
+                    "slms",
+                    "explicit",
+                    "accuracies",
+                    "emotion",
+                    "ser",
+                    "neutral",
+                    "more",
+                    "modalityspecific",
+                    "baseline",
+                    "salmonn"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Class-specific SLM decisions are presented in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.25054v2#S5.F2\" title=\"Figure 2 &#8227; 5 Conclusion &#8227; Evaluating Emotion Recognition in Spoken Language Models on Emotionally Incongruent Speech\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Under the congruent condition, i.e., when speech and semantic content have matching emotions, target and predicted emotions are closely aligned, indicating that SLM systems apparently leverage information mutually present in speech and semantic content. However, under the incongruent condition, i.e., when speech emotion differs from semantic content, this alignment breaks down, and SLM systems exhibit clear tendencies towards predicting the <span class=\"ltx_text ltx_font_italic\">angry</span> and <span class=\"ltx_text ltx_font_italic\">happy</span> classes while overlooking the <span class=\"ltx_text ltx_font_italic\">sad</span> class. This may reflect an interaction effect between the way each SLM model captures information and the fact that <span class=\"ltx_text ltx_font_italic\">angry</span> and <span class=\"ltx_text ltx_font_italic\">happy</span> samples are more closely associated with prosodic variations than <span class=\"ltx_text ltx_font_italic\">sad</span> and <span class=\"ltx_text ltx_font_italic\">neutral</span>.</p>\n\n",
+                "matched_terms": [
+                    "condition",
+                    "content",
+                    "slm",
+                    "emotions",
+                    "semantic",
+                    "neutral",
+                    "more",
+                    "target",
+                    "each",
+                    "under",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The conducted chi-squared tests indicated that predicted emotion is significantly associated with both target and proxy labels (<math alttext=\"p&lt;0.01\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p4.m1\" intent=\":literal\"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0.01</mn></mrow><annotation encoding=\"application/x-tex\">p&lt;0.01</annotation></semantics></math> for both cases), allowing us to reject the null hypothesis. However, the association between predicted and target emotions exhibited a very small effect size, with a Cram&#233;r&#8217;s <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p4.m2\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> of 0.08, whereas the association between predicted and proxy emotions showed a considerable effect size (<math alttext=\"V=0.65\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p4.m3\" intent=\":literal\"><semantics><mrow><mi>V</mi><mo>=</mo><mn>0.65</mn></mrow><annotation encoding=\"application/x-tex\">V=0.65</annotation></semantics></math>). These findings suggest that while acoustic cues have some influence on the models&#8217; decisions, they are largely overshadowed by the spoken utterances&#8217; semantic content, which has a much stronger impact on the model&#8217;s prediction.</p>\n\n",
+                "matched_terms": [
+                    "whereas",
+                    "content",
+                    "emotions",
+                    "semantic",
+                    "target",
+                    "proxy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work investigated whether current SLMs can truly integrate semantic and acoustic information in their internal representations. Although seen as steps toward universal audio understanding, our evaluation suggests that these models fall short of this goal, showing a limited ability to disentangle semantics and acoustics when conflicting. The obtained results show that there is an imbalance between text and audio modalities, as the models tend to over-rely on information present in textual semantics, the more easily available that information is, as we can see in the explicit semantic condition. This has major implications for the rapidly growing ecosystem of speech foundational models. If these models are evaluated primarily on benchmarks where semantic content and acoustic expressiveness are aligned, their apparent competence may mask critical deficiencies in their capacity for paralinguistic reasoning, crucial component in applications that depend on nuanced interpretation of human communication, such as detecting irony, sarcasm, or emotional subtleties.</p>\n\n",
+                "matched_terms": [
+                    "condition",
+                    "explicit",
+                    "content",
+                    "audio",
+                    "semantic",
+                    "more",
+                    "show",
+                    "slms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work was partially funded by the Coordena&#231;&#227;o de Aperfei&#231;oamento de Pessoal de N&#237;vel Superior &#8211; Brasil (CAPES) &#8211; Finance Code 001, by the S&#227;o Paulo Research Foundation (FAPESP) under grant #2020/09838-0 (BI0S - Brazilian Institute of Data Science) and #2023/12865-8 (Horus project), and by the Ministry of Science, Technology, and Innovations, with resources from Law No. 8.248, of October 23, 1991, under the PPI-SOFTEX program, DOU 01245.003479/2024-10. The authors are also affiliated with the Artificial Intelligence Lab, Recod.ai.</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "superior"
+                ]
+            }
+        ]
+    }
+}

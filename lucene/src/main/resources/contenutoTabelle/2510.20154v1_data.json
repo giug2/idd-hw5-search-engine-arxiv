@@ -1,0 +1,1259 @@
+{
+    "S3.T1": {
+        "caption": "Table 1: Discretization of Flesch-Kincaid Score",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Flesch Score</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Readability</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_l ltx_border_t\"><math alttext=\"\\geq 80\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8805;</mo><mn>80</mn></mrow><annotation encoding=\"application/x-tex\">\\geq 80</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Easy</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_l\"><math alttext=\"\\geq 60,&lt;80\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"S3.T1.m2\" intent=\":literal\"><semantics><mrow><mo>&#8805;</mo><mn>60</mn><mo>,</mo><mo lspace=\"0em\">&lt;</mo><mn>80</mn></mrow><annotation encoding=\"application/x-tex\">\\geq 60,&lt;80</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Medium</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_l\"><math alttext=\"\\geq 30,&lt;60\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"S3.T1.m3\" intent=\":literal\"><semantics><mrow><mo>&#8805;</mo><mn>30</mn><mo>,</mo><mo lspace=\"0em\">&lt;</mo><mn>60</mn></mrow><annotation encoding=\"application/x-tex\">\\geq 30,&lt;60</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Difficult</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_b ltx_border_l\"><math alttext=\"&lt;30\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T1.m4\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>30</mn></mrow><annotation encoding=\"application/x-tex\">&lt;30</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">Very difficult</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "flesch",
+            "score",
+            "medium",
+            "difficult",
+            "fleschkincaid",
+            "readability",
+            "easy",
+            "very",
+            "≥80geq",
+            "discretization",
+            "≥6080geq",
+            "≥3060geq"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We discretize this score in four groups following previous works: Easy (or low complexity), Medium, Difficult readability and Very Difficult readability (or very high complexity, see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.T1\" title=\"Table 1 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> for details).</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we focus on biases as unfair actions that result more often from stereotypes, i.e. over-generalization or false beliefs toward a certain part of the population, most often social groups such as defined by so-called protected attributes (gender, race, etc.).To date, the work of <cite class=\"ltx_cite ltx_citemacro_citet\">Li and Zhang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib19\" title=\"\">2024</a>)</cite> is the only one that focuses on social group bias in stance detection algorithms. They demonstrate the existence of gender biases in stance detection based on language models such as BERT, GPT-3.5 and GPT-4 in zero-shot settings, using generated data. No other work proposes to study two important sensitive attributes: African American English vs Standard American English and Text complexity, easily detectable with Flesch score, and their influence on the model decision when producing a stance for a text on politically oriented topics.</p>\n\n",
+                "matched_terms": [
+                    "flesch",
+                    "score"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we measure bias\nrelated to two different sensitive attributes.\nNone of the existing Stance Detection datasets contain text or\npost-level sensitive attribute annotations. Therefore, we propose to leverage existing datasets and augment them with automatic text annotation for two sensitive attributes. We consider the potential bias of the models regarding African-American English (AAE) text. AAE can be grammatically and syntactically different from Standard American English (SAE),\nserving as a proxy for linguistic and sociocultural group membership. Importantly, note that as stated in <cite class=\"ltx_cite ltx_citemacro_cite\">Blodgett et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib4\" title=\"\">2016</a>)</cite>, &#8220;Not all\nAfrican-Americans speak AAE, and not all speakers\nof AAE are African-American&#8221;. AAE/SAE is used here as a linguistic marker, not as a deterministic racial classifier, and it represents perceived sociocultural identity, which is interpreted by LLMs as a social signal, a central point of our bias hypothesis.\nSecond, we consider the bias towards text complexity/readability. We use the Flesch-Kincaid score <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>, which is a test for the readability of a text or sentence. Our aim is to assess whether models implicitly rely on text complexity to make biased assumptions. Bias in LLMs related to text complexity is especially concerning, as recent work <cite class=\"ltx_cite ltx_citemacro_cite\">Ahmed et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib2\" title=\"\">2022</a>)</cite> found correlations between readability and socio-economic status on social media. In the following section, we detail the methods we used to enrich the existing datasets with these sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "readability",
+                    "score",
+                    "fleschkincaid"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To measure the text complexity of a given text, we use the Flesch&#8211;Kincaid readability test <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>. This test measures the readability of a text by evaluating the average sentence length and the average number of syllables per word. The resulting score corresponds to a reading ease scale, where higher scores indicate easier readability. This approach has been widely used in readability research and serves as a reliable indicator of the text&#8217;s complexity. The Flesch-Kincaid score is computed as follows:</p>\n\n",
+                "matched_terms": [
+                    "readability",
+                    "score",
+                    "fleschkincaid"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "readability",
+                    "fleschkincaid"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "readability",
+                    "medium",
+                    "fleschkincaid"
+                ]
+            }
+        ]
+    },
+    "S4.T2": {
+        "caption": "Table 2: Weighted F1 for each dataset and LLM",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_tt\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Mistral</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Llama</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Falcon</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Flan</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">GPT</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">PStance</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.804</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.711</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.477</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.693</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.787</th>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\">SCD</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.637</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.617</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.513</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.591</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.685</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">KE-MLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.671</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.639</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.494</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.623</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.695</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "gpt",
+            "llama",
+            "scd",
+            "llm",
+            "weighted",
+            "flan",
+            "each",
+            "pstance",
+            "dataset",
+            "mistral",
+            "kemlm",
+            "falcon"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The weighted F1-score of each model on each dataset can be found in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. To put these results into perspective, we also provide the percentage of \"Neutral\" predictions made by each model on each dataset in the Appendix (F1-score is computed only on the favor and against stances).</p>\n\n",
+            "<p class=\"ltx_p\">The results from Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate a clear performance hierarchy among the evaluated models. Falcon is the least effective model, demonstrating the lowest performance. In contrast, Llama achieves good results in terms of F1-score. However, Llama generates a high number of neutral predictions, which raises concerns about its overall reliability and effectiveness for this task. This tendency towards neutrality suggests that Llama may struggle to predict stance in zero-shot settings, limiting its practical application.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this work, we aim to address the gap in research regarding bias in zero-shot stance detection with LLMs. Our contributions are as follows: (1) We investigate biases in LLMs&#8217; stance detection predictions, focusing on discriminatory decisions based on pre-existing stereotypes embedded in their parametric knowledge, such as associating political stances with a vernacular expression of English or text complexity. We evaluate popular LLMs, including Mistral, Llama, Falcon, Flan, and GPT-3.5, on stance detection tasks and analyze their biases using several fairness metrics. (2) We release enhanced datasets that integrate stance information with sensitive attributes for further research. (3) Our findings reveal significant biases, including the association of certain political and social issues with specific sensitive attributes, emphasizing the need for more equitable stance detection models and better debiasing techniques.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "flan",
+                    "falcon",
+                    "mistral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as SAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as AAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the language varieties experiment, we use the PStance dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib18\" title=\"\">2021</a>)</cite>, a stance detection dataset composed of a large number of posts retrieved from X (formerly Twitter) in the political domain. Specifically, this dataset focuses on three American political figures: Bernie Sanders, Joe Biden and Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "each",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "dataset",
+                    "pstance",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For all datasets, we balance the data to ensure an equal proportion of favorable and unfavorable posts for each class. Although this results in smaller datasets, it mitigates the potential bias caused by class imbalance. The initial statistics for each dataset are provided in the Appendix.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also provide an aggregated version of EO, by computing the average of absolute values of EO for each class, dataset and stance, allowing us to compute the overall language model bias for the considered sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Flan shows above-average capabilities, indicating it is a strong contender for stance detection tasks. Its performance is consistently reliable, making it a dependable choice for researchers and practitioners. However, Flan does not outperform the top models, Mistral and GPT-3.5, which demonstrate superior performance in the task.</p>\n\n",
+                "matched_terms": [
+                    "flan",
+                    "mistral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "pstance",
+                    "dataset",
+                    "flan"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F8\" title=\"Figure 8 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>, LLMs demonstrate clear biases for all models except Llama and to a lesser extent Falcon on the \"against marijuana\" target (bottom plots), with values reaching -0.4 for Mistral. The models show a lower probability of predicting low complexity texts as being against marijuana, compared to other groups. In contrast, the models are more likely to predict high complexity texts as being against marijuana. This trend is further supported by additional fairness metrics (see Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A4\" title=\"Appendix D Complete results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>), demonstrating that LLMs tend to associate a highly complex text with opposition to marijuana and a lower complexity\nwith support toward it.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "flan",
+                    "dataset",
+                    "mistral",
+                    "scd",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "flan",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "kemlm",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T3\" title=\"Table 3 &#8227; Stereotype 5: Falcon associates low complexity with partisanship, high complexity with opposition &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides the average EO for each model and\nstudied attribute.\nFalcon demonstrates the maximum bias overall, followed by Mistral, Flan, Llama and GPT-3.5. As models are based on a similar architecture,\nthis difference might stem from either the pre-training corpus or the instruction data, as we used instruction-tuned\nopen\nmodels.\n</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "flan",
+                    "each",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Additionally, the Mistral and Llama versions used in this study have a limited number of parameters. While this allows their use, larger model variants may perform better on the stance detection task and reveal additional biases.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "mistral"
+                ]
+            }
+        ]
+    },
+    "S4.T3": {
+        "caption": "Table 3: Average absolute value of EO for each model and demographic group.",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_tt\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Mistral</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Llama</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Falcon</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Flan</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">GPT</th>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\">Complexity</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.12</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.20</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.12</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.08</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">A/SAE</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.04</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "gpt",
+            "absolute",
+            "llama",
+            "average",
+            "model",
+            "asae",
+            "group",
+            "complexity",
+            "flan",
+            "each",
+            "demographic",
+            "value",
+            "falcon",
+            "mistral"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T3\" title=\"Table 3 &#8227; Stereotype 5: Falcon associates low complexity with partisanship, high complexity with opposition &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides the average EO for each model and\nstudied attribute.\nFalcon demonstrates the maximum bias overall, followed by Mistral, Flan, Llama and GPT-3.5. As models are based on a similar architecture,\nthis difference might stem from either the pre-training corpus or the instruction data, as we used instruction-tuned\nopen\nmodels.\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large Language Models inherit stereotypes from their pretraining data, leading to biased behavior toward certain social groups in many Natural Language Processing tasks, such as hateful speech detection or sentiment analysis. Surprisingly, the evaluation of this kind of bias in stance detection methods has been largely overlooked by the community. Stance Detection involves labeling a statement as being against, in favor, or neutral towards a specific target and is among the most sensitive NLP tasks, as it often relates to political leanings. In this paper, we focus on the bias of Large Language Models when performing stance detection in a zero-shot setting. We automatically annotate posts in pre-existing stance detection datasets with two attributes: dialect or vernacular of a specific group and text complexity/readability, to investigate whether these attributes influence the model&#8217;s stance detection decisions. Our results show that LLMs exhibit significant stereotypes in stance detection tasks, such as incorrectly associating pro-marijuana views with low text complexity and African American dialect with opposition to Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Nevertheless, despite their advanced capabilities, LLMs exhibit significant biases toward social groups. For example, they may default to assuming a doctor is male and a nurse is female, which can impair task performance <cite class=\"ltx_cite ltx_citemacro_cite\">Salinas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib21\" title=\"\">2023</a>); Motoki et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib20\" title=\"\">2024</a>); Gallegos et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib8\" title=\"\">2024</a>); Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib17\" title=\"\">2024</a>)</cite>. In stance detection, these biases could result in unfair outcomes, such as associating certain ideologies with specific demographic groups, demonstrating the existence of <em class=\"ltx_emph ltx_font_italic\">stereotypes</em> in the model&#8217;s parametric knowledge. Here, we refer to a stereotype as the set of ideas used to describe a person or a social group that is often reducing or false<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://dictionary.cambridge.org/dictionary/english/stereotype\" title=\"\">https://dictionary.cambridge.org/dictionary/english/stereotype</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "demographic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Surprisingly, limited research has focused on bias in stance detection, particularly regarding racial and social group biases in LLMs, even though a recent study showed that language models demonstrate gender bias in stance detection <cite class=\"ltx_cite ltx_citemacro_cite\">Li and Zhang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib19\" title=\"\">2024</a>)</cite>. This gap is especially concerning given the task&#8217;s sensitivity and its potential real-world impact, such as inferring a social media user&#8217;s political orientation. Moreover, the scarcity of datasets that integrate both stance information and author attributes significantly limits the ability to study and mitigate bias in this domain. As a consequence, <cite class=\"ltx_cite ltx_citemacro_citet\">Li and Zhang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib19\" title=\"\">2024</a>)</cite> focus on template-based gender bias (i.e. synthetic data), while our work is the first to leverage demographic linguistic cues on real-life data.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "demographic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we aim to address the gap in research regarding bias in zero-shot stance detection with LLMs. Our contributions are as follows: (1) We investigate biases in LLMs&#8217; stance detection predictions, focusing on discriminatory decisions based on pre-existing stereotypes embedded in their parametric knowledge, such as associating political stances with a vernacular expression of English or text complexity. We evaluate popular LLMs, including Mistral, Llama, Falcon, Flan, and GPT-3.5, on stance detection tasks and analyze their biases using several fairness metrics. (2) We release enhanced datasets that integrate stance information with sensitive attributes for further research. (3) Our findings reveal significant biases, including the association of certain political and social issues with specific sensitive attributes, emphasizing the need for more equitable stance detection models and better debiasing techniques.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "complexity",
+                    "flan",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In their stance detection benchmark from 2020, <cite class=\"ltx_cite ltx_citemacro_citet\">Schiller et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib22\" title=\"\">2021</a>)</cite> do mention the problem of bias in stance detection models, showing that while it has been a known problem for years, little to no research has been done about it. Language models were shown to be biased by many existing studies <cite class=\"ltx_cite ltx_citemacro_cite\">Dixon et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib6\" title=\"\">2018</a>); Kiritchenko and Mohammad (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib14\" title=\"\">2018</a>); Leteno et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib16\" title=\"\">2023</a>)</cite>, i.e. they were shown to demonstrate different behavior with regard to the demographic group associated with the text, mostly gender and race.\n<cite class=\"ltx_cite ltx_citemacro_citet\">Salinas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib21\" title=\"\">2023</a>)</cite> show ways to prompt a model to remove its filters, confirming obvious bias against certain groups when the model is not restrained by manually applied constraints. <cite class=\"ltx_cite ltx_citemacro_citet\">Motoki et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib20\" title=\"\">2024</a>)</cite> trick ChatGPT into impersonating humans with certain political opinions, leading to biased responses when the model does not consider itself restrained anymore. Additionally, LLMs were shown by <cite class=\"ltx_cite ltx_citemacro_citet\">Feng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib7\" title=\"\">2023</a>)</cite> to be politically oriented.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "model",
+                    "demographic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we focus on biases as unfair actions that result more often from stereotypes, i.e. over-generalization or false beliefs toward a certain part of the population, most often social groups such as defined by so-called protected attributes (gender, race, etc.).To date, the work of <cite class=\"ltx_cite ltx_citemacro_citet\">Li and Zhang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib19\" title=\"\">2024</a>)</cite> is the only one that focuses on social group bias in stance detection algorithms. They demonstrate the existence of gender biases in stance detection based on language models such as BERT, GPT-3.5 and GPT-4 in zero-shot settings, using generated data. No other work proposes to study two important sensitive attributes: African American English vs Standard American English and Text complexity, easily detectable with Flesch score, and their influence on the model decision when producing a stance for a text on politically oriented topics.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "complexity",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we measure bias\nrelated to two different sensitive attributes.\nNone of the existing Stance Detection datasets contain text or\npost-level sensitive attribute annotations. Therefore, we propose to leverage existing datasets and augment them with automatic text annotation for two sensitive attributes. We consider the potential bias of the models regarding African-American English (AAE) text. AAE can be grammatically and syntactically different from Standard American English (SAE),\nserving as a proxy for linguistic and sociocultural group membership. Importantly, note that as stated in <cite class=\"ltx_cite ltx_citemacro_cite\">Blodgett et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib4\" title=\"\">2016</a>)</cite>, &#8220;Not all\nAfrican-Americans speak AAE, and not all speakers\nof AAE are African-American&#8221;. AAE/SAE is used here as a linguistic marker, not as a deterministic racial classifier, and it represents perceived sociocultural identity, which is interpreted by LLMs as a social signal, a central point of our bias hypothesis.\nSecond, we consider the bias towards text complexity/readability. We use the Flesch-Kincaid score <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>, which is a test for the readability of a text or sentence. Our aim is to assess whether models implicitly rely on text complexity to make biased assumptions. Bias in LLMs related to text complexity is especially concerning, as recent work <cite class=\"ltx_cite ltx_citemacro_cite\">Ahmed et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib2\" title=\"\">2022</a>)</cite> found correlations between readability and socio-economic status on social media. In the following section, we detail the methods we used to enrich the existing datasets with these sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To measure the text complexity of a given text, we use the Flesch&#8211;Kincaid readability test <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>. This test measures the readability of a text by evaluating the average sentence length and the average number of syllables per word. The resulting score corresponds to a reading ease scale, where higher scores indicate easier readability. This approach has been widely used in readability research and serves as a reliable indicator of the text&#8217;s complexity. The Flesch-Kincaid score is computed as follows:</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "average"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "complexity",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As done in previous works, we rely on weighted F1 as a measure of performance for the (binary) stance detection evaluation, 1 being the best score. With regard to fairness, we rely on Equal Opportunity (EO), and extend to Demographic Parity and Predictive Parity in the Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A3\" title=\"Appendix C Additional Fairness Metrics &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">C</span></a> <cite class=\"ltx_cite ltx_citemacro_cite\">Alves et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib3\" title=\"\">2023</a>)</cite>. In the sequel, <math alttext=\"y\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mi>y</mi><annotation encoding=\"application/x-tex\">y</annotation></semantics></math> denotes the stance label, <math alttext=\"\\hat{y}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>y</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{y}</annotation></semantics></math> the prediction made by the model, <math alttext=\"s\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><mi>s</mi><annotation encoding=\"application/x-tex\">s</annotation></semantics></math> a sensitive attribute, taking values corresponding to different groups (<math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> and <math alttext=\"\\bar{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m5\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>a</mi><mo>&#175;</mo></mover><annotation encoding=\"application/x-tex\">\\bar{a}</annotation></semantics></math>). Equal Opportunity (EO) is defined by:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "demographic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">EO ranges from <math alttext=\"-1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">-1</annotation></semantics></math> to <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m2\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>, with <math alttext=\"0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m3\" intent=\":literal\"><mn>0</mn></math> being the fairer result, <math alttext=\"-1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">-1</annotation></semantics></math> meaning that group <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m5\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> is discriminated by the model (less likely to predict 1 for examples labeled 1 and with sensitive attribute value <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m6\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>) and <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m7\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math> meaning that group <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m8\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> is privileged by the model (more likely to predict 1 for examples labeled 1 and with sensitive attribute value <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m9\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>). Equal Opportunity <cite class=\"ltx_cite ltx_citemacro_cite\">Hardt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib9\" title=\"\">2016</a>)</cite> allows us to compare the probability of labeling a text 1 with property <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m10\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> to the probability of labeling 1 a text without property <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m11\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>, knowing that the true label of the text is 1. In our experiment, we present EO in both ways: with label 1 corresponding to \"favor\" and then to \"against\".</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "value",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also provide an aggregated version of EO, by computing the average of absolute values of EO for each class, dataset and stance, allowing us to compute the overall language model bias for the considered sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "absolute",
+                    "average",
+                    "model",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The weighted F1-score of each model on each dataset can be found in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. To put these results into perspective, we also provide the percentage of \"Neutral\" predictions made by each model on each dataset in the Appendix (F1-score is computed only on the favor and against stances).</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results from Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate a clear performance hierarchy among the evaluated models. Falcon is the least effective model, demonstrating the lowest performance. In contrast, Llama achieves good results in terms of F1-score. However, Llama generates a high number of neutral predictions, which raises concerns about its overall reliability and effectiveness for this task. This tendency towards neutrality suggests that Llama may struggle to predict stance in zero-shot settings, limiting its practical application.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "model",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Flan shows above-average capabilities, indicating it is a strong contender for stance detection tasks. Its performance is consistently reliable, making it a dependable choice for researchers and practitioners. However, Flan does not outperform the top models, Mistral and GPT-3.5, which demonstrate superior performance in the task.</p>\n\n",
+                "matched_terms": [
+                    "flan",
+                    "mistral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "average",
+                    "group",
+                    "complexity",
+                    "each",
+                    "value"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "flan",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F8\" title=\"Figure 8 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>, LLMs demonstrate clear biases for all models except Llama and to a lesser extent Falcon on the \"against marijuana\" target (bottom plots), with values reaching -0.4 for Mistral. The models show a lower probability of predicting low complexity texts as being against marijuana, compared to other groups. In contrast, the models are more likely to predict high complexity texts as being against marijuana. This trend is further supported by additional fairness metrics (see Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A4\" title=\"Appendix D Complete results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>), demonstrating that LLMs tend to associate a highly complex text with opposition to marijuana and a lower complexity\nwith support toward it.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "mistral",
+                    "complexity",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "complexity",
+                    "flan",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "flan",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F9\" title=\"Figure 9 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>, a significant bias is observed in GPT-3.5 and Llama predictions related to the stance of high complexity texts on gay rights. These models disproportionately predict that high complexity texts are against gay rights compared to low complexity texts.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our study revealed that Large Language Models consistently (across topics and models) exhibit significant biases in zero-shot stance detection, with stereotypes influencing their predictions based on English dialect and text complexity.\nThis aligns with the work of <cite class=\"ltx_cite ltx_citemacro_citet\">Feng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib7\" title=\"\">2023</a>)</cite>, which traces political and social biases. We hypothesize that differences in bias between models are likely due to variations in their training data composition and instruction tuning strategies.\nThese biases, which manifest in politically sensitive contexts, highlight the need for closer scrutiny of LLM behavior, particularly in zero-shot settings. Our findings emphasize the importance of developing more robust and equitable stance detection models to mitigate the harmful impacts of such biases. This could be achieved using fairness-aware prompting or calibration, such as discussed in <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib17\" title=\"\">2024</a>)</cite>, to reduce bias in predictions or by causal modeling, like counterfactual inference <cite class=\"ltx_cite ltx_citemacro_cite\">Yuan et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib25\" title=\"\">2022</a>)</cite>, to isolate the contribution of sensitive attributes. Finally, note that our protocol could be generalized to any other group categorization, e.g. gender. This being said, a promising line of research would be to combine static and LLM-based metrics for automatic group categorization.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Additionally, the Mistral and Llama versions used in this study have a limited number of parameters. While this allows their use, larger model variants may perform better on the stance detection task and reveal additional biases.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "mistral",
+                    "model"
+                ]
+            }
+        ]
+    },
+    "A1.T4": {
+        "caption": "Table 4: PStance dataset balanced/unbalanced distribution",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row ltx_border_t\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Unbalanced</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Balanced</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">SAE</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">20,575</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">339</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">AAE</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">339</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">339</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "balancedunbalanced",
+            "balanced",
+            "distribution",
+            "sae",
+            "unbalanced",
+            "dataset",
+            "aae",
+            "pstance"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We provide in Tables <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T4\" title=\"Table 4 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T5\" title=\"Table 5 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T6\" title=\"Table 6 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> the resampling statistics for our experiments.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we measure bias\nrelated to two different sensitive attributes.\nNone of the existing Stance Detection datasets contain text or\npost-level sensitive attribute annotations. Therefore, we propose to leverage existing datasets and augment them with automatic text annotation for two sensitive attributes. We consider the potential bias of the models regarding African-American English (AAE) text. AAE can be grammatically and syntactically different from Standard American English (SAE),\nserving as a proxy for linguistic and sociocultural group membership. Importantly, note that as stated in <cite class=\"ltx_cite ltx_citemacro_cite\">Blodgett et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib4\" title=\"\">2016</a>)</cite>, &#8220;Not all\nAfrican-Americans speak AAE, and not all speakers\nof AAE are African-American&#8221;. AAE/SAE is used here as a linguistic marker, not as a deterministic racial classifier, and it represents perceived sociocultural identity, which is interpreted by LLMs as a social signal, a central point of our bias hypothesis.\nSecond, we consider the bias towards text complexity/readability. We use the Flesch-Kincaid score <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>, which is a test for the readability of a text or sentence. Our aim is to assess whether models implicitly rely on text complexity to make biased assumptions. Bias in LLMs related to text complexity is especially concerning, as recent work <cite class=\"ltx_cite ltx_citemacro_cite\">Ahmed et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib2\" title=\"\">2022</a>)</cite> found correlations between readability and socio-economic status on social media. In the following section, we detail the methods we used to enrich the existing datasets with these sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "aae",
+                    "sae"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To infer the nature of the language, we propose to leverage the model<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/slanglab/twitteraae\" title=\"\">https://github.com/slanglab/twitteraae</a></span></span></span> proposed by <cite class=\"ltx_cite ltx_citemacro_citet\">Blodgett et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib4\" title=\"\">2016</a>)</cite> as was done to build the MOJI dataset. This model takes a text as input and returns a probability for four possible forms of English, labeled as \"African-American\", \"Hispanic\", \"Asian\", and \"Standard\". We label every text with the category with the highest probability. In our study, we focus on \"African-American\" and \"Standard American\" (SAE).</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "sae"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as SAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance",
+                    "sae"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as AAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "aae",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For this study, we use existing stance detection datasets for which we create sensitive attributes using the aforementioned methods. We use one dataset for the stereotypical bias toward language variety (SAE vs AAE) and two datasets for the bias toward text complexity.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "aae",
+                    "sae"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the language varieties experiment, we use the PStance dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib18\" title=\"\">2021</a>)</cite>, a stance detection dataset composed of a large number of posts retrieved from X (formerly Twitter) in the political domain. Specifically, this dataset focuses on three American political figures: Bernie Sanders, Joe Biden and Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After running our sensitive attribute annotation protocol on this dataset, a clear imbalance was shown, with a large majority of the dataset being labeled as SAE tweets, and only a small portion of the dataset being labeled as AAE (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F1\" title=\"Figure 1 &#8227; 3.1.1 African vs Standard American English &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). However, we deemed the numbers sufficient and went ahead with the experiment. For the experiments, we balance the dataset by downsampling the majority group, so that there are as many AAE tweets as SAE tweets in our study, and the same proportion of favorable tweets in both groups.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "aae",
+                    "sae"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "balanced",
+                    "distribution",
+                    "dataset",
+                    "aae",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "balanced"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "aae",
+                    "pstance",
+                    "sae"
+                ]
+            }
+        ]
+    },
+    "A1.T5": {
+        "caption": "Table 5: SCD dataset balanced/unbalanced distribution",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Complexity</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Unbalanced</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Balanced</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Low</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">521</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">262</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Medium</th>\n<td class=\"ltx_td ltx_align_center\">2071</td>\n<td class=\"ltx_td ltx_align_center\">262</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">High</th>\n<td class=\"ltx_td ltx_align_center\">1999</td>\n<td class=\"ltx_td ltx_align_center\">262</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">Very high</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">310</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">262</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "medium",
+            "balancedunbalanced",
+            "balanced",
+            "low",
+            "very",
+            "high",
+            "complexity",
+            "unbalanced",
+            "dataset",
+            "distribution",
+            "scd"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We provide in Tables <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T4\" title=\"Table 4 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T5\" title=\"Table 5 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T6\" title=\"Table 6 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> the resampling statistics for our experiments.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large Language Models inherit stereotypes from their pretraining data, leading to biased behavior toward certain social groups in many Natural Language Processing tasks, such as hateful speech detection or sentiment analysis. Surprisingly, the evaluation of this kind of bias in stance detection methods has been largely overlooked by the community. Stance Detection involves labeling a statement as being against, in favor, or neutral towards a specific target and is among the most sensitive NLP tasks, as it often relates to political leanings. In this paper, we focus on the bias of Large Language Models when performing stance detection in a zero-shot setting. We automatically annotate posts in pre-existing stance detection datasets with two attributes: dialect or vernacular of a specific group and text complexity/readability, to investigate whether these attributes influence the model&#8217;s stance detection decisions. Our results show that LLMs exhibit significant stereotypes in stance detection tasks, such as incorrectly associating pro-marijuana views with low text complexity and African American dialect with opposition to Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We discretize this score in four groups following previous works: Easy (or low complexity), Medium, Difficult readability and Very Difficult readability (or very high complexity, see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.T1\" title=\"Table 1 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> for details).</p>\n\n",
+                "matched_terms": [
+                    "medium",
+                    "low",
+                    "high",
+                    "complexity",
+                    "very"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We hypothesized that the complexity of a text, measured by the F-K readability tests, could potentially affect the model&#8217;s assumptions about the writer&#8217;s writing skills. In other words, a high or low language complexity (the quality of writing) of a text might result in biased decisions about its stance.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of text from SCD labeled &#8220;Very high text complexity&#8221;</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For this study, we use existing stance detection datasets for which we create sensitive attributes using the aforementioned methods. We use one dataset for the stereotypical bias toward language variety (SAE vs AAE) and two datasets for the bias toward text complexity.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "dataset",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "medium",
+                    "balanced",
+                    "complexity",
+                    "dataset",
+                    "distribution",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "balanced",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "very",
+                    "dataset",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F8\" title=\"Figure 8 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>, LLMs demonstrate clear biases for all models except Llama and to a lesser extent Falcon on the \"against marijuana\" target (bottom plots), with values reaching -0.4 for Mistral. The models show a lower probability of predicting low complexity texts as being against marijuana, compared to other groups. In contrast, the models are more likely to predict high complexity texts as being against marijuana. This trend is further supported by additional fairness metrics (see Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A4\" title=\"Appendix D Complete results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>), demonstrating that LLMs tend to associate a highly complex text with opposition to marijuana and a lower complexity\nwith support toward it.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "low",
+                    "high",
+                    "complexity",
+                    "dataset",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "very",
+                    "high",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F9\" title=\"Figure 9 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>, a significant bias is observed in GPT-3.5 and Llama predictions related to the stance of high complexity texts on gay rights. These models disproportionately predict that high complexity texts are against gay rights compared to low complexity texts.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "low",
+                    "high",
+                    "complexity",
+                    "very",
+                    "dataset"
+                ]
+            }
+        ]
+    },
+    "A1.T6": {
+        "caption": "Table 6: KE-MLM dataset balanced/unbalanced distribution",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Complexity</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Unbalanced</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Balanced</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Low</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">403</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">160</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Medium</th>\n<td class=\"ltx_td ltx_align_center\">839</td>\n<td class=\"ltx_td ltx_align_center\">160</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">High</th>\n<td class=\"ltx_td ltx_align_center\">867</td>\n<td class=\"ltx_td ltx_align_center\">160</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">Very high</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">391</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">160</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "medium",
+            "balancedunbalanced",
+            "balanced",
+            "low",
+            "very",
+            "high",
+            "complexity",
+            "unbalanced",
+            "dataset",
+            "distribution",
+            "kemlm"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We provide in Tables <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T4\" title=\"Table 4 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T5\" title=\"Table 5 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A1.T6\" title=\"Table 6 &#8227; A.2 Resampling Statistics &#8227; Appendix A Additional Implementation details &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> the resampling statistics for our experiments.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large Language Models inherit stereotypes from their pretraining data, leading to biased behavior toward certain social groups in many Natural Language Processing tasks, such as hateful speech detection or sentiment analysis. Surprisingly, the evaluation of this kind of bias in stance detection methods has been largely overlooked by the community. Stance Detection involves labeling a statement as being against, in favor, or neutral towards a specific target and is among the most sensitive NLP tasks, as it often relates to political leanings. In this paper, we focus on the bias of Large Language Models when performing stance detection in a zero-shot setting. We automatically annotate posts in pre-existing stance detection datasets with two attributes: dialect or vernacular of a specific group and text complexity/readability, to investigate whether these attributes influence the model&#8217;s stance detection decisions. Our results show that LLMs exhibit significant stereotypes in stance detection tasks, such as incorrectly associating pro-marijuana views with low text complexity and African American dialect with opposition to Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We discretize this score in four groups following previous works: Easy (or low complexity), Medium, Difficult readability and Very Difficult readability (or very high complexity, see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.T1\" title=\"Table 1 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> for details).</p>\n\n",
+                "matched_terms": [
+                    "medium",
+                    "low",
+                    "high",
+                    "complexity",
+                    "very"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We hypothesized that the complexity of a text, measured by the F-K readability tests, could potentially affect the model&#8217;s assumptions about the writer&#8217;s writing skills. In other words, a high or low language complexity (the quality of writing) of a text might result in biased decisions about its stance.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For this study, we use existing stance detection datasets for which we create sensitive attributes using the aforementioned methods. We use one dataset for the stereotypical bias toward language variety (SAE vs AAE) and two datasets for the bias toward text complexity.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "dataset",
+                    "kemlm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "medium",
+                    "balanced",
+                    "complexity",
+                    "dataset",
+                    "distribution",
+                    "kemlm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "complexity",
+                    "balanced",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "very",
+                    "dataset",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F8\" title=\"Figure 8 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>, LLMs demonstrate clear biases for all models except Llama and to a lesser extent Falcon on the \"against marijuana\" target (bottom plots), with values reaching -0.4 for Mistral. The models show a lower probability of predicting low complexity texts as being against marijuana, compared to other groups. In contrast, the models are more likely to predict high complexity texts as being against marijuana. This trend is further supported by additional fairness metrics (see Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A4\" title=\"Appendix D Complete results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>), demonstrating that LLMs tend to associate a highly complex text with opposition to marijuana and a lower complexity\nwith support toward it.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "very",
+                    "high",
+                    "complexity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F9\" title=\"Figure 9 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>, a significant bias is observed in GPT-3.5 and Llama predictions related to the stance of high complexity texts on gay rights. These models disproportionately predict that high complexity texts are against gay rights compared to low complexity texts.</p>\n\n",
+                "matched_terms": [
+                    "high",
+                    "complexity",
+                    "low"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "low",
+                    "high",
+                    "complexity",
+                    "very",
+                    "dataset",
+                    "kemlm"
+                ]
+            }
+        ]
+    },
+    "A1.T7": {
+        "caption": "Table 7: Dataset Size and Ratio",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">File</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Size</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Ratio Favor</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">KE-MLM</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1603</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.45</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Donald Trump</th>\n<td class=\"ltx_td ltx_align_center\">840</td>\n<td class=\"ltx_td ltx_align_center\">0.41</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Joe Biden</th>\n<td class=\"ltx_td ltx_align_center\">763</td>\n<td class=\"ltx_td ltx_align_center\">0.50</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">PStance</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">20914</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.48</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Bernie Sanders</th>\n<td class=\"ltx_td ltx_align_center\">6161</td>\n<td class=\"ltx_td ltx_align_center\">0.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Donald Trump</th>\n<td class=\"ltx_td ltx_align_center\">7709</td>\n<td class=\"ltx_td ltx_align_center\">0.46</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Joe Biden</th>\n<td class=\"ltx_td ltx_align_center\">7044</td>\n<td class=\"ltx_td ltx_align_center\">0.44</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">SCD</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4901</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.59</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Abortion</th>\n<td class=\"ltx_td ltx_align_center\">1915</td>\n<td class=\"ltx_td ltx_align_center\">0.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Barack Obama</th>\n<td class=\"ltx_td ltx_align_center\">985</td>\n<td class=\"ltx_td ltx_align_center\">0.53</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Gay rights</th>\n<td class=\"ltx_td ltx_align_center\">1375</td>\n<td class=\"ltx_td ltx_align_center\">0.64</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Marijuana</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">626</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.71</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "sanders",
+            "size",
+            "marijuana",
+            "pstance",
+            "trump",
+            "obama",
+            "biden",
+            "joe",
+            "ratio",
+            "favor",
+            "kemlm",
+            "file",
+            "bernie",
+            "gay",
+            "scd",
+            "donald",
+            "barack",
+            "abortion",
+            "rights",
+            "dataset"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large Language Models inherit stereotypes from their pretraining data, leading to biased behavior toward certain social groups in many Natural Language Processing tasks, such as hateful speech detection or sentiment analysis. Surprisingly, the evaluation of this kind of bias in stance detection methods has been largely overlooked by the community. Stance Detection involves labeling a statement as being against, in favor, or neutral towards a specific target and is among the most sensitive NLP tasks, as it often relates to political leanings. In this paper, we focus on the bias of Large Language Models when performing stance detection in a zero-shot setting. We automatically annotate posts in pre-existing stance detection datasets with two attributes: dialect or vernacular of a specific group and text complexity/readability, to investigate whether these attributes influence the model&#8217;s stance detection decisions. Our results show that LLMs exhibit significant stereotypes in stance detection tasks, such as incorrectly associating pro-marijuana views with low text complexity and African American dialect with opposition to Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "donald",
+                    "favor",
+                    "trump"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work shows that politically skewed pretraining data can propagate biases into LLMs&#8217; applications, resulting in unfair predictions, especially in tasks involving social or identity groups. This could lead the language model to inherit some biases or stereotypes that might impact its decision when detecting stances toward political subjects such as those appearing in the commonly used datasets, e.g. Biden, Trump, abortion, gay rights <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "gay",
+                    "abortion",
+                    "rights",
+                    "trump",
+                    "biden"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as SAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">Example of a text from the PStance dataset labeled as AAE</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the language varieties experiment, we use the PStance dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib18\" title=\"\">2021</a>)</cite>, a stance detection dataset composed of a large number of posts retrieved from X (formerly Twitter) in the political domain. Specifically, this dataset focuses on three American political figures: Bernie Sanders, Joe Biden and Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "donald",
+                    "sanders",
+                    "dataset",
+                    "trump",
+                    "pstance",
+                    "bernie",
+                    "joe",
+                    "biden"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "gay",
+                    "donald",
+                    "barack",
+                    "obama",
+                    "abortion",
+                    "marijuana",
+                    "rights",
+                    "trump",
+                    "dataset",
+                    "joe",
+                    "biden",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "pstance",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The weighted F1-score of each model on each dataset can be found in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. To put these results into perspective, we also provide the percentage of \"Neutral\" predictions made by each model on each dataset in the Appendix (F1-score is computed only on the favor and against stances).</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "abortion",
+                    "dataset",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "biden",
+                    "pstance",
+                    "dataset",
+                    "trump"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "barack",
+                    "dataset",
+                    "obama",
+                    "favor",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "biden",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F9\" title=\"Figure 9 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>, a significant bias is observed in GPT-3.5 and Llama predictions related to the stance of high complexity texts on gay rights. These models disproportionately predict that high complexity texts are against gay rights compared to low complexity texts.</p>\n\n",
+                "matched_terms": [
+                    "rights",
+                    "gay"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "favor",
+                    "kemlm"
+                ]
+            }
+        ]
+    },
+    "A2.T8": {
+        "caption": "Table 8: Percentage of neutral predictions made by each model on the datasets. \"Neutral\" refers to instances where the model did not return \"FAVOR\" or \"AGAINST\" as instructed in the prompt",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_tt\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Mistral</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Llama</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Falcon</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Flan</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">GPT</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">PStance</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">21.73</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">61.27</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">12.69</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.01</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.04</th>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\">SCD</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">15.49</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">37.03</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.94</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.00</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.14</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">KE-MLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">65.96</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">63.84</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">20.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.00</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.12</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "did",
+            "each",
+            "pstance",
+            "not",
+            "falcon",
+            "against",
+            "instructed",
+            "flan",
+            "percentage",
+            "favor",
+            "kemlm",
+            "return",
+            "instances",
+            "predictions",
+            "llama",
+            "made",
+            "gpt",
+            "where",
+            "datasets",
+            "scd",
+            "model",
+            "prompt",
+            "neutral",
+            "refers",
+            "mistral"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Some LMs fail to follow the prompt and output neutral predictions. We provide the statistics in table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A2.T8\" title=\"Table 8 &#8227; Appendix B Neutral Predictions &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>. \"Neutral\" refers to instances where the model did not return \"FAVOR\" or \"AGAINST\" as instructed in the prompt</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large Language Models inherit stereotypes from their pretraining data, leading to biased behavior toward certain social groups in many Natural Language Processing tasks, such as hateful speech detection or sentiment analysis. Surprisingly, the evaluation of this kind of bias in stance detection methods has been largely overlooked by the community. Stance Detection involves labeling a statement as being against, in favor, or neutral towards a specific target and is among the most sensitive NLP tasks, as it often relates to political leanings. In this paper, we focus on the bias of Large Language Models when performing stance detection in a zero-shot setting. We automatically annotate posts in pre-existing stance detection datasets with two attributes: dialect or vernacular of a specific group and text complexity/readability, to investigate whether these attributes influence the model&#8217;s stance detection decisions. Our results show that LLMs exhibit significant stereotypes in stance detection tasks, such as incorrectly associating pro-marijuana views with low text complexity and African American dialect with opposition to Donald Trump.</p>\n\n",
+                "matched_terms": [
+                    "neutral",
+                    "against",
+                    "favor",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous studies indicate that prompt engineering, i.e., optimizing input instructions, can sometimes outperform traditional NLP model tuning for specific tasks <cite class=\"ltx_cite ltx_citemacro_cite\">Kheiri and Karimi (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib12\" title=\"\">2023</a>)</cite>. One such task is stance detection, which infers an author&#8217;s position on a topic based on the text they wrote. Stance detection models typically classify opinions as \"Favorable\", \"Against\", or occasionally \"Neutral\". LLMs have demonstrated strong performance in stance detection, surpassing specialized models <cite class=\"ltx_cite ltx_citemacro_cite\">Cruickshank and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib5\" title=\"\">2024</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "against",
+                    "model",
+                    "neutral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we aim to address the gap in research regarding bias in zero-shot stance detection with LLMs. Our contributions are as follows: (1) We investigate biases in LLMs&#8217; stance detection predictions, focusing on discriminatory decisions based on pre-existing stereotypes embedded in their parametric knowledge, such as associating political stances with a vernacular expression of English or text complexity. We evaluate popular LLMs, including Mistral, Llama, Falcon, Flan, and GPT-3.5, on stance detection tasks and analyze their biases using several fairness metrics. (2) We release enhanced datasets that integrate stance information with sensitive attributes for further research. (3) Our findings reveal significant biases, including the association of certain political and social issues with specific sensitive attributes, emphasizing the need for more equitable stance detection models and better debiasing techniques.</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "llama",
+                    "flan",
+                    "mistral",
+                    "datasets",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In their stance detection benchmark from 2020, <cite class=\"ltx_cite ltx_citemacro_citet\">Schiller et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib22\" title=\"\">2021</a>)</cite> do mention the problem of bias in stance detection models, showing that while it has been a known problem for years, little to no research has been done about it. Language models were shown to be biased by many existing studies <cite class=\"ltx_cite ltx_citemacro_cite\">Dixon et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib6\" title=\"\">2018</a>); Kiritchenko and Mohammad (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib14\" title=\"\">2018</a>); Leteno et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib16\" title=\"\">2023</a>)</cite>, i.e. they were shown to demonstrate different behavior with regard to the demographic group associated with the text, mostly gender and race.\n<cite class=\"ltx_cite ltx_citemacro_citet\">Salinas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib21\" title=\"\">2023</a>)</cite> show ways to prompt a model to remove its filters, confirming obvious bias against certain groups when the model is not restrained by manually applied constraints. <cite class=\"ltx_cite ltx_citemacro_citet\">Motoki et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib20\" title=\"\">2024</a>)</cite> trick ChatGPT into impersonating humans with certain political opinions, leading to biased responses when the model does not consider itself restrained anymore. Additionally, LLMs were shown by <cite class=\"ltx_cite ltx_citemacro_citet\">Feng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib7\" title=\"\">2023</a>)</cite> to be politically oriented.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "against",
+                    "not",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work shows that politically skewed pretraining data can propagate biases into LLMs&#8217; applications, resulting in unfair predictions, especially in tasks involving social or identity groups. This could lead the language model to inherit some biases or stereotypes that might impact its decision when detecting stances toward political subjects such as those appearing in the commonly used datasets, e.g. Biden, Trump, abortion, gay rights <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "model",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Surprisingly, the issue of bias in stance detection approaches has received little attention in the literature, possibly due to the scarcity of sensitive attribute annotations within existing datasets. <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib17\" title=\"\">2024</a>)</cite> examine the potential influence of the text polarity on the model decision, but also target preference, similarly to <cite class=\"ltx_cite ltx_citemacro_citet\">Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib26\" title=\"\">2024</a>)</cite>. Close to the latter, <cite class=\"ltx_cite ltx_citemacro_citet\">Yuan et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib25\" title=\"\">2022</a>)</cite> use causal graph modeling and propose to isolate the text&#8217;s direct effect on stance and to focus on the text-target interaction.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we measure bias\nrelated to two different sensitive attributes.\nNone of the existing Stance Detection datasets contain text or\npost-level sensitive attribute annotations. Therefore, we propose to leverage existing datasets and augment them with automatic text annotation for two sensitive attributes. We consider the potential bias of the models regarding African-American English (AAE) text. AAE can be grammatically and syntactically different from Standard American English (SAE),\nserving as a proxy for linguistic and sociocultural group membership. Importantly, note that as stated in <cite class=\"ltx_cite ltx_citemacro_cite\">Blodgett et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib4\" title=\"\">2016</a>)</cite>, &#8220;Not all\nAfrican-Americans speak AAE, and not all speakers\nof AAE are African-American&#8221;. AAE/SAE is used here as a linguistic marker, not as a deterministic racial classifier, and it represents perceived sociocultural identity, which is interpreted by LLMs as a social signal, a central point of our bias hypothesis.\nSecond, we consider the bias towards text complexity/readability. We use the Flesch-Kincaid score <cite class=\"ltx_cite ltx_citemacro_cite\">Kincaid (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib13\" title=\"\">1975</a>)</cite>, which is a test for the readability of a text or sentence. Our aim is to assess whether models implicitly rely on text complexity to make biased assumptions. Bias in LLMs related to text complexity is especially concerning, as recent work <cite class=\"ltx_cite ltx_citemacro_cite\">Ahmed et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib2\" title=\"\">2022</a>)</cite> found correlations between readability and socio-economic status on social media. In the following section, we detail the methods we used to enrich the existing datasets with these sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "not",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the text complexity experiment, we use the SCD Dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Hasan and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib10\" title=\"\">2013</a>)</cite>, which consists of posts taken from the CreateDebate website. These posts are part of debates about four themes: Abortion, Gay rights, Marijuana and Barack Obama. Since this dataset is sourced from a debating website and consists of long texts, the Flesch-Kincaid reading ease test is more applicable. The proportion of texts for each readability class in the SCD dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F2\" title=\"Figure 2 &#8227; 3.1.2 Text Complexity &#8227; 3.1 Enriching Datasets with Sensitive Attributes Annotation &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Additionally, we use the KE-MLM dataset <cite class=\"ltx_cite ltx_citemacro_cite\">Kawintiranon and Singh (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib11\" title=\"\">2021</a>)</cite>, another dataset about two political figures, Donald Trump and Joe Biden, which contained substantial numbers of tweets from all four text complexity classes, making it usable to evaluate models&#8217; bias. The proportion of tweets for each readability class in the KE-MLM dataset after annotation can be seen in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Datasets Used &#8227; 3 Methodology &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice to use the PStance, SCD, and KE-MLM datasets in different contexts was driven by the specific characteristics of each dataset and the requirements of our experiments. The PStance dataset was ideal for language variety experiments due to its focus on diverse linguistic expressions across various stances. For text complexity experiments, the SCD dataset was initially selected because it contains longer texts, making it more suitable for applying the Flesch-Kincaid readability test effectively. Later, we incorporated the KE-MLM dataset for text complexity experiments to explore whether similar patterns observed in longer texts could also emerge in shorter, more dynamic texts like tweets. The PStance dataset, however, did not yield meaningful results for the text complexity experiments due to a large over representation of medium- and low-complexity levels, rendering it unsuitable for our analysis.\nIn contrast, while the KE-MLM dataset also consists of tweets, the Flesch-Kincaid test provided a more balanced group distribution (see Figure 2). However, the SCD and KE-MLM datasets included an insignificant proportion of AAE texts, making our study on language varieties inapplicable to them.</p>\n\n",
+                "matched_terms": [
+                    "did",
+                    "datasets",
+                    "each",
+                    "pstance",
+                    "not",
+                    "kemlm",
+                    "scd"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For all datasets, we balance the data to ensure an equal proportion of favorable and unfavorable posts for each class. Although this results in smaller datasets, it mitigates the potential bias caused by class imbalance. The initial statistics for each dataset are provided in the Appendix.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Several prompting methods can be used to perform stance detection with LLMs. Among those described by <cite class=\"ltx_cite ltx_citemacro_citet\">Cruickshank and Ng (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib5\" title=\"\">2024</a>)</cite>, we employ the Context Analyze and Zero-shot Chain-of-Thought methods, as both demonstrated superior results with Mistral compared to other approaches. Since both methods yielded similar outcomes in preliminary experiments, we opted for the Context Analyze method due to its significantly faster performance compared to Zero-Shot Chain-of-Thought. Following the Context Analyze method we use the prompt:</p>\n\n",
+                "matched_terms": [
+                    "mistral",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_italic\">Stance classification is the task of determining the expressed or implied opinion, or stance, of a statement toward a certain, specified target.\n<br class=\"ltx_break\"/>Analyze the following social media statement and determine its stance towards the provided [target]. Respond with a single word: FAVOR or AGAINST. Only return the stance as a single word, and no other text.\n<br class=\"ltx_break\"/>[target]: <span class=\"ltx_text ltx_font_bold\">TARGET\n<br class=\"ltx_break\"/></span>Statement: <span class=\"ltx_text ltx_font_bold\">TEXT\n<br class=\"ltx_break\"/></span></span>\n</p>\n\n",
+                "matched_terms": [
+                    "against",
+                    "favor",
+                    "return"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As done in previous works, we rely on weighted F1 as a measure of performance for the (binary) stance detection evaluation, 1 being the best score. With regard to fairness, we rely on Equal Opportunity (EO), and extend to Demographic Parity and Predictive Parity in the Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A3\" title=\"Appendix C Additional Fairness Metrics &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">C</span></a> <cite class=\"ltx_cite ltx_citemacro_cite\">Alves et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib3\" title=\"\">2023</a>)</cite>. In the sequel, <math alttext=\"y\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mi>y</mi><annotation encoding=\"application/x-tex\">y</annotation></semantics></math> denotes the stance label, <math alttext=\"\\hat{y}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>y</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{y}</annotation></semantics></math> the prediction made by the model, <math alttext=\"s\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><mi>s</mi><annotation encoding=\"application/x-tex\">s</annotation></semantics></math> a sensitive attribute, taking values corresponding to different groups (<math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> and <math alttext=\"\\bar{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m5\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>a</mi><mo>&#175;</mo></mover><annotation encoding=\"application/x-tex\">\\bar{a}</annotation></semantics></math>). Equal Opportunity (EO) is defined by:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "made"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">EO ranges from <math alttext=\"-1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">-1</annotation></semantics></math> to <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m2\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>, with <math alttext=\"0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m3\" intent=\":literal\"><mn>0</mn></math> being the fairer result, <math alttext=\"-1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">-1</annotation></semantics></math> meaning that group <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m5\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> is discriminated by the model (less likely to predict 1 for examples labeled 1 and with sensitive attribute value <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m6\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>) and <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m7\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math> meaning that group <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m8\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> is privileged by the model (more likely to predict 1 for examples labeled 1 and with sensitive attribute value <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m9\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>). Equal Opportunity <cite class=\"ltx_cite ltx_citemacro_cite\">Hardt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#bib.bib9\" title=\"\">2016</a>)</cite> allows us to compare the probability of labeling a text 1 with property <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m10\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> to the probability of labeling 1 a text without property <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m11\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math>, knowing that the true label of the text is 1. In our experiment, we present EO in both ways: with label 1 corresponding to \"favor\" and then to \"against\".</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "against",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also provide an aggregated version of EO, by computing the average of absolute values of EO for each class, dataset and stance, allowing us to compute the overall language model bias for the considered sensitive attributes.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "each"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The weighted F1-score of each model on each dataset can be found in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. To put these results into perspective, we also provide the percentage of \"Neutral\" predictions made by each model on each dataset in the Appendix (F1-score is computed only on the favor and against stances).</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "against",
+                    "made",
+                    "model",
+                    "neutral",
+                    "percentage",
+                    "each",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results from Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Stance Detection Capabilities &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate a clear performance hierarchy among the evaluated models. Falcon is the least effective model, demonstrating the lowest performance. In contrast, Llama achieves good results in terms of F1-score. However, Llama generates a high number of neutral predictions, which raises concerns about its overall reliability and effectiveness for this task. This tendency towards neutrality suggests that Llama may struggle to predict stance in zero-shot settings, limiting its practical application.</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "llama",
+                    "model",
+                    "neutral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Flan shows above-average capabilities, indicating it is a strong contender for stance detection tasks. Its performance is consistently reliable, making it a dependable choice for researchers and practitioners. However, Flan does not outperform the top models, Mistral and GPT-3.5, which demonstrate superior performance in the task.</p>\n\n",
+                "matched_terms": [
+                    "flan",
+                    "not",
+                    "mistral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Mistral and GPT-3.5 emerge as the best models for stance detection. Among these, GPT-3.5 is particularly noteworthy for its significantly lower number of neutral predictions. This characteristic indicates that GPT-3.5 is more decisive and confident in its classifications, making it highly effective for tasks requiring clear and definitive stances.</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "mistral",
+                    "neutral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All fairness results have been computed by averaging the metrics on 1000 balanced samples randomly taken from the dataset. Each sample contains an equal number of texts for each class, and as many favorable and unfavorable texts in each class. The same samples have been used for the 5 models. We provide the average EO (with standard deviation) per group for each class and target. More precisely, a dot indicates the average result (the value is given on the bottom) and the whiskers represent standard deviation (mean -/+ sd). On top of each EO plot, we provide results in green when \"favor\" is considered as label 1, and on the bottom in red when &#8220;against&#8221; is considered as label 1. This allows to show the bias toward each target in a single plot. For instance, in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F10\" title=\"Figure 10 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> related to abortion, with EO values around 0, LLMs demonstrate limited biases w.r.t. the text complexity.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "favor"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>,&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F5\" title=\"Figure 5 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F6\" title=\"Figure 6 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> present the results on the PStance dataset. Surprisingly, results seem to show very little bias based on African American English. The only low magnitude biases we observe are the following: the FLAN model seems to associate more easily SAE as being against Biden than AAE. Similarly, FLAN seems to associate AAE more easily as being against Trump than SAE.</p>\n\n",
+                "matched_terms": [
+                    "against",
+                    "pstance",
+                    "model",
+                    "flan"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F8\" title=\"Figure 8 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>, LLMs demonstrate clear biases for all models except Llama and to a lesser extent Falcon on the \"against marijuana\" target (bottom plots), with values reaching -0.4 for Mistral. The models show a lower probability of predicting low complexity texts as being against marijuana, compared to other groups. In contrast, the models are more likely to predict high complexity texts as being against marijuana. This trend is further supported by additional fairness metrics (see Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#A4\" title=\"Appendix D Complete results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>), demonstrating that LLMs tend to associate a highly complex text with opposition to marijuana and a lower complexity\nwith support toward it.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "against",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By examining Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, we observe an interesting pattern concerning the target \"Barack Obama\" on the SCD dataset. All models, except Llama, exhibit biases. Notably, Falcon shows an opposite bias compared to Mistral, Flan, and GPT-3.5 when predicting the label \"favor\". The latter models tend to predict that high complexity texts favor Obama, while Falcon is more likely to predict that low complexity texts are in favor, and high complexity texts are against.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "against",
+                    "scd",
+                    "flan",
+                    "mistral",
+                    "favor",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Analyzing Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, we observe that all models show a bias toward predicting that very high complexity texts are less likely to oppose Biden. This bias is most pronounced in Flan and GPT-3.5, where the probability of classifying highly complex texts as being against Biden is much less than for other complexities. Notably, Falcon once again exhibits an opposite bias for very high complexity and \"favor\" (shown in green).</p>\n\n",
+                "matched_terms": [
+                    "against",
+                    "flan",
+                    "favor",
+                    "where",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F9\" title=\"Figure 9 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>, a significant bias is observed in GPT-3.5 and Llama predictions related to the stance of high complexity texts on gay rights. These models disproportionately predict that high complexity texts are against gay rights compared to low complexity texts.</p>\n\n",
+                "matched_terms": [
+                    "predictions",
+                    "against",
+                    "llama"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, Falcon demonstrates a similar pattern for all three political figures (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F11\" title=\"Figure 11 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F7\" title=\"Figure 7 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.F12\" title=\"Figure 12 &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">12</span></a>) in the KE-MLM dataset: in green, it assigns a much higher probability for texts with low complexity to be in favor of the politician than for those with high or very high complexity, regardless of political party. This could suggest that it is more likely to associate simpler text with partisanship and complex posts with opposition.</p>\n\n",
+                "matched_terms": [
+                    "favor",
+                    "kemlm",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20154v1#S4.T3\" title=\"Table 3 &#8227; Stereotype 5: Falcon associates low complexity with partisanship, high complexity with opposition &#8227; 4.2 Biases of LLMs &#8227; 4 Results &#8227; Are Stereotypes Leading LLMs&#8217; Zero-Shot Stance Detection ?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides the average EO for each model and\nstudied attribute.\nFalcon demonstrates the maximum bias overall, followed by Mistral, Flan, Llama and GPT-3.5. As models are based on a similar architecture,\nthis difference might stem from either the pre-training corpus or the instruction data, as we used instruction-tuned\nopen\nmodels.\n</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "model",
+                    "flan",
+                    "each",
+                    "mistral",
+                    "falcon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Additionally, the Mistral and Llama versions used in this study have a limited number of parameters. While this allows their use, larger model variants may perform better on the stance detection task and reveal additional biases.</p>\n\n",
+                "matched_terms": [
+                    "llama",
+                    "mistral",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Predictive Parity measures the probability for a text written by an author belonging to the modality <math alttext=\"a\" class=\"ltx_Math\" display=\"inline\" id=\"A3.p3.m1\" intent=\":literal\"><semantics><mi>a</mi><annotation encoding=\"application/x-tex\">a</annotation></semantics></math> to be in favor of the target, compared to a text written by someone else, knowing that the text was classified as in favor of the target by the model.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "favor"
+                ]
+            }
+        ]
+    }
+}

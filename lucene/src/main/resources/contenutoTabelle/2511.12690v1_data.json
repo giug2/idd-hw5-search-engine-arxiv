@@ -1,0 +1,154 @@
+{
+    "S5.T1": {
+        "caption": "Table 1: ASR BLEU (Fa → En)",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\">Model</th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">CVSS-Only</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">CVSS+Synthetic</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Translatotron</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">6.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Translatotron 2</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ Pre-training</th>\n<td class=\"ltx_td ltx_align_center\">3.8</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Speech-to-unit</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">11.8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ Pre-training</th>\n<td class=\"ltx_td ltx_align_center\">2.8</td>\n<td class=\"ltx_td ltx_align_center\">13.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\">Our Proposed model</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.1</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">17.8</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "our",
+            "speechtounit",
+            "proposed",
+            "cvssonly",
+            "model",
+            "translatotron",
+            "pretraining",
+            "asr",
+            "cvsssynthetic",
+            "bleu"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><a class=\"ltx_ref ltx_refmacro_autoref\" href=\"https://arxiv.org/html/2511.12690v1#S5.T1\" title=\"Table 1 &#8227; 5.3 Results &#8227; 5 Experiments &#8227; Improving Direct Persian&#8211;English Speech-to-Speech Translation with Discrete Units and Synthetic Parallel Data\"><span class=\"ltx_text ltx_ref_tag\">Table&#160;1</span></a> summarizes the ASR BLEU scores on the CVSS Fa&#8211;En evaluation set for training with both CVSS-only and CVSS+Synthetic datasets. The proposed model achieves the highest ASR BLEU among all systems, outperforming\nthe best baseline (Translatotron 2 with pretraining) by 0.3 BLEU. This gain is achieved\ndespite using the same training data, indicating that the combination of a pretrained\nconformer encoder, discrete target units, and a tailored decoder architecture provides a\nmore effective mapping from Persian speech to English speech units.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Direct speech-to-speech translation (S2ST), in which all components are trained jointly,\nis an attractive alternative to cascaded systems because it offers a simpler pipeline and\nlower inference latency. However, direct S2ST models require large amounts of parallel\nspeech data in the source and target languages, which are rarely available for low-resource\nlanguages such as Persian. This paper presents a direct S2ST system for translating Persian speech into English speech, as well as a pipeline for synthetic parallel Persian-English speech generation..\nThe model comprises three components: (1) a conformer-based encoder,\ninitialized from self-supervised pretraining, maps source speech to high-level acoustic\nrepresentations; (2) a causal transformer decoder with relative position multi-head attention\ntranslates these representations into discrete target speech units; (3) a unit-based neural vocoder generates waveforms from the predicted discrete units. To mitigate the data scarcity problem,\nwe construct a new Persian&#8211;English parallel speech corpus by translating Persian speech\ntranscriptions into English using a large language model and then synthesizing the\ncorresponding English speech with a state-of-the-art zero-shot text-to-speech system. The resulting corpus increases the amount of available parallel speech by roughly a factor of six.\nOn the Persian&#8211;English portion of the CVSS corpus, the proposed model achieves\nimprovement of 4.6 ASR BLEU with the\nsynthetic data over direct baselines. These results indicate that combining self-supervised\npretraining, discrete speech units, and synthetic parallel data is effective for\nimproving direct S2ST in low-resource language pairs such as Persian&#8211;English. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Code is publicly available at <a class=\"ltx_ref ltx_href\" href=\"https://github.com/sinarashidi/S2ST-Transformer\" title=\"\">https://github.com/sinarashidi/S2ST-Transformer</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "proposed",
+                    "model",
+                    "pretraining",
+                    "asr",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct a comprehensive experimental study on the CVSS Fa&#8211;En benchmark and\nthe newly constructed corpus, comparing our system to strong direct baselines such as\nTranslatotron and a speech-to-unit model.</p>\n\n",
+                "matched_terms": [
+                    "speechtounit",
+                    "model",
+                    "translatotron",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We analyze the impact of self-supervised pretraining, discrete units, and synthetic\ndata, showing that their combination yields consistent improvements in ASR BLEU\nfor Persian&#8211;English S2ST.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "asr",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A complementary line of work replaces continuous spectrograms with discrete speech\nunits learned by self-supervised speech models followed by vector quantization or\nclustering <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2021direct</span>]</cite>. Discrete units serve as a compact, language-agnostic representation of speech,\nenabling modular combinations of unit-based ASR, MT, and TTS components. For\nS2ST, discrete units allow the translation network to focus on symbolic sequences, while\na separate unit vocoder handles waveform synthesis. Recent systems such as direct\nS2ST with discrete units <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2021direct</span>]</cite> and two-pass architectures like UnitY <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">inaguma2022unity</span>]</cite> demonstrate strong\nperformance by leveraging self-supervised pretraining and large-scale unit discovery.\nSelf-supervised representation learning for speech, exemplified by wav2vec 2.0 <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span>]</cite> and\nrelated models, has proven highly effective in low-resource scenarios. By pretraining on\nunlabeled speech and fine-tuning on task-specific data, these models substantially reduce\nthe amount of labeled data needed to achieve reliable performance. Data augmentation\ntechniques such as SpecAugment <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">park2019specaugment</span>]</cite> further improve robustness by applying time warping\nand time/frequency masking to spectrograms during training.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our experiments rely on three types of speech corpora and a synthetic Persian&#8211;English parallel corpus. We use the Persian portion of Common Voice <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ardila2019common</span>]</cite>, a large crowdsourced corpus of read speech containing thousands of speakers and substantial hours of audio, both for self-supervised pretraining and as the starting point for building the synthetic parallel corpus. As our main benchmark for evaluating translation quality, we adopt the Persian&#8211;English subset of CVSS <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022cvss</span>]</cite>, a multilingual S2ST corpus constructed by aligning speech-to-text translation data and synthesizing target speech with a neural TTS system. In addition, for training and adapting the neural unit vocoder used in our pipeline, we employ LJSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ljspeech17</span>]</cite>, an English TTS dataset consisting of high-quality recordings by a single speaker.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The model follows a direct S2ST paradigm based on discrete speech units. It (<a class=\"ltx_ref ltx_refmacro_autoref\" href=\"https://arxiv.org/html/2511.12690v1#S4.F2\" title=\"Figure 2 &#8227; 4 Model &#8227; Improving Direct Persian&#8211;English Speech-to-Speech Translation with Discrete Units and Synthetic Parallel Data\"><span class=\"ltx_text ltx_ref_tag\">Figure&#160;2</span></a>)\nconsists of three main components: (1) a conformer-based speech encoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gulati2020conformer</span>]</cite> initialized from self-supervised pretraining on Persian speech; (2) a causal transformer decoder with relative position multi-head attention, which maps encoder representations to discrete target speech units; (3) a neural vocoder that converts sequences of discrete units into English speech waveforms.\nThe entire model is trained to maximize the likelihood of the target unit sequence given\nthe source speech, without accessing intermediate source or target text. The unit vocoder\nis trained separately on English data and kept fixed during S2ST training.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The encoder is based on wav2vec 2.0, with its Transformer encoder layers replaced by Conformer layers. We first perform self-supervised pretraining on\nthe Persian portion of Common Voice using a contrastive objective similar to wav2vec\n2.0. During pretraining, random spans of the input are masked, and the model learns to\ndistinguish the true latent representation of each masked region from a set of negative\nexamples. This encourages the encoder to capture robust, high-level acoustic features\nthat generalize well across tasks and domains.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After pretraining, the encoder is fine-tuned as part of the direct S2ST model. The\ncombination of self-supervised pretraining and supervised fine-tuning improves data\nefficiency and robustness, especially in the low-resource Persian setting.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To improve robustness and reduce overfitting, we apply SpecAugment. Time shifting,\nfrequency masking, and time masking are randomly applied to the encoder inputs.\nThese perturbations encourage the model to focus on invariant acoustic cues and have\nbeen shown to improve performance in both ASR and S2ST tasks.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All speech signals are resampled to 16 kHz. We use dynamic batch construction based\non the total number of frames to efficiently utilize GPU memory. The main S2ST model\nis trained for 40 epochs with an initial learning rate of 2.5e-4 for the decoder and a\nsmaller learning rate of 1e-5 for the pretrained encoder, using an optimizer with warmup\nand decay. The training loss is computed as the average cross-entropy over all target\nunits in each mini-batch.\nWe train two versions of the proposed model:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "proposed"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We compare our approach to several direct S2ST baselines:\n(1) Translatotron: a spectrogram-based direct S2ST model that predicts target mel-\nspectrograms from source speech and uses a neural vocoder to synthesize waveform;\n(2) Translatotron 2 (+pretraining): an improved version with stronger pretraining and\narchitectural refinements;\n(3) Speech-to-unit (+pretraining): a model that directly predicts discrete target units from\nsource speech but uses a simpler encoder&#8211;decoder architecture than our proposed\nsystem.\nThese baselines represent strong direct S2ST systems and provide a meaningful point of\ncomparison for our contributions in encoder pretraining, unit modeling, and data\naugmentation.</p>\n\n",
+                "matched_terms": [
+                    "speechtounit",
+                    "proposed",
+                    "model",
+                    "translatotron",
+                    "pretraining",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate translation quality using ASR BLEU. In this metric, the synthesized English\nspeech is fed to an English ASR model trained on LibriSpeech. The resulting\ntranscripts are compared against the reference English transcripts using the BLEU\nmetric. ASR BLEU correlates with translation quality while accounting for both\ntranslation and synthesis errors.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "asr",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also report qualitative observations on speech naturalness and alignment based on\nlistening to model outputs, but the main quantitative comparisons are in terms of ASR\nBLEU.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "asr",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When we augment training with the synthetic Persian&#8211;English corpus, the proposed\nmodel benefits substantially from the increased data. Relative to direct baselines trained\nonly on existing datasets, our system achieves gains of 0.3 ASR BLEU without synthetic\ndata and 4.6 ASR BLEU with synthetic data.\nThese improvements highlight the effectiveness of large-scale synthetic data for\nlow-resource S2ST, particularly when combined with self-supervised pretraining and\nunit-based modeling.</p>\n\n",
+                "matched_terms": [
+                    "proposed",
+                    "model",
+                    "pretraining",
+                    "asr",
+                    "bleu",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we presented a direct Persian&#8211;English S2ST system designed for audio dubbing that integrates a self-supervised pretrained Conformer encoder, a discrete-unit Transformer decoder with relative positional attention, and a neural unit-based vocoder. To mitigate the scarcity of parallel data, we constructed a synthetic Persian&#8211;English corpus using large language model translation and neural TTS synthesis, increasing the amount of parallel speech by approximately six times. On the CVSS Fa&#8211;En benchmark, our model achieves up to a 4.6 BLEU improvement over strong direct baselines when trained with the synthetic corpus. These results demonstrate that the combination of self-supervised pretraining, discrete units, and synthetic data is an effective strategy for improving S2ST in low-resource language pairs.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "model",
+                    "bleu",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our results highlight key factors that contribute to effective direct Persian&#8211;English speech-to-speech translation (S2ST) in low-resource conditions. First, self-supervised pretraining of the encoder significantly enhances model performance. The pretrained Conformer encoder captures robust acoustic and phonetic patterns from large amounts of unlabeled Persian speech, enabling the fine-tuned S2ST system to generalize more effectively than models trained from scratch.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "model",
+                    "our"
+                ]
+            }
+        ]
+    }
+}

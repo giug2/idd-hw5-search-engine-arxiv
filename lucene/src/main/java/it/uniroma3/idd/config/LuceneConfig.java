@@ -39,6 +39,10 @@ public class LuceneConfig {
     @Value("${data.articles.path}")
     private String articlesPath;
 
+    @Getter
+    @Value("${data.tables.path}")
+    private String tablesPath;
+
     @Bean
     public Analyzer customAnalyzer() {
         return new Analyzer() {

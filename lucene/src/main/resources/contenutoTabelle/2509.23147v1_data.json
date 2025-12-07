@@ -1,0 +1,581 @@
+{
+    "S2.T1": {
+        "caption": "Table 1: Processing Speed and Real-time Performance",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Dataset</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Method</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Time/Clip</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">Total Time</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\">Buckeye (535s avg)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">45 min</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7 days</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">BFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">60 s</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">1 hour</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\">TIMIT (3.1s avg)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1 min</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.2 days</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">BFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">0.25s</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">25 min</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Speed Improvement</th>\n<td class=\"ltx_td ltx_border_r ltx_border_t\"/>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">45-240&#215;</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">72-242&#215;</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\">Real-time Factor</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" colspan=\"3\">MFA: 52-194&#215;, BFA: <span class=\"ltx_text ltx_font_bold\">0.05-0.1&#215;</span>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "processing",
+            "025s",
+            "days",
+            "mfa",
+            "timit",
+            "time",
+            "31s",
+            "speed",
+            "timeclip",
+            "72242×",
+            "performance",
+            "bfa",
+            "hour",
+            "avg",
+            "improvement",
+            "min",
+            "realtime",
+            "buckeye",
+            "535s",
+            "factor",
+            "total",
+            "52194×",
+            "00501×",
+            "method",
+            "45240×",
+            "dataset"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T1\" title=\"Table 1 &#8227; 2.1 Contextless Phoneme Classification &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents computational performance comparison, demonstrating substantial efficiency improvements that enable real-time processing capabilities.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We present Bournemouth Forced Aligner (BFA), a system that combines a Contextless Universal Phoneme Encoder (CUPE) with a connectionist temporal classification (CTC)&#8211;based decoder. BFA introduces explicit modelling of inter-phoneme gaps and silences and hierarchical decoding strategies, enabling fine-grained boundary prediction. Evaluations on TIMIT and Buckeye corpora show that BFA achieves competitive recall relative to Montreal Forced Aligner at relaxed tolerance levels, while predicting both onset and offset boundaries for richer temporal structure. BFA processes speech up to 240&#215; faster than MFA, enabling faster than real-time alignment. This combination of speed and silence-aware alignment opens opportunities for interactive speech applications previously constrained by slow aligners.</p>\n\n",
+                "matched_terms": [
+                    "bfa",
+                    "speed",
+                    "realtime",
+                    "buckeye",
+                    "mfa",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Accurate phoneme-level time alignment is important for speech processing pipelines, yet existing forced alignment tools are often language-specific and computationally expensive. Forced alignment&#8212;determining precise temporal boundaries for phonemes given known transcription&#8212;underpins applications from speech synthesis to audio-visual synchronization. Despite decades of research, current approaches face significant limitations constraining their applicability in modern pipelines.</p>\n\n",
+                "matched_terms": [
+                    "time",
+                    "processing"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The forced alignment landscape evolved significantly with Montreal Forced Aligner (MFA) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib1\" title=\"\">1</a>]</cite>, establishing parallel processing through Kaldi and becoming the dominant tool. Recent neural approaches include Charsiu <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib2\" title=\"\">2</a>]</cite> pioneering text-independent alignment using Wav2Vec2 models. WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib3\" title=\"\">3</a>]</cite> demonstrated the integration of modern ASR systems with forced alignment, achieving 12-fold transcription speedup through batched inference. However, comparative studies consistently show that traditional HMM-GMM approaches like MFA continue to outperform modern ASR-based methods in pure alignment tasks, with MFA achieving 41.6% word-level accuracy at 10ms tolerance on TIMIT compared to 22.4% for WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. The MAPS neural system <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib5\" title=\"\">5</a>]</cite> represents a notable exception, achieving 28% relative improvement over MFA through bidirectional LSTM architectures with interpolation techniques.</p>\n\n",
+                "matched_terms": [
+                    "improvement",
+                    "mfa",
+                    "processing",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current benchmarking on TIMIT and Buckeye corpora establishes performance baselines with MFA achieving 72.8% word-level accuracy at 20ms tolerance on TIMIT and 69.9% on Buckeye, while phone-level accuracy reaches 72.3% and 60.6% respectively at 20ms tolerance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. Traditional HMM-GMM approaches consistently outperform neural systems, with WhisperX achieving only 52.7% word-level accuracy at 20ms tolerance on TIMIT compared to MFA&#8217;s superior performance. While neural approaches show promise, the field faces a fundamental trade-off between computational complexity and accuracy, with enhanced CTC methods <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib9\" title=\"\">9</a>]</cite> achieving only 12-40% improvement in boundary errors despite significantly more complex training pipelines. The BFA system addresses these limitations through its combination of fast processing (0.2s for 10s audio, representing substantial speedup over MFA), universal phoneme representation, and punctuation-aware alignment that treats punctuation as structured silence periods.</p>\n\n",
+                "matched_terms": [
+                    "bfa",
+                    "timit",
+                    "processing",
+                    "improvement",
+                    "buckeye",
+                    "mfa",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(a) Error distances on <span class=\"ltx_text ltx_font_bold\">TIMIT</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "mfa",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(b) Error distances on <span class=\"ltx_text ltx_font_bold\">Buckeye</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "mfa"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our method integrates three key components: a contextless universal phoneme encoder for acoustic feature extraction, a multilingual phonemization module for text processing, and a CTC-based dynamic programming decoder for temporal alignment. This architecture addresses the computational and linguistic limitations identified in contemporary forced alignment systems. The source code, pre-trained weights, and Python package are publicly available<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"www.github.com/tabahi/bournemouth-forced-aligner\" title=\"\">www.github.com/tabahi/bournemouth-forced-aligner</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "method",
+                    "processing"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate on two benchmarks representing different conditions. TIMIT provides 6300 clean read utterances (3.1s average), while Buckeye offers spontaneous conversational speech from 40 speakers (535s average). We compare against Montreal Forced Aligner using standard metrics: recall at multiple tolerance levels (20ms, 40ms, 60ms), precision, and boundary distance accuracy.</p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "535s",
+                    "31s",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-lingual Performance</span>: The BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub> and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub> models, trained without English data, achieve performance on par with MFA and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub> on English test sets. This suggests that the universal phoneme representation can generalize across languages, though evaluation on additional languages would further validate this approach.</p>\n\n",
+                "matched_terms": [
+                    "mfa",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented a forced alignment approach addressing limitations in phoneme-level temporal boundary detection. Combining universal phoneme representation with contextless processing and explicit prosodic modeling achieves substantial computational improvements while maintaining competitive accuracy. Evaluation on TIMIT and Buckeye shows competitive recall performance versus established baselines with acceptable boundary distance accuracy. The approach shows promising results across different training configurations, from English-optimized to models trained on non-English data that generalize to English evaluation.</p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "performance",
+                    "processing",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The computational efficiency improvements enable real-time processing scenarios, expanding forced alignment applications to interactive and streaming contexts. Future research directions include investigating the approach&#8217;s effectiveness on tonal languages, exploring applications in multilingual speech processing pipelines, and examining the potential for adaptive boundary prediction strategies that optimize precision-completeness trade-offs based on application requirements.</p>\n\n",
+                "matched_terms": [
+                    "realtime",
+                    "processing"
+                ]
+            }
+        ]
+    },
+    "S2.T2": {
+        "caption": "Table 2: Alignment Performance and Boundary Detection Statistics. *Precision at 20ms tolerance is calculated considering only onset boundaries to align with conventional metrics.",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">Method</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"3\">Recall (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"4\">Precision (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"2\">Totals</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"2\">Errors (%)</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">20ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">40ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">60ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">20ms*</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">20ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">40ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">60ms</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Annotated</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Predicted</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Deletions</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Insertions</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">71.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">81.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">82.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">81.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">81.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">96.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">98.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">234,127</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">210,828</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.49</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">1.11</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">71.4</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">84.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">87.9</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">82.3</span></td>\n<td class=\"ltx_td ltx_align_center\">55.6</td>\n<td class=\"ltx_td ltx_align_center\">84.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">95.3</td>\n<td class=\"ltx_td ltx_align_center\">234,841</td>\n<td class=\"ltx_td ltx_align_center\">402,962</td>\n<td class=\"ltx_td ltx_align_center\">3.04</td>\n<td class=\"ltx_td ltx_align_center\">4.66</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">71.0</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">84.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">88.1</span></td>\n<td class=\"ltx_td ltx_align_center\">80.9</td>\n<td class=\"ltx_td ltx_align_center\">55.2</td>\n<td class=\"ltx_td ltx_align_center\">83.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">94.6</td>\n<td class=\"ltx_td ltx_align_center\">234,841</td>\n<td class=\"ltx_td ltx_align_center\">402,982</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">2.76</span></td>\n<td class=\"ltx_td ltx_align_center\">5.37</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">60.9</td>\n<td class=\"ltx_td ltx_align_center\">73.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">77.4</td>\n<td class=\"ltx_td ltx_align_center\">77.5</td>\n<td class=\"ltx_td ltx_align_center\">50.9</td>\n<td class=\"ltx_td ltx_align_center\">79.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">91.7</td>\n<td class=\"ltx_td ltx_align_center\">234,841</td>\n<td class=\"ltx_td ltx_align_center\">376,962</td>\n<td class=\"ltx_td ltx_align_center\">10.86</td>\n<td class=\"ltx_td ltx_align_center\">8.31</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">70.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">74.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">58.5</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">79.5</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">88.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24,135</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">25,036</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">15.37</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">11.37</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">63.7</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">73.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">76.3</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">61.4</span></td>\n<td class=\"ltx_td ltx_align_center\">48.6</td>\n<td class=\"ltx_td ltx_align_center\">75.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">86.6</td>\n<td class=\"ltx_td ltx_align_center\">20,905</td>\n<td class=\"ltx_td ltx_align_center\">40,984</td>\n<td class=\"ltx_td ltx_align_center\">18.83</td>\n<td class=\"ltx_td ltx_align_center\">13.38</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center\">60.5</td>\n<td class=\"ltx_td ltx_align_center\">70.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">73.5</td>\n<td class=\"ltx_td ltx_align_center\">59.8</td>\n<td class=\"ltx_td ltx_align_center\">47.9</td>\n<td class=\"ltx_td ltx_align_center\">74.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">85.6</td>\n<td class=\"ltx_td ltx_align_center\">20,905</td>\n<td class=\"ltx_td ltx_align_center\">40,134</td>\n<td class=\"ltx_td ltx_align_center\">21.87</td>\n<td class=\"ltx_td ltx_align_center\">14.43</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">58.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">67.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">71.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">54.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">44.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">71.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">82.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">20,905</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">39,208</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">23.34</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">17.40</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "predicted",
+            "align",
+            "detection",
+            "calculated",
+            "considering",
+            "mfa",
+            "boundary",
+            "onset",
+            "timit",
+            "deletions",
+            "insertions",
+            "conventional",
+            "bfaen",
+            "statistics",
+            "annotated",
+            "60ms",
+            "40ms",
+            "totals",
+            "performance",
+            "alignment",
+            "20ms",
+            "metrics",
+            "recall",
+            "bfaeu",
+            "tolerance",
+            "buckeye",
+            "only",
+            "errors",
+            "precision",
+            "boundaries",
+            "method",
+            "dataset",
+            "bfaworld"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T2\" title=\"Table 2 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents alignment performance across both evaluation datasets on English speech. Our approach demonstrates competitive recall performance, particularly at relaxed tolerance levels that reflect practical application requirements. Our dual boundary prediction results in 30-40% of phonemes having preceding inter-phoneme gaps on these datasets, compared to conventional aligners that model no gaps between consecutive phonemes.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We present Bournemouth Forced Aligner (BFA), a system that combines a Contextless Universal Phoneme Encoder (CUPE) with a connectionist temporal classification (CTC)&#8211;based decoder. BFA introduces explicit modelling of inter-phoneme gaps and silences and hierarchical decoding strategies, enabling fine-grained boundary prediction. Evaluations on TIMIT and Buckeye corpora show that BFA achieves competitive recall relative to Montreal Forced Aligner at relaxed tolerance levels, while predicting both onset and offset boundaries for richer temporal structure. BFA processes speech up to 240&#215; faster than MFA, enabling faster than real-time alignment. This combination of speed and silence-aware alignment opens opportunities for interactive speech applications previously constrained by slow aligners.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "onset",
+                    "recall",
+                    "boundaries",
+                    "tolerance",
+                    "buckeye",
+                    "mfa",
+                    "boundary",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nalignment, text-to-speech, forced alignment, multilingual, phoneme boundary, speech recognition</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "boundary"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Accurate phoneme-level time alignment is important for speech processing pipelines, yet existing forced alignment tools are often language-specific and computationally expensive. Forced alignment&#8212;determining precise temporal boundaries for phonemes given known transcription&#8212;underpins applications from speech synthesis to audio-visual synchronization. Despite decades of research, current approaches face significant limitations constraining their applicability in modern pipelines.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "boundaries"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The forced alignment landscape evolved significantly with Montreal Forced Aligner (MFA) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib1\" title=\"\">1</a>]</cite>, establishing parallel processing through Kaldi and becoming the dominant tool. Recent neural approaches include Charsiu <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib2\" title=\"\">2</a>]</cite> pioneering text-independent alignment using Wav2Vec2 models. WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib3\" title=\"\">3</a>]</cite> demonstrated the integration of modern ASR systems with forced alignment, achieving 12-fold transcription speedup through batched inference. However, comparative studies consistently show that traditional HMM-GMM approaches like MFA continue to outperform modern ASR-based methods in pure alignment tasks, with MFA achieving 41.6% word-level accuracy at 10ms tolerance on TIMIT compared to 22.4% for WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. The MAPS neural system <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib5\" title=\"\">5</a>]</cite> represents a notable exception, achieving 28% relative improvement over MFA through bidirectional LSTM architectures with interpolation techniques.</p>\n\n",
+                "matched_terms": [
+                    "tolerance",
+                    "mfa",
+                    "alignment",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Research in universal phoneme representation has developed through IPA-based approaches, with systems employing 87-95 core phoneme sets <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib7\" title=\"\">7</a>]</cite>. These developments parallel BFA&#8217;s classification system but focus on multilingual scenarios. Silent gaps have been largely overlooked in existing systems. Recent prosody-aware alignment work demonstrates that silence periods and prosodic boundaries significantly impact alignment quality <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "boundaries"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current benchmarking on TIMIT and Buckeye corpora establishes performance baselines with MFA achieving 72.8% word-level accuracy at 20ms tolerance on TIMIT and 69.9% on Buckeye, while phone-level accuracy reaches 72.3% and 60.6% respectively at 20ms tolerance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. Traditional HMM-GMM approaches consistently outperform neural systems, with WhisperX achieving only 52.7% word-level accuracy at 20ms tolerance on TIMIT compared to MFA&#8217;s superior performance. While neural approaches show promise, the field faces a fundamental trade-off between computational complexity and accuracy, with enhanced CTC methods <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib9\" title=\"\">9</a>]</cite> achieving only 12-40% improvement in boundary errors despite significantly more complex training pipelines. The BFA system addresses these limitations through its combination of fast processing (0.2s for 10s audio, representing substantial speedup over MFA), universal phoneme representation, and punctuation-aware alignment that treats punctuation as structured silence periods.</p>\n\n",
+                "matched_terms": [
+                    "timit",
+                    "alignment",
+                    "errors",
+                    "20ms",
+                    "only",
+                    "tolerance",
+                    "buckeye",
+                    "mfa",
+                    "boundary",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(a) Error distances on <span class=\"ltx_text ltx_font_bold\">TIMIT</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld",
+                    "mfa",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(b) Error distances on <span class=\"ltx_text ltx_font_bold\">Buckeye</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "buckeye",
+                    "bfaworld",
+                    "mfa"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our method integrates three key components: a contextless universal phoneme encoder for acoustic feature extraction, a multilingual phonemization module for text processing, and a CTC-based dynamic programming decoder for temporal alignment. This architecture addresses the computational and linguistic limitations identified in contemporary forced alignment systems. The source code, pre-trained weights, and Python package are publicly available<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"www.github.com/tabahi/bournemouth-forced-aligner\" title=\"\">www.github.com/tabahi/bournemouth-forced-aligner</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ espeak-ng for text-to-phoneme conversion, mapping International Phonetic Alphabet symbols to our data-driven phoneme mapping system. We derive phonemes from frequency analysis of multilingual speech data, optimized for Indo-European languages in our training corpora. This reduces dependence on language-specific pronunciation dictionaries while maintaining phonetic precision. The phoneme selection can adapt to different language families by adjusting vocabulary based on target characteristics. We generate broader phoneme groups enabling coarse-grained alignment when needed.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "precision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Probability Floor Enforcement</span>: We establish minimum probability thresholds <math alttext=\"\\epsilon=10^{-8}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS4.p3.m1\" intent=\":literal\"><semantics><mrow><mi>&#1013;</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>8</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\epsilon=10^{-8}</annotation></semantics></math> for all target phonemes to prevent complete elimination during the alignment process, ensuring robust performance across diverse acoustic conditions.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Interval Boundary Prediction</span>: We extend conventional onset-only prediction to estimate both phoneme start and end boundaries. The predicted end boundaries often occur before the subsequent phoneme onset, creating explicit inter-phoneme gaps that capture natural pause patterns in speech. However, the tolerance to gaps is an adjustable parameter since some applications may require more context between phonemes.</p>\n\n",
+                "matched_terms": [
+                    "conventional",
+                    "predicted",
+                    "boundaries",
+                    "tolerance",
+                    "boundary",
+                    "onset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate on two benchmarks representing different conditions. TIMIT provides 6300 clean read utterances (3.1s average), while Buckeye offers spontaneous conversational speech from 40 speakers (535s average). We compare against Montreal Forced Aligner using standard metrics: recall at multiple tolerance levels (20ms, 40ms, 60ms), precision, and boundary distance accuracy.</p>\n\n",
+                "matched_terms": [
+                    "20ms",
+                    "metrics",
+                    "60ms",
+                    "40ms",
+                    "recall",
+                    "precision",
+                    "tolerance",
+                    "buckeye",
+                    "boundary",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">English-optimized: Maximum performance on English speech denoted as BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">European multilingual: Cross-lingual performance across 8 European languages denoted as BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaeu",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-lingual Performance</span>: The BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub> and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub> models, trained without English data, achieve performance on par with MFA and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub> on English test sets. This suggests that the universal phoneme representation can generalize across languages, though evaluation on additional languages would further validate this approach.</p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld",
+                    "mfa",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">End Boundary</span>: By predicting phoneme end boundaries that often occur before the next phoneme onset, our approach explicitly models inter-phoneme gaps that conventional aligners ignore entirely. While this results in approximately twice the boundary predictions and consequently lower precision scores (since the annotations are also onset-only), it provides a more complete representation of speech temporal structure where 30-40% of phonemes exhibit small inter-phoneme gaps as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T3\" title=\"Table 3 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "conventional",
+                    "precision",
+                    "boundaries",
+                    "boundary",
+                    "onset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablations</span>: The two ablations presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T4\" title=\"Table 4 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> highlight the importance of our algorithmic contributions. Probability boosting does not affect the performance of the English-only model but helps the universal model where the diverse phoneme set can be biased towards language-specific phonemes. The 100% target coverage enforcement slightly improves the performance of the universal model given its lower baseline recall rate. The ablations also show that these optimizations do not compromise boundary distance accuracy, indicating that they effectively enhance phoneme detection without sacrificing temporal precision.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "recall",
+                    "precision",
+                    "boundary",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented a forced alignment approach addressing limitations in phoneme-level temporal boundary detection. Combining universal phoneme representation with contextless processing and explicit prosodic modeling achieves substantial computational improvements while maintaining competitive accuracy. Evaluation on TIMIT and Buckeye shows competitive recall performance versus established baselines with acceptable boundary distance accuracy. The approach shows promising results across different training configurations, from English-optimized to models trained on non-English data that generalize to English evaluation.</p>\n\n",
+                "matched_terms": [
+                    "timit",
+                    "alignment",
+                    "detection",
+                    "recall",
+                    "buckeye",
+                    "boundary",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The computational efficiency improvements enable real-time processing scenarios, expanding forced alignment applications to interactive and streaming contexts. Future research directions include investigating the approach&#8217;s effectiveness on tonal languages, exploring applications in multilingual speech processing pipelines, and examining the potential for adaptive boundary prediction strategies that optimize precision-completeness trade-offs based on application requirements.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "boundary"
+                ]
+            }
+        ]
+    },
+    "S2.T3": {
+        "caption": "Table 3: Boundary Distance and Inter-phoneme Gap Analysis",
+        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">Method</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"2\">Known to Aligned (ms)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"2\">Aligned to Known (ms)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\">Inter-phoneme Gap Statistics</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Mean</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">Median</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Mean</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">Median</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Median (ms)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Std (ms)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">%gap/phone</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">13.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">9.5</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">11.8</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">8.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">60.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">97.3</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.54%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">14.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">10.7</td>\n<td class=\"ltx_td ltx_align_center\">20.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">17.2</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">40.0</span></td>\n<td class=\"ltx_td ltx_align_center\">51.2</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">35.30%</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">14.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">11.0</td>\n<td class=\"ltx_td ltx_align_center\">20.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">17.2</td>\n<td class=\"ltx_td ltx_align_center\">41.0</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">50.6</span></td>\n<td class=\"ltx_td ltx_align_center\">34.79%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">TIMIT</td>\n<td class=\"ltx_td ltx_align_center\">16.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">12.5</td>\n<td class=\"ltx_td ltx_align_center\">21.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.4</td>\n<td class=\"ltx_td ltx_align_center\">41.0</td>\n<td class=\"ltx_td ltx_align_center\">83.0</td>\n<td class=\"ltx_td ltx_align_center\">33.25%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r ltx_border_t\">MFA</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">16.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">13.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">17.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">14.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">300.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">530.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.81%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">13.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">9.7</span></td>\n<td class=\"ltx_td ltx_align_center\">20.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.3</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">39.0</span></td>\n<td class=\"ltx_td ltx_align_center\">468.2</td>\n<td class=\"ltx_td ltx_align_center\">31.91%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center\">13.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">9.7</span></td>\n<td class=\"ltx_td ltx_align_center\">20.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.3</td>\n<td class=\"ltx_td ltx_align_center\">40.0</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">385.7</span></td>\n<td class=\"ltx_td ltx_align_center\">31.66%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">Buckeye</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">14.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">10.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">21.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">18.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">39.0</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">391.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">34.04%</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "interphoneme",
+            "mfa",
+            "boundary",
+            "timit",
+            "bfaen",
+            "statistics",
+            "distance",
+            "analysis",
+            "known",
+            "mean",
+            "bfaeu",
+            "gapphone",
+            "buckeye",
+            "std",
+            "aligned",
+            "gap",
+            "method",
+            "dataset",
+            "bfaworld",
+            "median"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">End Boundary</span>: By predicting phoneme end boundaries that often occur before the next phoneme onset, our approach explicitly models inter-phoneme gaps that conventional aligners ignore entirely. While this results in approximately twice the boundary predictions and consequently lower precision scores (since the annotations are also onset-only), it provides a more complete representation of speech temporal structure where 30-40% of phonemes exhibit small inter-phoneme gaps as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T3\" title=\"Table 3 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We present Bournemouth Forced Aligner (BFA), a system that combines a Contextless Universal Phoneme Encoder (CUPE) with a connectionist temporal classification (CTC)&#8211;based decoder. BFA introduces explicit modelling of inter-phoneme gaps and silences and hierarchical decoding strategies, enabling fine-grained boundary prediction. Evaluations on TIMIT and Buckeye corpora show that BFA achieves competitive recall relative to Montreal Forced Aligner at relaxed tolerance levels, while predicting both onset and offset boundaries for richer temporal structure. BFA processes speech up to 240&#215; faster than MFA, enabling faster than real-time alignment. This combination of speed and silence-aware alignment opens opportunities for interactive speech applications previously constrained by slow aligners.</p>\n\n",
+                "matched_terms": [
+                    "interphoneme",
+                    "buckeye",
+                    "mfa",
+                    "boundary",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The forced alignment landscape evolved significantly with Montreal Forced Aligner (MFA) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib1\" title=\"\">1</a>]</cite>, establishing parallel processing through Kaldi and becoming the dominant tool. Recent neural approaches include Charsiu <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib2\" title=\"\">2</a>]</cite> pioneering text-independent alignment using Wav2Vec2 models. WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib3\" title=\"\">3</a>]</cite> demonstrated the integration of modern ASR systems with forced alignment, achieving 12-fold transcription speedup through batched inference. However, comparative studies consistently show that traditional HMM-GMM approaches like MFA continue to outperform modern ASR-based methods in pure alignment tasks, with MFA achieving 41.6% word-level accuracy at 10ms tolerance on TIMIT compared to 22.4% for WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. The MAPS neural system <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib5\" title=\"\">5</a>]</cite> represents a notable exception, achieving 28% relative improvement over MFA through bidirectional LSTM architectures with interpolation techniques.</p>\n\n",
+                "matched_terms": [
+                    "mfa",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current benchmarking on TIMIT and Buckeye corpora establishes performance baselines with MFA achieving 72.8% word-level accuracy at 20ms tolerance on TIMIT and 69.9% on Buckeye, while phone-level accuracy reaches 72.3% and 60.6% respectively at 20ms tolerance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. Traditional HMM-GMM approaches consistently outperform neural systems, with WhisperX achieving only 52.7% word-level accuracy at 20ms tolerance on TIMIT compared to MFA&#8217;s superior performance. While neural approaches show promise, the field faces a fundamental trade-off between computational complexity and accuracy, with enhanced CTC methods <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib9\" title=\"\">9</a>]</cite> achieving only 12-40% improvement in boundary errors despite significantly more complex training pipelines. The BFA system addresses these limitations through its combination of fast processing (0.2s for 10s audio, representing substantial speedup over MFA), universal phoneme representation, and punctuation-aware alignment that treats punctuation as structured silence periods.</p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "mfa",
+                    "boundary",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(a) Error distances on <span class=\"ltx_text ltx_font_bold\">TIMIT</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld",
+                    "mfa",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(b) Error distances on <span class=\"ltx_text ltx_font_bold\">Buckeye</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "buckeye",
+                    "bfaworld",
+                    "mfa"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Interval Boundary Prediction</span>: We extend conventional onset-only prediction to estimate both phoneme start and end boundaries. The predicted end boundaries often occur before the subsequent phoneme onset, creating explicit inter-phoneme gaps that capture natural pause patterns in speech. However, the tolerance to gaps is an adjustable parameter since some applications may require more context between phonemes.</p>\n\n",
+                "matched_terms": [
+                    "interphoneme",
+                    "boundary"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate on two benchmarks representing different conditions. TIMIT provides 6300 clean read utterances (3.1s average), while Buckeye offers spontaneous conversational speech from 40 speakers (535s average). We compare against Montreal Forced Aligner using standard metrics: recall at multiple tolerance levels (20ms, 40ms, 60ms), precision, and boundary distance accuracy.</p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "distance",
+                    "boundary",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T2\" title=\"Table 2 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents alignment performance across both evaluation datasets on English speech. Our approach demonstrates competitive recall performance, particularly at relaxed tolerance levels that reflect practical application requirements. Our dual boundary prediction results in 30-40% of phonemes having preceding inter-phoneme gaps on these datasets, compared to conventional aligners that model no gaps between consecutive phonemes.</p>\n\n",
+                "matched_terms": [
+                    "interphoneme",
+                    "boundary"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-lingual Performance</span>: The BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub> and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub> models, trained without English data, achieve performance on par with MFA and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub> on English test sets. This suggests that the universal phoneme representation can generalize across languages, though evaluation on additional languages would further validate this approach.</p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "mfa",
+                    "bfaworld"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablations</span>: The two ablations presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T4\" title=\"Table 4 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> highlight the importance of our algorithmic contributions. Probability boosting does not affect the performance of the English-only model but helps the universal model where the diverse phoneme set can be biased towards language-specific phonemes. The 100% target coverage enforcement slightly improves the performance of the universal model given its lower baseline recall rate. The ablations also show that these optimizations do not compromise boundary distance accuracy, indicating that they effectively enhance phoneme detection without sacrificing temporal precision.</p>\n\n",
+                "matched_terms": [
+                    "boundary",
+                    "distance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented a forced alignment approach addressing limitations in phoneme-level temporal boundary detection. Combining universal phoneme representation with contextless processing and explicit prosodic modeling achieves substantial computational improvements while maintaining competitive accuracy. Evaluation on TIMIT and Buckeye shows competitive recall performance versus established baselines with acceptable boundary distance accuracy. The approach shows promising results across different training configurations, from English-optimized to models trained on non-English data that generalize to English evaluation.</p>\n\n",
+                "matched_terms": [
+                    "buckeye",
+                    "distance",
+                    "boundary",
+                    "timit"
+                ]
+            }
+        ]
+    },
+    "S2.T4": {
+        "caption": "Table 4: Ablation Study: Impact of Algorithm Parameters on TIMIT",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\">Model</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\">Mode</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\" colspan=\"2\">Precision (%)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" colspan=\"2\">Recall (%)</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\">20ms</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">60ms</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">20ms</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">60ms</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Default</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">55.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">95.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">87.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">No enforce</th>\n<td class=\"ltx_td ltx_align_center\">55.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">95.3</td>\n<td class=\"ltx_td ltx_align_center\">71.4</td>\n<td class=\"ltx_td ltx_align_center\">87.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">No boost</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">56.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">95.5</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">73.5</span></td>\n<td class=\"ltx_td ltx_align_center\">87.1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Default</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">55.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">94.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">88.1</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">No enforce</th>\n<td class=\"ltx_td ltx_align_center\">55.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">94.6</td>\n<td class=\"ltx_td ltx_align_center\">71.0</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">88.1</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">No boost</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">55.8</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">95.0</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">71.2</span></td>\n<td class=\"ltx_td ltx_align_center\">85.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Default</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">50.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">91.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">60.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">77.4</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">No enforce</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">51.0</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">92.1</span></td>\n<td class=\"ltx_td ltx_align_center\">58.1</td>\n<td class=\"ltx_td ltx_align_center\">74.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\">BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub>\n</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\">No boost</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">51.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">92.0</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">35.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">49.0</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "algorithm",
+            "impact",
+            "bfaworld",
+            "20ms",
+            "study",
+            "bfaen",
+            "model",
+            "mode",
+            "ablation",
+            "60ms",
+            "recall",
+            "bfaeu",
+            "default",
+            "precision",
+            "enforce",
+            "boost",
+            "parameters",
+            "timit"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablations</span>: The two ablations presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T4\" title=\"Table 4 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> highlight the importance of our algorithmic contributions. Probability boosting does not affect the performance of the English-only model but helps the universal model where the diverse phoneme set can be biased towards language-specific phonemes. The 100% target coverage enforcement slightly improves the performance of the universal model given its lower baseline recall rate. The ablations also show that these optimizations do not compromise boundary distance accuracy, indicating that they effectively enhance phoneme detection without sacrificing temporal precision.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We present Bournemouth Forced Aligner (BFA), a system that combines a Contextless Universal Phoneme Encoder (CUPE) with a connectionist temporal classification (CTC)&#8211;based decoder. BFA introduces explicit modelling of inter-phoneme gaps and silences and hierarchical decoding strategies, enabling fine-grained boundary prediction. Evaluations on TIMIT and Buckeye corpora show that BFA achieves competitive recall relative to Montreal Forced Aligner at relaxed tolerance levels, while predicting both onset and offset boundaries for richer temporal structure. BFA processes speech up to 240&#215; faster than MFA, enabling faster than real-time alignment. This combination of speed and silence-aware alignment opens opportunities for interactive speech applications previously constrained by slow aligners.</p>\n\n",
+                "matched_terms": [
+                    "recall",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current benchmarking on TIMIT and Buckeye corpora establishes performance baselines with MFA achieving 72.8% word-level accuracy at 20ms tolerance on TIMIT and 69.9% on Buckeye, while phone-level accuracy reaches 72.3% and 60.6% respectively at 20ms tolerance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib4\" title=\"\">4</a>]</cite>. Traditional HMM-GMM approaches consistently outperform neural systems, with WhisperX achieving only 52.7% word-level accuracy at 20ms tolerance on TIMIT compared to MFA&#8217;s superior performance. While neural approaches show promise, the field faces a fundamental trade-off between computational complexity and accuracy, with enhanced CTC methods <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib9\" title=\"\">9</a>]</cite> achieving only 12-40% improvement in boundary errors despite significantly more complex training pipelines. The BFA system addresses these limitations through its combination of fast processing (0.2s for 10s audio, representing substantial speedup over MFA), universal phoneme representation, and punctuation-aware alignment that treats punctuation as structured silence periods.</p>\n\n",
+                "matched_terms": [
+                    "timit",
+                    "20ms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(a) Error distances on <span class=\"ltx_text ltx_font_bold\">TIMIT</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center ltx_align_center\">(b) Error distances on <span class=\"ltx_text ltx_font_bold\">Buckeye</span> corpus using MFA, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub>, BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub>, and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub></p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate on two benchmarks representing different conditions. TIMIT provides 6300 clean read utterances (3.1s average), while Buckeye offers spontaneous conversational speech from 40 speakers (535s average). We compare against Montreal Forced Aligner using standard metrics: recall at multiple tolerance levels (20ms, 40ms, 60ms), precision, and boundary distance accuracy.</p>\n\n",
+                "matched_terms": [
+                    "20ms",
+                    "60ms",
+                    "recall",
+                    "precision",
+                    "timit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T2\" title=\"Table 2 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents alignment performance across both evaluation datasets on English speech. Our approach demonstrates competitive recall performance, particularly at relaxed tolerance levels that reflect practical application requirements. Our dual boundary prediction results in 30-40% of phonemes having preceding inter-phoneme gaps on these datasets, compared to conventional aligners that model no gaps between consecutive phonemes.</p>\n\n",
+                "matched_terms": [
+                    "recall",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-lingual Performance</span>: The BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">eu</span></sub> and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">world</span></sub> models, trained without English data, achieve performance on par with MFA and BFA<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">en</span></sub> on English test sets. This suggests that the universal phoneme representation can generalize across languages, though evaluation on additional languages would further validate this approach.</p>\n\n",
+                "matched_terms": [
+                    "bfaen",
+                    "bfaeu",
+                    "bfaworld"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented a forced alignment approach addressing limitations in phoneme-level temporal boundary detection. Combining universal phoneme representation with contextless processing and explicit prosodic modeling achieves substantial computational improvements while maintaining competitive accuracy. Evaluation on TIMIT and Buckeye shows competitive recall performance versus established baselines with acceptable boundary distance accuracy. The approach shows promising results across different training configurations, from English-optimized to models trained on non-English data that generalize to English evaluation.</p>\n\n",
+                "matched_terms": [
+                    "recall",
+                    "timit"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,855 @@
+{
+    "S5.T1": {
+        "caption": "TABLE I: Classification performance comparison of different models on the ASL-Citizen-1500[6] dataset.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Top-1 (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Top-5 (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">F1</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">I3D<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.10</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">90.13</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">IsoSignVid2Aud</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">72.01</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">91.42</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.72</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r ltx_border_t\">Combined training</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">75.19</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">92.65</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">0.75</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "i3d6",
+            "models",
+            "combined",
+            "aslcitizen15006",
+            "model",
+            "top5",
+            "classification",
+            "training",
+            "isosignvid2aud",
+            "dataset",
+            "top1",
+            "different",
+            "comparison",
+            "performance"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T1\" title=\"TABLE I &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> presents the classification performance of our models on the ASL-Citizen-1500 dataset, which follows the standard train/validation/test splits provided by the dataset creators. IsoSignVid2Aud achieves a Top-1 accuracy of 72.01% and a Top-5 accuracy of 91.42%, which is a slight improvement upon the baseline I3D model by 0.91% and 1.29%, respectively. Our model also provides an F1 score of 0.72, demonstrating its effectiveness in recognizing ASL signs with both precision and recall. When trained with the combined approach, IsoSignVid2Aud achieves even better results with a Top-1 accuracy of 75.19%, Top-5 accuracy of 92.65%, and an F1-Score of 0.75. This represents a significant improvement of 4.09% in Top-1 accuracy over the baseline I3D model, suggesting that the joint training approach enhances the feature extraction capabilities for sign language recognition.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Sign language to spoken language audio translation is important to connect the hearing- and speech-challenged humans with others. We consider sign language videos with isolated sign sequences rather than continuous grammatical signing. Such videos are useful in educational applications and sign prompt interfaces. Towards this, we propose\nIsoSignVid2Aud, a novel end-to-end framework that translates sign language videos with a sequence of possibly non-grammatic continuous signs to speech without requiring intermediate text representation, providing immediate communication benefits while avoiding the latency and cascading errors inherent in multi-stage translation systems. Our approach combines an I3D-based feature extraction module with a specialized feature transformation network and an audio generation pipeline, utilizing a novel Non-Maximal Suppression (NMS) algorithm for the temporal detection of signs in non-grammatic continuous sequences. Experimental results demonstrate competitive performance on ASL-Citizen-1500 and WLASL-100 datasets with Top-1 accuracies of 72.01% and 78.67%, respectively, and audio quality metrics (PESQ: 2.67, STOI: 0.73) indicating intelligible speech output. Code is available at: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/BheeshmSharma/IsoSignVid2Aud_AIMLsystems-2025\" title=\"\">this link</a>.</p>\n\n",
+                "matched_terms": [
+                    "top1",
+                    "performance",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate our proposed framework on two standard datasets: ASL-Citizen-1500 and WLASL-100. Our experiments demonstrate that IsoSignVid2Aud achieves competitive performance in both sign recognition accuracy and speech quality. These results suggest that direct sign-to-speech conversion based on isolated sign recognition is not only feasible but potentially advantageous compared to traditional multi-stage approaches that require continuous grammatical signing.</p>\n\n",
+                "matched_terms": [
+                    "performance",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To the best of our knowledge, we are the first to propose a direct sign language video-to-audio model without the need for intermediate text. This contributes a new paradigm for sign-to-speech translation that bridges the gap between early-stage sign language understanding and accessible communication technologies, particularly for non-signers and emerging sign learners. Another key innovation in our approach is the introduction of a Non-Maximal Suppression (NMS) algorithm for temporal sign isolation, enabling our system to process sign language videos effectively by identifying and isolating the most significant sign gestures while eliminating redundant or low-confidence predictions, which aligns with how humans naturally acquire and process sign language by recognizing distinct signs before interpreting their combined meaning.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">More recently, transformer-based approaches have shown promising results. SignBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib9\" title=\"\">9</a>]</cite> introduced a pre-training approach for hand-model-aware representation. SiFormer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib11\" title=\"\">11</a>]</cite> proposed a spatiotemporal transformer specifically designed for sign language recognition, achieving state-of-the-art results on benchmark datasets. Spoter <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib1\" title=\"\">1</a>]</cite> presented a sign pose-based transformer for word-level recognition, while UniSign <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib10\" title=\"\">10</a>]</cite> introduced a universal sign language recognition model that achieves superior performance across datasets.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The IsoSignVid2Aud framework operates modularly to achieve direct conversion from sign language videos to speech. We first extract deep spatio-temporal features from sign language videos using an I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> model pretrained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets. These features then transform our Spectrogram Generator, comprising a multi-layer perceptron and transposed convolution network, to produce the magnitude and phase of mel spectrograms. Then these synthesized spectrograms are converted to audible speech using the Inverse Short-Time Fourier Transform (ISTFT) algorithm <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To extract meaningful features from sign language videos, we require a model capable of capturing both spatial and temporal dynamics to accurately interpret the expressive and sequential nature of sign language. To meet these needs, we employ the Inception 3D (I3D) model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> pre-trained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL Citizen and WLASL datasets for extracting meaningful features from sign language videos. The I3D architecture, an extension of the Inception model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib27\" title=\"\">27</a>]</cite>, with all 2D convolutions inflated to 3D convolutions by repeating filter kernel parameters along the temporal dimension, enables direct processing of video data. This approach allows I3D to utilize pre-trained 2D image classification weights while effectively modeling spatio-temporal data.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "classification",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The Spectrogram Generator module is a key component of our approach. It bridges visual features and audio representations, enabling our model to function independently of text by converting visual inputs into spectrogram-based audio features. Due to the absence of a pre-existing feature-to-spectrogram matching dataset, we train the spectrogram generation model on a custom dataset. This dataset is generated by creating spectrograms from the Tacotron2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib21\" title=\"\">21</a>]</cite> model using the text glosses from the WLASL and ASL-Citizen datasets, which serve as the ground truth.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, we utilize the spectrogram magnitudes and phases from the custom dataset and map them to the corresponding I3D features, following the training of the I3D feature extractor. This spectrogram generator component processes the feature vector <math alttext=\"\\phi\\in\\mathbb{R}^{n}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#981;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\phi\\in\\mathbb{R}^{n}</annotation></semantics></math> obtained from the I3D model <math alttext=\"\\mathcal{E}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m2\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#8496;</mi><annotation encoding=\"application/x-tex\">\\mathcal{E}</annotation></semantics></math> and utilizes a multi-layer perceptron followed by a transposed convolution network <math alttext=\"\\mathcal{S}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m3\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119982;</mi><annotation encoding=\"application/x-tex\">\\mathcal{S}</annotation></semantics></math> to map it to the real and imaginary parts of the spectrogram, each of the dimensions <math alttext=\"r,i\\in\\mathbb{R}^{\\omega\\times\\tau}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m4\" intent=\":literal\"><semantics><mrow><mrow><mi>r</mi><mo>,</mo><mi>i</mi></mrow><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><mi>&#969;</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>&#964;</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">r,i\\in\\mathbb{R}^{\\omega\\times\\tau}</annotation></semantics></math> as in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S3.F1\" title=\"Figure 1 &#8227; III Methodology &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where <math alttext=\"\\omega\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m5\" intent=\":literal\"><semantics><mi>&#969;</mi><annotation encoding=\"application/x-tex\">\\omega</annotation></semantics></math> and <math alttext=\"\\tau\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m6\" intent=\":literal\"><semantics><mi>&#964;</mi><annotation encoding=\"application/x-tex\">\\tau</annotation></semantics></math> denote the number of frequencies and time steps respectively. The functionality of the Spectrogram Generator can be expressed as</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We used the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and the WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets, which contain sign language videos and their corresponding gloss. Each video contains a single signer performing an American Sign Language (ASL) sign, recorded at 25 frames per second. We conducted our experiments on a subset of 1500 of the most frequent glosses of the ASL-Citizen dataset, which originally consists of around 2731 sign language words. The dataset was split into training, validation, and testing sets of sizes 23365, 5282, and 17798, respectively. We then performed experiments on a subset of the 100 most frequent glosses of the WLASL dataset, which originally consists of around 2000 signs. The dataset was split into training, validation, and testing sets of sizes 1448, 252, and 336, respectively.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This increased our effective training set size by a factor of 5, providing greater diversity for model training. All augmented videos were saved as MP4 files using the same encoding as the original dataset.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our feature extractor utilizes a pre-trained I3D model,\nwhich produces embeddings of dimension 2048 for each video. To get the confidence score, we modify the final block of the model by replacing it with an average pooling operation (kernel size <math alttext=\"4\\times 7\\times 7\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>4</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">4\\times 7\\times 7</annotation></semantics></math>) to produce spatially condensed feature maps. This is followed by a classification head that consists of a dropout layer (<math alttext=\"p=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m2\" intent=\":literal\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">p=0.5</annotation></semantics></math>), a linear projection to the number of classes (<math alttext=\"1500\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m3\" intent=\":literal\"><semantics><mn>1500</mn><annotation encoding=\"application/x-tex\">1500</annotation></semantics></math> for ASL Citizen and <math alttext=\"100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m4\" intent=\":literal\"><semantics><mn>100</mn><annotation encoding=\"application/x-tex\">100</annotation></semantics></math> for the WLASL dataset), and a ReLU activation. Then we apply an adaptive average pooling and flatten the features of the classifier output.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "classification",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For efficient training, we use a batch size of 64 with configurable parallelism through the num_workers parameter. The training process incorporates an early stopping mechanism with a patience of 10 epochs to prevent overfitting, which can be enabled or disabled via configuration. Training progress is monitored through both training and validation losses, with the best model selected based on the lowest validation loss.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our current approach focused on sequential training of the feature extractor and feature transformer models. We also performed a combined training which jointly optimizes the feature extractor and spectrogram generator models using a unified training pipeline. The feature extractor is optimized using Stochastic Gradient Descent (SGD) with momentum 0.9, while the transformer-based spectrogram generator uses Adam optimizer with an initial learning rate of <math alttext=\"1\\times 10^{-2}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-2}</annotation></semantics></math> and weight decay of <math alttext=\"1\\times 10^{-8}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m2\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>8</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-8}</annotation></semantics></math>. We use a ReduceLROnPlateau scheduler that reduces the learning rate by a factor of 0.1 after 3 epochs without improvement in validation loss, ensuring adaptive optimization. We implement a combined loss function that incorporates both classification and spectrogram reconstruction objectives:</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "classification",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For efficient training, we accumulate gradients over 8 batches before applying parameter updates. Different learning rate schedules are implemented for each component: a ReduceLROnPlateau scheduler for the feature extractor that reduces the learning rate when validation loss plateaus, and a CosineAnnealingLR scheduler with a cycle length of 50 epochs for the transformer generator.\nThe training process employs an early stopping mechanism with a configurable patience parameter to prevent overfitting. Training progress is monitored through both classification accuracy and validation loss, with the best model selected based on validation performance.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "classification",
+                    "training",
+                    "different",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All models were implemented in PyTorch with the PyTorchVideo library for video processing. Training was performed on a single NVIDIA RTX A6000 GPU with 48GB of memory. For the feature extractor, we used a batch size of 4 due to the memory constraints of 3D CNN processing. For the spectrogram generator, we used a larger batch size of 64. Our complete model contains approximately 100 million trainable parameters and achieves an average processing speed of 22 frames per second (fps).</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For all experiments, we trained the feature extractor on the augmented training set and validated it on the original validation set. We then extracted features for all videos in training, validation, and test sets using the feature extractor model. This was followed by training the spectrogram generator on extracted features from the training set and validating on the validation set. We then evaluated the complete pipeline on the test set, measuring both classification accuracy and spectrogram quality.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we evaluate the classification and audio generation performance of our proposed IsoSignVid2Aud model on the ASL-Citizen-1500 and WLASL-100 datasets.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "model",
+                    "performance",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T2\" title=\"TABLE II &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> compares the classification performance of different models on the WLASL-100 dataset using the official dataset splits. Our IsoSignVid2Aud model achieves a Top-1 accuracy of 78.67%, outperforming I3D (65.89%), and Spoter (63.18%) and achieving a slight improvement over StepNet (78.29%). With the combined training approach, IsoSignVid2Aud reaches a Top-1 accuracy of 77.72%, which is slightly lower than the standalone model but still competitive. However, it achieves the highest Top-5 accuracy among all models at 95.32%, even surpassing SignBERT (95.00%) and I3D with ST-GCN (94.13%). While UniSign maintains the highest Top-1 accuracy at 92.25%, both of our models demonstrate competitive performance in the broader Top-5 metric.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "model",
+                    "top5",
+                    "classification",
+                    "training",
+                    "performance",
+                    "dataset",
+                    "top1",
+                    "different",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The notable improvement from our Top-1 to Top-5 accuracy demonstrates the models&#8217; strong semantic understanding of sign language. While visually similar signs may create challenges for precise Top-1 classification, the consistent presence of the correct sign within the Top-5 predictions indicates that our approaches effectively capture the underlying feature space of sign language. Particularly, the Combined IsoSignVid2Aud model&#8217;s exceptional Top-5 performance on WLASL-100 suggests that joint optimization helps the model learn more robust and generalizable features. Notably, our models achieve these results without the pose-based architectures used in some competing approaches, suggesting that our feature extraction methodology effectively captures the spatial-temporal dynamics of sign language gestures.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "model",
+                    "top5",
+                    "classification",
+                    "performance",
+                    "top1",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also created a test dataset of a sequence of isolated signs by grouping the ASL-citizen dataset by participant ID, selecting a participant at random with replacement, and then concatenating all their gloss videos if they are below ten in number. If there are more than 10 videos for a particular participant, we randomly pick a subset of 10 videos and concatenate them. We got the following average metrics by transcribing the audio we obtained as output for 100 participants against ground truth labels: Average WER: 0.3000, Average CER: 0.2733, Average BLEU: 0.7036. This strongly reflects the capability of our model to capture a sequence of isolated signs.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the audio generation quality of both our IsoSignVid2Aud model and the combined training approach using standard metrics, as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T3\" title=\"TABLE III &#8227; V-B Audio Generation Quality &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">III</span></a>. For the standalone IsoSignVid2Aud model, the PESQ score of 2.68 and STOI score of 0.73 indicate high speech intelligibility and perceptual quality. The SNR and MSE scores suggest effective preservation of phonetic and spectral properties, ensuring accurate sign-to-speech conversion.The combined training approach, which jointly optimizes the feature extractor and spectrogram generator, achieves a PESQ score of 2.44 and STOI of 0.78. While the PESQ score is slightly lower than the standalone model, the improved STOI score indicates enhanced speech intelligibility, suggesting that the joint optimization helps preserve important speech characteristics. The combined approach also shows a higher SNR of 15.5, demonstrating better noise reduction capabilities, along with a significantly lower MSE of 0.16, indicating more accurate spectrogram reconstruction.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "model",
+                    "training",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To our knowledge, we are the first to propose a direct sign language video-to-audio model without the need for intermediate text. Since existing models generate only text output, to compare them with our approach, we need to apply text-to-speech (TTS) systems on top of their outputs. However, this would lead to an unfair comparison, as the resulting audio quality would primarily reflect the performance of the TTS system rather than the model&#8217;s effectiveness in processing sign language videos.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "model",
+                    "comparison",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Though our combined model consistently outperforms the standalone base classifier (I3D) within our framework, the model accuracy on the WLASL dataset remains below some state-of-the-art levels, with scope of improvement in recognizing complex signs. Our proposed architecture is designed to be modular, allowing different base models to be used as feature extractors. Although integrating a more advanced classifier could potentially improve accuracy, our choice of I3D is a deliberate trade-off between accuracy and latency. Since our aim includes supporting real-time communication, adopting other state-of-the-art classifiers with better accuracy will compel us to use heavy transformer architectures and extract pose features, increasing latency and reducing the scope for real-time communication. This approach exhibits some limitations that require future work. In addition, the audio quality metrics indicate moderate performance, but artifacts and limited frequency expressiveness persist.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "model",
+                    "dataset",
+                    "different",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we presented IsoSignVid2Aud, a novel end-to-end framework for direct conversion of sign language videos to speech without intermediate text representation. Our approach combines a powerful I3D-based feature extraction module with a specialized feature transformation network and audio generation pipeline. The experimental results demonstrate that our method achieves competitive performance on both the ASL-Citizen-1500 and WLASL-100 datasets, with a Top-1 accuracy of 72.01% and 78.67% respectively.</p>\n\n",
+                "matched_terms": [
+                    "top1",
+                    "performance",
+                    "isosignvid2aud"
+                ]
+            }
+        ]
+    },
+    "S5.T2": {
+        "caption": "TABLE II: Classification performance comparison of different models on the WLASL-100[18] dataset.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\">Method</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Top-1 (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Top-5 (%)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">UniSign <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib10\" title=\"\">10</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">92.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">SiFormer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib11\" title=\"\">11</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">86.50</td>\n<td class=\"ltx_td ltx_align_center\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">SignBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib9\" title=\"\">9</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">83.30</td>\n<td class=\"ltx_td ltx_align_center\">95.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">I3D, ST-GCN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib19\" title=\"\">19</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">81.38</td>\n<td class=\"ltx_td ltx_align_center\">94.13</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">StepNet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib26\" title=\"\">26</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">78.29</td>\n<td class=\"ltx_td ltx_align_center\">92.25</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">65.89</td>\n<td class=\"ltx_td ltx_align_center\">84.11</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">Spoter <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">63.18</td>\n<td class=\"ltx_td ltx_align_center\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">Ours (IsoSignVid2Aud)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">78.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">94.96</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r ltx_border_t\">Ours (Combined training)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\">77.72</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\">95.32</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "combined",
+            "models",
+            "siformer",
+            "comparison",
+            "wlasl10018",
+            "training",
+            "stepnet",
+            "performance",
+            "top1",
+            "stgcn",
+            "top5",
+            "i3d",
+            "classification",
+            "unisign",
+            "spoter",
+            "ours",
+            "method",
+            "dataset",
+            "signbert",
+            "different",
+            "isosignvid2aud"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T2\" title=\"TABLE II &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> compares the classification performance of different models on the WLASL-100 dataset using the official dataset splits. Our IsoSignVid2Aud model achieves a Top-1 accuracy of 78.67%, outperforming I3D (65.89%), and Spoter (63.18%) and achieving a slight improvement over StepNet (78.29%). With the combined training approach, IsoSignVid2Aud reaches a Top-1 accuracy of 77.72%, which is slightly lower than the standalone model but still competitive. However, it achieves the highest Top-5 accuracy among all models at 95.32%, even surpassing SignBERT (95.00%) and I3D with ST-GCN (94.13%). While UniSign maintains the highest Top-1 accuracy at 92.25%, both of our models demonstrate competitive performance in the broader Top-5 metric.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Sign language to spoken language audio translation is important to connect the hearing- and speech-challenged humans with others. We consider sign language videos with isolated sign sequences rather than continuous grammatical signing. Such videos are useful in educational applications and sign prompt interfaces. Towards this, we propose\nIsoSignVid2Aud, a novel end-to-end framework that translates sign language videos with a sequence of possibly non-grammatic continuous signs to speech without requiring intermediate text representation, providing immediate communication benefits while avoiding the latency and cascading errors inherent in multi-stage translation systems. Our approach combines an I3D-based feature extraction module with a specialized feature transformation network and an audio generation pipeline, utilizing a novel Non-Maximal Suppression (NMS) algorithm for the temporal detection of signs in non-grammatic continuous sequences. Experimental results demonstrate competitive performance on ASL-Citizen-1500 and WLASL-100 datasets with Top-1 accuracies of 72.01% and 78.67%, respectively, and audio quality metrics (PESQ: 2.67, STOI: 0.73) indicating intelligible speech output. Code is available at: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/BheeshmSharma/IsoSignVid2Aud_AIMLsystems-2025\" title=\"\">this link</a>.</p>\n\n",
+                "matched_terms": [
+                    "top1",
+                    "isosignvid2aud",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in deep learning have enabled significant progress in both sign language recognition and speech synthesis independently. Models like I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> have demonstrated impressive capabilities in capturing the spatio-temporal dynamics crucial for sign language understanding, while modern speech synthesis techniques have achieved increasingly natural-sounding output. However, these advancements have largely developed in parallel, with limited exploration of direct sign-to-speech conversion.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "models"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The IsoSignVid2Aud system consists of three primary components: a feature extraction module based on the I3D network to capture spatio-temporal information from sign language videos, a feature transformer that maps visual features to audio representations in the form of spectrograms, and an audio generation module that synthesizes natural-sounding speech from the predicted spectrograms.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate our proposed framework on two standard datasets: ASL-Citizen-1500 and WLASL-100. Our experiments demonstrate that IsoSignVid2Aud achieves competitive performance in both sign recognition accuracy and speech quality. These results suggest that direct sign-to-speech conversion based on isolated sign recognition is not only feasible but potentially advantageous compared to traditional multi-stage approaches that require continuous grammatical signing.</p>\n\n",
+                "matched_terms": [
+                    "isosignvid2aud",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Convolutional neural networks (CNNs) have been widely adopted for this task, with notable architectures including I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite>, which has demonstrated strong performance in action recognition tasks and sign language recognition. I3D&#8217;s ability to capture spatio-temporal information makes it particularly suitable for understanding the dynamic nature of sign language gestures.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">More recently, transformer-based approaches have shown promising results. SignBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib9\" title=\"\">9</a>]</cite> introduced a pre-training approach for hand-model-aware representation. SiFormer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib11\" title=\"\">11</a>]</cite> proposed a spatiotemporal transformer specifically designed for sign language recognition, achieving state-of-the-art results on benchmark datasets. Spoter <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib1\" title=\"\">1</a>]</cite> presented a sign pose-based transformer for word-level recognition, while UniSign <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib10\" title=\"\">10</a>]</cite> introduced a universal sign language recognition model that achieves superior performance across datasets.</p>\n\n",
+                "matched_terms": [
+                    "siformer",
+                    "unisign",
+                    "spoter",
+                    "signbert",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Graph-based methods have also been explored, with ST-GCN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib29\" title=\"\">29</a>]</cite> applying graph convolutional networks to skeleton-based action recognition, which has been adapted for sign language processing. StepNet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib26\" title=\"\">26</a>]</cite> introduced a spatial-temporal part-aware network specifically designed for isolated sign language recognition.</p>\n\n",
+                "matched_terms": [
+                    "stgcn",
+                    "stepnet"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our IsoSignVid2Aud framework\nconsists of three major components: (1) a feature extraction module based on I3D network, (2) a feature transformer that maps visual features to audio representations, and (3) an audio generation module to synthesize natural-sounding speech. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S3.F1\" title=\"Figure 1 &#8227; III Methodology &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents an overview of our end-to-end pipeline.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The IsoSignVid2Aud framework operates modularly to achieve direct conversion from sign language videos to speech. We first extract deep spatio-temporal features from sign language videos using an I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> model pretrained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets. These features then transform our Spectrogram Generator, comprising a multi-layer perceptron and transposed convolution network, to produce the magnitude and phase of mel spectrograms. Then these synthesized spectrograms are converted to audible speech using the Inverse Short-Time Fourier Transform (ISTFT) algorithm <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "dataset",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To extract meaningful features from sign language videos, we require a model capable of capturing both spatial and temporal dynamics to accurately interpret the expressive and sequential nature of sign language. To meet these needs, we employ the Inception 3D (I3D) model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> pre-trained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL Citizen and WLASL datasets for extracting meaningful features from sign language videos. The I3D architecture, an extension of the Inception model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib27\" title=\"\">27</a>]</cite>, with all 2D convolutions inflated to 3D convolutions by repeating filter kernel parameters along the temporal dimension, enables direct processing of video data. This approach allows I3D to utilize pre-trained 2D image classification weights while effectively modeling spatio-temporal data.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "dataset",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, we utilize the spectrogram magnitudes and phases from the custom dataset and map them to the corresponding I3D features, following the training of the I3D feature extractor. This spectrogram generator component processes the feature vector <math alttext=\"\\phi\\in\\mathbb{R}^{n}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#981;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\phi\\in\\mathbb{R}^{n}</annotation></semantics></math> obtained from the I3D model <math alttext=\"\\mathcal{E}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m2\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#8496;</mi><annotation encoding=\"application/x-tex\">\\mathcal{E}</annotation></semantics></math> and utilizes a multi-layer perceptron followed by a transposed convolution network <math alttext=\"\\mathcal{S}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m3\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119982;</mi><annotation encoding=\"application/x-tex\">\\mathcal{S}</annotation></semantics></math> to map it to the real and imaginary parts of the spectrogram, each of the dimensions <math alttext=\"r,i\\in\\mathbb{R}^{\\omega\\times\\tau}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m4\" intent=\":literal\"><semantics><mrow><mrow><mi>r</mi><mo>,</mo><mi>i</mi></mrow><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><mi>&#969;</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>&#964;</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">r,i\\in\\mathbb{R}^{\\omega\\times\\tau}</annotation></semantics></math> as in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S3.F1\" title=\"Figure 1 &#8227; III Methodology &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where <math alttext=\"\\omega\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m5\" intent=\":literal\"><semantics><mi>&#969;</mi><annotation encoding=\"application/x-tex\">\\omega</annotation></semantics></math> and <math alttext=\"\\tau\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m6\" intent=\":literal\"><semantics><mi>&#964;</mi><annotation encoding=\"application/x-tex\">\\tau</annotation></semantics></math> denote the number of frequencies and time steps respectively. The functionality of the Spectrogram Generator can be expressed as</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "dataset",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We used the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and the WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets, which contain sign language videos and their corresponding gloss. Each video contains a single signer performing an American Sign Language (ASL) sign, recorded at 25 frames per second. We conducted our experiments on a subset of 1500 of the most frequent glosses of the ASL-Citizen dataset, which originally consists of around 2731 sign language words. The dataset was split into training, validation, and testing sets of sizes 23365, 5282, and 17798, respectively. We then performed experiments on a subset of the 100 most frequent glosses of the WLASL dataset, which originally consists of around 2000 signs. The dataset was split into training, validation, and testing sets of sizes 1448, 252, and 336, respectively.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This increased our effective training set size by a factor of 5, providing greater diversity for model training. All augmented videos were saved as MP4 files using the same encoding as the original dataset.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our feature extractor utilizes a pre-trained I3D model,\nwhich produces embeddings of dimension 2048 for each video. To get the confidence score, we modify the final block of the model by replacing it with an average pooling operation (kernel size <math alttext=\"4\\times 7\\times 7\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>4</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">4\\times 7\\times 7</annotation></semantics></math>) to produce spatially condensed feature maps. This is followed by a classification head that consists of a dropout layer (<math alttext=\"p=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m2\" intent=\":literal\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">p=0.5</annotation></semantics></math>), a linear projection to the number of classes (<math alttext=\"1500\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m3\" intent=\":literal\"><semantics><mn>1500</mn><annotation encoding=\"application/x-tex\">1500</annotation></semantics></math> for ASL Citizen and <math alttext=\"100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m4\" intent=\":literal\"><semantics><mn>100</mn><annotation encoding=\"application/x-tex\">100</annotation></semantics></math> for the WLASL dataset), and a ReLU activation. Then we apply an adaptive average pooling and flatten the features of the classifier output.</p>\n\n",
+                "matched_terms": [
+                    "i3d",
+                    "dataset",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our current approach focused on sequential training of the feature extractor and feature transformer models. We also performed a combined training which jointly optimizes the feature extractor and spectrogram generator models using a unified training pipeline. The feature extractor is optimized using Stochastic Gradient Descent (SGD) with momentum 0.9, while the transformer-based spectrogram generator uses Adam optimizer with an initial learning rate of <math alttext=\"1\\times 10^{-2}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-2}</annotation></semantics></math> and weight decay of <math alttext=\"1\\times 10^{-8}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m2\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>8</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-8}</annotation></semantics></math>. We use a ReduceLROnPlateau scheduler that reduces the learning rate by a factor of 0.1 after 3 epochs without improvement in validation loss, ensuring adaptive optimization. We implement a combined loss function that incorporates both classification and spectrogram reconstruction objectives:</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "classification",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For efficient training, we accumulate gradients over 8 batches before applying parameter updates. Different learning rate schedules are implemented for each component: a ReduceLROnPlateau scheduler for the feature extractor that reduces the learning rate when validation loss plateaus, and a CosineAnnealingLR scheduler with a cycle length of 50 epochs for the transformer generator.\nThe training process employs an early stopping mechanism with a configurable patience parameter to prevent overfitting. Training progress is monitored through both classification accuracy and validation loss, with the best model selected based on validation performance.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "different",
+                    "training",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All models were implemented in PyTorch with the PyTorchVideo library for video processing. Training was performed on a single NVIDIA RTX A6000 GPU with 48GB of memory. For the feature extractor, we used a batch size of 4 due to the memory constraints of 3D CNN processing. For the spectrogram generator, we used a larger batch size of 64. Our complete model contains approximately 100 million trainable parameters and achieves an average processing speed of 22 frames per second (fps).</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For all experiments, we trained the feature extractor on the augmented training set and validated it on the original validation set. We then extracted features for all videos in training, validation, and test sets using the feature extractor model. This was followed by training the spectrogram generator on extracted features from the training set and validating on the validation set. We then evaluated the complete pipeline on the test set, measuring both classification accuracy and spectrogram quality.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we evaluate the classification and audio generation performance of our proposed IsoSignVid2Aud model on the ASL-Citizen-1500 and WLASL-100 datasets.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "performance",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T1\" title=\"TABLE I &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> presents the classification performance of our models on the ASL-Citizen-1500 dataset, which follows the standard train/validation/test splits provided by the dataset creators. IsoSignVid2Aud achieves a Top-1 accuracy of 72.01% and a Top-5 accuracy of 91.42%, which is a slight improvement upon the baseline I3D model by 0.91% and 1.29%, respectively. Our model also provides an F1 score of 0.72, demonstrating its effectiveness in recognizing ASL signs with both precision and recall. When trained with the combined approach, IsoSignVid2Aud achieves even better results with a Top-1 accuracy of 75.19%, Top-5 accuracy of 92.65%, and an F1-Score of 0.75. This represents a significant improvement of 4.09% in Top-1 accuracy over the baseline I3D model, suggesting that the joint training approach enhances the feature extraction capabilities for sign language recognition.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "top5",
+                    "i3d",
+                    "classification",
+                    "training",
+                    "isosignvid2aud",
+                    "dataset",
+                    "top1",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in sign language recognition have yielded a diverse set of architectures with varying approaches to feature extraction and representation. Transformer-based models such as UniSign&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib10\" title=\"\">10</a>]</cite>, SiFormer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib11\" title=\"\">11</a>]</cite>, and SignBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib9\" title=\"\">9</a>]</cite> leverage self-attention mechanisms to capture complex temporal dependencies in sign language sequences. Models such as UniSign, SignBERT, and I3D+ST-GCN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib19\" title=\"\">19</a>]</cite> incorporate multimodal features, combining both RGB and pose estimation, while SiFormer and SPOTER <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib1\" title=\"\">1</a>]</cite> primarily use only pose estimation. I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> and StepNet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib26\" title=\"\">26</a>]</cite> can utilize RGB and optical flow streams as inputs.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "siformer",
+                    "i3d",
+                    "unisign",
+                    "spoter",
+                    "signbert",
+                    "stepnet"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The notable improvement from our Top-1 to Top-5 accuracy demonstrates the models&#8217; strong semantic understanding of sign language. While visually similar signs may create challenges for precise Top-1 classification, the consistent presence of the correct sign within the Top-5 predictions indicates that our approaches effectively capture the underlying feature space of sign language. Particularly, the Combined IsoSignVid2Aud model&#8217;s exceptional Top-5 performance on WLASL-100 suggests that joint optimization helps the model learn more robust and generalizable features. Notably, our models achieve these results without the pose-based architectures used in some competing approaches, suggesting that our feature extraction methodology effectively captures the spatial-temporal dynamics of sign language gestures.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "top5",
+                    "classification",
+                    "isosignvid2aud",
+                    "top1",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the audio generation quality of both our IsoSignVid2Aud model and the combined training approach using standard metrics, as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T3\" title=\"TABLE III &#8227; V-B Audio Generation Quality &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">III</span></a>. For the standalone IsoSignVid2Aud model, the PESQ score of 2.68 and STOI score of 0.73 indicate high speech intelligibility and perceptual quality. The SNR and MSE scores suggest effective preservation of phonetic and spectral properties, ensuring accurate sign-to-speech conversion.The combined training approach, which jointly optimizes the feature extractor and spectrogram generator, achieves a PESQ score of 2.44 and STOI of 0.78. While the PESQ score is slightly lower than the standalone model, the improved STOI score indicates enhanced speech intelligibility, suggesting that the joint optimization helps preserve important speech characteristics. The combined approach also shows a higher SNR of 15.5, demonstrating better noise reduction capabilities, along with a significantly lower MSE of 0.16, indicating more accurate spectrogram reconstruction.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "training",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To our knowledge, we are the first to propose a direct sign language video-to-audio model without the need for intermediate text. Since existing models generate only text output, to compare them with our approach, we need to apply text-to-speech (TTS) systems on top of their outputs. However, this would lead to an unfair comparison, as the resulting audio quality would primarily reflect the performance of the TTS system rather than the model&#8217;s effectiveness in processing sign language videos.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "comparison",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Though our combined model consistently outperforms the standalone base classifier (I3D) within our framework, the model accuracy on the WLASL dataset remains below some state-of-the-art levels, with scope of improvement in recognizing complex signs. Our proposed architecture is designed to be modular, allowing different base models to be used as feature extractors. Although integrating a more advanced classifier could potentially improve accuracy, our choice of I3D is a deliberate trade-off between accuracy and latency. Since our aim includes supporting real-time communication, adopting other state-of-the-art classifiers with better accuracy will compel us to use heavy transformer architectures and extract pose features, increasing latency and reducing the scope for real-time communication. This approach exhibits some limitations that require future work. In addition, the audio quality metrics indicate moderate performance, but artifacts and limited frequency expressiveness persist.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "i3d",
+                    "dataset",
+                    "different",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we presented IsoSignVid2Aud, a novel end-to-end framework for direct conversion of sign language videos to speech without intermediate text representation. Our approach combines a powerful I3D-based feature extraction module with a specialized feature transformation network and audio generation pipeline. The experimental results demonstrate that our method achieves competitive performance on both the ASL-Citizen-1500 and WLASL-100 datasets, with a Top-1 accuracy of 72.01% and 78.67% respectively.</p>\n\n",
+                "matched_terms": [
+                    "top1",
+                    "isosignvid2aud",
+                    "method",
+                    "performance"
+                ]
+            }
+        ]
+    },
+    "S5.T3": {
+        "caption": "TABLE III: Audio generation quality metrics for our models on the WLASL-100 dataset.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_figure_panel ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">PESQ <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">STOI <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T3.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">SNR <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T3.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">MSE <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.T3.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">IsoSignVid2Aud</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.68</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.73</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">14.79</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">Combined training</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">2.44</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">0.78</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">15.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">0.16</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "combined",
+            "models",
+            "pesq",
+            "↓downarrow",
+            "our",
+            "audio",
+            "iii",
+            "generation",
+            "training",
+            "snr",
+            "stoi",
+            "metrics",
+            "↑uparrow",
+            "mse",
+            "wlasl100",
+            "model",
+            "dataset",
+            "quality",
+            "isosignvid2aud"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We evaluate the audio generation quality of both our IsoSignVid2Aud model and the combined training approach using standard metrics, as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T3\" title=\"TABLE III &#8227; V-B Audio Generation Quality &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">III</span></a>. For the standalone IsoSignVid2Aud model, the PESQ score of 2.68 and STOI score of 0.73 indicate high speech intelligibility and perceptual quality. The SNR and MSE scores suggest effective preservation of phonetic and spectral properties, ensuring accurate sign-to-speech conversion.The combined training approach, which jointly optimizes the feature extractor and spectrogram generator, achieves a PESQ score of 2.44 and STOI of 0.78. While the PESQ score is slightly lower than the standalone model, the improved STOI score indicates enhanced speech intelligibility, suggesting that the joint optimization helps preserve important speech characteristics. The combined approach also shows a higher SNR of 15.5, demonstrating better noise reduction capabilities, along with a significantly lower MSE of 0.16, indicating more accurate spectrogram reconstruction.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Sign language to spoken language audio translation is important to connect the hearing- and speech-challenged humans with others. We consider sign language videos with isolated sign sequences rather than continuous grammatical signing. Such videos are useful in educational applications and sign prompt interfaces. Towards this, we propose\nIsoSignVid2Aud, a novel end-to-end framework that translates sign language videos with a sequence of possibly non-grammatic continuous signs to speech without requiring intermediate text representation, providing immediate communication benefits while avoiding the latency and cascading errors inherent in multi-stage translation systems. Our approach combines an I3D-based feature extraction module with a specialized feature transformation network and an audio generation pipeline, utilizing a novel Non-Maximal Suppression (NMS) algorithm for the temporal detection of signs in non-grammatic continuous sequences. Experimental results demonstrate competitive performance on ASL-Citizen-1500 and WLASL-100 datasets with Top-1 accuracies of 72.01% and 78.67%, respectively, and audio quality metrics (PESQ: 2.67, STOI: 0.73) indicating intelligible speech output. Code is available at: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/BheeshmSharma/IsoSignVid2Aud_AIMLsystems-2025\" title=\"\">this link</a>.</p>\n\n",
+                "matched_terms": [
+                    "pesq",
+                    "audio",
+                    "wlasl100",
+                    "stoi",
+                    "metrics",
+                    "generation",
+                    "isosignvid2aud",
+                    "quality",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we present IsoSignVid2Aud, a novel end-to-end framework that directly converts sign language videos to speech without requiring an intermediate text representation. Our system is specifically designed to recognize sequences of isolated signs, making it well-suited for high-impact practical applications where isolated recognition delivers immediate value: emergency communication and keyword recognition in public spaces (identifying signs like &#8220;help&#8221;, &#8220;bathroom&#8221; or &#8220;information&#8221;), accessibility interfaces for diverse users, command-based systems for menu navigation in kiosks and smart devices, and other scenarios that prioritize practical, real-world utility over linguistic completeness.</p>\n\n",
+                "matched_terms": [
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The IsoSignVid2Aud system consists of three primary components: a feature extraction module based on the I3D network to capture spatio-temporal information from sign language videos, a feature transformer that maps visual features to audio representations in the form of spectrograms, and an audio generation module that synthesizes natural-sounding speech from the predicted spectrograms.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generation",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate our proposed framework on two standard datasets: ASL-Citizen-1500 and WLASL-100. Our experiments demonstrate that IsoSignVid2Aud achieves competitive performance in both sign recognition accuracy and speech quality. These results suggest that direct sign-to-speech conversion based on isolated sign recognition is not only feasible but potentially advantageous compared to traditional multi-stage approaches that require continuous grammatical signing.</p>\n\n",
+                "matched_terms": [
+                    "wlasl100",
+                    "quality",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To the best of our knowledge, we are the first to propose a direct sign language video-to-audio model without the need for intermediate text. This contributes a new paradigm for sign-to-speech translation that bridges the gap between early-stage sign language understanding and accessible communication technologies, particularly for non-signers and emerging sign learners. Another key innovation in our approach is the introduction of a Non-Maximal Suppression (NMS) algorithm for temporal sign isolation, enabling our system to process sign language videos effectively by identifying and isolating the most significant sign gestures while eliminating redundant or low-confidence predictions, which aligns with how humans naturally acquire and process sign language by recognizing distinct signs before interpreting their combined meaning.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">More efficient approaches like HiFi-GAN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib16\" title=\"\">16</a>]</cite> utilize generative adversarial networks to produce high-fidelity speech with fewer computational requirements. This model employs multi-period and multi-scale discriminators to capture both local and global structures in the audio waveform, producing natural-sounding speech with fewer artifacts compared to traditional methods.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our IsoSignVid2Aud approach differs from previous work by proposing a direct end-to-end framework for converting sign language videos to speech without requiring intermediate text representation, combining advanced feature extraction techniques with specialized audio generation pipelines to preserve more of the expressiveness inherent in sign languages.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generation",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our IsoSignVid2Aud framework\nconsists of three major components: (1) a feature extraction module based on I3D network, (2) a feature transformer that maps visual features to audio representations, and (3) an audio generation module to synthesize natural-sounding speech. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S3.F1\" title=\"Figure 1 &#8227; III Methodology &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents an overview of our end-to-end pipeline.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generation",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The IsoSignVid2Aud framework operates modularly to achieve direct conversion from sign language videos to speech. We first extract deep spatio-temporal features from sign language videos using an I3D <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> model pretrained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets. These features then transform our Spectrogram Generator, comprising a multi-layer perceptron and transposed convolution network, to produce the magnitude and phase of mel spectrograms. Then these synthesized spectrograms are converted to audible speech using the Inverse Short-Time Fourier Transform (ISTFT) algorithm <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To extract meaningful features from sign language videos, we require a model capable of capturing both spatial and temporal dynamics to accurately interpret the expressive and sequential nature of sign language. To meet these needs, we employ the Inception 3D (I3D) model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib4\" title=\"\">4</a>]</cite> pre-trained on the Kinetics dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib12\" title=\"\">12</a>]</cite> and fine-tuned on the ASL Citizen and WLASL datasets for extracting meaningful features from sign language videos. The I3D architecture, an extension of the Inception model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib27\" title=\"\">27</a>]</cite>, with all 2D convolutions inflated to 3D convolutions by repeating filter kernel parameters along the temporal dimension, enables direct processing of video data. This approach allows I3D to utilize pre-trained 2D image classification weights while effectively modeling spatio-temporal data.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The Spectrogram Generator module is a key component of our approach. It bridges visual features and audio representations, enabling our model to function independently of text by converting visual inputs into spectrogram-based audio features. Due to the absence of a pre-existing feature-to-spectrogram matching dataset, we train the spectrogram generation model on a custom dataset. This dataset is generated by creating spectrograms from the Tacotron2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib21\" title=\"\">21</a>]</cite> model using the text glosses from the WLASL and ASL-Citizen datasets, which serve as the ground truth.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "model",
+                    "generation",
+                    "dataset",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, we utilize the spectrogram magnitudes and phases from the custom dataset and map them to the corresponding I3D features, following the training of the I3D feature extractor. This spectrogram generator component processes the feature vector <math alttext=\"\\phi\\in\\mathbb{R}^{n}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#981;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\phi\\in\\mathbb{R}^{n}</annotation></semantics></math> obtained from the I3D model <math alttext=\"\\mathcal{E}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m2\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#8496;</mi><annotation encoding=\"application/x-tex\">\\mathcal{E}</annotation></semantics></math> and utilizes a multi-layer perceptron followed by a transposed convolution network <math alttext=\"\\mathcal{S}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m3\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119982;</mi><annotation encoding=\"application/x-tex\">\\mathcal{S}</annotation></semantics></math> to map it to the real and imaginary parts of the spectrogram, each of the dimensions <math alttext=\"r,i\\in\\mathbb{R}^{\\omega\\times\\tau}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m4\" intent=\":literal\"><semantics><mrow><mrow><mi>r</mi><mo>,</mo><mi>i</mi></mrow><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><mi>&#969;</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>&#964;</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">r,i\\in\\mathbb{R}^{\\omega\\times\\tau}</annotation></semantics></math> as in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S3.F1\" title=\"Figure 1 &#8227; III Methodology &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where <math alttext=\"\\omega\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m5\" intent=\":literal\"><semantics><mi>&#969;</mi><annotation encoding=\"application/x-tex\">\\omega</annotation></semantics></math> and <math alttext=\"\\tau\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p2.m6\" intent=\":literal\"><semantics><mi>&#964;</mi><annotation encoding=\"application/x-tex\">\\tau</annotation></semantics></math> denote the number of frequencies and time steps respectively. The functionality of the Spectrogram Generator can be expressed as</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our pipeline&#8217;s final stage converts predicted spectrograms into audible speech via the Inverse Short-Time Fourier Transform (ISTFT). Utilizing the spectrogram&#8217;s real (<math alttext=\"r\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mi>r</mi><annotation encoding=\"application/x-tex\">r</annotation></semantics></math>) and imaginary (<math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>) components, ISTFT directly reconstructs the time-domain signal. Unlike vocoder-based approaches requiring additional neural models, ISTFT provides an efficient, high-fidelity solution for audio generation from complex spectrograms.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "generation",
+                    "audio",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a Non-Maximal Suppression (NMS) algorithm for temporal sign isolation. This is particularly important as our framework is designed to identify single signs, while real-world sign language videos often contain multiple signs in sequence. The NMS module ranks predictions based on confidence and imposes temporal constraints such that the final audio output is consistent.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This approach enables our system to identify and isolate the most significant sign gestures in continuous signing while eliminating redundant or low-confidence predictions. By adjusting the window parameters, we can effectively balance detection sensitivity with the natural speed of sign language communication, ensuring that only the relevant sign language features are processed for audio generation.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generation",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, we implement a sliding window approach for continuous sign language processing. We process each frame of the video through our &#8216;IsoSignVid2Aud&#8216; model which orchestrates the entire pipeline:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We used the ASL-Citizen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib6\" title=\"\">6</a>]</cite> and the WLASL <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib18\" title=\"\">18</a>]</cite> datasets, which contain sign language videos and their corresponding gloss. Each video contains a single signer performing an American Sign Language (ASL) sign, recorded at 25 frames per second. We conducted our experiments on a subset of 1500 of the most frequent glosses of the ASL-Citizen dataset, which originally consists of around 2731 sign language words. The dataset was split into training, validation, and testing sets of sizes 23365, 5282, and 17798, respectively. We then performed experiments on a subset of the 100 most frequent glosses of the WLASL dataset, which originally consists of around 2000 signs. The dataset was split into training, validation, and testing sets of sizes 1448, 252, and 336, respectively.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "training",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This increased our effective training set size by a factor of 5, providing greater diversity for model training. All augmented videos were saved as MP4 files using the same encoding as the original dataset.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "training",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our feature extractor utilizes a pre-trained I3D model,\nwhich produces embeddings of dimension 2048 for each video. To get the confidence score, we modify the final block of the model by replacing it with an average pooling operation (kernel size <math alttext=\"4\\times 7\\times 7\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>4</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">4\\times 7\\times 7</annotation></semantics></math>) to produce spatially condensed feature maps. This is followed by a classification head that consists of a dropout layer (<math alttext=\"p=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m2\" intent=\":literal\"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">p=0.5</annotation></semantics></math>), a linear projection to the number of classes (<math alttext=\"1500\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m3\" intent=\":literal\"><semantics><mn>1500</mn><annotation encoding=\"application/x-tex\">1500</annotation></semantics></math> for ASL Citizen and <math alttext=\"100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m4\" intent=\":literal\"><semantics><mn>100</mn><annotation encoding=\"application/x-tex\">100</annotation></semantics></math> for the WLASL dataset), and a ReLU activation. Then we apply an adaptive average pooling and flatten the features of the classifier output.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our spectrogram generator transforms video features extracted by the I3D model into complex spectrograms using a multi-layer perceptron (MLP) followed by dual deconvolution networks for the magnitude and phase components. The model takes input features of dimension <math alttext=\"2048\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m1\" intent=\":literal\"><semantics><mn>2048</mn><annotation encoding=\"application/x-tex\">2048</annotation></semantics></math> from the I3D model. The MLP changes dimensions progressively <math alttext=\"[648,1296,2592,5184]\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m2\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>648</mn><mo>,</mo><mn>1296</mn><mo>,</mo><mn>2592</mn><mo>,</mo><mn>5184</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[648,1296,2592,5184]</annotation></semantics></math> with layer normalization, LeakyReLU activations, and dropout (<math alttext=\"0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m3\" intent=\":literal\"><semantics><mn>0.1</mn><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math>) between each linear projection. The final MLP output is then reshaped to a <math alttext=\"128\\times 9\\times 9\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m4\" intent=\":literal\"><semantics><mrow><mn>128</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>9</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">128\\times 9\\times 9</annotation></semantics></math> tensor, representing the base shape for subsequent upsampling which is then passed through two parallel deconvolution networks with identical architectures&#8212;one generating the magnitude (<math alttext=\"r\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m5\" intent=\":literal\"><semantics><mi>r</mi><annotation encoding=\"application/x-tex\">r</annotation></semantics></math>) component and the other generating the phase (<math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m6\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>) component of the spectrogram. Each deconvolution network consists of a series of transposed convolution blocks each of which comprises a transposed convolution layer followed by instance normalization, ReLU activation, and dropout.\nThe blocks successively half the channel dimensions from 64 to 8 by applying kernels of various sizes, stride length and padding.\nBoth networks conclude with a final transposed convolution with kernel size <math alttext=\"3\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m7\" intent=\":literal\"><semantics><mn>3</mn><annotation encoding=\"application/x-tex\">3</annotation></semantics></math>, stride <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m8\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>, and padding <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m9\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>, reducing the channel count from <math alttext=\"8\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m10\" intent=\":literal\"><semantics><mn>8</mn><annotation encoding=\"application/x-tex\">8</annotation></semantics></math> to <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m11\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>. The outputs from both networks are concatenated along the channel dimension, resulting in a two-channel spectrogram where the first channel represents the magnitude and the second channel represents the phase with dimensions <math alttext=\"1025\\times 100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS6.p1.m12\" intent=\":literal\"><semantics><mrow><mn>1025</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>100</mn></mrow><annotation encoding=\"application/x-tex\">1025\\times 100</annotation></semantics></math> each.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For efficient training, we use a batch size of 64 with configurable parallelism through the num_workers parameter. The training process incorporates an early stopping mechanism with a patience of 10 epochs to prevent overfitting, which can be enabled or disabled via configuration. Training progress is monitored through both training and validation losses, with the best model selected based on the lowest validation loss.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our current approach focused on sequential training of the feature extractor and feature transformer models. We also performed a combined training which jointly optimizes the feature extractor and spectrogram generator models using a unified training pipeline. The feature extractor is optimized using Stochastic Gradient Descent (SGD) with momentum 0.9, while the transformer-based spectrogram generator uses Adam optimizer with an initial learning rate of <math alttext=\"1\\times 10^{-2}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-2}</annotation></semantics></math> and weight decay of <math alttext=\"1\\times 10^{-8}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS8.p1.m2\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>8</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-8}</annotation></semantics></math>. We use a ReduceLROnPlateau scheduler that reduces the learning rate by a factor of 0.1 after 3 epochs without improvement in validation loss, ensuring adaptive optimization. We implement a combined loss function that incorporates both classification and spectrogram reconstruction objectives:</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "training",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For efficient training, we accumulate gradients over 8 batches before applying parameter updates. Different learning rate schedules are implemented for each component: a ReduceLROnPlateau scheduler for the feature extractor that reduces the learning rate when validation loss plateaus, and a CosineAnnealingLR scheduler with a cycle length of 50 epochs for the transformer generator.\nThe training process employs an early stopping mechanism with a configurable patience parameter to prevent overfitting. Training progress is monitored through both classification accuracy and validation loss, with the best model selected based on validation performance.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All models were implemented in PyTorch with the PyTorchVideo library for video processing. Training was performed on a single NVIDIA RTX A6000 GPU with 48GB of memory. For the feature extractor, we used a batch size of 4 due to the memory constraints of 3D CNN processing. For the spectrogram generator, we used a larger batch size of 64. Our complete model contains approximately 100 million trainable parameters and achieves an average processing speed of 22 frames per second (fps).</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "model",
+                    "training",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since none of the state of the art models deal with audio, we evaluated our approach using <span class=\"ltx_text ltx_font_bold\">PESQ</span> (Perceptual Evaluation of Speech Quality) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib24\" title=\"\">24</a>]</cite> which measures the naturalness of speech on a scale from -0.5 to 4.5, with higher values indicating better quality; <span class=\"ltx_text ltx_font_bold\">STOI</span> (Short-Time Objective Intelligibility) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib28\" title=\"\">28</a>]</cite> which quantifies word intelligibility on a scale from 0 to 1, where values closer to 1 represent better intelligibility; <span class=\"ltx_text ltx_font_bold\">MSE</span> (Mean Squared Error) between the generated and the target spectrograms and <span class=\"ltx_text ltx_font_bold\">MCD</span> (Mel Cepstral Distortion) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#bib.bib17\" title=\"\">17</a>]</cite> which assesses spectral differences between generated and reference audio, with lower values signifying better similarity. We also employed <span class=\"ltx_text ltx_font_bold\">Top 1</span> and <span class=\"ltx_text ltx_font_bold\">Top 5</span> Accuracy to measure word prediction accuracy by transcribing the audio, since we aren&#8217;t dealing with text intermediaries, alongside <span class=\"ltx_text ltx_font_bold\">F1 score</span>, which provides a balanced measure of precision and recall.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "pesq",
+                    "mse",
+                    "audio",
+                    "stoi",
+                    "quality",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For all experiments, we trained the feature extractor on the augmented training set and validated it on the original validation set. We then extracted features for all videos in training, validation, and test sets using the feature extractor model. This was followed by training the spectrogram generator on extracted features from the training set and validating on the validation set. We then evaluated the complete pipeline on the test set, measuring both classification accuracy and spectrogram quality.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we evaluate the classification and audio generation performance of our proposed IsoSignVid2Aud model on the ASL-Citizen-1500 and WLASL-100 datasets.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "wlasl100",
+                    "model",
+                    "generation",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T1\" title=\"TABLE I &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> presents the classification performance of our models on the ASL-Citizen-1500 dataset, which follows the standard train/validation/test splits provided by the dataset creators. IsoSignVid2Aud achieves a Top-1 accuracy of 72.01% and a Top-5 accuracy of 91.42%, which is a slight improvement upon the baseline I3D model by 0.91% and 1.29%, respectively. Our model also provides an F1 score of 0.72, demonstrating its effectiveness in recognizing ASL signs with both precision and recall. When trained with the combined approach, IsoSignVid2Aud achieves even better results with a Top-1 accuracy of 75.19%, Top-5 accuracy of 92.65%, and an F1-Score of 0.75. This represents a significant improvement of 4.09% in Top-1 accuracy over the baseline I3D model, suggesting that the joint training approach enhances the feature extraction capabilities for sign language recognition.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "model",
+                    "training",
+                    "isosignvid2aud",
+                    "dataset",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07837v1#S5.T2\" title=\"TABLE II &#8227; V-A Sign Language Recognition Performance &#8227; V Results and Analysis &#8227; IsoSignVid2Aud: Sign Language Video to Audio Conversion without Text Intermediaries\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> compares the classification performance of different models on the WLASL-100 dataset using the official dataset splits. Our IsoSignVid2Aud model achieves a Top-1 accuracy of 78.67%, outperforming I3D (65.89%), and Spoter (63.18%) and achieving a slight improvement over StepNet (78.29%). With the combined training approach, IsoSignVid2Aud reaches a Top-1 accuracy of 77.72%, which is slightly lower than the standalone model but still competitive. However, it achieves the highest Top-5 accuracy among all models at 95.32%, even surpassing SignBERT (95.00%) and I3D with ST-GCN (94.13%). While UniSign maintains the highest Top-1 accuracy at 92.25%, both of our models demonstrate competitive performance in the broader Top-5 metric.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "wlasl100",
+                    "model",
+                    "training",
+                    "isosignvid2aud",
+                    "dataset",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The notable improvement from our Top-1 to Top-5 accuracy demonstrates the models&#8217; strong semantic understanding of sign language. While visually similar signs may create challenges for precise Top-1 classification, the consistent presence of the correct sign within the Top-5 predictions indicates that our approaches effectively capture the underlying feature space of sign language. Particularly, the Combined IsoSignVid2Aud model&#8217;s exceptional Top-5 performance on WLASL-100 suggests that joint optimization helps the model learn more robust and generalizable features. Notably, our models achieve these results without the pose-based architectures used in some competing approaches, suggesting that our feature extraction methodology effectively captures the spatial-temporal dynamics of sign language gestures.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "wlasl100",
+                    "model",
+                    "isosignvid2aud",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also created a test dataset of a sequence of isolated signs by grouping the ASL-citizen dataset by participant ID, selecting a participant at random with replacement, and then concatenating all their gloss videos if they are below ten in number. If there are more than 10 videos for a particular participant, we randomly pick a subset of 10 videos and concatenate them. We got the following average metrics by transcribing the audio we obtained as output for 100 participants against ground truth labels: Average WER: 0.3000, Average CER: 0.2733, Average BLEU: 0.7036. This strongly reflects the capability of our model to capture a sequence of isolated signs.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "model",
+                    "metrics",
+                    "dataset",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To our knowledge, we are the first to propose a direct sign language video-to-audio model without the need for intermediate text. Since existing models generate only text output, to compare them with our approach, we need to apply text-to-speech (TTS) systems on top of their outputs. However, this would lead to an unfair comparison, as the resulting audio quality would primarily reflect the performance of the TTS system rather than the model&#8217;s effectiveness in processing sign language videos.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "models",
+                    "audio",
+                    "model",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_figure_panel ltx_align_center\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">PESQ: Perceptual Evaluation of Speech Quality (range: 1-5), STOI: Short-Time Objective Intelligibility (range: 0-1), SNR: Signal-to-Noise Ratio (dB), MSE: Mean Square Error.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "mse",
+                    "pesq",
+                    "snr",
+                    "stoi",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Though our combined model consistently outperforms the standalone base classifier (I3D) within our framework, the model accuracy on the WLASL dataset remains below some state-of-the-art levels, with scope of improvement in recognizing complex signs. Our proposed architecture is designed to be modular, allowing different base models to be used as feature extractors. Although integrating a more advanced classifier could potentially improve accuracy, our choice of I3D is a deliberate trade-off between accuracy and latency. Since our aim includes supporting real-time communication, adopting other state-of-the-art classifiers with better accuracy will compel us to use heavy transformer architectures and extract pose features, increasing latency and reducing the scope for real-time communication. This approach exhibits some limitations that require future work. In addition, the audio quality metrics indicate moderate performance, but artifacts and limited frequency expressiveness persist.</p>\n\n",
+                "matched_terms": [
+                    "combined",
+                    "models",
+                    "audio",
+                    "metrics",
+                    "model",
+                    "dataset",
+                    "quality",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our architecture is language-agnostic by design. The feature extractor and temporal segmentation modules operate purely on visual input, independent of linguistic grammar or vocabulary. The spectrogram generator is conditioned on the corresponding spoken audio, which can be replaced with any language&#8217;s speech data. Thus, the pipeline is modular and can be adapted to different sign&#8211;speech pairs without any architectural changes, which we plan to work on in the future while addressing these limitations.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "our"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we presented IsoSignVid2Aud, a novel end-to-end framework for direct conversion of sign language videos to speech without intermediate text representation. Our approach combines a powerful I3D-based feature extraction module with a specialized feature transformation network and audio generation pipeline. The experimental results demonstrate that our method achieves competitive performance on both the ASL-Citizen-1500 and WLASL-100 datasets, with a Top-1 accuracy of 72.01% and 78.67% respectively.</p>\n\n",
+                "matched_terms": [
+                    "our",
+                    "audio",
+                    "wlasl100",
+                    "generation",
+                    "isosignvid2aud"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The audio quality evaluation metrics (PESQ score of 2.68 and STOI score of 0.73) indicate that our approach produces intelligible speech, though there remains room for improvement. The proposed Non-Maximal Suppression algorithm for temporal detection effectively isolates individual signs from continuous signing sequences, enabling practical application in real-world scenarios.</p>\n\n",
+                "matched_terms": [
+                    "pesq",
+                    "audio",
+                    "stoi",
+                    "metrics",
+                    "quality",
+                    "our"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,609 @@
+{
+    "S3.T1": {
+        "caption": "TABLE I: MELD and IEMOCAP Composition Before and After Quality Control",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Split</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Original</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Verified</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\" rowspan=\"4\">MELD</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Train</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">9,989</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">7,443</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Dev</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1,109</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">835</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Test</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2,610</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1,966</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Total</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">13,708</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">10,244</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r ltx_border_t\">IEMOCAP</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">Total</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">10,039</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">7,309</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "original",
+            "meld",
+            "before",
+            "iemocap",
+            "train",
+            "total",
+            "test",
+            "after",
+            "dev",
+            "control",
+            "composition",
+            "dataset",
+            "split",
+            "verified",
+            "quality"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">This ensured a standardized and relatively clean audio input across all utterances. In the end, our experiments relied on subsets of MELD and IEMOCAP where all three modalities were successfully captured and passed our quality control processes. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.T1\" title=\"TABLE I &#8227; III-D Data Quality Control Pipeline &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> summarizes the dataset composition before and after quality control.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">This paper addresses data quality issues in multimodal emotion recognition in conversation (MERC) through systematic quality control and multi-stage transfer learning. We implement a quality control pipeline for MELD and IEMOCAP datasets that validates speaker identity, audio-text alignment, and face detection. We leverage transfer learning from speaker and face recognition, assuming that identity-discriminative embeddings capture not only stable acoustic and facial traits but also person-specific patterns of emotional expression. We employ RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> engines for extracting 512-dimensional speaker and face embeddings, fine-tune MPNet-v2 for emotion-aware text representations, and adapt these features through emotion-specific MLPs trained on unimodal datasets. MAMBA-based trimodal fusion achieves 64.8% accuracy on MELD and 74.3% on IEMOCAP. These results show that combining identity-based audio and visual embeddings with emotion-tuned text representations on a quality-controlled subset of data yields consistent competitive performance for multimodal emotion recognition in conversation and provides a basis for further improvement on challenging, low-frequency emotion classes.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Large-scale conversational emotion datasets such as MELD <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib5\" title=\"\">5</a>]</cite> serve as primary benchmarks for MERC research. However, these datasets exhibit systematic quality issues that propagate through modeling pipelines: speaker labels conflate distinct individuals (e.g., &#8220;Waiter&#8221; assigned to multiple actors), audio-text misalignment occurs due to imprecise video segmentation, and face tracking often captures non-speaking individuals or fails entirely. Despite these issues affecting a substantial portion of samples, few studies systematically address data curation.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">1. Systematic Data Quality Control:</span> We develop a systematic quality control pipeline for MELD and IEMOCAP that resolves speaker disambiguation, audio-text alignment verification, and face-speaker validation.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite widespread use of MELD and IEMOCAP, few studies systematically address their quality issues. Busso et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib21\" title=\"\">21</a>]</cite> acknowledged annotation challenges in the original IEMOCAP paper, noting inter-annotator agreement issues for ambiguous emotions. Recent work highlights that fear and disgust categories in MELD barely exceed chance-level recognition even with state-of-the-art models <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib22\" title=\"\">22</a>]</cite>, suggesting the possibility of fundamental data problems rather than model limitations.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "original",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The lack of systematic quality control might lead to inflated performance claims. Models trained on corrupted data may learn spurious correlations by using audio-text misalignment as unintended features. Our work aims to narrow this gap through comprehensive validation of modality alignment and speaker identity.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given a conversational sequence <math alttext=\"U=[u_{1},u_{2},\\ldots,u_{N}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy=\"false\">[</mo><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><msub><mi>u</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>u</mi><mi>N</mi></msub><mo stretchy=\"false\">]</mo></mrow></mrow><annotation encoding=\"application/x-tex\">U=[u_{1},u_{2},\\ldots,u_{N}]</annotation></semantics></math> with <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> utterances and corresponding speakers <math alttext=\"S=[s_{1},s_{2},\\ldots,s_{N}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mo stretchy=\"false\">[</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><msub><mi>s</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>s</mi><mi>N</mi></msub><mo stretchy=\"false\">]</mo></mrow></mrow><annotation encoding=\"application/x-tex\">S=[s_{1},s_{2},\\ldots,s_{N}]</annotation></semantics></math>, each utterance <math alttext=\"u_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><msub><mi>u</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">u_{i}</annotation></semantics></math> comprises three modalities: text <math alttext=\"t_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">t_{i}</annotation></semantics></math>, audio <math alttext=\"a_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m6\" intent=\":literal\"><semantics><msub><mi>a</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">a_{i}</annotation></semantics></math>, and visual (face) <math alttext=\"v_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m7\" intent=\":literal\"><semantics><msub><mi>v</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">v_{i}</annotation></semantics></math>. The goal is to predict emotion label <math alttext=\"y_{i}\\in\\mathcal{Y}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m8\" intent=\":literal\"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>&#8712;</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi></mrow><annotation encoding=\"application/x-tex\">y_{i}\\in\\mathcal{Y}</annotation></semantics></math> for each utterance, where <math alttext=\"|\\mathcal{Y}|=7\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m9\" intent=\":literal\"><semantics><mrow><mrow><mo stretchy=\"false\">|</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mo stretchy=\"false\">|</mo></mrow><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">|\\mathcal{Y}|=7</annotation></semantics></math> for MELD and <math alttext=\"|\\mathcal{Y}|=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m10\" intent=\":literal\"><semantics><mrow><mrow><mo stretchy=\"false\">|</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mo stretchy=\"false\">|</mo></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">|\\mathcal{Y}|=4</annotation></semantics></math> for IEMOCAP.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We leverage the RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> speaker recognition engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib9\" title=\"\">9</a>]</cite> to extract embeddings from audio. Specifically, we pass both unimodal audio datasets (e.g., CREMA-D and RAVDESS) and audio from MELD and IEMOCAP to the engine, obtaining 512-dimensional speaker embeddings per utterance.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For visual features, extracted facial images from MELD, IEMOCAP, and additional unimodal facial expression datasets (e.g., CK+ and RAF-DB) are processed through the RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> face recognition engine to obtain 512-dimensional face embeddings.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Textual embeddings are derived from the <span class=\"ltx_text ltx_font_typewriter\">sentence-transformers/all-mpnet-base-v2</span> model, which we fine-tune for seven-class emotion classification (surprise, fear, disgust, happiness, sadness, anger, neutral) using a supervised learning setup with balanced sampling from multiple emotion corpora. A classification head with two linear layers is added on top of the pretrained MPNet encoder, with the final layer containing seven neurons, one for each emotion class. The input text is tokenized using the MPNet tokenizer with padding to a maximum length and truncation enabled. Training is performed for three epochs using the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p9.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math>, a batch size of 16, and weight decay of <math alttext=\"0.01\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p9.m2\" intent=\":literal\"><semantics><mn>0.01</mn><annotation encoding=\"application/x-tex\">0.01</annotation></semantics></math>. We save the best checkpoint based on validation loss at the end of each epoch. This fine-tuning procedure yields a training accuracy of 90.08% and a test accuracy of 83.41% on the aggregated emotion corpora. After training, we discard the classification head and use the 768-dimensional pooled output of the encoder as the textual embedding for each utterance. The transcripts of IEMOCAP and MELD dialogues are passed through this fine-tuned MPNet model to produce 768-dimensional textual embeddings that encode both semantic and emotional content.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "after",
+                    "test"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To achieve this, we train feedforward multi-layer perceptron (MLP) classifiers on unimodal emotion recognition datasets, each containing single-modality emotional cues. For facial expression recognition, we train an MLP on 512-dimensional face embeddings extracted from static facial images for seven-class emotion classification. The MLP architecture consists of three fully connected layers with dimensions <math alttext=\"512\\rightarrow 256\\rightarrow 128\\rightarrow 7\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m1\" intent=\":literal\"><semantics><mrow><mn>512</mn><mo stretchy=\"false\">&#8594;</mo><mn>256</mn><mo stretchy=\"false\">&#8594;</mo><mn>128</mn><mo stretchy=\"false\">&#8594;</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">512\\rightarrow 256\\rightarrow 128\\rightarrow 7</annotation></semantics></math>, with batch normalization and ReLU activation after each hidden layer. Dropout with a rate of <math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m2\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math> is applied after each hidden layer to reduce overfitting. The model is trained only on non-MELD datasets (including CK+ and RAF-DB) using the Adam optimizer with an initial learning rate of <math alttext=\"1\\times 10^{-3}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m3\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>3</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-3}</annotation></semantics></math> and weight decay of <math alttext=\"1\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m4\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-5}</annotation></semantics></math>. The learning rate is adjusted by a ReduceLROnPlateau scheduler with a factor of <math alttext=\"0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m5\" intent=\":literal\"><semantics><mn>0.1</mn><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math> and patience of 5 epochs. Training uses cross-entropy loss with a batch size of 32 for up to 100 epochs, with early stopping triggered after 10 epochs without improvement in validation F1-score. This setup achieves about <math alttext=\"82.5\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m6\" intent=\":literal\"><semantics><mrow><mn>82.5</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">82.5\\%</annotation></semantics></math> validation accuracy on the non-MELD facial expression test set.</p>\n\n",
+                "matched_terms": [
+                    "train",
+                    "after",
+                    "test"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ a single MAMBA block (<math alttext=\"d_{\\text{state}}=64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m1\" intent=\":literal\"><semantics><mrow><msub><mi>d</mi><mtext>state</mtext></msub><mo>=</mo><mn>64</mn></mrow><annotation encoding=\"application/x-tex\">d_{\\text{state}}=64</annotation></semantics></math>, <math alttext=\"\\text{expand\\_factor}=2\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m2\" intent=\":literal\"><semantics><mrow><mtext>expand_factor</mtext><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">\\text{expand\\_factor}=2</annotation></semantics></math>, <math alttext=\"d_{\\text{conv}}=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m3\" intent=\":literal\"><semantics><mrow><msub><mi>d</mi><mtext>conv</mtext></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">d_{\\text{conv}}=4</annotation></semantics></math>) followed by mean pooling and a linear classification head for utterance-level emotion recognition. The model&#8217;s input dimension (<math alttext=\"d_{\\text{model}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m4\" intent=\":literal\"><semantics><msub><mi>d</mi><mtext>model</mtext></msub><annotation encoding=\"application/x-tex\">d_{\\text{model}}</annotation></semantics></math>) varies based on the modality combination: 1024-dimensional for text+speaker+face, 768-dimensional for text-only, and other configurations for different multimodal setups. Each input utterance is represented as a variable-length sequence of concatenated multimodal embeddings, with padding and attention masking applied to handle sequences of different lengths. We train on MELD and IEMOCAP training sets separately using AdamW optimizer with a learning rate of <math alttext=\"1\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m5\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-5}</annotation></semantics></math>, batch size 32, and early stopping (patience 10 epochs) based on validation weighted F1. For MELD (7 emotion classes), we address severe class imbalance using weighted cross-entropy loss with class weights of [15.0, 15.0, 6.0, 1.0, 3.0, 6.0, 4.0] for surprise, fear, disgust, happiness, sadness, anger, and neutral respectively, combined with label smoothing of 0.2. For IEMOCAP (4 emotion classes with excitement merged into happiness), we use standard cross-entropy loss with the same label smoothing of 0.2.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "train",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ a comprehensive collection of multimodal and unimodal emotion datasets for our experiments. The multimodal datasets (MELD and IEMOCAP) serve as our target evaluation benchmarks, while the unimodal datasets are used for fine-tuning MPNet-v2 and training the face and speaker MLPs in Stage 2 of our framework. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F2\" title=\"Figure 2 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the distribution of emotion categories across all auxiliary unimodal datasets, demonstrating our balanced sampling strategy across modalities.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">MELD (Multimodal EmotionLines Dataset)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib5\" title=\"\">5</a>]</cite> is a large-scale multimodal dataset derived from TV show dialogues, providing synchronized audio, video and text data for more than 13,000 utterances in 1,400 dialogues. It includes seven emotion categories: anger, disgust, fear, joy, neutral, sadness, and surprise. The dataset&#8217;s focus on conversational context makes it particularly suitable for emotion recognition in multi-turn dialogues, where emotions vary dynamically across speakers and modalities.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">IEMOCAP (Interactive Emotional Dyadic Motion Capture Database)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib21\" title=\"\">21</a>]</cite> is a widely used multimodal dataset containing approximately 12 hours of audio, video, and text from both scripted and improvised dyadic conversations between actors. It encompasses nine emotion categories: angry, fearful, disappointed, happy, sad, surprised, excited, frustrated, and neutral. The dataset provides detailed facial expressions, vocal signals, and transcriptions, making it ideal for comprehensive multimodal emotion analysis.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our quality control pipeline ensures the integrity, quality, and modality alignment of data from the MELD and IEMOCAP datasets. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F3\" title=\"Figure 3 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates key challenges and solutions in our data cleaning process, including speaker identification in multi-person scenes, handling off-screen speakers, and detecting audio-text misalignments. The objective is to generate a clean, speaker-specific, and temporally aligned corpus of audiovisual utterances suitable for emotion recognition.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">c) <span class=\"ltx_text ltx_font_bold\">Ensuring Audio-Text Alignment in MELD:</span> MELD&#8217;s original video cropping sometimes resulted in misalignments between audio and text, especially for short utterances (1&#8211;2 seconds long). To address this, we re-transcribed the audio using the Whisper API and compared the newly generated transcriptions to the original MELD annotations. Ninety-one utterances were removed due to extremely short or inaudible audio, where Whisper yielded empty transcriptions. To detect more subtle misalignments (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F3\" title=\"Figure 3 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>D), we employed two metrics:</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "original"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">If multiple faces were detected, we selected the one with the highest similarity. If no face passed the threshold, we applied an offset search (looking slightly before or after the initial frame) to find a valid match.</p>\n\n",
+                "matched_terms": [
+                    "before",
+                    "after"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the IEMOCAP dataset, face extraction was simpler due to fewer speakers (10 actors across 5 sessions). We applied a similar methodology using DeepFace, YOLOv8, and Facenet-512 with a cosine similarity threshold of 0.3, starting from 0.5 seconds into each utterance. Any utterances without a detected face were discarded. After this process, we retained 7,309 utterances from IEMOCAP that included all three modalities.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "iemocap",
+                    "after"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">MELD&#8217;s original audio was recorded using a microphone array, resulting in multiple audio channels per utterance. For consistency and quality:</p>\n\n",
+                "matched_terms": [
+                    "original",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S4.T2\" title=\"TABLE II &#8227; IV-A Overall Performance &#8227; IV Results &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> presents emotion recognition performance across modality configurations. On MELD, the trimodal system (T+V+A) achieves 64.8% accuracy and 64.3% weighted F1-score. Text emerges as the strongest unimodal baseline at 58.1%, substantially outperforming vision at 42.3%. The poor performance of visual features indicates IEMOCAP shows similar patterns with trimodal fusion reaching 74.3% accuracy. This suggest there might be temporal misalignment between the emotional peaks for the facial expressions and the extracted frames in our pipelines.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our choice to leverage speaker and face recognition models for emotion transfer departs from conventional approaches, grounded in the hypothesis that identity-preserving representations inherently capture emotion-relevant patterns. Speaker recognition models encode prosodic variations and voice quality while face recognition systems learn subtle facial muscle configurations&#8212;both crucial for emotion expression. Similarly, we select MPNet-v2 as a sentence encoder that combines contrastive learning, masked and permuted language modeling, and can be fine-tuned on textual emotion corpora and then used to extract emotion-aware embeddings for conversational datasets such as MELD and IEMOCAP.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The filtered utterances from benchmark data like MELD reveal systematic quality issues, with audio-text misalignment representing most of removed MELD samples. These misalignments could create spurious training signals where models learn incorrect cross-modal associations. The dominance of text (58.1%) versus poor visual performance (42.3%) in MELD challenges multimodal fusion assumptions, stemming from compressed TV footage quality, subtle conversational expressions, and temporal misalignment between emotional peaks and extracted frames. The limited fusion improvement (6.7% over text-only) questions whether current datasets truly require multimodal processing.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work faces several limitations. We implement quality control without extensive ablation or statistical significance testing, potentially missing systematic biases in our filtering process. The distribution of removed samples across speakers, emotions, and dialogue positions remains unanalyzed. Most critically, our use of fixed speaker embeddings fails to capture temporal dynamics inherent in emotional speech&#8212;speaker embeddings provide static representations while emotions evolve over time within utterances.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work should address these limitations through several directions. We plan to incorporate pre-trained speech recognition models such as wav2vec 2.0 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib30\" title=\"\">30</a>]</cite> to enhance the audio component, as these models provide frame-level features that capture temporal emotional evolution unlike static speaker embeddings. This temporal richness would enable better utilization of MAMBA&#8217;s state-space modeling capabilities, which currently process fixed-dimensional embeddings rather than exploiting sequential speech dynamics. Additionally, developing quality-aware training methods that utilize imperfect samples rather than discarding them could recover the filtered data. We also aim to explore self-supervised approaches learning from unlabeled conversational data and investigate continuous emotion dimensions as alternatives to problematic categorical schemes. Creating new datasets with rigorous quality control during acquisition, rather than post-hoc filtering, remains essential for advancing the field.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We implement a systematic quality control pipeline for MERC datasets that addresses multiple problematic scenarios&#8212;speaker mislabeling, audio-text desynchronization, and face detection failures&#8212;ensuring proper alignment across all three modalities. Our approach leveraging identity-based transfer learning achieves 64.8% accuracy on MELD and 74.3% on IEMOCAP. However, significant challenges remain: sparse emotions achieve near-random accuracy, and fusion provides limited improvements over text-only baselines. These results emphasize that progress in conversational emotion recognition requires addressing fundamental data quality issues alongside architectural innovations. The field must move beyond incremental model improvements to confront the systematic data problems that limit current approaches, prioritizing the creation of properly aligned, high-quality multimodal datasets and developing methods robust to the inherent ambiguity of emotional expression in natural conversation.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "control",
+                    "quality"
+                ]
+            }
+        ]
+    },
+    "S4.T2": {
+        "caption": "TABLE II: Emotion Recognition Performance with final fusion by Modality Configuration",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Modalities</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Accuracy</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">W-F1</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\" rowspan=\"6\">MELD</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">T</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">58.1%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">57.9%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">42.3%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">41.8%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">T+A</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">62.5%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">62.1%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">T+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">61.2%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">60.9%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">V+A</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">48.7%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">48.2%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">T+V+A</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">64.8%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">64.3%</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t\" rowspan=\"7\">IEMOCAP</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">T</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.2%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.0%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">52.1%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">51.7%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">T+A</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">72.9%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">72.6%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">T+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">71.6%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">71.3%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">V+A</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">58.3%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">57.9%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">T+V+A</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">74.3%</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">74.1%</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "recognition",
+            "meld",
+            "modality",
+            "iemocap",
+            "final",
+            "accuracy",
+            "emotion",
+            "tva",
+            "fusion",
+            "modalities",
+            "dataset",
+            "wf1",
+            "configuration",
+            "performance"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S4.T2\" title=\"TABLE II &#8227; IV-A Overall Performance &#8227; IV Results &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> presents emotion recognition performance across modality configurations. On MELD, the trimodal system (T+V+A) achieves 64.8% accuracy and 64.3% weighted F1-score. Text emerges as the strongest unimodal baseline at 58.1%, substantially outperforming vision at 42.3%. The poor performance of visual features indicates IEMOCAP shows similar patterns with trimodal fusion reaching 74.3% accuracy. This suggest there might be temporal misalignment between the emotional peaks for the facial expressions and the extracted frames in our pipelines.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">This paper addresses data quality issues in multimodal emotion recognition in conversation (MERC) through systematic quality control and multi-stage transfer learning. We implement a quality control pipeline for MELD and IEMOCAP datasets that validates speaker identity, audio-text alignment, and face detection. We leverage transfer learning from speaker and face recognition, assuming that identity-discriminative embeddings capture not only stable acoustic and facial traits but also person-specific patterns of emotional expression. We employ RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> engines for extracting 512-dimensional speaker and face embeddings, fine-tune MPNet-v2 for emotion-aware text representations, and adapt these features through emotion-specific MLPs trained on unimodal datasets. MAMBA-based trimodal fusion achieves 64.8% accuracy on MELD and 74.3% on IEMOCAP. These results show that combining identity-based audio and visual embeddings with emotion-tuned text representations on a quality-controlled subset of data yields consistent competitive performance for multimodal emotion recognition in conversation and provides a basis for further improvement on challenging, low-frequency emotion classes.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "meld",
+                    "iemocap",
+                    "fusion",
+                    "performance",
+                    "accuracy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Multimodal emotion recognition in conversation (MERC) leverages complementary information from text, audio, and visual modalities to identify emotional states in dialogue contexts <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib1\" title=\"\">1</a>]</cite>. While recent architectures demonstrate incremental improvements in MERC performance, such as MGCMA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib3\" title=\"\">3</a>]</cite> and MMGAT-EMO <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib4\" title=\"\">4</a>]</cite>, fundamental data quality issues in benchmark datasets remain unaddressed.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "performance",
+                    "modalities",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Large-scale conversational emotion datasets such as MELD <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib5\" title=\"\">5</a>]</cite> serve as primary benchmarks for MERC research. However, these datasets exhibit systematic quality issues that propagate through modeling pipelines: speaker labels conflate distinct individuals (e.g., &#8220;Waiter&#8221; assigned to multiple actors), audio-text misalignment occurs due to imprecise video segmentation, and face tracking often captures non-speaking individuals or fails entirely. Despite these issues affecting a substantial portion of samples, few studies systematically address data curation.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Additionally, beyond data quality, most MERC approaches rely on generic pre-trained models for each modality that lack emotion-specific discriminability. While numerous unimodal emotion datasets exist with prototypical emotional expressions&#8212;acted speech in RAVDESS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib6\" title=\"\">6</a>]</cite>, posed facial expressions in CK+ <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib7\" title=\"\">7</a>]</cite>, emotion-labeled text in GoEmotions <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib8\" title=\"\">8</a>]</cite>&#8212;their potential to inform multimodal models through transfer learning remains largely unexplored.</p>\n\n",
+                "matched_terms": [
+                    "modality",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The selection of appropriate pre-trained models for transfer learning is critical. We leverage the RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> speaker and face recognition models built by Recognition Technologies, Inc.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib9\" title=\"\">9</a>]</cite>, based on the hypothesis that identity-preserving representations inherently capture fine-grained acoustic and facial patterns that correlate with emotional expression. Speaker embeddings&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib15\" title=\"\">15</a>]</cite> encode prosodic variations, voice quality, and temporal dynamics&#8212;all crucial for emotion recognition. Similarly, face recognition models must learn subtle facial muscle movements and expression dynamics to distinguish individuals, providing rich features for emotion classification.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, fusion strategies predominantly employ attention-based cross-modal transformers <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib11\" title=\"\">11</a>]</cite> with quadratic complexity, raising questions about efficiency in practical settings. Recent efficient sequence models like MAMBA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib12\" title=\"\">12</a>]</cite> offer linear complexity but have not been widely used for multimodal emotion fusion.</p>\n\n",
+                "matched_terms": [
+                    "fusion",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">1. Systematic Data Quality Control:</span> We develop a systematic quality control pipeline for MELD and IEMOCAP that resolves speaker disambiguation, audio-text alignment verification, and face-speaker validation.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">2. Emotion-Specific Multi-Stage Transfer Learning:</span> We propose leveraging various auxiliary unimodal emotion datasets to inject emotion-discriminative information into each modality&#8217;s representation before fusion. This multi-stage approach uses emotion-specific text datasets to fine-tune language models, vocal emotion corpora to adapt speaker embeddings, and facial expression databases to condition face features.</p>\n\n",
+                "matched_terms": [
+                    "fusion",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">3. Efficient Fusion with State Space Model:</span> We demonstrate that a single MAMBA block achieves competitive performance with linear complexity, and report empirical results on quality-controlled data subsets while identifying remaining challenges for future investigation.</p>\n\n",
+                "matched_terms": [
+                    "fusion",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Transfer learning has emerged as a dominant paradigm for addressing data scarcity in emotion recognition. Recent work by Jakubec et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib13\" title=\"\">13</a>]</cite> demonstrates that speaker embedding models (d-vector, x-vector, r-vector) pre-trained on large speaker verification&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib15\" title=\"\">15</a>]</cite> datasets significantly improve speech emotion recognition (SER). The advantage lies in these models&#8217; ability to capture speaker-specific acoustic patterns including prosodic variations and voice quality characteristics that correlate with emotional states <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib14\" title=\"\">14</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Padi et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib14\" title=\"\">14</a>]</cite> proposed leveraging ResNet-based models trained on speaker recognition&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib15\" title=\"\">15</a>]</cite> tasks, incorporating statistics pooling layers to handle variable-length inputs. Their approach eliminates the need for sequence truncation commonly used in SER systems, achieving competitive results on IEMOCAP. This supports our hypothesis that speaker identity models capture emotion-relevant acoustic features.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The relationship between face recognition and emotion recognition has been extensively studied. Knyazev et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib16\" title=\"\">16</a>]</cite> demonstrated that industry-level face recognition networks pre-trained on large-scale datasets (e.g., VGG-Face2) outperform emotion-specific models when fine-tuned for facial emotion recognition (FER). This finding suggests that learning to distinguish facial identities requires capturing subtle muscular movements and expression dynamics that directly transfer to emotion recognition.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Ngo and Yoon <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib17\" title=\"\">17</a>]</cite> showed that an SE-ResNet-50 model pre-trained on the VGG-Face2 database, combined with a novel weighted-cluster loss function, effectively transfers high-level facial features to FER tasks. The success of face recognition models in emotion tasks stems from their need to be invariant to expressions while still encoding them&#8212;creating representations that separate identity from emotion while preserving both.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While BERT and its variants dominate text emotion recognition, recent advances in sentence transformers offer superior semantic representations. MPNet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib18\" title=\"\">18</a>]</cite> combines the strengths of BERT&#8217;s bidirectional context and XLNet&#8217;s autoregressive modeling, addressing the limitations of masked language modeling through permuted language modeling. The all-mpnet-base-v2 model, fine-tuned on over 1 billion sentence pairs using contrastive learning <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib19\" title=\"\">19</a>]</cite>, produces 768-dimensional embeddings that capture nuanced semantic relationships.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The choice of MPNet-v2 over alternatives is motivated by several factors: (1) the contrastive training objective naturally aligns with emotion recognition&#8217;s need to distinguish subtle semantic differences at utterance level; (2) extensive evaluation shows MPNet-based models achieve state-of-the-art performance on semantic textual similarity tasks <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib19\" title=\"\">19</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib20\" title=\"\">20</a>]</cite>, which correlate with emotion understanding.</p>\n\n",
+                "matched_terms": [
+                    "performance",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite widespread use of MELD and IEMOCAP, few studies systematically address their quality issues. Busso et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib21\" title=\"\">21</a>]</cite> acknowledged annotation challenges in the original IEMOCAP paper, noting inter-annotator agreement issues for ambiguous emotions. Recent work highlights that fear and disgust categories in MELD barely exceed chance-level recognition even with state-of-the-art models <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib22\" title=\"\">22</a>]</cite>, suggesting the possibility of fundamental data problems rather than model limitations.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "recognition",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The lack of systematic quality control might lead to inflated performance claims. Models trained on corrupted data may learn spurious correlations by using audio-text misalignment as unintended features. Our work aims to narrow this gap through comprehensive validation of modality alignment and speaker identity.</p>\n\n",
+                "matched_terms": [
+                    "modality",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given a conversational sequence <math alttext=\"U=[u_{1},u_{2},\\ldots,u_{N}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy=\"false\">[</mo><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><msub><mi>u</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>u</mi><mi>N</mi></msub><mo stretchy=\"false\">]</mo></mrow></mrow><annotation encoding=\"application/x-tex\">U=[u_{1},u_{2},\\ldots,u_{N}]</annotation></semantics></math> with <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> utterances and corresponding speakers <math alttext=\"S=[s_{1},s_{2},\\ldots,s_{N}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mo stretchy=\"false\">[</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><msub><mi>s</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>s</mi><mi>N</mi></msub><mo stretchy=\"false\">]</mo></mrow></mrow><annotation encoding=\"application/x-tex\">S=[s_{1},s_{2},\\ldots,s_{N}]</annotation></semantics></math>, each utterance <math alttext=\"u_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><msub><mi>u</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">u_{i}</annotation></semantics></math> comprises three modalities: text <math alttext=\"t_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">t_{i}</annotation></semantics></math>, audio <math alttext=\"a_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m6\" intent=\":literal\"><semantics><msub><mi>a</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">a_{i}</annotation></semantics></math>, and visual (face) <math alttext=\"v_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m7\" intent=\":literal\"><semantics><msub><mi>v</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">v_{i}</annotation></semantics></math>. The goal is to predict emotion label <math alttext=\"y_{i}\\in\\mathcal{Y}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m8\" intent=\":literal\"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>&#8712;</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi></mrow><annotation encoding=\"application/x-tex\">y_{i}\\in\\mathcal{Y}</annotation></semantics></math> for each utterance, where <math alttext=\"|\\mathcal{Y}|=7\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m9\" intent=\":literal\"><semantics><mrow><mrow><mo stretchy=\"false\">|</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mo stretchy=\"false\">|</mo></mrow><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">|\\mathcal{Y}|=7</annotation></semantics></math> for MELD and <math alttext=\"|\\mathcal{Y}|=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m10\" intent=\":literal\"><semantics><mrow><mrow><mo stretchy=\"false\">|</mo><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mo stretchy=\"false\">|</mo></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">|\\mathcal{Y}|=4</annotation></semantics></math> for IEMOCAP.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "modalities",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We begin by extracting unimodal embeddings from pretrained speaker recognition and face recognition models, as well as a fine-tuned MPNet-v2 model, as foundation embeddings for each modality.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "modality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We leverage the RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> speaker recognition engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib9\" title=\"\">9</a>]</cite> to extract embeddings from audio. Specifically, we pass both unimodal audio datasets (e.g., CREMA-D and RAVDESS) and audio from MELD and IEMOCAP to the engine, obtaining 512-dimensional speaker embeddings per utterance.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "recognition",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For visual features, extracted facial images from MELD, IEMOCAP, and additional unimodal facial expression datasets (e.g., CK+ and RAF-DB) are processed through the RecoMadeEasy<sup class=\"ltx_sup\">&#174;</sup> face recognition engine to obtain 512-dimensional face embeddings.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "recognition",
+                    "iemocap"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Textual embeddings are derived from the <span class=\"ltx_text ltx_font_typewriter\">sentence-transformers/all-mpnet-base-v2</span> model, which we fine-tune for seven-class emotion classification (surprise, fear, disgust, happiness, sadness, anger, neutral) using a supervised learning setup with balanced sampling from multiple emotion corpora. A classification head with two linear layers is added on top of the pretrained MPNet encoder, with the final layer containing seven neurons, one for each emotion class. The input text is tokenized using the MPNet tokenizer with padding to a maximum length and truncation enabled. Training is performed for three epochs using the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p9.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math>, a batch size of 16, and weight decay of <math alttext=\"0.01\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p9.m2\" intent=\":literal\"><semantics><mn>0.01</mn><annotation encoding=\"application/x-tex\">0.01</annotation></semantics></math>. We save the best checkpoint based on validation loss at the end of each epoch. This fine-tuning procedure yields a training accuracy of 90.08% and a test accuracy of 83.41% on the aggregated emotion corpora. After training, we discard the classification head and use the 768-dimensional pooled output of the encoder as the textual embedding for each utterance. The transcripts of IEMOCAP and MELD dialogues are passed through this fine-tuned MPNet model to produce 768-dimensional textual embeddings that encode both semantic and emotional content.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "final",
+                    "accuracy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To achieve this, we train feedforward multi-layer perceptron (MLP) classifiers on unimodal emotion recognition datasets, each containing single-modality emotional cues. For facial expression recognition, we train an MLP on 512-dimensional face embeddings extracted from static facial images for seven-class emotion classification. The MLP architecture consists of three fully connected layers with dimensions <math alttext=\"512\\rightarrow 256\\rightarrow 128\\rightarrow 7\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m1\" intent=\":literal\"><semantics><mrow><mn>512</mn><mo stretchy=\"false\">&#8594;</mo><mn>256</mn><mo stretchy=\"false\">&#8594;</mo><mn>128</mn><mo stretchy=\"false\">&#8594;</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">512\\rightarrow 256\\rightarrow 128\\rightarrow 7</annotation></semantics></math>, with batch normalization and ReLU activation after each hidden layer. Dropout with a rate of <math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m2\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math> is applied after each hidden layer to reduce overfitting. The model is trained only on non-MELD datasets (including CK+ and RAF-DB) using the Adam optimizer with an initial learning rate of <math alttext=\"1\\times 10^{-3}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m3\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>3</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-3}</annotation></semantics></math> and weight decay of <math alttext=\"1\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m4\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-5}</annotation></semantics></math>. The learning rate is adjusted by a ReduceLROnPlateau scheduler with a factor of <math alttext=\"0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m5\" intent=\":literal\"><semantics><mn>0.1</mn><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math> and patience of 5 epochs. Training uses cross-entropy loss with a batch size of 32 for up to 100 epochs, with early stopping triggered after 10 epochs without improvement in validation F1-score. This setup achieves about <math alttext=\"82.5\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p13.m6\" intent=\":literal\"><semantics><mrow><mn>82.5</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">82.5\\%</annotation></semantics></math> validation accuracy on the non-MELD facial expression test set.</p>\n\n",
+                "matched_terms": [
+                    "accuracy",
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We apply the same MLP architecture, hyperparameters, and training procedure to 512-dimensional audio embeddings derived from emotion speech datasets (CREMA-D, RAVDESS, SAVEE, and TESS). This audio MLP reaches <math alttext=\"69\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p14.m1\" intent=\":literal\"><semantics><mrow><mn>69</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">69\\%</annotation></semantics></math> validation accuracy on the non-MELD audio test sets.</p>\n\n",
+                "matched_terms": [
+                    "accuracy",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For both audio and face, we use the 128-dimensional penultimate layer of the MLP as the transformed emotion embedding. These 128-dimensional vectors serve as the final unimodal representations used in the subsequent multimodal fusion stage, as they capture the emotion-relevant structure learned from unimodal data while remaining compact.</p>\n\n",
+                "matched_terms": [
+                    "final",
+                    "fusion",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ a single MAMBA block (<math alttext=\"d_{\\text{state}}=64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m1\" intent=\":literal\"><semantics><mrow><msub><mi>d</mi><mtext>state</mtext></msub><mo>=</mo><mn>64</mn></mrow><annotation encoding=\"application/x-tex\">d_{\\text{state}}=64</annotation></semantics></math>, <math alttext=\"\\text{expand\\_factor}=2\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m2\" intent=\":literal\"><semantics><mrow><mtext>expand_factor</mtext><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">\\text{expand\\_factor}=2</annotation></semantics></math>, <math alttext=\"d_{\\text{conv}}=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m3\" intent=\":literal\"><semantics><mrow><msub><mi>d</mi><mtext>conv</mtext></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">d_{\\text{conv}}=4</annotation></semantics></math>) followed by mean pooling and a linear classification head for utterance-level emotion recognition. The model&#8217;s input dimension (<math alttext=\"d_{\\text{model}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m4\" intent=\":literal\"><semantics><msub><mi>d</mi><mtext>model</mtext></msub><annotation encoding=\"application/x-tex\">d_{\\text{model}}</annotation></semantics></math>) varies based on the modality combination: 1024-dimensional for text+speaker+face, 768-dimensional for text-only, and other configurations for different multimodal setups. Each input utterance is represented as a variable-length sequence of concatenated multimodal embeddings, with padding and attention masking applied to handle sequences of different lengths. We train on MELD and IEMOCAP training sets separately using AdamW optimizer with a learning rate of <math alttext=\"1\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p17.m5\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-5}</annotation></semantics></math>, batch size 32, and early stopping (patience 10 epochs) based on validation weighted F1. For MELD (7 emotion classes), we address severe class imbalance using weighted cross-entropy loss with class weights of [15.0, 15.0, 6.0, 1.0, 3.0, 6.0, 4.0] for surprise, fear, disgust, happiness, sadness, anger, and neutral respectively, combined with label smoothing of 0.2. For IEMOCAP (4 emotion classes with excitement merged into happiness), we use standard cross-entropy loss with the same label smoothing of 0.2.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "meld",
+                    "iemocap",
+                    "modality",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">c) <span class=\"ltx_text ltx_font_bold\">Text + Face Fusion:</span> For a given utterance, we first determine the correspondence between text tokens and video frames. With 15 tokens and 4 frames, we match the first 4 tokens to frame 1, the next 4 to frame 2, the next 4 to frame 3, and the final 3 to frame 4. Each token&#8217;s 768-dimensional embedding is concatenated with its corresponding frame&#8217;s 128-dimensional face representation, yielding an 896-dimensional vector per token.</p>\n\n",
+                "matched_terms": [
+                    "final",
+                    "fusion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ a comprehensive collection of multimodal and unimodal emotion datasets for our experiments. The multimodal datasets (MELD and IEMOCAP) serve as our target evaluation benchmarks, while the unimodal datasets are used for fine-tuning MPNet-v2 and training the face and speaker MLPs in Stage 2 of our framework. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F2\" title=\"Figure 2 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the distribution of emotion categories across all auxiliary unimodal datasets, demonstrating our balanced sampling strategy across modalities.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "iemocap",
+                    "modalities",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">MELD (Multimodal EmotionLines Dataset)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib5\" title=\"\">5</a>]</cite> is a large-scale multimodal dataset derived from TV show dialogues, providing synchronized audio, video and text data for more than 13,000 utterances in 1,400 dialogues. It includes seven emotion categories: anger, disgust, fear, joy, neutral, sadness, and surprise. The dataset&#8217;s focus on conversational context makes it particularly suitable for emotion recognition in multi-turn dialogues, where emotions vary dynamically across speakers and modalities.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "meld",
+                    "modalities",
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">IEMOCAP (Interactive Emotional Dyadic Motion Capture Database)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib21\" title=\"\">21</a>]</cite> is a widely used multimodal dataset containing approximately 12 hours of audio, video, and text from both scripted and improvised dyadic conversations between actors. It encompasses nine emotion categories: angry, fearful, disappointed, happy, sad, surprised, excited, frustrated, and neutral. The dataset provides detailed facial expressions, vocal signals, and transcriptions, making it ideal for comprehensive multimodal emotion analysis.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "iemocap",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enhance modality-specific representations, we leverage several established unimodal emotion datasets across visual, audio, and text modalities. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F2\" title=\"Figure 2 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we apply balanced sampling strategies to ensure comparable representation across emotion categories within each modality.</p>\n\n",
+                "matched_terms": [
+                    "modality",
+                    "modalities",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SAVEE (Surrey Audio-Visual Expressed Emotion Database)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib26\" title=\"\">26</a>]</cite> includes recordings of four male actors expressing seven emotions: anger, disgust, fear, happiness, sadness, surprise, and neutral. The dataset provides high-quality audio recordings suitable for acoustic feature extraction.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">CrowdFlower (Emotion in Text Dataset, 2016)</span> is a corpus of 40,000 tweets labeled with 13 emotion categories (e.g., anger, joy, sadness, fear, enthusiasm, etc.) via crowd-sourcing. We map these labels into our seven-class taxonomy and sample 6.2k utterances to balance with other sources.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">CARER (Contextual Affect Dataset)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib27\" title=\"\">27</a>]</cite> covers five basic emotions (anger, fear, joy, sadness, and surprise) with sentences collected from diverse domains, providing varied linguistic expressions of emotion.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">GoEmotions</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib8\" title=\"\">8</a>]</cite> is a large-scale dataset of 58,000 Reddit comments labeled with 27 fine-grained emotion categories. We map its labels to our seven-emotion taxonomy, leveraging its rich emotional diversity and conversational context.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ISEAR (International Survey on Emotion Antecedents and Reactions)</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib28\" title=\"\">28</a>]</cite> contains self-reported emotional experiences across multiple emotions (anger, disgust, fear, joy, sadness) from participants in 37 countries. The dataset includes contextual descriptions of emotion triggers, providing valuable semantic information.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We standardize all datasets to a unified seven-emotion taxonomy (anger, disgust, fear, joy/happiness, neutral, sadness, surprise) where applicable. As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F2\" title=\"Figure 2 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our text modality employs balanced sampling from five sources, resulting in approximately 6.2k utterances per emotion. The visual datasets (CK+ and RAF-DB) provide 15,648 samples, while the audio datasets (CREMA-D, RAVDESS, TESS, and SAVEE) contribute 10,557 samples.</p>\n\n",
+                "matched_terms": [
+                    "modality",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our quality control pipeline ensures the integrity, quality, and modality alignment of data from the MELD and IEMOCAP datasets. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.F3\" title=\"Figure 3 &#8227; III-C Datasets &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates key challenges and solutions in our data cleaning process, including speaker identification in multi-person scenes, handling off-screen speakers, and detecting audio-text misalignments. The objective is to generate a clean, speaker-specific, and temporally aligned corpus of audiovisual utterances suitable for emotion recognition.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "meld",
+                    "iemocap",
+                    "modality",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This step further filtered out utterances where no suitable face was found. The resulting subset of MELD contains utterances where all three modalities (text, audio, and video) were successfully aligned and the correct speaker&#8217;s face was detected.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "modalities"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the IEMOCAP dataset, face extraction was simpler due to fewer speakers (10 actors across 5 sessions). We applied a similar methodology using DeepFace, YOLOv8, and Facenet-512 with a cosine similarity threshold of 0.3, starting from 0.5 seconds into each utterance. Any utterances without a detected face were discarded. After this process, we retained 7,309 utterances from IEMOCAP that included all three modalities.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "iemocap",
+                    "modalities"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This ensured a standardized and relatively clean audio input across all utterances. In the end, our experiments relied on subsets of MELD and IEMOCAP where all three modalities were successfully captured and passed our quality control processes. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S3.T1\" title=\"TABLE I &#8227; III-D Data Quality Control Pipeline &#8227; III Methodology &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> summarizes the dataset composition before and after quality control.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "dataset",
+                    "iemocap",
+                    "modalities"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#S4.F5\" title=\"Figure 5 &#8227; IV-B Class-wise Analysis &#8227; IV Results &#8227; Quality-Controlled Multimodal Emotion Recognition in Conversations with Identity-Based Transfer Learning and MAMBA Fusion Technical Report: RTI-20251118-01 DOI: 10.13140/RG.2.2.33632.55045\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> displays confusion matrices for trimodal fusion. On MELD, neutral achieves 81.9% accuracy while fear (16.7%) and disgust (29.0%) remain problematic. Fear shows substantial confusion with disgust (18.8%) and anger (17.7%), suggesting these emotions share overlapping multimodal patterns in conversational contexts. IEMOCAP&#8217;s four-class problem yields more balanced performance: neutral (74.5%), sadness (80.0%), anger (72.3%), and happy+excited (70.8%).</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "accuracy",
+                    "fusion",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our choice to leverage speaker and face recognition models for emotion transfer departs from conventional approaches, grounded in the hypothesis that identity-preserving representations inherently capture emotion-relevant patterns. Speaker recognition models encode prosodic variations and voice quality while face recognition systems learn subtle facial muscle configurations&#8212;both crucial for emotion expression. Similarly, we select MPNet-v2 as a sentence encoder that combines contrastive learning, masked and permuted language modeling, and can be fine-tuned on textual emotion corpora and then used to extract emotion-aware embeddings for conversational datasets such as MELD and IEMOCAP.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "recognition",
+                    "iemocap",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The filtered utterances from benchmark data like MELD reveal systematic quality issues, with audio-text misalignment representing most of removed MELD samples. These misalignments could create spurious training signals where models learn incorrect cross-modal associations. The dominance of text (58.1%) versus poor visual performance (42.3%) in MELD challenges multimodal fusion assumptions, stemming from compressed TV footage quality, subtle conversational expressions, and temporal misalignment between emotional peaks and extracted frames. The limited fusion improvement (6.7% over text-only) questions whether current datasets truly require multimodal processing.</p>\n\n",
+                "matched_terms": [
+                    "meld",
+                    "fusion",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work should address these limitations through several directions. We plan to incorporate pre-trained speech recognition models such as wav2vec 2.0 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14969v1#bib.bib30\" title=\"\">30</a>]</cite> to enhance the audio component, as these models provide frame-level features that capture temporal emotional evolution unlike static speaker embeddings. This temporal richness would enable better utilization of MAMBA&#8217;s state-space modeling capabilities, which currently process fixed-dimensional embeddings rather than exploiting sequential speech dynamics. Additionally, developing quality-aware training methods that utilize imperfect samples rather than discarding them could recover the filtered data. We also aim to explore self-supervised approaches learning from unlabeled conversational data and investigate continuous emotion dimensions as alternatives to problematic categorical schemes. Creating new datasets with rigorous quality control during acquisition, rather than post-hoc filtering, remains essential for advancing the field.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We implement a systematic quality control pipeline for MERC datasets that addresses multiple problematic scenarios&#8212;speaker mislabeling, audio-text desynchronization, and face detection failures&#8212;ensuring proper alignment across all three modalities. Our approach leveraging identity-based transfer learning achieves 64.8% accuracy on MELD and 74.3% on IEMOCAP. However, significant challenges remain: sparse emotions achieve near-random accuracy, and fusion provides limited improvements over text-only baselines. These results emphasize that progress in conversational emotion recognition requires addressing fundamental data quality issues alongside architectural innovations. The field must move beyond incremental model improvements to confront the systematic data problems that limit current approaches, prioritizing the creation of properly aligned, high-quality multimodal datasets and developing methods robust to the inherent ambiguity of emotional expression in natural conversation.</p>\n\n",
+                "matched_terms": [
+                    "recognition",
+                    "meld",
+                    "iemocap",
+                    "fusion",
+                    "modalities",
+                    "accuracy",
+                    "emotion"
+                ]
+            }
+        ]
+    }
+}

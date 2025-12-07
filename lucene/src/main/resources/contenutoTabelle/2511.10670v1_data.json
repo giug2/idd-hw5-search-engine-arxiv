@@ -1,0 +1,1107 @@
+{
+    "Sx3.T1": {
+        "caption": "Table 1: \nWER ↓\\downarrow scores of two settings.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Settings</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Es</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Share Projector</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"7.99\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m1\" intent=\":literal\"><semantics><mn>7.99</mn><annotation encoding=\"application/x-tex\">7.99</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"4.46\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m2\" intent=\":literal\"><semantics><mn>4.46</mn><annotation encoding=\"application/x-tex\">4.46</annotation></semantics></math></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Expert Projector</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"7.70\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m3\" intent=\":literal\"><semantics><mn>7.70</mn><annotation encoding=\"application/x-tex\">7.70</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"4.41\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.T1.m4\" intent=\":literal\"><semantics><mn>4.41</mn><annotation encoding=\"application/x-tex\">4.41</annotation></semantics></math></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "wer",
+            "share",
+            "expert",
+            "settings",
+            "projector",
+            "↓downarrow",
+            "two",
+            "scores"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Previous studies typically employ a single projector to align the semantic spaces of the speech encoder and the LLM. However, given the observed cross-lingual semantic gap, the suitability of a shared projector in capturing semantic distinctions across languages remains uncertain. To investigate this, we compare two settings: (1) a shared projector for all languages, and (2) language-specific expert projectors. Since CS speech features lack oracle language labels, we conduct the evaluation on English and Spanish monolingual data from the Common Voice corpus. First, we pre-train a single projector with bilingual ASR data to reduce variance from random initialization and to provide basic semantic alignment. Then, we initialize both the shared and expert projectors with pre-trained weights. For the expert setting, each language data is then processed through its corresponding expert projector, whereas in the shared setting, all data pass through the shared one. Subsequently, LoRA is attached in both settings to prevent overfitting, followed by fine-tuning both settings on the same bilingual ASR data. The experimental results, presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.T1\" title=\"Table 1 &#8227; Does a semantic space gap exist between different languages? &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, show that the expert projector consistently performs better than the shared projector. This finding indicates that using expert projectors for different languages better capture semantic variations. However, in practice, the oracle language label of each CS speech feature is unavailable. To address this limitation, we adopt the MoE projector, enabling the model to dynamically route speech features to the appropriate expert projectors in an adaptive manner.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) speech translation (ST) refers to translating speech that alternates between two or more languages into a target language text, which poses significant challenges due to the complexity of semantic modeling and the scarcity of CS data. Previous studies tend to rely on the model itself to implicitly learn semantic modeling during training, and resort to inefficient and costly manual annotations for these two challenges. To mitigate these limitations, we propose enhancing Large Language Models (LLMs) with a Mixture of Experts (MoE) speech projector, where each expert specializes in the semantic subspace of a specific language, enabling fine-grained modeling of speech features. Additionally, we introduce a multi-stage training paradigm that utilizes readily available monolingual automatic speech recognition (ASR) and monolingual ST data, facilitating speech-text alignment and improving translation capabilities. During training, we leverage a combination of language-specific loss and intra-group load balancing loss to guide the MoE speech projector in efficiently allocating tokens to the appropriate experts, across expert groups and within each group, respectively. To bridge the data gap across different training stages and improve adaptation to the CS scenario, we further employ a transition loss, enabling smooth transitions of data between stages, to effectively address the scarcity of high-quality CS speech translation data. Extensive experiments on widely used datasets demonstrate the effectiveness and generality of our approach.</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "projector",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) is a common linguistic phenomenon in multilingual communities, referring to the alternation between two or more languages within a single utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">scotton1977bilingual</span>)</cite>. In the task of speech translation (ST), CS speech translation aims to translate such speech into text in the target language. With globalization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2023-decades</span>)</cite>, CS has become increasingly prevalent, extending beyond multilingual communities to predominantly monolingual settings, thus drawing much attention recently.</p>\n\n",
+                "matched_terms": [
+                    "settings",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, to address the aforementioned challenges, we explore the use of LLMs for CS speech translation, achieving improvements in two key aspects. 1) Based on the above-mentioned architecture, we introduce a novel Mixture-of-Experts (MoE)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shazeer2017outrageously</span>)</cite> speech projector that enables fine-grained processing of speech features from different languages, thereby addressing the semantic modeling complexity in CS speech. 2) To mitigate the scarcity of high-quality CS speech translation data, we propose a novel multi-stage training paradigm. In the first stage, corresponding ASR data is used to pretrain individual projectors for each language. In the second stage, these pretrained projectors are integrated into a MoE speech projector, which is then further trained. These two stages jointly align the speech and text modalities, facilitating the learning of cross-modal representations. In the third stage, we progressively transition from ASR to monolingual ST data using a transition loss to enhance the model&#8217;s translation ability. In the final stage, we further transition from monolingual ST to CS ST data, thus enabling effective translation of CS speech. Meanwhile, we incorporate a language-specific loss and an intra-group load balancing loss to better guide the learning of the MoE speech projector and promote effective expert specialization.</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "projector",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we explore the complexity of semantic modeling in CS speech from two perspectives. First, we examine whether there exists a semantic space gap between speech representations of different languages. Second, we evaluate how employing a shared projector affects the performance of the model.</p>\n\n",
+                "matched_terms": [
+                    "projector",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The speech projector connects the speech encoder to the LLM by mapping the representation space of the encoder output with the LLM input. Considering the representation space gap across different languages in CS speech, we propose the MoE Speech Projector. Each MoE layer consists of a set of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> expert linear layers <math alttext=\"E=(E_{1},E_{2},...,E_{N})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>E</mi><mi>N</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">E=(E_{1},E_{2},...,E_{N})</annotation></semantics></math> and a sparse router <math alttext=\"G\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>G</mi><annotation encoding=\"application/x-tex\">G</annotation></semantics></math>. For the <math alttext=\"l\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m4\" intent=\":literal\"><semantics><mi>l</mi><annotation encoding=\"application/x-tex\">l</annotation></semantics></math>-th MoE layer, the sparse router predicts the probabilities of the input <math alttext=\"\\bm{h}_{l}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m5\" intent=\":literal\"><semantics><msub><mi>&#119945;</mi><mi>l</mi></msub><annotation encoding=\"application/x-tex\">\\bm{h}_{l}</annotation></semantics></math> being assigned to each expert to select the corresponding Top-<math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m6\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math> experts at the token level. The outputs of the selected experts are then weighted by their corresponding probabilities and summed to produce output <math alttext=\"h_{l+1}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m7\" intent=\":literal\"><semantics><msub><mi>h</mi><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding=\"application/x-tex\">h_{l+1}</annotation></semantics></math>. The complete computation process is formulated as follows:</p>\n\n",
+                "matched_terms": [
+                    "projector",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Subsequently, for each language, we initialize an expert group consisting of <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> experts using the weights from the corresponding pretrained projector to facilitate effective training. All expert groups from the <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> languages are then aggregated to form the MoE speech projector, with a randomly initialized router inserted between each layer. Thus, the total number of experts is <math alttext=\"N=n\\times m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mrow><mi>n</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>m</mi></mrow></mrow><annotation encoding=\"application/x-tex\">N=n\\times m</annotation></semantics></math>. Although all experts within the same group share identical initial weights, the randomly initialized router assigns tokens to different experts, allowing them to gradually specialize through training.</p>\n\n",
+                "matched_terms": [
+                    "share",
+                    "projector",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In addition to the cross-entropy loss, we incorporate two auxiliary loss functions, language-specific loss and intra-group load balancing loss. The language-specific loss provides explicit supervision in assigning audio tokens to their corresponding language expert groups. Specifically, the loss is defined to minimize the probability of assigning audio tokens to experts from other language expert groups, and formally defined given below:</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use LLaMA2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>)</cite> as the base LLM and adopt Whisper-large-v3 encoder as the speech encoder. The projector is implemented as a three-layer MLP with ReLU&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">agarap2018deep</span>)</cite> activation. Each language expert group consists of <math alttext=\"n=3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=3</annotation></semantics></math> experts, and the MoE router selects the top-3 experts to generate the final output. We set the LoRA alpha to <math alttext=\"512\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mn>512</mn><annotation encoding=\"application/x-tex\">512</annotation></semantics></math> for the LLM and <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> for the speech encoder. In Stage 1&#8211;2, we train our model using ASR data from Common Voice in the corresponding languages. In Stage 3, we gradually transition the training data from Common Voice ASR to monolingual ST data from the Fisher or NTUML2021 datasets. Finally, in Stage 4, we further transition from the monolingual ST data to the CS ST data in Fisher or NTUML2021. All results are evaluated on NVIDIA RTX A100 GPU.</p>\n\n",
+                "matched_terms": [
+                    "projector",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T2\" title=\"Table 2 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T3\" title=\"Table 3 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> present the BLEU and COMET scores of various models on the Fisher and NTUML2021 test sets under three test settings: CS ST data only (CS), monolingual ST data only (Mono.), and the combination of both (Both.). Across all datasets and settings, our proposed method consistently outperforms all the baselines, demonstrating its superior translation performance.</p>\n\n",
+                "matched_terms": [
+                    "settings",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Specifically, under the CS setting, our model achieves the highest BLEU and COMET scores of <math alttext=\"37.13\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m1\" intent=\":literal\"><semantics><mn>37.13</mn><annotation encoding=\"application/x-tex\">37.13</annotation></semantics></math> and <math alttext=\"77.74\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m2\" intent=\":literal\"><semantics><mn>77.74</mn><annotation encoding=\"application/x-tex\">77.74</annotation></semantics></math> on Fisher, <math alttext=\"37.48\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m3\" intent=\":literal\"><semantics><mn>37.48</mn><annotation encoding=\"application/x-tex\">37.48</annotation></semantics></math> and <math alttext=\"81.69\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m4\" intent=\":literal\"><semantics><mn>81.69</mn><annotation encoding=\"application/x-tex\">81.69</annotation></semantics></math> on NTUML2021, significantly surpassing LLaST. Notably, although our method is primarily designed for CS scenarios, similar improvements are also observed under the Mono. and Both. settings, indicating the effectiveness of our method in both monolingual and CS speech translation scenarios.</p>\n\n",
+                "matched_terms": [
+                    "settings",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">w/o <math alttext=\"\\mathcal{L}_{lang}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{lang}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math>.</em> To verify the benefit of our carefully designed loss functions, we evaluate a variant in which <math alttext=\"\\mathcal{L}_{lang}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m3\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{lang}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math> are removed during Stages 2 and 3. As shown in Line <math alttext=\"3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m5\" intent=\":literal\"><semantics><mn>3</mn><annotation encoding=\"application/x-tex\">3</annotation></semantics></math>, we find a notable performance degradation, indicating that these two auxiliary loss play an important role in guiding expert specialization and routing consistency.</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "expert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we first explore LLMs in end-to-end CS speech translation, and significantly achieve improvements in two key aspect. First, we propose a novel MoE speech projector, which enables capturing fine-grained representations of CS speech. Second, we propose a novel multi-stage training paradigm that effectively utilize diverse data sources while ensuring smooth transitions across training stages. Extensive experiments and analyses verify the effectiveness of our model.\nFor future work, we plan to extend our model to support a wider range of CS language pairs and to investigate more adaptive expert selection mechanisms. Besides, we aim to generalize our model to related CS tasks such as ASR and MT, in order to further validate its robustness and generalizability.</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "projector",
+                    "expert"
+                ]
+            }
+        ]
+    },
+    "Sx5.T2": {
+        "caption": "Table 2: \nBLEU↑\\uparrow / COMET↑\\uparrow scores of various models on the Fisher test sets. CS refers to CS ST data, Mono. refers to monolingual ST data, and Both. denotes the combination of the two.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\" style=\"padding-top:1pt;padding-bottom:1pt;\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding-top:1pt;padding-bottom:1pt;\">Fisher</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">CS</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">Mono.</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">Both</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Wav2vec2.0+mBART</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"25.23\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m1\" intent=\":literal\"><semantics><mn>25.23</mn><annotation encoding=\"application/x-tex\">25.23</annotation></semantics></math> / <math alttext=\"72.94\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m2\" intent=\":literal\"><semantics><mn>72.94</mn><annotation encoding=\"application/x-tex\">72.94</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"24.79\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m3\" intent=\":literal\"><semantics><mn>24.79</mn><annotation encoding=\"application/x-tex\">24.79</annotation></semantics></math> / <math alttext=\"73.20\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m4\" intent=\":literal\"><semantics><mn>73.20</mn><annotation encoding=\"application/x-tex\">73.20</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"24.82\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m5\" intent=\":literal\"><semantics><mn>24.82</mn><annotation encoding=\"application/x-tex\">24.82</annotation></semantics></math> / <math alttext=\"73.19\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m6\" intent=\":literal\"><semantics><mn>73.19</mn><annotation encoding=\"application/x-tex\">73.19</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Whisper</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"31.46\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m7\" intent=\":literal\"><semantics><mn>31.46</mn><annotation encoding=\"application/x-tex\">31.46</annotation></semantics></math> / <math alttext=\"74.76\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m8\" intent=\":literal\"><semantics><mn>74.76</mn><annotation encoding=\"application/x-tex\">74.76</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"28.88\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m9\" intent=\":literal\"><semantics><mn>28.88</mn><annotation encoding=\"application/x-tex\">28.88</annotation></semantics></math> / <math alttext=\"75.01\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m10\" intent=\":literal\"><semantics><mn>75.01</mn><annotation encoding=\"application/x-tex\">75.01</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"29.09\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m11\" intent=\":literal\"><semantics><mn>29.09</mn><annotation encoding=\"application/x-tex\">29.09</annotation></semantics></math> / <math alttext=\"75.00\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m12\" intent=\":literal\"><semantics><mn>75.00</mn><annotation encoding=\"application/x-tex\">75.00</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">LLaST</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"33.78\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m13\" intent=\":literal\"><semantics><mn>33.78</mn><annotation encoding=\"application/x-tex\">33.78</annotation></semantics></math> / <math alttext=\"75.35\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m14\" intent=\":literal\"><semantics><mn>75.35</mn><annotation encoding=\"application/x-tex\">75.35</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"30.67\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m15\" intent=\":literal\"><semantics><mn>30.67</mn><annotation encoding=\"application/x-tex\">30.67</annotation></semantics></math> / <math alttext=\"78.37\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m16\" intent=\":literal\"><semantics><mn>78.37</mn><annotation encoding=\"application/x-tex\">78.37</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"30.83\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m17\" intent=\":literal\"><semantics><mn>30.83</mn><annotation encoding=\"application/x-tex\">30.83</annotation></semantics></math> / <math alttext=\"78.21\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m18\" intent=\":literal\"><semantics><mn>78.21</mn><annotation encoding=\"application/x-tex\">78.21</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Ours</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{37.13}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m19\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">37.13</mn><annotation encoding=\"application/x-tex\">\\bf{37.13}</annotation></semantics></math> / <math alttext=\"\\bf{77.74}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m20\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">77.74</mn><annotation encoding=\"application/x-tex\">\\bf{77.74}</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{32.40}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m21\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">32.40</mn><annotation encoding=\"application/x-tex\">\\bf{32.40}</annotation></semantics></math> / <math alttext=\"\\bf{80.30}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m22\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">80.30</mn><annotation encoding=\"application/x-tex\">\\bf{80.30}</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{32.77}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m23\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">32.77</mn><annotation encoding=\"application/x-tex\">\\bf{32.77}</annotation></semantics></math> / <math alttext=\"\\bf{80.16}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m24\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">80.16</mn><annotation encoding=\"application/x-tex\">\\bf{80.16}</annotation></semantics></math>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "models",
+            "8016bf8016",
+            "llast",
+            "3277bf3277",
+            "denotes",
+            "mono",
+            "various",
+            "two",
+            "monolingual",
+            "combination",
+            "3713bf3713",
+            "3240bf3240",
+            "test",
+            "bleu↑uparrow",
+            "scores",
+            "sets",
+            "wav2vec20mbart",
+            "both",
+            "8030bf8030",
+            "ours",
+            "fisher",
+            "model",
+            "data",
+            "whisper",
+            "7774bf7774",
+            "comet↑uparrow",
+            "refers"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T2\" title=\"Table 2 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T3\" title=\"Table 3 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> present the BLEU and COMET scores of various models on the Fisher and NTUML2021 test sets under three test settings: CS ST data only (CS), monolingual ST data only (Mono.), and the combination of both (Both.). Across all datasets and settings, our proposed method consistently outperforms all the baselines, demonstrating its superior translation performance.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) speech translation (ST) refers to translating speech that alternates between two or more languages into a target language text, which poses significant challenges due to the complexity of semantic modeling and the scarcity of CS data. Previous studies tend to rely on the model itself to implicitly learn semantic modeling during training, and resort to inefficient and costly manual annotations for these two challenges. To mitigate these limitations, we propose enhancing Large Language Models (LLMs) with a Mixture of Experts (MoE) speech projector, where each expert specializes in the semantic subspace of a specific language, enabling fine-grained modeling of speech features. Additionally, we introduce a multi-stage training paradigm that utilizes readily available monolingual automatic speech recognition (ASR) and monolingual ST data, facilitating speech-text alignment and improving translation capabilities. During training, we leverage a combination of language-specific loss and intra-group load balancing loss to guide the MoE speech projector in efficiently allocating tokens to the appropriate experts, across expert groups and within each group, respectively. To bridge the data gap across different training stages and improve adaptation to the CS scenario, we further employ a transition loss, enabling smooth transitions of data between stages, to effectively address the scarcity of high-quality CS speech translation data. Extensive experiments on widely used datasets demonstrate the effectiveness and generality of our approach.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "models",
+                    "combination",
+                    "model",
+                    "data",
+                    "refers",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) is a common linguistic phenomenon in multilingual communities, referring to the alternation between two or more languages within a single utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">scotton1977bilingual</span>)</cite>. In the task of speech translation (ST), CS speech translation aims to translate such speech into text in the target language. With globalization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2023-decades</span>)</cite>, CS has become increasingly prevalent, extending beyond multilingual communities to predominantly monolingual settings, thus drawing much attention recently.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While CS has been extensively explored in machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite> and automatic speech recognition (ASR)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, the research in speech translation remains relatively limited. This is primarily due to two key challenges: 1) &#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">semantic modeling complexity</span> introduced by language alternation, which poses significant challenges for the model in capturing effective representations from CS speech; 2)&#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">data scarcity</span>, as high-quality and large-scale CS speech translation datasets are limited and difficult to construct, which limits effective model training. Prior methods tend to ignore the semantic complexity arising from language switching, simply leaving it to the model itself to implicitly learn and resolve during training&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which limits overall performance. To mitigate data scarcity, previous studies resort to manual annotations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which is inefficient and costly, producing datasets of limited scale. Other approaches focus on synthetic data, which often suffer from unnatural switching, disrupted word order, and grammatical inconsistencies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2025switchlingua</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, large language models (LLMs) have demonstrated remarkable performance across diverse tasks. However, existing studies indicate that even being pretrained on large-scale multilingual corpora, LLMs still underperform on CS data compared to monolingual data&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>. Moreover, current research on LLMs in the context of CS primarily focuses on MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>)</cite>, leaving their potential in CS speech translation largely unexplored. To equip LLMs with cross-modal capabilities, prior approaches typically introduce a projector that connects a pretrained speech encoder to the LLM. This architecture effectively integrates the speech encoder&#8217;s strength in extracting acoustic features with the LLM&#8217;s powerful language modeling ability.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "models",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, to address the aforementioned challenges, we explore the use of LLMs for CS speech translation, achieving improvements in two key aspects. 1) Based on the above-mentioned architecture, we introduce a novel Mixture-of-Experts (MoE)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shazeer2017outrageously</span>)</cite> speech projector that enables fine-grained processing of speech features from different languages, thereby addressing the semantic modeling complexity in CS speech. 2) To mitigate the scarcity of high-quality CS speech translation data, we propose a novel multi-stage training paradigm. In the first stage, corresponding ASR data is used to pretrain individual projectors for each language. In the second stage, these pretrained projectors are integrated into a MoE speech projector, which is then further trained. These two stages jointly align the speech and text modalities, facilitating the learning of cross-modal representations. In the third stage, we progressively transition from ASR to monolingual ST data using a transition loss to enhance the model&#8217;s translation ability. In the final stage, we further transition from monolingual ST to CS ST data, thus enabling effective translation of CS speech. Meanwhile, we incorporate a language-specific loss and an intra-group load balancing loss to better guide the learning of the MoE speech projector and promote effective expert specialization.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a multi-stage training paradigm. This approach progressively guides the model to learn speech-text alignment and adapt to the CS scenarios, effectively addressing the scarcity of high-quality CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Empirical evaluations on the CS and monolingual speech translation datasets validate the effectiveness of our model.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CS translation in natural language processing (NLP) has garnered much attention and focuses mainly on the machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite>, yet many instances of CS occur in spoken contexts, such as lectures, meetings, and calls. To process speech data, such methods are often cascaded with CS Automatic Speech Recognition (ASR) models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, making them suffer from error propagation. Recent research efforts explore end-to-end (E2E) speech translation (ST) to mitigate this issue&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>. To improve translation quality, a representative approach COSTA&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite> aligns speech and text representations via interleaving their respective embeddings during fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we explore the complexity of semantic modeling in CS speech from two perspectives. First, we examine whether there exists a semantic space gap between speech representations of different languages. Second, we evaluate how employing a shared projector affects the performance of the model.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To investigate this issue, we conduct a preliminary experiment using Chinese, English, and Spanish ASR data from the Common Voice corpus. Specifically, the mean-pooled speech features extracted from the Speech Encoder are reduced to two dimensions using t-SNE&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hinton2002stochastic</span>)</cite> and visualized via a bivariate kernel density estimation (KDE) plot, as shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.F1\" title=\"Figure 1 &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The visualization reveals that samples from the same language cluster tightly, while those from different languages are clearly separated, indicating clear boundaries between languages. These findings provide empirical evidence of a substantial semantic gap across languages in speech representations.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous studies typically employ a single projector to align the semantic spaces of the speech encoder and the LLM. However, given the observed cross-lingual semantic gap, the suitability of a shared projector in capturing semantic distinctions across languages remains uncertain. To investigate this, we compare two settings: (1) a shared projector for all languages, and (2) language-specific expert projectors. Since CS speech features lack oracle language labels, we conduct the evaluation on English and Spanish monolingual data from the Common Voice corpus. First, we pre-train a single projector with bilingual ASR data to reduce variance from random initialization and to provide basic semantic alignment. Then, we initialize both the shared and expert projectors with pre-trained weights. For the expert setting, each language data is then processed through its corresponding expert projector, whereas in the shared setting, all data pass through the shared one. Subsequently, LoRA is attached in both settings to prevent overfitting, followed by fine-tuning both settings on the same bilingual ASR data. The experimental results, presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.T1\" title=\"Table 1 &#8227; Does a semantic space gap exist between different languages? &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, show that the expert projector consistently performs better than the shared projector. This finding indicates that using expert projectors for different languages better capture semantic variations. However, in practice, the oracle language label of each CS speech feature is unavailable. To address this limitation, we adopt the MoE projector, enabling the model to dynamically route speech features to the appropriate expert projectors in an adaptive manner.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model",
+                    "data",
+                    "both",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we first describe the architecture of our model and then detail the four-stage training strategy, including alignment pretraining, expert specialization, monolingual speech translation adaptation, and CS speech translation adaption.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> is the decoding timestep, <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m3\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math> denotes the target text token at timestep <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m4\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m5\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> refers to model parameters.</p>\n\n",
+                "matched_terms": [
+                    "refers",
+                    "denotes",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This stage focuses on enhancing the translation ability of the model by training on monolingual ST data. However, directly switching the data introduces training inconsistency due to the different task in the two stages. To enable a smoother transition between training stages, we first mix the ASR data with the monolingual ST data and propose the transition loss:</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\lambda=\\frac{b}{B}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mfrac><mi>b</mi><mi>B</mi></mfrac></mrow><annotation encoding=\"application/x-tex\">\\lambda=\\frac{b}{B}</annotation></semantics></math>, <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m2\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math> is the current batch index, and <math alttext=\"B\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m3\" intent=\":literal\"><semantics><mi>B</mi><annotation encoding=\"application/x-tex\">B</annotation></semantics></math> is the total number of batches. <math alttext=\"\\mathcal{L}_{asr\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{asr\\_ce}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{st\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m5\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{st\\_ce}</annotation></semantics></math> denote the cross-entropy losses for the ASR and monolingual ST data, respectively.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the final stage, we employ CS speech translation data to adapt the translation ability of the model to CS scenarios. Following the same rationale as in Stage 3, we combine monolingual ST with CS ST data and apply the transition loss:</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathcal{L}_{csst\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px4.p2.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{csst\\_ce}</annotation></semantics></math> denotes the cross-entropy loss for the CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "denotes",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, since the language of each source audio token is unavailable in CS speech translation data, both the language-specific loss and the intra-group load balancing loss are excluded during this stage.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite> and &#160;<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span></cite>, we select Fisher and NTUML2021 datasets to evaluate the model performance, as well as the widely used Common Voice dataset for ASR. The dataset details are as follows:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "fisher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Common Voice.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ardila-etal-2020-common</span>)</cite> This is a widely used multilingual ASR dataset containing monolingual speech and corresponding transcriptions. We select the English, Spanish, and Chinese subsets as our ASR data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fisher.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cieri2004fisher</span>)</cite> This is a CS speech translation dataset featuring English&#8211;Spanish source speech with English target translations. We follow the splits defined by <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>, and adopt their separation of monolingual and CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "fisher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">NTUML2021.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span>)</cite> This dataset consists of Chinese&#8211;English source speech with English target translations. We adopt the original data splits, and categorize samples whose transcriptions contain both Chinese and English as CS speech translation data, the remaining samples are treats as monolingual speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use LLaMA2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>)</cite> as the base LLM and adopt Whisper-large-v3 encoder as the speech encoder. The projector is implemented as a three-layer MLP with ReLU&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">agarap2018deep</span>)</cite> activation. Each language expert group consists of <math alttext=\"n=3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=3</annotation></semantics></math> experts, and the MoE router selects the top-3 experts to generate the final output. We set the LoRA alpha to <math alttext=\"512\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mn>512</mn><annotation encoding=\"application/x-tex\">512</annotation></semantics></math> for the LLM and <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> for the speech encoder. In Stage 1&#8211;2, we train our model using ASR data from Common Voice in the corresponding languages. In Stage 3, we gradually transition the training data from Common Voice ASR to monolingual ST data from the Fisher or NTUML2021 datasets. Finally, in Stage 4, we further transition from the monolingual ST data to the CS ST data in Fisher or NTUML2021. All results are evaluated on NVIDIA RTX A100 GPU.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model",
+                    "fisher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Wav2Vec2+mBART.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>. This work explores various model architectures for CS speech translation. We adopt its best-performing configuration (E2E BIDIRECT SHARED) as one of our baselines.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "various"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Whisper.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pmlr-v202-radford23a</span>)</cite>. As a large-scale pretrained model, Whisper has demonstrated strong performance across a range of speech translation tasks and is widely regarded as a robust baseline.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "whisper"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">LLaST.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen-etal-2024-llast</span>)</cite>. As there is currently no existing work specifically targeting E2E CS speech translation with LLMs, we include LLaST as a representative method. It adopts the same mainstream architecture that combines a pretrained speech encoder with an LLM and has shown competitive performance in monolingual CS speech translation tasks.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "llast"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Specifically, under the CS setting, our model achieves the highest BLEU and COMET scores of <math alttext=\"37.13\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m1\" intent=\":literal\"><semantics><mn>37.13</mn><annotation encoding=\"application/x-tex\">37.13</annotation></semantics></math> and <math alttext=\"77.74\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m2\" intent=\":literal\"><semantics><mn>77.74</mn><annotation encoding=\"application/x-tex\">77.74</annotation></semantics></math> on Fisher, <math alttext=\"37.48\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m3\" intent=\":literal\"><semantics><mn>37.48</mn><annotation encoding=\"application/x-tex\">37.48</annotation></semantics></math> and <math alttext=\"81.69\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m4\" intent=\":literal\"><semantics><mn>81.69</mn><annotation encoding=\"application/x-tex\">81.69</annotation></semantics></math> on NTUML2021, significantly surpassing LLaST. Notably, although our method is primarily designed for CS scenarios, similar improvements are also observed under the Mono. and Both. settings, indicating the effectiveness of our method in both monolingual and CS speech translation scenarios.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "fisher",
+                    "llast",
+                    "model",
+                    "mono",
+                    "both",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we first explore LLMs in end-to-end CS speech translation, and significantly achieve improvements in two key aspect. First, we propose a novel MoE speech projector, which enables capturing fine-grained representations of CS speech. Second, we propose a novel multi-stage training paradigm that effectively utilize diverse data sources while ensuring smooth transitions across training stages. Extensive experiments and analyses verify the effectiveness of our model.\nFor future work, we plan to extend our model to support a wider range of CS language pairs and to investigate more adaptive expert selection mechanisms. Besides, we aim to generalize our model to related CS tasks such as ASR and MT, in order to further validate its robustness and generalizability.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model",
+                    "two"
+                ]
+            }
+        ]
+    },
+    "Sx5.T3": {
+        "caption": "Table 3: \nBLEU↑\\uparrow / COMET↑\\uparrow scores of various models on the NTUML2021 test sets. CS refers to CS ST data, Mono. refers to monolingual ST data, and Both. denotes the combination of the two.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\" rowspan=\"2\" style=\"padding-top:1pt;padding-bottom:1pt;\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding-top:1pt;padding-bottom:1pt;\">NTUML2021</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">CS</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">Mono.</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\" style=\"padding-top:1pt;padding-bottom:1pt;\">Both</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Wav2vec2.0+mBART</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"24.35\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m1\" intent=\":literal\"><semantics><mn>24.35</mn><annotation encoding=\"application/x-tex\">24.35</annotation></semantics></math> / <math alttext=\"74.78\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m2\" intent=\":literal\"><semantics><mn>74.78</mn><annotation encoding=\"application/x-tex\">74.78</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"24.10\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m3\" intent=\":literal\"><semantics><mn>24.10</mn><annotation encoding=\"application/x-tex\">24.10</annotation></semantics></math> / <math alttext=\"74.89\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m4\" intent=\":literal\"><semantics><mn>74.89</mn><annotation encoding=\"application/x-tex\">74.89</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"24.25\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m5\" intent=\":literal\"><semantics><mn>24.25</mn><annotation encoding=\"application/x-tex\">24.25</annotation></semantics></math> / <math alttext=\"74.82\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m6\" intent=\":literal\"><semantics><mn>74.82</mn><annotation encoding=\"application/x-tex\">74.82</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Whisper</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"26.82\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m7\" intent=\":literal\"><semantics><mn>26.82</mn><annotation encoding=\"application/x-tex\">26.82</annotation></semantics></math> / <math alttext=\"77.07\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m8\" intent=\":literal\"><semantics><mn>77.07</mn><annotation encoding=\"application/x-tex\">77.07</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"28.23\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m9\" intent=\":literal\"><semantics><mn>28.23</mn><annotation encoding=\"application/x-tex\">28.23</annotation></semantics></math> / <math alttext=\"75.45\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m10\" intent=\":literal\"><semantics><mn>75.45</mn><annotation encoding=\"application/x-tex\">75.45</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"27.42\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m11\" intent=\":literal\"><semantics><mn>27.42</mn><annotation encoding=\"application/x-tex\">27.42</annotation></semantics></math> / <math alttext=\"76.40\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m12\" intent=\":literal\"><semantics><mn>76.40</mn><annotation encoding=\"application/x-tex\">76.40</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">LLaST</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"32.53\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m13\" intent=\":literal\"><semantics><mn>32.53</mn><annotation encoding=\"application/x-tex\">32.53</annotation></semantics></math> / <math alttext=\"78.92\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m14\" intent=\":literal\"><semantics><mn>78.92</mn><annotation encoding=\"application/x-tex\">78.92</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"33.81\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m15\" intent=\":literal\"><semantics><mn>33.81</mn><annotation encoding=\"application/x-tex\">33.81</annotation></semantics></math> / <math alttext=\"79.03\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m16\" intent=\":literal\"><semantics><mn>79.03</mn><annotation encoding=\"application/x-tex\">79.03</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"33.06\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m17\" intent=\":literal\"><semantics><mn>33.06</mn><annotation encoding=\"application/x-tex\">33.06</annotation></semantics></math> / <math alttext=\"78.96\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m18\" intent=\":literal\"><semantics><mn>78.96</mn><annotation encoding=\"application/x-tex\">78.96</annotation></semantics></math>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Ours</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{37.48}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m19\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">37.48</mn><annotation encoding=\"application/x-tex\">\\bf{37.48}</annotation></semantics></math> / <math alttext=\"\\bf{81.69}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m20\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">81.69</mn><annotation encoding=\"application/x-tex\">\\bf{81.69}</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{37.14}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m21\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">37.14</mn><annotation encoding=\"application/x-tex\">\\bf{37.14}</annotation></semantics></math> / <math alttext=\"\\bf{81.87}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m22\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">81.87</mn><annotation encoding=\"application/x-tex\">\\bf{81.87}</annotation></semantics></math>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<math alttext=\"\\bf{37.34}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m23\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">37.34</mn><annotation encoding=\"application/x-tex\">\\bf{37.34}</annotation></semantics></math> / <math alttext=\"\\bf{81.77}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T3.m24\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">81.77</mn><annotation encoding=\"application/x-tex\">\\bf{81.77}</annotation></semantics></math>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "8169bf8169",
+            "models",
+            "llast",
+            "3748bf3748",
+            "denotes",
+            "mono",
+            "various",
+            "two",
+            "monolingual",
+            "3734bf3734",
+            "combination",
+            "test",
+            "bleu↑uparrow",
+            "scores",
+            "8177bf8177",
+            "sets",
+            "wav2vec20mbart",
+            "8187bf8187",
+            "both",
+            "ntuml2021",
+            "ours",
+            "3714bf3714",
+            "model",
+            "data",
+            "whisper",
+            "comet↑uparrow",
+            "refers"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T2\" title=\"Table 2 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T3\" title=\"Table 3 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> present the BLEU and COMET scores of various models on the Fisher and NTUML2021 test sets under three test settings: CS ST data only (CS), monolingual ST data only (Mono.), and the combination of both (Both.). Across all datasets and settings, our proposed method consistently outperforms all the baselines, demonstrating its superior translation performance.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) speech translation (ST) refers to translating speech that alternates between two or more languages into a target language text, which poses significant challenges due to the complexity of semantic modeling and the scarcity of CS data. Previous studies tend to rely on the model itself to implicitly learn semantic modeling during training, and resort to inefficient and costly manual annotations for these two challenges. To mitigate these limitations, we propose enhancing Large Language Models (LLMs) with a Mixture of Experts (MoE) speech projector, where each expert specializes in the semantic subspace of a specific language, enabling fine-grained modeling of speech features. Additionally, we introduce a multi-stage training paradigm that utilizes readily available monolingual automatic speech recognition (ASR) and monolingual ST data, facilitating speech-text alignment and improving translation capabilities. During training, we leverage a combination of language-specific loss and intra-group load balancing loss to guide the MoE speech projector in efficiently allocating tokens to the appropriate experts, across expert groups and within each group, respectively. To bridge the data gap across different training stages and improve adaptation to the CS scenario, we further employ a transition loss, enabling smooth transitions of data between stages, to effectively address the scarcity of high-quality CS speech translation data. Extensive experiments on widely used datasets demonstrate the effectiveness and generality of our approach.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "models",
+                    "combination",
+                    "model",
+                    "data",
+                    "refers",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) is a common linguistic phenomenon in multilingual communities, referring to the alternation between two or more languages within a single utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">scotton1977bilingual</span>)</cite>. In the task of speech translation (ST), CS speech translation aims to translate such speech into text in the target language. With globalization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2023-decades</span>)</cite>, CS has become increasingly prevalent, extending beyond multilingual communities to predominantly monolingual settings, thus drawing much attention recently.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While CS has been extensively explored in machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite> and automatic speech recognition (ASR)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, the research in speech translation remains relatively limited. This is primarily due to two key challenges: 1) &#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">semantic modeling complexity</span> introduced by language alternation, which poses significant challenges for the model in capturing effective representations from CS speech; 2)&#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">data scarcity</span>, as high-quality and large-scale CS speech translation datasets are limited and difficult to construct, which limits effective model training. Prior methods tend to ignore the semantic complexity arising from language switching, simply leaving it to the model itself to implicitly learn and resolve during training&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which limits overall performance. To mitigate data scarcity, previous studies resort to manual annotations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which is inefficient and costly, producing datasets of limited scale. Other approaches focus on synthetic data, which often suffer from unnatural switching, disrupted word order, and grammatical inconsistencies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2025switchlingua</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, large language models (LLMs) have demonstrated remarkable performance across diverse tasks. However, existing studies indicate that even being pretrained on large-scale multilingual corpora, LLMs still underperform on CS data compared to monolingual data&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>. Moreover, current research on LLMs in the context of CS primarily focuses on MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>)</cite>, leaving their potential in CS speech translation largely unexplored. To equip LLMs with cross-modal capabilities, prior approaches typically introduce a projector that connects a pretrained speech encoder to the LLM. This architecture effectively integrates the speech encoder&#8217;s strength in extracting acoustic features with the LLM&#8217;s powerful language modeling ability.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "models",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, to address the aforementioned challenges, we explore the use of LLMs for CS speech translation, achieving improvements in two key aspects. 1) Based on the above-mentioned architecture, we introduce a novel Mixture-of-Experts (MoE)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shazeer2017outrageously</span>)</cite> speech projector that enables fine-grained processing of speech features from different languages, thereby addressing the semantic modeling complexity in CS speech. 2) To mitigate the scarcity of high-quality CS speech translation data, we propose a novel multi-stage training paradigm. In the first stage, corresponding ASR data is used to pretrain individual projectors for each language. In the second stage, these pretrained projectors are integrated into a MoE speech projector, which is then further trained. These two stages jointly align the speech and text modalities, facilitating the learning of cross-modal representations. In the third stage, we progressively transition from ASR to monolingual ST data using a transition loss to enhance the model&#8217;s translation ability. In the final stage, we further transition from monolingual ST to CS ST data, thus enabling effective translation of CS speech. Meanwhile, we incorporate a language-specific loss and an intra-group load balancing loss to better guide the learning of the MoE speech projector and promote effective expert specialization.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a multi-stage training paradigm. This approach progressively guides the model to learn speech-text alignment and adapt to the CS scenarios, effectively addressing the scarcity of high-quality CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Empirical evaluations on the CS and monolingual speech translation datasets validate the effectiveness of our model.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CS translation in natural language processing (NLP) has garnered much attention and focuses mainly on the machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite>, yet many instances of CS occur in spoken contexts, such as lectures, meetings, and calls. To process speech data, such methods are often cascaded with CS Automatic Speech Recognition (ASR) models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, making them suffer from error propagation. Recent research efforts explore end-to-end (E2E) speech translation (ST) to mitigate this issue&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>. To improve translation quality, a representative approach COSTA&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite> aligns speech and text representations via interleaving their respective embeddings during fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we explore the complexity of semantic modeling in CS speech from two perspectives. First, we examine whether there exists a semantic space gap between speech representations of different languages. Second, we evaluate how employing a shared projector affects the performance of the model.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To investigate this issue, we conduct a preliminary experiment using Chinese, English, and Spanish ASR data from the Common Voice corpus. Specifically, the mean-pooled speech features extracted from the Speech Encoder are reduced to two dimensions using t-SNE&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hinton2002stochastic</span>)</cite> and visualized via a bivariate kernel density estimation (KDE) plot, as shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.F1\" title=\"Figure 1 &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The visualization reveals that samples from the same language cluster tightly, while those from different languages are clearly separated, indicating clear boundaries between languages. These findings provide empirical evidence of a substantial semantic gap across languages in speech representations.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous studies typically employ a single projector to align the semantic spaces of the speech encoder and the LLM. However, given the observed cross-lingual semantic gap, the suitability of a shared projector in capturing semantic distinctions across languages remains uncertain. To investigate this, we compare two settings: (1) a shared projector for all languages, and (2) language-specific expert projectors. Since CS speech features lack oracle language labels, we conduct the evaluation on English and Spanish monolingual data from the Common Voice corpus. First, we pre-train a single projector with bilingual ASR data to reduce variance from random initialization and to provide basic semantic alignment. Then, we initialize both the shared and expert projectors with pre-trained weights. For the expert setting, each language data is then processed through its corresponding expert projector, whereas in the shared setting, all data pass through the shared one. Subsequently, LoRA is attached in both settings to prevent overfitting, followed by fine-tuning both settings on the same bilingual ASR data. The experimental results, presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.T1\" title=\"Table 1 &#8227; Does a semantic space gap exist between different languages? &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, show that the expert projector consistently performs better than the shared projector. This finding indicates that using expert projectors for different languages better capture semantic variations. However, in practice, the oracle language label of each CS speech feature is unavailable. To address this limitation, we adopt the MoE projector, enabling the model to dynamically route speech features to the appropriate expert projectors in an adaptive manner.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model",
+                    "data",
+                    "both",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we first describe the architecture of our model and then detail the four-stage training strategy, including alignment pretraining, expert specialization, monolingual speech translation adaptation, and CS speech translation adaption.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> is the decoding timestep, <math alttext=\"y_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m3\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">y_{t}</annotation></semantics></math> denotes the target text token at timestep <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m4\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m5\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> refers to model parameters.</p>\n\n",
+                "matched_terms": [
+                    "refers",
+                    "denotes",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This stage focuses on enhancing the translation ability of the model by training on monolingual ST data. However, directly switching the data introduces training inconsistency due to the different task in the two stages. To enable a smoother transition between training stages, we first mix the ASR data with the monolingual ST data and propose the transition loss:</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\lambda=\\frac{b}{B}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mfrac><mi>b</mi><mi>B</mi></mfrac></mrow><annotation encoding=\"application/x-tex\">\\lambda=\\frac{b}{B}</annotation></semantics></math>, <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m2\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math> is the current batch index, and <math alttext=\"B\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m3\" intent=\":literal\"><semantics><mi>B</mi><annotation encoding=\"application/x-tex\">B</annotation></semantics></math> is the total number of batches. <math alttext=\"\\mathcal{L}_{asr\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{asr\\_ce}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{st\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px3.p2.m5\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{st\\_ce}</annotation></semantics></math> denote the cross-entropy losses for the ASR and monolingual ST data, respectively.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the final stage, we employ CS speech translation data to adapt the translation ability of the model to CS scenarios. Following the same rationale as in Stage 3, we combine monolingual ST with CS ST data and apply the transition loss:</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathcal{L}_{csst\\_ce}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px4.p2.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{csst\\_ce}</annotation></semantics></math> denotes the cross-entropy loss for the CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "denotes",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, since the language of each source audio token is unavailable in CS speech translation data, both the language-specific loss and the intra-group load balancing loss are excluded during this stage.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "both"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite> and &#160;<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span></cite>, we select Fisher and NTUML2021 datasets to evaluate the model performance, as well as the widely used Common Voice dataset for ASR. The dataset details are as follows:</p>\n\n",
+                "matched_terms": [
+                    "ntuml2021",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Common Voice.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ardila-etal-2020-common</span>)</cite> This is a widely used multilingual ASR dataset containing monolingual speech and corresponding transcriptions. We select the English, Spanish, and Chinese subsets as our ASR data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fisher.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cieri2004fisher</span>)</cite> This is a CS speech translation dataset featuring English&#8211;Spanish source speech with English target translations. We follow the splits defined by <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>, and adopt their separation of monolingual and CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">NTUML2021.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span>)</cite> This dataset consists of Chinese&#8211;English source speech with English target translations. We adopt the original data splits, and categorize samples whose transcriptions contain both Chinese and English as CS speech translation data, the remaining samples are treats as monolingual speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "both",
+                    "ntuml2021"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use LLaMA2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>)</cite> as the base LLM and adopt Whisper-large-v3 encoder as the speech encoder. The projector is implemented as a three-layer MLP with ReLU&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">agarap2018deep</span>)</cite> activation. Each language expert group consists of <math alttext=\"n=3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=3</annotation></semantics></math> experts, and the MoE router selects the top-3 experts to generate the final output. We set the LoRA alpha to <math alttext=\"512\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mn>512</mn><annotation encoding=\"application/x-tex\">512</annotation></semantics></math> for the LLM and <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> for the speech encoder. In Stage 1&#8211;2, we train our model using ASR data from Common Voice in the corresponding languages. In Stage 3, we gradually transition the training data from Common Voice ASR to monolingual ST data from the Fisher or NTUML2021 datasets. Finally, in Stage 4, we further transition from the monolingual ST data to the CS ST data in Fisher or NTUML2021. All results are evaluated on NVIDIA RTX A100 GPU.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "data",
+                    "model",
+                    "ntuml2021"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Wav2Vec2+mBART.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>. This work explores various model architectures for CS speech translation. We adopt its best-performing configuration (E2E BIDIRECT SHARED) as one of our baselines.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "various"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Whisper.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pmlr-v202-radford23a</span>)</cite>. As a large-scale pretrained model, Whisper has demonstrated strong performance across a range of speech translation tasks and is widely regarded as a robust baseline.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "whisper"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">LLaST.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen-etal-2024-llast</span>)</cite>. As there is currently no existing work specifically targeting E2E CS speech translation with LLMs, we include LLaST as a representative method. It adopts the same mainstream architecture that combines a pretrained speech encoder with an LLM and has shown competitive performance in monolingual CS speech translation tasks.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "llast"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Specifically, under the CS setting, our model achieves the highest BLEU and COMET scores of <math alttext=\"37.13\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m1\" intent=\":literal\"><semantics><mn>37.13</mn><annotation encoding=\"application/x-tex\">37.13</annotation></semantics></math> and <math alttext=\"77.74\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m2\" intent=\":literal\"><semantics><mn>77.74</mn><annotation encoding=\"application/x-tex\">77.74</annotation></semantics></math> on Fisher, <math alttext=\"37.48\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m3\" intent=\":literal\"><semantics><mn>37.48</mn><annotation encoding=\"application/x-tex\">37.48</annotation></semantics></math> and <math alttext=\"81.69\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m4\" intent=\":literal\"><semantics><mn>81.69</mn><annotation encoding=\"application/x-tex\">81.69</annotation></semantics></math> on NTUML2021, significantly surpassing LLaST. Notably, although our method is primarily designed for CS scenarios, similar improvements are also observed under the Mono. and Both. settings, indicating the effectiveness of our method in both monolingual and CS speech translation scenarios.</p>\n\n",
+                "matched_terms": [
+                    "monolingual",
+                    "llast",
+                    "model",
+                    "mono",
+                    "both",
+                    "ntuml2021",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we first explore LLMs in end-to-end CS speech translation, and significantly achieve improvements in two key aspect. First, we propose a novel MoE speech projector, which enables capturing fine-grained representations of CS speech. Second, we propose a novel multi-stage training paradigm that effectively utilize diverse data sources while ensuring smooth transitions across training stages. Extensive experiments and analyses verify the effectiveness of our model.\nFor future work, we plan to extend our model to support a wider range of CS language pairs and to investigate more adaptive expert selection mechanisms. Besides, we aim to generalize our model to related CS tasks such as ASR and MT, in order to further validate its robustness and generalizability.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "model",
+                    "two"
+                ]
+            }
+        ]
+    },
+    "Sx5.T4": {
+        "caption": "Table 4: \nAblation studies on the Fisher CS test set.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">BLEU</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">COMET</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Ours</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"37.13\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m1\" intent=\":literal\"><semantics><mn>37.13</mn><annotation encoding=\"application/x-tex\">37.13</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"77.74\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m2\" intent=\":literal\"><semantics><mn>77.74</mn><annotation encoding=\"application/x-tex\">77.74</annotation></semantics></math></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8194;&#8202;&#8195;<em class=\"ltx_emph ltx_font_italic\">w/o MoE Speech Projector</em>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"34.92\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m3\" intent=\":literal\"><semantics><mn>34.92</mn><annotation encoding=\"application/x-tex\">34.92</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"75.51\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m4\" intent=\":literal\"><semantics><mn>75.51</mn><annotation encoding=\"application/x-tex\">75.51</annotation></semantics></math></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8194;&#8202;&#8195;<em class=\"ltx_emph ltx_font_italic\">w/o <math alttext=\"\\mathcal{L}_{lang}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m5\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{lang}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m6\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math></em>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"35.35\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m7\" intent=\":literal\"><semantics><mn>35.35</mn><annotation encoding=\"application/x-tex\">35.35</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"75.45\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m8\" intent=\":literal\"><semantics><mn>75.45</mn><annotation encoding=\"application/x-tex\">75.45</annotation></semantics></math></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8194;&#8202;&#8195;<em class=\"ltx_emph ltx_font_italic\">conventional <math alttext=\"\\mathcal{L^{\\prime}}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m9\" intent=\":literal\"><semantics><mmultiscripts><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow/><mo>&#8242;</mo><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow><mrow/></mmultiscripts><annotation encoding=\"application/x-tex\">\\mathcal{L^{\\prime}}_{balance}</annotation></semantics></math></em>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"36.77\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m10\" intent=\":literal\"><semantics><mn>36.77</mn><annotation encoding=\"application/x-tex\">36.77</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"77.50\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T4.m11\" intent=\":literal\"><semantics><mn>77.50</mn><annotation encoding=\"application/x-tex\">77.50</annotation></semantics></math></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "set",
+            "ours",
+            "ℒl​a​n​gmathcalllang",
+            "fisher",
+            "studies",
+            "conventional",
+            "model",
+            "ablation",
+            "comet",
+            "projector",
+            "moe",
+            "test",
+            "speech",
+            "ℒ′b​a​l​a​n​c​emathcallprimebalance",
+            "ℒb​a​l​a​n​c​emathcallbalance",
+            "bleu"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T4\" title=\"Table 4 &#8227; Main Results &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> , we consider the following variants:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) speech translation (ST) refers to translating speech that alternates between two or more languages into a target language text, which poses significant challenges due to the complexity of semantic modeling and the scarcity of CS data. Previous studies tend to rely on the model itself to implicitly learn semantic modeling during training, and resort to inefficient and costly manual annotations for these two challenges. To mitigate these limitations, we propose enhancing Large Language Models (LLMs) with a Mixture of Experts (MoE) speech projector, where each expert specializes in the semantic subspace of a specific language, enabling fine-grained modeling of speech features. Additionally, we introduce a multi-stage training paradigm that utilizes readily available monolingual automatic speech recognition (ASR) and monolingual ST data, facilitating speech-text alignment and improving translation capabilities. During training, we leverage a combination of language-specific loss and intra-group load balancing loss to guide the MoE speech projector in efficiently allocating tokens to the appropriate experts, across expert groups and within each group, respectively. To bridge the data gap across different training stages and improve adaptation to the CS scenario, we further employ a transition loss, enabling smooth transitions of data between stages, to effectively address the scarcity of high-quality CS speech translation data. Extensive experiments on widely used datasets demonstrate the effectiveness and generality of our approach.</p>\n\n",
+                "matched_terms": [
+                    "studies",
+                    "model",
+                    "projector",
+                    "moe",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While CS has been extensively explored in machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite> and automatic speech recognition (ASR)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, the research in speech translation remains relatively limited. This is primarily due to two key challenges: 1) &#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">semantic modeling complexity</span> introduced by language alternation, which poses significant challenges for the model in capturing effective representations from CS speech; 2)&#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">data scarcity</span>, as high-quality and large-scale CS speech translation datasets are limited and difficult to construct, which limits effective model training. Prior methods tend to ignore the semantic complexity arising from language switching, simply leaving it to the model itself to implicitly learn and resolve during training&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which limits overall performance. To mitigate data scarcity, previous studies resort to manual annotations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which is inefficient and costly, producing datasets of limited scale. Other approaches focus on synthetic data, which often suffer from unnatural switching, disrupted word order, and grammatical inconsistencies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2025switchlingua</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model",
+                    "studies"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, large language models (LLMs) have demonstrated remarkable performance across diverse tasks. However, existing studies indicate that even being pretrained on large-scale multilingual corpora, LLMs still underperform on CS data compared to monolingual data&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>. Moreover, current research on LLMs in the context of CS primarily focuses on MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>)</cite>, leaving their potential in CS speech translation largely unexplored. To equip LLMs with cross-modal capabilities, prior approaches typically introduce a projector that connects a pretrained speech encoder to the LLM. This architecture effectively integrates the speech encoder&#8217;s strength in extracting acoustic features with the LLM&#8217;s powerful language modeling ability.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "studies"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, to address the aforementioned challenges, we explore the use of LLMs for CS speech translation, achieving improvements in two key aspects. 1) Based on the above-mentioned architecture, we introduce a novel Mixture-of-Experts (MoE)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shazeer2017outrageously</span>)</cite> speech projector that enables fine-grained processing of speech features from different languages, thereby addressing the semantic modeling complexity in CS speech. 2) To mitigate the scarcity of high-quality CS speech translation data, we propose a novel multi-stage training paradigm. In the first stage, corresponding ASR data is used to pretrain individual projectors for each language. In the second stage, these pretrained projectors are integrated into a MoE speech projector, which is then further trained. These two stages jointly align the speech and text modalities, facilitating the learning of cross-modal representations. In the third stage, we progressively transition from ASR to monolingual ST data using a transition loss to enhance the model&#8217;s translation ability. In the final stage, we further transition from monolingual ST to CS ST data, thus enabling effective translation of CS speech. Meanwhile, we incorporate a language-specific loss and an intra-group load balancing loss to better guide the learning of the MoE speech projector and promote effective expert specialization.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a novel MoE speech projector, enabling fine-grained modeling of speech features from different languages and enhances the model&#8217;s ability to capture semantic variations in CS speech.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a multi-stage training paradigm. This approach progressively guides the model to learn speech-text alignment and adapt to the CS scenarios, effectively addressing the scarcity of high-quality CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Empirical evaluations on the CS and monolingual speech translation datasets validate the effectiveness of our model.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, Large Language Models (LLMs) have demonstrated impressive performance across diverse tasks, leading to increasing research on their use in CS MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>, where they have shown promising results. In spite of success, the potential of LLMs for CS speech translation remains largely unexplored. Typical, prevailing research integrates a pretrained speech encoder with an LLM through a projector, thereby equipping the LLM with cross-modal understanding abilities. This framework effectively combines the strength of the speech encoder in extracting speech features with the powerful translation capabilities of the LLM.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we explore the complexity of semantic modeling in CS speech from two perspectives. First, we examine whether there exists a semantic space gap between speech representations of different languages. Second, we evaluate how employing a shared projector affects the performance of the model.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous studies typically employ a single projector to align the semantic spaces of the speech encoder and the LLM. However, given the observed cross-lingual semantic gap, the suitability of a shared projector in capturing semantic distinctions across languages remains uncertain. To investigate this, we compare two settings: (1) a shared projector for all languages, and (2) language-specific expert projectors. Since CS speech features lack oracle language labels, we conduct the evaluation on English and Spanish monolingual data from the Common Voice corpus. First, we pre-train a single projector with bilingual ASR data to reduce variance from random initialization and to provide basic semantic alignment. Then, we initialize both the shared and expert projectors with pre-trained weights. For the expert setting, each language data is then processed through its corresponding expert projector, whereas in the shared setting, all data pass through the shared one. Subsequently, LoRA is attached in both settings to prevent overfitting, followed by fine-tuning both settings on the same bilingual ASR data. The experimental results, presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.T1\" title=\"Table 1 &#8227; Does a semantic space gap exist between different languages? &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, show that the expert projector consistently performs better than the shared projector. This finding indicates that using expert projectors for different languages better capture semantic variations. However, in practice, the oracle language label of each CS speech feature is unavailable. To address this limitation, we adopt the MoE projector, enabling the model to dynamically route speech features to the appropriate expert projectors in an adaptive manner.</p>\n\n",
+                "matched_terms": [
+                    "studies",
+                    "model",
+                    "projector",
+                    "moe",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we first describe the architecture of our model and then detail the four-stage training strategy, including alignment pretraining, expert specialization, monolingual speech translation adaptation, and CS speech translation adaption.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx4.F2\" title=\"Figure 2 &#8227; Methodology &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our proposed framework primarily consists of a speech encoder, a MoE speech projector, and an LLM. The speech encoder extracts features from the speech input, which are then aligned to the representation space of the LLM via the MoE speech projector. These aligned features are concatenated with the prompt embeddings and used as input to the LLM to generate the translation.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The speech projector connects the speech encoder to the LLM by mapping the representation space of the encoder output with the LLM input. Considering the representation space gap across different languages in CS speech, we propose the MoE Speech Projector. Each MoE layer consists of a set of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> expert linear layers <math alttext=\"E=(E_{1},E_{2},...,E_{N})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>E</mi><mi>N</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">E=(E_{1},E_{2},...,E_{N})</annotation></semantics></math> and a sparse router <math alttext=\"G\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>G</mi><annotation encoding=\"application/x-tex\">G</annotation></semantics></math>. For the <math alttext=\"l\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m4\" intent=\":literal\"><semantics><mi>l</mi><annotation encoding=\"application/x-tex\">l</annotation></semantics></math>-th MoE layer, the sparse router predicts the probabilities of the input <math alttext=\"\\bm{h}_{l}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m5\" intent=\":literal\"><semantics><msub><mi>&#119945;</mi><mi>l</mi></msub><annotation encoding=\"application/x-tex\">\\bm{h}_{l}</annotation></semantics></math> being assigned to each expert to select the corresponding Top-<math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m6\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math> experts at the token level. The outputs of the selected experts are then weighted by their corresponding probabilities and summed to produce output <math alttext=\"h_{l+1}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m7\" intent=\":literal\"><semantics><msub><mi>h</mi><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding=\"application/x-tex\">h_{l+1}</annotation></semantics></math>. The complete computation process is formulated as follows:</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\bm{h}_{s}\\in\\mathbb{R}^{T_{s}\\times D_{LLM}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p4.m1\" intent=\":literal\"><semantics><mrow><msub><mi>&#119945;</mi><mi>s</mi></msub><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>T</mi><mi>s</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mrow><mi>L</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>L</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>M</mi></mrow></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\bm{h}_{s}\\in\\mathbb{R}^{T_{s}\\times D_{LLM}}</annotation></semantics></math> denotes the speech projector output.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the initial stage, we aim to guide the model to first align the speech and text modalities and to subsequently learn fine-grained representations of CS speech.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m1\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> languages involved in CS speech, we first randomly initialize an MLP-based projector and pretrain it using the corresponding ASR data for each language. The training objective is to minimize the cross-entropy loss:</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Subsequently, for each language, we initialize an expert group consisting of <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> experts using the weights from the corresponding pretrained projector to facilitate effective training. All expert groups from the <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> languages are then aggregated to form the MoE speech projector, with a randomly initialized router inserted between each layer. Thus, the total number of experts is <math alttext=\"N=n\\times m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mrow><mi>n</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>m</mi></mrow></mrow><annotation encoding=\"application/x-tex\">N=n\\times m</annotation></semantics></math>. Although all experts within the same group share identical initial weights, the randomly initialized router assigns tokens to different experts, allowing them to gradually specialize through training.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the final stage, we employ CS speech translation data to adapt the translation ability of the model to CS scenarios. Following the same rationale as in Stage 3, we combine monolingual ST with CS ST data and apply the transition loss:</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we evaluate the effectiveness of our proposed method on monolingual and CS speech translation datasets. We first describe the experimental setup, including evaluation metrics, datasets, baselines, and implementation details. Finally, we present the main results followed by detailed ablation studies to analyze the contribution of each component in our framework.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "studies",
+                    "ablation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite> and &#160;<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span></cite>, we select Fisher and NTUML2021 datasets to evaluate the model performance, as well as the widely used Common Voice dataset for ASR. The dataset details are as follows:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "fisher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fisher.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cieri2004fisher</span>)</cite> This is a CS speech translation dataset featuring English&#8211;Spanish source speech with English target translations. We follow the splits defined by <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>, and adopt their separation of monolingual and CS speech translation data.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "fisher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use LLaMA2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>)</cite> as the base LLM and adopt Whisper-large-v3 encoder as the speech encoder. The projector is implemented as a three-layer MLP with ReLU&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">agarap2018deep</span>)</cite> activation. Each language expert group consists of <math alttext=\"n=3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=3</annotation></semantics></math> experts, and the MoE router selects the top-3 experts to generate the final output. We set the LoRA alpha to <math alttext=\"512\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mn>512</mn><annotation encoding=\"application/x-tex\">512</annotation></semantics></math> for the LLM and <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> for the speech encoder. In Stage 1&#8211;2, we train our model using ASR data from Common Voice in the corresponding languages. In Stage 3, we gradually transition the training data from Common Voice ASR to monolingual ST data from the Fisher or NTUML2021 datasets. Finally, in Stage 4, we further transition from the monolingual ST data to the CS ST data in Fisher or NTUML2021. All results are evaluated on NVIDIA RTX A100 GPU.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "fisher",
+                    "model",
+                    "projector",
+                    "moe",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Wav2Vec2+mBART.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>)</cite>. This work explores various model architectures for CS speech translation. We adopt its best-performing configuration (E2E BIDIRECT SHARED) as one of our baselines.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Whisper.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pmlr-v202-radford23a</span>)</cite>. As a large-scale pretrained model, Whisper has demonstrated strong performance across a range of speech translation tasks and is widely regarded as a robust baseline.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T2\" title=\"Table 2 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T3\" title=\"Table 3 &#8227; Experimental Setting &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> present the BLEU and COMET scores of various models on the Fisher and NTUML2021 test sets under three test settings: CS ST data only (CS), monolingual ST data only (Mono.), and the combination of both (Both.). Across all datasets and settings, our proposed method consistently outperforms all the baselines, demonstrating its superior translation performance.</p>\n\n",
+                "matched_terms": [
+                    "comet",
+                    "bleu",
+                    "fisher",
+                    "test"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Specifically, under the CS setting, our model achieves the highest BLEU and COMET scores of <math alttext=\"37.13\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m1\" intent=\":literal\"><semantics><mn>37.13</mn><annotation encoding=\"application/x-tex\">37.13</annotation></semantics></math> and <math alttext=\"77.74\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m2\" intent=\":literal\"><semantics><mn>77.74</mn><annotation encoding=\"application/x-tex\">77.74</annotation></semantics></math> on Fisher, <math alttext=\"37.48\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m3\" intent=\":literal\"><semantics><mn>37.48</mn><annotation encoding=\"application/x-tex\">37.48</annotation></semantics></math> and <math alttext=\"81.69\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx3.p2.m4\" intent=\":literal\"><semantics><mn>81.69</mn><annotation encoding=\"application/x-tex\">81.69</annotation></semantics></math> on NTUML2021, significantly surpassing LLaST. Notably, although our method is primarily designed for CS scenarios, similar improvements are also observed under the Mono. and Both. settings, indicating the effectiveness of our method in both monolingual and CS speech translation scenarios.</p>\n\n",
+                "matched_terms": [
+                    "fisher",
+                    "model",
+                    "comet",
+                    "speech",
+                    "bleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">w/o MoE Speech Projector.</em> In this variant, we replace the MoE speech projector with a single MLP projector having the same number of layers and ReLU activation. Consequently, the language-specific loss and the intra-group load balancing loss are removed, along with Stage 2. From Line <math alttext=\"2\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i1.p1.m1\" intent=\":literal\"><semantics><mn>2</mn><annotation encoding=\"application/x-tex\">2</annotation></semantics></math>, we observe that replacing the MoE speech projector with an MLP projector leads to a significant performance drop, highlighting the effectiveness of our proposed MoE speech projector design in capturing fine-grained representations for CS speech.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">w/o <math alttext=\"\\mathcal{L}_{lang}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{lang}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math>.</em> To verify the benefit of our carefully designed loss functions, we evaluate a variant in which <math alttext=\"\\mathcal{L}_{lang}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m3\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{lang}</annotation></semantics></math> and <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m4\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math> are removed during Stages 2 and 3. As shown in Line <math alttext=\"3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i2.p1.m5\" intent=\":literal\"><semantics><mn>3</mn><annotation encoding=\"application/x-tex\">3</annotation></semantics></math>, we find a notable performance degradation, indicating that these two auxiliary loss play an important role in guiding expert specialization and routing consistency.</p>\n\n",
+                "matched_terms": [
+                    "ℒl​a​n​gmathcalllang",
+                    "ℒb​a​l​a​n​c​emathcallbalance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">conventional <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math></em>. To make a direct comparison, We replace our proposed <math alttext=\"\\mathcal{L}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i3.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{balance}</annotation></semantics></math> with the conventional <math alttext=\"\\mathcal{L^{\\prime}}_{balance}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.I4.i3.p1.m3\" intent=\":literal\"><semantics><mmultiscripts><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mrow/><mo>&#8242;</mo><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow><mrow/></mmultiscripts><annotation encoding=\"application/x-tex\">\\mathcal{L^{\\prime}}_{balance}</annotation></semantics></math> proposed in&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fedus2022switch</span>)</cite>:</p>\n\n",
+                "matched_terms": [
+                    "ℒ′b​a​l​a​n​c​emathcallprimebalance",
+                    "conventional",
+                    "ℒb​a​l​a​n​c​emathcallbalance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further investigate how the MoE projector adaptively routes speech features to appropriate experts, we conduct an analysis using Chinese and English speech data from the Common Voice corpus since the oracle language labels are unavailable in CS speech. For each speech feature, we record the ranking of experts assigned by the MoE router. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T5\" title=\"Table 5 &#8227; Ablation Studies &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the majority of speech features are routed to corresponding language experts, demonstrating that the MoE projector effectively captures cross-lingual semantic distinctions. The routing accuracy for English tokens is nearly 100%, while that for Chinese tokens is slightly lower but still exceeds 90%, which is likely due to the imbalance in data volume across languages during pre-training.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "moe"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we first explore LLMs in end-to-end CS speech translation, and significantly achieve improvements in two key aspect. First, we propose a novel MoE speech projector, which enables capturing fine-grained representations of CS speech. Second, we propose a novel multi-stage training paradigm that effectively utilize diverse data sources while ensuring smooth transitions across training stages. Extensive experiments and analyses verify the effectiveness of our model.\nFor future work, we plan to extend our model to support a wider range of CS language pairs and to investigate more adaptive expert selection mechanisms. Besides, we aim to generalize our model to related CS tasks such as ASR and MT, in order to further validate its robustness and generalizability.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "projector",
+                    "model",
+                    "moe"
+                ]
+            }
+        ]
+    },
+    "Sx5.T5": {
+        "caption": "Table 5: \nProportion of speech features routed to corresponding language experts within the Top-kk experts.",
+        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Top-<math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m1\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">En</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">zh-CN</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Top-<math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m2\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"99.99\\%\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m3\" intent=\":literal\"><semantics><mrow><mn>99.99</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">99.99\\%</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"95.29\\%\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m4\" intent=\":literal\"><semantics><mrow><mn>95.29</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">95.29\\%</annotation></semantics></math></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r\" style=\"padding-top:1pt;padding-bottom:1pt;\">Top-<math alttext=\"3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m5\" intent=\":literal\"><semantics><mn>3</mn><annotation encoding=\"application/x-tex\">3</annotation></semantics></math>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"99.98\\%\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m6\" intent=\":literal\"><semantics><mrow><mn>99.98</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">99.98\\%</annotation></semantics></math></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><math alttext=\"92.27\\%\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T5.m7\" intent=\":literal\"><semantics><mrow><mn>92.27</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">92.27\\%</annotation></semantics></math></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "informative_terms_identified": [
+            "features",
+            "zhcn",
+            "top11",
+            "top33",
+            "corresponding",
+            "within",
+            "language",
+            "proportion",
+            "speech",
+            "topkk",
+            "routed",
+            "experts"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To further investigate how the MoE projector adaptively routes speech features to appropriate experts, we conduct an analysis using Chinese and English speech data from the Common Voice corpus since the oracle language labels are unavailable in CS speech. For each speech feature, we record the ranking of experts assigned by the MoE router. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx5.T5\" title=\"Table 5 &#8227; Ablation Studies &#8227; Experiments &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the majority of speech features are routed to corresponding language experts, demonstrating that the MoE projector effectively captures cross-lingual semantic distinctions. The routing accuracy for English tokens is nearly 100%, while that for Chinese tokens is slightly lower but still exceeds 90%, which is likely due to the imbalance in data volume across languages during pre-training.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) speech translation (ST) refers to translating speech that alternates between two or more languages into a target language text, which poses significant challenges due to the complexity of semantic modeling and the scarcity of CS data. Previous studies tend to rely on the model itself to implicitly learn semantic modeling during training, and resort to inefficient and costly manual annotations for these two challenges. To mitigate these limitations, we propose enhancing Large Language Models (LLMs) with a Mixture of Experts (MoE) speech projector, where each expert specializes in the semantic subspace of a specific language, enabling fine-grained modeling of speech features. Additionally, we introduce a multi-stage training paradigm that utilizes readily available monolingual automatic speech recognition (ASR) and monolingual ST data, facilitating speech-text alignment and improving translation capabilities. During training, we leverage a combination of language-specific loss and intra-group load balancing loss to guide the MoE speech projector in efficiently allocating tokens to the appropriate experts, across expert groups and within each group, respectively. To bridge the data gap across different training stages and improve adaptation to the CS scenario, we further employ a transition loss, enabling smooth transitions of data between stages, to effectively address the scarcity of high-quality CS speech translation data. Extensive experiments on widely used datasets demonstrate the effectiveness and generality of our approach.</p>\n\n",
+                "matched_terms": [
+                    "features",
+                    "within",
+                    "language",
+                    "speech",
+                    "experts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Code-switching (CS) is a common linguistic phenomenon in multilingual communities, referring to the alternation between two or more languages within a single utterance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">scotton1977bilingual</span>)</cite>. In the task of speech translation (ST), CS speech translation aims to translate such speech into text in the target language. With globalization&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2023-decades</span>)</cite>, CS has become increasingly prevalent, extending beyond multilingual communities to predominantly monolingual settings, thus drawing much attention recently.</p>\n\n",
+                "matched_terms": [
+                    "within",
+                    "language",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While CS has been extensively explored in machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite> and automatic speech recognition (ASR)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, the research in speech translation remains relatively limited. This is primarily due to two key challenges: 1) &#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">semantic modeling complexity</span> introduced by language alternation, which poses significant challenges for the model in capturing effective representations from CS speech; 2)&#160;<span class=\"ltx_text ltx_markedasmath ltx_font_italic\">data scarcity</span>, as high-quality and large-scale CS speech translation datasets are limited and difficult to construct, which limits effective model training. Prior methods tend to ignore the semantic complexity arising from language switching, simply leaving it to the model itself to implicitly learn and resolve during training&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which limits overall performance. To mitigate data scarcity, previous studies resort to manual annotations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>, which is inefficient and costly, producing datasets of limited scale. Other approaches focus on synthetic data, which often suffer from unnatural switching, disrupted word order, and grammatical inconsistencies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2025switchlingua</span>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, large language models (LLMs) have demonstrated remarkable performance across diverse tasks. However, existing studies indicate that even being pretrained on large-scale multilingual corpora, LLMs still underperform on CS data compared to monolingual data&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>. Moreover, current research on LLMs in the context of CS primarily focuses on MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>)</cite>, leaving their potential in CS speech translation largely unexplored. To equip LLMs with cross-modal capabilities, prior approaches typically introduce a projector that connects a pretrained speech encoder to the LLM. This architecture effectively integrates the speech encoder&#8217;s strength in extracting acoustic features with the LLM&#8217;s powerful language modeling ability.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, to address the aforementioned challenges, we explore the use of LLMs for CS speech translation, achieving improvements in two key aspects. 1) Based on the above-mentioned architecture, we introduce a novel Mixture-of-Experts (MoE)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shazeer2017outrageously</span>)</cite> speech projector that enables fine-grained processing of speech features from different languages, thereby addressing the semantic modeling complexity in CS speech. 2) To mitigate the scarcity of high-quality CS speech translation data, we propose a novel multi-stage training paradigm. In the first stage, corresponding ASR data is used to pretrain individual projectors for each language. In the second stage, these pretrained projectors are integrated into a MoE speech projector, which is then further trained. These two stages jointly align the speech and text modalities, facilitating the learning of cross-modal representations. In the third stage, we progressively transition from ASR to monolingual ST data using a transition loss to enhance the model&#8217;s translation ability. In the final stage, we further transition from monolingual ST to CS ST data, thus enabling effective translation of CS speech. Meanwhile, we incorporate a language-specific loss and an intra-group load balancing loss to better guide the learning of the MoE speech projector and promote effective expert specialization.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "features",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a novel MoE speech projector, enabling fine-grained modeling of speech features from different languages and enhances the model&#8217;s ability to capture semantic variations in CS speech.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CS translation in natural language processing (NLP) has garnered much attention and focuses mainly on the machine translation (MT)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu-yvon-2021-traducir</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta-etal-2021-training</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vavre-etal-2022-adapting</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gaser-etal-2023-exploring</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pengpun2024creating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borisov-etal-2025-low</span>)</cite>, yet many instances of CS occur in spoken contexts, such as lectures, meetings, and calls. To process speech data, such methods are often cascaded with CS Automatic Speech Recognition (ASR) models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winata-etal-2020-meta</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chi-bell-2022-improving</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan-etal-2023-unified</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kronis-etal-2024-code</span>)</cite>, making them suffer from error propagation. Recent research efforts explore end-to-end (E2E) speech translation (ST) to mitigate this issue&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">weller2022end</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huber2022code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alastruey2023towards</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024investigating</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite>. To improve translation quality, a representative approach COSTA&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">p-s-v-n-etal-2025-costa</span>)</cite> aligns speech and text representations via interleaving their respective embeddings during fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recently, Large Language Models (LLMs) have demonstrated impressive performance across diverse tasks, leading to increasing research on their use in CS MT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023multilingual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024code</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gupta2024codemixeryanahinovel</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mohamed2025lost</span>)</cite>, where they have shown promising results. In spite of success, the potential of LLMs for CS speech translation remains largely unexplored. Typical, prevailing research integrates a pretrained speech encoder with an LLM through a projector, thereby equipping the LLM with cross-modal understanding abilities. This framework effectively combines the strength of the speech encoder in extracting speech features with the powerful translation capabilities of the LLM.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To investigate this issue, we conduct a preliminary experiment using Chinese, English, and Spanish ASR data from the Common Voice corpus. Specifically, the mean-pooled speech features extracted from the Speech Encoder are reduced to two dimensions using t-SNE&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hinton2002stochastic</span>)</cite> and visualized via a bivariate kernel density estimation (KDE) plot, as shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.F1\" title=\"Figure 1 &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The visualization reveals that samples from the same language cluster tightly, while those from different languages are clearly separated, indicating clear boundaries between languages. These findings provide empirical evidence of a substantial semantic gap across languages in speech representations.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous studies typically employ a single projector to align the semantic spaces of the speech encoder and the LLM. However, given the observed cross-lingual semantic gap, the suitability of a shared projector in capturing semantic distinctions across languages remains uncertain. To investigate this, we compare two settings: (1) a shared projector for all languages, and (2) language-specific expert projectors. Since CS speech features lack oracle language labels, we conduct the evaluation on English and Spanish monolingual data from the Common Voice corpus. First, we pre-train a single projector with bilingual ASR data to reduce variance from random initialization and to provide basic semantic alignment. Then, we initialize both the shared and expert projectors with pre-trained weights. For the expert setting, each language data is then processed through its corresponding expert projector, whereas in the shared setting, all data pass through the shared one. Subsequently, LoRA is attached in both settings to prevent overfitting, followed by fine-tuning both settings on the same bilingual ASR data. The experimental results, presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx3.T1\" title=\"Table 1 &#8227; Does a semantic space gap exist between different languages? &#8227; Preliminary Study &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, show that the expert projector consistently performs better than the shared projector. This finding indicates that using expert projectors for different languages better capture semantic variations. However, in practice, the oracle language label of each CS speech feature is unavailable. To address this limitation, we adopt the MoE projector, enabling the model to dynamically route speech features to the appropriate expert projectors in an adaptive manner.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "features",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10670v1#Sx4.F2\" title=\"Figure 2 &#8227; Methodology &#8227; Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our proposed framework primarily consists of a speech encoder, a MoE speech projector, and an LLM. The speech encoder extracts features from the speech input, which are then aligned to the representation space of the LLM via the MoE speech projector. These aligned features are concatenated with the prompt embeddings and used as input to the LLM to generate the translation.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The speech projector connects the speech encoder to the LLM by mapping the representation space of the encoder output with the LLM input. Considering the representation space gap across different languages in CS speech, we propose the MoE Speech Projector. Each MoE layer consists of a set of <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> expert linear layers <math alttext=\"E=(E_{1},E_{2},...,E_{N})\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>E</mi><mi>N</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">E=(E_{1},E_{2},...,E_{N})</annotation></semantics></math> and a sparse router <math alttext=\"G\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mi>G</mi><annotation encoding=\"application/x-tex\">G</annotation></semantics></math>. For the <math alttext=\"l\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m4\" intent=\":literal\"><semantics><mi>l</mi><annotation encoding=\"application/x-tex\">l</annotation></semantics></math>-th MoE layer, the sparse router predicts the probabilities of the input <math alttext=\"\\bm{h}_{l}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m5\" intent=\":literal\"><semantics><msub><mi>&#119945;</mi><mi>l</mi></msub><annotation encoding=\"application/x-tex\">\\bm{h}_{l}</annotation></semantics></math> being assigned to each expert to select the corresponding Top-<math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m6\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math> experts at the token level. The outputs of the selected experts are then weighted by their corresponding probabilities and summed to produce output <math alttext=\"h_{l+1}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.SSS0.Px2.p1.m7\" intent=\":literal\"><semantics><msub><mi>h</mi><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding=\"application/x-tex\">h_{l+1}</annotation></semantics></math>. The complete computation process is formulated as follows:</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "topkk",
+                    "experts",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px1.p2.m1\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> languages involved in CS speech, we first randomly initialize an MLP-based projector and pretrain it using the corresponding ASR data for each language. The training objective is to minimize the cross-entropy loss:</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Subsequently, for each language, we initialize an expert group consisting of <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math> experts using the weights from the corresponding pretrained projector to facilitate effective training. All expert groups from the <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> languages are then aggregated to form the MoE speech projector, with a randomly initialized router inserted between each layer. Thus, the total number of experts is <math alttext=\"N=n\\times m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>N</mi><mo>=</mo><mrow><mi>n</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>m</mi></mrow></mrow><annotation encoding=\"application/x-tex\">N=n\\times m</annotation></semantics></math>. Although all experts within the same group share identical initial weights, the randomly initialized router assigns tokens to different experts, allowing them to gradually specialize through training.</p>\n\n",
+                "matched_terms": [
+                    "corresponding",
+                    "within",
+                    "language",
+                    "speech",
+                    "experts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In addition to the cross-entropy loss, we incorporate two auxiliary loss functions, language-specific loss and intra-group load balancing loss. The language-specific loss provides explicit supervision in assigning audio tokens to their corresponding language expert groups. Specifically, the loss is defined to minimize the probability of assigning audio tokens to experts from other language expert groups, and formally defined given below:</p>\n\n",
+                "matched_terms": [
+                    "language",
+                    "experts",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"L\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p3.m1\" intent=\":literal\"><semantics><mi>L</mi><annotation encoding=\"application/x-tex\">L</annotation></semantics></math> is the total number of layers, and <math alttext=\"z_{i}=1\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p3.m2\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">z_{i}=1</annotation></semantics></math> if expert <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p3.m3\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> belongs to the expert group corresponding to the language of input ASR data, otherwise <math alttext=\"z_{i}=0\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p3.m4\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">z_{i}=0</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "language",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While the language-specific loss provides supervision at the expert group level, it lacks regulation over token distribution among individual experts within each expert group. To address this limitation, the intra-group load balancing loss is introduced to encourage balanced token assignment within each expert group, preventing over-reliance on a subset of experts. Formally, the loss is defined as:</p>\n\n",
+                "matched_terms": [
+                    "within",
+                    "experts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"f_{ijl}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m1\" intent=\":literal\"><semantics><msub><mi>f</mi><mrow><mi>i</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>j</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi></mrow></msub><annotation encoding=\"application/x-tex\">f_{ijl}</annotation></semantics></math> is the fraction of tokens in language <math alttext=\"j\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m2\" intent=\":literal\"><semantics><mi>j</mi><annotation encoding=\"application/x-tex\">j</annotation></semantics></math> dispatched to expert <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m3\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> within the corresponding expert group:</p>\n\n",
+                "matched_terms": [
+                    "within",
+                    "language",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">and <math alttext=\"P_{ijl}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m4\" intent=\":literal\"><semantics><msub><mi>P</mi><mrow><mi>i</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>j</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi></mrow></msub><annotation encoding=\"application/x-tex\">P_{ijl}</annotation></semantics></math> is the average routing probability of assigning tokens in language <math alttext=\"j\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m5\" intent=\":literal\"><semantics><mi>j</mi><annotation encoding=\"application/x-tex\">j</annotation></semantics></math> to expert <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSS0.Px2.p4.m6\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> within the corresponding expert group:</p>\n\n",
+                "matched_terms": [
+                    "within",
+                    "language",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, since the language of each source audio token is unavailable in CS speech translation data, both the language-specific loss and the intra-group load balancing loss are excluded during this stage.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Common Voice.</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ardila-etal-2020-common</span>)</cite> This is a widely used multilingual ASR dataset containing monolingual speech and corresponding transcriptions. We select the English, Spanish, and Chinese subsets as our ASR data.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use LLaMA2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>)</cite> as the base LLM and adopt Whisper-large-v3 encoder as the speech encoder. The projector is implemented as a three-layer MLP with ReLU&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">agarap2018deep</span>)</cite> activation. Each language expert group consists of <math alttext=\"n=3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">n=3</annotation></semantics></math> experts, and the MoE router selects the top-3 experts to generate the final output. We set the LoRA alpha to <math alttext=\"512\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mn>512</mn><annotation encoding=\"application/x-tex\">512</annotation></semantics></math> for the LLM and <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> for the speech encoder. In Stage 1&#8211;2, we train our model using ASR data from Common Voice in the corresponding languages. In Stage 3, we gradually transition the training data from Common Voice ASR to monolingual ST data from the Fisher or NTUML2021 datasets. Finally, in Stage 4, we further transition from the monolingual ST data to the CS ST data in Fisher or NTUML2021. All results are evaluated on NVIDIA RTX A100 GPU.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language",
+                    "experts",
+                    "corresponding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we first explore LLMs in end-to-end CS speech translation, and significantly achieve improvements in two key aspect. First, we propose a novel MoE speech projector, which enables capturing fine-grained representations of CS speech. Second, we propose a novel multi-stage training paradigm that effectively utilize diverse data sources while ensuring smooth transitions across training stages. Extensive experiments and analyses verify the effectiveness of our model.\nFor future work, we plan to extend our model to support a wider range of CS language pairs and to investigate more adaptive expert selection mechanisms. Besides, we aim to generalize our model to related CS tasks such as ASR and MT, in order to further validate its robustness and generalizability.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "language"
+                ]
+            }
+        ]
+    }
+}
