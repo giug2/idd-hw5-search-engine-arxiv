@@ -43,6 +43,10 @@ public class LuceneConfig {
     @Value("${data.tables.path}")
     private String tablesPath;
 
+    @Getter
+    @Value("${lucene.index_table.directory}")
+    private String tableDirectory;
+
     @Bean
     public Analyzer customAnalyzer() {
         return new Analyzer() {

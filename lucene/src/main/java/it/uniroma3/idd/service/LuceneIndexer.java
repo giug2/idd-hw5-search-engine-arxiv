@@ -3,6 +3,7 @@ package it.uniroma3.idd.service;
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.event.IndexingCompleteEvent;
 import it.uniroma3.idd.model.Article;
+import it.uniroma3.idd.model.Table;
 import it.uniroma3.idd.utils.Parser;
 import jakarta.annotation.PostConstruct;
 import org.apache.lucene.analysis.Analyzer;
@@ -46,6 +47,7 @@ public class LuceneIndexer {
                 System.out.println("Deleting the index directory...");
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // Delete the index directory
                 indexArticles(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
+                indexTables(luceneConfig.getTableDirectory(), Codec.getDefault());
             }
             System.out.println("Index initialized, publishing event.");
             eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // Publish the event upon completion
@@ -82,6 +84,80 @@ public class LuceneIndexer {
 
         writer.commit();
         writer.close();
+    }
+
+
+public void indexTables(String Pathdir, Codec codec) throws Exception {
+        Path path = Paths.get(Pathdir);
+        Directory dir = FSDirectory.open(path);
+
+        IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
+        config.setCodec(codec);
+
+        IndexWriter writer = new IndexWriter(dir, config);
+
+        // 1. Recupera la lista di oggetti Table dal parser
+        List<Table> tables = parser.tableParser();
+
+        for (Table table : tables) {
+            Document doc = new Document();
+
+            // --- CAMPI IDENTIFICATIVI (StringField -> Ricerca Esatta) ---
+
+            // ID univoco (es. "2509.16375v1_S4.T1")
+            doc.add(new StringField("id", table.getId(), Field.Store.YES));
+
+            // NUOVO CAMPO: ID/Nome del file sorgente (es. "Titolo Articolo" o "2509.16375v1")
+            String sourceFile = table.getSourceFilename() != null ? table.getSourceFilename() : "Unknown";
+            doc.add(new StringField("sourceFilename", sourceFile, Field.Store.YES));
+
+
+            // --- CAMPI TESTUALI (TextField -> Ricerca Full-Text Analizzata) ---
+
+            // Caption
+            String caption = table.getCaption() != null ? table.getCaption() : "";
+            doc.add(new TextField("caption", caption, Field.Store.YES));
+
+            // Body Cleaned (Testo puro della tabella)
+            String bodyCleaned = table.getBodyCleaned() != null ? table.getBodyCleaned() : "";
+            doc.add(new TextField("body", bodyCleaned, Field.Store.YES));
+
+
+            // --- GESTIONE LISTE (Join in stringa unica per Lucene) ---
+
+            // Informative Terms (ex "terms")
+            String termsString = table.getInformativeTerms() != null ? String.join(" ", table.getInformativeTerms()) : "";
+            doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
+
+            // Citing Paragraphs (ex "mentions")
+            String citingString = table.getCitingParagraphs() != null ? String.join(" ", table.getCitingParagraphs()) : "";
+            doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
+
+            // Contextual Paragraphs (Lista di Oggetti -> Stringa unica)
+            // Dobbiamo estrarre il campo 'html' da ogni oggetto ContextualParagraph
+            StringBuilder contextSb = new StringBuilder();
+            if (table.getContextualParagraphs() != null) {
+                for (var cp : table.getContextualParagraphs()) {
+                    if (cp.getHtml() != null) {
+                        contextSb.append(cp.getHtml()).append(" ");
+                    }
+                }
+            }
+            doc.add(new TextField("contextual_paragraphs", contextSb.toString().trim(), Field.Store.YES));
+
+
+            // --- CAMPI DI STORAGE (StoredField -> Solo visualizzazione) ---
+
+            // HTML Table (Raw Body)
+            String htmlBody = table.getBody() != null ? table.getBody() : "";
+            doc.add(new StoredField("html_table", htmlBody));
+
+            writer.addDocument(doc);
+        }
+
+        writer.commit();
+        writer.close();
+        System.out.println("Tables indexing completed. Total indexed: " + tables.size());
     }
 
     public void deleteNonEmptyDirectory(Path directory) throws IOException {

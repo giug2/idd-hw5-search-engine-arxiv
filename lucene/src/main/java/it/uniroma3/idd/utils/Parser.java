@@ -2,6 +2,7 @@ package it.uniroma3.idd.utils;
 
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.model.Article;
+import it.uniroma3.idd.model.ContextualParagraph;
 import it.uniroma3.idd.model.Table;
 
 import org.jsoup.Jsoup;
@@ -136,8 +137,8 @@ public class Parser {
         return articles;
     }
 
-// Assumo che la classe sia parte di un Service o Component
 public List<Table> tableParser() {
+    // Usiamo il getter per il path configurato nelle properties
     File dir = new File(luceneConfig.getTablesPath());
     
     // Controlli di sicurezza sulla directory
@@ -161,21 +162,19 @@ public List<Table> tableParser() {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(file);
 
-            // MODIFICA: Il tuo JSON generato da Python è un Oggetto (Mappa), non un Array.
-            // Esempio: { "S4.T1": { ... }, "S4.T2": { ... } }
+            // Il JSON è un Oggetto (Mappa): { "S4.T1": { ... }, "S4.T2": { ... } }
             if (!rootNode.isObject()) {
                 System.err.println("WARNING: File " + file.getName() + " is NOT a JSON Object. Skipping.");
                 continue;
             }
 
-            // 1. Ricaviamo il Paper ID dal nome del file
-            // Il file si chiama tipo "2509.16375v1_data.json" -> paperId = "2509.16375v1"
+            // Ricaviamo il Paper ID dal nome del file fisico (es. 2509.16375v1)
             String filename = file.getName();
             String paperId = filename.replace("_data.json", "").replace(".json", "");
 
             int tablesInFile = 0;
             
-            // 2. Iteriamo sui campi dell'oggetto JSON (chiave = TableID parziale, valore = Dati)
+            // Iteriamo sui campi dell'oggetto JSON
             Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
             
             while (fields.hasNext()) {
@@ -184,53 +183,71 @@ public List<Table> tableParser() {
                 String partialTableId = entry.getKey(); // Es. "S4.T1"
                 JsonNode tableData = entry.getValue();
 
-                // COSTRUZIONE ID UNIVOCO: paperId + "_" + tableId (es. 2509.16375v1_S4.T1)
-                // Uso underscore per separare paper da tabella
+                // COSTRUZIONE ID UNIVOCO: paperId + "_" + tableId
                 String uniqueId = paperId + "_" + partialTableId;
 
-                // Estrazione Campi Semplici (con valore di default vuoto)
+                // --- Estrazione Campi ---
+                
+                // Titolo del file di origine (dal nuovo campo JSON "source_file")
+                // Se manca, usiamo paperId come fallback
+                String sourceFilename = tableData.path("source_file").asText(paperId);
+
                 String caption = tableData.path("caption").asText("");
                 String bodyHtml = tableData.path("body").asText("");
                 
-                // Nota: htmlBody nel costruttore originale sembrava ridondante o assente nel nuovo JSON, 
-                // riutilizziamo bodyHtml o stringa vuota.
-                String htmlBody = bodyHtml; 
+                // Helper per pulire l'HTML per l'indicizzazione
+                String bodyCleaned = cleanHtml(bodyHtml);
 
-                // Estrazione Liste di Stringhe
-                // Mappatura: "citing_paragraphs" (Python) -> mentions (Java)
+                // Estrazione Liste
                 List<String> mentions = extractStringList(tableData, "citing_paragraphs");
-                
-                // Mappatura: "informative_terms_identified" (Python) -> terms (Java)
                 List<String> terms = extractStringList(tableData, "informative_terms_identified");
-
-                // Mappatura COMPLESSA: "contextual_paragraphs" (Python) -> context_paragraphs (Java)
-                // Nel JSON Python è una lista di oggetti, in Java vuoi una List<String>.
-                // Estraiamo solo il campo "html" dall'oggetto.
+                
+                // Estrazione Contesto (Solo HTML)
+                // Usiamo il metodo helper specifico per appiattire la struttura complessa
                 List<String> contextParagraphs = extractContextFromComplexList(tableData, "contextual_paragraphs");
-
-                // Creazione Oggetto Table
-                // Assumo che cleanHtml() sia un metodo definito nella tua classe per pulire i tag
+                
+                // Conversione da List<String> a List<ContextualParagraph> non necessaria qui 
+                // perché abbiamo deciso di passare solo le stringhe HTML al costruttore per semplicità,
+                // oppure se il costruttore vuole oggetti complessi, dobbiamo crearli.
+                // 
+                // NOTA: Nel costruttore Table che abbiamo definito prima, 'contextualParagraphs' era List<ContextualParagraph>.
+                // Se vuoi mantenere quella firma, dobbiamo convertire le stringhe in oggetti.
+                // Se invece hai semplificato il costruttore per prendere List<String>, lascia così.
+                // 
+                // Assumo la versione PIÙ SEMPLICE (List<String>) per coerenza con indexTables che fa String.join.
+                // Se il costruttore Table richiede List<ContextualParagraph>, dimmelo. 
+                //
+                // Qui assumo che Table abbia un costruttore che accetta i dati grezzi.
+                
+                // Creazione Oggetto Table (Ordine argomenti aggiornato al nuovo costruttore)
                 Table table = new Table(
-                    uniqueId,                       // id
-                    caption,                        // caption
-                    bodyHtml,                       // tableHtml (grezzo)
-                    cleanHtml(bodyHtml),            // cleanHtml (solo testo per indicizzazione)
-                    mentions,                       // mentions
-                    contextParagraphs,              // context_paragraphs
-                    terms,                          // terms
-                    paperId,                        // paperId
-                    htmlBody                        // htmlBody
+                    uniqueId,           // id
+                    sourceFilename,     // sourceFilename (NUOVO CAMPO)
+                    caption,            // caption
+                    bodyHtml,           // body (html grezzo)
+                    bodyCleaned,        // bodyCleaned
+                    terms,              // informativeTerms
+                    mentions,           // citingParagraphs
+                    null                // contextualParagraphs (List<Object>). Passiamo null se usiamo le stringhe
+                                        // OPPURE: Modifica il costruttore per accettare List<String> contextHtmls
                 );
+                
+                // FIX RAPIDO: Poiché indexTables usa 'getContext_paragraphs()' che ritorna List<String>,
+                // Dobbiamo assicurarci che l'oggetto Table sia popolato correttamente.
+                // Se Table ha un setter per contextParagraphs che accetta List<String>, usalo:
+                // table.setContextParagraphsStrings(contextParagraphs); 
+                // 
+                // Oppure popola il campo corrispondente se usi una classe custom:
+                List<ContextualParagraph> cpList = new ArrayList<>();
+                for(String html : contextParagraphs) {
+                    cpList.add(new ContextualParagraph(html, null));
+                }
+                table.setContextualParagraphs(cpList);
+
 
                 tables.add(table);
                 tablesInFile++;
             }
-
-            if (tablesInFile == 0) {
-                 // Può capitare se il JSON è {} (vuoto)
-                 // System.out.println("File " + file.getName() + " contained 0 tables (empty object).");
-            }
-
         } catch (IOException e) {
             System.err.println("CRITICAL JSON PARSING ERROR in file: " + file.getName() + ". Message: " + e.getMessage());
         }

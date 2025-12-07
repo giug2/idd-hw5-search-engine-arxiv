@@ -78,6 +78,15 @@ def process_single_file(html_path, output_dir='output'):
     # Struttura dati finale
     extracted_data = {}
 
+    # --- MODIFICA 1: Estrazione del Titolo/Nome File ---
+    # Cerchiamo il titolo del documento HTML per usarlo come riferimento d'origine
+    title_nodes = root.xpath("//title")
+    source_identifier = filename # Default: nome del file
+    if title_nodes:
+        page_title = get_node_text(title_nodes[0])
+        if page_title:
+            source_identifier = page_title
+
     # --- MODIFICA LOGICA DI RICERCA ---
     # 1. Trova tutte le tabelle. Invece di cercare il contenitore esterno, cerchiamo direttamente il tag <table>
     #    che ha la classe 'ltx_tabular'. Questo trova la tabella ovunque essa sia.
@@ -166,7 +175,9 @@ def process_single_file(html_path, output_dir='output'):
                     })
 
         # --- E. Salvataggio Dati Tabella ---
+        # MODIFICA 2: Aggiunto il campo source_file
         extracted_data[table_id] = {
+            "source_file": source_identifier,  # Nuovo campo con il titolo o nome file
             "caption": caption_text,
             "body": table_body_html,
             "informative_terms_identified": list(target_terms), # Per debug/verifica
@@ -198,8 +209,7 @@ if __name__ == '__main__':
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
     # 2. Identifica la cartella genitore (es. .../Progetto)
-    #    Saliamo di un livello rispetto a 'scripts' usando dirname
-    #    NOTA CORREZIONE: dirname accetta un solo argomento.
+    #    Saliamo di un livello rispetto a 'script'
     PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
     # 3. Definisci i percorsi relativi alla radice del progetto
@@ -207,7 +217,7 @@ if __name__ == '__main__':
     RESOURCES_DIR = os.path.join(PROJECT_ROOT, 'lucene', 'src', 'main', 'resources')
 
     #    input sta in .../resources/input
-    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'papers')                         #AGGIORNARE PER UNIFICARE I PERCORSI DEI FILE HTML                                                         #percorso della cartella di input
+    SOURCE_DIRECTORY = os.path.join(RESOURCES_DIR, 'input')                                                                           #percorso della cartella di input
     
     #    output lo mettiamo in .../resources/contenutoTabelle
     OUTPUT_DIRECTORY = os.path.join(RESOURCES_DIR, 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
@@ -263,8 +273,9 @@ if __name__ == '__main__':
 #    struttura del json generato:
 #
 #    id della tabella 1 :{
+#        "source_file": "Titolo del file HTML o nome del file",                                         NUOVO CAMPO: Identificativo del file di origine
 #        "caption": "Testo della didascalia",
-#        "body": "<html>...</html>",                                                                    codice html grezzo dell atabella
+#        "body": "<html>...</html>",                                                                    codice html grezzo della tabella
 #        "informative_terms_identified": ["termine1", "termine2", ...],                                 parole chiave individuate
 #        "citing_paragraphs": [                                                                         lista dei paragrafi che citano la tabella
 #            "<p>Paragrafo che cita la tabella</p>",
