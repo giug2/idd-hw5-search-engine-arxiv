@@ -1,20 +1,25 @@
 package it.uniroma3.idd.controller;
 
-import it.uniroma3.idd.config.LuceneConfig;
-import it.uniroma3.idd.dto.SearchResult;
-import it.uniroma3.idd.service.Searcher;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import it.uniroma3.idd.config.LuceneConfig;
+import it.uniroma3.idd.dto.SearchResult;
+import it.uniroma3.idd.service.Searcher;
 
 
 @Controller
@@ -49,8 +54,8 @@ public class SearchController {
                 return "index";
             }
 
-            String field = parts[0].toLowerCase();
-            String queryText = parts[1];
+            String field = parts[0].toLowerCase();          //campo di ricerca (title, authirs, ecc)
+            String queryText = parts[1];                    //parola cercata
 
             // Validate field against known fields in LuceneIndexer
             switch (field) {

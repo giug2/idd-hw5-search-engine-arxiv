@@ -68,8 +68,8 @@ public class LuceneIndexer {
 
         IndexWriter writer = new IndexWriter(dir, config);
 
-        List<Article> articles = parser.articleParser();
-    System.out.println("Number of articles parsed: " + articles.size());
+        List<Article> articles = parser.articleParser(); 
+        System.out.println("Number of articles parsed: " + articles.size());
 
         for (Article article : articles) {
             Document doc = new Document();
@@ -157,7 +157,10 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
 
         writer.commit();
         writer.close();
-        System.out.println("Tables indexing completed. Total indexed: " + tables.size());
+        System.out.println("==========================================");
+        System.out.println("Indicizzazione delle tabelle completata");
+        System.out.println("Tabelle indicizzate: " + tables.size());
+        System.out.println("==========================================");
     }
 
     public void deleteNonEmptyDirectory(Path directory) throws IOException {
