@@ -84,11 +84,10 @@ public class SearchController {
             if (field.equals("articleabstract")) field = "articleAbstract";
             if (field.equals("publicationdate")) field = "publicationDate";
 
-            List<SearchResult> results = searcher.search(type, field, queryText);
+            List<SearchResult> results = searcher.search(field, queryText);
 
             model.addAttribute("results", results);
             model.addAttribute("query", query);
-            model.addAttribute("type", type);
 
         } catch (Exception e) {
             model.addAttribute("error", "Errore: " + e.getMessage());
