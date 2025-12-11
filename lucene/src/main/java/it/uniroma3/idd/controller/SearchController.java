@@ -1,25 +1,18 @@
 package it.uniroma3.idd.controller;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.dto.SearchResult;
 import it.uniroma3.idd.service.Searcher;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 
 @Controller
@@ -40,52 +33,62 @@ public class SearchController {
     }
 
     @PostMapping("/")
-    public String search(@RequestParam("query") String query, Model model) {
-
-
-        /*verifico la validità dell'input*/
+    public String search(@RequestParam("query") String query, 
+                         @RequestParam(value = "type", defaultValue = "article") String type,
+                         Model model) {
         if (query == null || query.trim().isEmpty()) {
             model.addAttribute("error", "Inserisci una query valida.");
             return "index";
         }
 
         try {
-            String[] parts = query.trim().split("\\s+", 2);     //estraggo e valido i 2 campi dall'input
+            String[] parts = query.trim().split("\\s+", 2);
             if (parts.length < 2) {
                 model.addAttribute("error", "Sintassi: <campo> <termine_query>");
                 model.addAttribute("info", "Esempio: title \"cancer therapy\" oppure body \"protein structure\"");
                 return "index";
             }
 
-            String field = parts[0].toLowerCase();          //campo di ricerca (title, authirs, ecc)
-            String queryText = parts[1];                    //parola cercata
+            String field = parts[0].toLowerCase();
+            String queryText = parts[1];
 
-            // Validate field against known fields in LuceneIndexer
-            switch (field) {
-                case "title":
-                case "authors":
-                case "paragraphs":
-                case "articleabstract":
-                case "publicationdate":
-                    break;
-                default:
-                    model.addAttribute("error", "Campo non valido. Campi supportati: title, authors, paragraphs, articleAbstract, publicationDate");
-                    return "index";
-            }
-            
-            // Handle camelCase for articleAbstract and publicationDate
-            if (field.equals("articleabstract")) {
-                field = "articleAbstract";
-            } else {
-                if (field.equals("publicationdate")) {
-                    field = "publicationDate";
+            // Validate field based on type
+            boolean isValid = false;
+            if ("article".equalsIgnoreCase(type)) {
+                switch (field) {
+                    case "title":
+                    case "authors":
+                    case "paragraphs":
+                    case "articleabstract":
+                    case "publicationdate":
+                        isValid = true;
+                        break;
+                }
+            } else if ("table".equalsIgnoreCase(type) || "figure".equalsIgnoreCase(type)) {
+                switch (field) {
+                    case "caption":
+                    case "body": 
+                    case "informative_terms":
+                    case "citing_paragraphs":
+                    case "contextual_paragraphs":
+                        isValid = true;
+                        break;
                 }
             }
 
-            List<SearchResult> results = searcher.search(field, queryText);
+            if (!isValid) {
+                model.addAttribute("error", "Campo '" + field + "' non valido per il tipo '" + type + "'.");
+                return "index";
+            }
+            
+            if (field.equals("articleabstract")) field = "articleAbstract";
+            if (field.equals("publicationdate")) field = "publicationDate";
+
+            List<SearchResult> results = searcher.search(type, field, queryText);
 
             model.addAttribute("results", results);
             model.addAttribute("query", query);
+            model.addAttribute("type", type);
 
         } catch (Exception e) {
             model.addAttribute("error", "Errore: " + e.getMessage());
@@ -95,83 +98,14 @@ public class SearchController {
         return "index";
     }
 
-    @GetMapping("/view/{fileName:.+}")
-    public String viewArticle(@PathVariable String fileName, Model model) {
-        try {
-            Path filePath = Paths.get(luceneConfig.getArticlesPath()).resolve(fileName).normalize();
-            File file = filePath.toFile();
-            
-            if (!file.exists()) {
-                model.addAttribute("error", "File non trovato: " + fileName);
-                return "index";
-            }
-
-            Document document = Jsoup.parse(file, "UTF-8");
-            
-            // Extract fields using the same logic as Parser.java
-            String title = document.select("article-title").first() != null ? document.select("article-title").first().text() : "No Title Found";
-            
-            List<String> authors = new ArrayList<>();
-            document.select("contrib[contrib-type=author] name").forEach(nameElement -> {
-                String surname = nameElement.select("surname").text();
-                String givenNames = nameElement.select("given-names").text();
-                authors.add(givenNames + " " + surname);
-            });
-            
-            String articleAbstract = document.select("abstract p").first() != null ? document.select("abstract p").text() : "No Abstract Found";
-            
-            // Date extraction
-            String publicationDate = "Unknown Date";
-            org.jsoup.nodes.Element pubDateElement = document.select("pub-date").first();
-            if (pubDateElement != null) {
-                String year = pubDateElement.select("year").text();
-                String month = pubDateElement.select("month").text();
-                String day = pubDateElement.select("day").text();
-                
-                if (!year.isEmpty()) {
-                    publicationDate = year;
-                    if (!month.isEmpty()) {
-                        publicationDate += "-" + (month.length() == 1 ? "0" + month : month);
-                        if (!day.isEmpty()) {
-                            publicationDate += "-" + (day.length() == 1 ? "0" + day : day);
-                        }
-                    }
-                }
-            }
-
-            List<String> paragraphs = new ArrayList<>();
-            document.select("body p").forEach(paragraph -> paragraphs.add(paragraph.text()));
-
-            model.addAttribute("fileName", fileName);
-            model.addAttribute("title", title);
-            model.addAttribute("authors", authors);
-            model.addAttribute("articleAbstract", articleAbstract);
-            model.addAttribute("publicationDate", publicationDate);
-            model.addAttribute("paragraphs", paragraphs);
-            
-            return "article";
-
-        } catch (Exception e) {
-            model.addAttribute("error", "Errore durante la lettura del file: " + e.getMessage());
-            return "index";
-        }
-    }
-
     @GetMapping("/file/{fileName:.+}")
     @ResponseBody
-    public org.springframework.core.io.Resource serveFile(@PathVariable String fileName) {
-        try {
-            Path file = Paths.get(luceneConfig.getArticlesPath()).resolve(fileName).normalize();
-            if (file == null) {
-                throw new RuntimeException("Percorso file non valido: " + fileName);
-            }
-            org.springframework.core.io.Resource resource = new org.springframework.core.io.FileSystemResource(file);
-            if (!resource.exists()) {
-                throw new RuntimeException("File non trovato: " + fileName);
-            }
-            return resource;
-        } catch (Exception e) {
-            throw new RuntimeException("Errore nel recupero del file: " + fileName, e);
+    public Resource serveFile(@PathVariable String fileName) {
+        Path file = Paths.get(luceneConfig.getArticlesPath()).resolve(fileName).normalize();
+        Resource resource = new FileSystemResource(file);
+        if (!resource.exists()) {
+            throw new RuntimeException("File non trovato: " + fileName);
         }
+        return resource;
     }
 }
