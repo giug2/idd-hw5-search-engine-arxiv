@@ -41,13 +41,16 @@ public class SearchController {
 
     @PostMapping("/")
     public String search(@RequestParam("query") String query, Model model) {
+
+
+        /*verifico la validità dell'input*/
         if (query == null || query.trim().isEmpty()) {
             model.addAttribute("error", "Inserisci una query valida.");
             return "index";
         }
 
         try {
-            String[] parts = query.trim().split("\\s+", 2);
+            String[] parts = query.trim().split("\\s+", 2);     //estraggo e valido i 2 campi dall'input
             if (parts.length < 2) {
                 model.addAttribute("error", "Sintassi: <campo> <termine_query>");
                 model.addAttribute("info", "Esempio: title \"cancer therapy\" oppure body \"protein structure\"");
@@ -73,8 +76,10 @@ public class SearchController {
             // Handle camelCase for articleAbstract and publicationDate
             if (field.equals("articleabstract")) {
                 field = "articleAbstract";
-            } else if (field.equals("publicationdate")) {
-                field = "publicationDate";
+            } else {
+                if (field.equals("publicationdate")) {
+                    field = "publicationDate";
+                }
             }
 
             List<SearchResult> results = searcher.search(field, queryText);
