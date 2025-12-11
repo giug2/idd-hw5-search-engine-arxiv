@@ -2,72 +2,100 @@
 <html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucene Search</title>
+    <title>Ricerca Lucene Scalabile PubM-IDD</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
 
-    <div class="main-container">
-        
-        <h1>Ricerca file</h1>
+    <div class="container">
+        <h1>🔍 Motore di Ricerca Lucene</h1>
 
-        <form action="/" method="post">
-            <input type="text" name="query" 
-                   placeholder='es. nome/contenuto "parole"'
-                   th:value="${query}">
-            <button type="submit">Cerca</button>
-        </form>
-
-        <!-- Legenda Ricerca -->
-        <div class="search-legend">
-            <p><strong>Sintassi Obbligatoria:</strong> <code>campo query</code></p>
-            <p>Esempi:</p>
-            <ul>
-                <li><code>title speech</code> (Cerca "speech" nel titolo)</li>
-                <li><code>authors Karim</code> (Cerca "Smith" tra gli autori)</li>
-                <li><code>paragraphs "S2ST"</code> (Frase esatta nel testo)</li>
-            </ul>
-                        <p><strong>Campi disponibili:</strong></p>
-            <div class="fields-grid">
-                <code>title</code>, <code>authors</code>, <code>paragraphs</code>, <code>articleAbstract</code>, <code>publicationDate</code>
-            </div>
-        </div>
-
-        <!-- Messaggi di errore -->
-        </div>
-
-        <!-- Messaggi di errore -->
-        <div th:if="${error}" class="error-message" role="alert">
-            <strong>Errore: </strong>
-            <span th:text="${error}"></span>
-        </div>
-
-        <!-- Risultati -->
-        <div th:if="${results}" class="results-container">
-            <h2>Risultati:</h2>
+        <form th:action="@{/}" method="post">
             
-            <ul>
-                <li th:each="r : ${results}">
-                    <div class="file-info">
-                        <div>
-                            <div class="filename" th:text="${r.title}">Titolo</div>
-                            <div style="font-size: 0.8rem; color: #666;">
-                                <span th:text="${r.fileName}">nomefile</span> | 
-                                <span th:text="${r.publicationDate}">Data</span>
+            <div class="form-group">
+                <label for="query" style="font-weight: bold;">Query di Ricerca:</label>
+                <input type="text" id="query" name="query" th:value="${query}" required 
+                       style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                
+                <p class="sintax-guide">
+                    Guida alla Ricerca Lucene Avanzata:
+                    <ul>
+                        <li>
+                            Ricerca Combinata (Multi-campo): Inserisci solo la parola chiave (es. `protein gene`).
+                        </li>
+                        <li>
+                            Ricerca Specifica (Campo:Valore):
+                            <div style="margin-left: 20px; margin-top: 5px;">
+                                <strong>Articoli:</strong> `title`, `authors`, `articleAbstract`, `paragraphs`<br>
+                                <strong>Tabelle:</strong> `caption`, `body`, `mentions`, `terms`, `context_paragraphs`
                             </div>
-                        </div>
-                        <span class="score">
-                            Score: <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
-                        </span>
+                            Esempio: `title:cancer AND authors:Smith`
+                        </li>
+                        <li>
+                            Operatori Logici: `AND`, `OR`, `NOT`. Wildcard: `*`, `?`.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="index-checkboxes">
+                <h4>Scegli Indice/i da consultare:</h4>
+                
+                <label style="margin-right: 15px;">
+                    <input type="checkbox" name="indices" value="articoli" 
+                           th:checked="${indicesScelti != null and #lists.contains(indicesScelti, 'articoli')}"> 
+                    Articoli 
+                </label>
+                
+                <label style="margin-right: 15px;">
+                    <input type="checkbox" name="indices" value="tabelle" 
+                           th:checked="${indicesScelti != null and #lists.contains(indicesScelti, 'tabelle')}"> 
+                    Tabelle 
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px; text-align: center;">
+                <button type="submit" style="padding: 10px 30px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Esegui Ricerca
+                </button>
+            </div>
+            
+        </form>
+        
+        <hr>
+        
+        <div th:if="${error}" class="error" style="color: red; margin: 10px 0;">
+            <p>ERRORE: <span th:text="${error}"></span></p>
+        </div>
+
+        <div th:if="${risultatiTotali}" class="results-container">
+            <h2>Risultati trovati per: "<span th:text="${query}"></span>"</h2>
+            
+            <div class="results-grid">
+                
+                <div th:each="entry : ${risultatiTotali}" class="result-list-column">
+                    
+                    <h3 th:text="${#strings.toUpperCase(entry.key)} + ' (' + ${entry.value.size()} + ' Trovati)'">Risultati:</h3>
+                    
+                    <div th:if="${entry.value.isEmpty()}">
+                        <p>Nessun risultato trovato in questo indice.</p>
                     </div>
 
-                    <a class="open-link" th:href="@{'/file/' + ${r.fileName}}" target="_blank">Apri</a>
-                </li>
-            </ul>
-        </div>
+                    <div th:each="result : ${entry.value}" class="result-item">
 
+                        <h4>
+                            <a th:href="@{${result.urlDettaglio}}" th:text="${result.titolo}">Titolo del Documento</a>
+                            <span class="score" th:text="'(Score: ' + ${#numbers.formatDecimal(result.score, 1, 4)} + ')'"></span>
+                        </h4>
+
+                        <p th:text="${result.snippet}">Snippet: Anteprima del contenuto...</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
     </div>
 
 </body>

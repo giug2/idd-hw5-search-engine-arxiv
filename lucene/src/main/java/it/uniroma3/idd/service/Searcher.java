@@ -94,7 +94,7 @@ public class Searcher {
 
 
             if (currentSearcher == null) {
-                System.err.println("Indice non trovato o non caricato: " + currentIndex);
+                System.err.println("nessun risultato trovato per '" + queryText + "' tra: " + currentIndex);
                 continue; 
             }
 
