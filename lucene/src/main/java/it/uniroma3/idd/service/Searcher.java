@@ -11,12 +11,14 @@ import java.util.Map;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -187,6 +189,23 @@ public class Searcher {
     }
 
 
+    
+    // metodo di supporto per la ricerca dettagliata di un documento 
+    public Document getDocumentById(String id, String indexKey) throws IOException {
+        IndexSearcher targetSearcher = searcherMap.get(indexKey);
+        if (targetSearcher == null) {
+            throw new IllegalArgumentException("Indice non valido o non caricato: " + indexKey);
+        }
+        
+        Query idQuery = new TermQuery(new Term("id", id));
+        
+        TopDocs hits = targetSearcher.search(idQuery, 1);
+
+        if (hits.scoreDocs.length > 0) {
+            return targetSearcher.storedFields().document(hits.scoreDocs[0].doc);
+        }
+        return null;
+    }
 
 
 
@@ -197,7 +216,7 @@ public class Searcher {
 
 
 
-
+    //!=============== METODI DEPRECATI ===============
 
     public List<Document> searchDocuments(String field, String queryText) throws Exception {
         List<Document> resultsList = new ArrayList<>();

@@ -13,4 +13,8 @@ public class LuceneWebApp {
 
 // mvn spring-boot:run
 
-//caption comparison
+/*possibili input tabelle:
+caption comparison
+VoiceLDM AND 17.2 (output solo 1 tabella)
+
+*/

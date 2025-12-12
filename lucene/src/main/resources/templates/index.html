@@ -78,7 +78,7 @@
                     <h3 th:text="${#strings.toUpperCase(entry.key)} + ' (' + ${entry.value.size()} + ' Trovati)'">Risultati:</h3>
                     
                     <div th:if="${entry.value.isEmpty()}">
-                        <p>Nessun risultato trovato in questo indice.</p>
+                        <p>Nessun risultato trovato per "<span th:text="${query}"></span>".</p>
                     </div>
 
                     <div th:each="result : ${entry.value}" class="result-item">
