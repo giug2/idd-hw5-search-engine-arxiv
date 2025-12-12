@@ -15,7 +15,9 @@ import org.apache.lucene.document.Document;
 
 import it.uniroma3.idd.dto.GetDocumentResponse;
 import it.uniroma3.idd.service.Searcher;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class DetailController {
 
     private final Searcher searcher;
@@ -85,7 +87,7 @@ public class DetailController {
                 title = doc.get("title");
                 authors = doc.get("authors");
                 String articleId = doc.get("id");
-                String rawHtmlUrl = "/raw_articles/" + articleId + ".html";
+                String rawHtmlUrl = "/raw_articles/" + articleId;
                 results.put("URL Articolo Originale", rawHtmlUrl);
                 results.put("Abstract", doc.get("articleAbstract"));
                 results.put("Testo", doc.get("paragraphs"));

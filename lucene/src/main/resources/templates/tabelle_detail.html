@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${document.title}">Dettaglio Tabella</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
+
+    <h1 th:text="${document.title}">Titolo Tabella</h1>
+    
+    <div class="detail-section" th:each="entry : ${document.results}">
+        <h3 th:text="${entry.key}">Chiave</h3>
+        
+        <div th:if="${entry.key == 'HTML Tabella'}">
+             <div th:utext="${entry.value}"></div>
+        </div>
+        
+        <div th:unless="${entry.key == 'HTML Tabella'}">
+            <p th:text="${entry.value}" style="white-space: pre-wrap;">Valore</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
