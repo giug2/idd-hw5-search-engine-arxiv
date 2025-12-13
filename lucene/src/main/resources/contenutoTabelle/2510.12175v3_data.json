@@ -6,15 +6,15 @@
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">FAD (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">CLAP Score (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Stable Audio Open 1.0</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.615</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">Audio Palette</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">5.95</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">0.589</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "palette",
-            "clap",
+            "stable",
+            "model",
             "score",
             "↓downarrow",
-            "stable",
-            "fad",
             "open",
-            "audio",
-            "model",
-            "↑uparrow"
+            "fad",
+            "clap",
+            "↑uparrow",
+            "audio"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
@@ -23,17 +23,17 @@
                 "matched_terms": [
                     "palette",
                     "stable",
+                    "model",
                     "fad",
                     "open",
-                    "audio",
-                    "model"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Generative models have made significant strides in domains such as image, video, and audio synthesis, with diffusion-based architectures emerging as a state-of-the-art solution for high-fidelity generation. In audio research, diffusion models have enabled impressive results for text-to-audio (TTA) tasks, producing high-quality audio from natural language descriptions. Architectures like Stable Audio Open, built upon the Diffusion Transformer (DiT) [1], exemplify this progress by generating coherent, high-fidelity audio sequences from text prompts [2].</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "stable",
+                    "audio",
                     "open"
                 ]
             },
@@ -42,33 +42,33 @@
                 "matched_terms": [
                     "palette",
                     "stable",
+                    "model",
                     "open",
-                    "audio",
-                    "model"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Denoising Diffusion Probabilistic Models (DDPMs) have become a cornerstone of high-fidelity audio generation. Early architectures often employed U-Net backbones, but recent state-of-the-art models have increasingly adopted the Diffusion Transformer (DiT) architecture [1]. The self-attention mechanism in Transformers is particularly adept at capturing long-range dependencies within audio sequences, which is critical for maintaining temporal coherence over several seconds. Model like Stable Audio Open [2] is a prominent example of this trend, leveraging DiTs to operate on latent representations of audio to generate high-quality, semantically relevant sound from text prompts. Our work builds directly upon this DiT-based foundation, leveraging the powerful pre-trained capabilities of Stable Audio Open.</p>\n\n",
                 "matched_terms": [
+                    "stable",
                     "model",
                     "audio",
-                    "stable",
                     "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The quest for greater control in audio synthesis is not new, and a central challenge in this domain is balancing the introduction of new control mechanisms with the preservation of core audio quality and semantic coherence. This often manifests as an inherent trade-off, where adding conditioning signals can lead to slight degradations in standard objective metrics as the model works to satisfy a more complex set of constraints.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Closer to our work, Sketch2Sound introduced a method for conditioning a TTA DiT on loudness, pitch, and spectral centroid signals extracted from a vocal imitation or other sonic gesture [4]. This work demonstrated the viability of adding control signal embeddings to the latent representation in a diffusion model. Audio Palette shares this foundational philosophy but extends it by incorporating a fourth crucial signal for timbre (MFCCs) and introduces a novel multi-scale guidance mechanism for more disentangled control at inference time. While Sketch2Sound focuses on gestural imitation for general sounds, our work specifically targets the rigorous demands of Foley synthesis through specialized fine-tuning.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
@@ -76,57 +76,57 @@
                 "matched_terms": [
                     "palette",
                     "stable",
+                    "model",
                     "open",
-                    "audio",
-                    "model"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Variational Autoencoder (VAE):</span> A VAE first encodes stereo audio at 44.1 kHz into a compressed latent representation. This allows the subsequent diffusion model to operate in a lower-dimensional space, significantly reducing computational complexity. The VAE has a latent bottleneck size of 64. A corresponding decoder reconstructs the final audio waveform from the denoised latent sequence.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To adapt the general-purpose Stable Audio Open model for the specialized task of Foley synthesis, we employ an efficient fine-tuning strategy.</p>\n\n",
                 "matched_terms": [
+                    "stable",
                     "model",
                     "audio",
-                    "stable",
                     "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Self-Supervised Training:</span> The fine-tuning is conducted in a self-supervised manner. For each audio-text pair from the dataset, the four control signals are extracted from the audio itself. These signals are then used as conditions to guide the model in reconstructing the same audio&#8217;s latent representation.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Baselines:</span> Our primary baseline for comparison is the original, unmodified Stable Audio Open 1.0 model, which represents the state-of-the-art in open-source TTA generation [2]. This allows us to isolate the impact of our proposed conditioning and fine-tuning methodology.</p>\n\n",
                 "matched_terms": [
+                    "stable",
                     "model",
                     "audio",
-                    "stable",
                     "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Fr&#233;chet Audio Distance (FAD):</span> FAD measures audio quality by computing the Fr&#233;chet distance between Gaussian distributions fitted to embeddings of real and generated audio [8]. We use the VGGish model as the feature extractor. A lower FAD score indicates that the generated audio distribution is closer to the real audio distribution, signifying higher quality.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model",
                     "fad",
+                    "model",
+                    "audio",
                     "score"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">LAION-CLAP Score:</span> To evaluate the semantic alignment between the generated audio and the input text prompt, we calculate the cosine similarity between their respective embeddings using a pre-trained LAION-CLAP model [9]. A higher score indicates better correspondence between the audio content and the text description.</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "model",
+                    "audio",
                     "score"
                 ]
             },
@@ -134,58 +134,58 @@
                 "html": "<p class=\"ltx_p\">We first evaluated the overall audio quality and text alignment of Audio Palette against the baseline model. The results, presented in Table 1, demonstrate that our approach successfully integrates fine-grained control with only a minor trade-off in objective audio quality and text adherence, which is an expected outcome when adding multiple conditioning signals.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown, Audio Palette achieves its controllability with a slight increase in FAD and a slight decrease in the CLAP score compared to the text-only baseline. This trade-off is characteristic of controllable generation systems, where the model must balance adherence to the text prompt with adherence to several new, complex control signals. The key result is that a significant gain in expressive control is achieved with a minimal impact on the model&#8217;s core generation quality and semantic understanding within the target domain.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "clap",
+                    "model",
                     "score",
                     "fad",
-                    "audio",
-                    "model"
+                    "clap",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The primary contribution of Audio Palette is its ability to provide fine-grained control. As objective metrics do not capture this capability, a qualitative analysis is essential to demonstrate the model&#8217;s performance on its main task. We conducted a series of targeted generations to systematically evaluate control over each acoustic attribute, providing strong evidence that the model successfully learns to manipulate the acoustic properties of the output in accordance with the user-provided reference signals.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Control over brightness was demonstrated with the prompt \"A cymbal crash that fades out,\" using filtered white noise with a decreasing low-pass filter cutoff as a reference. The generated cymbal began with a bright, high-frequency crash and became progressively darker, tracking the falling spectral centroid of the reference signal. Furthermore, we explored timbre transfer by combining the text prompt \"Footsteps on gravel\" with a reference audio of crunching leaves. The model successfully generated a sound with the rhythm of footsteps but the sharp, brittle texture of the leaves, demonstrating effective timbral control.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These qualitative examples confirm that <span class=\"ltx_text ltx_font_italic\">Audio Palette</span> provides an intuitive and powerful interface for sound design.\nBy providing a text prompt for semantic content and a reference audio for performative nuance, a user can guide the model to produce highly specific and intentional sounds.\nThe multi-scale guidance further enhances this, allowing a user to, for instance, increase <math alttext=\"\\boldsymbol{s}_{\\text{timbre}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx3.p4.m1\" intent=\":literal\"><semantics><msub><mi>&#119956;</mi><mtext>timbre</mtext></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{s}_{\\text{timbre}}</annotation></semantics></math> to prioritize the texture of a reference sound over its dynamics, or increase <math alttext=\"\\boldsymbol{s}_{\\text{ctrls}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx3.p4.m2\" intent=\":literal\"><semantics><msub><mi>&#119956;</mi><mtext>ctrls</mtext></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{s}_{\\text{ctrls}}</annotation></semantics></math> to ensure a precise dynamic match at the potential cost of some semantic ambiguity.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To understand the contribution and \"cost\" of different components of our model, we conducted an ablation study on the control signals. We trained variants of Audio Palette with different subsets of the four control signals and evaluated their performance. This study highlights the inherent trade-off between adding more control signals and maintaining text adherence and audio quality.</p>\n\n",
                 "matched_terms": [
                     "palette",
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The results in Table 2 reveal the relative impact of each set of controls. As expected, introducing any control signals leads to a slight increase in FAD and a decrease in the CLAP score compared to the unconstrained text-only baseline. This analysis demonstrates the challenge the model faces in simultaneously satisfying multiple constraints. Adding the dynamic controls (Loudness, Pitch, Centroid) results in the largest drop in the CLAP score. This is logical, as these signals impose strong, precise structural constraints on the output&#8217;s temporal evolution, which can sometimes compete with the semantic guidance from the text prompt. Conditioning on timbre alone has a smaller impact on both metrics, suggesting that imposing a general spectral shape is a less restrictive constraint. The full model, which incorporates all four signals, finds a balance between the different control types. This confirms that each set of signals contributes to the model&#8217;s controllability, with a predictable and acceptable trade-off in objective metrics.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "clap",
                     "fad",
+                    "model",
                     "score"
                 ]
             },
@@ -194,16 +194,16 @@
                 "matched_terms": [
                     "palette",
                     "stable",
+                    "model",
                     "open",
-                    "audio",
-                    "model"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limitations:</span> The current model relies on a reference audio to extract control signals; it cannot generate these contours from a text description alone. Furthermore, extreme guidance values can occasionally introduce audible artifacts, requiring careful tuning by the user. As the model was specifically fine-tuned for Foley, its performance on highly complex, out-of-domain audio like music may be limited without further adaptation.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "model"
+                    "model",
+                    "audio"
                 ]
             }
         ]
@@ -214,37 +214,37 @@
         "body": "Model Configuration\nFAD (↓\\downarrow)\nCLAP Score (↑\\uparrow)\n\n\n\n\nBaseline (Text Only)\n5.82\n0.615\n\n\n+ Loudness, Pitch, Centroid\n5.98\n0.595\n\n\n+ Timbre (MFCCs) only\n5.90\n0.605\n\n\nFull Model (All Signals)\n5.95\n0.589",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Model Configuration</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">FAD (<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx4.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math>)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">CLAP Score (<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx4.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math>)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Baseline (Text Only)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.615</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ Loudness, Pitch, Centroid</th>\n<td class=\"ltx_td ltx_align_center\">5.98</td>\n<td class=\"ltx_td ltx_align_center\">0.595</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">+ Timbre (MFCCs) only</th>\n<td class=\"ltx_td ltx_align_center\">5.90</td>\n<td class=\"ltx_td ltx_align_center\">0.605</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">Full Model (All Signals)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">5.95</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">0.589</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
+            "model",
+            "full",
+            "signals",
             "text",
-            "clap",
-            "loudness",
-            "score",
-            "pitch",
-            "baseline",
-            "↓downarrow",
-            "timbre",
             "only",
             "all",
+            "score",
+            "↓downarrow",
             "fad",
-            "centroid",
             "configuration",
+            "baseline",
+            "clap",
             "mfccs",
-            "full",
-            "model",
             "↑uparrow",
-            "signals"
+            "pitch",
+            "timbre",
+            "centroid",
+            "loudness"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Abstract:</span>\nRecent advances in diffusion-based generative models have enabled high-quality text-to-audio synthesis, but fine-grained acoustic control remains a significant challenge in open-source research. We present Audio Palette, a diffusion transformer (DiT) based model that extends the Stable Audio Open architecture to address this \"control gap\" in controllable audio generation. Unlike prior approaches that rely solely on semantic conditioning, Audio Palette introduces four time-varying control signals&#8212;loudness, pitch, spectral centroid, and timbre&#8212;for precise and interpretable manipulation of acoustic features. The model is efficiently adapted for the nuanced domain of Foley synthesis using Low-Rank Adaptation (LoRA) on a curated subset of AudioSet, requiring only 0.85% of the original parameters to be trained. Experiments demonstrate that Audio Palette achieves fine-grained, interpretable control of sound attributes. Crucially, it accomplishes this novel controllability while maintaining high audio quality and strong semantic alignment to text prompts, with performance on standard metrics such as Fr&#233;chet Audio Distance (FAD) and LAION-CLAP scores remaining comparable to the original baseline model. We provide a scalable, modular pipeline for audio research, emphasizing sequence-based conditioning, memory efficiency, and a novel three-scale classifier-free guidance mechanism for nuanced inference-time control. This work establishes a robust foundation for controllable sound design and performative audio synthesis in open-source settings, enabling a more artist-centric workflow.</p>\n\n",
                 "matched_terms": [
+                    "model",
                     "text",
-                    "pitch",
+                    "fad",
                     "baseline",
                     "only",
-                    "fad",
-                    "centroid",
-                    "model"
+                    "pitch",
+                    "centroid"
                 ]
             },
             {
@@ -257,19 +257,19 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">A Multi-Signal Conditioning Framework for Performative Control:</span> We augment a state-of-the-art open-source TTA model with four distinct, time-varying acoustic control signals (loudness, pitch, spectral centroid, and timbre), enabling precise and reproducible synthesis guided by both semantic and acoustic specifications. This transforms the generative process into a performative act, aligning it more closely with the craft of Foley artistry.</p>\n\n",
                 "matched_terms": [
-                    "timbre",
-                    "loudness",
-                    "pitch",
-                    "centroid",
                     "model",
-                    "signals"
+                    "signals",
+                    "pitch",
+                    "timbre",
+                    "centroid",
+                    "loudness"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">An Efficient, Specialized Foley Synthesizer:</span> We demonstrate a parameter-efficient fine-tuning methodology using Low-Rank Adaptation (LoRA) to specialize a large, general-purpose model for the nuanced domain of Foley synthesis, using a publicly available subset of the AudioSet [6] dataset. This approach makes specialized, high-quality controllable synthesis accessible without the prohibitive cost of full model retraining.</p>\n\n",
                 "matched_terms": [
-                    "full",
-                    "model"
+                    "model",
+                    "full"
                 ]
             },
             {
@@ -296,13 +296,13 @@
             {
                 "html": "<p class=\"ltx_p\">Closer to our work, Sketch2Sound introduced a method for conditioning a TTA DiT on loudness, pitch, and spectral centroid signals extracted from a vocal imitation or other sonic gesture [4]. This work demonstrated the viability of adding control signal embeddings to the latent representation in a diffusion model. Audio Palette shares this foundational philosophy but extends it by incorporating a fourth crucial signal for timbre (MFCCs) and introduces a novel multi-scale guidance mechanism for more disentangled control at inference time. While Sketch2Sound focuses on gestural imitation for general sounds, our work specifically targets the rigorous demands of Foley synthesis through specialized fine-tuning.</p>\n\n",
                 "matched_terms": [
-                    "timbre",
+                    "model",
+                    "signals",
+                    "centroid",
                     "loudness",
                     "pitch",
-                    "centroid",
-                    "mfccs",
-                    "model",
-                    "signals"
+                    "timbre",
+                    "mfccs"
                 ]
             },
             {
@@ -322,8 +322,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Timbre:</span> The spectral shape is captured using the first 13 Mel-Frequency Cepstral Coefficients (MFCCs), a standard feature set in audio processing.</p>\n\n",
                 "matched_terms": [
-                    "mfccs",
-                    "timbre"
+                    "timbre",
+                    "mfccs"
                 ]
             },
             {
@@ -353,16 +353,16 @@
                 "html": "<p class=\"ltx_p\"><math alttext=\"\\boldsymbol{s}_{\\text{ctrls}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p3.m1\" intent=\":literal\"><semantics><msub><mi>&#119956;</mi><mtext class=\"ltx_mathvariant_bold\">ctrls</mtext></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{s}_{\\text{ctrls}}</annotation></semantics></math><span class=\"ltx_text ltx_font_bold\">:</span> Controls the adherence to the dynamic control signals (Loudness, Pitch, Spectral Centroid).</p>\n\n",
                 "matched_terms": [
                     "loudness",
-                    "centroid",
                     "pitch",
+                    "centroid",
                     "signals"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><math alttext=\"\\boldsymbol{s}_{\\text{timbre}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p4.m1\" intent=\":literal\"><semantics><msub><mi>&#119956;</mi><mtext class=\"ltx_mathvariant_bold\">timbre</mtext></msub><annotation encoding=\"application/x-tex\">\\boldsymbol{s}_{\\text{timbre}}</annotation></semantics></math><span class=\"ltx_text ltx_font_bold\">:</span> Controls the adherence to the timbre signal (MFCCs), enabling a form of timbre transfer from the reference audio.</p>\n\n",
                 "matched_terms": [
-                    "mfccs",
-                    "timbre"
+                    "timbre",
+                    "mfccs"
                 ]
             },
             {
@@ -375,8 +375,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Fr&#233;chet Audio Distance (FAD):</span> FAD measures audio quality by computing the Fr&#233;chet distance between Gaussian distributions fitted to embeddings of real and generated audio [8]. We use the VGGish model as the feature extractor. A lower FAD score indicates that the generated audio distribution is closer to the real audio distribution, signifying higher quality.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "fad",
+                    "model",
                     "score"
                 ]
             },
@@ -391,30 +391,30 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Implementation Details:</span> The model was fine-tuned for 40,000 steps using the AdamW optimizer. The LoRA rank was set to 16. All training was conducted on two NVIDIA A6000 GPUs.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "all"
+                    "all",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We first evaluated the overall audio quality and text alignment of Audio Palette against the baseline model. The results, presented in Table 1, demonstrate that our approach successfully integrates fine-grained control with only a minor trade-off in objective audio quality and text adherence, which is an expected outcome when adding multiple conditioning signals.</p>\n\n",
                 "matched_terms": [
+                    "model",
+                    "signals",
                     "text",
                     "baseline",
-                    "only",
-                    "model",
-                    "signals"
+                    "only"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown, Audio Palette achieves its controllability with a slight increase in FAD and a slight decrease in the CLAP score compared to the text-only baseline. This trade-off is characteristic of controllable generation systems, where the model must balance adherence to the text prompt with adherence to several new, complex control signals. The key result is that a significant gain in expressive control is achieved with a minimal impact on the model&#8217;s core generation quality and semantic understanding within the target domain.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "clap",
-                    "score",
-                    "baseline",
-                    "fad",
                     "model",
-                    "signals"
+                    "signals",
+                    "text",
+                    "fad",
+                    "baseline",
+                    "score"
                 ]
             },
             {
@@ -427,17 +427,17 @@
             {
                 "html": "<p class=\"ltx_p\">For instance, to test loudness control, we used the prompt \"A dog barking, starting quiet, getting loud, then quiet again\" with a human vocal imitation that followed a crescendo-decrescendo envelope. The resulting audio featured dog barks that precisely matched the target loudness contour. Similarly, for pitch control, the prompt \"a siren with a rising pitch\" was paired with a simple ascending sine wave; the generated siren accurately followed the specified pitch curve.</p>\n\n",
                 "matched_terms": [
-                    "loudness",
-                    "pitch"
+                    "pitch",
+                    "loudness"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Control over brightness was demonstrated with the prompt \"A cymbal crash that fades out,\" using filtered white noise with a decreasing low-pass filter cutoff as a reference. The generated cymbal began with a bright, high-frequency crash and became progressively darker, tracking the falling spectral centroid of the reference signal. Furthermore, we explored timbre transfer by combining the text prompt \"Footsteps on gravel\" with a reference audio of crunching leaves. The model successfully generated a sound with the rhythm of footsteps but the sharp, brittle texture of the leaves, demonstrating effective timbral control.</p>\n\n",
                 "matched_terms": [
                     "text",
+                    "centroid",
                     "model",
-                    "timbre",
-                    "centroid"
+                    "timbre"
                 ]
             },
             {
@@ -458,31 +458,31 @@
             {
                 "html": "<p class=\"ltx_p\">The results in Table 2 reveal the relative impact of each set of controls. As expected, introducing any control signals leads to a slight increase in FAD and a decrease in the CLAP score compared to the unconstrained text-only baseline. This analysis demonstrates the challenge the model faces in simultaneously satisfying multiple constraints. Adding the dynamic controls (Loudness, Pitch, Centroid) results in the largest drop in the CLAP score. This is logical, as these signals impose strong, precise structural constraints on the output&#8217;s temporal evolution, which can sometimes compete with the semantic guidance from the text prompt. Conditioning on timbre alone has a smaller impact on both metrics, suggesting that imposing a general spectral shape is a less restrictive constraint. The full model, which incorporates all four signals, finds a balance between the different control types. This confirms that each set of signals contributes to the model&#8217;s controllability, with a predictable and acceptable trade-off in objective metrics.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "pitch",
                     "clap",
-                    "score",
-                    "loudness",
-                    "baseline",
-                    "timbre",
+                    "model",
+                    "full",
+                    "signals",
+                    "text",
+                    "centroid",
                     "all",
                     "fad",
-                    "centroid",
-                    "full",
-                    "model",
-                    "signals"
+                    "baseline",
+                    "score",
+                    "pitch",
+                    "timbre",
+                    "loudness"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this paper, we introduced Audio Palette, a diffusion transformer-based model for controllable audio generation. By extending the Stable Audio Open architecture with four time-varying acoustic control signals and employing a parameter-efficient fine-tuning strategy, we created a powerful tool that successfully bridges the \"control gap\" in open-source Foley synthesis. Our experiments show that Audio Palette achieves precise, interpretable control over loudness, pitch, spectral centroid, and timbre, while maintaining high audio quality and strong text-semantic alignment comparable to a state-of-the-art baseline on a specialized dataset. The proposed multi-scale classifier-free guidance mechanism further enhances creative flexibility during inference, enabling a more artist-centric workflow.</p>\n\n",
                 "matched_terms": [
-                    "timbre",
-                    "loudness",
-                    "pitch",
-                    "baseline",
-                    "centroid",
                     "model",
-                    "signals"
+                    "signals",
+                    "centroid",
+                    "baseline",
+                    "pitch",
+                    "timbre",
+                    "loudness"
                 ]
             },
             {

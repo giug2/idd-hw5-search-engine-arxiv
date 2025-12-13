@@ -5,28 +5,28 @@
         "body": "Training Steps\nGrid8\nSingle Pooled Embedding\n\n\n\n\n50,000\n3.220921\n3.222953\n\n\n100,000\n3.145059\n3.188678\n\n\n200,000\n3.153171\n3.194564\n\n\n300,000\n3.104110\n3.130133\n\n\n400,000\n3.119460\n3.111351",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Training Steps</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Grid8</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Single Pooled Embedding</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">50,000</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.220921</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.222953</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">100,000</th>\n<td class=\"ltx_td ltx_align_center\">3.145059</td>\n<td class=\"ltx_td ltx_align_center\">3.188678</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">200,000</th>\n<td class=\"ltx_td ltx_align_center\">3.153171</td>\n<td class=\"ltx_td ltx_align_center\">3.194564</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">300,000</th>\n<td class=\"ltx_td ltx_align_center\">3.104110</td>\n<td class=\"ltx_td ltx_align_center\">3.130133</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\">400,000</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">3.119460</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">3.111351</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "kinetics700",
-            "embedding",
-            "study",
-            "lower",
-            "metric",
+            "strategies",
             "over",
+            "training",
+            "subset",
+            "ablation",
             "text",
+            "grid8",
+            "single",
+            "lower",
+            "better",
+            "embedding",
+            "kinetics700",
+            "klpanns",
             "validation",
             "without",
-            "klpanns",
-            "pooling",
-            "ablation",
-            "grid8",
-            "strategies",
-            "single",
-            "training",
             "guidance",
             "comparing",
-            "pooled",
-            "better",
-            "subset",
-            "steps"
+            "pooling",
+            "steps",
+            "study",
+            "metric",
+            "pooled"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S4.T1\" title=\"Table 1 &#8227; Pooling Strategies. &#8227; 4.2 Ablation Studies &#8227; 4 Experiments &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S4.F2\" title=\"Figure 2 &#8227; Results and Discussion. &#8227; 4.2 Ablation Studies &#8227; 4 Experiments &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the lower-resolution <span class=\"ltx_text ltx_font_bold\">Single pooled embedding</span> configuration achieves performance on par with, or slightly better than, the grid8 embedding variant.\nDespite a substantial reduction in visual token count&#8212;and therefore compute and memory use&#8212;no meaningful loss in temporal alignment or perceptual fidelity was observed.\nAcross 400k training steps, the metrics differ by less than <math alttext=\"0.03\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mn>0.03</mn><annotation encoding=\"application/x-tex\">0.03</annotation></semantics></math>, indicating that the mid-level spatial resolution of the single-pooled embeddings captures sufficient motion and context cues for Foley synchronization.</p>\n\n"
@@ -36,8 +36,8 @@
                 "html": "<p class=\"ltx_p\">Foley Control is a lightweight approach to video-guided Foley that keeps pretrained single-modality models frozen and learns only a small cross-attention bridge between them. We connect V-JEPA2 video embeddings to a frozen Stable Audio Open DiT text-to-audio (T2A) model by inserting compact video cross-attention after the model&#8217;s existing text cross-attention, so prompts set global semantics while video refines timing and local dynamics. The frozen backbones retain strong marginals (video; audio given text) and the bridge learns the audio&#8211;video dependency needed for synchronization &#8212; without retraining the audio prior. To cut memory and stabilize training, we pool video tokens before conditioning.\nOn curated video&#8211;audio benchmarks, Foley Control delivers competitive temporal and semantic alignment with far fewer trainable parameters than recent multi-modal systems, while preserving prompt-driven controllability and production-friendly modularity (swap/upgrade encoders or the T2A backbone without end-to-end retraining). Although we focus on Video-to-Foley, the same bridge design can potentially extend to other audio modalities (e.g., speech).</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "without",
-                    "training"
+                    "training",
+                    "without"
                 ]
             },
             {
@@ -86,8 +86,8 @@
             {
                 "html": "<p class=\"ltx_p\">Training high-quality video-to-audio models requires large-scale, temporally aligned multimodal data.\nTo this end, we constructed a dataset derived from the <span class=\"ltx_text ltx_font_bold\">Kinetics-700</span> dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib6\" title=\"\">6</a>]</cite> , which provides a diverse set of human action videos in a wide range of everyday activities.\nSince not all videos contain meaningful or relevant sound events, we applied a data curation pipeline similar to that used by HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> . Since the dataset was already partitioned into clips, we first filtered out any silent samples from the dataset, we then used ImageBind <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib8\" title=\"\">8</a>]</cite> and Meta Audiobox Aesthetics <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib29\" title=\"\">29</a>]</cite> scores to filter out both low quality and conceptually distinct samples, ensuring high-fidelity and semantically consistent audio&#8211;video pairs similar to the filtering strategy of HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "kinetics700",
-                    "training"
+                    "training",
+                    "kinetics700"
                 ]
             },
             {
@@ -114,23 +114,23 @@
             {
                 "html": "<p class=\"ltx_p\">We condition collaboration cross-attention on V&#8211;JEPA2 tokens derived from <math alttext=\"16\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m1\" intent=\":literal\"><semantics><mn>16</mn><annotation encoding=\"application/x-tex\">16</annotation></semantics></math>&#8201;FPS video streams. For each <math alttext=\"4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m2\" intent=\":literal\"><semantics><mn>4</mn><annotation encoding=\"application/x-tex\">4</annotation></semantics></math>&#8201;s segment, we sample <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> frames and encode them with V&#8211;JEPA2. To obtain a compact sequence, we <em class=\"ltx_emph ltx_font_italic\">pool each effective frame</em> into a <em class=\"ltx_emph ltx_font_italic\">single</em> token (the encoder operates with stride 2, so one effective frame corresponds to two input frames). This results in <math alttext=\"32\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m4\" intent=\":literal\"><semantics><mn>32</mn><annotation encoding=\"application/x-tex\">32</annotation></semantics></math> effective frames per <math alttext=\"4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m5\" intent=\":literal\"><semantics><mn>4</mn><annotation encoding=\"application/x-tex\">4</annotation></semantics></math>&#8201;s segment and thus <math alttext=\"32\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m6\" intent=\":literal\"><semantics><mn>32</mn><annotation encoding=\"application/x-tex\">32</annotation></semantics></math> tokens per segment. To bound computational cost, we restrict inputs to a maximum of <math alttext=\"12\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m7\" intent=\":literal\"><semantics><mn>12</mn><annotation encoding=\"application/x-tex\">12</annotation></semantics></math>&#8201;s and concatenate the segment-level embeddings in temporal order. Originally, we experimented with spatial grids such as <math alttext=\"8{\\times}8\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m8\" intent=\":literal\"><semantics><mrow><mn>8</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">8{\\times}8</annotation></semantics></math> (<math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m9\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> tokens per frame) and <math alttext=\"16{\\times}16\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m10\" intent=\":literal\"><semantics><mrow><mn>16</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16{\\times}16</annotation></semantics></math> (<math alttext=\"256\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m11\" intent=\":literal\"><semantics><mn>256</mn><annotation encoding=\"application/x-tex\">256</annotation></semantics></math> tokens per frame), but found that reducing to a single pooled token per frame preserved salient spatial context while substantially improving efficiency and stabilizing optimization.</p>\n\n",
                 "matched_terms": [
-                    "pooled",
-                    "single"
+                    "single",
+                    "pooled"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate our proposed joint audio&#8211;video fine-tuning framework on the curated Kinetics-700 dataset (Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S3.SS2\" title=\"3.2 Dataset Curation &#8227; 3 Method &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">3.2</span></a>), using the large filtered corpus for pretraining and the high-quality SFT subset for supervised alignment.\nWe train all the models for the experiment with a batch size of 12, using a frozen <span class=\"ltx_text ltx_font_typewriter\">StableAudioDiT</span> backbone and V-JEPA2 embeddings; only the collaboration layers are updated. We adopt the original Stable Audio Open velocity-prediction training setup and apply token-drop regularization with 10% probability. For evaluation, we use the Meta Movie Audio Bench test set dataset.</p>\n\n",
                 "matched_terms": [
+                    "training",
                     "subset",
-                    "kinetics700",
-                    "training"
+                    "kinetics700"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We compare two ways of aggregating V-JEPA2 patch tokens into video tokens:\n(i) <em class=\"ltx_emph ltx_font_italic\">frame pooling</em> (1 token per two frames),\n(ii) <em class=\"ltx_emph ltx_font_italic\">grid8</em> pooling (<math alttext=\"8{\\times}8\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>8</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">8{\\times}8</annotation></semantics></math> tokens per frame, 64 per frame).\nFrame pooling offers maximum computational efficiency, while grid-based schemes capture richer spatial and motion cues at higher cost.</p>\n\n",
                 "matched_terms": [
-                    "pooling",
-                    "grid8"
+                    "grid8",
+                    "pooling"
                 ]
             },
             {
@@ -138,16 +138,16 @@
                 "matched_terms": [
                     "text",
                     "metric",
-                    "klpanns",
-                    "without"
+                    "without",
+                    "klpanns"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To reduce compute, all ablation runs are trained on a fixed 30% random subset of our curated Kinetics&#8211;700 training split; the same subset is used for both pooling variants, with identical hyperparameters , schedules and seed across conditions.</p>\n\n",
                 "matched_terms": [
-                    "subset",
                     "pooling",
                     "training",
+                    "subset",
                     "ablation"
                 ]
             },
@@ -168,16 +168,16 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Mean KL Divergence (KL)</span> between classifier-based audio event posteriors, using PaSST (<span class=\"ltx_text ltx_font_bold\">KL-PaSST<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text ltx_font_medium\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib16\" title=\"\">16</a><span class=\"ltx_text ltx_font_medium\">]</span></cite></span>) and PANNs (<span class=\"ltx_text ltx_font_bold\">KL-PANNs</span>). Lower values denote better distributional consistency.</p>\n\n",
                 "matched_terms": [
+                    "better",
                     "lower",
-                    "klpanns",
-                    "better"
+                    "klpanns"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">DeSync Score</span> evaluating temporal misalignment (in seconds) predicted by <span class=\"ltx_text ltx_font_bold\">Synchformer<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib11\" title=\"\">11</a>]</cite></span>; lower values indicate better synchronization.</p>\n\n",
                 "matched_terms": [
-                    "lower",
-                    "better"
+                    "better",
+                    "lower"
                 ]
             },
             {
@@ -191,16 +191,16 @@
                 "html": "<p class=\"ltx_p\">We introduced <span class=\"ltx_text ltx_font_bold\">Foley Control</span>, a lightweight bridge that brings video guidance to a frozen text-to-audio generator by inserting compact, trainable collaboration layers after the model&#8217;s existing text cross-attention. With V-JEPA2 embeddings, token pooling, and RoPE-based ordering cues, our design preserves the strengths of the audio prior and prompt controllability while adding the temporal control needed for Foley.</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "pooling",
-                    "guidance"
+                    "guidance",
+                    "pooling"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Across a curated data corpus and evaluation on MovieGenBench, the approach delivers competitive semantic and temporal alignment while training only a small fraction of parameters compared to fully multimodal systems. Ablations show that aggressively pooled video tokens match the performance of denser grid features, substantially reducing compute and memory without degrading synchronization.</p>\n\n",
                 "matched_terms": [
                     "pooled",
-                    "without",
-                    "training"
+                    "training",
+                    "without"
                 ]
             },
             {
@@ -218,22 +218,22 @@
         "body": "System\nKL-\n\nPANNs\n ↓\nKL-\n\nPaSST\n ↓\nIB ↑\nFD-\n\nVGG\n ↓\nFD-\n\nPANNs\n ↓\nFD-\n\nPaSST\n ↓\nDeSync ↓\n\n\n\n\nFRIEREN\n3.58\n3.89\n0.14\n5.65\n59.04\n560.91\n0.30\n\n\nMMaudio\n2.52\n2.35\n0.25\n4.14\n37.60\n343.24\n0.29\n\n\nHunyuanVideo-Foley\n2.58\n2.11\n0.30\n7.00\n31.28\n373.62\n0.31\n\n\nFoley Control (ours)\n2.93\n2.59\n0.20\n5.89\n31.10\n383.99\n0.32\n\n\nThinkSound\n3.16\n2.90\n0.18\n6.62\n33.62\n468.25\n0.30\n\n\nFoleyCrafter\n1.11\n1.29\n0.26\n6.94\n40.70\n493.08\n0.33",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">System</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">KL-\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:22.7pt;height:3.8pt;vertical-align:-0.0pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-4.9pt,0.8pt) scale(0.7,0.7) ;\">\n<span class=\"ltx_p\">PANNs</span>\n</span></span> &#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">KL-\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:20.2pt;height:3.8pt;vertical-align:-0.0pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-4.3pt,0.8pt) scale(0.7,0.7) ;\">\n<span class=\"ltx_p\">PaSST</span>\n</span></span> &#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">IB &#8593;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">FD-\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:15.8pt;height:3.8pt;vertical-align:-0.0pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-3.4pt,0.8pt) scale(0.7,0.7) ;\">\n<span class=\"ltx_p\">VGG</span>\n</span></span> &#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">FD-\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:22.7pt;height:3.8pt;vertical-align:-0.0pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-4.9pt,0.8pt) scale(0.7,0.7) ;\">\n<span class=\"ltx_p\">PANNs</span>\n</span></span> &#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">FD-\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:20.2pt;height:3.8pt;vertical-align:-0.0pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-4.3pt,0.8pt) scale(0.7,0.7) ;\">\n<span class=\"ltx_p\">PaSST</span>\n</span></span> &#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">DeSync &#8595;</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">FRIEREN</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.58</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.89</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.14</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">5.65</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">59.04</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">560.91</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.30</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">MMaudio</span></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.52</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.35</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.25</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">4.14</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">37.60</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">343.24</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">0.29</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">HunyuanVideo-Foley</span></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.58</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.11</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">0.30</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">7.00</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">31.28</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">373.62</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.31</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">Foley Control (ours)</span></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.93</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.59</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.20</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">5.89</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">31.10</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">383.99</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.32</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">ThinkSound</span></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">3.16</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">2.90</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.18</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.62</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">33.62</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">468.25</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.30</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">FoleyCrafter</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">1.11</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">1.29</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.26</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">6.94</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">40.70</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">493.08</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">0.33</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "system",
-            "ours",
-            "frieren",
-            "passt",
             "moviegenbench",
-            "mmaudio",
-            "control",
+            "system",
             "desync",
-            "comparison",
-            "hunyuanvideofoley",
-            "panns",
-            "foleycrafter",
-            "thinksound",
+            "mmaudio",
             "foley",
+            "panns",
+            "passt",
             "vgg",
-            "dataset"
+            "thinksound",
+            "frieren",
+            "foleycrafter",
+            "dataset",
+            "ours",
+            "hunyuanvideofoley",
+            "control",
+            "comparison"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We test on the <span class=\"ltx_text ltx_font_bold\">MovieGenBench</span> dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib23\" title=\"\">23</a>]</cite>, which emphasizes cinematic sound design and long-range temporal dependencies.\nThis benchmark evaluates generated audio against a strong text-to-video-with-audio (T2VA) reference model, providing a measure better aligned with large-scale multimodal systems such as MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite> and HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>, which excel at generating ambient, scene-level audio.\nBecause MovieGenBench includes extensive background and environmental textures, it favors models that maintain coherent ambiance and long-horizon consistency rather than isolated transients.\nIn contrast, <span class=\"ltx_text ltx_font_bold\">VGGSound</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib2\" title=\"\">2</a>]</cite> consists primarily of short, event-driven Foley-style clips that emphasize localized synchronization and sound event accuracy.\nWe also omit comparisons with <span class=\"ltx_text ltx_font_bold\">V-AURA</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib30\" title=\"\">30</a>]</cite>, a video-to-audio model limited to generating 2.5-second clips, which makes it unsuitable for long-form benchmarks like MovieGenBench.\nAs shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S4.T2\" title=\"Table 2 &#8227; Kling-Foley AudioEval. &#8227; 4.3 Comparison to Existing Work &#8227; 4 Experiments &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, Foley Control performs competitively under these more demanding, ambient conditions.</p>\n\n"
@@ -242,8 +242,8 @@
             {
                 "html": "<p class=\"ltx_p\">Foley Control is a lightweight approach to video-guided Foley that keeps pretrained single-modality models frozen and learns only a small cross-attention bridge between them. We connect V-JEPA2 video embeddings to a frozen Stable Audio Open DiT text-to-audio (T2A) model by inserting compact video cross-attention after the model&#8217;s existing text cross-attention, so prompts set global semantics while video refines timing and local dynamics. The frozen backbones retain strong marginals (video; audio given text) and the bridge learns the audio&#8211;video dependency needed for synchronization &#8212; without retraining the audio prior. To cut memory and stabilize training, we pool video tokens before conditioning.\nOn curated video&#8211;audio benchmarks, Foley Control delivers competitive temporal and semantic alignment with far fewer trainable parameters than recent multi-modal systems, while preserving prompt-driven controllability and production-friendly modularity (swap/upgrade encoders or the T2A backbone without end-to-end retraining). Although we focus on Video-to-Foley, the same bridge design can potentially extend to other audio modalities (e.g., speech).</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "control"
+                    "control",
+                    "foley"
                 ]
             },
             {
@@ -256,95 +256,95 @@
             {
                 "html": "<p class=\"ltx_p\">At the other extreme, multimodal diffusion transformers (e.g., MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite>, HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> and others  <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib4\" title=\"\">4</a>]</cite> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib28\" title=\"\">28</a>]</cite> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib13\" title=\"\">13</a>]</cite>) jointly train audio, video, and sometimes text streams end-to-end.\nSuch approaches achieve impressive synchronization and coverage, but at the cost of massive curated datasets, high compute budgets, and reduced modularity.</p>\n\n",
                 "matched_terms": [
-                    "hunyuanvideofoley",
-                    "mmaudio"
+                    "mmaudio",
+                    "hunyuanvideofoley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper proposes <span class=\"ltx_text ltx_font_bold\">Foley Control</span>, a lightweight framework that targets the same alignment benefits while preserving the practicality of frozen generative backbones. Our key idea is to connect V-JEPA2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib1\" title=\"\">1</a>]</cite> video embeddings to a frozen Stable Audio Open DiT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite> by inserting <em class=\"ltx_emph ltx_font_italic\">collaboration layers</em>&#8212;compact, video-conditioned cross-attention modules placed <em class=\"ltx_emph ltx_font_italic\">inside</em> existing transformer blocks. This placement is deliberate: video cross-attention is applied <em class=\"ltx_emph ltx_font_italic\">after</em> the model&#8217;s original text cross-attention, so text prompts first establish high-level semantics and structure, and video then refines temporal grounding and localized dynamics. By freezing the remaining parameters of the DiT blocks, we retain the strong generative prior learned from large-scale audio&#8211;text corpora and focus the trainable capacity on cross-modal synchronization rather than relearning audio generation.</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "control"
+                    "control",
+                    "foley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Taken together, these elements provide a practical route to high-quality Foley generation: reuse a strong, frozen T2A backbone for audio fidelity and prompt control, and add just enough trainable capacity to align timing and dynamics to the video.</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "control"
+                    "control",
+                    "foley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Early neural Foley systems learn to synthesize sounds that are semantically and temporally aligned with visual inputs, but often depend on limited audio&#8211;visual data and struggle to preserve high audio fidelity.\nFoleyCrafter <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib37\" title=\"\">37</a>]</cite> addresses this by <em class=\"ltx_emph ltx_font_italic\">plugging</em> lightweight controllers into a strong text-to-audio backbone, thereby retaining audio quality while improving video&#8211;audio alignment.\nConcretely, it builds on a U-Net&#8211;based V2A generator (in the spirit of AuFusion <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib34\" title=\"\">34</a>]</cite>) and employs <em class=\"ltx_emph ltx_font_italic\">multiple</em> control streams: a <em class=\"ltx_emph ltx_font_italic\">semantic adapter</em> that injects video/text features throughout the U-Net (early, middle, and late blocks), and a <em class=\"ltx_emph ltx_font_italic\">timestamp/onset controller</em> that is applied primarily in late layers to sharpen synchronization around transient events.\nEvent timing cues are provided by a <em class=\"ltx_emph ltx_font_italic\">separate</em> timestamp detection model , whose outputs modulate the diffusion steps to align onsets without altering the pretrained backbone.\nThis division of labor&#8212;frozen backbone for fidelity, semantic control across the network, and late-layer timing refinement&#8212;yields stronger alignment under modest compute.</p>\n\n",
                 "matched_terms": [
+                    "control",
                     "foley",
-                    "foleycrafter",
-                    "control"
+                    "foleycrafter"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite> introduces a unified, <em class=\"ltx_emph ltx_font_italic\">from-scratch</em> multimodal training paradigm that jointly leverages audio&#8211;text and audio&#8211;video pairs under a conditional flow-matching objective.\nA hybrid architecture&#8212;multimodal DiT blocks followed by audio-only blocks&#8212;supports scalable data mixing and strong semantic alignment, while a synchronization module operating via high frame-rate visual features further improves temporal precision.\nA related approach, HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>, scales this paradigm with a massive curated text&#8211;video&#8211;audio dataset and a dual-stream multimodal diffusion transformer that fuses audio&#8211;video attention with text cross-attention.\nAdditionally, it introduces a representation-alignment loss (REPA<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib36\" title=\"\">36</a>]</cite>) that steers the audio DiT&#8217;s hidden states toward self-supervised audio embeddings, enhancing fidelity and stability, and employs a DAC-style autoencoder for higher-quality waveform reconstruction.</p>\n\n",
                 "matched_terms": [
-                    "hunyuanvideofoley",
+                    "mmaudio",
                     "dataset",
-                    "mmaudio"
+                    "hunyuanvideofoley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For instance, <span class=\"ltx_text ltx_font_bold\">FRIEREN</span> proposes rectified flow matching in spectrogram latent space to regress a conditional transport vector field, enabling few-step or even one-step audio sampling with strong video-audio alignment <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib33\" title=\"\">33</a>]</cite>.\n<span class=\"ltx_text ltx_font_bold\">UniVerse-1</span> fuses pretrained video and music experts via a stitching-of-experts approach to jointly generate synchronized audio and video <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib31\" title=\"\">31</a>]</cite>.\n<span class=\"ltx_text ltx_font_bold\">ThinkSound</span> frames audio generation as a reasoning process via chain-of-thought, decomposing generation into stages of Foley synthesis, object-centric refinement, and editing, guided by a multimodal LLM <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib20\" title=\"\">20</a>]</cite>.\nMore recently, <span class=\"ltx_text ltx_font_bold\">DeepSound-V1</span> also introduces stepwise CoT reasoning in video&#8594;audio synthesis <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib18\" title=\"\">18</a>]</cite>, and <span class=\"ltx_text ltx_font_bold\">YingSound</span> uses a multimodal CoT controller plus conditional flow matching for sound effect generation in few-shot settings <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib3\" title=\"\">3</a>]</cite>.\nThese works complement ours: while they may retrain large joint models or adopt reasoning-based pipelines, our approach uniquely freezes a strong text&#8211;audio backbone and learns only a light cross-modal bridge for alignment.</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "ours",
                     "thinksound",
-                    "frieren"
+                    "foley",
+                    "frieren",
+                    "ours"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our approach differs from prior adapter-based frameworks for adding multi-modality to frozen single modality models such as FoleyCrafter <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib37\" title=\"\">37</a>]</cite> or Stylecodes<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib25\" title=\"\">25</a>]</cite>, which attach specialized controllers to a U-Net backbone for alignment.\nWhile such modular control can improve synchronization under limited data, it partitions the conditioning pathways &#8211; forcing each module to learn its own alignment rather than leveraging the pretrained model&#8217;s holistic structure.</p>\n\n",
                 "matched_terms": [
-                    "foleycrafter",
-                    "control"
+                    "control",
+                    "foleycrafter"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In contrast, <span class=\"ltx_text ltx_font_bold\">Foley Control</span> adopts a more unified transformer-based design that integrates video conditioning directly within the frozen diffusion transformer&#8217;s existing attention layers.\nThis avoids separate control heads and allows cross-modal signals to propagate through the same representational channels as text, better aligning with modern large-scale pretrained architectures such as Stable Audio Open <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite>.\nResults from large-scale modeling <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib12\" title=\"\">12</a>]</cite> indicate that architectures which enable pretrained components to co-adapt through shared attention tend to harness scale and generalize more effectively than systems with manually partitioned control modules.</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "control"
+                    "control",
+                    "foley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">At the other end of the spectrum, fully multi-modal diffusion transformers such as MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite> and HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> extend this idea further by training end-to-end across text, video, and audio streams.\nThese models demonstrate even higher efficiency and expressivity when massive, curated datasets are available, but they require orders of magnitude more paired data and compute to converge.\n<span class=\"ltx_text ltx_font_bold\">Foley Control</span> therefore strikes a middle ground: it retains the scalability and representational advantages of transformer conditioning while remaining data-efficient by freezing the text&#8211;audio prior and learning only lightweight video&#8211;audio bridges.</p>\n\n",
                 "matched_terms": [
-                    "hunyuanvideofoley",
-                    "foley",
                     "control",
-                    "mmaudio"
+                    "mmaudio",
+                    "foley",
+                    "hunyuanvideofoley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Training high-quality video-to-audio models requires large-scale, temporally aligned multimodal data.\nTo this end, we constructed a dataset derived from the <span class=\"ltx_text ltx_font_bold\">Kinetics-700</span> dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib6\" title=\"\">6</a>]</cite> , which provides a diverse set of human action videos in a wide range of everyday activities.\nSince not all videos contain meaningful or relevant sound events, we applied a data curation pipeline similar to that used by HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> . Since the dataset was already partitioned into clips, we first filtered out any silent samples from the dataset, we then used ImageBind <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib8\" title=\"\">8</a>]</cite> and Meta Audiobox Aesthetics <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib29\" title=\"\">29</a>]</cite> scores to filter out both low quality and conceptually distinct samples, ensuring high-fidelity and semantically consistent audio&#8211;video pairs similar to the filtering strategy of HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "hunyuanvideofoley",
-                    "dataset"
+                    "dataset",
+                    "hunyuanvideofoley"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We compare our framework against recent state-of-the-art video-to-audio generation systems, including MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite>, HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>, ThinkSound, and FRIEREN.\nAll baselines represent distinct strategies for bridging video and audio modalities, ranging from fully joint multimodal diffusion training to modular adapter-based control.\nTo ensure comparability, we evaluated all models under a consistent protocol using the <span class=\"ltx_text ltx_font_bold\">MovieGenBench<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text ltx_font_medium\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib23\" title=\"\">23</a><span class=\"ltx_text ltx_font_medium\">]</span></cite></span> benchmark, which emphasizes long-form cinematic scenes with diverse dynamics and complex soundscapes.</p>\n\n",
                 "matched_terms": [
-                    "frieren",
-                    "control",
                     "mmaudio",
+                    "thinksound",
+                    "frieren",
                     "hunyuanvideofoley",
-                    "thinksound"
+                    "control"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each method generates audio at 44.1&#8201;kHz, conditioned on video frames and corresponding text prompts when supported.\nFor our model, the Stable Audio DiT backbone, VAE, and CLAP text encoder remain entirely <em class=\"ltx_emph ltx_font_italic\">frozen</em>; only the lightweight collaboration layers and alignment heads introduced in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S3\" title=\"3 Method &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> are trained.\nThis setup isolates the effect of our proposed video bridge while maintaining a fixed generative prior across all experiments.\nAll systems are evaluated on the same MovieGenBench test split, using synchronized video clips with corresponding ground-truth soundtracks.\n<span class=\"ltx_text ltx_font_bold\">For metric computation, preprocessing, and dataset loaders, we used the MMAudio evaluation/testing repository<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><a class=\"ltx_ref ltx_url ltx_font_typewriter ltx_font_medium\" href=\"https://github.com/facebookresearch/mmaudio/tree/main/eval\" title=\"\">https://github.com/facebookresearch/mmaudio/tree/main/eval</a></span></span></span></span> <span class=\"ltx_text ltx_font_bold\">to ensure consistent scoring across methods</span>.</p>\n\n",
                 "matched_terms": [
+                    "moviegenbench",
                     "mmaudio",
-                    "dataset",
-                    "moviegenbench"
+                    "dataset"
                 ]
             },
             {
@@ -385,19 +385,19 @@
             {
                 "html": "<p class=\"ltx_p\">While large multimodal diffusion systems such as HunyuanVideo-Foley train end-to-end for <span class=\"ltx_text ltx_font_bold\">200k&#8211;700k steps</span> on roughly <span class=\"ltx_text ltx_font_bold\">100k hours</span> of curated text&#8211;video&#8211;audio data using <span class=\"ltx_text ltx_font_bold\">128<math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.SSS0.Px7.p1.m1\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math>H20 GPUs</span> and an <span class=\"ltx_text ltx_font_bold\">effective batch size of 2048</span>, our Foley Control bridge trains for only <span class=\"ltx_text ltx_font_bold\">400k steps</span> with an <span class=\"ltx_text ltx_font_bold\">effective batch size of 384</span>.\nIn contrast to MMAudio and ThinkSound, which use a comparable amount of paired audio&#8211;video data but additionally rely on extensive <em class=\"ltx_emph ltx_font_italic\">audio-only</em> pretraining to learn their generative priors, Foley Control requires <em class=\"ltx_emph ltx_font_italic\">no</em> such auxiliary corpus&#8212;leveraging instead a frozen Stable Audio backbone trained independently on text&#8211;audio data.\nCompared to HunyuanVideo-Foley, Foley Control operates with nearly <span class=\"ltx_text ltx_font_bold\">two orders of magnitude less paired data and compute</span>, yet achieves competitive synchronization and semantic alignment, underscoring the efficiency of the lightweight cross-modal adapter strategy.\n<em class=\"ltx_emph ltx_font_italic\">Similarly, FoleyCrafter</em> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib37\" title=\"\">37</a>]</cite> demonstrates that adapter-based designs can deliver strong alignment and controllability by keeping a pretrained T2A backbone frozen and learning only compact temporal and semantic controllers, employing a more elaborate adapter architecture built atop a U-Net&#8211;based generative model.</p>\n\n",
                 "matched_terms": [
-                    "control",
                     "mmaudio",
-                    "hunyuanvideofoley",
-                    "foleycrafter",
+                    "foley",
                     "thinksound",
-                    "foley"
+                    "foleycrafter",
+                    "hunyuanvideofoley",
+                    "control"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We introduced <span class=\"ltx_text ltx_font_bold\">Foley Control</span>, a lightweight bridge that brings video guidance to a frozen text-to-audio generator by inserting compact, trainable collaboration layers after the model&#8217;s existing text cross-attention. With V-JEPA2 embeddings, token pooling, and RoPE-based ordering cues, our design preserves the strengths of the audio prior and prompt controllability while adding the temporal control needed for Foley.</p>\n\n",
                 "matched_terms": [
-                    "foley",
-                    "control"
+                    "control",
+                    "foley"
                 ]
             }
         ]

@@ -5,29 +5,29 @@
         "body": "Period\nTotal Tokens\nTotal Labeling Errors\nPOS Acc. (%)\nLemma Acc. (%)\n\n\n\n\n1500-1600\n762\n30\n97.90\n98.16\n\n\n1600-1700\n759\n41\n96.57\n98.02\n\n\n1700-1800\n631\n27\n96.99\n98.73\n\n\n1800-1900\n709\n54\n94.50\n97.88\n\n\n1900-2000\n656\n43\n96.34\n97.10\n\n\nAll Centuries\n3517\n195\n96.47\n97.98",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\">Period</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Total Tokens</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Total Labeling Errors</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">POS Acc. (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">Lemma Acc. (%)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">1500-1600</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">762</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">97.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">98.16</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">1600-1700</td>\n<td class=\"ltx_td ltx_align_center\">759</td>\n<td class=\"ltx_td ltx_align_center\">41</td>\n<td class=\"ltx_td ltx_align_center\">96.57</td>\n<td class=\"ltx_td ltx_align_center\">98.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">1700-1800</td>\n<td class=\"ltx_td ltx_align_center\">631</td>\n<td class=\"ltx_td ltx_align_center\">27</td>\n<td class=\"ltx_td ltx_align_center\">96.99</td>\n<td class=\"ltx_td ltx_align_center\">98.73</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">1800-1900</td>\n<td class=\"ltx_td ltx_align_center\">709</td>\n<td class=\"ltx_td ltx_align_center\">54</td>\n<td class=\"ltx_td ltx_align_center\">94.50</td>\n<td class=\"ltx_td ltx_align_center\">97.88</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">1900-2000</td>\n<td class=\"ltx_td ltx_align_center\">656</td>\n<td class=\"ltx_td ltx_align_center\">43</td>\n<td class=\"ltx_td ltx_align_center\">96.34</td>\n<td class=\"ltx_td ltx_align_center\">97.10</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">All Centuries</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3517</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">195</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">96.47</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">97.98</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "all",
-            "accuracy",
-            "tokens",
-            "french",
-            "pos",
+            "acc",
+            "labeling",
             "errors",
-            "centuries",
+            "french",
+            "lemma",
+            "all",
             "annotation",
             "total",
-            "across…",
-            "labeling",
-            "acc",
-            "lemma",
-            "period"
+            "centuries",
+            "period",
+            "pos",
+            "tokens",
+            "accuracy",
+            "across…"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">Historical and low-resource NLP remains challenging due to limited annotated data and domain mismatches with modern, web-sourced corpora. This paper outlines our work in using large language models (LLMs) to create ground-truth annotations for historical French (16th&#8211;20th centuries) and Chinese (1900&#8211;1950) texts. By leveraging LLM-generated ground truth on a subset of our corpus, we were able to fine-tune spaCy to achieve significant gains on period-specific tests for part-of-speech (POS) annotations, lemmatization, and named entity recognition (NER). Our results underscore the importance of domain-specific models and demonstrate that even relatively limited amounts of synthetic data can improve NLP tools for under-resourced corpora in computational humanities research.</p>\n\n",
                 "matched_terms": [
-                    "centuries",
                     "french",
-                    "pos"
+                    "pos",
+                    "centuries"
                 ]
             },
             {
@@ -61,18 +61,18 @@
             {
                 "html": "<p class=\"ltx_p\">Because gold-standard testing and validation datasets do not yet exist for these time periods, our approach to selecting an ideal LLM for annotation was less systematic and more exploratory, relying on iterative experimentation and qualitative assessments of output quality. This included drawing on our own expertise as specialists in working with these historical French and Chinese texts. We also found that some models, especially commercial LLMs, were better equipped to handle tasks such as Chinese tokenization. We recognize that this counters emerging best practices in the field that favors open-source models to ensure reproducibility and accessibility. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alizadeh2025open</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ziems2024can</span>]</cite> Our aim, however, was to prioritize accuracy and feasibility in a domain where reliable benchmarks are still lacking. We see this as an initial step toward developing workflows and evaluation criteria that can eventually be transferred to more open and transparent frameworks as the ecosystem of historical-language resources matures.</p>\n\n",
                 "matched_terms": [
-                    "annotation",
+                    "french",
                     "accuracy",
-                    "french"
+                    "annotation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the French corpus, we selected OpenAI&#8217;s GPT-4o model. To ensure deterministic outputs suitable for our annotation task, we selected a temperature of 0 for our prompt. The model was tasked with performing lemmatization and part-of-speech (POS) tagging, adhering to Universal Dependencies (UD) guidelines, as well as assigning morphological tags based on the French Treebank tagset. The detailed API prompt guiding the French annotation process is available in Appendix A at the end of the document. Total computing time for the 55,000 passages was around 36 hours.</p>\n\n",
                 "matched_terms": [
-                    "annotation",
-                    "total",
                     "french",
-                    "pos"
+                    "pos",
+                    "total",
+                    "annotation"
                 ]
             },
             {
@@ -85,22 +85,22 @@
             {
                 "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "french",
                     "errors",
-                    "pos",
-                    "centuries",
-                    "annotation",
-                    "total",
                     "labeling",
-                    "tokens"
+                    "french",
+                    "total",
+                    "annotation",
+                    "centuries",
+                    "pos",
+                    "tokens",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the case of the French, many mistakes are systematic and amenable to automatic post-processing. For example, the French word \"pas\" is regularly tagged as a particle rather than an adverb. We believe such inconsistencies could be significantly reduced with the use of ensemble methods. One approach would involve generating multiple annotations per token (using either a single LLM with different temperature settings or multiple LLMs) and selecting the highest-confidence label when disagreements occur. In contrast, the issues in Chinese stem mostly from segmentation errors, such as &#8217;Tokyo Institute of Technology&#8217;, which, when split into three tokens, prevent its recognition as a single named entity. This type of error highlights the need for a more refined, domain-specific tokenization method as a first step towards future improvements.</p>\n\n",
                 "matched_terms": [
-                    "tokens",
                     "french",
+                    "tokens",
                     "errors"
                 ]
             },
@@ -114,51 +114,51 @@
             {
                 "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
                     "french",
-                    "pos"
+                    "pos",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Chinese proved especially challenging because all downstream tasks depend on accurate segmentation, yet spaCy&#8217;s Chinese pipelines use third-party tokenizers (e.g., pkuseg, jieba) tuned for modern simplified text that are less reliable on historical or traditional-character corpora. We finetuned our spaCy model on traditional characters but evaluated it on both traditional and simplified versions of the validation set. Since segmentation errors directly cap POS and NER performance, we also include normalized POS and NER scores, defined as</p>\n\n",
                 "matched_terms": [
                     "pos",
-                    "errors",
-                    "all"
+                    "all",
+                    "errors"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As seen in Table  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T3\" title=\"Table 3 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> summarizing the results for the historical ARTFL&#8211;Frantext corpus, the fine-tuned historic model outperformed the off-the-shelf transformer model provided by spaCy, achieving 97.20% POS accuracy and 96.04% lemmatization accuracy versus 90.97% and 87.55%, respectively when working with historical datasets. Conversely, our contemporary validation dataset (UD French-Sequoia) shows that the off-the-shelf model has an edge on the historical model when working with contemporary data as expected: 98.29% POS and 94.32% lemma accuracy compared to 94.10% and 93.82%. Moreover, a comparison of the models shows a major performance gap for the off-the-shelf model when shifting from contemporary to historical materials: POS and lemmatization accuracy both drop by around 7%.</p>\n\n",
                 "matched_terms": [
                     "lemma",
-                    "accuracy",
-                    "pos"
+                    "pos",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T4\" title=\"Table 4 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, fine-tuning yields consistent gains across both historical and contemporary Chinese data. On the traditional&#8208;character Shanghai corpus, the historic model boosts POS accuracy from 67.75% to 72.33% (normalized POS from 90.21% to 96.31%) and raises NER from 33.44% to 43.98% (normalized NER from 44.53% to 58.56%). On the simplified&#8208;character Shanghai corpus, POS climbs from 72.77% to 76.94% (normalized POS from 88.72% to 93.81%) and NER from 41.82% to 53.60% (normalized NER from 50.99% to 65.35%). Contrary to the French corpus which saw a slip in accuracy for the historical model when working with contemporary data, we find that the historical model outperforms the base model for our validation dataset (UD Chinese-PUD treebank), 77.63% POS versus 71.70% (normalized POS 86.32% vs. 79.73%).</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
                     "french",
-                    "pos"
+                    "pos",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Having identified errors in our LLM-generated training annotations (see section 3.2), we sought to determine whether these imperfections would significantly impact the performance of models trained on this data. To assess this, we evaluated our French corpus given its higher error rate with our custom spaCy model against the standard off-the-shelf spaCy model using our manually validated labels as ground truth. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T5\" title=\"Table 5 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the results demonstrate that the custom historical French model is remarkably robust to the labeling errors in its training data, substantially outperforming the standard modern French model across all time periods, achieving 95.28% POS accuracy and 96.42% lemmatization accuracy compared to 92.69% and 89.28% respectively&#8212;improvements of 2.59 and 7.14 percentage points. The gains are particularly striking in earlier periods: for 16th-century texts, the custom model outperforms the standard model by 6.17 percentage points for POS tagging and 13.91 percentage points for lemmatization.</p>\n\n",
                 "matched_terms": [
-                    "all",
-                    "accuracy",
-                    "french",
-                    "pos",
                     "errors",
-                    "labeling"
+                    "labeling",
+                    "french",
+                    "all",
+                    "pos",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These results show, albeit with a relatively small sample size, that the error rate in our LLM-generated training annotations does not significantly degrade model performance. The custom model not only learns effectively from imperfect training data but achieves accuracy levels (95-96%) that closely approach the quality of the training annotations themselves (96-97%). We believe this robustness to labeling noise validates our approach and suggests that perfect training annotations are not necessary to produce high-quality models for low-resource historical languages.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "labeling"
+                    "labeling",
+                    "accuracy"
                 ]
             },
             {
@@ -179,15 +179,15 @@
                 "html": "<p class=\"ltx_p\">While this \"many-models\" approach might not have been possible a few years ago, our study highlights how LLMs make hyper&#8208;specific model development increasingly feasible at scale. With synthetic annotations, researchers are now able to iterate new pipelines for a growing number of historical period or subject domains. Although the optimal amount of synthetic data required will naturally vary based on the specific language, historical period, and NLP tasks (e.g. POS tagging versus NER), our experience suggests that even moderately sized, LLM-generated datasets can provide substantial benefits. Further research in this area could help establish clearer benchmarks for the volume of training data needed for such tasks. There remain certain bottlenecks in place, such as Chinese tokenization, but synthetic annotation might finally be the answer to developing domain-specific tokenizers for languages with notoriously difficult or fluid segmentation practices &#8211; an issue that our team will work on in the future. As LLMs continue to improve, we anticipate that synthetic ground truth will become an indispensable tool for tailoring NLP models to the rich linguistic diversity found in historical corpora.</p>\n\n",
                 "matched_terms": [
                     "annotation",
-                    "period",
-                    "pos"
+                    "pos",
+                    "period"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper presents a practical method for generating synthetic ground truth via LLMs to bootstrap NLP pipelines in historical contexts. Our experiments on French and Chinese corpora show that fine-tuning on LLM-annotated historical text yields noticeable improvements over off-the-shelf models, even if segmentation accuracy for Chinese remains a critical ceiling for downstream tasks. These findings advocate for a &#8220;many-models&#8221; strategy, in which separate, era- or genre-tailored pipelines outperform universal solutions. Although our approach depends on the availability of reasonably resource-rich LLMs, it opens new possibilities for computational analysis of lower-resource contexts that lack manual annotations.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "french"
+                    "french",
+                    "accuracy"
                 ]
             },
             {
@@ -214,10 +214,10 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">You are a highly precise historical Chinese tokenizer specialized in texts from the 1900&#8211;1950 period. Your task is to segment a given sentence according to strict Chinese Treebank (CTB) style guidelines adapted for this historical context, assign accurate Universal Dependencies (UD) POS tags and CTB tags, and perform Named Entity Recognition (NER) using the IOB scheme. **It is crucial to diligently apply NER tagging for all tokens that fit the specified entity types.**</span>\n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "period",
-                    "pos",
                     "tokens",
-                    "all"
+                    "pos",
+                    "all",
+                    "period"
                 ]
             },
             {
@@ -235,35 +235,35 @@
         "body": "Dataset\nTotal Tokens\nTotal Labeling Errors\nPOS Acc. (%)\nNER Acc. (%)\n\n\n\n\nShanghai_Simp\n1,807\n31\n98.95\n94.26",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">Total Tokens</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">Total Labeling Errors</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">POS Acc. (%)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">NER Acc. (%)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">Shanghai_Simp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">1,807</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">31</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">98.95</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">94.26</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "accuracy",
-            "pos",
-            "errors",
-            "annotation",
-            "total",
             "acc",
             "labeling",
-            "chinese",
-            "ner",
-            "tokens",
+            "errors",
+            "shanghaisimp",
             "dataset",
-            "shanghaisimp"
+            "chinese",
+            "annotation",
+            "total",
+            "pos",
+            "tokens",
+            "accuracy",
+            "ner"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">Historical and low-resource NLP remains challenging due to limited annotated data and domain mismatches with modern, web-sourced corpora. This paper outlines our work in using large language models (LLMs) to create ground-truth annotations for historical French (16th&#8211;20th centuries) and Chinese (1900&#8211;1950) texts. By leveraging LLM-generated ground truth on a subset of our corpus, we were able to fine-tune spaCy to achieve significant gains on period-specific tests for part-of-speech (POS) annotations, lemmatization, and named entity recognition (NER). Our results underscore the importance of domain-specific models and demonstrate that even relatively limited amounts of synthetic data can improve NLP tools for under-resourced corpora in computational humanities research.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper outlines the work of our lab in using large language models (LLMs) to generate ground-truth datasets to fine-tune Natural Language Processing (NLP) models for historical analysis. Our recent work has focused primarily on analyzing historical French and Chinese texts where we have confronted countless problems with existing NLP tools in working with archaic spellings, obsolete vocabulary, fluid grammar, fragmentary digitization, and for Chinese, traditional characters and rare variants. These historical datasets lack standard training and validation sets, the creation of which are too costly for our digital humanities lab. While our use of historical French and Chinese texts in this paper is the result of our broader research agendas, we nevertheless suggest that bringing these two corpora together in this study allow us to address different issues of NLP for historical research, serving as potential test cases for using LLM-generated annotations to train specialized models in diverse and multilingual settings. The French corpus is comprised of literary texts from the 1500s-1900s where shifting spelling conventions and word forms routinely trip up off-the-shelf taggers and lemmatizers. In Chinese, we focus on texts from 1900 to 1950, a shorter but pivotal time frame when written language was shifting from classical to contemporary writing conventions, which makes part-of-speech (POS) and named entity recognition (NER) tagging especially difficult. These two examples therefore represent how leveraging LLMs for ground truth creation can address the critical need to generate suitable training data for specialized historical contexts where it is otherwise absent.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
@@ -283,9 +283,9 @@
             {
                 "html": "<p class=\"ltx_p\">Once we selected our corpora, we experimented with different LLMs for generating text annotations in the form of token-level JSON annotations. Similar to previous studies, we found that LLMs produce inconsistent sequence tagging, <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qin2023chatgpt</span>]</cite> leading us to instead focus on POS for both French and Chinese, lemmatization for French only, and NER for Chinese only.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
@@ -300,8 +300,8 @@
                 "html": "<p class=\"ltx_p\">For the French corpus, we selected OpenAI&#8217;s GPT-4o model. To ensure deterministic outputs suitable for our annotation task, we selected a temperature of 0 for our prompt. The model was tasked with performing lemmatization and part-of-speech (POS) tagging, adhering to Universal Dependencies (UD) guidelines, as well as assigning morphological tags based on the French Treebank tagset. The detailed API prompt guiding the French annotation process is available in Appendix A at the end of the document. Total computing time for the 55,000 passages was around 36 hours.</p>\n\n",
                 "matched_terms": [
                     "annotation",
-                    "total",
-                    "pos"
+                    "pos",
+                    "total"
                 ]
             },
             {
@@ -315,100 +315,100 @@
             {
                 "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
                     "errors",
-                    "pos",
-                    "annotation",
-                    "total",
                     "labeling",
                     "chinese",
-                    "ner",
-                    "tokens"
+                    "annotation",
+                    "total",
+                    "pos",
+                    "tokens",
+                    "accuracy",
+                    "ner"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the case of the French, many mistakes are systematic and amenable to automatic post-processing. For example, the French word \"pas\" is regularly tagged as a particle rather than an adverb. We believe such inconsistencies could be significantly reduced with the use of ensemble methods. One approach would involve generating multiple annotations per token (using either a single LLM with different temperature settings or multiple LLMs) and selecting the highest-confidence label when disagreements occur. In contrast, the issues in Chinese stem mostly from segmentation errors, such as &#8217;Tokyo Institute of Technology&#8217;, which, when split into three tokens, prevent its recognition as a single named entity. This type of error highlights the need for a more refined, domain-specific tokenization method as a first step towards future improvements.</p>\n\n",
                 "matched_terms": [
-                    "chinese",
                     "tokens",
-                    "errors"
+                    "errors",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
                 "matched_terms": [
-                    "ner",
+                    "pos",
                     "accuracy",
-                    "chinese",
-                    "pos"
+                    "ner",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Chinese proved especially challenging because all downstream tasks depend on accurate segmentation, yet spaCy&#8217;s Chinese pipelines use third-party tokenizers (e.g., pkuseg, jieba) tuned for modern simplified text that are less reliable on historical or traditional-character corpora. We finetuned our spaCy model on traditional characters but evaluated it on both traditional and simplified versions of the validation set. Since segmentation errors directly cap POS and NER performance, we also include normalized POS and NER scores, defined as</p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "chinese",
+                    "pos",
                     "errors",
-                    "pos"
+                    "ner",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As seen in Table  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T3\" title=\"Table 3 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> summarizing the results for the historical ARTFL&#8211;Frantext corpus, the fine-tuned historic model outperformed the off-the-shelf transformer model provided by spaCy, achieving 97.20% POS accuracy and 96.04% lemmatization accuracy versus 90.97% and 87.55%, respectively when working with historical datasets. Conversely, our contemporary validation dataset (UD French-Sequoia) shows that the off-the-shelf model has an edge on the historical model when working with contemporary data as expected: 98.29% POS and 94.32% lemma accuracy compared to 94.10% and 93.82%. Moreover, a comparison of the models shows a major performance gap for the off-the-shelf model when shifting from contemporary to historical materials: POS and lemmatization accuracy both drop by around 7%.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "accuracy",
-                    "dataset",
-                    "pos"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T4\" title=\"Table 4 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, fine-tuning yields consistent gains across both historical and contemporary Chinese data. On the traditional&#8208;character Shanghai corpus, the historic model boosts POS accuracy from 67.75% to 72.33% (normalized POS from 90.21% to 96.31%) and raises NER from 33.44% to 43.98% (normalized NER from 44.53% to 58.56%). On the simplified&#8208;character Shanghai corpus, POS climbs from 72.77% to 76.94% (normalized POS from 88.72% to 93.81%) and NER from 41.82% to 53.60% (normalized NER from 50.99% to 65.35%). Contrary to the French corpus which saw a slip in accuracy for the historical model when working with contemporary data, we find that the historical model outperforms the base model for our validation dataset (UD Chinese-PUD treebank), 77.63% POS versus 71.70% (normalized POS 86.32% vs. 79.73%).</p>\n\n",
                 "matched_terms": [
                     "accuracy",
-                    "pos",
+                    "dataset",
                     "chinese",
-                    "ner",
-                    "dataset"
+                    "pos",
+                    "ner"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Having identified errors in our LLM-generated training annotations (see section 3.2), we sought to determine whether these imperfections would significantly impact the performance of models trained on this data. To assess this, we evaluated our French corpus given its higher error rate with our custom spaCy model against the standard off-the-shelf spaCy model using our manually validated labels as ground truth. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T5\" title=\"Table 5 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the results demonstrate that the custom historical French model is remarkably robust to the labeling errors in its training data, substantially outperforming the standard modern French model across all time periods, achieving 95.28% POS accuracy and 96.42% lemmatization accuracy compared to 92.69% and 89.28% respectively&#8212;improvements of 2.59 and 7.14 percentage points. The gains are particularly striking in earlier periods: for 16th-century texts, the custom model outperforms the standard model by 6.17 percentage points for POS tagging and 13.91 percentage points for lemmatization.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "labeling",
+                    "pos",
                     "errors",
-                    "pos"
+                    "labeling",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These results show, albeit with a relatively small sample size, that the error rate in our LLM-generated training annotations does not significantly degrade model performance. The custom model not only learns effectively from imperfect training data but achieves accuracy levels (95-96%) that closely approach the quality of the training annotations themselves (96-97%). We believe this robustness to labeling noise validates our approach and suggests that perfect training annotations are not necessary to produce high-quality models for low-resource historical languages.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "labeling"
+                    "labeling",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our results demonstrate that LLM&#8208;generated synthetic ground truth can effectively bootstrap annotation in lower&#8208;resource historical contexts. Compared to datasets manually annotated by human experts, data generated by LLMs may still be somewhat less accurate. However, the actual error rate proved to be relatively low and is unlikely to materially degrade downstream model performance. This is in part evidenced by the observed improvement to POS results for our historical model when testing the Chinese validation dataset. This suggests that LLMs can serve as a pragmatic source of training data when human&#8208;annotated corpora are scarce or expensive to produce.</p>\n\n",
                 "matched_terms": [
                     "annotation",
-                    "chinese",
+                    "pos",
                     "dataset",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Moreover, our results further point to the value and potential of domain&#8208;specific models over a single, all&#8208;purpose pipelines. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gururangan2020don</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">10.1145/3458754</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">beltagy2019scibert</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">klein2025provocationshumanitiesgenerativeai</span>]</cite> Universal models trained on contemporary, web&#8208;sourced text struggle with archaic orthography, obsolete vocabulary, and period&#8208;specific syntax. By contrast, fine&#8208;tuning on even a modest amount of synthetic annotations yields noticeable improvements in POS tagging and NER. In the case of the French model, a clear avenue for future work would be to systematically create and evaluate century-specific models to quantify the potential gains compared the multi-century historic model we built. We believe that a &#8220;many&#8208;models&#8221; approach, in which separate pipelines are tailored to particular eras or genres rather than forcing one model to cover every variant of a language, will not only yield higher quality results, but will also demand fewer resources given the smaller amounts of training data needed.</p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "pos"
+                    "pos",
+                    "ner"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While this \"many-models\" approach might not have been possible a few years ago, our study highlights how LLMs make hyper&#8208;specific model development increasingly feasible at scale. With synthetic annotations, researchers are now able to iterate new pipelines for a growing number of historical period or subject domains. Although the optimal amount of synthetic data required will naturally vary based on the specific language, historical period, and NLP tasks (e.g. POS tagging versus NER), our experience suggests that even moderately sized, LLM-generated datasets can provide substantial benefits. Further research in this area could help establish clearer benchmarks for the volume of training data needed for such tasks. There remain certain bottlenecks in place, such as Chinese tokenization, but synthetic annotation might finally be the answer to developing domain-specific tokenizers for languages with notoriously difficult or fluid segmentation practices &#8211; an issue that our team will work on in the future. As LLMs continue to improve, we anticipate that synthetic ground truth will become an indispensable tool for tailoring NLP models to the rich linguistic diversity found in historical corpora.</p>\n\n",
                 "matched_terms": [
-                    "ner",
                     "annotation",
-                    "chinese",
-                    "pos"
+                    "pos",
+                    "ner",
+                    "chinese"
                 ]
             },
             {
@@ -421,31 +421,31 @@
             {
                 "html": "<p class=\"ltx_p\">Although we performed randomized validation checks, which strongly suggest sound quality ground truth data, we acknowledge that our synthetic ground truth data likely still contains subtle or systematic errors. Moreover, our method depends on LLMs extensively trained on modern Chinese and French. While their historical variants remain underrepresented, languages that are not well represented in LLM training data will likely struggle to replicate the results we report.</p>\n\n",
                 "matched_terms": [
-                    "chinese",
-                    "errors"
+                    "errors",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">You are a highly precise historical Chinese tokenizer specialized in texts from the 1900&#8211;1950 period. Your task is to segment a given sentence according to strict Chinese Treebank (CTB) style guidelines adapted for this historical context, assign accurate Universal Dependencies (UD) POS tags and CTB tags, and perform Named Entity Recognition (NER) using the IOB scheme. **It is crucial to diligently apply NER tagging for all tokens that fit the specified entity types.**</span>\n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "chinese",
+                    "pos",
                     "tokens",
-                    "pos"
+                    "ner",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">* &#8216;\"ent_iob_\"&#8216;: The IOB tag for NER. Must be one of &#8216;\"B\"&#8216; (beginning), &#8216;\"I\"&#8216; (inside), or &#8216;\"O\"&#8216; (outside). Use &#8216;\"B\"&#8216; for the first token of any entity (including single-token entities) and &#8216;\"I\"&#8216; for subsequent tokens within the same multi-token entity. Use &#8216;\"O\"&#8216; for tokens not part of any named entity.</span>\n</p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "tokens"
+                    "tokens",
+                    "ner"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">* **ALWAYS split** off particles (&#8216;DEG&#8216;, &#8216;DEC&#8216;, &#8216;DEV&#8216;, &#8216;AS&#8216;, &#8216;SP&#8216;, &#8216;ETC&#8216;, etc.), measure words (&#8216;M&#8216;), localizers (&#8216;LC&#8216;), and punctuation (&#8216;PU&#8216;) as separate tokens. This explicitly includes standard punctuation marks (&#12290;, ,, &#65311;, !) AND all types of brackets: &#8216;&#12300;&#8216;, &#8216;&#12301;&#8216;, &#8216;&#12298;&#8216;, &#8216;&#12299;&#8216;, &#8216;&lt;&#8216;, &#8216;&gt;&#8216;. The content *inside* any brackets should be tokenized according to all other rules (1-5) and NER tagged according to the allowed entity types and specific guidelines.</span>\n</p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "tokens"
+                    "tokens",
+                    "ner"
                 ]
             }
         ]
@@ -456,20 +456,20 @@
         "body": "Dataset\n\n\nPeriod\n\n\n\n\nModel\n\n\nPOS\nLemma\n\n\n\n\nARTFL-Frantext\n\n\nhistorical\n\n\n\n\nfr_dep_news_trf\n\n\n90.97%\n87.55%\n\n\nARTFL-Frantext\n\n\nhistorical\n\n\n\n\nhistoric\n\n\n97.20%\n96.04%\n\n\nUD French-Sequoia\n\n\nmodern\n\n\n\n\nfr_dep_news_trf\n\n\n98.29%\n94.32%\n\n\nUD French-Sequoia\n\n\nmodern\n\n\n\n\nhistoric\n\n\n94.10%\n93.82%",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_justify ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Period</span></span>\n</span>\n</th>\n<th class=\"ltx_td ltx_align_justify ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model</span></span>\n</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">POS</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Lemma</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">ARTFL-Frantext</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historical</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">90.97%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">87.55%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding-top:1pt;padding-bottom:1pt;\">ARTFL-Frantext</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historical</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">97.20%</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">96.04%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding-top:1pt;padding-bottom:1pt;\">UD French-Sequoia</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">modern</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">98.29%</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">94.32%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\" style=\"padding-top:1pt;padding-bottom:1pt;\">UD French-Sequoia</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_bb\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">modern</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_bb\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-top:1pt;padding-bottom:1pt;\">94.10%</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-top:1pt;padding-bottom:1pt;\">93.82%</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
+            "model",
             "modern",
-            "frdepnewstrf",
-            "evaluation",
-            "historical",
-            "frenchsequoia",
             "french",
+            "lemma",
+            "frenchsequoia",
+            "evaluation",
+            "dataset",
+            "artflfrantext",
+            "historic",
+            "period",
             "pos",
             "results",
-            "lemma",
-            "historic",
-            "model",
-            "artflfrantext",
-            "period",
-            "dataset"
+            "historical",
+            "frdepnewstrf"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">As seen in Table  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T3\" title=\"Table 3 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> summarizing the results for the historical ARTFL&#8211;Frantext corpus, the fine-tuned historic model outperformed the off-the-shelf transformer model provided by spaCy, achieving 97.20% POS accuracy and 96.04% lemmatization accuracy versus 90.97% and 87.55%, respectively when working with historical datasets. Conversely, our contemporary validation dataset (UD French-Sequoia) shows that the off-the-shelf model has an edge on the historical model when working with contemporary data as expected: 98.29% POS and 94.32% lemma accuracy compared to 94.10% and 93.82%. Moreover, a comparison of the models shows a major performance gap for the off-the-shelf model when shifting from contemporary to historical materials: POS and lemmatization accuracy both drop by around 7%.</p>\n\n"
@@ -479,25 +479,25 @@
                 "html": "<p class=\"ltx_p\">Historical and low-resource NLP remains challenging due to limited annotated data and domain mismatches with modern, web-sourced corpora. This paper outlines our work in using large language models (LLMs) to create ground-truth annotations for historical French (16th&#8211;20th centuries) and Chinese (1900&#8211;1950) texts. By leveraging LLM-generated ground truth on a subset of our corpus, we were able to fine-tune spaCy to achieve significant gains on period-specific tests for part-of-speech (POS) annotations, lemmatization, and named entity recognition (NER). Our results underscore the importance of domain-specific models and demonstrate that even relatively limited amounts of synthetic data can improve NLP tools for under-resourced corpora in computational humanities research.</p>\n\n",
                 "matched_terms": [
                     "modern",
-                    "historical",
                     "french",
                     "pos",
-                    "results"
+                    "results",
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper outlines the work of our lab in using large language models (LLMs) to generate ground-truth datasets to fine-tune Natural Language Processing (NLP) models for historical analysis. Our recent work has focused primarily on analyzing historical French and Chinese texts where we have confronted countless problems with existing NLP tools in working with archaic spellings, obsolete vocabulary, fluid grammar, fragmentary digitization, and for Chinese, traditional characters and rare variants. These historical datasets lack standard training and validation sets, the creation of which are too costly for our digital humanities lab. While our use of historical French and Chinese texts in this paper is the result of our broader research agendas, we nevertheless suggest that bringing these two corpora together in this study allow us to address different issues of NLP for historical research, serving as potential test cases for using LLM-generated annotations to train specialized models in diverse and multilingual settings. The French corpus is comprised of literary texts from the 1500s-1900s where shifting spelling conventions and word forms routinely trip up off-the-shelf taggers and lemmatizers. In Chinese, we focus on texts from 1900 to 1950, a shorter but pivotal time frame when written language was shifting from classical to contemporary writing conventions, which makes part-of-speech (POS) and named entity recognition (NER) tagging especially difficult. These two examples therefore represent how leveraging LLMs for ground truth creation can address the critical need to generate suitable training data for specialized historical contexts where it is otherwise absent.</p>\n\n",
                 "matched_terms": [
-                    "historical",
                     "french",
-                    "pos"
+                    "pos",
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This research builds on existing scholarship addressing the longstanding challenge of applying NLP tools in low-resource and historical language settings. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">piotrowski2012natural</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guldi2023dangerous</span>]</cite> Off-the-shelf models, such as those in NLTK or spaCy, are typically trained on contemporary, web-sourced texts. Consequently, their precision lags significantly when applied to historical materials, which often feature different vocabularies, syntax, and genre conventions. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kapan2022fine</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">humbel2021named</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">batjargal2014approach</span>]</cite> Traditionally, researchers have addressed this problem through methods like iterative self-training. In this approach, a pre-trained NER system tags unlabeled historical text, and its high-confidence spans are treated as \"silver\" data to retrain the model, gradually improving its quality with each iteration. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2009domain</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">novotny2023people</span>]</cite></p>\n\n",
                 "matched_terms": [
-                    "historical",
-                    "model"
+                    "model",
+                    "historical"
                 ]
             },
             {
@@ -510,16 +510,16 @@
             {
                 "html": "<p class=\"ltx_p\">Since the goal of this project was to produce models that could accurately process our corpora, we chose to work with real historical texts rather than generating synthetic \"historical\" samples given that LLMs struggle to represent the past without inserting anachronisms. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">underwood2025languagemodelsrepresentpast</span>]</cite> Once we had extracted our random samples of historical passages (typically at the sentence level), we then used LLMs to produce our ground truth dataset for finetuning. The process for both the French and Chinese corpus included the following steps:</p>\n\n",
                 "matched_terms": [
+                    "french",
                     "historical",
-                    "dataset",
-                    "french"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">French:</span> For the French corpus, we drew 55,000 sentences from the ARTFL-Frantext database,<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://artfl-project.uchicago.edu/artfl-frantext\" title=\"\">https://artfl-project.uchicago.edu/artfl-frantext</a></span></span></span> selecting 11,000 sentences per century from the 16th&#8211;20th centuries. These sentences were randomly selected across eras to prevent chronological bias, with an attempt to capture the orthographic and morphological diversity that characterized centuries of linguistic change.<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rey2013mille</span>]</cite></p>\n\n",
                 "matched_terms": [
-                    "artflfrantext",
-                    "french"
+                    "french",
+                    "artflfrantext"
                 ]
             },
             {
@@ -532,136 +532,136 @@
             {
                 "html": "<p class=\"ltx_p\">Because gold-standard testing and validation datasets do not yet exist for these time periods, our approach to selecting an ideal LLM for annotation was less systematic and more exploratory, relying on iterative experimentation and qualitative assessments of output quality. This included drawing on our own expertise as specialists in working with these historical French and Chinese texts. We also found that some models, especially commercial LLMs, were better equipped to handle tasks such as Chinese tokenization. We recognize that this counters emerging best practices in the field that favors open-source models to ensure reproducibility and accessibility. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alizadeh2025open</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ziems2024can</span>]</cite> Our aim, however, was to prioritize accuracy and feasibility in a domain where reliable benchmarks are still lacking. We see this as an initial step toward developing workflows and evaluation criteria that can eventually be transferred to more open and transparent frameworks as the ecosystem of historical-language resources matures.</p>\n\n",
                 "matched_terms": [
+                    "french",
                     "evaluation",
-                    "historical",
-                    "french"
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the French corpus, we selected OpenAI&#8217;s GPT-4o model. To ensure deterministic outputs suitable for our annotation task, we selected a temperature of 0 for our prompt. The model was tasked with performing lemmatization and part-of-speech (POS) tagging, adhering to Universal Dependencies (UD) guidelines, as well as assigning morphological tags based on the French Treebank tagset. The detailed API prompt guiding the French annotation process is available in Appendix A at the end of the document. Total computing time for the 55,000 passages was around 36 hours.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "french",
-                    "pos"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
-                "matched_terms": [
-                    "evaluation",
-                    "french",
-                    "pos"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
-                "matched_terms": [
-                    "evaluation",
-                    "historical",
                     "french",
                     "pos",
                     "model"
                 ]
             },
             {
+                "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
+                "matched_terms": [
+                    "french",
+                    "pos",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "french",
+                    "evaluation",
+                    "pos",
+                    "historical"
+                ]
+            },
+            {
                 "html": "<p class=\"ltx_p\">We validated both the original and fine-tuned models using two complementary tests: first, by evaluating each on our withheld historical test set to measure improvements in processing period-specific language; and second, by assessing performance on a modern reference corpus to gauge general-purpose accuracy, using the UD French-Sequoia<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/UniversalDependencies/UD_French-Sequoia\" title=\"\">https://github.com/UniversalDependencies/UD_French-Sequoia</a></span></span></span> and UD Chinese-PUD<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/UniversalDependencies/UD_Chinese-PUD/tree/master\" title=\"\">https://github.com/UniversalDependencies/UD_Chinese-PUD/tree/master</a></span></span></span> treebanks, which are primarily trained on web-sourced text (e.g., Wikipedia, news articles), thereby highlighting the fine-tuned model&#8217;s gains on historical text while checking for its robustness on contemporary data.</p>\n\n",
                 "matched_terms": [
-                    "historical",
-                    "modern"
+                    "modern",
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Chinese proved especially challenging because all downstream tasks depend on accurate segmentation, yet spaCy&#8217;s Chinese pipelines use third-party tokenizers (e.g., pkuseg, jieba) tuned for modern simplified text that are less reliable on historical or traditional-character corpora. We finetuned our spaCy model on traditional characters but evaluated it on both traditional and simplified versions of the validation set. Since segmentation errors directly cap POS and NER performance, we also include normalized POS and NER scores, defined as</p>\n\n",
                 "matched_terms": [
-                    "historical",
                     "modern",
                     "model",
+                    "historical",
                     "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T4\" title=\"Table 4 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, fine-tuning yields consistent gains across both historical and contemporary Chinese data. On the traditional&#8208;character Shanghai corpus, the historic model boosts POS accuracy from 67.75% to 72.33% (normalized POS from 90.21% to 96.31%) and raises NER from 33.44% to 43.98% (normalized NER from 44.53% to 58.56%). On the simplified&#8208;character Shanghai corpus, POS climbs from 72.77% to 76.94% (normalized POS from 88.72% to 93.81%) and NER from 41.82% to 53.60% (normalized NER from 50.99% to 65.35%). Contrary to the French corpus which saw a slip in accuracy for the historical model when working with contemporary data, we find that the historical model outperforms the base model for our validation dataset (UD Chinese-PUD treebank), 77.63% POS versus 71.70% (normalized POS 86.32% vs. 79.73%).</p>\n\n",
                 "matched_terms": [
-                    "historical",
-                    "french",
-                    "pos",
-                    "historic",
                     "model",
-                    "dataset"
+                    "french",
+                    "dataset",
+                    "historic",
+                    "pos",
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The decline in performance that the French corpus saw on the UD French-Sequoia corpus can most likely be explained by several factors: first, the training data is derived from a literary corpus which is quite different from the mostly web/news data used in the Sequoia corpus; second, the coverage area is much larger in the historic model, and in that sense is more generalist than the off-the-shelf spaCy model which is focused on 21st century French. These two observations seem to be verified by a breakdown of performance of both models - historic and contemporary - by century as found in Figure  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.F1\" title=\"Figure 1 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where we see how the off-the-shelf model struggles with 16th-18th century French, improving gradually as we get closer to contemporary texts, while the historical model achieves impressive consistency over time.</p>\n\n",
                 "matched_terms": [
-                    "historical",
-                    "frenchsequoia",
+                    "model",
                     "french",
+                    "frenchsequoia",
                     "historic",
-                    "model"
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Having identified errors in our LLM-generated training annotations (see section 3.2), we sought to determine whether these imperfections would significantly impact the performance of models trained on this data. To assess this, we evaluated our French corpus given its higher error rate with our custom spaCy model against the standard off-the-shelf spaCy model using our manually validated labels as ground truth. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T5\" title=\"Table 5 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the results demonstrate that the custom historical French model is remarkably robust to the labeling errors in its training data, substantially outperforming the standard modern French model across all time periods, achieving 95.28% POS accuracy and 96.42% lemmatization accuracy compared to 92.69% and 89.28% respectively&#8212;improvements of 2.59 and 7.14 percentage points. The gains are particularly striking in earlier periods: for 16th-century texts, the custom model outperforms the standard model by 6.17 percentage points for POS tagging and 13.91 percentage points for lemmatization.</p>\n\n",
                 "matched_terms": [
                     "modern",
-                    "historical",
+                    "model",
                     "french",
                     "pos",
                     "results",
-                    "model"
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These results show, albeit with a relatively small sample size, that the error rate in our LLM-generated training annotations does not significantly degrade model performance. The custom model not only learns effectively from imperfect training data but achieves accuracy levels (95-96%) that closely approach the quality of the training annotations themselves (96-97%). We believe this robustness to labeling noise validates our approach and suggests that perfect training annotations are not necessary to produce high-quality models for low-resource historical languages.</p>\n\n",
                 "matched_terms": [
                     "historical",
-                    "results",
-                    "model"
+                    "model",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our results demonstrate that LLM&#8208;generated synthetic ground truth can effectively bootstrap annotation in lower&#8208;resource historical contexts. Compared to datasets manually annotated by human experts, data generated by LLMs may still be somewhat less accurate. However, the actual error rate proved to be relatively low and is unlikely to materially degrade downstream model performance. This is in part evidenced by the observed improvement to POS results for our historical model when testing the Chinese validation dataset. This suggests that LLMs can serve as a pragmatic source of training data when human&#8208;annotated corpora are scarce or expensive to produce.</p>\n\n",
                 "matched_terms": [
-                    "historical",
+                    "model",
+                    "dataset",
                     "pos",
                     "results",
-                    "model",
-                    "dataset"
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Moreover, our results further point to the value and potential of domain&#8208;specific models over a single, all&#8208;purpose pipelines. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gururangan2020don</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">10.1145/3458754</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">beltagy2019scibert</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">klein2025provocationshumanitiesgenerativeai</span>]</cite> Universal models trained on contemporary, web&#8208;sourced text struggle with archaic orthography, obsolete vocabulary, and period&#8208;specific syntax. By contrast, fine&#8208;tuning on even a modest amount of synthetic annotations yields noticeable improvements in POS tagging and NER. In the case of the French model, a clear avenue for future work would be to systematically create and evaluate century-specific models to quantify the potential gains compared the multi-century historic model we built. We believe that a &#8220;many&#8208;models&#8221; approach, in which separate pipelines are tailored to particular eras or genres rather than forcing one model to cover every variant of a language, will not only yield higher quality results, but will also demand fewer resources given the smaller amounts of training data needed.</p>\n\n",
                 "matched_terms": [
+                    "model",
                     "french",
-                    "pos",
-                    "results",
                     "historic",
-                    "model"
+                    "pos",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While this \"many-models\" approach might not have been possible a few years ago, our study highlights how LLMs make hyper&#8208;specific model development increasingly feasible at scale. With synthetic annotations, researchers are now able to iterate new pipelines for a growing number of historical period or subject domains. Although the optimal amount of synthetic data required will naturally vary based on the specific language, historical period, and NLP tasks (e.g. POS tagging versus NER), our experience suggests that even moderately sized, LLM-generated datasets can provide substantial benefits. Further research in this area could help establish clearer benchmarks for the volume of training data needed for such tasks. There remain certain bottlenecks in place, such as Chinese tokenization, but synthetic annotation might finally be the answer to developing domain-specific tokenizers for languages with notoriously difficult or fluid segmentation practices &#8211; an issue that our team will work on in the future. As LLMs continue to improve, we anticipate that synthetic ground truth will become an indispensable tool for tailoring NLP models to the rich linguistic diversity found in historical corpora.</p>\n\n",
                 "matched_terms": [
-                    "historical",
+                    "pos",
                     "model",
-                    "period",
-                    "pos"
+                    "historical",
+                    "period"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper presents a practical method for generating synthetic ground truth via LLMs to bootstrap NLP pipelines in historical contexts. Our experiments on French and Chinese corpora show that fine-tuning on LLM-annotated historical text yields noticeable improvements over off-the-shelf models, even if segmentation accuracy for Chinese remains a critical ceiling for downstream tasks. These findings advocate for a &#8220;many-models&#8221; strategy, in which separate, era- or genre-tailored pipelines outperform universal solutions. Although our approach depends on the availability of reasonably resource-rich LLMs, it opens new possibilities for computational analysis of lower-resource contexts that lack manual annotations.</p>\n\n",
                 "matched_terms": [
-                    "historical",
-                    "french"
+                    "french",
+                    "historical"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Although we performed randomized validation checks, which strongly suggest sound quality ground truth data, we acknowledge that our synthetic ground truth data likely still contains subtle or systematic errors. Moreover, our method depends on LLMs extensively trained on modern Chinese and French. While their historical variants remain underrepresented, languages that are not well represented in LLM training data will likely struggle to replicate the results we report.</p>\n\n",
                 "matched_terms": [
+                    "french",
                     "historical",
                     "modern",
-                    "results",
-                    "french"
+                    "results"
                 ]
             },
             {
@@ -674,9 +674,9 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">You are a highly precise historical Chinese tokenizer specialized in texts from the 1900&#8211;1950 period. Your task is to segment a given sentence according to strict Chinese Treebank (CTB) style guidelines adapted for this historical context, assign accurate Universal Dependencies (UD) POS tags and CTB tags, and perform Named Entity Recognition (NER) using the IOB scheme. **It is crucial to diligently apply NER tagging for all tokens that fit the specified entity types.**</span>\n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "historical",
-                    "period",
-                    "pos"
+                    "period"
                 ]
             }
         ]
@@ -687,21 +687,21 @@
         "body": "Dataset\nModel\nToken F1\nPOS\nPOS_Norm\nNER\nNER_Norm\n\n\n\n\nShanghai_Trad\nzh_core_web_lg\n75.10%\n67.75%\n90.21%\n33.44%\n44.53%\n\n\nShanghai_Trad\nhistoric\n75.10%\n72.33%\n96.31%\n43.98%\n58.56%\n\n\nShanghai_Simp\nzh_core_web_lg\n82.02%\n72.77%\n88.72%\n41.82%\n50.99%\n\n\nShanghai_Simp\nhistoric\n82.02%\n76.94%\n93.81%\n53.60%\n65.35%\n\n\nUD Chinese-PUD\nzh_core_web_lg\n89.93%\n71.70%\n79.73%\n—\n—\n\n\nUD Chinese-PUD\nhistoric\n89.93%\n77.63%\n86.32%\n—\n—",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Token F1</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">POS</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">POS_Norm</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">NER</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">NER_Norm</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">Shanghai_Trad</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">zh_core_web_lg</th>\n<td class=\"ltx_td ltx_align_right ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">75.10%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">67.75%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">90.21%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">33.44%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">44.53%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">Shanghai_Trad</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">historic</th>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">75.10%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">72.33%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">96.31%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">43.98%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">58.56%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">Shanghai_Simp</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">zh_core_web_lg</th>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">82.02%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">72.77%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">88.72%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">41.82%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">50.99%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">Shanghai_Simp</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">historic</th>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">82.02%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">76.94%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">93.81%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">53.60%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">65.35%</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">UD Chinese-PUD</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:1pt;padding-bottom:1pt;\">zh_core_web_lg</th>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">89.93%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">71.70%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">79.73%</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8212;</td>\n<td class=\"ltx_td ltx_align_right\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8212;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">UD Chinese-PUD</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">historic</th>\n<td class=\"ltx_td ltx_align_right ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">89.93%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">77.63%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">86.32%</td>\n<td class=\"ltx_td ltx_align_right ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8212;</td>\n<td class=\"ltx_td ltx_align_right ltx_border_bb ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">&#8212;</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "historic",
-            "token",
-            "evaluation",
             "posnorm",
             "shanghaitrad",
+            "model",
+            "shanghaisimp",
+            "evaluation",
+            "dataset",
+            "chinese",
+            "nernorm",
             "chinesepud",
-            "zhcoreweblg",
+            "token",
+            "historic",
             "pos",
             "results",
-            "nernorm",
-            "chinese",
-            "ner",
-            "model",
-            "dataset",
-            "shanghaisimp"
+            "zhcoreweblg",
+            "ner"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T4\" title=\"Table 4 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, fine-tuning yields consistent gains across both historical and contemporary Chinese data. On the traditional&#8208;character Shanghai corpus, the historic model boosts POS accuracy from 67.75% to 72.33% (normalized POS from 90.21% to 96.31%) and raises NER from 33.44% to 43.98% (normalized NER from 44.53% to 58.56%). On the simplified&#8208;character Shanghai corpus, POS climbs from 72.77% to 76.94% (normalized POS from 88.72% to 93.81%) and NER from 41.82% to 53.60% (normalized NER from 50.99% to 65.35%). Contrary to the French corpus which saw a slip in accuracy for the historical model when working with contemporary data, we find that the historical model outperforms the base model for our validation dataset (UD Chinese-PUD treebank), 77.63% POS versus 71.70% (normalized POS 86.32% vs. 79.73%).</p>\n\n"
@@ -710,25 +710,25 @@
             {
                 "html": "<p class=\"ltx_p\">Historical and low-resource NLP remains challenging due to limited annotated data and domain mismatches with modern, web-sourced corpora. This paper outlines our work in using large language models (LLMs) to create ground-truth annotations for historical French (16th&#8211;20th centuries) and Chinese (1900&#8211;1950) texts. By leveraging LLM-generated ground truth on a subset of our corpus, we were able to fine-tune spaCy to achieve significant gains on period-specific tests for part-of-speech (POS) annotations, lemmatization, and named entity recognition (NER). Our results underscore the importance of domain-specific models and demonstrate that even relatively limited amounts of synthetic data can improve NLP tools for under-resourced corpora in computational humanities research.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "results",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper outlines the work of our lab in using large language models (LLMs) to generate ground-truth datasets to fine-tune Natural Language Processing (NLP) models for historical analysis. Our recent work has focused primarily on analyzing historical French and Chinese texts where we have confronted countless problems with existing NLP tools in working with archaic spellings, obsolete vocabulary, fluid grammar, fragmentary digitization, and for Chinese, traditional characters and rare variants. These historical datasets lack standard training and validation sets, the creation of which are too costly for our digital humanities lab. While our use of historical French and Chinese texts in this paper is the result of our broader research agendas, we nevertheless suggest that bringing these two corpora together in this study allow us to address different issues of NLP for historical research, serving as potential test cases for using LLM-generated annotations to train specialized models in diverse and multilingual settings. The French corpus is comprised of literary texts from the 1500s-1900s where shifting spelling conventions and word forms routinely trip up off-the-shelf taggers and lemmatizers. In Chinese, we focus on texts from 1900 to 1950, a shorter but pivotal time frame when written language was shifting from classical to contemporary writing conventions, which makes part-of-speech (POS) and named entity recognition (NER) tagging especially difficult. These two examples therefore represent how leveraging LLMs for ground truth creation can address the critical need to generate suitable training data for specialized historical contexts where it is otherwise absent.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This research builds on existing scholarship addressing the longstanding challenge of applying NLP tools in low-resource and historical language settings. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">piotrowski2012natural</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guldi2023dangerous</span>]</cite> Off-the-shelf models, such as those in NLTK or spaCy, are typically trained on contemporary, web-sourced texts. Consequently, their precision lags significantly when applied to historical materials, which often feature different vocabularies, syntax, and genre conventions. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kapan2022fine</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">humbel2021named</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">batjargal2014approach</span>]</cite> Traditionally, researchers have addressed this problem through methods like iterative self-training. In this approach, a pre-trained NER system tags unlabeled historical text, and its high-confidence spans are treated as \"silver\" data to retrain the model, gradually improving its quality with each iteration. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2009domain</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">novotny2023people</span>]</cite></p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "model"
+                    "model",
+                    "ner"
                 ]
             },
             {
@@ -748,9 +748,9 @@
             {
                 "html": "<p class=\"ltx_p\">Once we selected our corpora, we experimented with different LLMs for generating text annotations in the form of token-level JSON annotations. Similar to previous studies, we found that LLMs produce inconsistent sequence tagging, <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qin2023chatgpt</span>]</cite> leading us to instead focus on POS for both French and Chinese, lemmatization for French only, and NER for Chinese only.</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
@@ -763,8 +763,8 @@
             {
                 "html": "<p class=\"ltx_p\">For the French corpus, we selected OpenAI&#8217;s GPT-4o model. To ensure deterministic outputs suitable for our annotation task, we selected a temperature of 0 for our prompt. The model was tasked with performing lemmatization and part-of-speech (POS) tagging, adhering to Universal Dependencies (UD) guidelines, as well as assigning morphological tags based on the French Treebank tagset. The detailed API prompt guiding the French annotation process is available in Appendix A at the end of the document. Total computing time for the 55,000 passages was around 36 hours.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "pos"
+                    "pos",
+                    "model"
                 ]
             },
             {
@@ -777,10 +777,10 @@
             {
                 "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "evaluation",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
@@ -793,82 +793,82 @@
             {
                 "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
                 "matched_terms": [
+                    "model",
                     "evaluation",
-                    "zhcoreweblg",
-                    "pos",
                     "chinese",
+                    "pos",
                     "ner",
-                    "model"
+                    "zhcoreweblg"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Chinese proved especially challenging because all downstream tasks depend on accurate segmentation, yet spaCy&#8217;s Chinese pipelines use third-party tokenizers (e.g., pkuseg, jieba) tuned for modern simplified text that are less reliable on historical or traditional-character corpora. We finetuned our spaCy model on traditional characters but evaluated it on both traditional and simplified versions of the validation set. Since segmentation errors directly cap POS and NER performance, we also include normalized POS and NER scores, defined as</p>\n\n",
                 "matched_terms": [
-                    "ner",
+                    "pos",
                     "model",
-                    "chinese",
-                    "pos"
+                    "ner",
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As seen in Table  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T3\" title=\"Table 3 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> summarizing the results for the historical ARTFL&#8211;Frantext corpus, the fine-tuned historic model outperformed the off-the-shelf transformer model provided by spaCy, achieving 97.20% POS accuracy and 96.04% lemmatization accuracy versus 90.97% and 87.55%, respectively when working with historical datasets. Conversely, our contemporary validation dataset (UD French-Sequoia) shows that the off-the-shelf model has an edge on the historical model when working with contemporary data as expected: 98.29% POS and 94.32% lemma accuracy compared to 94.10% and 93.82%. Moreover, a comparison of the models shows a major performance gap for the off-the-shelf model when shifting from contemporary to historical materials: POS and lemmatization accuracy both drop by around 7%.</p>\n\n",
                 "matched_terms": [
-                    "pos",
-                    "results",
-                    "historic",
                     "model",
-                    "dataset"
+                    "dataset",
+                    "historic",
+                    "pos",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The decline in performance that the French corpus saw on the UD French-Sequoia corpus can most likely be explained by several factors: first, the training data is derived from a literary corpus which is quite different from the mostly web/news data used in the Sequoia corpus; second, the coverage area is much larger in the historic model, and in that sense is more generalist than the off-the-shelf spaCy model which is focused on 21st century French. These two observations seem to be verified by a breakdown of performance of both models - historic and contemporary - by century as found in Figure  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.F1\" title=\"Figure 1 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where we see how the off-the-shelf model struggles with 16th-18th century French, improving gradually as we get closer to contemporary texts, while the historical model achieves impressive consistency over time.</p>\n\n",
                 "matched_terms": [
-                    "historic",
-                    "model"
+                    "model",
+                    "historic"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Having identified errors in our LLM-generated training annotations (see section 3.2), we sought to determine whether these imperfections would significantly impact the performance of models trained on this data. To assess this, we evaluated our French corpus given its higher error rate with our custom spaCy model against the standard off-the-shelf spaCy model using our manually validated labels as ground truth. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T5\" title=\"Table 5 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the results demonstrate that the custom historical French model is remarkably robust to the labeling errors in its training data, substantially outperforming the standard modern French model across all time periods, achieving 95.28% POS accuracy and 96.42% lemmatization accuracy compared to 92.69% and 89.28% respectively&#8212;improvements of 2.59 and 7.14 percentage points. The gains are particularly striking in earlier periods: for 16th-century texts, the custom model outperforms the standard model by 6.17 percentage points for POS tagging and 13.91 percentage points for lemmatization.</p>\n\n",
                 "matched_terms": [
-                    "results",
+                    "pos",
                     "model",
-                    "pos"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These results show, albeit with a relatively small sample size, that the error rate in our LLM-generated training annotations does not significantly degrade model performance. The custom model not only learns effectively from imperfect training data but achieves accuracy levels (95-96%) that closely approach the quality of the training annotations themselves (96-97%). We believe this robustness to labeling noise validates our approach and suggests that perfect training annotations are not necessary to produce high-quality models for low-resource historical languages.</p>\n\n",
                 "matched_terms": [
-                    "results",
-                    "model"
+                    "model",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our results demonstrate that LLM&#8208;generated synthetic ground truth can effectively bootstrap annotation in lower&#8208;resource historical contexts. Compared to datasets manually annotated by human experts, data generated by LLMs may still be somewhat less accurate. However, the actual error rate proved to be relatively low and is unlikely to materially degrade downstream model performance. This is in part evidenced by the observed improvement to POS results for our historical model when testing the Chinese validation dataset. This suggests that LLMs can serve as a pragmatic source of training data when human&#8208;annotated corpora are scarce or expensive to produce.</p>\n\n",
                 "matched_terms": [
-                    "pos",
-                    "results",
-                    "chinese",
                     "model",
-                    "dataset"
+                    "dataset",
+                    "chinese",
+                    "pos",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Moreover, our results further point to the value and potential of domain&#8208;specific models over a single, all&#8208;purpose pipelines. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gururangan2020don</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">10.1145/3458754</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">beltagy2019scibert</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">klein2025provocationshumanitiesgenerativeai</span>]</cite> Universal models trained on contemporary, web&#8208;sourced text struggle with archaic orthography, obsolete vocabulary, and period&#8208;specific syntax. By contrast, fine&#8208;tuning on even a modest amount of synthetic annotations yields noticeable improvements in POS tagging and NER. In the case of the French model, a clear avenue for future work would be to systematically create and evaluate century-specific models to quantify the potential gains compared the multi-century historic model we built. We believe that a &#8220;many&#8208;models&#8221; approach, in which separate pipelines are tailored to particular eras or genres rather than forcing one model to cover every variant of a language, will not only yield higher quality results, but will also demand fewer resources given the smaller amounts of training data needed.</p>\n\n",
                 "matched_terms": [
+                    "model",
                     "historic",
                     "pos",
-                    "results",
                     "ner",
-                    "model"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While this \"many-models\" approach might not have been possible a few years ago, our study highlights how LLMs make hyper&#8208;specific model development increasingly feasible at scale. With synthetic annotations, researchers are now able to iterate new pipelines for a growing number of historical period or subject domains. Although the optimal amount of synthetic data required will naturally vary based on the specific language, historical period, and NLP tasks (e.g. POS tagging versus NER), our experience suggests that even moderately sized, LLM-generated datasets can provide substantial benefits. Further research in this area could help establish clearer benchmarks for the volume of training data needed for such tasks. There remain certain bottlenecks in place, such as Chinese tokenization, but synthetic annotation might finally be the answer to developing domain-specific tokenizers for languages with notoriously difficult or fluid segmentation practices &#8211; an issue that our team will work on in the future. As LLMs continue to improve, we anticipate that synthetic ground truth will become an indispensable tool for tailoring NLP models to the rich linguistic diversity found in historical corpora.</p>\n\n",
                 "matched_terms": [
-                    "ner",
+                    "pos",
                     "model",
-                    "chinese",
-                    "pos"
+                    "ner",
+                    "chinese"
                 ]
             },
             {
@@ -881,23 +881,23 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">You are a highly precise historical Chinese tokenizer specialized in texts from the 1900&#8211;1950 period. Your task is to segment a given sentence according to strict Chinese Treebank (CTB) style guidelines adapted for this historical context, assign accurate Universal Dependencies (UD) POS tags and CTB tags, and perform Named Entity Recognition (NER) using the IOB scheme. **It is crucial to diligently apply NER tagging for all tokens that fit the specified entity types.**</span>\n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
+                    "pos",
                     "ner",
-                    "chinese",
-                    "pos"
+                    "chinese"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">* &#8216;\"ent_iob_\"&#8216;: The IOB tag for NER. Must be one of &#8216;\"B\"&#8216; (beginning), &#8216;\"I\"&#8216; (inside), or &#8216;\"O\"&#8216; (outside). Use &#8216;\"B\"&#8216; for the first token of any entity (including single-token entities) and &#8216;\"I\"&#8216; for subsequent tokens within the same multi-token entity. Use &#8216;\"O\"&#8216; for tokens not part of any named entity.</span>\n</p>\n\n",
                 "matched_terms": [
-                    "ner",
-                    "token"
+                    "token",
+                    "ner"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">* **Religious/National/Political Affiliations (NORP):** Terms referring to specific nationalities (e.g., \"&#32654;&#22283;&#20154;\" - American), religious affiliations (e.g., \"&#22238;&#25945;\" - Islam/Muslim), or political groups (e.g., \"&#22283;&#27665;&#40680;\" - Kuomintang) should be identified as &#8216;NORP&#8216; entities. These terms should generally be tagged as &#8216;pos: PROPN&#8216;, &#8216;tag: NR&#8216;. Specifically, for the token \"&#22238;&#25945;\" when it refers to the religion or its adherents, the expected output is: &#8216;\"text\": \"&#22238;&#25945;\", \"pos\": \"PROPN\", \"tag\": \"NR\", \"ent_iob_\": \"B\", \"ent_type_\": \"NORP\"&#8216;. This applies even when it modifies another noun (e.g., \"&#22238;&#25945;&#23559;&#36557;\").</span>\n</p>\n\n",
                 "matched_terms": [
-                    "token",
-                    "pos"
+                    "pos",
+                    "token"
                 ]
             }
         ]
@@ -908,22 +908,22 @@
         "body": "Period\n\n\nModel\n\n\n\n\nPOS Acc (%)\n\n\nLemma Acc (%)\n\n\n\n\n1500-1600\n\n\nhistoric\n\n\n\n\n95.54\n\n\n93.44\n\n\n\n\n\nfr_dep_news_trf\n\n\n\n\n89.37\n\n\n79.53\n\n\n1600-1700\n\n\nhistoric\n\n\n\n\n96.05\n\n\n96.44\n\n\n\n\n\nfr_dep_news_trf\n\n\n\n\n93.02\n\n\n84.19\n\n\n1700-1800\n\n\nhistoric\n\n\n\n\n95.72\n\n\n97.78\n\n\n\n\n\nfr_dep_news_trf\n\n\n\n\n93.19\n\n\n92.87\n\n\n1800-1900\n\n\nhistoric\n\n\n\n\n95.06\n\n\n98.03\n\n\n\n\n\nfr_dep_news_trf\n\n\n\n\n95.35\n\n\n95.77\n\n\n1900-2000\n\n\nhistoric\n\n\n\n\n93.90\n\n\n96.80\n\n\n\n\n\nfr_dep_news_trf\n\n\n\n\n92.84\n\n\n96.04\n\n\nAll Centuries\n\n\nhistoric\n\n\n\n\n95.28\n\n\n96.42\n\n\nAll Centuries\n\n\nfr_dep_news_trf\n\n\n\n\n92.69\n\n\n89.28",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Period</span></th>\n<th class=\"ltx_td ltx_align_justify ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model</span></span>\n</span>\n</th>\n<th class=\"ltx_td ltx_align_justify ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">POS Acc (%)</span></span>\n</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">Lemma Acc (%)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">1500-1600</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">95.54</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-top:1pt;padding-bottom:1pt;\">93.44</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\" style=\"padding-top:1pt;padding-bottom:1pt;\"/>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">89.37</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">79.53</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">1600-1700</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">96.05</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">96.44</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\" style=\"padding-top:1pt;padding-bottom:1pt;\"/>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">93.02</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">84.19</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">1700-1800</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">95.72</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">97.78</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\" style=\"padding-top:1pt;padding-bottom:1pt;\"/>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">93.19</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">92.87</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">1800-1900</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">95.06</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">98.03</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\" style=\"padding-top:1pt;padding-bottom:1pt;\"/>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">95.35</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">95.77</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">1900-2000</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">93.90</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">96.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\" style=\"padding-top:1pt;padding-bottom:1pt;\"/>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">92.84</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:1pt;padding-bottom:1pt;\">96.04</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">All Centuries</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">historic</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">95.28</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">96.42</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">All Centuries</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\">fr_dep_news_trf</span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">92.69</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding-top:1pt;padding-bottom:1pt;\"><span class=\"ltx_text ltx_font_bold\">89.28</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "modern",
-            "frdepnewstrf",
-            "all",
-            "models",
-            "comparison",
-            "french",
-            "data",
-            "pos",
-            "centuries",
-            "validated",
             "acc",
-            "lemma",
-            "historic",
-            "model",
+            "modern",
             "period",
-            "test"
+            "test",
+            "model",
+            "french",
+            "models",
+            "lemma",
+            "all",
+            "centuries",
+            "frdepnewstrf",
+            "validated",
+            "historic",
+            "data",
+            "comparison",
+            "pos"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Having identified errors in our LLM-generated training annotations (see section 3.2), we sought to determine whether these imperfections would significantly impact the performance of models trained on this data. To assess this, we evaluated our French corpus given its higher error rate with our custom spaCy model against the standard off-the-shelf spaCy model using our manually validated labels as ground truth. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T5\" title=\"Table 5 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, the results demonstrate that the custom historical French model is remarkably robust to the labeling errors in its training data, substantially outperforming the standard modern French model across all time periods, achieving 95.28% POS accuracy and 96.42% lemmatization accuracy compared to 92.69% and 89.28% respectively&#8212;improvements of 2.59 and 7.14 percentage points. The gains are particularly striking in earlier periods: for 16th-century texts, the custom model outperforms the standard model by 6.17 percentage points for POS tagging and 13.91 percentage points for lemmatization.</p>\n\n"
@@ -933,21 +933,21 @@
                 "html": "<p class=\"ltx_p\">Historical and low-resource NLP remains challenging due to limited annotated data and domain mismatches with modern, web-sourced corpora. This paper outlines our work in using large language models (LLMs) to create ground-truth annotations for historical French (16th&#8211;20th centuries) and Chinese (1900&#8211;1950) texts. By leveraging LLM-generated ground truth on a subset of our corpus, we were able to fine-tune spaCy to achieve significant gains on period-specific tests for part-of-speech (POS) annotations, lemmatization, and named entity recognition (NER). Our results underscore the importance of domain-specific models and demonstrate that even relatively limited amounts of synthetic data can improve NLP tools for under-resourced corpora in computational humanities research.</p>\n\n",
                 "matched_terms": [
                     "modern",
-                    "models",
-                    "data",
-                    "pos",
                     "french",
-                    "centuries"
+                    "models",
+                    "centuries",
+                    "data",
+                    "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper outlines the work of our lab in using large language models (LLMs) to generate ground-truth datasets to fine-tune Natural Language Processing (NLP) models for historical analysis. Our recent work has focused primarily on analyzing historical French and Chinese texts where we have confronted countless problems with existing NLP tools in working with archaic spellings, obsolete vocabulary, fluid grammar, fragmentary digitization, and for Chinese, traditional characters and rare variants. These historical datasets lack standard training and validation sets, the creation of which are too costly for our digital humanities lab. While our use of historical French and Chinese texts in this paper is the result of our broader research agendas, we nevertheless suggest that bringing these two corpora together in this study allow us to address different issues of NLP for historical research, serving as potential test cases for using LLM-generated annotations to train specialized models in diverse and multilingual settings. The French corpus is comprised of literary texts from the 1500s-1900s where shifting spelling conventions and word forms routinely trip up off-the-shelf taggers and lemmatizers. In Chinese, we focus on texts from 1900 to 1950, a shorter but pivotal time frame when written language was shifting from classical to contemporary writing conventions, which makes part-of-speech (POS) and named entity recognition (NER) tagging especially difficult. These two examples therefore represent how leveraging LLMs for ground truth creation can address the critical need to generate suitable training data for specialized historical contexts where it is otherwise absent.</p>\n\n",
                 "matched_terms": [
+                    "test",
+                    "french",
                     "models",
                     "data",
-                    "french",
-                    "pos",
-                    "test"
+                    "pos"
                 ]
             },
             {
@@ -961,8 +961,8 @@
             {
                 "html": "<p class=\"ltx_p\">Since the goal of this project was to produce models that could accurately process our corpora, we chose to work with real historical texts rather than generating synthetic \"historical\" samples given that LLMs struggle to represent the past without inserting anachronisms. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">underwood2025languagemodelsrepresentpast</span>]</cite> Once we had extracted our random samples of historical passages (typically at the sentence level), we then used LLMs to produce our ground truth dataset for finetuning. The process for both the French and Chinese corpus included the following steps:</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "french"
+                    "french",
+                    "models"
                 ]
             },
             {
@@ -982,43 +982,43 @@
             {
                 "html": "<p class=\"ltx_p\">Because gold-standard testing and validation datasets do not yet exist for these time periods, our approach to selecting an ideal LLM for annotation was less systematic and more exploratory, relying on iterative experimentation and qualitative assessments of output quality. This included drawing on our own expertise as specialists in working with these historical French and Chinese texts. We also found that some models, especially commercial LLMs, were better equipped to handle tasks such as Chinese tokenization. We recognize that this counters emerging best practices in the field that favors open-source models to ensure reproducibility and accessibility. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alizadeh2025open</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ziems2024can</span>]</cite> Our aim, however, was to prioritize accuracy and feasibility in a domain where reliable benchmarks are still lacking. We see this as an initial step toward developing workflows and evaluation criteria that can eventually be transferred to more open and transparent frameworks as the ecosystem of historical-language resources matures.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "french"
+                    "french",
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the French corpus, we selected OpenAI&#8217;s GPT-4o model. To ensure deterministic outputs suitable for our annotation task, we selected a temperature of 0 for our prompt. The model was tasked with performing lemmatization and part-of-speech (POS) tagging, adhering to Universal Dependencies (UD) guidelines, as well as assigning morphological tags based on the French Treebank tagset. The detailed API prompt guiding the French annotation process is available in Appendix A at the end of the document. Total computing time for the 55,000 passages was around 36 hours.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "french",
-                    "pos"
+                    "pos",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Given the generated nature of our annotation, we conducted a formal evaluation of the labeling produced by the LLMs to assess overall accuracy and identify error patterns in the sample we took from the test set. We randomly selected 100 annotated sentences from the test set (which enabled subsequent evaluation of our custom spaCy models&#8217; true error rate), manually verified the annotations, and analyzed the errors. For the French set, we selected 20 sentences from each represented century (16th through 20th centuries), for a total sample of 3,517 tokens. As detailed in Table 1, the overall accuracy was quite high: out of 3,517 annotated tokens, we identified 195 labeling errors, resulting in an accuracy of 96.47% for POS tagging and 97.98% for lemmatization in the French set. The breakdown by century reveals minimal variation, with POS accuracy consistently running approximately 1% lower than lemmatization accuracy. In our Chinese test, we achieved an even lower overall error rate, with only 31 labeling errors across 1807 tokens. Among these, 19 were POS tagging errors and 12 were NER tagging errors, resulting in a POS accuracy of 98.95% and an NER accuracy of 94.26% (see Table 2).</p>\n\n",
                 "matched_terms": [
-                    "centuries",
-                    "test",
                     "french",
-                    "pos"
+                    "pos",
+                    "centuries",
+                    "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">With these synthetic annotations, we converted all labels to the Universal Dependencies (UD) schema, correcting any remaining inconsistencies in tag conventions. To bolster representation of infrequent categories&#8212;such as interjections (INTJ) and imperative verb forms&#8212;we applied data augmentation by doubling existing examples. The resulting corpus was then shuffled and split into training (80%), development (10%), and test (10%) partitions, stratified by century for the French data and by decade for the Chinese data to preserve temporal balance. Models were trained on a Nvidia RTX 6000 ADA.</p>\n\n",
                 "matched_terms": [
-                    "all",
-                    "models",
-                    "data",
+                    "test",
                     "french",
-                    "test"
+                    "models",
+                    "all",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We next fine-tuned our models using spaCy&#8217;s (version 3.8.4) sequence-labeling framework, with early stopping determined by performance on the development set. For French, we used CamemBERT aV2 (111 million parameters) as the foundational language model for fine-tuning the components of our spaCy pipeline. This is a model which builds upon the DeBERTaV3 architecture and offers significant improvements in performance and tokenization for French compared to the original CamemBERT. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">antoun2024camembert</span>]</cite> For Chinese, we used zh_core_web_lg (500k unique 300-dimensional word vectors) given its speed, size, and robust POS and NER accuracy. Final evaluation comprised POS-tagging accuracy (for French and Chinese), lemmatization (for French) and NER (for Chinese) against a held-out, manually curated subset, thereby quantifying the effectiveness of LLM-derived synthetic ground truth in bootstrapping robust NLP tools for low-resource historical texts.</p>\n\n",
                 "matched_terms": [
+                    "french",
                     "models",
                     "model",
-                    "french",
                     "pos"
                 ]
             },
@@ -1026,51 +1026,51 @@
                 "html": "<p class=\"ltx_p\">We validated both the original and fine-tuned models using two complementary tests: first, by evaluating each on our withheld historical test set to measure improvements in processing period-specific language; and second, by assessing performance on a modern reference corpus to gauge general-purpose accuracy, using the UD French-Sequoia<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/UniversalDependencies/UD_French-Sequoia\" title=\"\">https://github.com/UniversalDependencies/UD_French-Sequoia</a></span></span></span> and UD Chinese-PUD<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/UniversalDependencies/UD_Chinese-PUD/tree/master\" title=\"\">https://github.com/UniversalDependencies/UD_Chinese-PUD/tree/master</a></span></span></span> treebanks, which are primarily trained on web-sourced text (e.g., Wikipedia, news articles), thereby highlighting the fine-tuned model&#8217;s gains on historical text while checking for its robustness on contemporary data.</p>\n\n",
                 "matched_terms": [
                     "modern",
+                    "test",
                     "models",
-                    "data",
                     "validated",
-                    "test"
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Chinese proved especially challenging because all downstream tasks depend on accurate segmentation, yet spaCy&#8217;s Chinese pipelines use third-party tokenizers (e.g., pkuseg, jieba) tuned for modern simplified text that are less reliable on historical or traditional-character corpora. We finetuned our spaCy model on traditional characters but evaluated it on both traditional and simplified versions of the validation set. Since segmentation errors directly cap POS and NER performance, we also include normalized POS and NER scores, defined as</p>\n\n",
                 "matched_terms": [
-                    "modern",
                     "pos",
+                    "all",
                     "model",
-                    "all"
+                    "modern"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As seen in Table  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T3\" title=\"Table 3 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> summarizing the results for the historical ARTFL&#8211;Frantext corpus, the fine-tuned historic model outperformed the off-the-shelf transformer model provided by spaCy, achieving 97.20% POS accuracy and 96.04% lemmatization accuracy versus 90.97% and 87.55%, respectively when working with historical datasets. Conversely, our contemporary validation dataset (UD French-Sequoia) shows that the off-the-shelf model has an edge on the historical model when working with contemporary data as expected: 98.29% POS and 94.32% lemma accuracy compared to 94.10% and 93.82%. Moreover, a comparison of the models shows a major performance gap for the off-the-shelf model when shifting from contemporary to historical materials: POS and lemmatization accuracy both drop by around 7%.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "model",
-                    "comparison",
-                    "data",
-                    "pos",
+                    "lemma",
+                    "models",
                     "historic",
-                    "lemma"
+                    "data",
+                    "comparison",
+                    "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.T4\" title=\"Table 4 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, fine-tuning yields consistent gains across both historical and contemporary Chinese data. On the traditional&#8208;character Shanghai corpus, the historic model boosts POS accuracy from 67.75% to 72.33% (normalized POS from 90.21% to 96.31%) and raises NER from 33.44% to 43.98% (normalized NER from 44.53% to 58.56%). On the simplified&#8208;character Shanghai corpus, POS climbs from 72.77% to 76.94% (normalized POS from 88.72% to 93.81%) and NER from 41.82% to 53.60% (normalized NER from 50.99% to 65.35%). Contrary to the French corpus which saw a slip in accuracy for the historical model when working with contemporary data, we find that the historical model outperforms the base model for our validation dataset (UD Chinese-PUD treebank), 77.63% POS versus 71.70% (normalized POS 86.32% vs. 79.73%).</p>\n\n",
                 "matched_terms": [
-                    "data",
+                    "model",
                     "french",
-                    "pos",
                     "historic",
-                    "model"
+                    "data",
+                    "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The decline in performance that the French corpus saw on the UD French-Sequoia corpus can most likely be explained by several factors: first, the training data is derived from a literary corpus which is quite different from the mostly web/news data used in the Sequoia corpus; second, the coverage area is much larger in the historic model, and in that sense is more generalist than the off-the-shelf spaCy model which is focused on 21st century French. These two observations seem to be verified by a breakdown of performance of both models - historic and contemporary - by century as found in Figure  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.14688v1#S4.F1\" title=\"Figure 1 &#8227; 4 Results &#8227; Ground Truth Generation for Multilingual Historical NLP using LLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, where we see how the off-the-shelf model struggles with 16th-18th century French, improving gradually as we get closer to contemporary texts, while the historical model achieves impressive consistency over time.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "data",
+                    "model",
                     "french",
+                    "models",
                     "historic",
-                    "model"
+                    "data"
                 ]
             },
             {
@@ -1084,45 +1084,45 @@
             {
                 "html": "<p class=\"ltx_p\">Our results demonstrate that LLM&#8208;generated synthetic ground truth can effectively bootstrap annotation in lower&#8208;resource historical contexts. Compared to datasets manually annotated by human experts, data generated by LLMs may still be somewhat less accurate. However, the actual error rate proved to be relatively low and is unlikely to materially degrade downstream model performance. This is in part evidenced by the observed improvement to POS results for our historical model when testing the Chinese validation dataset. This suggests that LLMs can serve as a pragmatic source of training data when human&#8208;annotated corpora are scarce or expensive to produce.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "data",
+                    "model",
                     "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Moreover, our results further point to the value and potential of domain&#8208;specific models over a single, all&#8208;purpose pipelines. <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gururangan2020don</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">10.1145/3458754</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">beltagy2019scibert</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">klein2025provocationshumanitiesgenerativeai</span>]</cite> Universal models trained on contemporary, web&#8208;sourced text struggle with archaic orthography, obsolete vocabulary, and period&#8208;specific syntax. By contrast, fine&#8208;tuning on even a modest amount of synthetic annotations yields noticeable improvements in POS tagging and NER. In the case of the French model, a clear avenue for future work would be to systematically create and evaluate century-specific models to quantify the potential gains compared the multi-century historic model we built. We believe that a &#8220;many&#8208;models&#8221; approach, in which separate pipelines are tailored to particular eras or genres rather than forcing one model to cover every variant of a language, will not only yield higher quality results, but will also demand fewer resources given the smaller amounts of training data needed.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "data",
+                    "model",
                     "french",
-                    "pos",
+                    "models",
                     "historic",
-                    "model"
+                    "data",
+                    "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While this \"many-models\" approach might not have been possible a few years ago, our study highlights how LLMs make hyper&#8208;specific model development increasingly feasible at scale. With synthetic annotations, researchers are now able to iterate new pipelines for a growing number of historical period or subject domains. Although the optimal amount of synthetic data required will naturally vary based on the specific language, historical period, and NLP tasks (e.g. POS tagging versus NER), our experience suggests that even moderately sized, LLM-generated datasets can provide substantial benefits. Further research in this area could help establish clearer benchmarks for the volume of training data needed for such tasks. There remain certain bottlenecks in place, such as Chinese tokenization, but synthetic annotation might finally be the answer to developing domain-specific tokenizers for languages with notoriously difficult or fluid segmentation practices &#8211; an issue that our team will work on in the future. As LLMs continue to improve, we anticipate that synthetic ground truth will become an indispensable tool for tailoring NLP models to the rich linguistic diversity found in historical corpora.</p>\n\n",
                 "matched_terms": [
+                    "model",
                     "models",
                     "data",
-                    "pos",
-                    "model",
-                    "period"
+                    "period",
+                    "pos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper presents a practical method for generating synthetic ground truth via LLMs to bootstrap NLP pipelines in historical contexts. Our experiments on French and Chinese corpora show that fine-tuning on LLM-annotated historical text yields noticeable improvements over off-the-shelf models, even if segmentation accuracy for Chinese remains a critical ceiling for downstream tasks. These findings advocate for a &#8220;many-models&#8221; strategy, in which separate, era- or genre-tailored pipelines outperform universal solutions. Although our approach depends on the availability of reasonably resource-rich LLMs, it opens new possibilities for computational analysis of lower-resource contexts that lack manual annotations.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "french"
+                    "french",
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Although we performed randomized validation checks, which strongly suggest sound quality ground truth data, we acknowledge that our synthetic ground truth data likely still contains subtle or systematic errors. Moreover, our method depends on LLMs extensively trained on modern Chinese and French. While their historical variants remain underrepresented, languages that are not well represented in LLM training data will likely struggle to replicate the results we report.</p>\n\n",
                 "matched_terms": [
-                    "modern",
+                    "french",
                     "data",
-                    "french"
+                    "modern"
                 ]
             },
             {
@@ -1143,8 +1143,8 @@
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:70%;\">You are a highly precise historical Chinese tokenizer specialized in texts from the 1900&#8211;1950 period. Your task is to segment a given sentence according to strict Chinese Treebank (CTB) style guidelines adapted for this historical context, assign accurate Universal Dependencies (UD) POS tags and CTB tags, and perform Named Entity Recognition (NER) using the IOB scheme. **It is crucial to diligently apply NER tagging for all tokens that fit the specified entity types.**</span>\n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
                     "pos",
-                    "period",
-                    "all"
+                    "all",
+                    "period"
                 ]
             }
         ]

@@ -6,28 +6,28 @@
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\">\n<span class=\"ltx_text ltx_font_bold\">Property</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Value</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Spoken findings sections</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center ltx_border_t\">50,188</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Total duration</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">1,197&#8201;h</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Avg. length</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">86&#8201;s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Language</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">English</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Voices</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">8 (4F / 4M)</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">TTS engine</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">Kokoro</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Sampling rate</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center\">24&#8201;kHz</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Augmentations</th>\n<td class=\"ltx_td ltx_nopad_l ltx_align_center ltx_border_bb\">Speed</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "spoken",
-            "speed",
-            "avg",
-            "khz",
-            "findings",
-            "value",
             "rate",
-            "total",
-            "statistics",
-            "speechrate",
-            "engine",
-            "kokoro",
+            "avg",
             "length",
-            "dataset",
-            "language",
-            "property",
+            "statistics",
+            "voices",
             "english",
-            "sampling",
             "tts",
+            "kokoro",
+            "findings",
+            "khz",
+            "speed",
+            "speechrate",
+            "language",
+            "duration",
+            "dataset",
+            "engine",
             "sections",
             "augmentations",
-            "duration",
-            "voices"
+            "sampling",
+            "value",
+            "total",
+            "property"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Speech is synthesized with eight distinct voices (4 female, 4 male), with small random variations in speaking rate to mimic realistic dictation. All clips are resampled to 24&#8201;kHz. The resulting dataset comprises 50,188 spoken findings sections totaling 1,197&#8201;hours of audio with an average length of 86&#8201;s (see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.T1\" title=\"Table 1 &#8227; 2.1 Speech-RATE: Synthetic Spoken Report Dataset &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). To support future research, Speech-RATE is released publicly on Hugging Face<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_text\" style=\"font-size:70%;\">Dataset will be released upon paper acceptance.</span></span></span></span>.</p>\n\n"
@@ -36,10 +36,10 @@
             {
                 "html": "<p class=\"ltx_p\">Spoken communication plays a central role in clinical workflows. In radiology, for example, most reports are created through dictation. Yet, nearly all medical AI systems rely exclusively on written text. In this work, we address this gap by exploring the feasibility of learning visual-language representations directly from spoken radiology reports. Specifically, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports and train SpeechCT-CLIP, a contrastive model that aligns speech and 3D CT volumes in a shared representation space. While na&#239;ve speech-based models underperform compared to text-trained counterparts, we show that knowledge distillation from a pretrained text-image CLIP model effectively transfers semantic alignment capabilities from text to speech, substantially narrowing this gap. Experiments demonstrate improved zero-shot classification F1 from 0.623 to 0.705, recovering 88% of the performance difference, and strong retrieval results without requiring text at inference. These findings highlight speech as a practical alternative to text in multimodal pretraining and open the door to voice-driven diagnostic support tools in clinical practice.</p>\n\n",
                 "matched_terms": [
-                    "spoken",
+                    "findings",
                     "speechrate",
-                    "dataset",
-                    "findings"
+                    "spoken",
+                    "dataset"
                 ]
             },
             {
@@ -52,8 +52,8 @@
             {
                 "html": "<p class=\"ltx_p\">To bridge this gap we introduce SpeechCT-CLIP, the first foundation model that aligns spoken radiology reports with 3D CT volumes. To build this system, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports from CT-RATE using diverse synthetic voices, and train a speech encoder alongside a CT encoder in a contrastive setup. While na&#239;ve training reveals a significant performance drop compared to CT-CLIP (text-based), we propose a simple yet effective solution: knowledge distillation from the stronger text encoder. By transferring semantic knowledge from text embeddings to audio embeddings during training, we substantially narrow the gap while enabling inference directly from speech. Our contributions are as follows:</p>\n\n",
                 "matched_terms": [
-                    "spoken",
                     "speechrate",
+                    "spoken",
                     "dataset",
                     "voices"
                 ]
@@ -61,8 +61,8 @@
             {
                 "html": "<p class=\"ltx_p\">We introduce Speech-RATE, the first large-scale dataset of spoken radiology reports paired with CT volumes from CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, totaling 50,188 synthetic spoken reports with diverse voices and dictation styles.</p>\n\n",
                 "matched_terms": [
-                    "spoken",
                     "speechrate",
+                    "spoken",
                     "dataset",
                     "voices"
                 ]
@@ -70,18 +70,18 @@
             {
                 "html": "<p class=\"ltx_p\">We propose SpeechCT-CLIP, a contrastive vision-speech model that aligns spoken radiology reports with 3D&#160;CT volumes in a shared representation space. A pretrained image encoder is aligned with a trainable speech encoder using contrastive and distillation objectives (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). We first describe the construction of the Speech-RATE dataset, and then detail the training method.</p>\n\n",
                 "matched_terms": [
-                    "spoken",
                     "speechrate",
+                    "spoken",
                     "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We construct Speech-RATE by extending CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, which consists of 50,188 3D CT volumes, each paired with a written radiology report and labeled across 18 abnormality labels. To simulate radiologist dictation, each report&#8217;s findings section is converted to audio using the Kokoro TTS engine<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/hexgrad/Kokoro-82M\" style=\"font-size:70%;\" title=\"\">https://huggingface.co/hexgrad/Kokoro-82M</a></span></span></span>.</p>\n\n",
                 "matched_terms": [
-                    "speechrate",
+                    "findings",
                     "tts",
                     "kokoro",
-                    "findings"
+                    "speechrate"
                 ]
             },
             {
@@ -94,16 +94,16 @@
             {
                 "html": "<p class=\"ltx_p\">We use Speech-RATE (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.SS1\" title=\"2.1 Speech-RATE: Synthetic Spoken Report Dataset &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2.1</span></a>), our synthetic dataset of spoken radiology reports paired with CT volumes from CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>. We use the official train/test splits and the lightweight RadGenome-ChestCT version <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib13\" title=\"\">13</a>]</cite> for efficiency. To test robustness to speaker variation and unseen images, we evaluate on RAD-ChestCT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib14\" title=\"\">14</a>]</cite>, containing scans from another hospital. Following prior work <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, arterial and coronary artery wall calcification are merged and mosaic attenuation removed, resulting in 16 labels. For each item, speech is synthesized using a random voice from 8 unseen speakers.</p>\n\n",
                 "matched_terms": [
-                    "spoken",
                     "speechrate",
+                    "spoken",
                     "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we proposed SpeechCT-CLIP, the first model to align spoken radiology reports with 3D CT volumes. Building on our newly created Speech-RATE dataset, we demonstrated that speech can serve as a promising alternative to text in multimodal pretraining. By distilling knowledge from a pretrained text encoder, SpeechCT-CLIP substantially narrows the gap between text- and speech-based training. This enables robust voice-native medical AI without intermediate transcription, avoiding ASR errors and preserving natural information such as radiologists&#8217; uncertainty that would otherwise be lost in transcription. Our work opens the path towards applications beyond classification and retrieval, including speech-driven segmentation, multilingual training, and integration into interactive clinical assistants. In doing so, SpeechCT-CLIP paves the way for more natural and accessible human-AI interaction in clinical practice.</p>\n\n",
                 "matched_terms": [
-                    "spoken",
                     "speechrate",
+                    "spoken",
                     "dataset"
                 ]
             }
@@ -115,29 +115,29 @@
         "body": "Model\nF1\nPrec.\nRec.\n\n\nLinear Probing\n\n\nwav2vec [15]\n\n0.51\n0.64\n0.45\n\n\nHuBERT [16]\n\n0.65\n0.79\n0.60\n\n\nWhisper [17]\n\n0.67\n0.79\n0.62\n\n\nFinetuning\n\n\nWhisper (top 2 layers)\n0.76\n0.84\n0.71\n\n\nWhisper (top 3 layers)\n0.75\n0.82\n0.71",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">F1</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">Prec.</span></td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_tt\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">Rec.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_italic\">Linear Probing</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">wav2vec <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.51</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.64</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.45</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">HuBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib16\" title=\"\">16</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.65</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.79</span></td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib17\" title=\"\">17</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.67</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.79</span></td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.62</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_italic\">Finetuning</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">Whisper (top 2 layers)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.76</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.84</span></td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.71</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">Whisper (top 3 layers)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.75</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\">0.82</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding-top:0.5pt;padding-bottom:0.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.71</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "encoders",
-            "speech",
             "spoken",
-            "classification",
-            "prec",
-            "recall",
+            "hubert",
             "pretrained",
-            "results",
-            "rec",
-            "linear",
+            "finetuning",
+            "speech",
+            "classification",
             "top",
             "probing",
-            "under",
-            "comparison",
-            "weighted",
-            "layers",
-            "precision",
-            "hubert",
+            "results",
             "whisper",
-            "report",
-            "finetuning",
             "wav2vec",
-            "model"
+            "rec",
+            "prec",
+            "layers",
+            "report",
+            "model",
+            "recall",
+            "under",
+            "weighted",
+            "linear",
+            "encoders",
+            "comparison",
+            "precision"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">To select a speech encoder for SpeechCT-CLIP, we evaluated wav2vec <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib15\" title=\"\">15</a>]</cite>, HuBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib16\" title=\"\">16</a>]</cite>, and Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib17\" title=\"\">17</a>]</cite> on classifying the 18 CT-RATE abnormality labels directly from the spoken reports (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Speech Encoder Selection &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), without using images. Whisper achieved the best linear probing results and improved further when finetuning its top layers. This likely reflects its pretraining on large-scale ASR, which emphasizes semantic content over acoustic detail, making it better suited for reporting. We therefore use Whisper (base) as backbone for subsequent experiments.</p>\n\n"
@@ -147,11 +147,11 @@
                 "html": "<p class=\"ltx_p\">Spoken communication plays a central role in clinical workflows. In radiology, for example, most reports are created through dictation. Yet, nearly all medical AI systems rely exclusively on written text. In this work, we address this gap by exploring the feasibility of learning visual-language representations directly from spoken radiology reports. Specifically, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports and train SpeechCT-CLIP, a contrastive model that aligns speech and 3D CT volumes in a shared representation space. While na&#239;ve speech-based models underperform compared to text-trained counterparts, we show that knowledge distillation from a pretrained text-image CLIP model effectively transfers semantic alignment capabilities from text to speech, substantially narrowing this gap. Experiments demonstrate improved zero-shot classification F1 from 0.623 to 0.705, recovering 88% of the performance difference, and strong retrieval results without requiring text at inference. These findings highlight speech as a practical alternative to text in multimodal pretraining and open the door to voice-driven diagnostic support tools in clinical practice.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "pretrained",
-                    "results",
-                    "spoken",
                     "classification",
-                    "model"
+                    "spoken",
+                    "model",
+                    "pretrained",
+                    "results"
                 ]
             },
             {
@@ -164,48 +164,48 @@
             {
                 "html": "<p class=\"ltx_p\">Recent advances in multimodal learning have transformed medical image analysis. By pairing visual data with unstructured clinical reports, contrastive pretraining has yielded robust foundation models capable of retrieval, abnormality detection, and even report generation <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib3\" title=\"\">3</a>]</cite>. The release of CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib4\" title=\"\">4</a>]</cite>, the first large-scale dataset linking 3D CT volumes to radiology reports, enabled CT-CLIP, a vision-language model (VLM) that demonstrated strong zero-shot performance across a wide range of tasks. These successes underscore the central role of natural language in shaping visual representations for radiology.</p>\n\n",
                 "matched_terms": [
-                    "report",
-                    "model"
+                    "model",
+                    "report"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In computer vision, CLIP has been extended to audio: AudioCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib6\" title=\"\">6</a>]</cite> aligns audio with images and text via contrastive learning, and Wav2CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib7\" title=\"\">7</a>]</cite> distills CLIP&#8217;s embedding space into an audio encoder. Large-scale audio-language resources such as Auto-ACD <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib8\" title=\"\">8</a>]</cite> further enable robust audio-text representation learning. In biomedicine, domain-specific vision-language pretraining with BiomedCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib9\" title=\"\">9</a>]</cite> demonstrated strong cross-modal transfer across retrieval and classification and ECG-Text Pretraining (ETP) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib10\" title=\"\">10</a>]</cite> extended text-paired contrastive pretraining to physiological signals. Complementary to these, acoustic-driven clinical reporting has been explored by generating pathological speech reports from audio with LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib11\" title=\"\">11</a>]</cite>. Despite this progress, existing medical contrastive models rely on text supervision; alignment of spoken radiology reports with medical images remains unaddressed.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "spoken",
-                    "classification"
+                    "classification",
+                    "spoken"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To bridge this gap we introduce SpeechCT-CLIP, the first foundation model that aligns spoken radiology reports with 3D CT volumes. To build this system, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports from CT-RATE using diverse synthetic voices, and train a speech encoder alongside a CT encoder in a contrastive setup. While na&#239;ve training reveals a significant performance drop compared to CT-CLIP (text-based), we propose a simple yet effective solution: knowledge distillation from the stronger text encoder. By transferring semantic knowledge from text embeddings to audio embeddings during training, we substantially narrow the gap while enabling inference directly from speech. Our contributions are as follows:</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "speech",
+                    "model",
                     "spoken"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We establish baselines for speech-CT contrastive learning and direct spoken report classification, providing the first benchmarks of their kind in medical imaging.</p>\n\n",
                 "matched_terms": [
-                    "report",
+                    "classification",
                     "spoken",
-                    "classification"
+                    "report"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our results highlight both the challenges and opportunities of replacing text with speech in medical multimodal pretraining, opening the door to robust, voice-native medical AI systems.</p>\n\n",
                 "matched_terms": [
-                    "results",
-                    "speech"
+                    "speech",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose SpeechCT-CLIP, a contrastive vision-speech model that aligns spoken radiology reports with 3D&#160;CT volumes in a shared representation space. A pretrained image encoder is aligned with a trainable speech encoder using contrastive and distillation objectives (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). We first describe the construction of the Speech-RATE dataset, and then detail the training method.</p>\n\n",
                 "matched_terms": [
-                    "model",
+                    "pretrained",
                     "speech",
-                    "spoken",
-                    "pretrained"
+                    "model",
+                    "spoken"
                 ]
             },
             {
@@ -225,9 +225,9 @@
             {
                 "html": "<p class=\"ltx_p\">Direct speech-CT alignment described in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.SS2\" title=\"2.2 Contrastive Pretraining &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2.2</span></a> lags behind text-CT alignment. To reduce this gap, we use the pretrained CT-CLIP text encoder <math alttext=\"h(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>h</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">h(\\cdot)</annotation></semantics></math> as a teacher, while keeping both CT and text encoders frozen. For each report <math alttext=\"x^{\\text{t}}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m2\" intent=\":literal\"><semantics><msubsup><mi>x</mi><mi>i</mi><mtext>t</mtext></msubsup><annotation encoding=\"application/x-tex\">x^{\\text{t}}_{i}</annotation></semantics></math>, we obtain the teacher embedding</p>\n\n",
                 "matched_terms": [
+                    "pretrained",
                     "report",
-                    "encoders",
-                    "pretrained"
+                    "encoders"
                 ]
             },
             {
@@ -247,42 +247,42 @@
             {
                 "html": "<p class=\"ltx_p\">We first evaluate zero-shot abnormality classification on the 18 CT-RATE labels using AUROC, F1, accuracy, and precision (averaged across labels). In addition, we assess cross-modal case retrieval with Recall@<math alttext=\"\\{5,10,50,100\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><mn>5</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>100</mn><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{5,10,50,100\\}</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "precision",
-                    "classification"
+                    "classification",
+                    "precision"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate SpeechCT-CLIP on zero-shot classification and cross-modal retrieval (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). As baselines, we report Random predictions, CT-Net <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a supervised vision-only model, and CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a text-based contrastive model. For speech, we compare a na&#239;ve variant, SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> (no knowledge distillation), trained only with contrastive loss, against our full SpeechCT-CLIP, which adds text-guided distillation. This progression isolates the roles of vision-only training, text supervision, speech alignment, and distillation.</p>\n\n",
                 "matched_terms": [
-                    "report",
                     "speech",
+                    "classification",
                     "model",
-                    "classification"
+                    "report"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We follow the evaluation protocol of CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> and assess zero-shot classification across the 18 CT-RATE labels, reporting AUROC, F1, accuracy, and precision (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T3\" title=\"Table 3 &#8227; 4.2 Zero-Shot Classification &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n",
                 "matched_terms": [
-                    "precision",
-                    "classification"
+                    "classification",
+                    "precision"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We further evaluate cross-modal retrieval, where spoken reports are used to retrieve similar CT volumes (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T4\" title=\"Table 4 &#8227; 4.3 Case Retrieval &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). CT-CLIP achieves the highest recall (R@10 = 0.085, R@100 = 0.430), while SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> underperforms due to weaker speech embeddings. SpeechCT-CLIP improves retrieval substantially (R@10 = 0.077, R@100 = 0.377), closing much of the gap to text-based performance and confirming the benefit of distillation for speech-image alignment.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "spoken",
-                    "recall"
+                    "recall",
+                    "spoken"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we proposed SpeechCT-CLIP, the first model to align spoken radiology reports with 3D CT volumes. Building on our newly created Speech-RATE dataset, we demonstrated that speech can serve as a promising alternative to text in multimodal pretraining. By distilling knowledge from a pretrained text encoder, SpeechCT-CLIP substantially narrows the gap between text- and speech-based training. This enables robust voice-native medical AI without intermediate transcription, avoiding ASR errors and preserving natural information such as radiologists&#8217; uncertainty that would otherwise be lost in transcription. Our work opens the path towards applications beyond classification and retrieval, including speech-driven segmentation, multilingual training, and integration into interactive clinical assistants. In doing so, SpeechCT-CLIP paves the way for more natural and accessible human-AI interaction in clinical practice.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "pretrained",
-                    "spoken",
                     "classification",
-                    "model"
+                    "model",
+                    "spoken",
+                    "pretrained"
                 ]
             }
         ]
@@ -293,42 +293,42 @@
         "body": "Model\nInference\nMetrics\n\n\n\n\n\nAUC\nF1\nAcc.\nPrec.\n\n\nCT-RATE (internal validation)\n\n\nRandom*\n\n✗\n✗\n✗\n0.505\n0.570\n0.502\n0.180\n\n\nCT-Net* [1]\n\n✓\n✗\n✗\n0.629\n0.657\n0.617\n0.263\n\n\nCT-CLIP [1]\n\n✓\n✓\n✗\n0.734\n0.718\n0.681\n0.326\n\n\nSpeechCT-CLIPnKD{}_{\\text{nKD}}\n\n✓\n✗\n✓\n0.610\n0.623\n0.574\n0.248\n\n\nSpeechCT-CLIP\n✓\n✗\n✓\n0.708\n0.705\n0.666\n0.314\n\n\nRAD-ChestCT (external validation)\n\n\nRandom*\n\n✗\n✗\n✗\n0.496\n0.555\n0.500\n0.265\n\n\nCT-Net* [1]\n\n✓\n✗\n✗\n0.544\n0.564\n0.517\n0.282\n\n\nCT-CLIP [1]\n\n✓\n✓\n✗\n0.643\n0.660\n0.615\n0.343\n\n\nSpeechCT-CLIPnKD{}_{\\text{nKD}}\n\n✓\n✗\n✓\n0.552\n0.596\n0.544\n0.297\n\n\nSpeechCT-CLIP\n✓\n✗\n✓\n0.603\n0.623\n0.575\n0.319\n\n\n\n\n\n* Metrics cited from the original publication [1].",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" rowspan=\"2\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"3\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Inference</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"4\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Metrics</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_square\" height=\"15\" id=\"S4.T3.g7\" src=\"x9.png\" width=\"16\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_portrait\" height=\"19\" id=\"S4.T3.g8\" src=\"x10.png\" width=\"14\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"15\" id=\"S4.T3.g9\" src=\"x11.png\" width=\"19\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">AUC</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">F1</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Acc.</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Prec.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"8\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\">CT-RATE (internal validation)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">Random<sup class=\"ltx_sup\">*</sup>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.505</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.570</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.502</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.180</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">CT-Net<sup class=\"ltx_sup\">*</sup> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.629</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.657</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.617</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.263</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.734</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.718</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.681</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.326</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.610</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.623</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.574</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.248</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.708</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.705</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.666</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.314</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"8\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\">RAD-ChestCT (external validation)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">Random<sup class=\"ltx_sup\">*</sup>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.496</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.555</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.500</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.265</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">CT-Net<sup class=\"ltx_sup\">*</sup> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.544</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.564</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.517</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.282</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.643</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.660</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.615</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.343</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m2\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.552</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.596</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.544</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.297</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.603</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.623</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.575</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.319</span></td>\n</tr>\n</tbody>\n<tfoot class=\"ltx_tfoot\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" colspan=\"8\" style=\"padding:0.5pt 3.0pt;\">\n<sup class=\"ltx_sup\">*</sup> Metrics cited from the original publication <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>.</th>\n</tr>\n</tfoot>\n</table>\n\n",
         "informative_terms_identified": [
-            "multilabel",
-            "original",
-            "auroc",
-            "underlined",
-            "publication",
-            "inference",
-            "classification",
-            "ctclip",
-            "time",
-            "prec",
-            "speechctclip",
-            "text",
-            "validation",
-            "random",
-            "cited",
-            "best",
-            "accuracy",
-            "internal",
-            "speechctclipnkdtextnkd",
-            "radchestct",
-            "audio",
-            "bold",
             "overall",
-            "metrics",
-            "modality",
-            "within",
-            "acc",
-            "from",
-            "zeroshot",
+            "text",
+            "publication",
             "modalities",
-            "precision",
-            "auc",
+            "modality",
+            "internal",
+            "random",
+            "classification",
             "external",
-            "ctnet",
+            "within",
+            "metrics",
+            "zeroshot",
+            "from",
+            "ctrate",
+            "original",
+            "precision",
+            "speechctclip",
+            "acc",
+            "prec",
+            "radchestct",
             "model",
-            "ctrate"
+            "validation",
+            "cited",
+            "auroc",
+            "bold",
+            "speechctclipnkdtextnkd",
+            "ctclip",
+            "accuracy",
+            "underlined",
+            "time",
+            "best",
+            "inference",
+            "multilabel",
+            "auc",
+            "audio",
+            "ctnet"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We follow the evaluation protocol of CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> and assess zero-shot classification across the 18 CT-RATE labels, reporting AUROC, F1, accuracy, and precision (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T3\" title=\"Table 3 &#8227; 4.2 Zero-Shot Classification &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n"
@@ -337,53 +337,53 @@
             {
                 "html": "<p class=\"ltx_p\">Spoken communication plays a central role in clinical workflows. In radiology, for example, most reports are created through dictation. Yet, nearly all medical AI systems rely exclusively on written text. In this work, we address this gap by exploring the feasibility of learning visual-language representations directly from spoken radiology reports. Specifically, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports and train SpeechCT-CLIP, a contrastive model that aligns speech and 3D CT volumes in a shared representation space. While na&#239;ve speech-based models underperform compared to text-trained counterparts, we show that knowledge distillation from a pretrained text-image CLIP model effectively transfers semantic alignment capabilities from text to speech, substantially narrowing this gap. Experiments demonstrate improved zero-shot classification F1 from 0.623 to 0.705, recovering 88% of the performance difference, and strong retrieval results without requiring text at inference. These findings highlight speech as a practical alternative to text in multimodal pretraining and open the door to voice-driven diagnostic support tools in clinical practice.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "model",
-                    "inference",
                     "classification",
-                    "from",
+                    "model",
+                    "text",
                     "zeroshot",
+                    "from",
+                    "inference",
                     "speechctclip"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recent advances in multimodal learning have transformed medical image analysis. By pairing visual data with unstructured clinical reports, contrastive pretraining has yielded robust foundation models capable of retrieval, abnormality detection, and even report generation <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib3\" title=\"\">3</a>]</cite>. The release of CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib4\" title=\"\">4</a>]</cite>, the first large-scale dataset linking 3D CT volumes to radiology reports, enabled CT-CLIP, a vision-language model (VLM) that demonstrated strong zero-shot performance across a wide range of tasks. These successes underscore the central role of natural language in shaping visual representations for radiology.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
                     "model",
                     "ctrate",
-                    "ctclip"
+                    "ctclip",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">However, radiologists rarely directly write reports, instead dictation remains the dominant reporting modality in everyday practice: radiologists scroll through CT volumes and describe their findings verbally, with automatic speech recognition (ASR) systems transcribing the audio into text for the electronic health record (EHR). Despite being widespread, ASR is not perfect and can lead to clinically significant errors <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib5\" title=\"\">5</a>]</cite>. Such errors not only burden clinicians with correction work but also pose risks to patient safety. These challenges motivate a different question: instead of relying on transcription, could we build models that understand radiology reports directly from speech?</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "audio",
                     "from",
-                    "modality"
+                    "modality",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In computer vision, CLIP has been extended to audio: AudioCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib6\" title=\"\">6</a>]</cite> aligns audio with images and text via contrastive learning, and Wav2CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib7\" title=\"\">7</a>]</cite> distills CLIP&#8217;s embedding space into an audio encoder. Large-scale audio-language resources such as Auto-ACD <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib8\" title=\"\">8</a>]</cite> further enable robust audio-text representation learning. In biomedicine, domain-specific vision-language pretraining with BiomedCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib9\" title=\"\">9</a>]</cite> demonstrated strong cross-modal transfer across retrieval and classification and ECG-Text Pretraining (ETP) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib10\" title=\"\">10</a>]</cite> extended text-paired contrastive pretraining to physiological signals. Complementary to these, acoustic-driven clinical reporting has been explored by generating pathological speech reports from audio with LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib11\" title=\"\">11</a>]</cite>. Despite this progress, existing medical contrastive models rely on text supervision; alignment of spoken radiology reports with medical images remains unaddressed.</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "audio",
+                    "classification",
                     "from",
-                    "classification"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To bridge this gap we introduce SpeechCT-CLIP, the first foundation model that aligns spoken radiology reports with 3D CT volumes. To build this system, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports from CT-RATE using diverse synthetic voices, and train a speech encoder alongside a CT encoder in a contrastive setup. While na&#239;ve training reveals a significant performance drop compared to CT-CLIP (text-based), we propose a simple yet effective solution: knowledge distillation from the stronger text encoder. By transferring semantic knowledge from text embeddings to audio embeddings during training, we substantially narrow the gap while enabling inference directly from speech. Our contributions are as follows:</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "from",
-                    "inference",
-                    "ctclip",
                     "audio",
                     "model",
-                    "speechctclip",
-                    "ctrate"
+                    "text",
+                    "from",
+                    "ctrate",
+                    "inference",
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
@@ -410,23 +410,23 @@
             {
                 "html": "<p class=\"ltx_p\">We construct Speech-RATE by extending CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, which consists of 50,188 3D CT volumes, each paired with a written radiology report and labeled across 18 abnormality labels. To simulate radiologist dictation, each report&#8217;s findings section is converted to audio using the Kokoro TTS engine<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/hexgrad/Kokoro-82M\" style=\"font-size:70%;\" title=\"\">https://huggingface.co/hexgrad/Kokoro-82M</a></span></span></span>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "ctrate"
+                    "ctrate",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Speech is synthesized with eight distinct voices (4 female, 4 male), with small random variations in speaking rate to mimic realistic dictation. All clips are resampled to 24&#8201;kHz. The resulting dataset comprises 50,188 spoken findings sections totaling 1,197&#8201;hours of audio with an average length of 86&#8201;s (see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.T1\" title=\"Table 1 &#8227; 2.1 Speech-RATE: Synthetic Spoken Report Dataset &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). To support future research, Speech-RATE is released publicly on Hugging Face<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_text\" style=\"font-size:70%;\">Dataset will be released upon paper acceptance.</span></span></span></span>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "random"
+                    "random",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following the CT-CLIP framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib12\" title=\"\">12</a>]</cite>, SpeechCT-CLIP learns a joint representation space for CT volumes and spoken reports. Let <math alttext=\"g(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">g(\\cdot)</annotation></semantics></math> denote the CT-ViT encoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib4\" title=\"\">4</a>]</cite> used in CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, which we adopt as the vision backbone, and <math alttext=\"f_{\\theta}(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>f</mi><mi>&#952;</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">f_{\\theta}(\\cdot)</annotation></semantics></math> the trainable speech encoder. For each CT volume <math alttext=\"x^{\\text{ct}}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m3\" intent=\":literal\"><semantics><msubsup><mi>x</mi><mi>i</mi><mtext>ct</mtext></msubsup><annotation encoding=\"application/x-tex\">x^{\\text{ct}}_{i}</annotation></semantics></math> and its paired audio waveform <math alttext=\"x^{\\text{a}}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m4\" intent=\":literal\"><semantics><msubsup><mi>x</mi><mi>i</mi><mtext>a</mtext></msubsup><annotation encoding=\"application/x-tex\">x^{\\text{a}}_{i}</annotation></semantics></math>, we compute</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "speechctclip",
-                    "ctclip"
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
@@ -447,64 +447,64 @@
             {
                 "html": "<p class=\"ltx_p\">We use Speech-RATE (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.SS1\" title=\"2.1 Speech-RATE: Synthetic Spoken Report Dataset &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2.1</span></a>), our synthetic dataset of spoken radiology reports paired with CT volumes from CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>. We use the official train/test splits and the lightweight RadGenome-ChestCT version <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib13\" title=\"\">13</a>]</cite> for efficiency. To test robustness to speaker variation and unseen images, we evaluate on RAD-ChestCT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib14\" title=\"\">14</a>]</cite>, containing scans from another hospital. Following prior work <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, arterial and coronary artery wall calcification are merged and mosaic attenuation removed, resulting in 16 labels. For each item, speech is synthesized using a random voice from 8 unseen speakers.</p>\n\n",
                 "matched_terms": [
-                    "radchestct",
                     "random",
                     "from",
+                    "radchestct",
                     "ctrate"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We first evaluate zero-shot abnormality classification on the 18 CT-RATE labels using AUROC, F1, accuracy, and precision (averaged across labels). In addition, we assess cross-modal case retrieval with Recall@<math alttext=\"\\{5,10,50,100\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><mn>5</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>100</mn><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{5,10,50,100\\}</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "auroc",
-                    "accuracy",
                     "classification",
                     "zeroshot",
-                    "precision",
-                    "ctrate"
+                    "ctrate",
+                    "auroc",
+                    "accuracy",
+                    "precision"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate SpeechCT-CLIP on zero-shot classification and cross-modal retrieval (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). As baselines, we report Random predictions, CT-Net <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a supervised vision-only model, and CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a text-based contrastive model. For speech, we compare a na&#239;ve variant, SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> (no knowledge distillation), trained only with contrastive loss, against our full SpeechCT-CLIP, which adds text-guided distillation. This progression isolates the roles of vision-only training, text supervision, speech alignment, and distillation.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "random",
-                    "ctnet",
-                    "model",
-                    "speechctclipnkdtextnkd",
                     "classification",
-                    "ctclip",
+                    "model",
+                    "text",
                     "zeroshot",
-                    "speechctclip"
+                    "speechctclipnkdtextnkd",
+                    "ctclip",
+                    "speechctclip",
+                    "ctnet"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To select a speech encoder for SpeechCT-CLIP, we evaluated wav2vec <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib15\" title=\"\">15</a>]</cite>, HuBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib16\" title=\"\">16</a>]</cite>, and Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib17\" title=\"\">17</a>]</cite> on classifying the 18 CT-RATE abnormality labels directly from the spoken reports (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Speech Encoder Selection &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), without using images. Whisper achieved the best linear probing results and improved further when finetuning its top layers. This likely reflects its pretraining on large-scale ASR, which emphasizes semantic content over acoustic detail, making it better suited for reporting. We therefore use Whisper (base) as backbone for subsequent experiments.</p>\n\n",
                 "matched_terms": [
-                    "best",
                     "from",
+                    "ctrate",
                     "speechctclip",
-                    "ctrate"
+                    "best"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">On internal validation, CT-CLIP provides the strongest baseline with an F1 of 0.718, while SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> drops to 0.623, reflecting the difficulty of learning directly from speech. Our proposed SpeechCT-CLIP substantially narrows this gap, improving F1 to 0.705 and AUROC to 0.708, thereby recovering 88% of the performance difference between text- and speech-based models.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "validation",
+                    "text",
+                    "from",
                     "auroc",
-                    "internal",
                     "speechctclipnkdtextnkd",
                     "ctclip",
-                    "from",
-                    "speechctclip"
+                    "speechctclip",
+                    "internal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To assess generalization, we evaluate SpeechCT-CLIP on RAD-ChestCT. It improves over SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> (F1 0.623 vs. 0.596) and approaches CT-CLIP (F1 0.660), demonstrating robustness to new domains and speakers.</p>\n\n",
                 "matched_terms": [
-                    "radchestct",
                     "speechctclipnkdtextnkd",
+                    "radchestct",
                     "speechctclip",
                     "ctclip"
                 ]
@@ -513,17 +513,17 @@
                 "html": "<p class=\"ltx_p\">We further evaluate cross-modal retrieval, where spoken reports are used to retrieve similar CT volumes (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T4\" title=\"Table 4 &#8227; 4.3 Case Retrieval &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). CT-CLIP achieves the highest recall (R@10 = 0.085, R@100 = 0.430), while SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> underperforms due to weaker speech embeddings. SpeechCT-CLIP improves retrieval substantially (R@10 = 0.077, R@100 = 0.377), closing much of the gap to text-based performance and confirming the benefit of distillation for speech-image alignment.</p>\n\n",
                 "matched_terms": [
                     "speechctclipnkdtextnkd",
-                    "speechctclip",
-                    "ctclip"
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we proposed SpeechCT-CLIP, the first model to align spoken radiology reports with 3D CT volumes. Building on our newly created Speech-RATE dataset, we demonstrated that speech can serve as a promising alternative to text in multimodal pretraining. By distilling knowledge from a pretrained text encoder, SpeechCT-CLIP substantially narrows the gap between text- and speech-based training. This enables robust voice-native medical AI without intermediate transcription, avoiding ASR errors and preserving natural information such as radiologists&#8217; uncertainty that would otherwise be lost in transcription. Our work opens the path towards applications beyond classification and retrieval, including speech-driven segmentation, multilingual training, and integration into interactive clinical assistants. In doing so, SpeechCT-CLIP paves the way for more natural and accessible human-AI interaction in clinical practice.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "classification",
-                    "from",
                     "model",
+                    "text",
+                    "from",
                     "speechctclip"
                 ]
             }
@@ -535,26 +535,26 @@
         "body": "Model\nInference\nRecall\n\n\n\n\n\n@5\n@10\n@50\n@100\n\n\nRandom\n✗\n✗\n✗\n0.003\n0.005\n0.036\n0.056\n\n\nCT-CLIP [1]\n\n✓\n✓\n✗\n0.048\n0.085\n0.281\n0.430\n\n\nSpeechCT-CLIPnKD{}_{\\text{nKD}}\n\n✓\n✗\n✓\n0.026\n0.049\n0.180\n0.291\n\n\nSpeechCT-CLIP\n✓\n✗\n✓\n0.042\n0.077\n0.244\n0.377",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" rowspan=\"2\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"3\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Inference</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"4\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">Recall</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_square\" height=\"15\" id=\"S4.T4.g7\" src=\"x18.png\" width=\"16\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_portrait\" height=\"19\" id=\"S4.T4.g8\" src=\"x19.png\" width=\"14\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"15\" id=\"S4.T4.g9\" src=\"x20.png\" width=\"19\"/></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">@5</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">@10</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">@50</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">@100</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">Random</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.003</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.005</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.036</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.5pt 3.0pt;\">0.056</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.048</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.085</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.281</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold ltx_framed ltx_framed_underline\">0.430</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T4.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math>\n</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.026</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.049</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.180</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.5pt 3.0pt;\">0.291</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\">SpeechCT-CLIP</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\">&#10007;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.042</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.077</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.244</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.5pt 3.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.377</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "underlined",
-            "inference",
-            "ctclip",
-            "time",
-            "speechctclip",
-            "recall",
-            "crossmodal",
-            "text",
-            "random",
-            "best",
-            "speechctclipnkdtextnkd",
-            "audio",
             "overall",
-            "bold",
-            "modality",
-            "within",
-            "modalities",
+            "text",
             "retrieval",
+            "modalities",
+            "modality",
+            "random",
+            "within",
+            "ctrate",
+            "speechctclip",
             "model",
-            "ctrate"
+            "crossmodal",
+            "bold",
+            "speechctclipnkdtextnkd",
+            "ctclip",
+            "underlined",
+            "recall",
+            "time",
+            "best",
+            "inference",
+            "audio"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We further evaluate cross-modal retrieval, where spoken reports are used to retrieve similar CT volumes (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T4\" title=\"Table 4 &#8227; 4.3 Case Retrieval &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>). CT-CLIP achieves the highest recall (R@10 = 0.085, R@100 = 0.430), while SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> underperforms due to weaker speech embeddings. SpeechCT-CLIP improves retrieval substantially (R@10 = 0.077, R@100 = 0.377), closing much of the gap to text-based performance and confirming the benefit of distillation for speech-image alignment.</p>\n\n"
@@ -563,10 +563,10 @@
             {
                 "html": "<p class=\"ltx_p\">Spoken communication plays a central role in clinical workflows. In radiology, for example, most reports are created through dictation. Yet, nearly all medical AI systems rely exclusively on written text. In this work, we address this gap by exploring the feasibility of learning visual-language representations directly from spoken radiology reports. Specifically, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports and train SpeechCT-CLIP, a contrastive model that aligns speech and 3D CT volumes in a shared representation space. While na&#239;ve speech-based models underperform compared to text-trained counterparts, we show that knowledge distillation from a pretrained text-image CLIP model effectively transfers semantic alignment capabilities from text to speech, substantially narrowing this gap. Experiments demonstrate improved zero-shot classification F1 from 0.623 to 0.705, recovering 88% of the performance difference, and strong retrieval results without requiring text at inference. These findings highlight speech as a practical alternative to text in multimodal pretraining and open the door to voice-driven diagnostic support tools in clinical practice.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "inference",
-                    "retrieval",
                     "model",
+                    "text",
+                    "retrieval",
+                    "inference",
                     "speechctclip"
                 ]
             },
@@ -583,29 +583,29 @@
                 "html": "<p class=\"ltx_p\">However, radiologists rarely directly write reports, instead dictation remains the dominant reporting modality in everyday practice: radiologists scroll through CT volumes and describe their findings verbally, with automatic speech recognition (ASR) systems transcribing the audio into text for the electronic health record (EHR). Despite being widespread, ASR is not perfect and can lead to clinically significant errors <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib5\" title=\"\">5</a>]</cite>. Such errors not only burden clinicians with correction work but also pose risks to patient safety. These challenges motivate a different question: instead of relying on transcription, could we build models that understand radiology reports directly from speech?</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "audio",
-                    "modality"
+                    "modality",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In computer vision, CLIP has been extended to audio: AudioCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib6\" title=\"\">6</a>]</cite> aligns audio with images and text via contrastive learning, and Wav2CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib7\" title=\"\">7</a>]</cite> distills CLIP&#8217;s embedding space into an audio encoder. Large-scale audio-language resources such as Auto-ACD <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib8\" title=\"\">8</a>]</cite> further enable robust audio-text representation learning. In biomedicine, domain-specific vision-language pretraining with BiomedCLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib9\" title=\"\">9</a>]</cite> demonstrated strong cross-modal transfer across retrieval and classification and ECG-Text Pretraining (ETP) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib10\" title=\"\">10</a>]</cite> extended text-paired contrastive pretraining to physiological signals. Complementary to these, acoustic-driven clinical reporting has been explored by generating pathological speech reports from audio with LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib11\" title=\"\">11</a>]</cite>. Despite this progress, existing medical contrastive models rely on text supervision; alignment of spoken radiology reports with medical images remains unaddressed.</p>\n\n",
                 "matched_terms": [
+                    "text",
                     "crossmodal",
-                    "audio",
                     "retrieval",
-                    "text"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To bridge this gap we introduce SpeechCT-CLIP, the first foundation model that aligns spoken radiology reports with 3D CT volumes. To build this system, we synthesize a large-scale dataset (Speech-RATE) of spoken radiology reports from CT-RATE using diverse synthetic voices, and train a speech encoder alongside a CT encoder in a contrastive setup. While na&#239;ve training reveals a significant performance drop compared to CT-CLIP (text-based), we propose a simple yet effective solution: knowledge distillation from the stronger text encoder. By transferring semantic knowledge from text embeddings to audio embeddings during training, we substantially narrow the gap while enabling inference directly from speech. Our contributions are as follows:</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "inference",
-                    "ctclip",
                     "audio",
                     "model",
-                    "speechctclip",
-                    "ctrate"
+                    "text",
+                    "ctrate",
+                    "inference",
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
@@ -618,23 +618,23 @@
             {
                 "html": "<p class=\"ltx_p\">We construct Speech-RATE by extending CT-RATE <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, which consists of 50,188 3D CT volumes, each paired with a written radiology report and labeled across 18 abnormality labels. To simulate radiologist dictation, each report&#8217;s findings section is converted to audio using the Kokoro TTS engine<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/hexgrad/Kokoro-82M\" style=\"font-size:70%;\" title=\"\">https://huggingface.co/hexgrad/Kokoro-82M</a></span></span></span>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "ctrate"
+                    "ctrate",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Speech is synthesized with eight distinct voices (4 female, 4 male), with small random variations in speaking rate to mimic realistic dictation. All clips are resampled to 24&#8201;kHz. The resulting dataset comprises 50,188 spoken findings sections totaling 1,197&#8201;hours of audio with an average length of 86&#8201;s (see Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S2.T1\" title=\"Table 1 &#8227; 2.1 Speech-RATE: Synthetic Spoken Report Dataset &#8227; 2 Method &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). To support future research, Speech-RATE is released publicly on Hugging Face<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_text\" style=\"font-size:70%;\">Dataset will be released upon paper acceptance.</span></span></span></span>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "random"
+                    "random",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following the CT-CLIP framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib12\" title=\"\">12</a>]</cite>, SpeechCT-CLIP learns a joint representation space for CT volumes and spoken reports. Let <math alttext=\"g(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">g(\\cdot)</annotation></semantics></math> denote the CT-ViT encoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib4\" title=\"\">4</a>]</cite> used in CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite>, which we adopt as the vision backbone, and <math alttext=\"f_{\\theta}(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>f</mi><mi>&#952;</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">f_{\\theta}(\\cdot)</annotation></semantics></math> the trainable speech encoder. For each CT volume <math alttext=\"x^{\\text{ct}}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m3\" intent=\":literal\"><semantics><msubsup><mi>x</mi><mi>i</mi><mtext>ct</mtext></msubsup><annotation encoding=\"application/x-tex\">x^{\\text{ct}}_{i}</annotation></semantics></math> and its paired audio waveform <math alttext=\"x^{\\text{a}}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m4\" intent=\":literal\"><semantics><msubsup><mi>x</mi><mi>i</mi><mtext>a</mtext></msubsup><annotation encoding=\"application/x-tex\">x^{\\text{a}}_{i}</annotation></semantics></math>, we compute</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "speechctclip",
-                    "ctclip"
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
@@ -670,13 +670,13 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluate SpeechCT-CLIP on zero-shot classification and cross-modal retrieval (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). As baselines, we report Random predictions, CT-Net <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a supervised vision-only model, and CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> as a text-based contrastive model. For speech, we compare a na&#239;ve variant, SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> (no knowledge distillation), trained only with contrastive loss, against our full SpeechCT-CLIP, which adds text-guided distillation. This progression isolates the roles of vision-only training, text supervision, speech alignment, and distillation.</p>\n\n",
                 "matched_terms": [
-                    "crossmodal",
-                    "text",
                     "random",
-                    "speechctclipnkdtextnkd",
-                    "retrieval",
-                    "ctclip",
                     "model",
+                    "text",
+                    "crossmodal",
+                    "retrieval",
+                    "speechctclipnkdtextnkd",
+                    "ctclip",
                     "speechctclip"
                 ]
             },
@@ -684,15 +684,15 @@
                 "html": "<p class=\"ltx_p\">To select a speech encoder for SpeechCT-CLIP, we evaluated wav2vec <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib15\" title=\"\">15</a>]</cite>, HuBERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib16\" title=\"\">16</a>]</cite>, and Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib17\" title=\"\">17</a>]</cite> on classifying the 18 CT-RATE abnormality labels directly from the spoken reports (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T2\" title=\"Table 2 &#8227; 4.1 Speech Encoder Selection &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), without using images. Whisper achieved the best linear probing results and improved further when finetuning its top layers. This likely reflects its pretraining on large-scale ASR, which emphasizes semantic content over acoustic detail, making it better suited for reporting. We therefore use Whisper (base) as backbone for subsequent experiments.</p>\n\n",
                 "matched_terms": [
                     "best",
-                    "speechctclip",
-                    "ctrate"
+                    "ctrate",
+                    "speechctclip"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We follow the evaluation protocol of CT-CLIP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#bib.bib1\" title=\"\">1</a>]</cite> and assess zero-shot classification across the 18 CT-RATE labels, reporting AUROC, F1, accuracy, and precision (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02322v1#S4.T3\" title=\"Table 3 &#8227; 4.2 Zero-Shot Classification &#8227; 4 Results and Discussion &#8227; SpeechCT-CLIP: Distilling Text-Image Knowledge to Speech for Voice-Native Multimodal CT Analysis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n",
                 "matched_terms": [
-                    "ctrate",
-                    "ctclip"
+                    "ctclip",
+                    "ctrate"
                 ]
             },
             {
@@ -700,24 +700,24 @@
                 "matched_terms": [
                     "text",
                     "speechctclipnkdtextnkd",
-                    "speechctclip",
-                    "ctclip"
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To assess generalization, we evaluate SpeechCT-CLIP on RAD-ChestCT. It improves over SpeechCT-CLIP<math alttext=\"{}_{\\text{nKD}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p3.m1\" intent=\":literal\"><semantics><msub><mi/><mtext>nKD</mtext></msub><annotation encoding=\"application/x-tex\">{}_{\\text{nKD}}</annotation></semantics></math> (F1 0.623 vs. 0.596) and approaches CT-CLIP (F1 0.660), demonstrating robustness to new domains and speakers.</p>\n\n",
                 "matched_terms": [
                     "speechctclipnkdtextnkd",
-                    "speechctclip",
-                    "ctclip"
+                    "ctclip",
+                    "speechctclip"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we proposed SpeechCT-CLIP, the first model to align spoken radiology reports with 3D CT volumes. Building on our newly created Speech-RATE dataset, we demonstrated that speech can serve as a promising alternative to text in multimodal pretraining. By distilling knowledge from a pretrained text encoder, SpeechCT-CLIP substantially narrows the gap between text- and speech-based training. This enables robust voice-native medical AI without intermediate transcription, avoiding ASR errors and preserving natural information such as radiologists&#8217; uncertainty that would otherwise be lost in transcription. Our work opens the path towards applications beyond classification and retrieval, including speech-driven segmentation, multilingual training, and integration into interactive clinical assistants. In doing so, SpeechCT-CLIP paves the way for more natural and accessible human-AI interaction in clinical practice.</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "model",
                     "retrieval",
+                    "model",
                     "speechctclip"
                 ]
             }

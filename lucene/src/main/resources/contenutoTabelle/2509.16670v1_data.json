@@ -5,26 +5,26 @@
         "body": "Dataset\nType\nCategories\nImages\nAudios\nBBox\n\n\n\n\nCOCO 2017 [20]\n\nDetection\n80\n330K\n80\n1.5M\n\n\nObjects365 [21]\n\nDetection\n365\n609K\n365\n10M\n\n\nFlickr30k [22]\n\nGrounding\n–\n31K\n158,915\n–",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Type</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Categories</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Images</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Audios</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">BBox</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t\">COCO 2017&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib20\" title=\"\">20</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">Detection</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">80</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">330K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">80</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1.5M</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r\">Objects365&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib21\" title=\"\">21</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">Detection</td>\n<td class=\"ltx_td ltx_align_center\">365</td>\n<td class=\"ltx_td ltx_align_center\">609K</td>\n<td class=\"ltx_td ltx_align_center\">365</td>\n<td class=\"ltx_td ltx_align_center\">10M</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r\">Flickr30k&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib22\" title=\"\">22</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">Grounding</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">&#8211;</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">31K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">158,915</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">&#8211;</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "coco",
-            "bbox",
-            "15m",
-            "datasets",
-            "31k",
-            "categories",
-            "10m",
             "images",
+            "detection",
+            "type",
+            "categories",
+            "datasets",
+            "audios",
+            "10m",
+            "31k",
+            "15m",
+            "coco",
+            "objects365",
+            "synthesized",
             "330k",
             "flickr30k",
-            "multimodal",
-            "audios",
-            "audio",
-            "synthesized",
-            "detection",
+            "609k",
             "dataset",
+            "bbox",
             "grounding",
-            "objects365",
-            "type",
-            "609k"
+            "audio",
+            "multimodal"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span>\nWe conduct experiments on three widely used multimodal benchmarks following the standard open-set object detection protocol.\nSince these datasets do not provide speech annotations, we construct a multi-speaker audio corpus by converting textual descriptions into spoken utterances using <span class=\"ltx_text ltx_font_typewriter\">edge-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_serif\">1</span></span><a class=\"ltx_ref ltx_url\" href=\"https://github.com/rany2/edge-tts\" title=\"\">https://github.com/rany2/edge-tts</a></span></span></span></span>.\nTo improve diversity and robustness, we generate speech with 10 distinct speakers and introduce random variations in timbre during synthesis.\nThe overall dataset statistics are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T1\" title=\"Table 1 &#8227; 3.1 Implementation Details &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n"
@@ -33,57 +33,57 @@
             {
                 "html": "<p class=\"ltx_p\">Audio grounding, or speech-driven open-set object detection, aims to localize and identify objects directly from speech, enabling generalization beyond predefined categories. This task is crucial for applications like human-robot interaction where textual input is impractical. However, progress in this domain faces a fundamental bottleneck from the scarcity of large-scale, paired audio-image data, and is further constrained by previous methods that rely on indirect, text-mediated pipelines. In this paper, we introduce Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end approach built on a pre-training and fine-tuning paradigm. Specifically, in the pre-training stage, we design a Query-Guided Semantic Aggregation module that employs learnable queries to condense redundant speech embeddings into compact semantic representations. During fine-tuning, we incorporate a parameter-efficient Mixture-of-LoRA-Experts (MoLE) architecture to achieve deeper and more nuanced cross-modal adaptation. Extensive experiments show that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves robust and adaptable performance across multiple benchmarks, demonstrating its strong generalization ability and broad applicability.</p>\n\n",
                 "matched_terms": [
+                    "detection",
                     "categories",
                     "audio",
-                    "grounding",
-                    "detection"
+                    "grounding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nOpen-set object detection, Audio Grounding, Multi-modal</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "grounding",
+                    "detection",
                     "multimodal",
-                    "detection"
+                    "audio",
+                    "grounding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Open-set object detection extends closed-set detection by recognizing not only known but also novel categories&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>. Motivated by the way humans rely on language for semantic association when interpreting visual information, recent research has explored multimodal learning to construct shared visual-language representations from large-scale image&#8211;text pairs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib3\" title=\"\">3</a>]</cite>. This approach enables broader category coverage and zero-shot detection. Representative approaches include GLIP&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib4\" title=\"\">4</a>]</cite>, YOLO-World&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib5\" title=\"\">5</a>]</cite>, and Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, all of which rely on text to provide semantic guidance for object localization and identification.</p>\n\n",
                 "matched_terms": [
+                    "detection",
                     "categories",
-                    "grounding",
                     "multimodal",
-                    "detection"
+                    "grounding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A pioneering attempt is YOSS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib10\" title=\"\">10</a>]</cite>, which adopts a two-stage design combining pre-trained audio and vision models. It first aligns an audio encoder to visual features via textual mediation through CLIP&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib3\" title=\"\">3</a>]</cite>, and then integrates the aligned audio encoder into a detection framework&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib11\" title=\"\">11</a>]</cite> using contrastive learning to map speech to image regions. However, this pipeline suffers from two limitations. First, the decoupled two-stage training hinders efficient end-to-end optimization, leading to suboptimal convergence&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib12\" title=\"\">12</a>]</cite>. Second, its reliance on text mediation limits direct cross-modal fusion, underutilizing the rich acoustic cues and properties of speech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib13\" title=\"\">13</a>]</cite>.\nMoreover, the scarcity of audio&#8211;image pairs poses a fundamental bottleneck for progress in audio grounding research.</p>\n\n",
                 "matched_terms": [
+                    "detection",
                     "audio",
-                    "grounding",
-                    "detection"
+                    "grounding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address the aforementioned limitations, we propose a novel end-to-end method, Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), by leveraging semantic knowledge from large-scale pre-trained models. Our approach leverages two key sources of knowledge: the rich text-image mapping semantics from Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite> and the deep acoustic representations from unsupervised audio encoders such as HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite>.\nIt is noteworthy that a modality gap exists between these two types of knowledge, necessitating modality alignment. Therefore, <span class=\"ltx_text ltx_font_italic\">Speech2See</span> employs a progressive pre-training and fine-tuning paradigm that efficiently bridges the audio and visual modalities, thereby efficiently leveraging transferred prior knowledge.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "grounding"
+                    "grounding",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During pre-training, we introduce a lightweight Query-Guided Semantic Aggregation (QSA) module. Acting as a semantic adapter, QSA distills raw speech features into a compact representation that can be directly fused with visual features. During fine-tuning, although the transferred decoder parameters retain semantic knowledge from text&#8211;image alignment, they remain suboptimal for speech-guided decoding. To deepen the alignment, we enhance the decoder with a Mixture-of-LoRA-Experts (MoLE) architectures, inspired by LLaVA-MoLE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib15\" title=\"\">15</a>]</cite>. Extensive experiments demonstrate that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves state-of-the-art performance in audio grounding, effectively overcoming the challenges of data scarcity and the limitations of prior methods.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "grounding"
+                    "grounding",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Configuration.</span>\nOur method is built upon Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, with Swin-T&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib16\" title=\"\">16</a>]</cite> as the visual backbone and HuBERT-Base&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite> as the speech backbone.\nThe detector is configured with 900 queries, and the speech input is downsampled to 256 tokens.\nSimilar to Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, the detection loss combines a contrastive loss, an L1 bounding box regression loss, and a GIoU loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib18\" title=\"\">18</a>]</cite>.\nDuring Hungarian matching, the weights are set to <math alttext=\"2.0/5.0/2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>2.0</mn><mo>/</mo><mn>5.0</mn><mo>/</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">2.0/5.0/2.0</annotation></semantics></math> and later adjusted to <math alttext=\"1.0/5.0/2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m2\" intent=\":literal\"><semantics><mrow><mn>1.0</mn><mo>/</mo><mn>5.0</mn><mo>/</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">1.0/5.0/2.0</annotation></semantics></math>.\nFor Mixture-of-LoRA-Experts fine-tuning, a load-balancing loss is applied to each layer, averaged across layers, and scaled by <math alttext=\"\\alpha=1\\times 10^{-2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m3\" intent=\":literal\"><semantics><mrow><mi>&#945;</mi><mo>=</mo><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>2</mn></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">\\alpha=1\\times 10^{-2}</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "grounding",
-                    "detection"
+                    "detection",
+                    "grounding"
                 ]
             },
             {
@@ -96,22 +96,22 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Zero-shot Detection on LVIS.</span>\nWe further evaluate <span class=\"ltx_text ltx_font_italic\">Speech2See</span> on the long-tailed LVIS benchmark, which contains 1,203 categories. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T3\" title=\"Table 3 &#8227; 3.2 Experimental Results &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, this task remains highly challenging for speech-based models. Notably, our approach achieves a performance improvement over the two-stage YOSS model across all metrics. Despite these improvements, a gap still exists compared with text-driven detectors, reflecting the inherent complexity of speech understanding.</p>\n\n",
                 "matched_terms": [
-                    "categories",
-                    "detection"
+                    "detection",
+                    "categories"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.F3\" title=\"Figure 3 &#8227; 3.3 Visualization &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides a qualitative comparison among ground-truth annotations (left), predictions from <span class=\"ltx_text ltx_font_italic\">Speech2See</span> (middle), and the text-driven baseline Grounding DINO (right). The examples illustrate both the strengths and limitations of each model. In the first row, our model exhibits robust detection: it not only matches the annotated objects but also identifies an additional item, the &#8220;handbag&#8221;, which was omitted from the ground truth. The second row demonstrates a more nuanced case: <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves an accurate localization of the &#8220;dining table&#8221; compared to the ground truth, whereas Grounding DINO fails to detect the object altogether. Nonetheless, our model overlooks the &#8220;potted plant&#8221;. These results suggest that while <span class=\"ltx_text ltx_font_italic\">Speech2See</span> effectively transfers knowledge to support accurate speech-driven localization, both speech and text based detectors exhibit complementary strengths and weaknesses that merit deeper analysis.</p>\n\n",
                 "matched_terms": [
-                    "grounding",
-                    "detection"
+                    "detection",
+                    "grounding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper proposes Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end framework for audio grounding. Our approach addresses two key challenges, data scarcity and limitation of previous methods, by transferring knowledge and establishing speech-vision alignment through a progressive training paradigm. A Query-based Semantic Aggregation module is introduced to generate compact representations for audio inputs.\nThe subsequent fine-tuning stage leverages a Mixture-of-LoRA-Experts architecture to provide parameter-efficient and adaptive refinement for diverse speech inputs. Experiments on multiple benchmarks demonstrate consistent improvements over existing methods in both closed-set and zero-shot settings. Future work will focus on addressing long-tailed distributions and improving robustness to noisy and diverse speech.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "grounding"
+                    "grounding",
+                    "audio"
                 ]
             }
         ]
@@ -122,29 +122,29 @@
         "body": "Model\nPre-Training Data\nMoLE\nAP\nAP50\nAP75\n\n\nClose-Set Setting\n\n\nYOSS-base\nFlickr, COCO\n×\\times\n34.0\n47.2\n36.9\n\n\nYOSS-large\n+GQA\n×\\times\n39.2\n53.3\n42.6\n\n\nOurs\nCOCO\n×\\times\n54.1\n70.2\n59.6\n\n\nOurs\nCOCO\n✓\\checkmark\n56.2\n71.3\n60.7\n\n\nZero-Shot Setting\n\n\nGrounding-DINO-T\nO365\n×\\times\n46.7\n-\n-\n\n\nGrounding-DINO-T\nO365, Flickr, GQA\n×\\times\n48.1\n-\n-\n\n\nOurs\nObj365\n×\\times\n38.2\n49.9\n40.8\n\n\nOurs\nObj365\n✓\\checkmark\n39.8\n50.3\n41.9\n\n\nOurs\nO365, Flickr, GQA\n×\\times\n40.4\n52.7\n44.2\n\n\nOurs\nO365, Flickr, GQA\n✓\\checkmark\n42.7\n55.7\n46.8",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Pre-Training Data</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">MoLE</th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">AP</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">AP50</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">AP75</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"6\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Close-Set Setting</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">YOSS-base</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Flickr, COCO</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m1\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">34.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">47.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">36.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">YOSS-large</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">+GQA</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m2\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">39.2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">53.3</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">42.6</td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">COCO</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m3\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mo mathbackground=\"#E6E6E6\" style=\"--ltx-bg-color:#E6E6E6;\">&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">54.1</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">70.2</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">59.6</span></td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">COCO</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\checkmark\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m4\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mi mathbackground=\"#E6E6E6\" mathvariant=\"normal\" style=\"--ltx-bg-color:#E6E6E6;\">&#10003;</mi><annotation encoding=\"application/x-tex\">\\checkmark</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">56.2</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">71.3</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">60.7</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"6\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Zero-Shot Setting</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Grounding-DINO-T</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">O365</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m5\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">46.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">Grounding-DINO-T</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">O365, Flickr, GQA</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m6\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">48.1</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Obj365</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m7\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mo mathbackground=\"#E6E6E6\" style=\"--ltx-bg-color:#E6E6E6;\">&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">38.2</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">49.9</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">40.8</span></td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Obj365</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\checkmark\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m8\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mi mathbackground=\"#E6E6E6\" mathvariant=\"normal\" style=\"--ltx-bg-color:#E6E6E6;\">&#10003;</mi><annotation encoding=\"application/x-tex\">\\checkmark</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">39.8</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">50.3</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">41.9</span></td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">O365, Flickr, GQA</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m9\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mo mathbackground=\"#E6E6E6\" style=\"--ltx-bg-color:#E6E6E6;\">&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">40.4</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">52.7</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">44.2</span></td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">O365, Flickr, GQA</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><math alttext=\"\\checkmark\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T2.m10\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mi mathbackground=\"#E6E6E6\" mathvariant=\"normal\" style=\"--ltx-bg-color:#E6E6E6;\">&#10003;</mi><annotation encoding=\"application/x-tex\">\\checkmark</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">42.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">55.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:5.0pt;padding-right:5.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">46.8</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "flickr",
-            "mole",
-            "coco",
-            "data",
-            "yosslarge",
-            "ap50",
-            "pretraining",
-            "yossbase",
-            "obj365",
-            "ap75",
-            "gqa",
-            "closeset",
-            "results",
             "detection",
+            "yosslarge",
             "groundingdinot",
-            "zeroshot",
-            "✓checkmark",
+            "gqa",
             "ours",
-            "o365",
+            "coco",
+            "zeroshot",
+            "ap75",
+            "results",
+            "ap50",
             "benchmarks",
-            "×times",
             "model",
-            "setting"
+            "closeset",
+            "mole",
+            "×times",
+            "o365",
+            "obj365",
+            "setting",
+            "yossbase",
+            "flickr",
+            "✓checkmark",
+            "pretraining",
+            "data"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Closed-set Audio-Visual Detection.</span>\nWe conduct a closed-set evaluation on the COCO2017-val benchmark, as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T2\" title=\"Table 2 &#8227; 3.2 Experimental Results &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Compared with the two-stage approach of YOSS, our approach achieves performance gains. This validates our end-to-end design, which establishes a direct speech-vision alignment that avoids the information bottlenecks and error propagation inherent in multi-stage systems.</p>\n\n",
@@ -155,86 +155,86 @@
             {
                 "html": "<p class=\"ltx_p\">Audio grounding, or speech-driven open-set object detection, aims to localize and identify objects directly from speech, enabling generalization beyond predefined categories. This task is crucial for applications like human-robot interaction where textual input is impractical. However, progress in this domain faces a fundamental bottleneck from the scarcity of large-scale, paired audio-image data, and is further constrained by previous methods that rely on indirect, text-mediated pipelines. In this paper, we introduce Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end approach built on a pre-training and fine-tuning paradigm. Specifically, in the pre-training stage, we design a Query-Guided Semantic Aggregation module that employs learnable queries to condense redundant speech embeddings into compact semantic representations. During fine-tuning, we incorporate a parameter-efficient Mixture-of-LoRA-Experts (MoLE) architecture to achieve deeper and more nuanced cross-modal adaptation. Extensive experiments show that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves robust and adaptable performance across multiple benchmarks, demonstrating its strong generalization ability and broad applicability.</p>\n\n",
                 "matched_terms": [
-                    "mole",
                     "detection",
                     "benchmarks",
-                    "data",
-                    "pretraining"
+                    "mole",
+                    "pretraining",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Open-set object detection extends closed-set detection by recognizing not only known but also novel categories&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>. Motivated by the way humans rely on language for semantic association when interpreting visual information, recent research has explored multimodal learning to construct shared visual-language representations from large-scale image&#8211;text pairs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib3\" title=\"\">3</a>]</cite>. This approach enables broader category coverage and zero-shot detection. Representative approaches include GLIP&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib4\" title=\"\">4</a>]</cite>, YOLO-World&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib5\" title=\"\">5</a>]</cite>, and Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, all of which rely on text to provide semantic guidance for object localization and identification.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "detection"
+                    "detection",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During pre-training, we introduce a lightweight Query-Guided Semantic Aggregation (QSA) module. Acting as a semantic adapter, QSA distills raw speech features into a compact representation that can be directly fused with visual features. During fine-tuning, although the transferred decoder parameters retain semantic knowledge from text&#8211;image alignment, they remain suboptimal for speech-guided decoding. To deepen the alignment, we enhance the decoder with a Mixture-of-LoRA-Experts (MoLE) architectures, inspired by LLaVA-MoLE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib15\" title=\"\">15</a>]</cite>. Extensive experiments demonstrate that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves state-of-the-art performance in audio grounding, effectively overcoming the challenges of data scarcity and the limitations of prior methods.</p>\n\n",
                 "matched_terms": [
-                    "mole",
+                    "pretraining",
                     "data",
-                    "pretraining"
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In pre-training, given an image&#8211;audio pair (I,A), we firstly extract multi-scale visual features via a Swin Transformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib16\" title=\"\">16</a>]</cite> and raw speech embeddings via HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite>. Our Query-based Semantic Aggregation (QSA) module then condenses the redundant HuBERT embeddings into compact semantic tokens. These tokens and the visual features are subsequently processed within a Grounding DINO-inspired&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite> architecture, which employs a feature enhancer for deep fusion and a speech-guided query selection module to initialize object queries. Finally, a cross modality decoder integrates these enhanced features to generate predictions, thereby establishing a foundational alignment between speech and vision.\nDuring fine-tuning, a parameter-efficient Mixture-of-LoRA-Experts (MoLE) is incorporated into the decoder to refine this alignment. The overall architecture thus establishes direct speech&#8211;vision correspondence, supports efficient end-to-end optimization, and exhibits strong generalization.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "pretraining"
+                    "pretraining",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The overall training loss consists of two components, including the <span class=\"ltx_text ltx_font_italic\">detection loss</span> and the <span class=\"ltx_text ltx_font_italic\">load balancing loss</span> for MoLE.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "detection"
+                    "detection",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span>\nWe conduct experiments on three widely used multimodal benchmarks following the standard open-set object detection protocol.\nSince these datasets do not provide speech annotations, we construct a multi-speaker audio corpus by converting textual descriptions into spoken utterances using <span class=\"ltx_text ltx_font_typewriter\">edge-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_serif\">1</span></span><a class=\"ltx_ref ltx_url\" href=\"https://github.com/rany2/edge-tts\" title=\"\">https://github.com/rany2/edge-tts</a></span></span></span></span>.\nTo improve diversity and robustness, we generate speech with 10 distinct speakers and introduce random variations in timbre during synthesis.\nThe overall dataset statistics are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T1\" title=\"Table 1 &#8227; 3.1 Implementation Details &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "benchmarks",
-                    "detection"
+                    "detection",
+                    "benchmarks"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training Strategy.</span>\nDuring the <span class=\"ltx_text ltx_font_italic\">pre-training stage</span>, the Swin-T, HuBERT backbones and decoder are frozen, while all other modules are optimized using AdamW with a learning rate of <math alttext=\"1\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-4}</annotation></semantics></math>, a batch size of 64, and 10 training epochs with a learning rate warm-up schedule.\nIn the <span class=\"ltx_text ltx_font_italic\">fine-tuning stage</span>, a MoLE module with rank 64 is inserted into the feed-forward network, where each insertion contains two LoRA experts.\nOnly the MoLE parameters are updated for 2 epochs, while all other parameters remain frozen.\nAll experiments are conducted on 8<math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m2\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math> NVIDIA A800 GPUs.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "pretraining"
+                    "pretraining",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate the performance of <span class=\"ltx_text ltx_font_italic\">Speech2See</span> under both closed-set and zero-shot detection settings, and further examine the contribution of the Mixture-of-LoRA-Experts (MoLE) fine-tuning strategy.</p>\n\n",
                 "matched_terms": [
+                    "detection",
                     "zeroshot",
-                    "mole",
-                    "detection"
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Zero-shot Detection on LVIS.</span>\nWe further evaluate <span class=\"ltx_text ltx_font_italic\">Speech2See</span> on the long-tailed LVIS benchmark, which contains 1,203 categories. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T3\" title=\"Table 3 &#8227; 3.2 Experimental Results &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, this task remains highly challenging for speech-based models. Notably, our approach achieves a performance improvement over the two-stage YOSS model across all metrics. Despite these improvements, a gap still exists compared with text-driven detectors, reflecting the inherent complexity of speech understanding.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
+                    "detection",
                     "model",
-                    "detection"
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.F3\" title=\"Figure 3 &#8227; 3.3 Visualization &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides a qualitative comparison among ground-truth annotations (left), predictions from <span class=\"ltx_text ltx_font_italic\">Speech2See</span> (middle), and the text-driven baseline Grounding DINO (right). The examples illustrate both the strengths and limitations of each model. In the first row, our model exhibits robust detection: it not only matches the annotated objects but also identifies an additional item, the &#8220;handbag&#8221;, which was omitted from the ground truth. The second row demonstrates a more nuanced case: <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves an accurate localization of the &#8220;dining table&#8221; compared to the ground truth, whereas Grounding DINO fails to detect the object altogether. Nonetheless, our model overlooks the &#8220;potted plant&#8221;. These results suggest that while <span class=\"ltx_text ltx_font_italic\">Speech2See</span> effectively transfers knowledge to support accurate speech-driven localization, both speech and text based detectors exhibit complementary strengths and weaknesses that merit deeper analysis.</p>\n\n",
                 "matched_terms": [
-                    "results",
+                    "detection",
                     "model",
-                    "detection"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper proposes Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end framework for audio grounding. Our approach addresses two key challenges, data scarcity and limitation of previous methods, by transferring knowledge and establishing speech-vision alignment through a progressive training paradigm. A Query-based Semantic Aggregation module is introduced to generate compact representations for audio inputs.\nThe subsequent fine-tuning stage leverages a Mixture-of-LoRA-Experts architecture to provide parameter-efficient and adaptive refinement for diverse speech inputs. Experiments on multiple benchmarks demonstrate consistent improvements over existing methods in both closed-set and zero-shot settings. Future work will focus on addressing long-tailed distributions and improving robustness to noisy and diverse speech.</p>\n\n",
                 "matched_terms": [
+                    "data",
                     "benchmarks",
-                    "zeroshot",
-                    "data"
+                    "zeroshot"
                 ]
             }
         ]
@@ -245,28 +245,28 @@
         "body": "Model\nPre-Training Data\nMoLE\nAP\nAPr\nAPc\nAPf\n\n\n\n\nGrounding-DINO-T\nO365, Flickr, GQA\n×\\times\n25.6\n14.4\n19.6\n32.2\n\n\nYOSS-base\nFlickr, COCO\n×\\times\n13.6\n4.4\n9.5\n18.8\n\n\nYOSS-large\n+GQA\n×\\times\n16.3\n6.3\n9.2\n16.9\n\n\nOurs\nO365, Flickr, GQA\n×\\times\n18.5\n7.6\n11.2\n18.2\n\n\nOurs\nO365, Flickr, GQA\n✓\\checkmark\n19.9\n7.9\n13.3\n18.9",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Pre-Training Data</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">MoLE</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">AP</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">APr</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">APc</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">APf</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Grounding-DINO-T</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">O365, Flickr, GQA</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m1\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">25.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">14.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">19.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">32.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">YOSS-base</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Flickr, COCO</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m2\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">13.6</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">4.4</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">9.5</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">18.8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">YOSS-large</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">+GQA</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m3\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">16.3</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">6.3</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">9.2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">16.9</td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">O365, Flickr, GQA</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m4\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mo mathbackground=\"#E6E6E6\" style=\"--ltx-bg-color:#E6E6E6;\">&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">18.5</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">7.6</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">11.2</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">18.2</span></td>\n</tr>\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">Ours</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">O365, Flickr, GQA</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><math alttext=\"\\checkmark\" class=\"ltx_Math\" display=\"inline\" id=\"S3.T3.m5\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mi mathbackground=\"#E6E6E6\" mathvariant=\"normal\" style=\"--ltx-bg-color:#E6E6E6;\">&#10003;</mi><annotation encoding=\"application/x-tex\">\\checkmark</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">19.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">7.9</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">13.3</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text\" style=\"--ltx-bg-color:#E6E6E6;\">18.9</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "flickr",
-            "mole",
-            "coco",
-            "data",
-            "yosslarge",
-            "apr",
-            "pretraining",
-            "yossbase",
-            "gqa",
-            "results",
-            "apc",
             "detection",
+            "yosslarge",
             "groundingdinot",
-            "apf",
-            "zeroshot",
-            "✓checkmark",
+            "apc",
+            "gqa",
             "ours",
-            "o365",
+            "apf",
+            "coco",
+            "zeroshot",
+            "results",
             "benchmarks",
-            "×times",
+            "lvis",
             "model",
-            "lvis"
+            "mole",
+            "×times",
+            "o365",
+            "yossbase",
+            "flickr",
+            "apr",
+            "✓checkmark",
+            "pretraining",
+            "data"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Zero-shot Detection on LVIS.</span>\nWe further evaluate <span class=\"ltx_text ltx_font_italic\">Speech2See</span> on the long-tailed LVIS benchmark, which contains 1,203 categories. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T3\" title=\"Table 3 &#8227; 3.2 Experimental Results &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, this task remains highly challenging for speech-based models. Notably, our approach achieves a performance improvement over the two-stage YOSS model across all metrics. Despite these improvements, a gap still exists compared with text-driven detectors, reflecting the inherent complexity of speech understanding.</p>\n\n",
@@ -276,62 +276,62 @@
             {
                 "html": "<p class=\"ltx_p\">Audio grounding, or speech-driven open-set object detection, aims to localize and identify objects directly from speech, enabling generalization beyond predefined categories. This task is crucial for applications like human-robot interaction where textual input is impractical. However, progress in this domain faces a fundamental bottleneck from the scarcity of large-scale, paired audio-image data, and is further constrained by previous methods that rely on indirect, text-mediated pipelines. In this paper, we introduce Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end approach built on a pre-training and fine-tuning paradigm. Specifically, in the pre-training stage, we design a Query-Guided Semantic Aggregation module that employs learnable queries to condense redundant speech embeddings into compact semantic representations. During fine-tuning, we incorporate a parameter-efficient Mixture-of-LoRA-Experts (MoLE) architecture to achieve deeper and more nuanced cross-modal adaptation. Extensive experiments show that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves robust and adaptable performance across multiple benchmarks, demonstrating its strong generalization ability and broad applicability.</p>\n\n",
                 "matched_terms": [
-                    "mole",
                     "detection",
                     "benchmarks",
-                    "data",
-                    "pretraining"
+                    "mole",
+                    "pretraining",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Open-set object detection extends closed-set detection by recognizing not only known but also novel categories&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>. Motivated by the way humans rely on language for semantic association when interpreting visual information, recent research has explored multimodal learning to construct shared visual-language representations from large-scale image&#8211;text pairs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib3\" title=\"\">3</a>]</cite>. This approach enables broader category coverage and zero-shot detection. Representative approaches include GLIP&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib4\" title=\"\">4</a>]</cite>, YOLO-World&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib5\" title=\"\">5</a>]</cite>, and Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, all of which rely on text to provide semantic guidance for object localization and identification.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "detection"
+                    "detection",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During pre-training, we introduce a lightweight Query-Guided Semantic Aggregation (QSA) module. Acting as a semantic adapter, QSA distills raw speech features into a compact representation that can be directly fused with visual features. During fine-tuning, although the transferred decoder parameters retain semantic knowledge from text&#8211;image alignment, they remain suboptimal for speech-guided decoding. To deepen the alignment, we enhance the decoder with a Mixture-of-LoRA-Experts (MoLE) architectures, inspired by LLaVA-MoLE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib15\" title=\"\">15</a>]</cite>. Extensive experiments demonstrate that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves state-of-the-art performance in audio grounding, effectively overcoming the challenges of data scarcity and the limitations of prior methods.</p>\n\n",
                 "matched_terms": [
-                    "mole",
+                    "pretraining",
                     "data",
-                    "pretraining"
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In pre-training, given an image&#8211;audio pair (I,A), we firstly extract multi-scale visual features via a Swin Transformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib16\" title=\"\">16</a>]</cite> and raw speech embeddings via HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite>. Our Query-based Semantic Aggregation (QSA) module then condenses the redundant HuBERT embeddings into compact semantic tokens. These tokens and the visual features are subsequently processed within a Grounding DINO-inspired&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite> architecture, which employs a feature enhancer for deep fusion and a speech-guided query selection module to initialize object queries. Finally, a cross modality decoder integrates these enhanced features to generate predictions, thereby establishing a foundational alignment between speech and vision.\nDuring fine-tuning, a parameter-efficient Mixture-of-LoRA-Experts (MoLE) is incorporated into the decoder to refine this alignment. The overall architecture thus establishes direct speech&#8211;vision correspondence, supports efficient end-to-end optimization, and exhibits strong generalization.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "pretraining"
+                    "pretraining",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The overall training loss consists of two components, including the <span class=\"ltx_text ltx_font_italic\">detection loss</span> and the <span class=\"ltx_text ltx_font_italic\">load balancing loss</span> for MoLE.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "detection"
+                    "detection",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span>\nWe conduct experiments on three widely used multimodal benchmarks following the standard open-set object detection protocol.\nSince these datasets do not provide speech annotations, we construct a multi-speaker audio corpus by converting textual descriptions into spoken utterances using <span class=\"ltx_text ltx_font_typewriter\">edge-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_serif\">1</span></span><a class=\"ltx_ref ltx_url\" href=\"https://github.com/rany2/edge-tts\" title=\"\">https://github.com/rany2/edge-tts</a></span></span></span></span>.\nTo improve diversity and robustness, we generate speech with 10 distinct speakers and introduce random variations in timbre during synthesis.\nThe overall dataset statistics are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T1\" title=\"Table 1 &#8227; 3.1 Implementation Details &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "benchmarks",
-                    "detection"
+                    "detection",
+                    "benchmarks"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training Strategy.</span>\nDuring the <span class=\"ltx_text ltx_font_italic\">pre-training stage</span>, the Swin-T, HuBERT backbones and decoder are frozen, while all other modules are optimized using AdamW with a learning rate of <math alttext=\"1\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-4}</annotation></semantics></math>, a batch size of 64, and 10 training epochs with a learning rate warm-up schedule.\nIn the <span class=\"ltx_text ltx_font_italic\">fine-tuning stage</span>, a MoLE module with rank 64 is inserted into the feed-forward network, where each insertion contains two LoRA experts.\nOnly the MoLE parameters are updated for 2 epochs, while all other parameters remain frozen.\nAll experiments are conducted on 8<math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m2\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math> NVIDIA A800 GPUs.</p>\n\n",
                 "matched_terms": [
-                    "mole",
-                    "pretraining"
+                    "pretraining",
+                    "mole"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate the performance of <span class=\"ltx_text ltx_font_italic\">Speech2See</span> under both closed-set and zero-shot detection settings, and further examine the contribution of the Mixture-of-LoRA-Experts (MoLE) fine-tuning strategy.</p>\n\n",
                 "matched_terms": [
+                    "detection",
                     "zeroshot",
-                    "mole",
-                    "detection"
+                    "mole"
                 ]
             },
             {
@@ -339,25 +339,25 @@
                 "matched_terms": [
                     "detection",
                     "coco",
+                    "zeroshot",
                     "data",
-                    "results",
-                    "zeroshot"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.F3\" title=\"Figure 3 &#8227; 3.3 Visualization &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides a qualitative comparison among ground-truth annotations (left), predictions from <span class=\"ltx_text ltx_font_italic\">Speech2See</span> (middle), and the text-driven baseline Grounding DINO (right). The examples illustrate both the strengths and limitations of each model. In the first row, our model exhibits robust detection: it not only matches the annotated objects but also identifies an additional item, the &#8220;handbag&#8221;, which was omitted from the ground truth. The second row demonstrates a more nuanced case: <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves an accurate localization of the &#8220;dining table&#8221; compared to the ground truth, whereas Grounding DINO fails to detect the object altogether. Nonetheless, our model overlooks the &#8220;potted plant&#8221;. These results suggest that while <span class=\"ltx_text ltx_font_italic\">Speech2See</span> effectively transfers knowledge to support accurate speech-driven localization, both speech and text based detectors exhibit complementary strengths and weaknesses that merit deeper analysis.</p>\n\n",
                 "matched_terms": [
-                    "results",
+                    "detection",
                     "model",
-                    "detection"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper proposes Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end framework for audio grounding. Our approach addresses two key challenges, data scarcity and limitation of previous methods, by transferring knowledge and establishing speech-vision alignment through a progressive training paradigm. A Query-based Semantic Aggregation module is introduced to generate compact representations for audio inputs.\nThe subsequent fine-tuning stage leverages a Mixture-of-LoRA-Experts architecture to provide parameter-efficient and adaptive refinement for diverse speech inputs. Experiments on multiple benchmarks demonstrate consistent improvements over existing methods in both closed-set and zero-shot settings. Future work will focus on addressing long-tailed distributions and improving robustness to noisy and diverse speech.</p>\n\n",
                 "matched_terms": [
+                    "data",
                     "benchmarks",
-                    "zeroshot",
-                    "data"
+                    "zeroshot"
                 ]
             }
         ]
@@ -368,20 +368,20 @@
         "body": "Method\nBackbone\nParams\nRTF\n\n\n\n\nCascaded\nHubert + Grounding DINO\n266.7M\n0.41\n\n\nEnd-to-End\nSpeech2See\n197.8M\n0.35",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Backbone</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Params</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">RTF</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Cascaded</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Hubert + Grounding DINO</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">266.7M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.41</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">End-to-End</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Speech2See</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">197.8M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding-left:10.0pt;padding-right:10.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.35</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "rtf",
-            "method",
-            "hubert",
-            "dino",
-            "speech2see",
-            "comparison",
-            "cascaded",
-            "architecture",
-            "grounding",
-            "backbone",
+            "endtoend",
             "params",
-            "2667m",
+            "speech2see",
+            "hubert",
+            "backbone",
+            "architecture",
+            "cascaded",
+            "method",
             "1978m",
-            "endtoend"
+            "grounding",
+            "dino",
+            "comparison",
+            "2667m",
+            "rtf"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We compare the computational efficiency of our end-to-end <span class=\"ltx_text ltx_font_italic\">Speech2See</span> with a cascaded baseline, which consists of an ASR module (Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib23\" title=\"\">23</a>]</cite>) followed by a text-guided detector (Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>). As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.T4\" title=\"Table 4 &#8227; 3.4 Ablation Studies &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, our end-to-end architecture is more efficient in terms of parameter count and real-time factor (RTF), providing a significant advantage in processing speed. These results underscore the computational benefits of adopting an end-to-end modeling paradigm.</p>\n\n"
@@ -390,10 +390,10 @@
             {
                 "html": "<p class=\"ltx_p\">Audio grounding, or speech-driven open-set object detection, aims to localize and identify objects directly from speech, enabling generalization beyond predefined categories. This task is crucial for applications like human-robot interaction where textual input is impractical. However, progress in this domain faces a fundamental bottleneck from the scarcity of large-scale, paired audio-image data, and is further constrained by previous methods that rely on indirect, text-mediated pipelines. In this paper, we introduce Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end approach built on a pre-training and fine-tuning paradigm. Specifically, in the pre-training stage, we design a Query-Guided Semantic Aggregation module that employs learnable queries to condense redundant speech embeddings into compact semantic representations. During fine-tuning, we incorporate a parameter-efficient Mixture-of-LoRA-Experts (MoLE) architecture to achieve deeper and more nuanced cross-modal adaptation. Extensive experiments show that <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves robust and adaptable performance across multiple benchmarks, demonstrating its strong generalization ability and broad applicability.</p>\n\n",
                 "matched_terms": [
-                    "architecture",
                     "speech2see",
                     "grounding",
-                    "endtoend"
+                    "endtoend",
+                    "architecture"
                 ]
             },
             {
@@ -413,12 +413,12 @@
             {
                 "html": "<p class=\"ltx_p\">To address the aforementioned limitations, we propose a novel end-to-end method, Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), by leveraging semantic knowledge from large-scale pre-trained models. Our approach leverages two key sources of knowledge: the rich text-image mapping semantics from Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite> and the deep acoustic representations from unsupervised audio encoders such as HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite>.\nIt is noteworthy that a modality gap exists between these two types of knowledge, necessitating modality alignment. Therefore, <span class=\"ltx_text ltx_font_italic\">Speech2See</span> employs a progressive pre-training and fine-tuning paradigm that efficiently bridges the audio and visual modalities, thereby efficiently leveraging transferred prior knowledge.</p>\n\n",
                 "matched_terms": [
-                    "method",
-                    "hubert",
-                    "dino",
+                    "endtoend",
                     "speech2see",
+                    "hubert",
+                    "method",
                     "grounding",
-                    "endtoend"
+                    "dino"
                 ]
             },
             {
@@ -431,45 +431,45 @@
             {
                 "html": "<p class=\"ltx_p\">As illustrated in Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, <span class=\"ltx_text ltx_font_italic\">Speech2See</span> employs a novel progressive pre-training and fine-tuning paradigm to efficiently transfer rich semantic knowledge from a foundational, pre-trained grounding method to the speech domain.</p>\n\n",
                 "matched_terms": [
-                    "method",
+                    "speech2see",
                     "grounding",
-                    "speech2see"
+                    "method"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In pre-training, given an image&#8211;audio pair (I,A), we firstly extract multi-scale visual features via a Swin Transformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib16\" title=\"\">16</a>]</cite> and raw speech embeddings via HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite>. Our Query-based Semantic Aggregation (QSA) module then condenses the redundant HuBERT embeddings into compact semantic tokens. These tokens and the visual features are subsequently processed within a Grounding DINO-inspired&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite> architecture, which employs a feature enhancer for deep fusion and a speech-guided query selection module to initialize object queries. Finally, a cross modality decoder integrates these enhanced features to generate predictions, thereby establishing a foundational alignment between speech and vision.\nDuring fine-tuning, a parameter-efficient Mixture-of-LoRA-Experts (MoLE) is incorporated into the decoder to refine this alignment. The overall architecture thus establishes direct speech&#8211;vision correspondence, supports efficient end-to-end optimization, and exhibits strong generalization.</p>\n\n",
                 "matched_terms": [
-                    "architecture",
                     "grounding",
                     "hubert",
-                    "endtoend"
+                    "endtoend",
+                    "architecture"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Configuration.</span>\nOur method is built upon Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, with Swin-T&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib16\" title=\"\">16</a>]</cite> as the visual backbone and HuBERT-Base&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib14\" title=\"\">14</a>]</cite> as the speech backbone.\nThe detector is configured with 900 queries, and the speech input is downsampled to 256 tokens.\nSimilar to Grounding DINO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib1\" title=\"\">1</a>]</cite>, the detection loss combines a contrastive loss, an L1 bounding box regression loss, and a GIoU loss&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#bib.bib18\" title=\"\">18</a>]</cite>.\nDuring Hungarian matching, the weights are set to <math alttext=\"2.0/5.0/2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>2.0</mn><mo>/</mo><mn>5.0</mn><mo>/</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">2.0/5.0/2.0</annotation></semantics></math> and later adjusted to <math alttext=\"1.0/5.0/2.0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m2\" intent=\":literal\"><semantics><mrow><mn>1.0</mn><mo>/</mo><mn>5.0</mn><mo>/</mo><mn>2.0</mn></mrow><annotation encoding=\"application/x-tex\">1.0/5.0/2.0</annotation></semantics></math>.\nFor Mixture-of-LoRA-Experts fine-tuning, a load-balancing loss is applied to each layer, averaged across layers, and scaled by <math alttext=\"\\alpha=1\\times 10^{-2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m3\" intent=\":literal\"><semantics><mrow><mi>&#945;</mi><mo>=</mo><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>2</mn></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">\\alpha=1\\times 10^{-2}</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "backbone",
-                    "method",
                     "grounding",
-                    "dino"
+                    "dino",
+                    "backbone",
+                    "method"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16670v1#S3.F3\" title=\"Figure 3 &#8227; 3.3 Visualization &#8227; 3 Experiments and Results &#8227; Speech-to-See: End-to-End Speech-Driven Open-Set Object Detection\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> provides a qualitative comparison among ground-truth annotations (left), predictions from <span class=\"ltx_text ltx_font_italic\">Speech2See</span> (middle), and the text-driven baseline Grounding DINO (right). The examples illustrate both the strengths and limitations of each model. In the first row, our model exhibits robust detection: it not only matches the annotated objects but also identifies an additional item, the &#8220;handbag&#8221;, which was omitted from the ground truth. The second row demonstrates a more nuanced case: <span class=\"ltx_text ltx_font_italic\">Speech2See</span> achieves an accurate localization of the &#8220;dining table&#8221; compared to the ground truth, whereas Grounding DINO fails to detect the object altogether. Nonetheless, our model overlooks the &#8220;potted plant&#8221;. These results suggest that while <span class=\"ltx_text ltx_font_italic\">Speech2See</span> effectively transfers knowledge to support accurate speech-driven localization, both speech and text based detectors exhibit complementary strengths and weaknesses that merit deeper analysis.</p>\n\n",
                 "matched_terms": [
                     "speech2see",
-                    "comparison",
                     "grounding",
-                    "dino"
+                    "dino",
+                    "comparison"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper proposes Speech-to-See (<span class=\"ltx_text ltx_font_italic\">Speech2See</span>), an end-to-end framework for audio grounding. Our approach addresses two key challenges, data scarcity and limitation of previous methods, by transferring knowledge and establishing speech-vision alignment through a progressive training paradigm. A Query-based Semantic Aggregation module is introduced to generate compact representations for audio inputs.\nThe subsequent fine-tuning stage leverages a Mixture-of-LoRA-Experts architecture to provide parameter-efficient and adaptive refinement for diverse speech inputs. Experiments on multiple benchmarks demonstrate consistent improvements over existing methods in both closed-set and zero-shot settings. Future work will focus on addressing long-tailed distributions and improving robustness to noisy and diverse speech.</p>\n\n",
                 "matched_terms": [
-                    "architecture",
                     "speech2see",
                     "grounding",
-                    "endtoend"
+                    "endtoend",
+                    "architecture"
                 ]
             }
         ]

@@ -5,130 +5,130 @@
         "body": "Subsystem\n\n\nModel / version\n\n\n\n\nTraining / fine-tune\n\n\n\n\nKey I/O and behavior\n\n\n\n\nASR\n\n\nWhisper (OpenAI), fine-tuned\n\n\n\n\nATC-focused fine-tune (large-v2) [garib_simugan-whisper-atc_nodate]\n\n\n\n\n\n\n\nInputs: speaker, frequency.\n\nOutput: transcript and tASRt_{\\mathrm{ASR}}.\n\nNotes: runway token canonicalization;\n\nconfidence gate ≥τASR\\geq\\tau_{\\mathrm{ASR}}.\n\n\n\n\nTTS (advisories)\n\n\nCoqui XTTS-v2 [noauthor_coqui_nodate]\n\n\n\n\n—\n\n\n\n\n\n\n\nAdvisory audio (no noise augmentation).\n\n\n\n\nRadio noise (ATC–pilot)\n\n\nSimuGAN (learned RF/VHF); DSP fallback (SNR)\n\n\n\n\napprox. 4.5 h TartanAviation ATC (for SimuGAN) [garib_simugan-whisper-atc_nodate]\n\n\n\n\n\n\n\nApplied only to ATC and pilot received audio.\n\nControls: SNR, wet mix, profile.\n\n\n\n\nVision\n\n\nUltralytics YOLOv10 [wang_yolov10_2024]; ego-masking; tiled inference\n\n\n\n\nClass filter (airplane, truck, bird)\n\n\n\n\n\n\n\nOutputs: detections and tvisiont_{\\mathrm{vision}}.\n\nMulti-camera corroboration (KK) or confidence persistence.\n\n\n\n\nADS-B / flight context\n\n\nParser + roster filters (airport map)\n\n\n\n\n—\n\n\n\n\n\n\n\nOutputs: runway expectations, occupancy, and tracks.\n\n\n\n\nDecision engine\n\n\nRules + GPT-OSS-20B (natural language generation, NLG only)\n\n\n\n\n—\n\n\n\n\n\n\n\nRule ladder; occupancy + time-to-go (TTG);\n\nsee Alg. 1 for details.\n\n\n\n\nOutput object\n\n\nAdvisory object + delivery\n\n\n\n\n—\n\n\n\n\n\n\n\nFields: severity, message, recipients, evidence;\n\nspeak only if ≥\\geq SPEAK_MIN_LEVEL.",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">Subsystem</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text ltx_align_left ltx_font_bold\" style=\"font-size:80%;\">Model / version</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text ltx_align_left ltx_font_bold\" style=\"font-size:80%;\">Training / fine-tune</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_border_tt\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p ltx_align_left\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:80%;\">Key I/O and behavior</span></span>\n</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">ASR</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Whisper (OpenAI), fine-tuned</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">ATC-focused fine-tune (</span><span class=\"ltx_text ltx_align_left ltx_font_typewriter\" style=\"font-size:80%;\">large-v2</span><span class=\"ltx_text\" style=\"font-size:80%;\">)&#160;</span><cite class=\"ltx_cite ltx_align_left ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garib_simugan-whisper-atc_nodate</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_border_t\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p1\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Inputs: speaker, frequency.</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Output: transcript and <math alttext=\"t_{\\mathrm{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.T1.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mi>ASR</mi></msub><annotation encoding=\"application/x-tex\">t_{\\mathrm{ASR}}</annotation></semantics></math>.</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Notes: runway token canonicalization;</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">confidence gate <math alttext=\"\\geq\\tau_{\\mathrm{ASR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.T1.p1.m2\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8805;</mo><msub><mi>&#964;</mi><mi>ASR</mi></msub></mrow><annotation encoding=\"application/x-tex\">\\geq\\tau_{\\mathrm{ASR}}</annotation></semantics></math>.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">TTS (advisories)</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Coqui XTTS-v2&#160;</span><cite class=\"ltx_cite ltx_align_left ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">noauthor_coqui_nodate</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">&#8212;</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p2\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Advisory audio (no noise augmentation).</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Radio noise (ATC&#8211;pilot)</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text ltx_align_left ltx_font_bold\" style=\"font-size:80%;\">SimuGAN</span><span class=\"ltx_text\" style=\"font-size:80%;\"> (learned RF/VHF); DSP fallback (SNR)</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">approx. 4.5&#8201;h TartanAviation ATC (for SimuGAN)&#160;</span><cite class=\"ltx_cite ltx_align_left ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garib_simugan-whisper-atc_nodate</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p3\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Applied only to ATC and pilot received audio.</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Controls: SNR, wet mix, profile.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Vision</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Ultralytics YOLOv10&#160;</span><cite class=\"ltx_cite ltx_align_left ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:80%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang_yolov10_2024</span><span class=\"ltx_text\" style=\"font-size:80%;\">]</span></cite><span class=\"ltx_text\" style=\"font-size:80%;\">; ego-masking; tiled inference</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Class filter (airplane, truck, bird)</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p4\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Outputs: detections and <math alttext=\"t_{\\mathrm{vision}}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.T1.p4.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mi>vision</mi></msub><annotation encoding=\"application/x-tex\">t_{\\mathrm{vision}}</annotation></semantics></math>.</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Multi-camera corroboration (<math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"S6.T1.p4.m2\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math>) or confidence persistence.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">ADS-B / flight context</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Parser + roster filters (airport map)</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">&#8212;</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p5\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Outputs: runway expectations, occupancy, and tracks.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Decision engine</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Rules + GPT-OSS-20B (natural language generation, NLG only)</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">&#8212;</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p6\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Rule ladder; occupancy + time-to-go (TTG);</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">see Alg.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#algorithm1\" title=\"In VI-B Decision Logic &#8227; VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> for details.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Output object</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_bb\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:65.6pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">Advisory object + delivery</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_bb\" style=\"padding:0.6pt 3.4pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:72.5pt;\"><span class=\"ltx_text\" style=\"font-size:80%;\">&#8212;</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_border_bb\" style=\"padding:0.6pt 3.4pt;\"><span class=\"ltx_inline-logical-block ltx_align_top\">\n<span class=\"ltx_para ltx_align_left ltx_noindent\" id=\"S6.T1.p7\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:80%;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">Fields: severity, message, recipients, evidence;</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_left\" style=\"padding:0.6pt 3.4pt;\">speak only if <math alttext=\"\\geq\" class=\"ltx_Math\" display=\"inline\" id=\"S6.T1.p7.m1\" intent=\":literal\"><semantics><mo>&#8805;</mo><annotation encoding=\"application/x-tex\">\\geq</annotation></semantics></math> <span class=\"ltx_text ltx_font_typewriter\" style=\"font-size:113%;\">SPEAK_MIN_LEVEL</span>.</span></span>\n</span></span><span class=\"ltx_text\" style=\"font-size:80%;\"/></span>\n</span></span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "≥τasrgeqtaumathrmasr",
-            "multicamera",
-            "expectations",
-            "timetogo",
-            "snr",
-            "further",
-            "notes",
-            "transcript",
-            "atc–pilot",
-            "token",
-            "xttsv2",
-            "delivery",
-            "bird",
-            "object",
-            "roster",
-            "parser",
-            "comms",
-            "dsp",
-            "atc",
-            "learned",
-            "whisper",
-            "speaker",
-            "occupancy",
-            "filter",
-            "wangyolov102024",
-            "atcfocused",
-            "controls",
-            "model",
-            "output",
-            "advisory",
-            "vision",
-            "adsb",
-            "wet",
-            "ultralytics",
-            "key",
-            "profile",
-            "subsystem",
-            "mix",
-            "≥geq",
-            "recipients",
-            "filters",
-            "canonicalization",
-            "details",
-            "form",
-            "alg",
-            "speakminlevel",
-            "context",
-            "airport",
-            "repository",
-            "generation",
-            "approx",
-            "rules",
-            "detections",
-            "behavior",
-            "public",
-            "surface",
-            "realism",
-            "yolov10",
             "nlg",
-            "class",
-            "message",
-            "wavtts",
-            "truck",
-            "natural",
-            "outputs",
-            "inference",
             "rule",
-            "received",
-            "map",
-            "ttg",
-            "severity",
-            "via",
-            "inputs",
-            "tartanaviation",
-            "confidence",
-            "version",
-            "only",
-            "tiled",
-            "radio‑path",
-            "decision",
-            "noauthorcoquinodate",
-            "engine",
-            "runway",
-            "rfvhf",
-            "gptoss20b",
-            "applied",
-            "finetuned",
-            "advisories",
-            "tvisiontmathrmvision",
-            "tracks",
-            "frequency",
-            "see",
-            "gate",
-            "pilot",
-            "finetune",
-            "ladder",
-            "used",
-            "coqui",
-            "egomasking",
-            "fields",
-            "corroboration",
-            "text",
-            "garibsimuganwhisperatcnodate",
-            "implementation",
-            "speak",
-            "asr",
             "airplane",
-            "audio",
-            "radio",
-            "fallback",
-            "openai",
+            "decision",
+            "speak",
+            "realism",
+            "truck",
+            "controls",
+            "behavior",
             "evidence",
-            "flight",
-            "noise‑augmented",
-            "training",
-            "augmentation",
-            "tasrtmathrmasr",
-            "language",
+            "class",
+            "finetune",
+            "implementation",
+            "openai",
+            "details",
+            "applied",
+            "xttsv2",
+            "key",
+            "object",
+            "noauthorcoquinodate",
+            "parser",
             "noise",
-            "largev2",
+            "atc",
+            "coqui",
+            "tiled",
+            "tvisiontmathrmvision",
+            "recipients",
+            "yolov10",
+            "inference",
+            "radio‑path",
+            "profile",
+            "learned",
+            "≥τasrgeqtaumathrmasr",
+            "delivery",
+            "whisper",
+            "augmentation",
+            "language",
+            "see",
+            "severity",
+            "roster",
+            "airport",
             "simugan",
-            "tts",
+            "engine",
+            "only",
+            "ttg",
+            "asr",
+            "tartanaviation",
+            "repository",
+            "inputs",
+            "timetogo",
+            "runway",
+            "further",
+            "received",
+            "speakminlevel",
+            "confidence",
+            "training",
+            "text",
+            "pilot",
+            "public",
+            "via",
+            "output",
+            "outputs",
+            "occupancy",
             "persistence",
-            "not"
+            "largev2",
+            "tts",
+            "gate",
+            "frequency",
+            "not",
+            "atcfocused",
+            "atc–pilot",
+            "egomasking",
+            "filter",
+            "filters",
+            "generation",
+            "wavtts",
+            "detections",
+            "version",
+            "context",
+            "token",
+            "wet",
+            "approx",
+            "comms",
+            "finetuned",
+            "transcript",
+            "vision",
+            "rfvhf",
+            "alg",
+            "expectations",
+            "ladder",
+            "fallback",
+            "form",
+            "map",
+            "snr",
+            "canonicalization",
+            "ultralytics",
+            "used",
+            "subsystem",
+            "multicamera",
+            "mix",
+            "rules",
+            "adsb",
+            "surface",
+            "advisory",
+            "notes",
+            "garibsimuganwhisperatcnodate",
+            "fields",
+            "speaker",
+            "corroboration",
+            "model",
+            "gptoss20b",
+            "bird",
+            "message",
+            "noise‑augmented",
+            "wangyolov102024",
+            "dsp",
+            "≥geq",
+            "tracks",
+            "tasrtmathrmasr",
+            "radio",
+            "natural",
+            "advisories",
+            "flight",
+            "audio"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S6.T1\" title=\"TABLE I &#8227; VI-A Models and Interfaces &#8227; VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">I</span></a> summarizes the modules and essential information regarding the models used in the reference pipeline.</p>\n\n"
@@ -137,17 +137,17 @@
             {
                 "html": "<p class=\"ltx_p\">We introduce AIRHILT (Aviation Integrated Reasoning, Human-in-the-Loop Testbed), a modular and lightweight simulation environment designed to evaluate multimodal pilot and ATC assistance systems for aviation conflict detection. Built on the Godot engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">godot_engine_godot_nodate</span>]</cite>, AIRHILT synchronizes pilot and air traffic controller (ATC) communications, visual scene understanding from camera streams, and ADS-B surveillance data within a unified, scalable platform. The environment supports pilot- and controller-in-the-loop interactions, providing a comprehensive scenario suite covering both terminal area and en route operational conflicts, including communication errors and procedural mistakes. AIRHILT offers standardized JSON-based interfaces enabling researchers to easily integrate, swap, and evaluate various automatic speech recognition (ASR), visual detection, decision-making, and text-to-speech (TTS) models. We demonstrate AIRHILT through a reference pipeline incorporating fine-tuned Whisper ASR, YOLO-based visual detection, ADS-B-based conflict logic, and GPT-OSS-20B structured reasoning, presenting preliminary results from representative runway-overlap scenarios where the assistant achieves an average time-to-first-warning of <math alttext=\"{\\sim}7.7\" class=\"ltx_Math\" display=\"inline\" id=\"m6\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>7.7</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}7.7</annotation></semantics></math>&#8201;s with average ASR and vision latencies of <math alttext=\"{\\sim}5.9\" class=\"ltx_Math\" display=\"inline\" id=\"m7\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>5.9</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}5.9</annotation></semantics></math>&#8201;s and <math alttext=\"{\\sim}0.4\" class=\"ltx_Math\" display=\"inline\" id=\"m8\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>0.4</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}0.4</annotation></semantics></math>&#8201;s, respectively. The AIRHILT environment and scenario suite are openly available, supporting reproducible research on multimodal situational awareness and conflict detection in aviation. The complete repository is available at <a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/ogarib3/airhilt\" title=\"\">github.com/ogarib3/airhilt</a>.</p>\n\n",
                 "matched_terms": [
-                    "adsb",
+                    "finetuned",
+                    "gptoss20b",
                     "atc",
-                    "whisper",
                     "repository",
-                    "engine",
-                    "asr",
                     "pilot",
                     "tts",
-                    "gptoss20b",
                     "vision",
-                    "finetuned"
+                    "adsb",
+                    "engine",
+                    "whisper",
+                    "asr"
                 ]
             },
             {
@@ -161,8 +161,8 @@
             {
                 "html": "<p class=\"ltx_p\">However, the current testing landscape for such aviation assistive systems presents notable challenges. Physically collocated test environments are costly, time-consuming, and require careful scheduling of limited ATC and pilot availability. These sophisticated facilities typically include several pilot and controller workstations along with integrated displays and are commonly utilized for operational scenario studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">schier_designing_2013</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">manske_visual_2015</span>]</cite>. Yet, their availability is increasingly constrained by growing global aviation traffic and rising research demands associated with emerging aviation concepts such as unmanned aerial systems (UAS) and advanced air mobility (AAM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chaisit_enhancing_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kaliardos_identifying_2024</span>]</cite>. Although rigorous testing at physical facilities remains essential for advanced development and certification phases, it is impractical for early-stage concept evaluations. Additionally, the rapidly expanding design space, driven by new machine learning models and varied computational, sensing, and communication architectures, further underscores the necessity of flexible, efficient, simulation-based environments suitable for rapid, systematic evaluations.</p>\n\n",
                 "matched_terms": [
-                    "pilot",
                     "atc",
+                    "pilot",
                     "further"
                 ]
             },
@@ -183,42 +183,42 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">A scalable scenario suite</span> consisting of six conflict scenario families (three terminal and three en route) that model communication, procedural, and visually driven hazards, with parameterized variations in noise, visibility, geometry, and traffic configurations.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "noise"
+                    "noise",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">A reference multimodal pipeline</span> that demonstrates environment capabilities through interchangeable components such as Whisper-based ASR, YOLO-based visual detection, ADS-B-based conflict logic, and a structured large language model (LLM) decision layer, with preliminary latency and time-to-first-warning metrics reported.</p>\n\n",
                 "matched_terms": [
                     "language",
-                    "asr",
+                    "decision",
                     "model",
-                    "decision"
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The remainder of this paper is structured as follows: Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2\" title=\"II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> provides background on air traffic management operations and the key components relevant to aviation situational awareness. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S3\" title=\"III Challenges &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> outlines related challenges to building such systems. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4\" title=\"IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> details the environment and interfaces. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S5\" title=\"V Evaluation Scenarios &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the designed scenarios. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S6\" title=\"VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a> describes the reference pipeline and presents preliminary results from representative runway-overlap scenarios. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S7\" title=\"VII Concluding Remarks &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VII</span></a> provides concluding remarks, discusses current limitations, and introduces avenues for future work.</p>\n\n",
                 "matched_terms": [
-                    "key",
-                    "details"
+                    "details",
+                    "key"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Aviation operations encompass both air traffic management and conflict detection, including the determination, sequencing, and issuance of clearances from departure through en route and approach phases <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_civil_aviation_organization_procedures_2016</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_air_2024</span>]</cite>, as well as the identification and mitigation of hazards such as wildlife encounters, mechanical issues, and other unexpected conflicts <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_hazardous_nodate</span>]</cite>. Effective traffic management maintains prescribed separation between aircraft while preserving operational efficiency under current operational conditions. Controllers integrate surveillance data (e.g., ADS-B and radar) provided via tower infrastructure, direct visual observations from the control tower, and standardized voice communications with pilots to formulate and issue clearances and instructions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>. In parallel, pilots routinely manage additional hazards, including wildlife (e.g., birds) activity, uncooperative or untracked intruder aircraft, and onboard mechanical anomalies, by synthesizing external visual cues with onboard sensor data and established procedures.</p>\n\n",
                 "matched_terms": [
-                    "via",
-                    "adsb"
+                    "adsb",
+                    "via"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Many unsafe conditions arise from (i) <em class=\"ltx_emph ltx_font_italic\">traffic-management breakdowns</em> (e.g., violations of separation minima or runway occupancy conflicts) and (ii) <em class=\"ltx_emph ltx_font_italic\">aircraft or airspace hazards</em> (e.g., bird strikes, uncooperative intruder aircraft, or mechanical anomalies). It is important to note that existing radar-based surveillance systems such as Automatic Dependent Surveillance-Broadcast (ADS-B), and collision-avoidance systems such as the Traffic Collision Avoidance System (TCAS/ACAS), already provide critical support. However, incidents have occurred and continue to occur even with these systems in place. For example, the &#220;berlingen mid-air collision highlighted critical vulnerabilities when ATC instructions conflict with TCAS resolution advisories (RAs), reinforcing that TCAS RAs must always take precedence over controller clearances <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_air_transport_association_acas_nodate</span>]</cite>. Moreover, it is important to note that TCAS RAs are intentionally inhibited at low altitudes <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>, impacting its operation to resolve situations such as runway incursions. These realities motivate the development of an assistive layer that fuses visual streams, voice communications, and surveillance data to identify and flag potential conflicts <em class=\"ltx_emph ltx_font_italic\">before</em> situations escalate to require intervention from safety systems such as TCAS.</p>\n\n",
                 "matched_terms": [
+                    "atc",
                     "adsb",
-                    "advisories",
+                    "bird",
                     "runway",
                     "occupancy",
-                    "bird",
-                    "atc"
+                    "advisories"
                 ]
             },
             {
@@ -231,95 +231,95 @@
             {
                 "html": "<p class=\"ltx_p\">Recent progress in multimodal AI provides essential building blocks for assistance: (i) <span class=\"ltx_text ltx_font_bold\">ASR</span> for transcribing and parsing ATC/pilot communications; (ii) <span class=\"ltx_text ltx_font_bold\">vision detection models</span> operating on tower or onboard cameras for surface/aircraft/vehicle detection and tracking; and (iii) <span class=\"ltx_text ltx_font_bold\">surveillance and trajectory analytics</span> from ADS-B/radar data. However, performance thresholds and latency budgets required for operational usefulness remain under-specified, and real systems must handle missing or degraded modalities.</p>\n\n",
                 "matched_terms": [
-                    "asr",
-                    "vision"
+                    "vision",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several automatic speech recognition (ASR) models have been proposed to reduce the Word Error Rate (WER) of ATC and pilot radio transmissions, with the aim of integration into ATC and pilot communication workflows. A comprehensive review of recent approaches can be found in the special collection by Helmke et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">helmke_automatic_2024</span>]</cite>. Notably, substantial improvements in WER have recently been achieved by fine-tuning OpenAI&#8217;s Whisper ASR model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">Whisper</span>]</cite> on simulated and synthetic ATC speech datasets&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">van_doorn_whisper-atc_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garib_simugan-whisper-atc_nodate</span>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "garibsimuganwhisperatcnodate",
-                    "whisper",
-                    "asr",
-                    "pilot",
                     "model",
                     "atc",
-                    "radio"
+                    "pilot",
+                    "radio",
+                    "garibsimuganwhisperatcnodate",
+                    "whisper",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Despite recent WER reductions, the safety impact remains uncertain. WER measures transcription accuracy, not how recognition errors influence pilot/controller performance during critical events. As noted by van Doorn et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">van_doorn_applying_2023</span>]</cite>, concrete performance requirements for safety management are not well specified. Moreover, the events where ASR would help most are rare and highly context dependent (airport geometry, traffic density, fatigue).</p>\n\n",
                 "matched_terms": [
                     "context",
-                    "asr",
                     "airport",
-                    "not"
+                    "not",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Image processing advances in the ATC context include the identification of aircraft in the air&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">li_lightweight_2022</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radovic_object_2017</span>]</cite>, on the ground&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratama_system_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">singh_deep_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">alshaibani_airplane_2021</span>]</cite>, or in operational contexts&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim_air_2021</span>]</cite>. These models are often built on top of the YOLO object detection architecture&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">YOLO</span>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "context",
                     "atc",
-                    "object"
+                    "object",
+                    "context"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Assistive systems offer various design choices: placement of ASR/Speech enhancement (SE) relative to pilot audio (ASR/SE-first or parallel), fusion approach for vision and ADS-B (early or late), and recipient of advisories (pilot, controller, or both). Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates three representative configurations, highlighting the need for flexible simulation environments to systematically evaluate diverse architectures across various operational scenarios.</p>\n\n",
                 "matched_terms": [
                     "adsb",
-                    "advisories",
+                    "vision",
                     "pilot",
-                    "audio",
-                    "vision"
+                    "advisories",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Evaluating air traffic situational awareness systems presents four key challenges: (1) moving from subtask accuracy to operational safety gains, (2) modeling rare failure scenarios with limited real-world data, (3) integrating multimodal context in evaluation frameworks, and (4) enabling simulation environments that support human-in-the-loop input and intelligent system responses.</p>\n\n",
                 "matched_terms": [
-                    "key",
-                    "context"
+                    "context",
+                    "key"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A related challenge for the design of the simulation environment is to incorporate humans in the scenarios via simulated ATC and pilot workstations. To actually execute operational evaluations as described above, the environment must support pilot- and controller-in-the-loop operation, so that human behaviors can be incorporated into the chain of events.</p>\n\n",
                 "matched_terms": [
-                    "via",
                     "atc",
-                    "pilot"
+                    "pilot",
+                    "via"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Safety-critical events are rare and underrepresented in public datasets, making the evaluation of assistive systems for conflict detection challenging. Therefore, these systems typically require evaluation through carefully constructed simulated scenarios developed with expert input and supplemented by synthetic generation and real ATC data when available. However, effectively decreasing the sim-to-real gap between actual incidents and simulated scenarios remains a significant challenge.</p>\n\n",
                 "matched_terms": [
-                    "public",
+                    "atc",
                     "generation",
-                    "atc"
+                    "public"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Current evaluations often rely on narrow, single-channel data inputs. Richer simulation frameworks should be able to synchronize visual, audio, and state data (e.g., from TartanAviation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dellarocco_tartanaviation_2025</span>]</cite>) to reflect the true complexity of operational environments.</p>\n\n",
                 "matched_terms": [
                     "inputs",
-                    "audio",
-                    "tartanaviation"
+                    "tartanaviation",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To enable efficient and scalable evaluation of different multimodal pilot-assist architectures with representative human-in-the-loop interactions, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a lightweight, modular simulation environment built upon the Godot engine. <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> offers a unified simulation platform that synchronizes pilot-to-ATC communications, camera-based visual perception, and ADS-B traffic data, enabling systematic evaluation of assistive systems designed for aviation conflict detection and resolution.</p>\n\n",
                 "matched_terms": [
-                    "engine",
-                    "adsb"
+                    "adsb",
+                    "engine"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">All components communicate via stable REST/JSON interfaces, allowing ASR, vision, decision, and text-to-speech (TTS) modules to be swapped with minimal code changes.</p>\n\n",
                 "matched_terms": [
-                    "decision",
-                    "asr",
+                    "vision",
                     "tts",
+                    "decision",
                     "via",
-                    "vision"
+                    "asr"
                 ]
             },
             {
@@ -332,9 +332,9 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Scene type and geometry:</span> Defines whether the scenario involves airport surface operations or en route airborne interactions, alongside geometric details for each actor&#8217;s initial placement and orientation.</p>\n\n",
                 "matched_terms": [
+                    "details",
                     "airport",
-                    "surface",
-                    "details"
+                    "surface"
                 ]
             },
             {
@@ -347,17 +347,17 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Scripted ATC communication timeline:</span> Specifies structured, timestamped radio exchanges with unique identifiers, including addressed clearances and instructions, with options to inject controlled noise artifacts.</p>\n\n",
                 "matched_terms": [
-                    "noise",
                     "atc",
+                    "noise",
                     "radio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Upon ingestion of the Scenario JSON, the <span class=\"ltx_text ltx_font_typewriter\">Director (Runner)</span> automatically loads and initializes all scene assets and actors as defined in the scenario specification. It subsequently mounts synchronized communication and vision buses to maintain consistent alignment of audio (radio), visual (camera), and corresponding ground-truth data streams.</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "vision",
-                    "radio"
+                    "radio",
+                    "audio"
                 ]
             },
             {
@@ -393,43 +393,43 @@
             {
                 "html": "<p class=\"ltx_p\">The communications subsystem of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> is structured to approximate operational aviation radio interactions while supporting controlled experimentation with pilot and ATC communications. This communication loop incorporates clearly defined interfaces for radio transmissions, TTS synthesis, and ASR, all implemented as interchangeable modules accessible through standardized REST/JSON endpoints:</p>\n\n",
                 "matched_terms": [
-                    "asr",
-                    "subsystem",
+                    "atc",
                     "pilot",
                     "tts",
-                    "atc",
-                    "radio"
+                    "radio",
+                    "subsystem",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Radio Bus</span>: The radio subsystem utilizes frequency-specific channels for addressed transmissions and includes optional overhearing capabilities. Transmission guarantees include ordered delivery, stable identifiers for each radio turn, and precise emission timestamps (<math alttext=\"t_{\\text{tx}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i1.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tx</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tx}}</annotation></semantics></math>).</p>\n\n",
                 "matched_terms": [
-                    "delivery",
+                    "radio",
                     "subsystem",
-                    "radio"
+                    "delivery"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ASR Service (Interchangeable)</span>: Pluggable ASR models transcribe received audio and emit finalization timestamps (<math alttext=\"t_{\\text{asr\\_out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i2.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr_out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr\\_out}}</annotation></semantics></math>) and optional confidences. By default, the ASR runs in parallel to the pilot audio path (matching the topology in Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>b), so pilots hear raw audio while a copy is forwarded to the recognizer; users may alternatively configure the ASR output as an intermediate step prior to pilot reception, depending on the assistive architecture and experimental setup being evaluated.</p>\n\n",
                 "matched_terms": [
-                    "asr",
                     "pilot",
+                    "output",
                     "received",
                     "audio",
-                    "output"
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">TTS Bridge (Interchangeable)</span>: The environment integrates pluggable TTS services (e.g., XTTS-v2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">noauthor_coqui_nodate</span>]</cite>) that convert scripted text instructions into realistic audio. An optional augmentation layer adds configurable radio-channel effects, including noise and distortion, with precise control over signal-to-noise ratio (SNR) and mixing parameters. In our experiments, all radio-path audio is encoded as single-channel PCM at a <math alttext=\"16\\,\\text{kHz}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>16</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>kHz</mtext></mrow><annotation encoding=\"application/x-tex\">16\\,\\text{kHz}</annotation></semantics></math> sample rate to match the reference ASR and SimuGAN configurations.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "noauthorcoquinodate",
                     "noise",
                     "xttsv2",
                     "snr",
-                    "asr",
+                    "text",
                     "tts",
+                    "noauthorcoquinodate",
                     "simugan",
+                    "asr",
                     "audio",
                     "augmentation"
                 ]
@@ -437,10 +437,10 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Detection Service (Interchangeable)</span>: Visual detection services operate as independently swappable modules accessible via REST APIs. They receive images (alongside optional ego masks), timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), and camera identifiers (<span class=\"ltx_text ltx_font_typewriter\">camera_id</span>), and return structured detections in JSON. Each detection object includes classification labels, confidence scores, and bounding box coordinates.</p>\n\n",
                 "matched_terms": [
-                    "via",
-                    "object",
                     "detections",
-                    "confidence"
+                    "confidence",
+                    "via",
+                    "object"
                 ]
             },
             {
@@ -454,103 +454,103 @@
             {
                 "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">Radio Transcripts</em>: Structured sequences of communications with timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), speaker IDs, transcript text, frequency, unique turn IDs, optional <em class=\"ltx_emph ltx_font_italic\">overhearing/subscription</em> flags (to receive nearby actors&#8217; traffic), addressed callsigns, and confidences when available.</p>\n\n",
                 "matched_terms": [
+                    "transcript",
                     "text",
                     "frequency",
-                    "speaker",
-                    "transcript",
-                    "radio"
+                    "radio",
+                    "speaker"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">Vision Detections</em>: Lists of detection results from visual perception, each containing frame timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), associated camera identifiers, detected object classifications, confidence scores, and bounding box coordinates.</p>\n\n",
                 "matched_terms": [
                     "detections",
-                    "object",
+                    "confidence",
                     "vision",
-                    "confidence"
+                    "object"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">ADS-B and Flight Context</em>: Data slices summarizing ownship operational states, expected and cleared runway information, and positional and velocity tracks.</p>\n\n",
                 "matched_terms": [
                     "adsb",
-                    "context",
-                    "flight",
                     "runway",
-                    "tracks"
+                    "tracks",
+                    "context",
+                    "flight"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Decision Engine (Interchangeable)</span>: Decision-making modules are integrated via standardized HTTP/JSON interfaces, allowing simple substitution between the different options of rule-based logic, LLM-based reasoning, or other hybrid methods. Inputs are posted as structured requests, and modules return standardized advisory objects (message, severity, optional recommendations, metadata).</p>\n\n",
                 "matched_terms": [
-                    "decision",
-                    "engine",
-                    "message",
                     "severity",
-                    "via",
                     "inputs",
-                    "advisory"
+                    "decision",
+                    "via",
+                    "advisory",
+                    "engine",
+                    "message"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Outputs</span>: The output schema is user&#8209;configurable. Advisories could include concise text, a severity level (INFO/ADVISORY/CAUTION/WARNING), optional recommendations, and supporting metadata for traceability and debugging.</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "advisories",
-                    "outputs",
                     "severity",
-                    "output"
+                    "output",
+                    "outputs",
+                    "advisories"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Severity scale and speech threshold</span>: In the reference pipeline we use a four-level severity scale {INFO, ADVISORY, CAUTION, WARNING} and map these to integer levels; only advisories at or above a configurable threshold <span class=\"ltx_text ltx_font_typewriter\">SPEAK_MIN_LEVEL</span> are synthesized via TTS (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S6\" title=\"VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a>), so that lower-severity findings can be logged without contributing to pilot workload.</p>\n\n",
                 "matched_terms": [
                     "speakminlevel",
-                    "advisories",
-                    "only",
-                    "pilot",
-                    "severity",
-                    "tts",
                     "map",
+                    "severity",
+                    "pilot",
+                    "tts",
                     "via",
-                    "advisory"
+                    "advisory",
+                    "advisories",
+                    "only"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Advisory Delivery</span>: Advisory objects are synthesized into audible alerts via the previously described TTS subsystem and delivered through the appropriate radio channel.</p>\n\n",
                 "matched_terms": [
-                    "delivery",
-                    "subsystem",
                     "tts",
                     "via",
                     "advisory",
-                    "radio"
+                    "radio",
+                    "delivery",
+                    "subsystem"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We instrument all subsystems with a shared monotonic timebase and log start/end events for each module. For radio/ASR we record the transmission time <math alttext=\"t_{\\text{tx}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tx</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tx}}</annotation></semantics></math> and ASR finalization <math alttext=\"t_{\\text{asr}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m2\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr}}</annotation></semantics></math>. For vision we record frame exposure end <math alttext=\"t_{\\text{frame}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m3\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>frame</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{frame}}</annotation></semantics></math> and detector completion <math alttext=\"t_{\\text{vision}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m4\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>vision</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{vision}}</annotation></semantics></math>. For ADS-B we record ingest <math alttext=\"t_{\\text{adsb,in}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,in</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,in}}</annotation></semantics></math> and post&#8209;processor output <math alttext=\"t_{\\text{adsb,out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m6\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,out}}</annotation></semantics></math>. The decision engine records when all required inputs are available <math alttext=\"t_{\\text{ready}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m7\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>ready</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{ready}}</annotation></semantics></math> and when an advisory is produced <math alttext=\"t_{\\text{dec}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m8\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>dec</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{dec}}</annotation></semantics></math> (this includes LLM inference when used). The audio path records the first audible sample delivered to the radio bus <math alttext=\"t_{\\text{tts}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m9\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tts</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tts}}</annotation></semantics></math>. Each scenario annotates the conflict&#8209;window opening time <math alttext=\"t_{\\text{conflict}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m10\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>conflict</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{conflict}}</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "adsb",
-                    "decision",
-                    "engine",
-                    "asr",
-                    "output",
-                    "inference",
-                    "inputs",
-                    "used",
-                    "advisory",
                     "vision",
-                    "radio"
+                    "inputs",
+                    "decision",
+                    "output",
+                    "advisory",
+                    "engine",
+                    "inference",
+                    "radio",
+                    "used",
+                    "audio",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In terminal airspace (airport surface operations), three scenario families assess runway incursions and occupancy conflicts:</p>\n\n",
                 "matched_terms": [
-                    "occupancy",
-                    "runway",
+                    "surface",
                     "airport",
-                    "surface"
+                    "occupancy",
+                    "runway"
                 ]
             },
             {
@@ -563,12 +563,12 @@
             {
                 "html": "<p class=\"ltx_p\">To demonstrate <span class=\"ltx_text ltx_font_italic\">AIRHILT</span>, we implemented a reference pipeline and tested it on <span class=\"ltx_text ltx_font_bold\">S01A&#8212;Runway Overlap</span>. For instance, in the <em class=\"ltx_emph ltx_font_italic\">bad readback accepted</em> variant, an arrival is cleared to land runway&#160;01, the pilot incorrectly reads back runway&#160;19, the tower replies &#8220;roger,&#8221; and later a departure is cleared for takeoff on runway&#160;01, creating an occupancy conflict. These variants allow us to study end-to-end assistant behavior at the scenario level, in terms of whether and when warnings are raised relative to the opening of the conflict window. Other S01A conflict types exercised in the suite include: <em class=\"ltx_emph ltx_font_italic\">cancel takeoff not received</em> (tower cancels the departure but the intended aircraft never hears it), <em class=\"ltx_emph ltx_font_italic\">misaddressed takeoff clearance</em> (clearance spoken with the wrong callsign, departure accepts), and <em class=\"ltx_emph ltx_font_italic\">tight timing overlap</em> (both clearances valid, but spacing is insufficient).</p>\n\n",
                 "matched_terms": [
-                    "runway",
                     "pilot",
-                    "occupancy",
                     "received",
-                    "behavior",
-                    "not"
+                    "runway",
+                    "not",
+                    "occupancy",
+                    "behavior"
                 ]
             },
             {
@@ -581,21 +581,21 @@
             {
                 "html": "<p class=\"ltx_p\">In the evidence-fallback branch we compute a scalar score\n<math alttext=\"S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mrow><mn>0.50</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>V</mi></msub></mrow><mo>+</mo><mrow><mn>0.35</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>A</mi></msub></mrow><mo>+</mo><mrow><mn>0.15</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>C</mi></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}</annotation></semantics></math>, where <math alttext=\"W_{V}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m2\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>V</mi></msub><annotation encoding=\"application/x-tex\">W_{V}</annotation></semantics></math>, <math alttext=\"W_{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m3\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>A</mi></msub><annotation encoding=\"application/x-tex\">W_{A}</annotation></semantics></math>, and <math alttext=\"W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m4\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>C</mi></msub><annotation encoding=\"application/x-tex\">W_{C}</annotation></semantics></math> are normalized evidence terms derived from vision occupancy, ASR consistency, and overall conflict context (all in <math alttext=\"[0,1]\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1]</annotation></semantics></math>). In our S01A experiments we set <math alttext=\"\\tau_{\\mathrm{ASR}}=0.8\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m6\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>ASR</mi></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{ASR}}=0.8</annotation></semantics></math> and <math alttext=\"\\tau_{\\mathrm{vis}}=0.7\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m7\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>vis</mi></msub><mo>=</mo><mn>0.7</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{vis}}=0.7</annotation></semantics></math>, which were chosen empirically to balance missed detections and nuisance alerts.</p>\n\n",
                 "matched_terms": [
-                    "context",
-                    "evidence",
-                    "asr",
-                    "occupancy",
+                    "vision",
                     "detections",
-                    "vision"
+                    "context",
+                    "occupancy",
+                    "evidence",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This ladder of rules prioritizes fast escalation in clearly unsafe conditions (for example, conflicting clearances with observed runway activity), while the evidence score <math alttext=\"S\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p3.m1\" intent=\":literal\"><semantics><mi>S</mi><annotation encoding=\"application/x-tex\">S</annotation></semantics></math> provides a conservative fallback mechanism in more ambiguous cases.</p>\n\n",
                 "matched_terms": [
-                    "evidence",
-                    "runway",
-                    "ladder",
                     "rules",
+                    "runway",
+                    "evidence",
+                    "ladder",
                     "fallback"
                 ]
             },
@@ -604,11 +604,11 @@
                 "matched_terms": [
                     "noise",
                     "snr",
-                    "asr",
-                    "simugan",
-                    "tts",
                     "vision",
-                    "radio"
+                    "tts",
+                    "simugan",
+                    "radio",
+                    "asr"
                 ]
             },
             {
@@ -629,10 +629,10 @@
                 "html": "<p class=\"ltx_p\">Current limitations of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> include a sim-to-real gap, particularly within the vision detection pipeline, where simulation artifacts can lead to discrepancies from real-world performance. Human-factors validation is also limited, as we have not yet conducted controlled pilot and ATC studies to quantify workload, situational awareness, and operator acceptance of the multimodal assistant. In addition, the reference assistant implementation is not yet latency-optimized; our goal in this work is to establish a clear baseline and measurement framework rather than to minimize processing time.</p>\n\n",
                 "matched_terms": [
                     "atc",
-                    "implementation",
-                    "pilot",
                     "vision",
-                    "not"
+                    "pilot",
+                    "not",
+                    "implementation"
                 ]
             }
         ]

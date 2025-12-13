@@ -5,16 +5,16 @@
         "body": "Component\nGPU\nCPU\n\n\nLLM Streaming\n✗\n✓\n✗\n✓\n\n\n\n\nASR (s)\n0.5056\n0.4986\n2.4502 7\n2.2245\n\n\nLLM (s)\n2.1502\n0.1504\n1.3272\n0.1496\n\n\nTTS (s)\n0.6695\n0.6345\n1.6299\n1.4647\n\n\nTotal (s)\n3.3253\n1.2835\n5.4073\n3.8388",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Component</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">GPU</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\">CPU</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">LLM Streaming</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">&#10007;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">&#10003;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">&#10007;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\">&#10003;</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">ASR (s)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">0.5056</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">0.4986</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">2.4502 7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">2.2245</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r\">LLM (s)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2.1502</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.1504</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.3272</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.1496</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r\">TTS (s)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.6695</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.6345</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.6299</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.4647</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r\">Total (s)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">3.3253</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">1.2835</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">5.4073</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">3.8388</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "streaming",
-            "profile",
-            "asr",
             "gpu",
-            "tts",
-            "cpu",
-            "total",
             "llm",
+            "time",
+            "tts",
+            "total",
+            "asr",
             "component",
-            "time"
+            "profile",
+            "cpu",
+            "streaming"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Note that the data corresponds to a single instance run on the same input audio. We observe that streaming the LLM response as an input for the TTS component provides significant speedup to the total latency (Total (s) in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T1\" title=\"TABLE I &#8227; III-A LLM Streaming &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>) experienced between end of speech (as determined by VAD) and playing the first audio chunk generated</p>\n\n"
@@ -23,88 +23,88 @@
             {
                 "html": "<p class=\"ltx_p\">We experiment with a low-latency, end-to-end voice-to-voice communication model to optimize it for real-time conversational applications. By analyzing components essential to voice to voice (V-2-V) system viz. automatic speech recognition (ASR), text-to-speech (TTS), and dialog management, our work analyzes how to reduce processing time while maintaining high-quality interactions to identify the levers for optimizing V-2-V system. Our work identifies that TTS component which generates life-like voice, full of emotions including natural pauses and exclamations has highest impact on Real time factor (RTF). The experimented V-2-V architecture utilizes CSM1b has the capability to understand tone as well as context of conversation by ingesting both audio and text of prior exchanges to generate contextually accurate speech. We explored optimization of Residual Vector Quantization (RVQ) iterations by the TTS decoder which come at a cost of decrease in the quality of voice generated. Our experimental evaluations also demonstrate that for V-2-V implementations based on CSM most important optimizations can be brought by reducing the number of RVQ Iterations along with the codebooks used in Mimi.</p>\n\n",
                 "matched_terms": [
-                    "component",
-                    "asr",
                     "tts",
-                    "time"
+                    "time",
+                    "component",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our proposed system consists of 3 important blocks: Speech to Text , LLM inference text to speech and Text to speech (TTS). The end-to-end pipeline (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) supports live audio transcription followed by LLM augmented response generation and low latency text-to-speech service delivering an interactive real-time experience.\nThe ASR component is configured to start transcribing the live speech chunk by chunk and eventually produce a coherent output which accounts for removal of pauses and gap words. Subsequently the output is passed to the LLM component along with the prior conversation transcriptions and LLM generated text responses for context aware replies. The text output of the LLM is fed to the TTS component which is highly optimized for low latency, delivering the first audio chunk in as low as 640.9 ms in the GPU compute environment. The proposed system has been evaluated over both CPU and GPU environments:</p>\n\n",
                 "matched_terms": [
-                    "asr",
-                    "tts",
                     "gpu",
-                    "cpu",
                     "llm",
-                    "component"
+                    "tts",
+                    "component",
+                    "cpu",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For minimal latency, OpenAI&#8217;s <code class=\"ltx_verbatim ltx_font_typewriter\">gpt-4o-mini</code> was used as the intermediate LLM for a balance between LLM intelligence and latency. We experimented with both streaming the LLM output and one-shot generation. For streaming, we pass the LLM output to TTS every 10 tokens generated.</p>\n\n",
                 "matched_terms": [
-                    "streaming",
                     "llm",
-                    "tts"
+                    "tts",
+                    "streaming"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model is able to achieve a Real Time Factor (RTF) <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> (0.383) on GPU processing without reducing RVQ Iterations and RTF of <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> on CPU but with reducing the RVQ Iterations to 16. \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "time",
                     "gpu",
+                    "time",
                     "cpu"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Streaming improves the latency of the model by bridging the gap between the user ending their speech and getting to hear the beginning of the response. This is facilitated by chunking the audio generation and hence the latency accounts only for the time it takes to generate the first audio chunk.\nA seamless experience is guaranteed by the fact that inter-chunk generation time is lesser than the length of the chunks, hence maintaining a non-empty queue for audio. RTF for streaming is naturally higher than One Shot Generation.</p>\n\n",
                 "matched_terms": [
-                    "streaming",
-                    "time"
+                    "time",
+                    "streaming"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The end-to-end pipeline described in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> represents the architecture describing the flow of data and the processes involved. A Voice Activity Detector (Silero-VAD) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#bib.bib11\" title=\"\">11</a>]</cite> filters the relevant part of speech and passes it to the ASR component for transcription which is further fed to the LLM for response generation. The context audio, context text and LLM response text are tokenized and concatenated to be fed into the TTS component wherein the tokens are processed through RVQ Iterations. The output of the RVQ process is fed to an Audio Decoder which generates the speech response.</p>\n\n",
                 "matched_terms": [
-                    "component",
-                    "asr",
+                    "llm",
                     "tts",
-                    "llm"
+                    "component",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our experiments on V-2-V architecture demonstrate that all components VAD, ASR, LLM based inference and finally TTS needs to work in tandem to generate real life like streaming conversation.</p>\n\n",
                 "matched_terms": [
-                    "streaming",
-                    "asr",
+                    "llm",
                     "tts",
-                    "llm"
+                    "streaming",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated our proposed architecture end to end by running all 3 components: ASR, LLM inference and TTS. For the same, we performed time profiling of entire pipleine to measure the latency contributed by the various components with TTS running on 16 RVQ iterations, the results of time profiling are capture in Table 1.</p>\n\n",
                 "matched_terms": [
-                    "time",
-                    "asr",
+                    "llm",
                     "tts",
-                    "llm"
+                    "time",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The main novelty of our work lies in the optimization of the TTS component. The results mentioned henceforth exhibit the improvements brought forth by our methodology.</p>\n\n",
                 "matched_terms": [
-                    "component",
-                    "tts"
+                    "tts",
+                    "component"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First, we present results for which we utilize the same number of Mimi codebooks as the number of RVQ Iterations\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T2\" title=\"TABLE II &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> summarizes the metrics for streaming TTS generation in GPU and CPU compute environments (with 32 RVQ Iterations) with the sentence &#8221;<span class=\"ltx_text ltx_font_italic\">I am an AI, I am designed to assist and provide helpful responses to your queries. I am a machine learning model, trained on a vast amount of text data</span>&#8221; with no prior context being used for benchmarking and no LLM streaming. GPU compute shows a significant speedup compared to CPU and demonstrates the capability for real-time generation with RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> and stable streaming output.\n<br class=\"ltx_break\"/>\n<br class=\"ltx_break\"/>Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T3\" title=\"TABLE III &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T4\" title=\"TABLE IV &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> summarize the impact of number of RVQ Iterations in both CPU and GPU compute environments. Rows represent various relevant metrics and columns represent the number of RVQ Iterations.\nThere are common trends observed across both the environments and reflect that decreasing the number of RVQ Iterations improved compute times at the cost of audio quality.</p>\n\n",
                 "matched_terms": [
-                    "streaming",
-                    "tts",
                     "gpu",
+                    "llm",
+                    "tts",
                     "cpu",
-                    "llm"
+                    "streaming"
                 ]
             },
             {
@@ -117,75 +117,75 @@
             {
                 "html": "<p class=\"ltx_p\">The impact of number of RVQ iterations is much more pronounced in the GPU compute environment due to the fact that RVQ iterations involve a lot of sequential computations instructed by standard Python code and PyTorch operations resulting in several handoffs between GPU and CPU computation. This adds to the overhead and the CPU computation bottlenecks the GPU.\nNext, we present the results of using 32 codebooks with Mimi decoder.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T5\" title=\"TABLE V &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the quality of the voice outputs in terms of SNR in dB computed using WADA-SNR on GPU compute.\nWhile the latency and RTF numbers remain almost similar to reduced Mimi codebooks supported by the fact that Audio decoding is not one of the bottlenecks of the TTS component, the deciding factor between the possible configurations turns out to be the audio quality.</p>\n\n",
                 "matched_terms": [
-                    "tts",
-                    "component",
                     "gpu",
-                    "cpu"
+                    "tts",
+                    "cpu",
+                    "component"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize Silero-vad for robust speech detection and passing only speech sections of audio to the ASR module for efficient processing. Post speech detection, a 1.5 second window of silence was observed to be optimal for considering end of speech. Against a suite of LLMs, gpt-4o-mini provided a good balance of latency and token throughput. Our V-2-V architecture hosted in GPU enviroment shows a stable streaming voice output with Average Inter-Chunk Latency being close to two-thirds of the Average Chunk Length ensuring the stream queue is not empty post first chunk generation. However, V-2-V architecture hosted in CPU environment has noticeable gaps between streaming some chunks even when using 16 RVQ iterations.</p>\n\n",
                 "matched_terms": [
-                    "streaming",
-                    "asr",
                     "gpu",
-                    "cpu"
+                    "streaming",
+                    "cpu",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">One-shot LLM response generation time remains a bottleneck for real-time conversation</p>\n\n",
                 "matched_terms": [
-                    "time",
-                    "llm"
+                    "llm",
+                    "time"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Streaming the LLM response substantially decreases the total latency by enabling the TTS component to generate audio chunks parallel to the LLM response generation</p>\n\n",
                 "matched_terms": [
-                    "streaming",
+                    "llm",
                     "tts",
                     "total",
-                    "llm",
-                    "component"
+                    "component",
+                    "streaming"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Time taken by the ASR component may be absorbed into the silence window of the VAD component by enabling chunk based generation to process the audio chunks as they are recorded to essentially result in near zero effective latency contributed by the ASR component</p>\n\n",
                 "matched_terms": [
+                    "time",
                     "component",
-                    "asr",
-                    "time"
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency from TTS component can be optimized at the cost of audio quality</p>\n\n",
                 "matched_terms": [
-                    "component",
-                    "tts"
+                    "tts",
+                    "component"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency scales proportionately to size of the audio chunk while maintaining a chunk size agnostic RTF, hence first chunk latency may be optimized by taking streaming input from the LLM component</p>\n\n",
                 "matched_terms": [
+                    "llm",
                     "streaming",
-                    "component",
-                    "llm"
+                    "component"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The Residual Vector Quantization process in its current state is sequential Python code which may be optimized further by generating CUDA Kernels for the process so that it may natively run on GPU improving the latency and the user experience. Further experimentation may be conducted to replace the Llama 3.2 Backbone and Decoder used natively by the CSM model with more efficient models to further reduce the TTS latency.</p>\n\n",
                 "matched_terms": [
-                    "tts",
-                    "gpu"
+                    "gpu",
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The ASR generation may also be streamed so that the component may start processing the audio input as soon as it gets a positive from VAD instead of waiting for the entire input audio to be first collected by VAD and then sent to the ASR component. Implementation of ASR streaming would ensure that the ASR processing time is enclosed within the window of silence we set for VAD to detect end of user speech input hence providing 0 latency for the ASR component</p>\n\n",
                 "matched_terms": [
-                    "component",
                     "streaming",
-                    "asr",
-                    "time"
+                    "time",
+                    "component",
+                    "asr"
                 ]
             }
         ]
@@ -196,26 +196,26 @@
         "body": "Metric\nGPU\nCPU\n\n\n\n\nFirst Chunk Latency (ms)\n1021.2\n2121.9\n\n\nReal-Time Factor (RTF)\n0.693x\n1.138x\n\n\nAverage Chunk Size (ms)\n1550.0\n1544.0\n\n\nAverage Inter-Chunk Latency (ms)\n1008.9\n1660.4\n\n\nMin Inter-Chunk Latency (ms)\n821.5\n1340.1\n\n\nMax Inter-Chunk Latency (ms)\n1319.7\n1767.6\n\n\nChunks per Second\n0.93\n0.57",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">GPU</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">CPU</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">First Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1021.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">2121.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Real-Time Factor (RTF)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.693x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.138x</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Average Chunk Size (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1550.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1544.0</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Average Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1008.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1660.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Min Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">821.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1340.1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Max Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1319.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1767.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">Chunks per Second</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">0.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">0.57</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "rtf",
-            "1138x",
-            "cpu",
-            "inference",
-            "interchunk",
-            "metric",
-            "0693x",
-            "chunks",
-            "realtime",
+            "size",
+            "second",
             "min",
             "max",
-            "metrics",
-            "average",
-            "chunk",
+            "factor",
             "first",
-            "second",
-            "size",
-            "gpu",
+            "chunks",
+            "metrics",
             "latency",
-            "factor"
+            "chunk",
+            "rtf",
+            "0693x",
+            "1138x",
+            "average",
+            "realtime",
+            "gpu",
+            "metric",
+            "inference",
+            "interchunk",
+            "cpu"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">First, we present results for which we utilize the same number of Mimi codebooks as the number of RVQ Iterations\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T2\" title=\"TABLE II &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> summarizes the metrics for streaming TTS generation in GPU and CPU compute environments (with 32 RVQ Iterations) with the sentence &#8221;<span class=\"ltx_text ltx_font_italic\">I am an AI, I am designed to assist and provide helpful responses to your queries. I am a machine learning model, trained on a vast amount of text data</span>&#8221; with no prior context being used for benchmarking and no LLM streaming. GPU compute shows a significant speedup compared to CPU and demonstrates the capability for real-time generation with RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> and stable streaming output.\n<br class=\"ltx_break\"/>\n<br class=\"ltx_break\"/>Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T3\" title=\"TABLE III &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T4\" title=\"TABLE IV &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> summarize the impact of number of RVQ Iterations in both CPU and GPU compute environments. Rows represent various relevant metrics and columns represent the number of RVQ Iterations.\nThere are common trends observed across both the environments and reflect that decreasing the number of RVQ Iterations improved compute times at the cost of audio quality.</p>\n\n"
@@ -224,20 +224,20 @@
             {
                 "html": "<p class=\"ltx_p\">We experiment with a low-latency, end-to-end voice-to-voice communication model to optimize it for real-time conversational applications. By analyzing components essential to voice to voice (V-2-V) system viz. automatic speech recognition (ASR), text-to-speech (TTS), and dialog management, our work analyzes how to reduce processing time while maintaining high-quality interactions to identify the levers for optimizing V-2-V system. Our work identifies that TTS component which generates life-like voice, full of emotions including natural pauses and exclamations has highest impact on Real time factor (RTF). The experimented V-2-V architecture utilizes CSM1b has the capability to understand tone as well as context of conversation by ingesting both audio and text of prior exchanges to generate contextually accurate speech. We explored optimization of Residual Vector Quantization (RVQ) iterations by the TTS decoder which come at a cost of decrease in the quality of voice generated. Our experimental evaluations also demonstrate that for V-2-V implementations based on CSM most important optimizations can be brought by reducing the number of RVQ Iterations along with the codebooks used in Mimi.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "realtime",
+                    "rtf",
                     "factor"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our proposed system consists of 3 important blocks: Speech to Text , LLM inference text to speech and Text to speech (TTS). The end-to-end pipeline (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) supports live audio transcription followed by LLM augmented response generation and low latency text-to-speech service delivering an interactive real-time experience.\nThe ASR component is configured to start transcribing the live speech chunk by chunk and eventually produce a coherent output which accounts for removal of pauses and gap words. Subsequently the output is passed to the LLM component along with the prior conversation transcriptions and LLM generated text responses for context aware replies. The text output of the LLM is fed to the TTS component which is highly optimized for low latency, delivering the first audio chunk in as low as 640.9 ms in the GPU compute environment. The proposed system has been evaluated over both CPU and GPU environments:</p>\n\n",
                 "matched_terms": [
-                    "realtime",
                     "gpu",
                     "inference",
-                    "cpu",
                     "latency",
                     "chunk",
+                    "cpu",
+                    "realtime",
                     "first"
                 ]
             },
@@ -252,35 +252,35 @@
                 "html": "<p class=\"ltx_p\">The model is able to achieve a Real Time Factor (RTF) <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> (0.383) on GPU processing without reducing RVQ Iterations and RTF of <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> on CPU but with reducing the RVQ Iterations to 16. \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
                     "rtf",
-                    "factor",
                     "gpu",
-                    "cpu"
+                    "cpu",
+                    "factor"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Streaming improves the latency of the model by bridging the gap between the user ending their speech and getting to hear the beginning of the response. This is facilitated by chunking the audio generation and hence the latency accounts only for the time it takes to generate the first audio chunk.\nA seamless experience is guaranteed by the fact that inter-chunk generation time is lesser than the length of the chunks, hence maintaining a non-empty queue for audio. RTF for streaming is naturally higher than One Shot Generation.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "chunks",
                     "latency",
-                    "interchunk",
                     "chunk",
-                    "first"
+                    "interchunk",
+                    "first",
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated our proposed architecture end to end by running all 3 components: ASR, LLM inference and TTS. For the same, we performed time profiling of entire pipleine to measure the latency contributed by the various components with TTS running on 16 RVQ iterations, the results of time profiling are capture in Table 1.</p>\n\n",
                 "matched_terms": [
-                    "latency",
-                    "inference"
+                    "inference",
+                    "latency"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Note that the data corresponds to a single instance run on the same input audio. We observe that streaming the LLM response as an input for the TTS component provides significant speedup to the total latency (Total (s) in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T1\" title=\"TABLE I &#8227; III-A LLM Streaming &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>) experienced between end of speech (as determined by VAD) and playing the first audio chunk generated</p>\n\n",
                 "matched_terms": [
-                    "chunk",
                     "latency",
-                    "first"
+                    "first",
+                    "chunk"
                 ]
             },
             {
@@ -293,44 +293,44 @@
             {
                 "html": "<p class=\"ltx_p\">The latency to first chunk decreases with a decrease in RVQ Iterations, indicating improved responsiveness and user experience in field implementations</p>\n\n",
                 "matched_terms": [
-                    "chunk",
+                    "first",
                     "latency",
-                    "first"
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The impact of number of RVQ iterations is much more pronounced in the GPU compute environment due to the fact that RVQ iterations involve a lot of sequential computations instructed by standard Python code and PyTorch operations resulting in several handoffs between GPU and CPU computation. This adds to the overhead and the CPU computation bottlenecks the GPU.\nNext, we present the results of using 32 codebooks with Mimi decoder.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T5\" title=\"TABLE V &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the quality of the voice outputs in terms of SNR in dB computed using WADA-SNR on GPU compute.\nWhile the latency and RTF numbers remain almost similar to reduced Mimi codebooks supported by the fact that Audio decoding is not one of the bottlenecks of the TTS component, the deciding factor between the possible configurations turns out to be the audio quality.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "gpu",
+                    "factor",
                     "cpu",
                     "latency",
-                    "factor"
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">One noticeable effect on voice output is that it is elongated in length due to addition of several natural pauses in speech, which deters the use of 32 codebooks with reduced RVQ iterations for use-cases where the speech should sound natural. Observing several audio clips generated, there is high variance in SNR values going as low as -2.2341 (for 16 RVQ iterations with Concat Padding) the cause of which is unclear.\nFurther, we study the effect of length of audio generated on audio quality. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F2\" title=\"Figure 2 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F3\" title=\"Figure 3 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> depicts the effect of number of input text characters (451 vs 151) on audio quality.\nAs expected, the average size of a chunk and hence the latency to first chunk scale with the increase in length of audio generated, however the Real Time Factor (RTF) for generation stays the same demonstrating consistent efficiency.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "size",
-                    "factor",
                     "average",
+                    "factor",
                     "latency",
                     "chunk",
+                    "rtf",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize Silero-vad for robust speech detection and passing only speech sections of audio to the ASR module for efficient processing. Post speech detection, a 1.5 second window of silence was observed to be optimal for considering end of speech. Against a suite of LLMs, gpt-4o-mini provided a good balance of latency and token throughput. Our V-2-V architecture hosted in GPU enviroment shows a stable streaming voice output with Average Inter-Chunk Latency being close to two-thirds of the Average Chunk Length ensuring the stream queue is not empty post first chunk generation. However, V-2-V architecture hosted in CPU environment has noticeable gaps between streaming some chunks even when using 16 RVQ iterations.</p>\n\n",
                 "matched_terms": [
-                    "chunks",
                     "gpu",
-                    "cpu",
-                    "average",
-                    "latency",
                     "second",
-                    "interchunk",
+                    "chunks",
+                    "latency",
                     "chunk",
+                    "average",
+                    "interchunk",
+                    "cpu",
                     "first"
                 ]
             },
@@ -345,33 +345,33 @@
                 "html": "<p class=\"ltx_p\">Time taken by the ASR component may be absorbed into the silence window of the VAD component by enabling chunk based generation to process the audio chunks as they are recorded to essentially result in near zero effective latency contributed by the ASR component</p>\n\n",
                 "matched_terms": [
                     "chunks",
-                    "chunk",
-                    "latency"
+                    "latency",
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency from TTS component can be optimized at the cost of audio quality</p>\n\n",
                 "matched_terms": [
-                    "chunk",
+                    "first",
                     "latency",
-                    "first"
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency scales proportionately to size of the audio chunk while maintaining a chunk size agnostic RTF, hence first chunk latency may be optimized by taking streaming input from the LLM component</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "size",
                     "latency",
                     "chunk",
-                    "first"
+                    "first",
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The Residual Vector Quantization process in its current state is sequential Python code which may be optimized further by generating CUDA Kernels for the process so that it may natively run on GPU improving the latency and the user experience. Further experimentation may be conducted to replace the Llama 3.2 Backbone and Decoder used natively by the CSM model with more efficient models to further reduce the TTS latency.</p>\n\n",
                 "matched_terms": [
-                    "latency",
-                    "gpu"
+                    "gpu",
+                    "latency"
                 ]
             },
             {
@@ -389,31 +389,31 @@
         "body": "Metric (RVQ Iterations)\n16\n20\n24\n32\n\n\nFirst Chunk Latency (ms)\n1748.6\n1855.0\n2172.3\n2662.5\n\n\nReal-Time Factor (RTF)\n0.934x\n1.143x\n1.236x\n1.489x\n\n\nNumber of Chunks\n5\n7\n7\n7\n\n\nAvg. Chunk Size\n1504.0\n1565.7\n1394.3\n1531.4\n\n\nAvg. Inter-Chunk Latency (ms)\n1191.3\n1693.7\n1563.2\n2131.6\n\n\nMin Inter-Chunk Latency (ms)\n976.8\n1542.8\n367.8\n1816.6\n\n\nMax Inter-Chunk Latency (ms)\n1306.1\n2035.0\n1879.2\n2280.0\n\n\nChunks per Second\n0.71\n0.56\n0.58\n0.44\n\n\nSNR (dB)\n15.459\n10.525\n24.569\n34.404",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric (RVQ Iterations)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">16</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">20</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">32</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">First Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1748.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1855.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">2172.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">2662.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Real-Time Factor (RTF)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.934x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.143x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.236x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.489x</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Number of Chunks</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Avg. Chunk Size</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1504.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1565.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1394.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1531.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Avg. Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1191.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1693.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1563.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2131.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Min Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">976.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1542.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">367.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1816.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Max Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1306.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2035.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1879.2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2280.0</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Chunks per Second</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.71</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.56</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.58</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.44</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">SNR (dB)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">15.459</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">10.525</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">24.569</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">34.404</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "rtf",
             "snr",
-            "optimization",
-            "cpu",
-            "0934x",
-            "interchunk",
-            "metric",
-            "avg",
-            "chunks",
-            "realtime",
-            "min",
-            "1236x",
-            "max",
-            "number",
-            "1489x",
-            "iterations",
-            "rvq",
-            "iii",
-            "chunk",
-            "first",
-            "second",
             "size",
-            "latency",
+            "second",
+            "min",
+            "avg",
+            "max",
+            "0934x",
             "factor",
-            "1143x"
+            "1489x",
+            "first",
+            "iterations",
+            "chunks",
+            "latency",
+            "chunk",
+            "iii",
+            "rtf",
+            "optimization",
+            "1143x",
+            "1236x",
+            "number",
+            "realtime",
+            "rvq",
+            "metric",
+            "interchunk",
+            "cpu"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">First, we present results for which we utilize the same number of Mimi codebooks as the number of RVQ Iterations\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T2\" title=\"TABLE II &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> summarizes the metrics for streaming TTS generation in GPU and CPU compute environments (with 32 RVQ Iterations) with the sentence &#8221;<span class=\"ltx_text ltx_font_italic\">I am an AI, I am designed to assist and provide helpful responses to your queries. I am a machine learning model, trained on a vast amount of text data</span>&#8221; with no prior context being used for benchmarking and no LLM streaming. GPU compute shows a significant speedup compared to CPU and demonstrates the capability for real-time generation with RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> and stable streaming output.\n<br class=\"ltx_break\"/>\n<br class=\"ltx_break\"/>Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T3\" title=\"TABLE III &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T4\" title=\"TABLE IV &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> summarize the impact of number of RVQ Iterations in both CPU and GPU compute environments. Rows represent various relevant metrics and columns represent the number of RVQ Iterations.\nThere are common trends observed across both the environments and reflect that decreasing the number of RVQ Iterations improved compute times at the cost of audio quality.</p>\n\n"
@@ -422,13 +422,13 @@
             {
                 "html": "<p class=\"ltx_p\">We experiment with a low-latency, end-to-end voice-to-voice communication model to optimize it for real-time conversational applications. By analyzing components essential to voice to voice (V-2-V) system viz. automatic speech recognition (ASR), text-to-speech (TTS), and dialog management, our work analyzes how to reduce processing time while maintaining high-quality interactions to identify the levers for optimizing V-2-V system. Our work identifies that TTS component which generates life-like voice, full of emotions including natural pauses and exclamations has highest impact on Real time factor (RTF). The experimented V-2-V architecture utilizes CSM1b has the capability to understand tone as well as context of conversation by ingesting both audio and text of prior exchanges to generate contextually accurate speech. We explored optimization of Residual Vector Quantization (RVQ) iterations by the TTS decoder which come at a cost of decrease in the quality of voice generated. Our experimental evaluations also demonstrate that for V-2-V implementations based on CSM most important optimizations can be brought by reducing the number of RVQ Iterations along with the codebooks used in Mimi.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
-                    "number",
-                    "realtime",
-                    "optimization",
                     "iterations",
+                    "optimization",
+                    "realtime",
+                    "factor",
+                    "number",
                     "rvq",
-                    "factor"
+                    "rtf"
                 ]
             },
             {
@@ -441,11 +441,11 @@
             {
                 "html": "<p class=\"ltx_p\">Our proposed system consists of 3 important blocks: Speech to Text , LLM inference text to speech and Text to speech (TTS). The end-to-end pipeline (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) supports live audio transcription followed by LLM augmented response generation and low latency text-to-speech service delivering an interactive real-time experience.\nThe ASR component is configured to start transcribing the live speech chunk by chunk and eventually produce a coherent output which accounts for removal of pauses and gap words. Subsequently the output is passed to the LLM component along with the prior conversation transcriptions and LLM generated text responses for context aware replies. The text output of the LLM is fed to the TTS component which is highly optimized for low latency, delivering the first audio chunk in as low as 640.9 ms in the GPU compute environment. The proposed system has been evaluated over both CPU and GPU environments:</p>\n\n",
                 "matched_terms": [
-                    "realtime",
-                    "cpu",
                     "latency",
                     "chunk",
-                    "first"
+                    "realtime",
+                    "first",
+                    "cpu"
                 ]
             },
             {
@@ -465,31 +465,31 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RVQ Iterations:</span> In order to reduce the latency, we decrease the number of iterations of RVQ computation, consequently the number of codebooks used in the Mimi Tokenizer used by CSM is also set to the number of RVQ iterations. We also experiment with reduced number of RVQ iterations and keeping the number of Mimi codebooks at 32 by padding the RVQ output by two of the following methods:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "number",
                     "latency",
+                    "number",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model is able to achieve a Real Time Factor (RTF) <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> (0.383) on GPU processing without reducing RVQ Iterations and RTF of <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> on CPU but with reducing the RVQ Iterations to 16. \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "rtf",
-                    "cpu",
                     "iterations",
+                    "factor",
+                    "rtf",
                     "rvq",
-                    "factor"
+                    "cpu"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Streaming improves the latency of the model by bridging the gap between the user ending their speech and getting to hear the beginning of the response. This is facilitated by chunking the audio generation and hence the latency accounts only for the time it takes to generate the first audio chunk.\nA seamless experience is guaranteed by the fact that inter-chunk generation time is lesser than the length of the chunks, hence maintaining a non-empty queue for audio. RTF for streaming is naturally higher than One Shot Generation.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "chunks",
                     "latency",
-                    "interchunk",
                     "chunk",
-                    "first"
+                    "interchunk",
+                    "first",
+                    "rtf"
                 ]
             },
             {
@@ -502,25 +502,25 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluated our proposed architecture end to end by running all 3 components: ASR, LLM inference and TTS. For the same, we performed time profiling of entire pipleine to measure the latency contributed by the various components with TTS running on 16 RVQ iterations, the results of time profiling are capture in Table 1.</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "latency",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Note that the data corresponds to a single instance run on the same input audio. We observe that streaming the LLM response as an input for the TTS component provides significant speedup to the total latency (Total (s) in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T1\" title=\"TABLE I &#8227; III-A LLM Streaming &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>) experienced between end of speech (as determined by VAD) and playing the first audio chunk generated</p>\n\n",
                 "matched_terms": [
-                    "chunk",
                     "latency",
-                    "first"
+                    "first",
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Overall time to generate decreases as indicated by decrease in RTF values with decrease in RVQ Iterations. CPU environment achieves a usable RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> only with 16 Iterations against the 32 intended</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "rtf",
                     "cpu",
+                    "rtf",
+                    "rvq",
                     "iterations"
                 ]
             },
@@ -528,76 +528,76 @@
                 "html": "<p class=\"ltx_p\">The latency to first chunk decreases with a decrease in RVQ Iterations, indicating improved responsiveness and user experience in field implementations</p>\n\n",
                 "matched_terms": [
                     "iterations",
-                    "rvq",
                     "latency",
                     "chunk",
+                    "rvq",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As expected, the quality of audio decreases with a decrease in RVQ Iterations. The Signal to Noise Ratio (SNR) is computed using WADA-SNR <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "snr",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Behavior of the TTS is quite similar for 20 and 24 RVQ Iterations, indicating a possible affinity to number of iterations being a multiple of 8 \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "number",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The impact of number of RVQ iterations is much more pronounced in the GPU compute environment due to the fact that RVQ iterations involve a lot of sequential computations instructed by standard Python code and PyTorch operations resulting in several handoffs between GPU and CPU computation. This adds to the overhead and the CPU computation bottlenecks the GPU.\nNext, we present the results of using 32 codebooks with Mimi decoder.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T5\" title=\"TABLE V &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the quality of the voice outputs in terms of SNR in dB computed using WADA-SNR on GPU compute.\nWhile the latency and RTF numbers remain almost similar to reduced Mimi codebooks supported by the fact that Audio decoding is not one of the bottlenecks of the TTS component, the deciding factor between the possible configurations turns out to be the audio quality.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
-                    "number",
                     "snr",
                     "iterations",
-                    "cpu",
-                    "rvq",
                     "latency",
-                    "factor"
+                    "factor",
+                    "cpu",
+                    "number",
+                    "rvq",
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">One noticeable effect on voice output is that it is elongated in length due to addition of several natural pauses in speech, which deters the use of 32 codebooks with reduced RVQ iterations for use-cases where the speech should sound natural. Observing several audio clips generated, there is high variance in SNR values going as low as -2.2341 (for 16 RVQ iterations with Concat Padding) the cause of which is unclear.\nFurther, we study the effect of length of audio generated on audio quality. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F2\" title=\"Figure 2 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F3\" title=\"Figure 3 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> depicts the effect of number of input text characters (451 vs 151) on audio quality.\nAs expected, the average size of a chunk and hence the latency to first chunk scale with the increase in length of audio generated, however the Real Time Factor (RTF) for generation stays the same demonstrating consistent efficiency.</p>\n\n",
                 "matched_terms": [
+                    "snr",
+                    "iterations",
+                    "size",
+                    "chunk",
+                    "latency",
+                    "factor",
                     "rtf",
                     "number",
-                    "snr",
-                    "size",
-                    "factor",
-                    "iterations",
                     "rvq",
-                    "latency",
-                    "chunk",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize Silero-vad for robust speech detection and passing only speech sections of audio to the ASR module for efficient processing. Post speech detection, a 1.5 second window of silence was observed to be optimal for considering end of speech. Against a suite of LLMs, gpt-4o-mini provided a good balance of latency and token throughput. Our V-2-V architecture hosted in GPU enviroment shows a stable streaming voice output with Average Inter-Chunk Latency being close to two-thirds of the Average Chunk Length ensuring the stream queue is not empty post first chunk generation. However, V-2-V architecture hosted in CPU environment has noticeable gaps between streaming some chunks even when using 16 RVQ iterations.</p>\n\n",
                 "matched_terms": [
-                    "chunks",
                     "iterations",
+                    "second",
+                    "chunks",
+                    "latency",
+                    "chunk",
+                    "interchunk",
                     "cpu",
                     "rvq",
-                    "latency",
-                    "second",
-                    "interchunk",
-                    "chunk",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our work presents a voice-to-voice model focusing on low latency and delivering contextually aware expressive responses imperative in certain domains such as Customer Support. The focus of our experiments is around optimizing the CSM-1B TTS model, which helps effectively decreasing the latency to half through experimentation with the number of RVQ iterations presented in the original work. This has an impact on quality of speech output which may be insignificant for telephone based agent conversations where expectation on speech quality are not very high owing to the nature of the medium. The important insights from our experiments on V-2-V architecture are as follows:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "number",
                     "latency",
+                    "number",
+                    "rvq",
                     "iterations"
                 ]
             },
@@ -612,26 +612,26 @@
                 "html": "<p class=\"ltx_p\">Time taken by the ASR component may be absorbed into the silence window of the VAD component by enabling chunk based generation to process the audio chunks as they are recorded to essentially result in near zero effective latency contributed by the ASR component</p>\n\n",
                 "matched_terms": [
                     "chunks",
-                    "chunk",
-                    "latency"
+                    "latency",
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency from TTS component can be optimized at the cost of audio quality</p>\n\n",
                 "matched_terms": [
-                    "chunk",
+                    "first",
                     "latency",
-                    "first"
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency scales proportionately to size of the audio chunk while maintaining a chunk size agnostic RTF, hence first chunk latency may be optimized by taking streaming input from the LLM component</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "size",
                     "latency",
                     "chunk",
-                    "first"
+                    "first",
+                    "rtf"
                 ]
             },
             {
@@ -649,30 +649,30 @@
         "body": "Metric (RVQ Iterations)\n16\n20\n24\n32\n\n\nFirst Chunk Latency (ms)\n640.9\n1105.4\n1172.3\n1381.9\n\n\nReal-Time Factor (RTF)\n0.480x\n0.571x\n0.574x\n0.785x\n\n\nNumber of Chunks\n6\n7\n13\n6\n\n\nAvg. Chunk Size (ms)\n1600.0\n1565.7\n1513.8\n1373.3\n\n\nAvg. Inter-Chunk Latency (ms)\n685.1\n773.0\n800.4\n915.2\n\n\nMin Inter-Chunk Latency (ms)\n597.6\n701.3\n47.8\n251.0\n\n\nMax Inter-Chunk Latency (ms)\n949.0\n1065.4\n1344.7\n1333.2\n\n\nChunks per Second\n1.30\n1.12\n1.15\n0.93\n\n\nSNR (dB)\n7.158\n14.844\n22.817\n33.115",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric (RVQ Iterations)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">16</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">20</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">32</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">First Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">640.9</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1105.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1172.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1381.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Real-Time Factor (RTF)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.480x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.571x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.574x</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.785x</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Number of Chunks</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">13</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Avg. Chunk Size (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1600.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1565.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1513.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1373.3</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Avg. Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">685.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">773.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">800.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">915.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Min Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">597.6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">701.3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">47.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">251.0</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Max Inter-Chunk Latency (ms)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">949.0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1065.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1344.7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1333.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Chunks per Second</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.12</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">1.15</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.93</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">SNR (dB)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">7.158</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">14.844</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">22.817</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">33.115</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "rtf",
             "snr",
-            "0571x",
-            "optimization",
-            "interchunk",
             "0574x",
-            "metric",
-            "avg",
-            "chunks",
-            "realtime",
-            "0480x",
-            "min",
-            "max",
-            "number",
-            "iterations",
-            "rvq",
-            "chunk",
-            "0785x",
-            "first",
-            "second",
             "size",
-            "gpu",
+            "second",
+            "min",
+            "avg",
+            "max",
+            "factor",
+            "first",
+            "iterations",
+            "chunks",
             "latency",
-            "factor"
+            "chunk",
+            "0571x",
+            "rtf",
+            "optimization",
+            "0480x",
+            "number",
+            "realtime",
+            "0785x",
+            "rvq",
+            "gpu",
+            "metric",
+            "interchunk"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">First, we present results for which we utilize the same number of Mimi codebooks as the number of RVQ Iterations\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T2\" title=\"TABLE II &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> summarizes the metrics for streaming TTS generation in GPU and CPU compute environments (with 32 RVQ Iterations) with the sentence &#8221;<span class=\"ltx_text ltx_font_italic\">I am an AI, I am designed to assist and provide helpful responses to your queries. I am a machine learning model, trained on a vast amount of text data</span>&#8221; with no prior context being used for benchmarking and no LLM streaming. GPU compute shows a significant speedup compared to CPU and demonstrates the capability for real-time generation with RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> and stable streaming output.\n<br class=\"ltx_break\"/>\n<br class=\"ltx_break\"/>Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T3\" title=\"TABLE III &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T4\" title=\"TABLE IV &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> summarize the impact of number of RVQ Iterations in both CPU and GPU compute environments. Rows represent various relevant metrics and columns represent the number of RVQ Iterations.\nThere are common trends observed across both the environments and reflect that decreasing the number of RVQ Iterations improved compute times at the cost of audio quality.</p>\n\n"
@@ -681,13 +681,13 @@
             {
                 "html": "<p class=\"ltx_p\">We experiment with a low-latency, end-to-end voice-to-voice communication model to optimize it for real-time conversational applications. By analyzing components essential to voice to voice (V-2-V) system viz. automatic speech recognition (ASR), text-to-speech (TTS), and dialog management, our work analyzes how to reduce processing time while maintaining high-quality interactions to identify the levers for optimizing V-2-V system. Our work identifies that TTS component which generates life-like voice, full of emotions including natural pauses and exclamations has highest impact on Real time factor (RTF). The experimented V-2-V architecture utilizes CSM1b has the capability to understand tone as well as context of conversation by ingesting both audio and text of prior exchanges to generate contextually accurate speech. We explored optimization of Residual Vector Quantization (RVQ) iterations by the TTS decoder which come at a cost of decrease in the quality of voice generated. Our experimental evaluations also demonstrate that for V-2-V implementations based on CSM most important optimizations can be brought by reducing the number of RVQ Iterations along with the codebooks used in Mimi.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
-                    "number",
-                    "realtime",
-                    "optimization",
                     "iterations",
+                    "optimization",
+                    "realtime",
+                    "factor",
+                    "number",
                     "rvq",
-                    "factor"
+                    "rtf"
                 ]
             },
             {
@@ -700,10 +700,10 @@
             {
                 "html": "<p class=\"ltx_p\">Our proposed system consists of 3 important blocks: Speech to Text , LLM inference text to speech and Text to speech (TTS). The end-to-end pipeline (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>) supports live audio transcription followed by LLM augmented response generation and low latency text-to-speech service delivering an interactive real-time experience.\nThe ASR component is configured to start transcribing the live speech chunk by chunk and eventually produce a coherent output which accounts for removal of pauses and gap words. Subsequently the output is passed to the LLM component along with the prior conversation transcriptions and LLM generated text responses for context aware replies. The text output of the LLM is fed to the TTS component which is highly optimized for low latency, delivering the first audio chunk in as low as 640.9 ms in the GPU compute environment. The proposed system has been evaluated over both CPU and GPU environments:</p>\n\n",
                 "matched_terms": [
-                    "realtime",
                     "gpu",
                     "latency",
                     "chunk",
+                    "realtime",
                     "first"
                 ]
             },
@@ -717,31 +717,31 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RVQ Iterations:</span> In order to reduce the latency, we decrease the number of iterations of RVQ computation, consequently the number of codebooks used in the Mimi Tokenizer used by CSM is also set to the number of RVQ iterations. We also experiment with reduced number of RVQ iterations and keeping the number of Mimi codebooks at 32 by padding the RVQ output by two of the following methods:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "number",
                     "latency",
+                    "number",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model is able to achieve a Real Time Factor (RTF) <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> (0.383) on GPU processing without reducing RVQ Iterations and RTF of <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> on CPU but with reducing the RVQ Iterations to 16. \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "gpu",
                     "iterations",
+                    "factor",
                     "rvq",
-                    "factor"
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Streaming improves the latency of the model by bridging the gap between the user ending their speech and getting to hear the beginning of the response. This is facilitated by chunking the audio generation and hence the latency accounts only for the time it takes to generate the first audio chunk.\nA seamless experience is guaranteed by the fact that inter-chunk generation time is lesser than the length of the chunks, hence maintaining a non-empty queue for audio. RTF for streaming is naturally higher than One Shot Generation.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "chunks",
                     "latency",
-                    "interchunk",
                     "chunk",
-                    "first"
+                    "interchunk",
+                    "first",
+                    "rtf"
                 ]
             },
             {
@@ -754,24 +754,24 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluated our proposed architecture end to end by running all 3 components: ASR, LLM inference and TTS. For the same, we performed time profiling of entire pipleine to measure the latency contributed by the various components with TTS running on 16 RVQ iterations, the results of time profiling are capture in Table 1.</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "latency",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Note that the data corresponds to a single instance run on the same input audio. We observe that streaming the LLM response as an input for the TTS component provides significant speedup to the total latency (Total (s) in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T1\" title=\"TABLE I &#8227; III-A LLM Streaming &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>) experienced between end of speech (as determined by VAD) and playing the first audio chunk generated</p>\n\n",
                 "matched_terms": [
-                    "chunk",
                     "latency",
-                    "first"
+                    "first",
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Overall time to generate decreases as indicated by decrease in RTF values with decrease in RVQ Iterations. CPU environment achieves a usable RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> only with 16 Iterations against the 32 intended</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "rtf",
+                    "rvq",
                     "iterations"
                 ]
             },
@@ -779,76 +779,76 @@
                 "html": "<p class=\"ltx_p\">The latency to first chunk decreases with a decrease in RVQ Iterations, indicating improved responsiveness and user experience in field implementations</p>\n\n",
                 "matched_terms": [
                     "iterations",
-                    "rvq",
                     "latency",
                     "chunk",
+                    "rvq",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As expected, the quality of audio decreases with a decrease in RVQ Iterations. The Signal to Noise Ratio (SNR) is computed using WADA-SNR <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "snr",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Behavior of the TTS is quite similar for 20 and 24 RVQ Iterations, indicating a possible affinity to number of iterations being a multiple of 8 \n<br class=\"ltx_break\"/></p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "number",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The impact of number of RVQ iterations is much more pronounced in the GPU compute environment due to the fact that RVQ iterations involve a lot of sequential computations instructed by standard Python code and PyTorch operations resulting in several handoffs between GPU and CPU computation. This adds to the overhead and the CPU computation bottlenecks the GPU.\nNext, we present the results of using 32 codebooks with Mimi decoder.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T5\" title=\"TABLE V &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the quality of the voice outputs in terms of SNR in dB computed using WADA-SNR on GPU compute.\nWhile the latency and RTF numbers remain almost similar to reduced Mimi codebooks supported by the fact that Audio decoding is not one of the bottlenecks of the TTS component, the deciding factor between the possible configurations turns out to be the audio quality.</p>\n\n",
                 "matched_terms": [
-                    "rtf",
-                    "number",
-                    "snr",
                     "gpu",
+                    "snr",
                     "iterations",
-                    "rvq",
                     "latency",
-                    "factor"
+                    "factor",
+                    "number",
+                    "rvq",
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">One noticeable effect on voice output is that it is elongated in length due to addition of several natural pauses in speech, which deters the use of 32 codebooks with reduced RVQ iterations for use-cases where the speech should sound natural. Observing several audio clips generated, there is high variance in SNR values going as low as -2.2341 (for 16 RVQ iterations with Concat Padding) the cause of which is unclear.\nFurther, we study the effect of length of audio generated on audio quality. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F2\" title=\"Figure 2 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.F3\" title=\"Figure 3 &#8227; III-B TTS Component &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> depicts the effect of number of input text characters (451 vs 151) on audio quality.\nAs expected, the average size of a chunk and hence the latency to first chunk scale with the increase in length of audio generated, however the Real Time Factor (RTF) for generation stays the same demonstrating consistent efficiency.</p>\n\n",
                 "matched_terms": [
+                    "snr",
+                    "iterations",
+                    "size",
+                    "chunk",
+                    "latency",
+                    "factor",
                     "rtf",
                     "number",
-                    "snr",
-                    "size",
-                    "factor",
-                    "iterations",
                     "rvq",
-                    "latency",
-                    "chunk",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize Silero-vad for robust speech detection and passing only speech sections of audio to the ASR module for efficient processing. Post speech detection, a 1.5 second window of silence was observed to be optimal for considering end of speech. Against a suite of LLMs, gpt-4o-mini provided a good balance of latency and token throughput. Our V-2-V architecture hosted in GPU enviroment shows a stable streaming voice output with Average Inter-Chunk Latency being close to two-thirds of the Average Chunk Length ensuring the stream queue is not empty post first chunk generation. However, V-2-V architecture hosted in CPU environment has noticeable gaps between streaming some chunks even when using 16 RVQ iterations.</p>\n\n",
                 "matched_terms": [
-                    "chunks",
                     "gpu",
                     "iterations",
-                    "rvq",
-                    "latency",
                     "second",
-                    "interchunk",
+                    "chunks",
+                    "latency",
                     "chunk",
+                    "interchunk",
+                    "rvq",
                     "first"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our work presents a voice-to-voice model focusing on low latency and delivering contextually aware expressive responses imperative in certain domains such as Customer Support. The focus of our experiments is around optimizing the CSM-1B TTS model, which helps effectively decreasing the latency to half through experimentation with the number of RVQ iterations presented in the original work. This has an impact on quality of speech output which may be insignificant for telephone based agent conversations where expectation on speech quality are not very high owing to the nature of the medium. The important insights from our experiments on V-2-V architecture are as follows:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "number",
                     "latency",
+                    "number",
+                    "rvq",
                     "iterations"
                 ]
             },
@@ -863,33 +863,33 @@
                 "html": "<p class=\"ltx_p\">Time taken by the ASR component may be absorbed into the silence window of the VAD component by enabling chunk based generation to process the audio chunks as they are recorded to essentially result in near zero effective latency contributed by the ASR component</p>\n\n",
                 "matched_terms": [
                     "chunks",
-                    "chunk",
-                    "latency"
+                    "latency",
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency from TTS component can be optimized at the cost of audio quality</p>\n\n",
                 "matched_terms": [
-                    "chunk",
+                    "first",
                     "latency",
-                    "first"
+                    "chunk"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">First audio chunk latency scales proportionately to size of the audio chunk while maintaining a chunk size agnostic RTF, hence first chunk latency may be optimized by taking streaming input from the LLM component</p>\n\n",
                 "matched_terms": [
-                    "rtf",
                     "size",
                     "latency",
                     "chunk",
-                    "first"
+                    "first",
+                    "rtf"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The Residual Vector Quantization process in its current state is sequential Python code which may be optimized further by generating CUDA Kernels for the process so that it may natively run on GPU improving the latency and the user experience. Further experimentation may be conducted to replace the Llama 3.2 Backbone and Decoder used natively by the CSM model with more efficient models to further reduce the TTS latency.</p>\n\n",
                 "matched_terms": [
-                    "latency",
-                    "gpu"
+                    "gpu",
+                    "latency"
                 ]
             },
             {
@@ -907,19 +907,19 @@
         "body": "Configuration (RVQ iterations)\n16\n20\n24\n\n\n\n\n32 Mimi Codebooks + Mean Pad\n7.3653\n10.4672\n26.49277\n\n\n32 Mimi Codebooks + Concat Pad\n8.5714\n14.558\n24.6396\n\n\nn Mimi Codebooks\n7.1582\n14.8440\n22.8174",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Configuration (RVQ iterations)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">16</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">20</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">24</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">32 Mimi Codebooks + Mean Pad</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">7.3653</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">10.4672</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">26.49277</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">32 Mimi Codebooks + Concat Pad</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">8.5714</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">14.558</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">24.6396</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">n Mimi Codebooks</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">7.1582</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">14.8440</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">22.8174</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "configurations",
-            "mimi",
             "codebooks",
             "snr",
-            "decoder",
             "quality",
             "iterations",
-            "rvq",
+            "decoder",
             "pad",
-            "configuration",
-            "audio",
+            "configurations",
             "mean",
-            "concat"
+            "concat",
+            "configuration",
+            "mimi",
+            "audio",
+            "rvq"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">The impact of number of RVQ iterations is much more pronounced in the GPU compute environment due to the fact that RVQ iterations involve a lot of sequential computations instructed by standard Python code and PyTorch operations resulting in several handoffs between GPU and CPU computation. This adds to the overhead and the CPU computation bottlenecks the GPU.\nNext, we present the results of using 32 codebooks with Mimi decoder.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T5\" title=\"TABLE V &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the quality of the voice outputs in terms of SNR in dB computed using WADA-SNR on GPU compute.\nWhile the latency and RTF numbers remain almost similar to reduced Mimi codebooks supported by the fact that Audio decoding is not one of the bottlenecks of the TTS component, the deciding factor between the possible configurations turns out to be the audio quality.</p>\n\n"
@@ -928,46 +928,46 @@
             {
                 "html": "<p class=\"ltx_p\">We experiment with a low-latency, end-to-end voice-to-voice communication model to optimize it for real-time conversational applications. By analyzing components essential to voice to voice (V-2-V) system viz. automatic speech recognition (ASR), text-to-speech (TTS), and dialog management, our work analyzes how to reduce processing time while maintaining high-quality interactions to identify the levers for optimizing V-2-V system. Our work identifies that TTS component which generates life-like voice, full of emotions including natural pauses and exclamations has highest impact on Real time factor (RTF). The experimented V-2-V architecture utilizes CSM1b has the capability to understand tone as well as context of conversation by ingesting both audio and text of prior exchanges to generate contextually accurate speech. We explored optimization of Residual Vector Quantization (RVQ) iterations by the TTS decoder which come at a cost of decrease in the quality of voice generated. Our experimental evaluations also demonstrate that for V-2-V implementations based on CSM most important optimizations can be brought by reducing the number of RVQ Iterations along with the codebooks used in Mimi.</p>\n\n",
                 "matched_terms": [
-                    "mimi",
                     "codebooks",
-                    "decoder",
                     "quality",
                     "iterations",
-                    "rvq",
-                    "audio"
+                    "decoder",
+                    "mimi",
+                    "audio",
+                    "rvq"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The standard implementation of CSM-1B uses 32 iterations of RVQ computation (32 codebooks) to generate life-like speech. However, this is a major bottleneck to voice generation speed owing to the process being sequential. For the same, we have applied following optimizations:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "codebooks",
+                    "rvq",
                     "iterations"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RVQ Iterations:</span> In order to reduce the latency, we decrease the number of iterations of RVQ computation, consequently the number of codebooks used in the Mimi Tokenizer used by CSM is also set to the number of RVQ iterations. We also experiment with reduced number of RVQ iterations and keeping the number of Mimi codebooks at 32 by padding the RVQ output by two of the following methods:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "mimi",
                     "codebooks",
-                    "iterations"
+                    "rvq",
+                    "iterations",
+                    "mimi"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Mean Padding: Pad the RVQ output by padding the remaining dimensions with the mean of the tokens in the output</p>\n\n",
                 "matched_terms": [
+                    "mean",
                     "rvq",
-                    "pad",
-                    "mean"
+                    "pad"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Concat Padding: Pad the RVQ output by concatenating the same array to the end</p>\n\n",
                 "matched_terms": [
+                    "concat",
                     "rvq",
-                    "pad",
-                    "concat"
+                    "pad"
                 ]
             },
             {
@@ -980,10 +980,10 @@
             {
                 "html": "<p class=\"ltx_p\">The end-to-end pipeline described in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S2.F1\" title=\"Figure 1 &#8227; II-B End-to-End Pipeline &#8227; II Methodology &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> represents the architecture describing the flow of data and the processes involved. A Voice Activity Detector (Silero-VAD) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#bib.bib11\" title=\"\">11</a>]</cite> filters the relevant part of speech and passes it to the ASR component for transcription which is further fed to the LLM for response generation. The context audio, context text and LLM response text are tokenized and concatenated to be fed into the TTS component wherein the tokens are processed through RVQ Iterations. The output of the RVQ process is fed to an Audio Decoder which generates the speech response.</p>\n\n",
                 "matched_terms": [
-                    "rvq",
-                    "audio",
                     "decoder",
-                    "iterations"
+                    "audio",
+                    "iterations",
+                    "rvq"
                 ]
             },
             {
@@ -996,12 +996,12 @@
             {
                 "html": "<p class=\"ltx_p\">First, we present results for which we utilize the same number of Mimi codebooks as the number of RVQ Iterations\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T2\" title=\"TABLE II &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> summarizes the metrics for streaming TTS generation in GPU and CPU compute environments (with 32 RVQ Iterations) with the sentence &#8221;<span class=\"ltx_text ltx_font_italic\">I am an AI, I am designed to assist and provide helpful responses to your queries. I am a machine learning model, trained on a vast amount of text data</span>&#8221; with no prior context being used for benchmarking and no LLM streaming. GPU compute shows a significant speedup compared to CPU and demonstrates the capability for real-time generation with RTF <math alttext=\"&lt;1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">&lt;1</annotation></semantics></math> and stable streaming output.\n<br class=\"ltx_break\"/>\n<br class=\"ltx_break\"/>Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T3\" title=\"TABLE III &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20971v2#S3.T4\" title=\"TABLE IV &#8227; III-C End-to-End Pipeline &#8227; III Results &#8227; i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> summarize the impact of number of RVQ Iterations in both CPU and GPU compute environments. Rows represent various relevant metrics and columns represent the number of RVQ Iterations.\nThere are common trends observed across both the environments and reflect that decreasing the number of RVQ Iterations improved compute times at the cost of audio quality.</p>\n\n",
                 "matched_terms": [
-                    "mimi",
                     "codebooks",
                     "quality",
                     "iterations",
-                    "rvq",
-                    "audio"
+                    "mimi",
+                    "audio",
+                    "rvq"
                 ]
             },
             {
@@ -1024,8 +1024,8 @@
                     "snr",
                     "quality",
                     "iterations",
-                    "rvq",
-                    "audio"
+                    "audio",
+                    "rvq"
                 ]
             },
             {
@@ -1042,25 +1042,25 @@
                     "snr",
                     "quality",
                     "iterations",
-                    "rvq",
+                    "concat",
                     "audio",
-                    "concat"
+                    "rvq"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize Silero-vad for robust speech detection and passing only speech sections of audio to the ASR module for efficient processing. Post speech detection, a 1.5 second window of silence was observed to be optimal for considering end of speech. Against a suite of LLMs, gpt-4o-mini provided a good balance of latency and token throughput. Our V-2-V architecture hosted in GPU enviroment shows a stable streaming voice output with Average Inter-Chunk Latency being close to two-thirds of the Average Chunk Length ensuring the stream queue is not empty post first chunk generation. However, V-2-V architecture hosted in CPU environment has noticeable gaps between streaming some chunks even when using 16 RVQ iterations.</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "audio",
-                    "iterations"
+                    "iterations",
+                    "rvq"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our work presents a voice-to-voice model focusing on low latency and delivering contextually aware expressive responses imperative in certain domains such as Customer Support. The focus of our experiments is around optimizing the CSM-1B TTS model, which helps effectively decreasing the latency to half through experimentation with the number of RVQ iterations presented in the original work. This has an impact on quality of speech output which may be insignificant for telephone based agent conversations where expectation on speech quality are not very high owing to the nature of the medium. The important insights from our experiments on V-2-V architecture are as follows:</p>\n\n",
                 "matched_terms": [
-                    "rvq",
                     "quality",
-                    "iterations"
+                    "iterations",
+                    "rvq"
                 ]
             },
             {

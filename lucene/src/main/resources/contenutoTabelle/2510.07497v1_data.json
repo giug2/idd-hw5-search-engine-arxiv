@@ -5,112 +5,112 @@
         "body": "",
         "html_code": "<table class=\"ltx_tabular\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g1\" src=\"x11.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g2\" src=\"x12.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g3\" src=\"x13.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g4\" src=\"x14.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g5\" src=\"x15.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g6\" src=\"x16.png\" width=\"475\"/></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding-left:3.0pt;padding-right:3.0pt;\"><img alt=\"[Uncaptioned image]\" class=\"ltx_graphics ltx_img_landscape\" height=\"107\" id=\"S9.T6.g7\" src=\"x17.png\" width=\"475\"/></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "ζ​pzetaleftpright",
-            "horizontal",
-            "sequence",
-            "corresponds",
+            "inflection",
+            "completeness",
+            "words",
+            "red",
             "including",
-            "underlined",
-            "axis",
-            "question",
-            "phatp",
             "curve",
             "each",
-            "inflection",
-            "current",
-            "point",
-            "completeness",
-            "examples",
-            "cumulative",
-            "word",
+            "horizontal",
+            "ζ​pzetaleftpright",
             "partial",
-            "words",
-            "red"
+            "sequence",
+            "examples",
+            "word",
+            "question",
+            "corresponds",
+            "underlined",
+            "cumulative",
+            "current",
+            "axis",
+            "point",
+            "phatp"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">Current speech LLM architectures may be broadly categorized into two types: single-stream and multi-stream. Single-stream architectures merge user/system speech and text into a unified token sequence <cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib25\" title=\"\">2024</a>; Veluri et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib45\" title=\"\">2024</a>)</cite>, while multi-stream architectures simultaneously model distinct streams for each token sequence <cite class=\"ltx_cite ltx_citemacro_citep\">(D&#233;fossez et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib15\" title=\"\">2024</a>)</cite>.\nIn this work, we build upon a multi-stream architecture due to its superior capacity for the concurrent processing of user audio and reasoning tokens.\nThis design provides significant flexibility by allowing the system&#8217;s text stream to be revised independently, a key advantage over single-stream models that lack this decoupling.\nSpecifically, we fine-tune the publicly available Moshi model <cite class=\"ltx_cite ltx_citemacro_citep\">(D&#233;fossez et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib15\" title=\"\">2024</a>)</cite> to generate CoT within its text monologue stream to improve its reasoning capabilities (Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S2\" title=\"2 Multi-stream Speech LLMs with Chain-of-Thought &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).\nTo enable the model to think while listening, we propose two methods: (i) a novel metric that estimates the completeness of the user&#8217;s question at each timestep, and (ii) a preference tuning scheme to update the model&#8217;s reasoning dynamically with new input (Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3\" title=\"3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n",
                 "matched_terms": [
+                    "each",
                     "sequence",
-                    "completeness",
-                    "question",
                     "current",
-                    "each"
+                    "completeness",
+                    "question"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Thinking while listening reduces reasoning latency.</span> We demonstrate that auto-regressive models that can generate tokens in sync with streaming user input can be taught to &#8220;think early&#8221; using entropy-based selection of trigger points. We achieve this using a novel Question Completeness metric that results in more controllable accuracy-latency trade-offs.</p>\n\n",
                 "matched_terms": [
-                    "completeness",
-                    "question"
+                    "question",
+                    "completeness"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To help the model learn the relationship between the user&#8217;s spoken question and the CoT, we also introduce a streaming ASR component into the text monologue, with the corresponding tokens denoted by <math alttext=\"\\mathcal{Q^{T}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m1\" intent=\":literal\"><semantics><msup><mi class=\"ltx_font_mathcaligraphic\">&#119980;</mi><mi class=\"ltx_font_mathcaligraphic\">&#119983;</mi></msup><annotation encoding=\"application/x-tex\">\\mathcal{Q^{T}}</annotation></semantics></math> (<span class=\"ltx_text\" style=\"--ltx-fg-color:#F8CECC;\">red tokens</span> in Fig. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>).\nPreviously, <cite class=\"ltx_cite ltx_citemacro_citet\">Arora et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib1\" title=\"\">2025</a>)</cite> and <cite class=\"ltx_cite ltx_citemacro_citet\">Yuen et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib52\" title=\"\">2024</a>)</cite> have suggested using the user&#8217;s audio transcript as an intermediate step in the CoT process for speech LLMs, but they focused on offline ASR.\nIn contrast, our model naturally learns streaming ASR through word-aligned user transcripts right-shifted by <math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m2\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math> tokens for look-ahead.\nBased on our preliminary experiments, we used <math alttext=\"k=6\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m3\" intent=\":literal\"><semantics><mrow><mi>k</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">k=6</annotation></semantics></math> (equivalent to a 480 ms look-ahead), which was found to provide a good balance between latency and word error rate (WER).\nFinally, the text monologue contains the user transcript <math alttext=\"\\mathcal{Q}^{T}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m4\" intent=\":literal\"><semantics><msup><mi class=\"ltx_font_mathcaligraphic\">&#119980;</mi><mi>T</mi></msup><annotation encoding=\"application/x-tex\">\\mathcal{Q}^{T}</annotation></semantics></math>, the reasoning <math alttext=\"\\mathcal{R}^{T}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m5\" intent=\":literal\"><semantics><msup><mi class=\"ltx_font_mathcaligraphic\">&#8475;</mi><mi>T</mi></msup><annotation encoding=\"application/x-tex\">\\mathcal{R}^{T}</annotation></semantics></math>, and the response text <math alttext=\"{\\mathcal{A}^{T}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m6\" intent=\":literal\"><semantics><msup><mi class=\"ltx_font_mathcaligraphic\">&#119964;</mi><mi>T</mi></msup><annotation encoding=\"application/x-tex\">{\\mathcal{A}^{T}}</annotation></semantics></math>.\nTo ensure all three streams&#8212;user audio (<math alttext=\"\\mathbf{A}^{\\mathrm{U}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m7\" intent=\":literal\"><semantics><msup><mi>&#119808;</mi><mi mathvariant=\"normal\">U</mi></msup><annotation encoding=\"application/x-tex\">\\mathbf{A}^{\\mathrm{U}}</annotation></semantics></math>), system audio (<math alttext=\"\\mathbf{A}^{\\mathrm{S}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m8\" intent=\":literal\"><semantics><msup><mi>&#119808;</mi><mi mathvariant=\"normal\">S</mi></msup><annotation encoding=\"application/x-tex\">\\mathbf{A}^{\\mathrm{S}}</annotation></semantics></math>), and text monologue (<math alttext=\"\\mathbf{A}^{\\mathrm{U}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p2.m9\" intent=\":literal\"><semantics><msup><mi>&#119808;</mi><mi mathvariant=\"normal\">U</mi></msup><annotation encoding=\"application/x-tex\">\\mathbf{A}^{\\mathrm{U}}</annotation></semantics></math>)&#8212;have the same length, we insert silent audio tokens as needed.</p>\n\n",
                 "matched_terms": [
+                    "red",
                     "word",
-                    "question",
-                    "red"
+                    "question"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_inline-block\" style=\"width:433.6pt;\">\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:345.0pt;height:34.4pt;vertical-align:-14.9pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(-15.6pt,1.6pt) scale(0.91698,0.91698) ;\">\n<span class=\"ltx_p\">\n<span class=\"ltx_inline-block ltx_transformed_outer\" style=\"width:376.2pt;height:37.6pt;vertical-align:-16.3pt;\"><span class=\"ltx_transformed_inner\" style=\"transform:translate(0.0pt,0.0pt) scale(1,1) ;\">\n<span class=\"ltx_p\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:6.9pt;\"><span class=\"ltx_text ltx_font_bold\">#</span></span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:155.2pt;\"><span class=\"ltx_text ltx_font_bold\">Question</span></span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:103.5pt;\"><span class=\"ltx_text ltx_font_bold\">Reasoning</span></span>\n</span></span>\n<span class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_align_top ltx_border_tt\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:86.3pt;\"><span class=\"ltx_text ltx_font_bold\">Answer</span></span>\n</span></span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:6.9pt;\">1</span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:155.2pt;\">What is the capital of France &#8230; <span class=\"ltx_text ltx_font_italic\">is it New York or Paris?</span></span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:103.5pt;\">The capital of France is Paris.</span>\n</span></span>\n<span class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_align_top ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:86.3pt;\">It&#8217;s Paris.</span>\n</span></span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:6.9pt;\">2</span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:155.2pt;\">If you flip a fair coin three times and get heads each time &#8230; <span class=\"ltx_text ltx_font_italic\">what is the probability the fourth flip is heads?</span></span>\n</span></span>\n<span class=\"ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:103.5pt;\">It&#8217;s a fair coin, so probability of heads/tails is always 0.5.</span>\n</span></span>\n<span class=\"ltx_td ltx_nopad_r ltx_align_justify ltx_align_top ltx_border_bb ltx_border_t\" style=\"padding-left:3.0pt;padding-right:3.0pt;\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\" style=\"width:86.3pt;\">The probability is 0.5.</span>\n</span></span></span>\n</span></span>\n</span></span></span>\n</span></span></span>\n</p>\n\n",
                 "matched_terms": [
-                    "each",
-                    "question"
+                    "question",
+                    "each"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">There are two scenarios where a model can begin reasoning early and yet provide the correct answer, as illustrated in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3.T1\" title=\"Table 1 &#8227; 3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.\nThe first scenario includes questions which can be considered &#8220;complete&#8221; before reaching the end. In such cases, the model can start reasoning early and simply ignore the remaining question.\nIn the second scenario, sufficient information may be available to start reasoning before the question ends, but the model still needs the remaining information to provide a correct response.\nWe propose two different methods to enable early thinking.\nTo endow the model with the ability for early reasoning, we created training examples by using our proposed Question Completeness metric.\nThis metric is designed to identify the optimal time for the model to begin generating its CoT.\nSubsequently, we fine-tuned the model on this dataset to teach it to follow the distribution of these early-reasoning examples.\nFinally, we apply preference tuning to further enhance the performance of the model under early thinking scenario.</p>\n\n",
                 "matched_terms": [
-                    "examples",
+                    "question",
                     "completeness",
-                    "question"
+                    "examples"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Let us define the <span class=\"ltx_text ltx_font_italic\">inflection point</span> of a question as the timestep where sufficient information is available to begin reasoning. Our objective is to teach the model to identify such points in order to start its reasoning trace.\nA naive approach to identify the inflection point may be to shift the reasoning trace by a fixed number of frames or words, based on the heuristic that sufficient information is typically available a few words before the question concludes.\nHowever, this method is fundamentally limited by its lack of semantic awareness. For instance, in the query &#8220;What is the capital of France?&#8221;, a model cannot reasonably begin its reasoning process until the final word, &#8220;France,&#8221; has been received.\nConsequently, it is necessary to develop a method that instructs the model to initiate reasoning at the <span class=\"ltx_text ltx_font_italic\">appropriate</span> moment, informed by the semantics of the question.\nWe do this through a novel metric, which we call Question Completeness, denoted as <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "word",
-                    "point",
+                    "inflection",
                     "completeness",
-                    "question",
+                    "word",
                     "words",
-                    "inflection"
+                    "question",
+                    "point"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Given a training sample that contains the question <math alttext=\"\\mathbf{Q}_{1:N}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>&#119824;</mi><mrow><mn>1</mn><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mi>N</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathbf{Q}_{1:N}</annotation></semantics></math>, the reasoning <math alttext=\"\\mathbf{R}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m2\" intent=\":literal\"><semantics><mi>&#119825;</mi><annotation encoding=\"application/x-tex\">\\mathbf{R}</annotation></semantics></math>, and the answer <math alttext=\"\\mathbf{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m3\" intent=\":literal\"><semantics><mi>&#119808;</mi><annotation encoding=\"application/x-tex\">\\mathbf{A}</annotation></semantics></math>, where <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m4\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> denotes the number of words in the question.\nOur goal is to find the index <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m5\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math> that splits <math alttext=\"\\mathbf{Q}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m6\" intent=\":literal\"><semantics><mi>&#119824;</mi><annotation encoding=\"application/x-tex\">\\mathbf{Q}</annotation></semantics></math> into two halves: <math alttext=\"\\mathbf{Q}_{1:p}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m7\" intent=\":literal\"><semantics><msub><mi>&#119824;</mi><mrow><mn>1</mn><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mi>p</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathbf{Q}_{1:p}</annotation></semantics></math> and <math alttext=\"\\mathbf{Q}_{p+1:N}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m8\" intent=\":literal\"><semantics><msub><mi>&#119824;</mi><mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mi>N</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mathbf{Q}_{p+1:N}</annotation></semantics></math> such that</p>\n\n",
                 "matched_terms": [
-                    "words",
-                    "question"
+                    "question",
+                    "words"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Let <math alttext=\"\\mathbf{X}_{p}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mi>p</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{p}</annotation></semantics></math> denote the joint probability of <math alttext=\"\\mathbf{R}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m2\" intent=\":literal\"><semantics><mi>&#119825;</mi><annotation encoding=\"application/x-tex\">\\mathbf{R}</annotation></semantics></math> and <math alttext=\"\\mathbf{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m3\" intent=\":literal\"><semantics><mi>&#119808;</mi><annotation encoding=\"application/x-tex\">\\mathbf{A}</annotation></semantics></math> given a partial question until the <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m4\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math>-th word, i.e., <math alttext=\"\\mathbf{X}_{p}=\\mathrm{Pr}\\left[\\mathbf{R},\\mathbf{A}|\\mathbf{Q}_{0:p}\\right]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m5\" intent=\":literal\"><semantics><mrow><msub><mi>&#119831;</mi><mi>p</mi></msub><mo>=</mo><mrow><mi>Pr</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo>[</mo><mi>&#119825;</mi><mo>,</mo><mrow><mi>&#119808;</mi><mo fence=\"false\">|</mo><msub><mi>&#119824;</mi><mrow><mn>0</mn><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mi>p</mi></mrow></msub></mrow><mo>]</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathbf{X}_{p}=\\mathrm{Pr}\\left[\\mathbf{R},\\mathbf{A}|\\mathbf{Q}_{0:p}\\right]</annotation></semantics></math>.\nIn practice, <math alttext=\"\\mathbf{X}_{p}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m6\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mi>p</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{p}</annotation></semantics></math> can be estimated using an external language model.\nWe define Question Completeness, <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m7\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math>, as:</p>\n\n",
                 "matched_terms": [
-                    "partial",
-                    "completeness",
                     "question",
-                    "word"
+                    "word",
+                    "completeness",
+                    "partial"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"D_{\\mathrm{KL}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m8\" intent=\":literal\"><semantics><msub><mi>D</mi><mi>KL</mi></msub><annotation encoding=\"application/x-tex\">D_{\\mathrm{KL}}</annotation></semantics></math> denotes the Kullback-Leibler (KL) divergence.\nHere, <math alttext=\"\\mathbf{X}_{N}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m9\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mi>N</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{N}</annotation></semantics></math> and <math alttext=\"\\mathbf{X}_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m10\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{0}</annotation></semantics></math> represent the extreme cases where the full question and no question are given, respectively.\nBy definition, <math alttext=\"\\zeta(0)=0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m11\" intent=\":literal\"><semantics><mrow><mrow><mi>&#950;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\zeta(0)=0</annotation></semantics></math> and <math alttext=\"\\zeta(N)=1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m12\" intent=\":literal\"><semantics><mrow><mrow><mi>&#950;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>N</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\zeta(N)=1</annotation></semantics></math>, so we can regard <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m13\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> as a semantic completeness progress bar<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"footnote3.m1\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> is not guaranteed to be non-decreasing, and in practice, there are small local fluctuations in probability <math alttext=\"\\mathbf{X}_{p}\" class=\"ltx_Math\" display=\"inline\" id=\"footnote3.m2\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mi>p</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{p}</annotation></semantics></math> due to incomplete syntax.\nNonetheless, the general trend of <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"footnote3.m3\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> is still increasing from <math alttext=\"0\" class=\"ltx_Math\" display=\"inline\" id=\"footnote3.m4\" intent=\":literal\"><mn>0</mn></math> to <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"footnote3.m5\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math>.</span></span></span>.\nFigure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Measuring the question completeness &#8227; 3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows illustrative examples of the <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m14\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> curve, indicating that <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m15\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> can be a good proxy for the progressive semantic completeness of a question.</p>\n\n",
                 "matched_terms": [
-                    "examples",
-                    "completeness",
                     "question",
-                    "curve"
+                    "curve",
+                    "completeness",
+                    "examples"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The inflection point for a training sample can be approximated using <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m1\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math> by estimating <math alttext=\"\\hat{p}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m2\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>p</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{p}</annotation></semantics></math> s.t.</p>\n\n",
                 "matched_terms": [
-                    "phatp",
+                    "point",
                     "inflection",
-                    "point"
+                    "phatp"
                 ]
             },
             {
@@ -123,39 +123,39 @@
             {
                 "html": "<p class=\"ltx_p\">While our question completeness metric allows for the creation of training samples that enable early reasoning, we observed that the model struggles to learn the distribution effectively via SFT and is often unable to update its CoT in response to new information in the user channel.\nAdditionally, the CoT in our training data may be excessively long for simple questions, indicating a considerable opportunity to shorten the reasoning trace.\nTo solve these issues, we created contrastive reasoning pairs, <math alttext=\"\\mathcal{D}=\\left\\{\\left(x^{\\left(i\\right)},y_{w}^{\\left(i\\right)},y_{l}^{\\left(i\\right)}\\right)\\right\\}^{N}_{i=1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#119967;</mi><mo>=</mo><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>x</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><mo>,</mo><msubsup><mi>y</mi><mi>w</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>y</mi><mi>l</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup><mo>)</mo></mrow><mo>}</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup></mrow><annotation encoding=\"application/x-tex\">\\mathcal{D}=\\left\\{\\left(x^{\\left(i\\right)},y_{w}^{\\left(i\\right)},y_{l}^{\\left(i\\right)}\\right)\\right\\}^{N}_{i=1}</annotation></semantics></math>, using rejection sampling and preference-tuned the SFT model using direct preference optimization (DPO) <cite class=\"ltx_cite ltx_citemacro_cite\">Rafailov et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib40\" title=\"\">2023</a>)</cite>.\nFig. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3.F3\" title=\"Figure 3 &#8227; 3.2 Preference tuning &#8227; 3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates our framework for preparing the preference dataset.</p>\n\n",
                 "matched_terms": [
-                    "completeness",
-                    "question"
+                    "question",
+                    "completeness"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S2\" title=\"2 Multi-stream Speech LLMs with Chain-of-Thought &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we proposed that training the model to generate streaming user text tokens improves its textual reasoning capability.\nPredicting user text poses a challenge when left-shifting the reasoning trace to occur before the user&#8217;s question is finished, since the CoT tokens may overlap with the existing streaming user ASR token sequence.\nTo address this issue, we introduce two special switching tokens, <span class=\"ltx_text ltx_font_typewriter\">&lt;switch_cot&gt;</span> and <span class=\"ltx_text ltx_font_typewriter\">&lt;switch_asr&gt;</span>,\nwhich enable the model to alternate between the two generation modes on the text monologue stream.</p>\n\n",
                 "matched_terms": [
-                    "sequence",
-                    "question"
+                    "question",
+                    "sequence"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Spoken reasoning question-answering (SRQA) benchmark.</span>\nWe prepared a suite of spoken reasoning tasks from multiple domains, derived from popular text benchmarks: (i) AI2 Reasoning Challenge (ARC) <cite class=\"ltx_cite ltx_citemacro_citep\">(Clark et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib8\" title=\"\">2018</a>)</cite>, (ii) Physical Interaction QA (PIQA) <cite class=\"ltx_cite ltx_citemacro_citep\">(Bisk et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib2\" title=\"\">2019</a>)</cite>, (iii) Social Interaction QA (SIQA) <cite class=\"ltx_cite ltx_citemacro_citep\">(Sap et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib41\" title=\"\">2019</a>)</cite>, and (iv) Grade School Math (GSM8K) <cite class=\"ltx_cite ltx_citemacro_citep\">(Cobbe et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib9\" title=\"\">2021</a>)</cite>.\nFor ARC, we prepared easy (ARC-E) and challenging (ARC-C) subsets, similar to previous work.\nSince these evaluation tasks are derived from text sources, we used the same method of LLM-rewriting and TTS as used for the Spoken CoT-Collection, to convert them into spoken forms.\nWe designed customized rewriting prompts for each eval set to ensure that the rewritten questions and answers are reasonable.\nSince several of the tasks contain multiple-choice questions, these were rewritten such that the choices are listed in the spoken question.\nAdditionally, we also tracked the accuracy on LLaMA-Questions <cite class=\"ltx_cite ltx_citemacro_citep\">(Nachmani et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib36\" title=\"\">2024</a>)</cite> to measure the model&#8217;s performance for cases where reasoning may not be useful.\nThe statistics and illustrative examples for all evaluation datasets can be found in Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S9.SS3\" title=\"9.3 Spoken reasoning benchmark &#8227; 9 Appendix &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">9.3</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "each",
                     "question",
+                    "each",
                     "examples"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3\" title=\"3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we proposed two methods to teach the model to think while listening: first, based on Question Completeness (QC), <math alttext=\"\\zeta\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m1\" intent=\":literal\"><semantics><mi>&#950;</mi><annotation encoding=\"application/x-tex\">\\zeta</annotation></semantics></math>, and second, using DPO on reasoning traces generated with rejection sampling.\nFor the QC method, we can control the onset of CoT during training based on <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m2\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math>.\nAs a simple baseline, we trained the model by left-shifting the CoT by a fixed number of words of the user question. We refer to this as WS-<math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m3\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math>, to denote shift by <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m4\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> words.\nFig. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S5.F5\" title=\"Figure 5 &#8227; 5.2 Effect of early reasoning &#8227; 5 Results &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> shows the accuracy v/s latency curves for our proposed methods as well as the baseline.\nThe latency metric is reported in terms of the number of tokens between the end of the user question and start of system response.</p>\n\n",
                 "matched_terms": [
-                    "words",
+                    "question",
                     "completeness",
-                    "question"
+                    "words"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">QC-based shifting outperforms word-count heuristic.</span>\nFirst, it is evident that all latency improvements resulted in accuracy degradation, and different methods can only be compared based on their pareto-frontiers on the accuracy-latency curve.\nThe results for the WS baselines were mixed: while they showed gradual latency reduction on ARC, the performance on other tasks was haphazard.\nOn PIQA and GSM8K, for instance, increasing <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p2.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> in training did not result in expected reduction in latency, indicating that the model was unable to learn any patterns for early reasoning.\nThe proposed QC method, on the other hand, provided better control over the trade-off.\nOn all eval sets, latency improved as we reduced the <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p2.m2\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> for selecting inflection point (see equation <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3.E7\" title=\"Equation 7 &#8227; 3.1 Measuring the question completeness &#8227; 3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>) from 0.95 to 0.65.</p>\n\n",
                 "matched_terms": [
+                    "point",
                     "inflection",
-                    "curve",
-                    "point"
+                    "curve"
                 ]
             },
             {
@@ -168,24 +168,24 @@
             {
                 "html": "<p class=\"ltx_p\">For determining the inflection point, we set a specific percentage-based threshold rather than capturing the largest jump in the curve, as suggested in prior work <cite class=\"ltx_cite ltx_citemacro_cite\">Labiausse et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib28\" title=\"\">2025</a>)</cite>.\nA large jump may occur early in a user&#8217;s question when a key term is mentioned, but it does not mean that this partial information is sufficient to answer the question correctly.\nWe conjecture that a metric based on a completeness percentage is more semantically reasonable.\nFurthermore, through manual examination of the QC curves on our training data, a 95% threshold was empirically found to align well with human perception of question completeness, serving as a conservative and effective criterion. We put more QC curves in the Appendix.\nTable <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab:qc_curve_appendix</span> shows more examples of QC curves.</p>\n\n",
                 "matched_terms": [
-                    "point",
+                    "inflection",
                     "completeness",
-                    "question",
-                    "partial",
                     "examples",
-                    "curve",
-                    "inflection"
+                    "partial",
+                    "question",
+                    "point",
+                    "curve"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We fine-tuned the entire model with a learning rate (LR) of <span class=\"ltx_text ltx_font_typewriter\">4e-6</span> and batch size <math alttext=\"128\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m1\" intent=\":literal\"><semantics><mn>128</mn><annotation encoding=\"application/x-tex\">128</annotation></semantics></math> using fully-sharded data-parallel (FSDP) on 8 A100 GPUs. All models were trained for 8K steps with a warmup of 400 steps followed by LR annealing.\nWe used Llama3-8B-Chat\n<cite class=\"ltx_cite ltx_citemacro_citep\">(Grattafiori et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#bib.bib16\" title=\"\">2024</a>)</cite>\nto estimate <math alttext=\"\\mathbf{X}_{p}\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#119831;</mi><mi>p</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{X}_{p}</annotation></semantics></math> which is required for estimating the inflection point <math alttext=\"\\hat{p}\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m3\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>p</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{p}</annotation></semantics></math> (&#167; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S3.SS1\" title=\"3.1 Measuring the question completeness &#8227; 3 Thinking while Listening &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">3.1</span></a>).\nFor preference tuning experiments, we selected models that are fine-tuned with different <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m4\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> as the base models.\nWe set learning rate to <span class=\"ltx_text ltx_font_typewriter\">5e-7</span>, <math alttext=\"\\beta=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m5\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\beta=0.1</annotation></semantics></math>, <math alttext=\"\\lambda=0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m6\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=0.1</annotation></semantics></math>, and trained with batch size <math alttext=\"16\" class=\"ltx_Math\" display=\"inline\" id=\"S9.SS2.p1.m7\" intent=\":literal\"><semantics><mn>16</mn><annotation encoding=\"application/x-tex\">16</annotation></semantics></math> for 1200 steps. Final checkpoint was selected based on saturation of reward accuracy.\nTo get a better monitor our model training, we curated a the validation set with a more strict filtering process. Specifically, we only keep examples with question length less than 80 words and the question shouldn&#8217;t include keywords such as &#8220;paragraph&#8221;, &#8220;article&#8221;, &#8230; etc. and no special character allowed.\nThe rest of dataset preparation procedure is as same as the training set.</p>\n\n",
                 "matched_terms": [
-                    "point",
-                    "question",
-                    "phatp",
+                    "inflection",
                     "examples",
                     "words",
-                    "inflection"
+                    "question",
+                    "point",
+                    "phatp"
                 ]
             },
             {
@@ -198,8 +198,8 @@
             {
                 "html": "<p class=\"ltx_p\">We present several qualitative examples generated by our models in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07497v1#S9.T8\" title=\"Table 8 &#8227; 9.5 Qualitative Examples &#8227; 9 Appendix &#8227; Can Speech LLMs Think while Listening?\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>.\nIn Example 1, after fine-tuning with CoT, our model correctly answers the question, whereas the Moshi baseline fails.\nWith our proposed QC-based early thinking, the model begins generating its CoT trace immediately after all information are provided.\nTherefore it reduces the latency.</p>\n\n",
                 "matched_terms": [
-                    "examples",
-                    "question"
+                    "question",
+                    "examples"
                 ]
             },
             {

@@ -45,12 +45,13 @@ public class LuceneIndexer {
             System.out.println("Index initialization in progress...");
             if (luceneConfig.isShouldInitializeIndex()) {
                 System.out.println("Deleting the index directory...");
-                deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // Delete the index directory
+                deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // svuota l'idex dei documenti prima di indicizzarli nuovamente
+                deleteNonEmptyDirectory(Paths.get(luceneConfig.getTableDirectory())); // svuota l'idex delle tabelle prima di indicizzarli nuovamente
                 indexArticles(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
                 indexTables(luceneConfig.getTableDirectory(), Codec.getDefault());
             }
             System.out.println("Index initialized, publishing event.");
-            eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // Publish the event upon completion
+            eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // lancio l'evento "completeIndexing"
             System.out.println("IndexingComplete event published.");
         } catch (Exception e) {
             throw new RuntimeException("Error initializing the index", e);
@@ -157,10 +158,7 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
 
         writer.commit();
         writer.close();
-        System.out.println("==========================================");
-        System.out.println("Indicizzazione delle tabelle completata");
-        System.out.println("Tabelle indicizzate: " + tables.size());
-        System.out.println("==========================================");
+
     }
 
     public void deleteNonEmptyDirectory(Path directory) throws IOException {

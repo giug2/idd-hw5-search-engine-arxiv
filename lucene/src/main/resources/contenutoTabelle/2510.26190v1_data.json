@@ -5,15 +5,15 @@
         "body": "# Hrs\n# Spk\n# Para\n# Utts\n# Ques\n\n\n8.76\n483\n550\n5,805\n2,688",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\"># Hrs</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\"># Spk</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\"># Para</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\"># Utts</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\"># Ques</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">8.76</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">483</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">550</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">5,805</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">2,688</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "utts",
-            "spk",
-            "set",
-            "spmcqaeval",
-            "hrs",
             "ques",
-            "statistics",
+            "test",
+            "spk",
+            "spmcqaeval",
             "para",
-            "test"
+            "hrs",
+            "utts",
+            "set",
+            "statistics"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">The SP-MCQA-Eval dataset contains proper nouns and digits (dates, names, times, locations, events, etc.). Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S3.T1\" title=\"Table 1 &#8227; 3.1 Benchmark Dataset &#8227; 3 SP-MCQA Overview &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> summarizes the SP-MCQA-Eval statistics, comprising 5,805 utterances with a total duration of 8.76 hours of speech.</p>\n\n"
@@ -22,32 +22,32 @@
             {
                 "html": "<p class=\"ltx_p\">To address these shortcomings, we introduce SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a framework for evaluating TTS systems on key-information accuracy beyond the word level, comprising a novel subjective evaluation metric (SP-MCQA ACC) and test set (SP-MCQA-Eval). In line with the need for SP-MCQA evaluation, SP-MCQA-Eval is constructed as a news-style test set for speech synthesis that is both acoustically natural and semantically rich in contextual and critical information. Unlike traditional transcript-based metrics, SP-MCQA does not measure word-by-word accuracy and instead evaluates semantic and structural fidelity of key information under realistic listening conditions. It acts as a complementary framework to WER for evaluating and comparing models that already achieve high intelligibility at the word level.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "spmcqaeval",
+                    "set",
                     "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">There are several datasets for listening comprehension research, such as TOEFL-QA<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/iamyuanchung/TOEFL-QA\" title=\"\">https://github.com/iamyuanchung/TOEFL-QA</a></span></span></span> and TED-Q <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib15\" title=\"\">15</a>]</cite>. Although these corpora resemble our newly created test set in form, they rarely focus on key information involving digits or numbers, making them less suitable than SP-MCQA-Eval for assessing the intelligibility of synthetic speech on key information.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "spmcqaeval",
+                    "set",
                     "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We also conduct objective evaluations on each model across three key aspects: intelligibility, coherence, and audio quality. Intelligibility is evaluated using Word Error Rate (WER), computed with the jewel package and transcribed by Whisper-large-v3<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/openai/whisper-large-v3\" title=\"\">https://huggingface.co/openai/whisper-large-v3</a></span></span></span> ASR, with a fixed &#8220;prompt&#8221; parameter to ensure consistent transcription style. Coherence is assessed via speaker similarity (S-SIM), which computes the cosine similarity between WavLM-TDNN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib21\" title=\"\">21</a>]</cite> speaker embeddings of the synthesized speech and the reference prompt. Audio quality is evaluated using Deep Noise Suppression Mean Opinion Score (DNSMOS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib22\" title=\"\">22</a>]</cite>, derived from P.835 human ratings, providing an overall audio quality score on a 1-5 scale. All metrics are computed at a 16 kHz sampling rate. While WER is our primary intelligibility metric for comparison, all three objective metrics together provide reference values for the overall quality of the SP-MCQA-Eval test set and the synthesized speech produced by TTS models.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "spmcqaeval",
+                    "set",
                     "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The SP-MCQA-Eval test set contains 483 unique speakers. During inference, we select one prompt (utterance + transcript) from each speaker, while the transcripts of all utterances&#8212;including the selected prompts&#8212;serve as target texts, yielding 5,805 prompt&#8211;target pairs in total. These pairs preserve speaker identity, enabling direct evaluation against ground-truth data. TTS inferences are conducted on 8 NVIDIA GeForce RTX 4090 GPUs using the official code from each model&#8217;s GitHub repository. For MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct\" title=\"\">https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct</a></span></span></span>, we modify the G2P module to correctly classify numerical inputs as English (en) instead of &#8220;other language.&#8221; For CosyVoice 2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/FunAudioLLM/CosyVoice\" title=\"\">https://github.com/FunAudioLLM/CosyVoice</a></span></span></span>, we remove the duration constraint in frontend.py, allowing the model to process speech tokens for audio longer than 30 seconds. No modifications are made to the inference code for FishSpeech V1.4<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/fishaudio/fish-speech\" title=\"\">https://github.com/fishaudio/fish-speech</a></span></span></span> and F5-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/SWivid/F5-TTS\" title=\"\">https://github.com/SWivid/F5-TTS</a></span></span></span>. All evaluations are also conducted under the same experimental setup as inference.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "spmcqaeval",
+                    "set",
                     "test"
                 ]
             }
@@ -59,77 +59,77 @@
         "body": "Error Type\n\n\nDescription\n\n\nExample\n\n\nPhonetic Error\n\n\nSimilar sounding to the correct answer.\n\n\n“Eighteen” vs. “Eighty”\n\n\nSemantic Error\n\n\nLogically reasonable but factually incorrect.\n\n\n“Wednesday” vs. “Thursday”\n\n\nSyntax Error\n\n\nStructural mistakes in phrasing.\n\n\n“Ph.D. Emily Clark” vs. “Emily Clark, Ph.D.”\n\n\nGrammar Error\n\n\nGrammatical inconsistencies or subtle inaccuracies in expression.\n\n\n“Wet cloths” vs. “Cloths wet”\n\n\nOther\n\n\nAlways appear as an option.\n\n\n“None of the above”",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Error Type</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\">\n<span class=\"ltx_inline-block ltx_align_top\" style=\"--ltx-bg-color:#E6E6E6;\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Description</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Example</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">Phonetic Error</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Similar sounding to the correct answer.</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">&#8220;Eighteen&#8221; vs. &#8220;Eighty&#8221;</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Semantic Error</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Logically reasonable but factually incorrect.</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">&#8220;Wednesday&#8221; vs. &#8220;Thursday&#8221;</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Syntax Error</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Structural mistakes in phrasing.</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">&#8220;Ph.D. Emily Clark&#8221; vs. &#8220;Emily Clark, Ph.D.&#8221;</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">Grammar Error</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Grammatical inconsistencies or subtle inaccuracies in expression.</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">&#8220;Wet cloths&#8221; vs. &#8220;Cloths wet&#8221;</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">Other</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_bb\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Always appear as an option.</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">&#8220;None of the above&#8221;</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "wet”",
-            "“emily",
-            "phrasing",
-            "description",
-            "semantic",
-            "mistakes",
-            "“phd",
-            "grammar",
-            "expression",
+            "other",
+            "type",
+            "answer",
+            "option",
+            "sounding",
+            "descriptions",
             "“wet",
-            "structural",
+            "grammatical",
+            "questions",
+            "appear",
+            "above”",
+            "clark”",
+            "example",
+            "phd”",
+            "factually",
+            "syntax",
+            "“wednesday”",
+            "“emily",
+            "“thursday”",
+            "subtle",
+            "mistakes",
             "emily",
             "cloths”",
-            "clark”",
-            "error",
-            "“eighty”",
-            "sounding",
-            "appear",
-            "logically",
-            "example",
             "“cloths",
-            "correct",
-            "answer",
-            "“thursday”",
-            "syntax",
-            "phonetic",
-            "incorrect",
-            "always",
-            "“wednesday”",
-            "descriptions",
-            "factually",
             "clark",
-            "grammatical",
-            "reasonable",
-            "“none",
-            "above”",
-            "“eighteen”",
-            "questions",
+            "always",
+            "correct",
+            "description",
+            "“eighty”",
+            "phonetic",
             "multiplechoice",
-            "phd”",
-            "generated",
-            "similar",
+            "“none",
+            "logically",
+            "wet”",
             "inconsistencies",
-            "option",
-            "other",
-            "subtle",
+            "semantic",
+            "expression",
+            "reasonable",
+            "structural",
+            "generated",
             "inaccuracies",
-            "type"
+            "similar",
+            "“phd",
+            "“eighteen”",
+            "phrasing",
+            "incorrect",
+            "error",
+            "grammar"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">The evaluation of intelligibility for TTS has reached a bottleneck, as existing assessments heavily rely on word-by-word accuracy metrics such as WER, which fail to capture the complexity of real-world speech or reflect human comprehension needs. To address this, we propose SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a novel subjective approach evaluating the accuracy of key information in synthesized speech, and release SP-MCQA-Eval, an 8.76-hour news-style benchmark dataset for SP-MCQA evaluation. Our experiments reveal that low WER does not necessarily guarantee high key-information accuracy, exposing a gap between traditional metrics and practical intelligibility. SP-MCQA shows that even state-of-the-art (SOTA) models still lack robust text normalization and phonetic accuracy. This work underscores the urgent need for high-level, more life-like evaluation criteria now that many systems already excel at WER yet may fall short on real-world intelligibility.</p>\n\n",
                 "matched_terms": [
-                    "multiplechoice",
-                    "phonetic"
+                    "phonetic",
+                    "multiplechoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these shortcomings, we introduce SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a framework for evaluating TTS systems on key-information accuracy beyond the word level, comprising a novel subjective evaluation metric (SP-MCQA ACC) and test set (SP-MCQA-Eval). In line with the need for SP-MCQA evaluation, SP-MCQA-Eval is constructed as a news-style test set for speech synthesis that is both acoustically natural and semantically rich in contextual and critical information. Unlike traditional transcript-based metrics, SP-MCQA does not measure word-by-word accuracy and instead evaluates semantic and structural fidelity of key information under realistic listening conditions. It acts as a complementary framework to WER for evaluating and comparing models that already achieve high intelligibility at the word level.</p>\n\n",
                 "matched_terms": [
-                    "multiplechoice",
+                    "semantic",
                     "structural",
-                    "semantic"
+                    "multiplechoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Spoken Multiple-Choice Question Answering (SMCQA), a form of Spoken Question Answering (SQA), referred to tasks related to machine text comprehension in which passages, questions, and multiple choices are presented entirely in speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib13\" title=\"\">13</a>]</cite>. In contrast, we study a hybrid setting similar to the text-based question answering on listening comprehension test <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib14\" title=\"\">14</a>]</cite>, where only the passage is spoken while the questions and answer choices are in text. We term this new variant SP-MCQA (Spoken-Passage Multiple-Choice Question Answering) to clearly distinguish it from SMCQA.</p>\n\n",
                 "matched_terms": [
-                    "answer",
                     "similar",
+                    "answer",
                     "multiplechoice",
                     "questions"
                 ]
@@ -138,38 +138,38 @@
                 "html": "<p class=\"ltx_p\">We employ GPT-4o-mini <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib20\" title=\"\">20</a>]</cite> to automatically generate multiple-choice questions (MCQs) that examine the key information in each paragraph. Each evaluation task consists of a paragraph and its two to ten associated questions. Each MCQ contains four options: one correct answer, one &#8220;Other,&#8221; and two distractors representing different error types, as illustrated in Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab2</span>. All questions are manually inspected, and problematic items caused by GPT hallucinations are removed.</p>\n\n",
                 "matched_terms": [
                     "answer",
-                    "multiplechoice",
-                    "error",
                     "correct",
-                    "questions"
+                    "multiplechoice",
+                    "questions",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For SP-MCQA evaluation, annotators listen to speech and answer multiple-choice textual questions based on its content, with accuracy scored as 1 for a correct answer and 0 otherwise. We recruit 40 annotators who are either native English speakers or non-native with an IELTS listening score 8.0<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_href\" href=\"https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained\" title=\"\">https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained</a> Band 8.0 indicates a very good user with a fully operational command of the language, making only occasional unsystematic inaccuracies or inappropriacies, and able to handle complex, detailed argumentation with only minor misunderstandings in unfamiliar situations.</span></span></span> and above. All annotators receive clear instructions: &#8220;Select the answer that directly matches the information explicitly stated in the audio; do not infer beyond what is clearly stated.&#8221;</p>\n\n",
                 "matched_terms": [
                     "answer",
-                    "multiplechoice",
                     "correct",
                     "inaccuracies",
+                    "multiplechoice",
                     "questions"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each evaluation task is randomly assigned to two annotators. If their answers differ, a third annotator is added; if all three differ, a fourth is introduced. No further annotators are involved if disagreement persists among four. Golden test questions are randomly inserted into 10% of tasks to assess general knowledge. Only annotators achieving 100% accuracy on golden tests are retained; results from those below this threshold are discarded, and their tasks are reassigned to other qualified annotators. The final SP-MCQA ACC is computed as the average accuracy across qualified annotators. We also collect qualitative feedback for future analysis.</p>\n\n",
                 "matched_terms": [
-                    "questions",
-                    "other"
+                    "other",
+                    "questions"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S4.T4\" title=\"Table 4 &#8227; 4.4 Results &amp; Analysis &#8227; 4 Experiments &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> presents the analysis of the error types, showing that phonetic errors are the most prevalent across all models, followed by structural (syntax and grammar) and semantic errors. The latter two might be caused by model&#8217;s &#8220;hallucinations,&#8221; such as generating inconsistent content with the input, or omitting content. We observe that NAR models (F5-TTS and MaskGCT) exhibit a higher proportion of such errors compared to AR models (CosyVoice2 and FishSpeech). Nonetheless, regardless of architecture, phonetic accuracy remains the primary challenge in our SP-MCQA tasks for key information, likely due to the scarcity of irregular or uncommon patterns in training data. These findings highlight the importance of addressing phonetic errors, especially in rare or atypical utterances, for developing human-like TTS systems.</p>\n\n",
                 "matched_terms": [
-                    "syntax",
-                    "error",
+                    "structural",
                     "phonetic",
-                    "semantic",
+                    "syntax",
                     "grammar",
-                    "structural"
+                    "error",
+                    "semantic"
                 ]
             },
             {
@@ -188,29 +188,29 @@
         "body": "System\n\n\n\nSP-MCQA\n\nACC (%) ↑\\uparrow\n\n\n\n\nWER\n\n(%) ↓\\downarrow\n\nS-SIM ↑\\uparrow\n\n\n\nDNSMOS\n\nP.835 OVRL ↑\\uparrow\n\n\n\nGround-Truth\n92.045\n8.067\n0.710\n2.955\n\n\nF5-TTS\n87.139\n11.267\n0.654\n3.202\n\n\nMaskGCT\n89.260\n7.351\n0.710\n3.081\n\n\nCosyVoice 2\n90.399\n9.044\n0.523\n3.334\n\n\nFishSpeech\n81.194\n5.739\n0.522\n3.242",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">System</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">SP-MCQA</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">ACC (%) <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m1\" intent=\":literal\"><semantics><mo mathbackground=\"#E6E6E6\" stretchy=\"false\" style=\"--ltx-bg-color:#E6E6E6;\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></span>\n</span></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">WER</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">(%) <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m2\" intent=\":literal\"><semantics><mo mathbackground=\"#E6E6E6\" stretchy=\"false\" style=\"--ltx-bg-color:#E6E6E6;\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></span>\n</span></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">S-SIM <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m3\" intent=\":literal\" style=\"--ltx-bg-color:#E6E6E6;\"><semantics><mo mathbackground=\"#E6E6E6\" stretchy=\"false\" style=\"--ltx-bg-color:#E6E6E6;\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">\n<span class=\"ltx_tabular ltx_align_middle\">\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">DNSMOS</span></span>\n<span class=\"ltx_tr\">\n<span class=\"ltx_td ltx_nopad_r ltx_align_center\" style=\"padding:0.45pt 4.0pt;\">P.835 OVRL <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T3.m4\" intent=\":literal\"><semantics><mo mathbackground=\"#E6E6E6\" stretchy=\"false\" style=\"--ltx-bg-color:#E6E6E6;\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></span>\n</span></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">Ground-Truth</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">92.045</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">8.067</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.710</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.955</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">F5-TTS</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">87.139</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">11.267</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.654</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">3.202</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">MaskGCT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">89.260</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">7.351</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0.710</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">3.081</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">CosyVoice 2</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">90.399</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">9.044</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.523</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">3.334</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">FishSpeech</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">81.194</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">5.739</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">0.522</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">3.242</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "wer",
-            "ssim",
-            "dnsmos",
-            "groundtruth",
             "cosyvoice",
-            "↑uparrow",
-            "evaluation",
-            "fishspeech",
-            "f5tts",
-            "results",
-            "maskgct",
-            "system",
-            "spmcqa",
             "↓downarrow",
-            "four",
-            "p835",
-            "acc",
+            "f5tts",
+            "dnsmos",
+            "ssim",
             "test",
-            "models",
-            "set",
-            "spmcqaeval",
             "tts",
-            "ovrl"
+            "p835",
+            "wer",
+            "results",
+            "system",
+            "acc",
+            "evaluation",
+            "spmcqaeval",
+            "ovrl",
+            "four",
+            "↑uparrow",
+            "groundtruth",
+            "maskgct",
+            "set",
+            "spmcqa",
+            "models",
+            "fishspeech"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">The evaluation results of ground-truth and four TTS models under SP-MCQA-Eval are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Results &amp; Analysis &#8227; 4 Experiments &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The relatively moderate performance of the ground-truth mainly stem from imprecise in timestamp extraction during pre-processing; nevertheless, these values still provide a meaningful reference for evaluation. While FishSpeech ranks highest in WER, it performs worst in SP-MCQA ACC, whereas CosyVoice 2, despite its lower rank in WER, ranks highest in SP-MCQA ACC. This reveals a critical limitation of WER: models with low WER may still fail to convey key information accurately.</p>\n\n"
@@ -220,69 +220,69 @@
                 "html": "<p class=\"ltx_p\">The evaluation of intelligibility for TTS has reached a bottleneck, as existing assessments heavily rely on word-by-word accuracy metrics such as WER, which fail to capture the complexity of real-world speech or reflect human comprehension needs. To address this, we propose SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a novel subjective approach evaluating the accuracy of key information in synthesized speech, and release SP-MCQA-Eval, an 8.76-hour news-style benchmark dataset for SP-MCQA evaluation. Our experiments reveal that low WER does not necessarily guarantee high key-information accuracy, exposing a gap between traditional metrics and practical intelligibility. SP-MCQA shows that even state-of-the-art (SOTA) models still lack robust text normalization and phonetic accuracy. This work underscores the urgent need for high-level, more life-like evaluation criteria now that many systems already excel at WER yet may fall short on real-world intelligibility.</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "wer",
-                    "evaluation",
                     "models",
+                    "tts",
+                    "evaluation",
                     "spmcqaeval",
-                    "tts"
+                    "wer"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nTTS evaluation, subjective metric, key information accuracy, benchmark dataset</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "tts"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">Text-to-Speech (TTS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite> systems have achieved remarkable progress in producing highly intelligible speech. However, evaluation methods have not kept pace with these advances. Existing intelligibility-related metrics, such as Word Error Rate (WER) or subjective intelligibility Mean Opinion Score (MOS), predominantly focus on low-level accuracy which overlook if the key information is accurately conveyed. This gap is critical because, in real-world scenarios, listeners care more about understanding essential information than perfect word-by-word reproduction.</p>\n\n",
-                "matched_terms": [
-                    "wer",
                     "tts",
                     "evaluation"
                 ]
             },
             {
+                "html": "<p class=\"ltx_p\">Text-to-Speech (TTS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite> systems have achieved remarkable progress in producing highly intelligible speech. However, evaluation methods have not kept pace with these advances. Existing intelligibility-related metrics, such as Word Error Rate (WER) or subjective intelligibility Mean Opinion Score (MOS), predominantly focus on low-level accuracy which overlook if the key information is accurately conveyed. This gap is critical because, in real-world scenarios, listeners care more about understanding essential information than perfect word-by-word reproduction.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "evaluation",
+                    "wer"
+                ]
+            },
+            {
                 "html": "<p class=\"ltx_p\">Meanwhile, many existing TTS evaluation test sets <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib11\" title=\"\">11</a>]</cite> are relatively simple and standardized, lacking challenging cases that reflect real-world speech variability. Although Seed-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib2\" title=\"\">2</a>]</cite> introduces challenging patterns such as word repetitions and tongue twisters, it still fails to adequately assess model performance on irregular text &#8212; particularly content involving digits and proper nouns, such as locations, names, numbers, and events &#8212; which frequently constitute key information in informative, context-rich speech.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "tts",
+                    "evaluation",
                     "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these shortcomings, we introduce SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a framework for evaluating TTS systems on key-information accuracy beyond the word level, comprising a novel subjective evaluation metric (SP-MCQA ACC) and test set (SP-MCQA-Eval). In line with the need for SP-MCQA evaluation, SP-MCQA-Eval is constructed as a news-style test set for speech synthesis that is both acoustically natural and semantically rich in contextual and critical information. Unlike traditional transcript-based metrics, SP-MCQA does not measure word-by-word accuracy and instead evaluates semantic and structural fidelity of key information under realistic listening conditions. It acts as a complementary framework to WER for evaluating and comparing models that already achieve high intelligibility at the word level.</p>\n\n",
                 "matched_terms": [
-                    "spmcqa",
-                    "wer",
-                    "evaluation",
-                    "models",
-                    "set",
-                    "spmcqaeval",
-                    "tts",
                     "acc",
-                    "test"
+                    "spmcqa",
+                    "test",
+                    "models",
+                    "tts",
+                    "evaluation",
+                    "spmcqaeval",
+                    "wer",
+                    "set"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose SP-MCQA, a novel subjective evaluation approach to measure the key information accuracy of a synthesized speech.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "spmcqa"
+                    "spmcqa",
+                    "evaluation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We create SP-MCQA-Eval, a new open-source news-style benchmark dataset that contains uncommon text, involving proper nouns and digits, designed for SP-MCQA.</p>\n\n",
                 "matched_terms": [
-                    "spmcqaeval",
-                    "spmcqa"
+                    "spmcqa",
+                    "spmcqaeval"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conduct an in-depth and comprehensive evaluation of how state-of-the-art (SOTA) TTS systems perform on this benchmark.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "tts"
+                    "tts",
+                    "evaluation"
                 ]
             },
             {
@@ -295,17 +295,17 @@
             {
                 "html": "<p class=\"ltx_p\">There are several datasets for listening comprehension research, such as TOEFL-QA<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/iamyuanchung/TOEFL-QA\" title=\"\">https://github.com/iamyuanchung/TOEFL-QA</a></span></span></span> and TED-Q <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib15\" title=\"\">15</a>]</cite>. Although these corpora resemble our newly created test set in form, they rarely focus on key information involving digits or numbers, making them less suitable than SP-MCQA-Eval for assessing the intelligibility of synthetic speech on key information.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "spmcqaeval",
+                    "set",
                     "test"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following Emilia&#8217;s pre-processing pipeline <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib16\" title=\"\">16</a>]</cite>, background music is removed using Ultimate Vocal Remover (UVR)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/Anjok07/ultimatevocalremovergui\" title=\"\">https://github.com/Anjok07/ultimatevocalremovergui</a></span></span></span>\n, and WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib17\" title=\"\">17</a>]</cite> is used for ASR and timestamp extraction. Because uppercase letters and numbers often indicate key information, we apply Regular Expressions (RegEx) to filter the raw text, retaining paragraphs that contain: (1)&#160;at least one number with a minimum of three digits; and (2)&#160;at least two uppercase letters (excluding those at sentence beginnings). From this filtered pool, we randomly select 550 &#8220;information paragraphs,&#8221; each constrained to 65&#8211;260 words (<math alttext=\"\\approx 30\\,\\text{s}-2\\,\\text{min}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8776;</mo><mrow><mrow><mn>30</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>s</mtext></mrow><mo>&#8722;</mo><mrow><mn>2</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>min</mtext></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\approx 30\\,\\text{s}-2\\,\\text{min}</annotation></semantics></math> of speech). Then, Pydub is used to segment the clean audio according to these paragraphs, producing the ground-truth for subsequent SP-MCQA testing. We further apply pyannote speaker-diarization-3.1 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib18\" title=\"\">18</a>]</cite> to extract speaker timestamps and refine the segmentation to separate different speakers. Since most TTS systems are not trained on very long utterances, we use the Natural Language Toolkit (NLTK) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib19\" title=\"\">19</a>]</cite> to split each paragraph into natural sentences and segment the audio accordingly. These aligned sentence&#8211;audio pairs form the ground-truth for later objective evaluation.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "tts",
                     "spmcqa",
+                    "tts",
+                    "evaluation",
                     "groundtruth"
                 ]
             },
@@ -319,59 +319,59 @@
             {
                 "html": "<p class=\"ltx_p\">For SP-MCQA evaluation, annotators listen to speech and answer multiple-choice textual questions based on its content, with accuracy scored as 1 for a correct answer and 0 otherwise. We recruit 40 annotators who are either native English speakers or non-native with an IELTS listening score 8.0<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_href\" href=\"https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained\" title=\"\">https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained</a> Band 8.0 indicates a very good user with a fully operational command of the language, making only occasional unsystematic inaccuracies or inappropriacies, and able to handle complex, detailed argumentation with only minor misunderstandings in unfamiliar situations.</span></span></span> and above. All annotators receive clear instructions: &#8220;Select the answer that directly matches the information explicitly stated in the audio; do not infer beyond what is clearly stated.&#8221;</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "spmcqa"
+                    "spmcqa",
+                    "evaluation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each evaluation task is randomly assigned to two annotators. If their answers differ, a third annotator is added; if all three differ, a fourth is introduced. No further annotators are involved if disagreement persists among four. Golden test questions are randomly inserted into 10% of tasks to assess general knowledge. Only annotators achieving 100% accuracy on golden tests are retained; results from those below this threshold are discarded, and their tasks are reassigned to other qualified annotators. The final SP-MCQA ACC is computed as the average accuracy across qualified annotators. We also collect qualitative feedback for future analysis.</p>\n\n",
                 "matched_terms": [
+                    "acc",
                     "spmcqa",
+                    "test",
                     "evaluation",
                     "four",
-                    "results",
-                    "acc",
-                    "test"
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We select FishSpeech V1.4 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>]</cite>, MaskGCT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite>, F5-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>]</cite>, and CosyVoice 2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>]</cite> for our SP-MCQA evaluation due to their strong performance in regular intelligibility assessment. FishSpeech V1.4 employs a dual autoregressive (AR) architecture and leverages LLMs for rich linguistic feature extraction, resulting in clear pronunciation and highly intelligible output. MaskGCT, a fully non-autoregressive (NAR) model with a mask-and-predict paradigm, enables fast parallel synthesis while maintaining high word-level accuracy and strong speaker similarity across unseen speakers. F5-TTS, also fully NAR with flow-matching-based diffusion, achieves low WER and expressive speech synthesis, providing robust intelligibility and controllable speaking rates. CosyVoice 2 combines AR fidelity with NAR speed, separately modeling semantic and acoustic features to enhance prosody, rhythm, and intonation, supporting naturalness and speaker identity preservation in both streaming and non-streaming scenarios. Collectively, these models represent diverse architectures and design choices, making them ideal for assessing the accuracy, speaker consistency, and audio quality of synthesized speech in key-information-sensitive tasks under news-style content.</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "wer",
-                    "evaluation",
+                    "cosyvoice",
                     "models",
                     "fishspeech",
+                    "evaluation",
                     "f5tts",
-                    "cosyvoice",
+                    "wer",
                     "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We also conduct objective evaluations on each model across three key aspects: intelligibility, coherence, and audio quality. Intelligibility is evaluated using Word Error Rate (WER), computed with the jewel package and transcribed by Whisper-large-v3<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/openai/whisper-large-v3\" title=\"\">https://huggingface.co/openai/whisper-large-v3</a></span></span></span> ASR, with a fixed &#8220;prompt&#8221; parameter to ensure consistent transcription style. Coherence is assessed via speaker similarity (S-SIM), which computes the cosine similarity between WavLM-TDNN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib21\" title=\"\">21</a>]</cite> speaker embeddings of the synthesized speech and the reference prompt. Audio quality is evaluated using Deep Noise Suppression Mean Opinion Score (DNSMOS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib22\" title=\"\">22</a>]</cite>, derived from P.835 human ratings, providing an overall audio quality score on a 1-5 scale. All metrics are computed at a 16 kHz sampling rate. While WER is our primary intelligibility metric for comparison, all three objective metrics together provide reference values for the overall quality of the SP-MCQA-Eval test set and the synthesized speech produced by TTS models.</p>\n\n",
                 "matched_terms": [
-                    "wer",
+                    "test",
                     "models",
-                    "set",
-                    "spmcqaeval",
-                    "ssim",
                     "tts",
-                    "p835",
+                    "spmcqaeval",
+                    "set",
                     "dnsmos",
-                    "test"
+                    "p835",
+                    "wer",
+                    "ssim"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The SP-MCQA-Eval test set contains 483 unique speakers. During inference, we select one prompt (utterance + transcript) from each speaker, while the transcripts of all utterances&#8212;including the selected prompts&#8212;serve as target texts, yielding 5,805 prompt&#8211;target pairs in total. These pairs preserve speaker identity, enabling direct evaluation against ground-truth data. TTS inferences are conducted on 8 NVIDIA GeForce RTX 4090 GPUs using the official code from each model&#8217;s GitHub repository. For MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct\" title=\"\">https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct</a></span></span></span>, we modify the G2P module to correctly classify numerical inputs as English (en) instead of &#8220;other language.&#8221; For CosyVoice 2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/FunAudioLLM/CosyVoice\" title=\"\">https://github.com/FunAudioLLM/CosyVoice</a></span></span></span>, we remove the duration constraint in frontend.py, allowing the model to process speech tokens for audio longer than 30 seconds. No modifications are made to the inference code for FishSpeech V1.4<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/fishaudio/fish-speech\" title=\"\">https://github.com/fishaudio/fish-speech</a></span></span></span> and F5-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/SWivid/F5-TTS\" title=\"\">https://github.com/SWivid/F5-TTS</a></span></span></span>. All evaluations are also conducted under the same experimental setup as inference.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "set",
-                    "spmcqaeval",
-                    "fishspeech",
-                    "tts",
-                    "groundtruth",
+                    "test",
                     "cosyvoice",
-                    "test"
+                    "tts",
+                    "evaluation",
+                    "fishspeech",
+                    "spmcqaeval",
+                    "groundtruth",
+                    "set"
                 ]
             },
             {
@@ -379,32 +379,32 @@
                 "matched_terms": [
                     "spmcqa",
                     "models",
+                    "tts",
                     "fishspeech",
                     "f5tts",
-                    "tts",
                     "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We further analyze annotators&#8217; comments for selecting &#8220;Other&#8221; (Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab4</span>). CosyVoice 2 occasionally adds noise at sentence endings, raising WER and slightly lowering SP-MCQA ACC. However, it is the only model that correctly pronounces all tested abbreviations (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alabama&#8221;), achieving the highest SP-MCQA ACC. MaskGCT generates odd sounds and struggles with proper nouns (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alala&#8221;), performing slightly worse on the SP-MCQA task. F5-TTS, in addition to incorrectly handling uncommon text (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Ala&#8221;), exhibits overly fast speech, hindering the recognition of key information. FishSpeech suffers from mid-sentence word drops and cut-offs due to normalization issues (e.g., &#8220;Ala.&#8221;&#8594;&#8220; &#8221;), yielding the lowest SP-MCQA ACC despite lowest WER. These observations underscore the need for robust text normalization and key-information accuracy evaluation beyond conventional metrics.</p>\n\n",
                 "matched_terms": [
-                    "spmcqa",
-                    "wer",
-                    "evaluation",
-                    "fishspeech",
-                    "f5tts",
                     "acc",
+                    "spmcqa",
                     "cosyvoice",
+                    "fishspeech",
+                    "evaluation",
+                    "f5tts",
+                    "wer",
                     "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we propose SP-MCQA, a framework that evaluates the accuracy of key information in synthesized speech beyond the word level for TTS models. SP-MCQA demonstrates that even SOTA TTS models exhibit critical weaknesses in key information when handling real-world speech complexity. Key findings include: (1) significant discrepancies between word-by-word accuracy and key information accuracy; (2) phonetic errors and text-normalization challenges in uncommon contexts and irregular patterns &#8212; particularly with names, numbers, and abbreviations &#8212; with each model exhibiting distinct error patterns, all of which should be addressed in future speech synthesis research. While our approach paves the way for high-level evaluation, limitations such as the substantial manual effort required for human evaluation remain. Future work will explore leveraging Audio LLMs for more efficient and scalable assessment and extend this work to other languages to provide clearer guidance for improving multilingual TTS systems.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "tts",
                     "models",
-                    "spmcqa"
+                    "spmcqa",
+                    "tts",
+                    "evaluation"
                 ]
             }
         ]
@@ -415,27 +415,27 @@
         "body": "System\nEvaluation\nError Types\n\n\n\nTotal Ques\nWrong Ques\nPhonetic\nSemantic\nStructure (Syntax + Grammar)\nOther\n\n\nGround-Truth\n6914\n550\n\n246 (3.558%)\n\n80 (1.157%)\n49 + 61 (1.591%)\n114 (1.649%)\n\n\nF5-TTS\n7472\n961\n\n306 (4.095%)\n\n114 (1.526%)\n79 + 93 (2.302%)\n369 (4.938%)\n\n\nMaskGCT\n7477\n803\n\n267 (3.571%)\n\n104 (1.391%)\n74 + 93 (2.234%)\n265 (3.544%)\n\n\nCosyVoice 2\n7218\n693\n\n233 (3.228%)\n\n70 (0.970%)\n64 + 72 (1.884%)\n254 (3.519%)\n\n\nFishSpeech\n7519\n1414\n271 (3.604%)\n104 (1.383%)\n66 + 77 (1.902%)\n\n896 (11.916%)",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">System</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\" colspan=\"2\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Evaluation</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"4\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Error Types</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Total Ques</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Wrong Ques</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Phonetic</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Semantic</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Structure (Syntax + Grammar)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Other</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">Ground-Truth</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">6914</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">550</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">246 (</span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">3.558%</span><span class=\"ltx_text\" style=\"font-size:90%;\">)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">80 (1.157%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">49 + 61 (1.591%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">114 (1.649%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">F5-TTS</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">7472</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:90%;\">961</span></td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">306 (</span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">4.095%</span><span class=\"ltx_text\" style=\"font-size:90%;\">)</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">114 (1.526%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">79 + 93 (2.302%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">369 (4.938%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">MaskGCT</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">7477</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:90%;\">803</span></td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">267 (</span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">3.571%</span><span class=\"ltx_text\" style=\"font-size:90%;\">)</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">104 (1.391%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">74 + 93 (2.234%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">265 (3.544%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\"><span class=\"ltx_text\" style=\"font-size:90%;\">CosyVoice 2</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">7218</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:90%;\">693</span></td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">233 (</span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">3.228%</span><span class=\"ltx_text\" style=\"font-size:90%;\">)</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">70 (0.970%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">64 + 72 (1.884%)</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">254 (3.519%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">FishSpeech</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">7519</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\"><span class=\"ltx_text\" style=\"font-size:90%;\">1414</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">271 (3.604%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">104 (1.383%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">66 + 77 (1.902%)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">896 (</span><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">11.916%</span><span class=\"ltx_text\" style=\"font-size:90%;\">)</span>\n</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
+            "other",
+            "cosyvoice",
+            "f5tts",
+            "types",
+            "wrong",
+            "each",
+            "syntax",
+            "analysis",
+            "system",
             "ques",
+            "phonetic",
+            "evaluation",
+            "structure",
+            "maskgct",
             "groundtruth",
             "semantic",
-            "grammar",
-            "cosyvoice",
-            "types",
-            "error",
-            "evaluation",
-            "fishspeech",
-            "f5tts",
-            "total",
-            "structure",
-            "each",
-            "maskgct",
-            "system",
-            "syntax",
             "spmcqa",
-            "phonetic",
-            "analysis",
-            "wrong",
-            "other"
+            "fishspeech",
+            "total",
+            "error",
+            "grammar"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S4.T4\" title=\"Table 4 &#8227; 4.4 Results &amp; Analysis &#8227; 4 Experiments &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> presents the analysis of the error types, showing that phonetic errors are the most prevalent across all models, followed by structural (syntax and grammar) and semantic errors. The latter two might be caused by model&#8217;s &#8220;hallucinations,&#8221; such as generating inconsistent content with the input, or omitting content. We observe that NAR models (F5-TTS and MaskGCT) exhibit a higher proportion of such errors compared to AR models (CosyVoice2 and FishSpeech). Nonetheless, regardless of architecture, phonetic accuracy remains the primary challenge in our SP-MCQA tasks for key information, likely due to the scarcity of irregular or uncommon patterns in training data. These findings highlight the importance of addressing phonetic errors, especially in rare or atypical utterances, for developing human-like TTS systems.</p>\n\n"
@@ -444,9 +444,9 @@
             {
                 "html": "<p class=\"ltx_p\">The evaluation of intelligibility for TTS has reached a bottleneck, as existing assessments heavily rely on word-by-word accuracy metrics such as WER, which fail to capture the complexity of real-world speech or reflect human comprehension needs. To address this, we propose SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a novel subjective approach evaluating the accuracy of key information in synthesized speech, and release SP-MCQA-Eval, an 8.76-hour news-style benchmark dataset for SP-MCQA evaluation. Our experiments reveal that low WER does not necessarily guarantee high key-information accuracy, exposing a gap between traditional metrics and practical intelligibility. SP-MCQA shows that even state-of-the-art (SOTA) models still lack robust text normalization and phonetic accuracy. This work underscores the urgent need for high-level, more life-like evaluation criteria now that many systems already excel at WER yet may fall short on real-world intelligibility.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "spmcqa",
-                    "phonetic"
+                    "phonetic",
+                    "evaluation"
                 ]
             },
             {
@@ -459,63 +459,63 @@
             {
                 "html": "<p class=\"ltx_p\">To address these shortcomings, we introduce SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a framework for evaluating TTS systems on key-information accuracy beyond the word level, comprising a novel subjective evaluation metric (SP-MCQA ACC) and test set (SP-MCQA-Eval). In line with the need for SP-MCQA evaluation, SP-MCQA-Eval is constructed as a news-style test set for speech synthesis that is both acoustically natural and semantically rich in contextual and critical information. Unlike traditional transcript-based metrics, SP-MCQA does not measure word-by-word accuracy and instead evaluates semantic and structural fidelity of key information under realistic listening conditions. It acts as a complementary framework to WER for evaluating and comparing models that already achieve high intelligibility at the word level.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "spmcqa",
+                    "evaluation",
                     "semantic"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose SP-MCQA, a novel subjective evaluation approach to measure the key information accuracy of a synthesized speech.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "spmcqa"
+                    "spmcqa",
+                    "evaluation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following Emilia&#8217;s pre-processing pipeline <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib16\" title=\"\">16</a>]</cite>, background music is removed using Ultimate Vocal Remover (UVR)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/Anjok07/ultimatevocalremovergui\" title=\"\">https://github.com/Anjok07/ultimatevocalremovergui</a></span></span></span>\n, and WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib17\" title=\"\">17</a>]</cite> is used for ASR and timestamp extraction. Because uppercase letters and numbers often indicate key information, we apply Regular Expressions (RegEx) to filter the raw text, retaining paragraphs that contain: (1)&#160;at least one number with a minimum of three digits; and (2)&#160;at least two uppercase letters (excluding those at sentence beginnings). From this filtered pool, we randomly select 550 &#8220;information paragraphs,&#8221; each constrained to 65&#8211;260 words (<math alttext=\"\\approx 30\\,\\text{s}-2\\,\\text{min}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8776;</mo><mrow><mrow><mn>30</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>s</mtext></mrow><mo>&#8722;</mo><mrow><mn>2</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>min</mtext></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\approx 30\\,\\text{s}-2\\,\\text{min}</annotation></semantics></math> of speech). Then, Pydub is used to segment the clean audio according to these paragraphs, producing the ground-truth for subsequent SP-MCQA testing. We further apply pyannote speaker-diarization-3.1 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib18\" title=\"\">18</a>]</cite> to extract speaker timestamps and refine the segmentation to separate different speakers. Since most TTS systems are not trained on very long utterances, we use the Natural Language Toolkit (NLTK) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib19\" title=\"\">19</a>]</cite> to split each paragraph into natural sentences and segment the audio accordingly. These aligned sentence&#8211;audio pairs form the ground-truth for later objective evaluation.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "spmcqa",
                     "each",
-                    "groundtruth"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">We employ GPT-4o-mini <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib20\" title=\"\">20</a>]</cite> to automatically generate multiple-choice questions (MCQs) that examine the key information in each paragraph. Each evaluation task consists of a paragraph and its two to ten associated questions. Each MCQ contains four options: one correct answer, one &#8220;Other,&#8221; and two distractors representing different error types, as illustrated in Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab2</span>. All questions are manually inspected, and problematic items caused by GPT hallucinations are removed.</p>\n\n",
-                "matched_terms": [
-                    "evaluation",
-                    "types",
-                    "each",
-                    "error"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">For SP-MCQA evaluation, annotators listen to speech and answer multiple-choice textual questions based on its content, with accuracy scored as 1 for a correct answer and 0 otherwise. We recruit 40 annotators who are either native English speakers or non-native with an IELTS listening score 8.0<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_href\" href=\"https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained\" title=\"\">https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained</a> Band 8.0 indicates a very good user with a fully operational command of the language, making only occasional unsystematic inaccuracies or inappropriacies, and able to handle complex, detailed argumentation with only minor misunderstandings in unfamiliar situations.</span></span></span> and above. All annotators receive clear instructions: &#8220;Select the answer that directly matches the information explicitly stated in the audio; do not infer beyond what is clearly stated.&#8221;</p>\n\n",
-                "matched_terms": [
+                    "groundtruth",
                     "evaluation",
                     "spmcqa"
                 ]
             },
             {
-                "html": "<p class=\"ltx_p\">Each evaluation task is randomly assigned to two annotators. If their answers differ, a third annotator is added; if all three differ, a fourth is introduced. No further annotators are involved if disagreement persists among four. Golden test questions are randomly inserted into 10% of tasks to assess general knowledge. Only annotators achieving 100% accuracy on golden tests are retained; results from those below this threshold are discarded, and their tasks are reassigned to other qualified annotators. The final SP-MCQA ACC is computed as the average accuracy across qualified annotators. We also collect qualitative feedback for future analysis.</p>\n\n",
+                "html": "<p class=\"ltx_p\">We employ GPT-4o-mini <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib20\" title=\"\">20</a>]</cite> to automatically generate multiple-choice questions (MCQs) that examine the key information in each paragraph. Each evaluation task consists of a paragraph and its two to ten associated questions. Each MCQ contains four options: one correct answer, one &#8220;Other,&#8221; and two distractors representing different error types, as illustrated in Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab2</span>. All questions are manually inspected, and problematic items caused by GPT hallucinations are removed.</p>\n\n",
+                "matched_terms": [
+                    "each",
+                    "types",
+                    "error",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For SP-MCQA evaluation, annotators listen to speech and answer multiple-choice textual questions based on its content, with accuracy scored as 1 for a correct answer and 0 otherwise. We recruit 40 annotators who are either native English speakers or non-native with an IELTS listening score 8.0<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_href\" href=\"https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained\" title=\"\">https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained</a> Band 8.0 indicates a very good user with a fully operational command of the language, making only occasional unsystematic inaccuracies or inappropriacies, and able to handle complex, detailed argumentation with only minor misunderstandings in unfamiliar situations.</span></span></span> and above. All annotators receive clear instructions: &#8220;Select the answer that directly matches the information explicitly stated in the audio; do not infer beyond what is clearly stated.&#8221;</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "evaluation",
-                    "analysis",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Each evaluation task is randomly assigned to two annotators. If their answers differ, a third annotator is added; if all three differ, a fourth is introduced. No further annotators are involved if disagreement persists among four. Golden test questions are randomly inserted into 10% of tasks to assess general knowledge. Only annotators achieving 100% accuracy on golden tests are retained; results from those below this threshold are discarded, and their tasks are reassigned to other qualified annotators. The final SP-MCQA ACC is computed as the average accuracy across qualified annotators. We also collect qualitative feedback for future analysis.</p>\n\n",
+                "matched_terms": [
                     "other",
-                    "each"
+                    "each",
+                    "spmcqa",
+                    "evaluation",
+                    "analysis"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We select FishSpeech V1.4 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>]</cite>, MaskGCT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite>, F5-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>]</cite>, and CosyVoice 2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>]</cite> for our SP-MCQA evaluation due to their strong performance in regular intelligibility assessment. FishSpeech V1.4 employs a dual autoregressive (AR) architecture and leverages LLMs for rich linguistic feature extraction, resulting in clear pronunciation and highly intelligible output. MaskGCT, a fully non-autoregressive (NAR) model with a mask-and-predict paradigm, enables fast parallel synthesis while maintaining high word-level accuracy and strong speaker similarity across unseen speakers. F5-TTS, also fully NAR with flow-matching-based diffusion, achieves low WER and expressive speech synthesis, providing robust intelligibility and controllable speaking rates. CosyVoice 2 combines AR fidelity with NAR speed, separately modeling semantic and acoustic features to enhance prosody, rhythm, and intonation, supporting naturalness and speaker identity preservation in both streaming and non-streaming scenarios. Collectively, these models represent diverse architectures and design choices, making them ideal for assessing the accuracy, speaker consistency, and audio quality of synthesized speech in key-information-sensitive tasks under news-style content.</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "evaluation",
-                    "fishspeech",
-                    "f5tts",
-                    "semantic",
                     "cosyvoice",
-                    "maskgct"
+                    "fishspeech",
+                    "evaluation",
+                    "f5tts",
+                    "maskgct",
+                    "semantic"
                 ]
             },
             {
@@ -528,44 +528,44 @@
             {
                 "html": "<p class=\"ltx_p\">The SP-MCQA-Eval test set contains 483 unique speakers. During inference, we select one prompt (utterance + transcript) from each speaker, while the transcripts of all utterances&#8212;including the selected prompts&#8212;serve as target texts, yielding 5,805 prompt&#8211;target pairs in total. These pairs preserve speaker identity, enabling direct evaluation against ground-truth data. TTS inferences are conducted on 8 NVIDIA GeForce RTX 4090 GPUs using the official code from each model&#8217;s GitHub repository. For MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct\" title=\"\">https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct</a></span></span></span>, we modify the G2P module to correctly classify numerical inputs as English (en) instead of &#8220;other language.&#8221; For CosyVoice 2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/FunAudioLLM/CosyVoice\" title=\"\">https://github.com/FunAudioLLM/CosyVoice</a></span></span></span>, we remove the duration constraint in frontend.py, allowing the model to process speech tokens for audio longer than 30 seconds. No modifications are made to the inference code for FishSpeech V1.4<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/fishaudio/fish-speech\" title=\"\">https://github.com/fishaudio/fish-speech</a></span></span></span> and F5-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/SWivid/F5-TTS\" title=\"\">https://github.com/SWivid/F5-TTS</a></span></span></span>. All evaluations are also conducted under the same experimental setup as inference.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "fishspeech",
-                    "total",
-                    "groundtruth",
                     "each",
-                    "cosyvoice"
+                    "cosyvoice",
+                    "fishspeech",
+                    "evaluation",
+                    "total",
+                    "groundtruth"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The evaluation results of ground-truth and four TTS models under SP-MCQA-Eval are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Results &amp; Analysis &#8227; 4 Experiments &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The relatively moderate performance of the ground-truth mainly stem from imprecise in timestamp extraction during pre-processing; nevertheless, these values still provide a meaningful reference for evaluation. While FishSpeech ranks highest in WER, it performs worst in SP-MCQA ACC, whereas CosyVoice 2, despite its lower rank in WER, ranks highest in SP-MCQA ACC. This reveals a critical limitation of WER: models with low WER may still fail to convey key information accurately.</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "evaluation",
+                    "cosyvoice",
                     "fishspeech",
-                    "groundtruth",
-                    "cosyvoice"
+                    "evaluation",
+                    "groundtruth"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We further analyze annotators&#8217; comments for selecting &#8220;Other&#8221; (Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab4</span>). CosyVoice 2 occasionally adds noise at sentence endings, raising WER and slightly lowering SP-MCQA ACC. However, it is the only model that correctly pronounces all tested abbreviations (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alabama&#8221;), achieving the highest SP-MCQA ACC. MaskGCT generates odd sounds and struggles with proper nouns (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alala&#8221;), performing slightly worse on the SP-MCQA task. F5-TTS, in addition to incorrectly handling uncommon text (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Ala&#8221;), exhibits overly fast speech, hindering the recognition of key information. FishSpeech suffers from mid-sentence word drops and cut-offs due to normalization issues (e.g., &#8220;Ala.&#8221;&#8594;&#8220; &#8221;), yielding the lowest SP-MCQA ACC despite lowest WER. These observations underscore the need for robust text normalization and key-information accuracy evaluation beyond conventional metrics.</p>\n\n",
                 "matched_terms": [
                     "spmcqa",
-                    "evaluation",
-                    "fishspeech",
-                    "f5tts",
                     "cosyvoice",
+                    "fishspeech",
+                    "evaluation",
+                    "f5tts",
                     "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we propose SP-MCQA, a framework that evaluates the accuracy of key information in synthesized speech beyond the word level for TTS models. SP-MCQA demonstrates that even SOTA TTS models exhibit critical weaknesses in key information when handling real-world speech complexity. Key findings include: (1) significant discrepancies between word-by-word accuracy and key information accuracy; (2) phonetic errors and text-normalization challenges in uncommon contexts and irregular patterns &#8212; particularly with names, numbers, and abbreviations &#8212; with each model exhibiting distinct error patterns, all of which should be addressed in future speech synthesis research. While our approach paves the way for high-level evaluation, limitations such as the substantial manual effort required for human evaluation remain. Future work will explore leveraging Audio LLMs for more efficient and scalable assessment and extend this work to other languages to provide clearer guidance for improving multilingual TTS systems.</p>\n\n",
                 "matched_terms": [
+                    "other",
+                    "each",
                     "spmcqa",
                     "phonetic",
                     "evaluation",
-                    "error",
-                    "other",
-                    "each"
+                    "error"
                 ]
             }
         ]
@@ -576,92 +576,92 @@
         "body": "Task ID\nSystem\n\n\nComment\n\n\nRelated Issue\n\n\n2210\nCosyVoice 2\n\n\nA “-nine” sound occurs after every sentence. (Cannot recognize).\n\n\nNoise\n\n\n1938\nCosyVoice 2\n\n\nEach sentence ends with an “-edge”/“‑ged” sound, causing confusion. (Cannot recognize).\n\n\nNoise\n\n\n951\nMaskGCT\n\n\nThe audio is noisy and difficult to identify. (Cannot recognize).\n\n\nNoise\n\n\n975\nMaskGCT\n\n\nIn the first 55 seconds, pronunciation was unclear, resembling reversed speech or persistent difficulty articulating the governor’s name throughout the segment. (Cannot recognize).\n\n\nNoise\n\n\n543\nMaskGCT\n\n\nPronunciation resembles “Alala” rather than “Alabama.” (No options).\n\n\nProper Noun\n\n\n1156\nF5-TTS\n\n\nToo fast with unclear pronunciation. (Cannot recognize).\n\n\nSpeed\n\n\n380\nF5-TTS\n\n\nSpeech rate is approximately 1.75×. (Cannot recognize).\n\n\nSpeed\n\n\n544\nF5-TTS\n\n\nPronunciation alternates between “… Ala” and “… Alabama.” (Inconsistency).\n\n\nProper Noun\n\n\n689\nFishSpeech\n\n\nThe number is 2, not 2,000. (No options).\n\n\nNumber\n\n\n541\nFishSpeech\n\n\nOnly “Talladega” is audible, not “Talladega Ala” or “Talladega Alabama.” (No options).\n\n\nProper Noun\n\n\n185\nFishSpeech\n\n\nNo data was mentioned. (No options).\n\n\nNumber",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\" style=\"--ltx-bg-color:#E6E6E6;\">\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Task ID</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">System</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_tt\">\n<span class=\"ltx_inline-block ltx_align_top\" style=\"--ltx-bg-color:#E6E6E6;\">\n<span class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Comment</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;--ltx-bg-color:#E6E6E6;\">Related Issue</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">2210</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">CosyVoice 2</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_t\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">A &#8220;-nine&#8221; sound occurs after every sentence. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text\" style=\"font-size:90%;\">Noise</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">1938</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">CosyVoice 2</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Each sentence ends with an &#8220;-edge&#8221;/&#8220;&#8209;ged&#8221; sound, causing confusion. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Noise</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">951</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">MaskGCT</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">The audio is noisy and difficult to identify. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Noise</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">975</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">MaskGCT</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">In the first 55 seconds, pronunciation was unclear, resembling reversed speech or persistent difficulty articulating the governor&#8217;s name throughout the segment. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Noise</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">543</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">MaskGCT</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Pronunciation resembles &#8220;Alala&#8221; rather than &#8220;Alabama.&#8221; (No options).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Proper Noun</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">1156</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">F5-TTS</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Too fast with unclear pronunciation. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Speed</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">380</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">F5-TTS</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Speech rate is approximately 1.75&#215;. (Cannot recognize).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Speed</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">544</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">F5-TTS</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Pronunciation alternates between &#8220;&#8230; Ala&#8221; and &#8220;&#8230; Alabama.&#8221; (Inconsistency).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Proper Noun</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">689</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">FishSpeech</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">The number is 2, not 2,000. (No options).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Number</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">541</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">FishSpeech</span></td>\n<td class=\"ltx_td ltx_align_justify\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">Only &#8220;Talladega&#8221; is audible, not &#8220;Talladega Ala&#8221; or &#8220;Talladega Alabama.&#8221; (No options).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text\" style=\"font-size:90%;\">Proper Noun</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">185</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">FishSpeech</span></td>\n<td class=\"ltx_td ltx_align_justify ltx_border_bb\">\n<span class=\"ltx_inline-block ltx_align_top\">\n<span class=\"ltx_p\"><span class=\"ltx_text\" style=\"font-size:90%;\">No data was mentioned. (No options).</span></span>\n</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text\" style=\"font-size:90%;\">Number</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "noisy",
-            "articulating",
-            "ala”",
-            "“other”",
-            "cosyvoice",
-            "difficult",
-            "than",
-            "unclear",
-            "sentence",
-            "cannot",
-            "175×",
-            "too",
-            "fast",
-            "clarity",
-            "noun",
-            "issue",
-            "system",
-            "audible",
-            "related",
-            "resembles",
-            "name",
-            "difficulty",
-            "occurs",
-            "comment",
-            "throughout",
-            "segment",
-            "pronunciation",
-            "mentioned",
-            "fishspeech",
-            "f5tts",
-            "“edge”“‑ged”",
-            "proper",
-            "sound",
-            "recognize",
-            "each",
-            "resembling",
-            "maskgct",
-            "identify",
-            "task",
-            "“talladega",
-            "“talladega”",
-            "main",
-            "every",
-            "speech",
-            "confusion",
-            "“nine”",
-            "ends",
-            "speed",
-            "rather",
-            "lightly",
-            "causing",
-            "only",
-            "“alala”",
-            "spmcqa",
-            "alternates",
-            "number",
-            "inconsistency",
-            "first",
-            "edited",
-            "between",
-            "“alabama”",
-            "comments",
-            "data",
-            "governor’s",
-            "persistent",
-            "selecting",
-            "evaluation",
-            "rate",
             "seconds",
-            "audio",
+            "audible",
+            "approximately",
+            "articulating",
+            "cannot",
+            "comments",
+            "noise",
+            "alternates",
+            "resembling",
+            "“alala”",
+            "“talladega",
+            "evaluation",
+            "“alabama”",
+            "number",
+            "spmcqa",
+            "fishspeech",
+            "after",
+            "proper",
+            "causing",
+            "throughout",
+            "related",
+            "first",
+            "name",
             "reversed",
             "alabama”",
-            "approximately",
-            "noise",
+            "between",
+            "“edge”“‑ged”",
+            "speed",
+            "system",
+            "resembles",
+            "only",
+            "difficulty",
+            "identify",
+            "sound",
+            "175×",
+            "“nine”",
+            "edited",
+            "cosyvoice",
+            "sentence",
+            "rate",
+            "f5tts",
+            "governor’s",
+            "persistent",
+            "speech",
+            "each",
+            "rather",
+            "segment",
+            "lightly",
+            "every",
+            "noisy",
+            "not",
+            "issue",
+            "confusion",
+            "than",
+            "too",
+            "maskgct",
+            "“other”",
+            "inconsistency",
+            "occurs",
             "options",
-            "after",
-            "not"
+            "task",
+            "clarity",
+            "unclear",
+            "mentioned",
+            "noun",
+            "pronunciation",
+            "comment",
+            "main",
+            "“talladega”",
+            "ends",
+            "ala”",
+            "difficult",
+            "fast",
+            "recognize",
+            "selecting",
+            "data",
+            "audio"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">The evaluation of intelligibility for TTS has reached a bottleneck, as existing assessments heavily rely on word-by-word accuracy metrics such as WER, which fail to capture the complexity of real-world speech or reflect human comprehension needs. To address this, we propose SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a novel subjective approach evaluating the accuracy of key information in synthesized speech, and release SP-MCQA-Eval, an 8.76-hour news-style benchmark dataset for SP-MCQA evaluation. Our experiments reveal that low WER does not necessarily guarantee high key-information accuracy, exposing a gap between traditional metrics and practical intelligibility. SP-MCQA shows that even state-of-the-art (SOTA) models still lack robust text normalization and phonetic accuracy. This work underscores the urgent need for high-level, more life-like evaluation criteria now that many systems already excel at WER yet may fall short on real-world intelligibility.</p>\n\n",
                 "matched_terms": [
+                    "speech",
                     "spmcqa",
                     "evaluation",
-                    "speech",
                     "between",
                     "not"
                 ]
@@ -669,9 +669,9 @@
             {
                 "html": "<p class=\"ltx_p\">Text-to-Speech (TTS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite> systems have achieved remarkable progress in producing highly intelligible speech. However, evaluation methods have not kept pace with these advances. Existing intelligibility-related metrics, such as Word Error Rate (WER) or subjective intelligibility Mean Opinion Score (MOS), predominantly focus on low-level accuracy which overlook if the key information is accurately conveyed. This gap is critical because, in real-world scenarios, listeners care more about understanding essential information than perfect word-by-word reproduction.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "rate",
                     "speech",
+                    "rate",
+                    "evaluation",
                     "than",
                     "not"
                 ]
@@ -679,42 +679,42 @@
             {
                 "html": "<p class=\"ltx_p\">Meanwhile, many existing TTS evaluation test sets <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib11\" title=\"\">11</a>]</cite> are relatively simple and standardized, lacking challenging cases that reflect real-world speech variability. Although Seed-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib2\" title=\"\">2</a>]</cite> introduces challenging patterns such as word repetitions and tongue twisters, it still fails to adequately assess model performance on irregular text &#8212; particularly content involving digits and proper nouns, such as locations, names, numbers, and events &#8212; which frequently constitute key information in informative, context-rich speech.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "speech",
-                    "proper"
+                    "proper",
+                    "evaluation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these shortcomings, we introduce SP-MCQA (Spoken-Passage Multiple-Choice Question Answering), a framework for evaluating TTS systems on key-information accuracy beyond the word level, comprising a novel subjective evaluation metric (SP-MCQA ACC) and test set (SP-MCQA-Eval). In line with the need for SP-MCQA evaluation, SP-MCQA-Eval is constructed as a news-style test set for speech synthesis that is both acoustically natural and semantically rich in contextual and critical information. Unlike traditional transcript-based metrics, SP-MCQA does not measure word-by-word accuracy and instead evaluates semantic and structural fidelity of key information under realistic listening conditions. It acts as a complementary framework to WER for evaluating and comparing models that already achieve high intelligibility at the word level.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "speech",
                     "spmcqa",
+                    "evaluation",
                     "not"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose SP-MCQA, a novel subjective evaluation approach to measure the key information accuracy of a synthesized speech.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "speech",
-                    "spmcqa"
+                    "spmcqa",
+                    "evaluation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We create SP-MCQA-Eval, a new open-source news-style benchmark dataset that contains uncommon text, involving proper nouns and digits, designed for SP-MCQA.</p>\n\n",
                 "matched_terms": [
-                    "proper",
-                    "spmcqa"
+                    "spmcqa",
+                    "proper"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Spoken Multiple-Choice Question Answering (SMCQA), a form of Spoken Question Answering (SQA), referred to tasks related to machine text comprehension in which passages, questions, and multiple choices are presented entirely in speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib13\" title=\"\">13</a>]</cite>. In contrast, we study a hybrid setting similar to the text-based question answering on listening comprehension test <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib14\" title=\"\">14</a>]</cite>, where only the passage is spoken while the questions and answer choices are in text. We term this new variant SP-MCQA (Spoken-Passage Multiple-Choice Question Answering) to clearly distinguish it from SMCQA.</p>\n\n",
                 "matched_terms": [
-                    "only",
                     "speech",
-                    "related",
-                    "spmcqa"
+                    "spmcqa",
+                    "only",
+                    "related"
                 ]
             },
             {
@@ -734,78 +734,78 @@
             {
                 "html": "<p class=\"ltx_p\">Audio and manually annotated text are sourced from National Public Radio (NPR) news, providing conversational speech with rich contextual information that facilitates the extraction of key details commonly encountered in daily life.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "speech"
+                    "speech",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following Emilia&#8217;s pre-processing pipeline <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib16\" title=\"\">16</a>]</cite>, background music is removed using Ultimate Vocal Remover (UVR)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/Anjok07/ultimatevocalremovergui\" title=\"\">https://github.com/Anjok07/ultimatevocalremovergui</a></span></span></span>\n, and WhisperX <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib17\" title=\"\">17</a>]</cite> is used for ASR and timestamp extraction. Because uppercase letters and numbers often indicate key information, we apply Regular Expressions (RegEx) to filter the raw text, retaining paragraphs that contain: (1)&#160;at least one number with a minimum of three digits; and (2)&#160;at least two uppercase letters (excluding those at sentence beginnings). From this filtered pool, we randomly select 550 &#8220;information paragraphs,&#8221; each constrained to 65&#8211;260 words (<math alttext=\"\\approx 30\\,\\text{s}-2\\,\\text{min}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8776;</mo><mrow><mrow><mn>30</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>s</mtext></mrow><mo>&#8722;</mo><mrow><mn>2</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>min</mtext></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\approx 30\\,\\text{s}-2\\,\\text{min}</annotation></semantics></math> of speech). Then, Pydub is used to segment the clean audio according to these paragraphs, producing the ground-truth for subsequent SP-MCQA testing. We further apply pyannote speaker-diarization-3.1 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib18\" title=\"\">18</a>]</cite> to extract speaker timestamps and refine the segmentation to separate different speakers. Since most TTS systems are not trained on very long utterances, we use the Natural Language Toolkit (NLTK) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib19\" title=\"\">19</a>]</cite> to split each paragraph into natural sentences and segment the audio accordingly. These aligned sentence&#8211;audio pairs form the ground-truth for later objective evaluation.</p>\n\n",
                 "matched_terms": [
-                    "sentence",
-                    "spmcqa",
-                    "evaluation",
-                    "number",
                     "speech",
-                    "segment",
+                    "spmcqa",
                     "each",
-                    "audio",
-                    "not"
+                    "sentence",
+                    "segment",
+                    "evaluation",
+                    "not",
+                    "number",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We employ GPT-4o-mini <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib20\" title=\"\">20</a>]</cite> to automatically generate multiple-choice questions (MCQs) that examine the key information in each paragraph. Each evaluation task consists of a paragraph and its two to ten associated questions. Each MCQ contains four options: one correct answer, one &#8220;Other,&#8221; and two distractors representing different error types, as illustrated in Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab2</span>. All questions are manually inspected, and problematic items caused by GPT hallucinations are removed.</p>\n\n",
                 "matched_terms": [
-                    "options",
-                    "evaluation",
+                    "each",
                     "task",
-                    "“other”",
-                    "each"
+                    "evaluation",
+                    "options",
+                    "“other”"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For SP-MCQA evaluation, annotators listen to speech and answer multiple-choice textual questions based on its content, with accuracy scored as 1 for a correct answer and 0 otherwise. We recruit 40 annotators who are either native English speakers or non-native with an IELTS listening score 8.0<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_href\" href=\"https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained\" title=\"\">https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained</a> Band 8.0 indicates a very good user with a fully operational command of the language, making only occasional unsystematic inaccuracies or inappropriacies, and able to handle complex, detailed argumentation with only minor misunderstandings in unfamiliar situations.</span></span></span> and above. All annotators receive clear instructions: &#8220;Select the answer that directly matches the information explicitly stated in the audio; do not infer beyond what is clearly stated.&#8221;</p>\n\n",
                 "matched_terms": [
+                    "speech",
                     "spmcqa",
                     "evaluation",
+                    "not",
                     "only",
-                    "speech",
-                    "audio",
-                    "not"
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each evaluation task is randomly assigned to two annotators. If their answers differ, a third annotator is added; if all three differ, a fourth is introduced. No further annotators are involved if disagreement persists among four. Golden test questions are randomly inserted into 10% of tasks to assess general knowledge. Only annotators achieving 100% accuracy on golden tests are retained; results from those below this threshold are discarded, and their tasks are reassigned to other qualified annotators. The final SP-MCQA ACC is computed as the average accuracy across qualified annotators. We also collect qualitative feedback for future analysis.</p>\n\n",
                 "matched_terms": [
+                    "each",
                     "spmcqa",
-                    "evaluation",
-                    "only",
                     "task",
-                    "each"
+                    "evaluation",
+                    "only"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We select FishSpeech V1.4 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib5\" title=\"\">5</a>]</cite>, MaskGCT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib8\" title=\"\">8</a>]</cite>, F5-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib6\" title=\"\">6</a>]</cite>, and CosyVoice 2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib7\" title=\"\">7</a>]</cite> for our SP-MCQA evaluation due to their strong performance in regular intelligibility assessment. FishSpeech V1.4 employs a dual autoregressive (AR) architecture and leverages LLMs for rich linguistic feature extraction, resulting in clear pronunciation and highly intelligible output. MaskGCT, a fully non-autoregressive (NAR) model with a mask-and-predict paradigm, enables fast parallel synthesis while maintaining high word-level accuracy and strong speaker similarity across unseen speakers. F5-TTS, also fully NAR with flow-matching-based diffusion, achieves low WER and expressive speech synthesis, providing robust intelligibility and controllable speaking rates. CosyVoice 2 combines AR fidelity with NAR speed, separately modeling semantic and acoustic features to enhance prosody, rhythm, and intonation, supporting naturalness and speaker identity preservation in both streaming and non-streaming scenarios. Collectively, these models represent diverse architectures and design choices, making them ideal for assessing the accuracy, speaker consistency, and audio quality of synthesized speech in key-information-sensitive tasks under news-style content.</p>\n\n",
                 "matched_terms": [
-                    "pronunciation",
-                    "spmcqa",
-                    "evaluation",
                     "speech",
+                    "spmcqa",
+                    "cosyvoice",
                     "fishspeech",
+                    "evaluation",
                     "f5tts",
                     "fast",
-                    "speed",
+                    "maskgct",
                     "audio",
-                    "cosyvoice",
-                    "maskgct"
+                    "speed",
+                    "pronunciation"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We also conduct objective evaluations on each model across three key aspects: intelligibility, coherence, and audio quality. Intelligibility is evaluated using Word Error Rate (WER), computed with the jewel package and transcribed by Whisper-large-v3<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/openai/whisper-large-v3\" title=\"\">https://huggingface.co/openai/whisper-large-v3</a></span></span></span> ASR, with a fixed &#8220;prompt&#8221; parameter to ensure consistent transcription style. Coherence is assessed via speaker similarity (S-SIM), which computes the cosine similarity between WavLM-TDNN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib21\" title=\"\">21</a>]</cite> speaker embeddings of the synthesized speech and the reference prompt. Audio quality is evaluated using Deep Noise Suppression Mean Opinion Score (DNSMOS) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#bib.bib22\" title=\"\">22</a>]</cite>, derived from P.835 human ratings, providing an overall audio quality score on a 1-5 scale. All metrics are computed at a 16 kHz sampling rate. While WER is our primary intelligibility metric for comparison, all three objective metrics together provide reference values for the overall quality of the SP-MCQA-Eval test set and the synthesized speech produced by TTS models.</p>\n\n",
                 "matched_terms": [
-                    "noise",
-                    "rate",
                     "speech",
+                    "noise",
                     "each",
+                    "rate",
                     "between",
                     "audio"
                 ]
@@ -813,24 +813,24 @@
             {
                 "html": "<p class=\"ltx_p\">The SP-MCQA-Eval test set contains 483 unique speakers. During inference, we select one prompt (utterance + transcript) from each speaker, while the transcripts of all utterances&#8212;including the selected prompts&#8212;serve as target texts, yielding 5,805 prompt&#8211;target pairs in total. These pairs preserve speaker identity, enabling direct evaluation against ground-truth data. TTS inferences are conducted on 8 NVIDIA GeForce RTX 4090 GPUs using the official code from each model&#8217;s GitHub repository. For MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct\" title=\"\">https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct</a></span></span></span>, we modify the G2P module to correctly classify numerical inputs as English (en) instead of &#8220;other language.&#8221; For CosyVoice 2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/FunAudioLLM/CosyVoice\" title=\"\">https://github.com/FunAudioLLM/CosyVoice</a></span></span></span>, we remove the duration constraint in frontend.py, allowing the model to process speech tokens for audio longer than 30 seconds. No modifications are made to the inference code for FishSpeech V1.4<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/fishaudio/fish-speech\" title=\"\">https://github.com/fishaudio/fish-speech</a></span></span></span> and F5-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/SWivid/F5-TTS\" title=\"\">https://github.com/SWivid/F5-TTS</a></span></span></span>. All evaluations are also conducted under the same experimental setup as inference.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
                     "speech",
-                    "fishspeech",
-                    "data",
-                    "seconds",
                     "each",
-                    "audio",
                     "cosyvoice",
-                    "than"
+                    "fishspeech",
+                    "seconds",
+                    "evaluation",
+                    "than",
+                    "data",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The evaluation results of ground-truth and four TTS models under SP-MCQA-Eval are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.26190v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Results &amp; Analysis &#8227; 4 Experiments &#8227; SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The relatively moderate performance of the ground-truth mainly stem from imprecise in timestamp extraction during pre-processing; nevertheless, these values still provide a meaningful reference for evaluation. While FishSpeech ranks highest in WER, it performs worst in SP-MCQA ACC, whereas CosyVoice 2, despite its lower rank in WER, ranks highest in SP-MCQA ACC. This reveals a critical limitation of WER: models with low WER may still fail to convey key information accurately.</p>\n\n",
                 "matched_terms": [
-                    "evaluation",
-                    "cosyvoice",
                     "spmcqa",
-                    "fishspeech"
+                    "fishspeech",
+                    "evaluation",
+                    "cosyvoice"
                 ]
             },
             {
@@ -846,31 +846,31 @@
             {
                 "html": "<p class=\"ltx_p\">We further analyze annotators&#8217; comments for selecting &#8220;Other&#8221; (Table <span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:tab4</span>). CosyVoice 2 occasionally adds noise at sentence endings, raising WER and slightly lowering SP-MCQA ACC. However, it is the only model that correctly pronounces all tested abbreviations (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alabama&#8221;), achieving the highest SP-MCQA ACC. MaskGCT generates odd sounds and struggles with proper nouns (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Alala&#8221;), performing slightly worse on the SP-MCQA task. F5-TTS, in addition to incorrectly handling uncommon text (e.g., &#8220;Ala.&#8221;&#8594;&#8220;Ala&#8221;), exhibits overly fast speech, hindering the recognition of key information. FishSpeech suffers from mid-sentence word drops and cut-offs due to normalization issues (e.g., &#8220;Ala.&#8221;&#8594;&#8220; &#8221;), yielding the lowest SP-MCQA ACC despite lowest WER. These observations underscore the need for robust text normalization and key-information accuracy evaluation beyond conventional metrics.</p>\n\n",
                 "matched_terms": [
-                    "sentence",
-                    "spmcqa",
-                    "noise",
-                    "evaluation",
-                    "only",
-                    "task",
-                    "speech",
-                    "fishspeech",
-                    "f5tts",
                     "comments",
-                    "fast",
+                    "noise",
+                    "spmcqa",
                     "proper",
+                    "speech",
+                    "task",
                     "selecting",
-                    "“other”",
                     "cosyvoice",
-                    "maskgct"
+                    "sentence",
+                    "fishspeech",
+                    "evaluation",
+                    "maskgct",
+                    "f5tts",
+                    "fast",
+                    "only",
+                    "“other”"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we propose SP-MCQA, a framework that evaluates the accuracy of key information in synthesized speech beyond the word level for TTS models. SP-MCQA demonstrates that even SOTA TTS models exhibit critical weaknesses in key information when handling real-world speech complexity. Key findings include: (1) significant discrepancies between word-by-word accuracy and key information accuracy; (2) phonetic errors and text-normalization challenges in uncommon contexts and irregular patterns &#8212; particularly with names, numbers, and abbreviations &#8212; with each model exhibiting distinct error patterns, all of which should be addressed in future speech synthesis research. While our approach paves the way for high-level evaluation, limitations such as the substantial manual effort required for human evaluation remain. Future work will explore leveraging Audio LLMs for more efficient and scalable assessment and extend this work to other languages to provide clearer guidance for improving multilingual TTS systems.</p>\n\n",
                 "matched_terms": [
-                    "spmcqa",
-                    "evaluation",
                     "speech",
+                    "spmcqa",
                     "each",
+                    "evaluation",
                     "between",
                     "audio"
                 ]

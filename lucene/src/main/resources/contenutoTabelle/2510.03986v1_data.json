@@ -5,16 +5,16 @@
         "body": "Language\nAccuracy (%)\n\n\nEnglish\n97.5\n\n\nGerman\n96.8\n\n\nRussian\n99.7",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Language</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Accuracy (%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">English</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">97.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">German</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">96.8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">Russian</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">99.7</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "language",
-            "english",
-            "across",
-            "russian",
             "detection",
-            "accuracy",
-            "german",
+            "language",
+            "dysarthria",
+            "across",
+            "english",
             "different",
+            "russian",
+            "german",
             "languages",
-            "dysarthria"
+            "accuracy"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">To evaluate cross-lingual generalization, we fine-tuned the English-trained model on German and Russian datasets. The model maintained high accuracy on both these languages as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T1\" title=\"TABLE I &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>. The confusion matrix in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F9\" title=\"Figure 9 &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>b should that 98 out of 100 dysarthric and 98 out of 100 non-dysarthric samples were correctly identified in the Russian dataset, with only minimal misclassifications.</p>\n\n"
@@ -23,15 +23,15 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "english",
-                    "across",
-                    "russian",
                     "detection",
-                    "accuracy",
-                    "german",
+                    "dysarthria",
+                    "across",
+                    "english",
                     "different",
+                    "russian",
+                    "german",
                     "languages",
-                    "dysarthria"
+                    "accuracy"
                 ]
             },
             {
@@ -44,73 +44,73 @@
             {
                 "html": "<p class=\"ltx_p\">In contrast, machine learning models trained on diverse, labeled datasets offer an objective alternative to human assessments. By extracting language-agnostic acoustic features and learning features across speech samples, ML can reduce diagnostic bias and enable more consistent screening. This makes machine learning based tools especially promising for accessible dysarthria detection across diverse healthcare settings.</p>\n\n",
                 "matched_terms": [
-                    "across",
+                    "detection",
                     "dysarthria",
-                    "detection"
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recent advances in machine learning have led to the development of models capable of detecting dysarthria using acoustic features such as Mel-Frequency Cepstral Coefficients (MFCCs), spectrograms, or prosodic cues. Prior work has focused largely on binary classification, distinguishing dysarthric from healthy speech, using convolutional or recurrent neural networks trained on datasets like TORGO and UA-Speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib9\" title=\"\">9</a>]</cite>. However, these models are typically trained and evaluated on a single language, limiting their clinical applicability across multilingual populations.</p>\n\n",
                 "matched_terms": [
                     "language",
-                    "across",
-                    "dysarthria"
+                    "dysarthria",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilized four primary datasets in this study. The TORGO dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib16\" title=\"\">16</a>]</cite> provides paired audio samples and textual prompts from individuals with and without dysarthria, supporting analysis of articulatory impairments in English Speech. From this corpus, we accessed a subset of approximately 2,000 audio files (500 each for female non-dysarthric, female dysarthric, male dysarthric, and male non-dysarthric speakers) made available on Kaggle<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib17\" title=\"\">17</a>]</cite>, and paired them with textual prompts sourced from a separate Kaggle dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib18\" title=\"\">18</a>]</cite>. The UA Dysarthria dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib19\" title=\"\">19</a>]</cite> was used for severity classification and includes 11,436 speech spectrograms labeled across 4 severity levels: very low, low, medium, high. For Russian-language data, the Hyperkinetic Dysarthria Speech dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib20\" title=\"\">20</a>]</cite> was utilized, providing 2000 samples from both Dysarthric and non-dysarthric patients reciting the same phrase, along with corresponding prompts. Additionally, the Dysarthric German dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib21\" title=\"\">21</a>]</cite> contributed 1,272 samples of Dysarthric German speech for crosslingual prediction.</p>\n\n",
                 "matched_terms": [
                     "german",
+                    "dysarthria",
                     "english",
-                    "across",
-                    "dysarthria"
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To gain initial insight into speech patterns associated with dysarthria, we visualized spectrograms across gender and condition (dysarthric vs non-dysarthric). In the highlighted regions shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F1.fig1\" title=\"Figure 1 &#8227; II-2 Initial Feature Extraction &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, we observe that dysarthric speech tends to exhibit prolonged low-frequency spectral bands and reduced clarity, indicative of slurred articulation and irregular pacing. In contrast, non-dysarthric speech shows more distinct high-frequency bursts and cleaner articulation boundaries.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "dysarthria"
+                    "dysarthria",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To perform dysarthria detection from MFCC inputs, we adapted a simple 2D Convolutional Neural Network (CNN) architecture based on a publicly available Kaggle notebook. The model takes MFCC visualizations as input and passes them through two convolutional layers with max-pooling, followed by a dense layer with 32 units and a final output layer for binary classification. This architecture, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F2.fig1\" title=\"Figure 2 &#8227; II-A Dysarthria Detection Task &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, is effective at capturing time-frequency patterns relevant to dysarthric speech for our multilingual classification experiments. The model was trained for 50\nepochs after which the training and validation loss converged.</p>\n\n",
                 "matched_terms": [
-                    "dysarthria",
-                    "detection"
+                    "detection",
+                    "dysarthria"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the first stage of our pipeline, we trained a U-Net model to map dysarthric speech to clean speech using Russian speech. As outlined in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F4.fig1\" title=\"Figure 4 &#8227; II-C1 Stage 1: Russian Dysarthric Speech to Normal Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, raw .wav files were converted into mel spectrograms using Librosa, then rescaled in decibels and resized to a uniform 128x128 image for consistent model input. These paired spectrograms were saved as .npy files for training. The U-Net model was trained for 300 epochs, with a learning rate of 1e-4, to output a clean spectrogram from a dysarthric spectrogram, and the learned weights were exported. This step allows the model to learn structural transformations between distorted and healthy speech, that generalize across languages due to shared characteristics.</p>\n\n",
                 "matched_terms": [
-                    "languages",
+                    "russian",
                     "across",
-                    "russian"
+                    "languages"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Although the Torgo database contains substantial English dysarthric speech, we encountered a key challenge: very few clean&#8211;dysarthric pairs were spoken with the same text, which is necessary for paired spectrogram training. To construct a usable dataset, we manually filtered for matched male and female speakers saying the same sentences. After preprocessing, we identified only 190 matched female and 37 matched male samples. These were processed into mel spectrograms using the same pipeline as in Stage 1.\nTo address the limitations of training from scratch, we leveraged our U-Net model trained on the larger Russian dataset which had already learned to correct dysarthric distortions and followed the steps shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F5.fig1\" title=\"Figure 5 &#8227; II-C2 Stage 2: Adapting Russian Model to English Dysarthric Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nWe processed English dysarthric audio using the same preprocessing steps outlined in Phase 1, then initialized the model with Russian weights. We then fine tuned the model using the small available English dataset for 300 epochs and observed an improved performance over models trained from scratch.\nThis cross-lingual transfer approach demonstrates how transfer learning can be used to compensate for scarcity of data and can be potentially applied to low-resource languages.</p>\n\n",
                 "matched_terms": [
-                    "languages",
                     "english",
-                    "russian"
+                    "russian",
+                    "languages"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To detect the presence of dysarthria, we trained a binary classifier on MFCC features extracted from the TORGO English dataset. The model achieved a high accuracy of 97.5%, and the training curve in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F9\" title=\"Figure 9 &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>a shows stable convergence with minimal overfitting, supported by consistent validation loss.</p>\n\n",
                 "matched_terms": [
                     "dysarthria",
-                    "english",
-                    "accuracy"
+                    "accuracy",
+                    "english"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our severity classifier was trained on spectrogram images of patients ranging across different severities of dysarthria. The model received a testing accuracy of 97.64% as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T2\" title=\"TABLE II &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">II</span></a>. The loss curves in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F10\" title=\"Figure 10 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> show convergence after 8 epochs. The confusion matrix in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F11\" title=\"Figure 11 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">11</span></a> shows very few misclassified instances.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "across",
                     "dysarthria",
-                    "different"
+                    "different",
+                    "across",
+                    "accuracy"
                 ]
             },
             {
@@ -123,50 +123,50 @@
             {
                 "html": "<p class=\"ltx_p\">Our Speech-to-Text model received its best accuracy after 3 epochs. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T4\" title=\"TABLE IV &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> shows a training loss (word error rate) of 0.1367 towards the 3rd epoch, indicating an accuracy of 87.33%. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F15\" title=\"Figure 15 &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">15</span></a> indicates decreasing loss in only three epochs, a result of Whisper Tiny&#8217;s light framework designed for slurred speech. The output transcription can then be use for patient voice cloning, recreating the speaker&#8217;s original voice identity in what they say after being diagnosed with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "dysarthria"
+                    "dysarthria",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Patients with dysarthria often have altered sentiment in their voice due to speech impairment. Model confidences shown in table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T5\" title=\"TABLE V &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> indicate moderate levels of confidence across all emotions when analyzing speech transcriptions. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T6\" title=\"TABLE VI &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a> showcases sample sentences along with their corresponding emotion.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "dysarthria"
+                    "dysarthria",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Overall, we were able to achieve high classification accuracy across English, Russian, and German demonstrating that our model is able to capture the acoustic patterns of Dysarthric speech while also generalizing to cross linguistic patterns. This cross-linguistic robustness is promising for improved dysarthria classification in other languages without as much available data.\nUsing a CNN for spectrogram-based severity detection also yielded promising and interpretable results, which enables early detection of dysarthria that a human examiner may not be able to pick up. Saliency heatmaps show that across all classes, the model is focusing on the lower harmonics, centered around the timepoints and frequencies that the signal lies in. This confirms the reason behind model prediction, as our model is able to look at a signal with interpretable results.</p>\n\n",
                 "matched_terms": [
-                    "english",
+                    "detection",
+                    "dysarthria",
                     "across",
                     "russian",
-                    "detection",
-                    "accuracy",
+                    "english",
                     "german",
                     "languages",
-                    "dysarthria"
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The results from our speech to speech model suggests that U-Net based spectrogram translation is promising for translating dysarthric speech to normal speech. By directly learning mappings from disordered to normalized speech spectrograms, the model is able to recover key time-frequency structures associated with clarity. While most existing systems rely on large matched datasets, our approach shows that using a pretrained architecture trained on Russian speech can be applied to low-resource languages. This highlights the potential of transfer learning for low resource languages, where collecting large paired datasets may not be feasible.</p>\n\n",
                 "matched_terms": [
-                    "languages",
-                    "russian"
+                    "russian",
+                    "languages"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">ASR using transfer learning with Whisper Tiny effectively used the pretrained model and adjusted well to the limited dysarthria data using freezing and data augmentation. Whisper Tiny supports 99 languages and further research is needed for fine-tuning the transfer learning model to generalize to multiple languages, improving accessibility <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib27\" title=\"\">27</a>]</cite>. The main benefits of Whisper Tiny is that it is very robust, trained on 680,000 hours of multilingual data while also providing faster inferences than the two other transfer learning models tested (Wav2Vec and Whisper Tiny) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib28\" title=\"\">28</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "languages",
-                    "dysarthria"
+                    "dysarthria",
+                    "languages"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While our framework demonstrates promising results across multiple tasks and languages, it has some limitations. First, our English speech-to-speech model was fine-tuned on a small paired dataset, which may restrict generalization across broader accents or sentence structures. Second, the emotion classifier was trained solely on clean transcriptions and may not fully capture emotion from more spontaneous or emotionally complex utterances. Finally, while our cross-lingual transfer approach worked well from Russian to English, its effectiveness across more structurally distant language pairs remains untested.\nFuture work includes expanding our dataset to include more diverse speakers and dialects, improving robustness to spontaneous speech, and testing the framework on additional low-resource languages. We also aim to refine the voice cloning pipeline to better preserve speaker identity over longer and more variable inputs.</p>\n\n",
                 "matched_terms": [
                     "language",
-                    "english",
                     "across",
+                    "english",
                     "russian",
                     "languages"
                 ]
@@ -174,14 +174,14 @@
             {
                 "html": "<p class=\"ltx_p\">In this work, we present a multilingual framework for addressing the many dimensions of dysarthria, including detection, severity classification, speech-to-text transcription, clean speech generation, emotion classification, and voice cloning. Our models show high performance across English, Russian, and German datasets, demonstrating the potential for use in real-world multilingual settings.\nTo expand the reach of our framework, our next goal is to incorporate more low-resource languages where dysarthria diagnosis tools are especially scarce. We also aim to further reduce the Word Error Rate (WER) in our speech-to-text module by increasing dataset size, fine-tuning on more speech, and exploring multimodal data (e.g. combining acoustic features with visual inputs such as lip movements) to improve transcription accuracy. Our work is the foundation for a globally inclusive system for speech-based assistive technologies to bridge linguistic gaps and support communication and care for all patients with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "english",
+                    "detection",
+                    "dysarthria",
                     "across",
                     "russian",
-                    "detection",
-                    "accuracy",
+                    "english",
                     "german",
                     "languages",
-                    "dysarthria"
+                    "accuracy"
                 ]
             }
         ]
@@ -192,14 +192,14 @@
         "body": "Metric\nAccuracy (%)\n\n\nTraining Accuracy\n98.18\n\n\nValidation Accuracy\n97.38\n\n\nTesting Accuracy\n97.64",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Accuracy (%)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">Training Accuracy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">98.18</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r\">Validation Accuracy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">97.38</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r\">Testing Accuracy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">97.64</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "validation",
-            "across",
-            "accuracy",
-            "datasets",
-            "training",
             "testing",
+            "validation",
+            "model",
+            "training",
+            "across",
             "metric",
-            "model"
+            "datasets",
+            "accuracy"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Our severity classifier was trained on spectrogram images of patients ranging across different severities of dysarthria. The model received a testing accuracy of 97.64% as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T2\" title=\"TABLE II &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">II</span></a>. The loss curves in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F10\" title=\"Figure 10 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> show convergence after 8 epochs. The confusion matrix in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F11\" title=\"Figure 11 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">11</span></a> shows very few misclassified instances.</p>\n\n"
@@ -208,39 +208,39 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "accuracy",
-                    "datasets",
+                    "model",
                     "training",
-                    "model"
+                    "across",
+                    "datasets",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In contrast, machine learning models trained on diverse, labeled datasets offer an objective alternative to human assessments. By extracting language-agnostic acoustic features and learning features across speech samples, ML can reduce diagnostic bias and enable more consistent screening. This makes machine learning based tools especially promising for accessible dysarthria detection across diverse healthcare settings.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "datasets"
+                    "datasets",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recent advances in machine learning have led to the development of models capable of detecting dysarthria using acoustic features such as Mel-Frequency Cepstral Coefficients (MFCCs), spectrograms, or prosodic cues. Prior work has focused largely on binary classification, distinguishing dysarthric from healthy speech, using convolutional or recurrent neural networks trained on datasets like TORGO and UA-Speech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib9\" title=\"\">9</a>]</cite>. However, these models are typically trained and evaluated on a single language, limiting their clinical applicability across multilingual populations.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "datasets"
+                    "datasets",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Prior research has explored several generative voice conversion and augmentation approaches for translating dysarthric speech to regular speech. The CycleGAN-VC model architecture was applied to Korean dysarthric speech (18700) utterances and healthy controls reducing Word-Error-Rate by 33.4% <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib11\" title=\"\">11</a>]</cite>. However, CycleGANs often produce artifacts especially in highly impaired speech and pixel level consistency can potentially be problematic and cause unrealistic images <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib12\" title=\"\">12</a>]</cite>. The DVC 3.1 system, which combines data augmentation with a StarGAN-VC backbone <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib13\" title=\"\">13</a>]</cite> improved both ASR word recognition and listener ratings. Still, the quality of generated speech heavily depends on the synthetic data distribution and can degrade for highly variable input. More recently, diffusion-based voice conversion with Fuzzy Expectation Maximization (FEM) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib14\" title=\"\">14</a>]</cite> improved intelligibility and accuracy using soft clustering, but diffusion models are typically slow to sample.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
-                    "model"
+                    "model",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilized four primary datasets in this study. The TORGO dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib16\" title=\"\">16</a>]</cite> provides paired audio samples and textual prompts from individuals with and without dysarthria, supporting analysis of articulatory impairments in English Speech. From this corpus, we accessed a subset of approximately 2,000 audio files (500 each for female non-dysarthric, female dysarthric, male dysarthric, and male non-dysarthric speakers) made available on Kaggle<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib17\" title=\"\">17</a>]</cite>, and paired them with textual prompts sourced from a separate Kaggle dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib18\" title=\"\">18</a>]</cite>. The UA Dysarthria dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib19\" title=\"\">19</a>]</cite> was used for severity classification and includes 11,436 speech spectrograms labeled across 4 severity levels: very low, low, medium, high. For Russian-language data, the Hyperkinetic Dysarthria Speech dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib20\" title=\"\">20</a>]</cite> was utilized, providing 2000 samples from both Dysarthric and non-dysarthric patients reciting the same phrase, along with corresponding prompts. Additionally, the Dysarthric German dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib21\" title=\"\">21</a>]</cite> contributed 1,272 samples of Dysarthric German speech for crosslingual prediction.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "datasets"
+                    "datasets",
+                    "across"
                 ]
             },
             {
@@ -263,8 +263,8 @@
                 "html": "<p class=\"ltx_p\">In the first stage of our pipeline, we trained a U-Net model to map dysarthric speech to clean speech using Russian speech. As outlined in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F4.fig1\" title=\"Figure 4 &#8227; II-C1 Stage 1: Russian Dysarthric Speech to Normal Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, raw .wav files were converted into mel spectrograms using Librosa, then rescaled in decibels and resized to a uniform 128x128 image for consistent model input. These paired spectrograms were saved as .npy files for training. The U-Net model was trained for 300 epochs, with a learning rate of 1e-4, to output a clean spectrogram from a dysarthric spectrogram, and the learned weights were exported. This step allows the model to learn structural transformations between distorted and healthy speech, that generalize across languages due to shared characteristics.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "across",
-                    "training"
+                    "training",
+                    "across"
                 ]
             },
             {
@@ -278,17 +278,17 @@
                 "html": "<p class=\"ltx_p\">To detect the presence of dysarthria, we trained a binary classifier on MFCC features extracted from the TORGO English dataset. The model achieved a high accuracy of 97.5%, and the training curve in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F9\" title=\"Figure 9 &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>a shows stable convergence with minimal overfitting, supported by consistent validation loss.</p>\n\n",
                 "matched_terms": [
                     "validation",
-                    "accuracy",
                     "model",
-                    "training"
+                    "training",
+                    "accuracy"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To evaluate cross-lingual generalization, we fine-tuned the English-trained model on German and Russian datasets. The model maintained high accuracy on both these languages as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T1\" title=\"TABLE I &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>. The confusion matrix in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F9\" title=\"Figure 9 &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>b should that 98 out of 100 dysarthric and 98 out of 100 non-dysarthric samples were correctly identified in the Russian dataset, with only minimal misclassifications.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
                     "model",
-                    "datasets"
+                    "datasets",
+                    "accuracy"
                 ]
             },
             {
@@ -302,9 +302,9 @@
             {
                 "html": "<p class=\"ltx_p\">Our Speech-to-Text model received its best accuracy after 3 epochs. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T4\" title=\"TABLE IV &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> shows a training loss (word error rate) of 0.1367 towards the 3rd epoch, indicating an accuracy of 87.33%. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F15\" title=\"Figure 15 &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">15</span></a> indicates decreasing loss in only three epochs, a result of Whisper Tiny&#8217;s light framework designed for slurred speech. The output transcription can then be use for patient voice cloning, recreating the speaker&#8217;s original voice identity in what they say after being diagnosed with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "accuracy",
                     "model",
-                    "training"
+                    "training",
+                    "accuracy"
                 ]
             },
             {
@@ -318,8 +318,8 @@
                 "html": "<p class=\"ltx_p\">Overall, we were able to achieve high classification accuracy across English, Russian, and German demonstrating that our model is able to capture the acoustic patterns of Dysarthric speech while also generalizing to cross linguistic patterns. This cross-linguistic robustness is promising for improved dysarthria classification in other languages without as much available data.\nUsing a CNN for spectrogram-based severity detection also yielded promising and interpretable results, which enables early detection of dysarthria that a human examiner may not be able to pick up. Saliency heatmaps show that across all classes, the model is focusing on the lower harmonics, centered around the timepoints and frequencies that the signal lies in. This confirms the reason behind model prediction, as our model is able to look at a signal with interpretable results.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "accuracy",
-                    "across"
+                    "across",
+                    "accuracy"
                 ]
             },
             {
@@ -332,17 +332,17 @@
             {
                 "html": "<p class=\"ltx_p\">While our framework demonstrates promising results across multiple tasks and languages, it has some limitations. First, our English speech-to-speech model was fine-tuned on a small paired dataset, which may restrict generalization across broader accents or sentence structures. Second, the emotion classifier was trained solely on clean transcriptions and may not fully capture emotion from more spontaneous or emotionally complex utterances. Finally, while our cross-lingual transfer approach worked well from Russian to English, its effectiveness across more structurally distant language pairs remains untested.\nFuture work includes expanding our dataset to include more diverse speakers and dialects, improving robustness to spontaneous speech, and testing the framework on additional low-resource languages. We also aim to refine the voice cloning pipeline to better preserve speaker identity over longer and more variable inputs.</p>\n\n",
                 "matched_terms": [
+                    "testing",
                     "model",
-                    "across",
-                    "testing"
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we present a multilingual framework for addressing the many dimensions of dysarthria, including detection, severity classification, speech-to-text transcription, clean speech generation, emotion classification, and voice cloning. Our models show high performance across English, Russian, and German datasets, demonstrating the potential for use in real-world multilingual settings.\nTo expand the reach of our framework, our next goal is to incorporate more low-resource languages where dysarthria diagnosis tools are especially scarce. We also aim to further reduce the Word Error Rate (WER) in our speech-to-text module by increasing dataset size, fine-tuning on more speech, and exploring multimodal data (e.g. combining acoustic features with visual inputs such as lip movements) to improve transcription accuracy. Our work is the foundation for a globally inclusive system for speech-based assistive technologies to bridge linguistic gaps and support communication and care for all patients with dysarthria.</p>\n\n",
                 "matched_terms": [
                     "accuracy",
-                    "across",
-                    "datasets"
+                    "datasets",
+                    "across"
                 ]
             }
         ]
@@ -353,34 +353,34 @@
         "body": "Pretrained Russian U-Net\n\n\nfinetuned on English",
         "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">Pretrained Russian U-Net</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">finetuned on English</span></td>\n</tr>\n</table>\n",
         "informative_terms_identified": [
+            "training",
+            "transfer",
             "dysarthric–clean",
+            "via",
+            "setups",
+            "russiantrained",
+            "pretrained",
             "losses",
-            "data",
+            "spectrograms",
+            "three",
+            "unet",
+            "test",
+            "across",
+            "russian",
+            "english",
+            "learning",
+            "iii",
             "good",
             "limited",
-            "pretraining",
-            "via",
-            "transfer",
-            "russian",
-            "leads",
-            "pretrained",
-            "learning",
-            "performance",
-            "russiantrained",
-            "comparison",
-            "setups",
+            "model",
             "trained",
-            "training",
-            "iii",
+            "performance",
             "finetuned",
-            "test",
-            "english",
-            "across",
-            "three",
-            "spectrograms",
-            "unet",
             "paired",
-            "model"
+            "pretraining",
+            "data",
+            "comparison",
+            "leads"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">The model achieved a relatively low L1 training loss (0.03) and validation loss (0.06) shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T3\" title=\"TABLE III &#8227; III-C3 Comparison of Speech to Speech Results &#8227; III-C Speech to Speech Pipelines &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">III</span></a>. The fine-tuned model for the English dataset achieved a low train and test loss of 0.02 loss of 0.03 respectively.</p>\n\n"
@@ -389,21 +389,21 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "transfer",
-                    "learning",
-                    "english",
-                    "losses",
-                    "across",
-                    "russian",
                     "three",
-                    "data",
-                    "trained",
                     "limited",
-                    "training",
-                    "paired",
-                    "test",
                     "model",
-                    "finetuned"
+                    "transfer",
+                    "training",
+                    "test",
+                    "across",
+                    "finetuned",
+                    "russian",
+                    "english",
+                    "learning",
+                    "data",
+                    "paired",
+                    "trained",
+                    "losses"
                 ]
             },
             {
@@ -419,32 +419,32 @@
                 "matched_terms": [
                     "trained",
                     "learning",
-                    "across",
-                    "spectrograms"
+                    "spectrograms",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While recent approaches <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib10\" title=\"\">10</a>]</cite> to dysarthria severity classification have received high performance using neural networks, they are often black boxes, not explaining the reasoning behind model classification. Furthermore, features extracted for the model, including embeddings from wav2vec2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib10\" title=\"\">10</a>]</cite>, do not offer insight on which acoustic characteristics of the slurred speech distinguish it from clean or less severe dysarthric speech. An interpretable model can thereby give insight as to which features of the speech are altered in dysarthria, helping with speech therapy and increasing patient understanding.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "performance"
+                    "performance",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Prior research has explored several generative voice conversion and augmentation approaches for translating dysarthric speech to regular speech. The CycleGAN-VC model architecture was applied to Korean dysarthric speech (18700) utterances and healthy controls reducing Word-Error-Rate by 33.4% <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib11\" title=\"\">11</a>]</cite>. However, CycleGANs often produce artifacts especially in highly impaired speech and pixel level consistency can potentially be problematic and cause unrealistic images <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib12\" title=\"\">12</a>]</cite>. The DVC 3.1 system, which combines data augmentation with a StarGAN-VC backbone <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib13\" title=\"\">13</a>]</cite> improved both ASR word recognition and listener ratings. Still, the quality of generated speech heavily depends on the synthetic data distribution and can degrade for highly variable input. More recently, diffusion-based voice conversion with Fuzzy Expectation Maximization (FEM) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib14\" title=\"\">14</a>]</cite> improved intelligibility and accuracy using soft clustering, but diffusion models are typically slow to sample.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "data"
+                    "data",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilized four primary datasets in this study. The TORGO dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib16\" title=\"\">16</a>]</cite> provides paired audio samples and textual prompts from individuals with and without dysarthria, supporting analysis of articulatory impairments in English Speech. From this corpus, we accessed a subset of approximately 2,000 audio files (500 each for female non-dysarthric, female dysarthric, male dysarthric, and male non-dysarthric speakers) made available on Kaggle<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib17\" title=\"\">17</a>]</cite>, and paired them with textual prompts sourced from a separate Kaggle dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib18\" title=\"\">18</a>]</cite>. The UA Dysarthria dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib19\" title=\"\">19</a>]</cite> was used for severity classification and includes 11,436 speech spectrograms labeled across 4 severity levels: very low, low, medium, high. For Russian-language data, the Hyperkinetic Dysarthria Speech dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib20\" title=\"\">20</a>]</cite> was utilized, providing 2000 samples from both Dysarthric and non-dysarthric patients reciting the same phrase, along with corresponding prompts. Additionally, the Dysarthric German dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib21\" title=\"\">21</a>]</cite> contributed 1,272 samples of Dysarthric German speech for crosslingual prediction.</p>\n\n",
                 "matched_terms": [
-                    "english",
                     "across",
-                    "spectrograms",
+                    "english",
+                    "paired",
                     "data",
-                    "paired"
+                    "spectrograms"
                 ]
             },
             {
@@ -466,40 +466,40 @@
                 "html": "<p class=\"ltx_p\">A sequential model was defined with model architecture shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F3.fig1\" title=\"Figure 3 &#8227; II-B Severity Classification Task &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. Three 2D convolutional layers were used to extract important features from the model, each of which were followed by a Max Pooling layer for dimensionality reduction. A dropout of 0.5 was specified to reduce overfitting and increase generalizability. The model was trained for 10 epochs after which the training and validation loss converged.</p>\n\n",
                 "matched_terms": [
                     "trained",
-                    "model",
                     "three",
+                    "model",
                     "training"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the first stage of our pipeline, we trained a U-Net model to map dysarthric speech to clean speech using Russian speech. As outlined in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F4.fig1\" title=\"Figure 4 &#8227; II-C1 Stage 1: Russian Dysarthric Speech to Normal Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, raw .wav files were converted into mel spectrograms using Librosa, then rescaled in decibels and resized to a uniform 128x128 image for consistent model input. These paired spectrograms were saved as .npy files for training. The U-Net model was trained for 300 epochs, with a learning rate of 1e-4, to output a clean spectrogram from a dysarthric spectrogram, and the learned weights were exported. This step allows the model to learn structural transformations between distorted and healthy speech, that generalize across languages due to shared characteristics.</p>\n\n",
                 "matched_terms": [
-                    "learning",
-                    "across",
-                    "russian",
-                    "spectrograms",
-                    "trained",
                     "unet",
                     "training",
+                    "across",
+                    "model",
+                    "russian",
+                    "learning",
                     "paired",
-                    "model"
+                    "trained",
+                    "spectrograms"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Although the Torgo database contains substantial English dysarthric speech, we encountered a key challenge: very few clean&#8211;dysarthric pairs were spoken with the same text, which is necessary for paired spectrogram training. To construct a usable dataset, we manually filtered for matched male and female speakers saying the same sentences. After preprocessing, we identified only 190 matched female and 37 matched male samples. These were processed into mel spectrograms using the same pipeline as in Stage 1.\nTo address the limitations of training from scratch, we leveraged our U-Net model trained on the larger Russian dataset which had already learned to correct dysarthric distortions and followed the steps shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F5.fig1\" title=\"Figure 5 &#8227; II-C2 Stage 2: Adapting Russian Model to English Dysarthric Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nWe processed English dysarthric audio using the same preprocessing steps outlined in Phase 1, then initialized the model with Russian weights. We then fine tuned the model using the small available English dataset for 300 epochs and observed an improved performance over models trained from scratch.\nThis cross-lingual transfer approach demonstrates how transfer learning can be used to compensate for scarcity of data and can be potentially applied to low-resource languages.</p>\n\n",
                 "matched_terms": [
-                    "transfer",
-                    "learning",
-                    "english",
-                    "performance",
-                    "russian",
-                    "spectrograms",
-                    "data",
-                    "trained",
                     "unet",
+                    "transfer",
                     "training",
+                    "model",
+                    "russian",
+                    "english",
+                    "learning",
+                    "data",
                     "paired",
-                    "model"
+                    "trained",
+                    "performance",
+                    "spectrograms"
                 ]
             },
             {
@@ -519,9 +519,9 @@
             {
                 "html": "<p class=\"ltx_p\">After obtaining speech to text results, an important component was adding an emotion classifier as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F6.fig1\" title=\"Figure 6 &#8227; II-D1 Speech to Text &#8227; II-D Automatic Speech Recognition, Emotion Classification, and Voice Cloning &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, as sentiment is often lost in their reduced speech intelligibility and limitation in expressing nonverbal information <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib24\" title=\"\">24</a>]</cite>. We used the pretrained Emotion English DistilRoBERTa-base transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib25\" title=\"\">25</a>]</cite> to classify english text into 7 sentiments: anger, disgust, fear, joy, sadness, surprise, and neutral. Audio recordings were converted to text using the speech-to-text converter and then subsequently passed into the DistilRoBERTa-base model to infer the speaker&#8217;s emotional state.</p>\n\n",
                 "matched_terms": [
+                    "pretrained",
                     "english",
-                    "model",
-                    "pretrained"
+                    "model"
                 ]
             },
             {
@@ -543,9 +543,9 @@
             {
                 "html": "<p class=\"ltx_p\">To evaluate cross-lingual generalization, we fine-tuned the English-trained model on German and Russian datasets. The model maintained high accuracy on both these languages as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T1\" title=\"TABLE I &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>. The confusion matrix in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F9\" title=\"Figure 9 &#8227; III-A Dysarthria Detection &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>b should that 98 out of 100 dysarthric and 98 out of 100 non-dysarthric samples were correctly identified in the Russian dataset, with only minimal misclassifications.</p>\n\n",
                 "matched_terms": [
-                    "finetuned",
+                    "russian",
                     "model",
-                    "russian"
+                    "finetuned"
                 ]
             },
             {
@@ -559,38 +559,38 @@
             {
                 "html": "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F13\" title=\"Figure 13 &#8227; III-C1 Dysarthria Clean Speech Generation (Russian) &#8227; III-C Speech to Speech Pipelines &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">13</span></a> above displays the input dysarthric spectrograms, the U-Net model&#8217;s predicted outputs, and the corresponding ground truth normal spectrograms. These visualizations confirm that the model successfully learns to denoise and restructure distorted speech patterns. While the outputs preserve the broad frequency distribution of the clean speech, they exhibit slight smoothing and blurring, likely due to the limited phase reconstruction during waveform conversion.</p>\n\n",
                 "matched_terms": [
-                    "unet",
+                    "limited",
                     "model",
                     "spectrograms",
-                    "limited"
+                    "unet"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F14\" title=\"Figure 14 &#8227; III-C2 Dysarthria Clean Speech Generation (Extended to English) &#8227; III-C Speech to Speech Pipelines &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">14</span></a> shows the results of the pretrained Russian U-Net model to generate normal speech from dysarthric speech fine tuned on the small English dataset.</p>\n\n",
                 "matched_terms": [
+                    "model",
+                    "unet",
                     "english",
                     "russian",
-                    "pretrained",
-                    "unet",
-                    "model"
+                    "pretrained"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In Phase 2, the Russian-trained U-Net model was fine-tuned on a much smaller, carefully filtered English dataset. The figure showcases the input English dysarthric spectrograms, model predictions, and their matched ground truth normal counterparts.</p>\n\n",
                 "matched_terms": [
+                    "model",
+                    "unet",
+                    "finetuned",
                     "english",
                     "russiantrained",
-                    "spectrograms",
-                    "unet",
-                    "model",
-                    "finetuned"
+                    "spectrograms"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our Speech-to-Text model received its best accuracy after 3 epochs. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T4\" title=\"TABLE IV &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> shows a training loss (word error rate) of 0.1367 towards the 3rd epoch, indicating an accuracy of 87.33%. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F15\" title=\"Figure 15 &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">15</span></a> indicates decreasing loss in only three epochs, a result of Whisper Tiny&#8217;s light framework designed for slurred speech. The output transcription can then be use for patient voice cloning, recreating the speaker&#8217;s original voice identity in what they say after being diagnosed with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "three",
+                    "model",
                     "training"
                 ]
             },
@@ -604,60 +604,60 @@
             {
                 "html": "<p class=\"ltx_p\">Overall, we were able to achieve high classification accuracy across English, Russian, and German demonstrating that our model is able to capture the acoustic patterns of Dysarthric speech while also generalizing to cross linguistic patterns. This cross-linguistic robustness is promising for improved dysarthria classification in other languages without as much available data.\nUsing a CNN for spectrogram-based severity detection also yielded promising and interpretable results, which enables early detection of dysarthria that a human examiner may not be able to pick up. Saliency heatmaps show that across all classes, the model is focusing on the lower harmonics, centered around the timepoints and frequencies that the signal lies in. This confirms the reason behind model prediction, as our model is able to look at a signal with interpretable results.</p>\n\n",
                 "matched_terms": [
-                    "english",
+                    "model",
                     "across",
                     "russian",
-                    "data",
-                    "model"
+                    "english",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The results from our speech to speech model suggests that U-Net based spectrogram translation is promising for translating dysarthric speech to normal speech. By directly learning mappings from disordered to normalized speech spectrograms, the model is able to recover key time-frequency structures associated with clarity. While most existing systems rely on large matched datasets, our approach shows that using a pretrained architecture trained on Russian speech can be applied to low-resource languages. This highlights the potential of transfer learning for low resource languages, where collecting large paired datasets may not be feasible.</p>\n\n",
                 "matched_terms": [
+                    "unet",
                     "transfer",
-                    "learning",
+                    "model",
                     "russian",
-                    "spectrograms",
+                    "learning",
+                    "paired",
                     "pretrained",
                     "trained",
-                    "unet",
-                    "paired",
-                    "model"
+                    "spectrograms"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">ASR using transfer learning with Whisper Tiny effectively used the pretrained model and adjusted well to the limited dysarthria data using freezing and data augmentation. Whisper Tiny supports 99 languages and further research is needed for fine-tuning the transfer learning model to generalize to multiple languages, improving accessibility <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib27\" title=\"\">27</a>]</cite>. The main benefits of Whisper Tiny is that it is very robust, trained on 680,000 hours of multilingual data while also providing faster inferences than the two other transfer learning models tested (Wav2Vec and Whisper Tiny) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib28\" title=\"\">28</a>]</cite>.</p>\n\n",
                 "matched_terms": [
+                    "limited",
+                    "model",
                     "transfer",
                     "learning",
                     "data",
                     "pretrained",
-                    "trained",
-                    "limited",
-                    "model"
+                    "trained"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While our framework demonstrates promising results across multiple tasks and languages, it has some limitations. First, our English speech-to-speech model was fine-tuned on a small paired dataset, which may restrict generalization across broader accents or sentence structures. Second, the emotion classifier was trained solely on clean transcriptions and may not fully capture emotion from more spontaneous or emotionally complex utterances. Finally, while our cross-lingual transfer approach worked well from Russian to English, its effectiveness across more structurally distant language pairs remains untested.\nFuture work includes expanding our dataset to include more diverse speakers and dialects, improving robustness to spontaneous speech, and testing the framework on additional low-resource languages. We also aim to refine the voice cloning pipeline to better preserve speaker identity over longer and more variable inputs.</p>\n\n",
                 "matched_terms": [
-                    "transfer",
-                    "english",
-                    "across",
-                    "russian",
-                    "trained",
-                    "paired",
                     "model",
-                    "finetuned"
+                    "transfer",
+                    "across",
+                    "finetuned",
+                    "english",
+                    "russian",
+                    "paired",
+                    "trained"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we present a multilingual framework for addressing the many dimensions of dysarthria, including detection, severity classification, speech-to-text transcription, clean speech generation, emotion classification, and voice cloning. Our models show high performance across English, Russian, and German datasets, demonstrating the potential for use in real-world multilingual settings.\nTo expand the reach of our framework, our next goal is to incorporate more low-resource languages where dysarthria diagnosis tools are especially scarce. We also aim to further reduce the Word Error Rate (WER) in our speech-to-text module by increasing dataset size, fine-tuning on more speech, and exploring multimodal data (e.g. combining acoustic features with visual inputs such as lip movements) to improve transcription accuracy. Our work is the foundation for a globally inclusive system for speech-based assistive technologies to bridge linguistic gaps and support communication and care for all patients with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "english",
                     "across",
-                    "performance",
                     "russian",
-                    "data"
+                    "english",
+                    "data",
+                    "performance"
                 ]
             }
         ]
@@ -668,15 +668,15 @@
         "body": "Epoch\nWord Error Rate (WER)\n\n\n0\n0.3224\n\n\n1\n0.3294\n\n\n2\n0.2489\n\n\n3\n0.1367",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Epoch</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Word Error Rate (WER)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">0.3224</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.3294</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">2</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.2489</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r\">3</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">0.1367</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "word",
+            "training",
             "across",
-            "error",
-            "wer",
             "epoch",
             "rate",
+            "word",
             "during",
-            "training",
-            "epochs"
+            "wer",
+            "epochs",
+            "error"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Our Speech-to-Text model received its best accuracy after 3 epochs. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T4\" title=\"TABLE IV &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> shows a training loss (word error rate) of 0.1367 towards the 3rd epoch, indicating an accuracy of 87.33%. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F15\" title=\"Figure 15 &#8227; III-D Speech to Text &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">15</span></a> indicates decreasing loss in only three epochs, a result of Whisper Tiny&#8217;s light framework designed for slurred speech. The output transcription can then be use for patient voice cloning, recreating the speaker&#8217;s original voice identity in what they say after being diagnosed with dysarthria.</p>\n\n"
@@ -685,12 +685,12 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "word",
-                    "across",
-                    "error",
-                    "rate",
                     "training",
-                    "epochs"
+                    "across",
+                    "rate",
+                    "word",
+                    "epochs",
+                    "error"
                 ]
             },
             {
@@ -717,10 +717,10 @@
             {
                 "html": "<p class=\"ltx_p\">In the first stage of our pipeline, we trained a U-Net model to map dysarthric speech to clean speech using Russian speech. As outlined in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F4.fig1\" title=\"Figure 4 &#8227; II-C1 Stage 1: Russian Dysarthric Speech to Normal Speech &#8227; II-C Multi-lingual clean speech synthesis &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, raw .wav files were converted into mel spectrograms using Librosa, then rescaled in decibels and resized to a uniform 128x128 image for consistent model input. These paired spectrograms were saved as .npy files for training. The U-Net model was trained for 300 epochs, with a learning rate of 1e-4, to output a clean spectrogram from a dysarthric spectrogram, and the learned weights were exported. This step allows the model to learn structural transformations between distorted and healthy speech, that generalize across languages due to shared characteristics.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "across",
                     "epochs",
-                    "training"
+                    "rate",
+                    "training",
+                    "across"
                 ]
             },
             {
@@ -733,18 +733,18 @@
             {
                 "html": "<p class=\"ltx_p\">Our severity classifier was trained on spectrogram images of patients ranging across different severities of dysarthria. The model received a testing accuracy of 97.64% as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T2\" title=\"TABLE II &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">II</span></a>. The loss curves in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F10\" title=\"Figure 10 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> show convergence after 8 epochs. The confusion matrix in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.F11\" title=\"Figure 11 &#8227; III-B Severity Classification &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">11</span></a> shows very few misclassified instances.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "epochs"
+                    "epochs",
+                    "across"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we present a multilingual framework for addressing the many dimensions of dysarthria, including detection, severity classification, speech-to-text transcription, clean speech generation, emotion classification, and voice cloning. Our models show high performance across English, Russian, and German datasets, demonstrating the potential for use in real-world multilingual settings.\nTo expand the reach of our framework, our next goal is to incorporate more low-resource languages where dysarthria diagnosis tools are especially scarce. We also aim to further reduce the Word Error Rate (WER) in our speech-to-text module by increasing dataset size, fine-tuning on more speech, and exploring multimodal data (e.g. combining acoustic features with visual inputs such as lip movements) to improve transcription accuracy. Our work is the foundation for a globally inclusive system for speech-based assistive technologies to bridge linguistic gaps and support communication and care for all patients with dysarthria.</p>\n\n",
                 "matched_terms": [
-                    "word",
                     "across",
-                    "error",
+                    "rate",
+                    "word",
                     "wer",
-                    "rate"
+                    "error"
                 ]
             }
         ]
@@ -755,20 +755,20 @@
         "body": "Emotion\nModel Confidence\n\n\nAnger\n0.619131\n\n\nDisgust\n0.675264\n\n\nFear\n0.625634\n\n\nJoy\n0.789678\n\n\nNeutral\n0.724674\n\n\nSadness\n0.645108\n\n\nSurprise\n0.575870",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Emotion</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Model Confidence</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\">Anger</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">0.619131</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Disgust</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.675264</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Fear</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.625634</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Joy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.789678</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Neutral</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.724674</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Sadness</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0.645108</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r\">Surprise</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">0.575870</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "joy",
-            "sadness",
             "confidence",
-            "surprise",
             "predicted",
-            "neutral",
-            "emotion",
-            "anger",
-            "distilroberta",
             "each",
-            "fear",
+            "distilroberta",
             "model",
+            "fear",
+            "sadness",
+            "surprise",
+            "emotion",
             "scores",
-            "disgust"
+            "anger",
+            "disgust",
+            "neutral",
+            "joy"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Patients with dysarthria often have altered sentiment in their voice due to speech impairment. Model confidences shown in table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T5\" title=\"TABLE V &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> indicate moderate levels of confidence across all emotions when analyzing speech transcriptions. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T6\" title=\"TABLE VI &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a> showcases sample sentences along with their corresponding emotion.</p>\n\n"
@@ -777,8 +777,8 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "emotion"
+                    "emotion",
+                    "model"
                 ]
             },
             {
@@ -798,15 +798,15 @@
             {
                 "html": "<p class=\"ltx_p\">After obtaining speech to text results, an important component was adding an emotion classifier as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F6.fig1\" title=\"Figure 6 &#8227; II-D1 Speech to Text &#8227; II-D Automatic Speech Recognition, Emotion Classification, and Voice Cloning &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, as sentiment is often lost in their reduced speech intelligibility and limitation in expressing nonverbal information <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib24\" title=\"\">24</a>]</cite>. We used the pretrained Emotion English DistilRoBERTa-base transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib25\" title=\"\">25</a>]</cite> to classify english text into 7 sentiments: anger, disgust, fear, joy, sadness, surprise, and neutral. Audio recordings were converted to text using the speech-to-text converter and then subsequently passed into the DistilRoBERTa-base model to infer the speaker&#8217;s emotional state.</p>\n\n",
                 "matched_terms": [
-                    "joy",
                     "sadness",
-                    "surprise",
                     "model",
-                    "neutral",
-                    "emotion",
                     "fear",
+                    "emotion",
                     "anger",
-                    "disgust"
+                    "joy",
+                    "disgust",
+                    "neutral",
+                    "surprise"
                 ]
             },
             {
@@ -819,8 +819,8 @@
             {
                 "html": "<p class=\"ltx_p\">While our framework demonstrates promising results across multiple tasks and languages, it has some limitations. First, our English speech-to-speech model was fine-tuned on a small paired dataset, which may restrict generalization across broader accents or sentence structures. Second, the emotion classifier was trained solely on clean transcriptions and may not fully capture emotion from more spontaneous or emotionally complex utterances. Finally, while our cross-lingual transfer approach worked well from Russian to English, its effectiveness across more structurally distant language pairs remains untested.\nFuture work includes expanding our dataset to include more diverse speakers and dialects, improving robustness to spontaneous speech, and testing the framework on additional low-resource languages. We also aim to refine the voice cloning pipeline to better preserve speaker identity over longer and more variable inputs.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "emotion"
+                    "emotion",
+                    "model"
                 ]
             }
         ]
@@ -831,54 +831,54 @@
         "body": "Sentence\nPredicted Emotion\n\n\nThe snow blew into large drifts.\nAnger\n\n\nDon’t ask me to carry an oily rag like that.\nDisgust\n\n\nBefore Thursday’s exam, review every formula.\nFear\n\n\nBright sunshine shimmers on the ocean.\nJoy\n\n\nThe store serves meals every day.\nNeutral\n\n\nThe family requests that flowers be omitted.\nSadness\n\n\nYet he still thinks as swiftly as ever.\nSurprise",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Sentence</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Predicted Emotion</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t\">The snow blew into large drifts.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Anger</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Don&#8217;t ask me to carry an oily rag like that.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Disgust</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Before Thursday&#8217;s exam, review every formula.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Fear</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">Bright sunshine shimmers on the ocean.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Joy</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">The store serves meals every day.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Neutral</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_l ltx_border_r\">The family requests that flowers be omitted.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Sadness</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r\">Yet he still thinks as swiftly as ever.</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">Surprise</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "joy",
-            "bright",
+            "fear",
+            "sentence",
+            "thinks",
+            "swiftly",
+            "exam",
+            "review",
+            "carry",
+            "shimmers",
+            "large",
+            "each",
+            "predicted",
+            "requests",
+            "flowers",
+            "like",
+            "sadness",
+            "surprise",
+            "serves",
+            "day",
+            "sample",
             "yet",
             "drifts",
             "every",
-            "don’t",
-            "omitted",
-            "rag",
-            "review",
-            "neutral",
-            "into",
-            "emotion",
-            "ask",
-            "fear",
-            "thursday’s",
-            "serves",
-            "sentence",
-            "thinks",
-            "day",
-            "like",
-            "each",
-            "ever",
-            "swiftly",
-            "sadness",
-            "snow",
-            "requests",
-            "surprise",
-            "ocean",
-            "formula",
-            "shimmers",
-            "large",
-            "oily",
-            "anger",
-            "exam",
-            "carry",
-            "disgust",
-            "flowers",
-            "meals",
             "sentences",
-            "store",
-            "blew",
-            "sunshine",
-            "before",
-            "predicted",
-            "sample",
-            "corresponding",
+            "neutral",
+            "bright",
+            "meals",
             "family",
-            "still"
+            "still",
+            "thursday’s",
+            "blew",
+            "rag",
+            "before",
+            "oily",
+            "sunshine",
+            "anger",
+            "snow",
+            "into",
+            "ask",
+            "ever",
+            "corresponding",
+            "ocean",
+            "emotion",
+            "store",
+            "formula",
+            "omitted",
+            "don’t",
+            "disgust",
+            "joy"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Patients with dysarthria often have altered sentiment in their voice due to speech impairment. Model confidences shown in table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T5\" title=\"TABLE V &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> indicate moderate levels of confidence across all emotions when analyzing speech transcriptions. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S3.T6\" title=\"TABLE VI &#8227; III-E Emotion &#8227; III Results &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a> showcases sample sentences along with their corresponding emotion.</p>\n\n"
@@ -887,8 +887,8 @@
             {
                 "html": "<p class=\"ltx_p\">Dysarthria is a motor speech disorder that results in slow and often incomprehensible speech. Speech intelligibility significantly impacts communication, leading to barriers in social interactions. Dysarthria is often a characteristic of neurological diseases including Parkinson&#8217;s and ALS, yet current tools lack generalizability across languages and levels of severity. In this study, we present a unified AI-based multilingual framework that addresses six key components: (1) binary dysarthria detection, (2) severity classification, (3) clean speech generation, (4) speech-to-text conversion, (5) emotion detection, and (6) voice cloning. We analyze datasets in English, Russian, and German, using spectrogram-based visualizations and acoustic feature extraction to inform model training. Our binary detection model achieved 97% accuracy across all three languages, demonstrating strong generalization across languages. The severity classification model also reached 97% test accuracy, with interpretable results showing model attention focused on lower harmonics. Our translation pipeline, trained on paired Russian dysarthric and clean speech, reconstructed intelligible outputs with low training (0.03) and test (0.06) L1 losses. Given the limited availability of English dysarthric-clean pairs, we finetuned the Russian model on English data and achieved improved losses of 0.02 (train) and 0.03 (test), highlighting the promise of cross-lingual transfer learning for low-resource settings. Our speech-to-text pipeline achieved a Word Error Rate of 0.1367 after three epochs, indicating accurate transcription on dysarthric speech and enabling downstream emotion recognition and voice cloning from transcribed speech. Overall, the results and products of this study can be used to diagnose dysarthria and improve communication and understanding for patients across different languages.</p>\n\n",
                 "matched_terms": [
-                    "yet",
-                    "emotion"
+                    "emotion",
+                    "yet"
                 ]
             },
             {
@@ -936,22 +936,22 @@
             {
                 "html": "<p class=\"ltx_p\">After obtaining speech to text results, an important component was adding an emotion classifier as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#S2.F6.fig1\" title=\"Figure 6 &#8227; II-D1 Speech to Text &#8227; II-D Automatic Speech Recognition, Emotion Classification, and Voice Cloning &#8227; II Methods &#8227; A Multilingual Framework for Dysarthria: Detection, Severity Classification, Speech-to-Text, and Clean Speech Generation\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, as sentiment is often lost in their reduced speech intelligibility and limitation in expressing nonverbal information <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib24\" title=\"\">24</a>]</cite>. We used the pretrained Emotion English DistilRoBERTa-base transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib25\" title=\"\">25</a>]</cite> to classify english text into 7 sentiments: anger, disgust, fear, joy, sadness, surprise, and neutral. Audio recordings were converted to text using the speech-to-text converter and then subsequently passed into the DistilRoBERTa-base model to infer the speaker&#8217;s emotional state.</p>\n\n",
                 "matched_terms": [
-                    "joy",
                     "sadness",
-                    "surprise",
-                    "neutral",
-                    "into",
-                    "emotion",
                     "fear",
+                    "emotion",
                     "anger",
-                    "disgust"
+                    "joy",
+                    "into",
+                    "disgust",
+                    "neutral",
+                    "surprise"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our voice-cloning text-to-speech (TTS) pipeline loads a user-provided sample audio (saying an arbitrary sentence) and resembles it to 16 hertz mono for input into an XCodec2 model. All reference code was taken from a pre-existing SOTA Text-to-speech and Zero Shot Voice cloning model <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03986v1#bib.bib26\" title=\"\">26</a>]</cite>. This speech codec model encodes a speaker&#8217;s vocal characteristics in a sequence of discrete tokens. The pipeline packages the speech tokens with the output from the speech-to-text pipeline, and feeds it into a LLASA-3B model which is fine-tuned to generate speech token sequences based on the text and speaker voice tokens. The generated speech tokens are then passed back onto the XCodec2 decoded to synthesize audio.</p>\n\n",
                 "matched_terms": [
-                    "sample",
                     "sentence",
+                    "sample",
                     "into"
                 ]
             },
@@ -965,8 +965,8 @@
             {
                 "html": "<p class=\"ltx_p\">While our framework demonstrates promising results across multiple tasks and languages, it has some limitations. First, our English speech-to-speech model was fine-tuned on a small paired dataset, which may restrict generalization across broader accents or sentence structures. Second, the emotion classifier was trained solely on clean transcriptions and may not fully capture emotion from more spontaneous or emotionally complex utterances. Finally, while our cross-lingual transfer approach worked well from Russian to English, its effectiveness across more structurally distant language pairs remains untested.\nFuture work includes expanding our dataset to include more diverse speakers and dialects, improving robustness to spontaneous speech, and testing the framework on additional low-resource languages. We also aim to refine the voice cloning pipeline to better preserve speaker identity over longer and more variable inputs.</p>\n\n",
                 "matched_terms": [
-                    "sentence",
-                    "emotion"
+                    "emotion",
+                    "sentence"
                 ]
             }
         ]

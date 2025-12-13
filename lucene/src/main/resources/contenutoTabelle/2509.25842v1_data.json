@@ -5,18 +5,18 @@
         "body": "Language\nMean_value(s)\nStd_value(s)\n\n\n\n\nChinese\n14.63\n4.94\n\n\nEnglish\n18.25\n7.70",
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">Language</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">Mean_value(s)</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">Std_value(s)</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">Chinese</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">14.63</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:2.5pt 10.0pt;\">4.94</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\" style=\"padding:2.5pt 10.0pt;\">English</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:2.5pt 10.0pt;\">18.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:2.5pt 10.0pt;\">7.70</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
+            "speech",
+            "standard",
             "language",
+            "computed",
+            "utterances",
             "english",
-            "meanvalues",
             "deviation",
             "rate",
-            "speech",
-            "stdvalues",
-            "computed",
             "chinese",
-            "utterances",
-            "standard",
-            "mean"
+            "mean",
+            "stdvalues",
+            "meanvalues"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">For speech rate, we first use signal processing methods to trim the silent segments at the beginning and end of the speech, then extract the phoneme sequence and audio duration with internal tools. The relative speech rate is defined as the total number of phonemes divided by the total duration. In our analysis, we observe a significant difference in calculated speech rate values between Chinese and English utterances, even when the perceived speaking speed is similar. As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S4.T1\" title=\"Table 1 &#8227; 4.1 Attribute Value Computation &#8227; 4 Data Annotation &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, the average speech rate for English is notably higher than that for Chinese, primarily due to differences in phoneme length between the two languages. To ensure annotation accuracy, we therefore set separate grading thresholds for Chinese and English speech.</p>\n\n"
@@ -25,78 +25,78 @@
             {
                 "html": "<p class=\"ltx_p\">Controllable speech synthesis refers to the precise control of speaking style by manipulating specific prosodic and paralinguistic attributes, such as gender, volume, speech rate, pitch, and pitch fluctuation. With the integration of advanced generative models, particularly large language models (LLMs) and diffusion models, controllable text-to-speech (TTS) systems have increasingly transitioned from label-based control to natural language description-based control, which is typically implemented by predicting global style embeddings from textual prompts. However, this straightforward prediction overlooks the underlying distribution of the style embeddings, which may hinder the full potential of controllable TTS systems. In this study, we use t-SNE analysis to visualize and analyze the global style embedding distribution of various mainstream TTS systems, revealing a clear hierarchical clustering pattern: embeddings first cluster by timbre and subsequently subdivide into finer clusters based on style attributes. Based on this observation, we propose HiStyle, a two-stage style embedding predictor that hierarchically predicts style embeddings conditioned on textual prompts, and further incorporate contrastive learning to help align the text and audio embedding spaces. Additionally, we propose a style annotation strategy that leverages the complementary strengths of statistical methodologies and human auditory preferences to generate more accurate and perceptually consistent textual prompts for style control. Comprehensive experiments demonstrate that when applied to the base TTS model, HiStyle achieves significantly better style controllability than alternative style embedding predicting approaches while preserving high speech quality in terms of naturalness and intelligibility. Audio samples are available at https://anonymous.4open.science/w/HiStyle-2517/.</p>\n\n",
                 "matched_terms": [
+                    "speech",
                     "language",
-                    "rate",
-                    "speech"
+                    "rate"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In recent years, there has been a growing research focus on developing style-controllable TTS systems that allow flexible control of speaking style attributes, such as speech rate, pitch, and volume. A common approach in prior work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib10\" title=\"\">10</a>]</cite> is to use categorical labels, e.g. speaking rate level or emotion category, to represent and control these style attributes. However, such label-based methods are constrained by a limited set of predefined style categories extracted from the training corpus, which inherently limits the system&#8217;s ability to generalize to new speaking styles not seen during training. To address this limitation, subsequent studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib13\" title=\"\">13</a>]</cite> introduced reference-audio-based style transfer, which uses acoustic representation extracted from a reference audio to guide synthesis and thus avoids constrained by predefined style categories. However, seeking suitable style reference audios that precisely match user intent remains time-consuming and often impractical.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "speech"
+                    "speech",
+                    "rate"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To achieve more flexible and user-friendly style control, several studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib15\" title=\"\">15</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib17\" title=\"\">17</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib5\" title=\"\">5</a>]</cite> have adopted natural language descriptions for controllable speech synthesis, enabling intuitive control over diverse speaking style attributes and avoiding the limitations of label- and reference-based methods. Typically, these approaches achieve controllable synthesis by predicting a global style embedding from a text prompt. To realize this, previous studies have explored a variety of prediction strategies. Early work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib18\" title=\"\">18</a>]</cite> employed lightweight projection networks for direct text-to-style embedding mapping, while its simplistic architecture limited controllable performance. Subsequent approaches leveraged diffusion-based variational networks to synthesize style embeddings from text prompts&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>]</cite>, capitalizing on diffusion models&#8217; superior ability to capture and model speech style variations, thereby achieving enhanced controllability. However, all these methods treat style embedding prediction as a single-step mapping procedure and therefore ignore the intrinsic hierarchical distribution of the style embedding space, which may limit the controllability of the synthesized speech. In the other hand, for the text prompt labeling aspect of style-controllable datasets, most prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib19\" title=\"\">19</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib20\" title=\"\">20</a>]</cite> relied on manually set thresholds for style attribute annotation, using hand-crafted percentage-based criteria to define attribute labels. Such approaches are inherently inflexible and fail to consider the alignment between automatically assigned labels and actual human perceptual judgments.</p>\n\n",
                 "matched_terms": [
-                    "language",
-                    "speech"
+                    "speech",
+                    "language"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Contemporary text-prompt controllable TTS systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib21\" title=\"\">21</a>]</cite> commonly employ global embeddings to control speech attributes (e.g., speech rate, pitch, and timbre). These embeddings are typically extracted by learnable audio encoders and subsequently predicted from prompt texts during inference. Some studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>]</cite> have employed Principal Component Analysis (PCA)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib22\" title=\"\">22</a>]</cite> to visualize the embedding space, revealing distinct clustering patterns corresponding to speaker identity and emotional characteristics. However, the precise relationship between the embedding space and specific style attributes (e.g., speech rate and pitch patterns) remains insufficiently characterized.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "speech"
+                    "speech",
+                    "rate"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The first step involves quantifying speech style attributes into measurable parameters, where we calculate gender, speech rate, volume, pitch, and pitch fluctuation values<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib33\" title=\"\">33</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "speech"
+                    "speech",
+                    "rate"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For gender, we fine-tune the ECAPA-TDNN<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib24\" title=\"\">24</a>]</cite> model on a large internal gender-labeled dataset to ensure robust generalization, then use its output probabilities for annotation. For pitch and its variability (pitch fluctuation), we use <span class=\"ltx_text ltx_font_smallcaps\">PyWorld</span> to extract the frame-level fundamental frequency (<math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math>) contour for each audio. To ensure accurate measurements, we remove abnormal zeros in the <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> array caused by unnatural pauses or noise. We then calculate the mean and standard deviation of the remaining non-zero <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m3\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> values, using them as the pitch and fluctuation of each recording, respectively.</p>\n\n",
                 "matched_terms": [
                     "standard",
-                    "mean",
-                    "deviation"
+                    "deviation",
+                    "mean"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For gender annotation, we assign the category with the highest probability as the final gender label for each utterance. For the other attributes, we adopt a strategy that combines objective statistical thresholds with subjective auditory preference. Specifically, for speech rate, pitch, and pitch fluctuation, we use a three-level classification scheme. For each attribute, we compute the mean and standard deviation across the relevant data groups, calculating separately by gender for pitch and fluctuation, and separately by language for speech rate. Initial thresholds are then set using <math alttext=\"\\mu-\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>&#8722;</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu-\\sigma</annotation></semantics></math> and <math alttext=\"\\mu+\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>+</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu+\\sigma</annotation></semantics></math> as boundaries, where <math alttext=\"\\mu\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><mi>&#956;</mi><annotation encoding=\"application/x-tex\">\\mu</annotation></semantics></math> and <math alttext=\"\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m4\" intent=\":literal\"><semantics><mi>&#963;</mi><annotation encoding=\"application/x-tex\">\\sigma</annotation></semantics></math> are the mean and standard deviation for each group, providing a sound statistical foundation for grading.</p>\n\n",
                 "matched_terms": [
-                    "language",
-                    "deviation",
-                    "rate",
                     "speech",
                     "standard",
+                    "language",
+                    "rate",
+                    "deviation",
                     "mean"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To further align these calculated thresholds with human perception, we design an iterative annotation workflow, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S4.F3\" title=\"Figure 3 &#8227; 4.3 Human Perception Adjustment &#8227; 4 Data Annotation &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. After using the initial thresholds to categorize utterances, we randomly sample a set of borderline cases. Specifically, samples falling within a &#177;5% margin of each threshold boundary for perceptual evaluation. In each iteration, we invite three annotators with basic speech knowledge to independently listen to 50 utterances per attribute (randomly selected and distributed across levels) and assign perceptual labels such as &#8220;slow,&#8221; &#8220;medium,&#8221; or &#8220;fast&#8221; for speech rate. After collecting the annotations, we analyze inter-annotator agreement and compare the perceptual labels with the current threshold-based labels. If consistent discrepancies are observed (for example, if more than 80% of listeners consistently classify a threshold-defined &#8220;medium&#8221; utterance as &#8220;fast&#8221;), we adjust the corresponding threshold accordingly. This process is repeated for 2&#8211;3 rounds until the classification results achieve over 85% agreement with human perceptual judgments, ensuring that the final attribute intervals are both statistically grounded and perceptually reliable.</p>\n\n",
                 "matched_terms": [
-                    "utterances",
+                    "speech",
                     "rate",
-                    "speech"
+                    "utterances"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets</span> We utilize a high-quality internal dataset comprising 2,000 hours of expressive speech, spanning over 20 distinct timbres and a wide range of style attribute levels. Using the annotation pipeline described above, we label each utterance with a level of each style attribute and combine these annotations into a descriptive sentence to serve as the text prompt. And then we preserve 2,000 utterances as the test set and use the remaining data for training.</p>\n\n",
                 "matched_terms": [
-                    "utterances",
-                    "speech"
+                    "speech",
+                    "utterances"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics</span> We first assess the accuracy of key speaking style attributes, including gender, speech rate, volume, pitch, and fluctuation. Gender accuracy is determined using an internal fine-tuned gender classifier. For the remaining attributes, we utilize the style annotation pipeline to annotate the synthesized speech, and then compare these labels with the corresponding style attributes in the text prompt to calculate the accuracy for each attribute. Additionally, we evaluate the overall quality of the synthesized speech in terms of Word Error Rate (WER), and UTMOS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib34\" title=\"\">34</a>]</cite>, following the evaluation protocols provided by Seed-TTS-eval<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib4\" title=\"\">4</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "speech"
+                    "speech",
+                    "rate"
                 ]
             },
             {
@@ -109,15 +109,15 @@
             {
                 "html": "<p class=\"ltx_p\">In this section, we present a series of objective and subjective experiments to evaluate the effectiveness of various style embedding prediction strategies for speech style control. All methods are implemented on a unified backbone: a SingleCodec-based TTS system that utilizes a LLaMA<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib35\" title=\"\">35</a>]</cite> architecture as its language model. This backbone is chosen for its simplicity and strong baseline performance. We compare our method with five different approaches:</p>\n\n",
                 "matched_terms": [
-                    "language",
-                    "speech"
+                    "speech",
+                    "language"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S5.T3\" title=\"Table 3 &#8227; 5.4 Ablation Study &#8227; 5 Experiment &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents the ablation results of HiStyle across four configurations (full model, without contrastive learning, without style annotation, and without both). For objective evaluation, the full model (HiStyle) achieves the best performance, excelling across all style dimensions, particularly in gender (98.78%), speech rate (90.84%), and volume (95.43%). Removing contrastive learning results in a decline in all accuracy metrics, with gender accuracy dropping to 94.49%. While omitting style annotation leads to a significant decrease in style control accuracy (e.g., pitch drops to 80.02%), although the WER remains at a moderate 3.58%. Removing both contrastive learning and style annotation results in the worst performance, with a significant increase in WER to 4.08%, emphasizing the complementarity and importance of contrastive learning and style annotation.</p>\n\n",
                 "matched_terms": [
-                    "rate",
-                    "speech"
+                    "speech",
+                    "rate"
                 ]
             }
         ]
@@ -128,34 +128,34 @@
         "body": "Model\nAccuracy(%)↑\nWER(%)↓\nUTMOS↑\nN-MOS↑\nStyle-MOS↑\n\n\nGender\nSpeed\nVolume\nPitch\nFluctuation\n\n\n\n\nText Prompt Only\n98.75\n89.21\n85.32\n85.69\n82.32\n3.09\n3.37\n3.79 ± 0.03\n3.45 ± 0.04\n\n\nDiscriminative Model\n97.71\n85.21\n88.43\n90.65\n83.65\n3.69\n3.36\n3.71 ± 0.08\n3.48 ± 0.02\n\n\nVariation Network\n98.27\n92.56\n93.33\n88.21\n86.58\n4.29\n3.38\n3.69 ± 0.06\n3.52 ± 0.05\n\n\nQuery Encoder\n97.66\n90.48\n91.58\n91.86\n83.31\n3.82\n3.45\n3.83 ± 0.09\n3.68 ± 0.03\n\n\nHiStyle\n98.88\n90.98\n95.56\n92.87\n88.02\n3.32\n3.41\n3.80 ± 0.08\n3.71 ± 0.05",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"5\"><span class=\"ltx_text ltx_font_bold\">Accuracy(%)&#8593;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">WER(%)&#8595;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">UTMOS&#8593;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">N-MOS&#8593;</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\"><span class=\"ltx_text ltx_font_bold\">Style-MOS&#8593;</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Gender</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Speed</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Volume</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Pitch</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Fluctuation</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Text Prompt Only</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">98.75</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">89.21</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">85.32</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">85.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">82.32</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.09</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">3.37</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.79 &#177; 0.03</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.45 &#177; 0.04</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">Discriminative Model</span></td>\n<td class=\"ltx_td ltx_align_center\">97.71</td>\n<td class=\"ltx_td ltx_align_center\">85.21</td>\n<td class=\"ltx_td ltx_align_center\">88.43</td>\n<td class=\"ltx_td ltx_align_center\">90.65</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">83.65</td>\n<td class=\"ltx_td ltx_align_center\">3.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">3.36</td>\n<td class=\"ltx_td ltx_align_center\">3.71 &#177; 0.08</td>\n<td class=\"ltx_td ltx_align_center\">3.48 &#177; 0.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">Variation Network</span></td>\n<td class=\"ltx_td ltx_align_center\">98.27</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">92.56</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">93.33</span></td>\n<td class=\"ltx_td ltx_align_center\">88.21</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">86.58</td>\n<td class=\"ltx_td ltx_align_center\">4.29</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">3.38</td>\n<td class=\"ltx_td ltx_align_center\">3.69 &#177; 0.06</td>\n<td class=\"ltx_td ltx_align_center\">3.52 &#177; 0.05</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">Query Encoder</span></td>\n<td class=\"ltx_td ltx_align_center\">97.66</td>\n<td class=\"ltx_td ltx_align_center\">90.48</td>\n<td class=\"ltx_td ltx_align_center\">91.58</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">91.86</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">83.31</td>\n<td class=\"ltx_td ltx_align_center\">3.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">3.45</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.83 &#177; 0.09</span></td>\n<td class=\"ltx_td ltx_align_center\">3.68 &#177; 0.03</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">HiStyle</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">98.88</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">90.98</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">95.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">92.87</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">88.02</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.32</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.41</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.80 &#177; 0.08</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">3.71 &#177; 0.05</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "prompt",
-            "embedding",
             "subjective",
-            "network",
+            "text",
+            "volume",
+            "utmos↑",
+            "embedding",
+            "encoder",
+            "objective",
+            "prediction",
+            "metrics",
+            "variation",
+            "methods",
+            "query",
+            "histyle",
+            "pitch",
             "gender",
             "speed",
-            "discriminative",
-            "text",
-            "pitch",
-            "volume",
-            "prediction",
-            "only",
-            "methods",
-            "different",
-            "objective",
-            "stylemos↑",
-            "nmos↑",
-            "histyle",
-            "encoder",
-            "metrics",
-            "wer↓",
-            "performance",
-            "variation",
-            "query",
-            "utmos↑",
-            "accuracy↑",
             "model",
+            "nmos↑",
+            "network",
             "fluctuation",
+            "performance",
+            "stylemos↑",
+            "only",
+            "accuracy↑",
+            "prompt",
+            "different",
+            "wer↓",
+            "discriminative",
             "style"
         ],
         "citing_paragraphs": [
@@ -165,49 +165,49 @@
             {
                 "html": "<p class=\"ltx_p\">Controllable speech synthesis refers to the precise control of speaking style by manipulating specific prosodic and paralinguistic attributes, such as gender, volume, speech rate, pitch, and pitch fluctuation. With the integration of advanced generative models, particularly large language models (LLMs) and diffusion models, controllable text-to-speech (TTS) systems have increasingly transitioned from label-based control to natural language description-based control, which is typically implemented by predicting global style embeddings from textual prompts. However, this straightforward prediction overlooks the underlying distribution of the style embeddings, which may hinder the full potential of controllable TTS systems. In this study, we use t-SNE analysis to visualize and analyze the global style embedding distribution of various mainstream TTS systems, revealing a clear hierarchical clustering pattern: embeddings first cluster by timbre and subsequently subdivide into finer clusters based on style attributes. Based on this observation, we propose HiStyle, a two-stage style embedding predictor that hierarchically predicts style embeddings conditioned on textual prompts, and further incorporate contrastive learning to help align the text and audio embedding spaces. Additionally, we propose a style annotation strategy that leverages the complementary strengths of statistical methodologies and human auditory preferences to generate more accurate and perceptually consistent textual prompts for style control. Comprehensive experiments demonstrate that when applied to the base TTS model, HiStyle achieves significantly better style controllability than alternative style embedding predicting approaches while preserving high speech quality in terms of naturalness and intelligibility. Audio samples are available at https://anonymous.4open.science/w/HiStyle-2517/.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "pitch",
-                    "volume",
-                    "prediction",
-                    "embedding",
-                    "gender",
-                    "histyle",
                     "model",
+                    "prediction",
+                    "text",
+                    "volume",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "histyle",
+                    "gender",
+                    "pitch",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In recent years, there has been a growing research focus on developing style-controllable TTS systems that allow flexible control of speaking style attributes, such as speech rate, pitch, and volume. A common approach in prior work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib10\" title=\"\">10</a>]</cite> is to use categorical labels, e.g. speaking rate level or emotion category, to represent and control these style attributes. However, such label-based methods are constrained by a limited set of predefined style categories extracted from the training corpus, which inherently limits the system&#8217;s ability to generalize to new speaking styles not seen during training. To address this limitation, subsequent studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib13\" title=\"\">13</a>]</cite> introduced reference-audio-based style transfer, which uses acoustic representation extracted from a reference audio to guide synthesis and thus avoids constrained by predefined style categories. However, seeking suitable style reference audios that precisely match user intent remains time-consuming and often impractical.</p>\n\n",
                 "matched_terms": [
                     "style",
-                    "pitch",
+                    "volume",
                     "methods",
-                    "volume"
+                    "pitch"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To achieve more flexible and user-friendly style control, several studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib15\" title=\"\">15</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib17\" title=\"\">17</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib5\" title=\"\">5</a>]</cite> have adopted natural language descriptions for controllable speech synthesis, enabling intuitive control over diverse speaking style attributes and avoiding the limitations of label- and reference-based methods. Typically, these approaches achieve controllable synthesis by predicting a global style embedding from a text prompt. To realize this, previous studies have explored a variety of prediction strategies. Early work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib18\" title=\"\">18</a>]</cite> employed lightweight projection networks for direct text-to-style embedding mapping, while its simplistic architecture limited controllable performance. Subsequent approaches leveraged diffusion-based variational networks to synthesize style embeddings from text prompts&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>]</cite>, capitalizing on diffusion models&#8217; superior ability to capture and model speech style variations, thereby achieving enhanced controllability. However, all these methods treat style embedding prediction as a single-step mapping procedure and therefore ignore the intrinsic hierarchical distribution of the style embedding space, which may limit the controllability of the synthesized speech. In the other hand, for the text prompt labeling aspect of style-controllable datasets, most prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib19\" title=\"\">19</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib20\" title=\"\">20</a>]</cite> relied on manually set thresholds for style attribute annotation, using hand-crafted percentage-based criteria to define attribute labels. Such approaches are inherently inflexible and fail to consider the alignment between automatically assigned labels and actual human perceptual judgments.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "performance",
                     "prompt",
-                    "embedding",
-                    "prediction",
-                    "methods",
                     "model",
-                    "style"
+                    "prediction",
+                    "text",
+                    "methods",
+                    "style",
+                    "performance",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these challenges, we visualize and analyze the style embedding distribution of various mainstream TTS systems, revealing that style embeddings exhibit a clear hierarchical distribution: globally grouped according to timbre and locally subdivided by specific style attributes. Building on this insight, we design a novel hierarchical two-stage style embedding predictor, named HiStyle, which first predict coarse-grained global embeddings and then predict fine-grained style embeddings. To further enhance the alignment between textual and acoustic spaces, we incorporate a contrastive learning objective during training. In addition, recognizing the limitations of fixed thresholds in style annotation, we develop a new data annotation pipeline that combines objective statistical methods with subjective human perceptual feedback, helping generate more accurate and perceptually consistent style labels.</p>\n\n",
                 "matched_terms": [
-                    "embedding",
-                    "methods",
                     "subjective",
-                    "objective",
+                    "methods",
+                    "style",
                     "histyle",
-                    "style"
+                    "embedding",
+                    "objective"
                 ]
             },
             {
@@ -229,47 +229,47 @@
                 "html": "<p class=\"ltx_p\">Contemporary text-prompt controllable TTS systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib21\" title=\"\">21</a>]</cite> commonly employ global embeddings to control speech attributes (e.g., speech rate, pitch, and timbre). These embeddings are typically extracted by learnable audio encoders and subsequently predicted from prompt texts during inference. Some studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>]</cite> have employed Principal Component Analysis (PCA)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib22\" title=\"\">22</a>]</cite> to visualize the embedding space, revealing distinct clustering patterns corresponding to speaker identity and emotional characteristics. However, the precise relationship between the embedding space and specific style attributes (e.g., speech rate and pitch patterns) remains insufficiently characterized.</p>\n\n",
                 "matched_terms": [
                     "prompt",
-                    "embedding",
                     "pitch",
+                    "embedding",
                     "style"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To better understand this internal structure, we select several representative reference encoder architectures and extract their global embeddings for visualization using t-SNE. We use various models to extract global embeddings for different style attributes, including the acoustic encoder based on ECAPA-TDNN&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib23\" title=\"\">23</a>]</cite>, the pre-trained voiceprint model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib24\" title=\"\">24</a>]</cite>, and the CNN-GRU-based encoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib25\" title=\"\">25</a>]</cite>. To observe the distribution of different style attributes in the global embedding, we construct a highly expressive and high-quality dataset with multiple speakers and multiple speech attributes. Using this dataset, we input speech samples into each encoder to extract the corresponding global embeddings. Then, we apply t-SNE to project the high-dimensional embeddings into a 2D space.</p>\n\n",
                 "matched_terms": [
-                    "embedding",
-                    "different",
                     "model",
-                    "encoder",
-                    "style"
+                    "different",
+                    "embedding",
+                    "style",
+                    "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S2.F1\" title=\"Figure 1 &#8227; 2 Preliminary Analysis &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the visualization result in the CNN-GRU-based encoder. As shown in Figure&#160;<span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:fig:tsne_hierarchy_1</span>, when we color the t-SNE visualization by speaker identity, the embedding space partitions clearly into distinct clusters corresponding to each speaker, indicating that the global embedding is organized by speaker timbre. Next, we recolor the same t-SNE cluster according to the pitch fluctuation attribute. As shown in Figure&#160;<span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:fig:tsne_hierarchy_2</span>, the embeddings do not exhibit distinct grouping across the entire space. However, by comparing Figure&#160;<span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:fig:tsne_hierarchy_1</span> and Figure&#160;<span class=\"ltx_ref ltx_missing_label ltx_ref_self\">LABEL:fig:tsne_hierarchy_2</span>, we find that the embeddings are further separated based on pitch fluctuation within each speaker-specific cluster. This phenomenon suggests that the embedding space has a clear hierarchical structure: embeddings are first grouped by timbre at the global level and then further organized by style attributes within each timbre cluster. We conduct the same visualization procedure using the other encoder structures and other attributes in the supplementary materials, observing the same hierarchical clustering patterns.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "embedding",
-                    "encoder",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "pitch",
+                    "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Inspired by the hierarchical structure observed in the previous section, we propose a novel hierarchical two-stage embedding predictor, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S3.F2\" title=\"Figure 2 &#8227; 3 HiStyle &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our predictor consists of three key components: the text prompt encoder, speaker embedding predictor and style embedding predictor. First, the text prompt encoder comprising a pre-trained BERT model followed by a linear projection encodes the input text description into a text-prompt embedding<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib26\" title=\"\">26</a>]</cite>. Next, we implement a speaker embedding predictor that predicts a global speaker-related embedding conditioned on the text-prompt embedding. This predicted embedding captures the speaker-related information comprising both timbre and style information and serves as an intermediate representation<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib27\" title=\"\">27</a>]</cite>. Then, we employ a style embedding predictor, which fuse the predicted speaker embedding with the original text-prompt embedding through a residual connection as condition to predict the final style embedding<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib28\" title=\"\">28</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "prompt",
-                    "embedding",
                     "model",
-                    "encoder",
-                    "style"
+                    "text",
+                    "embedding",
+                    "style",
+                    "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We adopt a unified architecture for <span class=\"ltx_text ltx_font_italic\">Speaker Embedding Predictor</span> and <span class=\"ltx_text ltx_font_italic\">Style Embedding Predictor</span>, all implemented within a conditional diffusion model based on transformer blocks&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib29\" title=\"\">29</a>]</cite>. As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S3.F2\" title=\"Figure 2 &#8227; 3 HiStyle &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, this model structure consists of a forward diffusion module for noise-adding and a transformer encoder-based estimator module for denoising<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib30\" title=\"\">30</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "embedding",
                     "model",
+                    "embedding",
                     "style"
                 ]
             },
@@ -284,16 +284,16 @@
                 "html": "<p class=\"ltx_p\">The global noisy reference embedding <math alttext=\"\\mathbf{x}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p4.m1\" intent=\":literal\"><semantics><msub><mi>&#119857;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{x}_{t}</annotation></semantics></math>, together with the text embedding and the current diffusion step, are concatenated and fed into the transformer blocks. This architecture fuses all three sources of information via multi-layer self-attention, yielding a global contextual representation. Then the model predicts the reference embedding <math alttext=\"\\mathbf{x}_{0\\_\\text{pred}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p4.m2\" intent=\":literal\"><semantics><msub><mi>&#119857;</mi><mrow><mn>0</mn><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mtext>pred</mtext></mrow></msub><annotation encoding=\"application/x-tex\">\\mathbf{x}_{0\\_\\text{pred}}</annotation></semantics></math> conditioned on this global contextual representation.</p>\n\n",
                 "matched_terms": [
                     "text",
-                    "embedding",
-                    "model"
+                    "model",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model is trained to minimize the Mean Squared Error (MSE) loss between its prediction and the ground-truth reference embedding:</p>\n\n",
                 "matched_terms": [
-                    "prediction",
                     "embedding",
-                    "model"
+                    "model",
+                    "prediction"
                 ]
             },
             {
@@ -308,34 +308,34 @@
             {
                 "html": "<p class=\"ltx_p\">During inference, the model starts from a random Gaussian noised embedding and progressively denoise it using only the text embedding as condition, ultimately generating a predicted reference style embedding that aligns with the input text prompt.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "prompt",
-                    "embedding",
-                    "only",
                     "model",
-                    "style"
+                    "text",
+                    "style",
+                    "only",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Above we introduce the two-stage prediction approach and the specific structure of each predictor, and below we will introduce how our predictor can be applied to the TTS model for controllable speech synthesis. Our proposed style embedding predictor is highly generalizable and can be flexibly integrated into mainstream TTS systems. The core idea is to design a speaker reference encoder and a style reference encoder within the TTS model to extract corresponding global speaker-related and style embeddings. These two embeddings are then fed into our predictor, which hierarchically predicts the target speaker embedding and target style embedding conditioned on the text prompt. In practical implementation, the speaker reference encoder can be flexibly chosen from various architectures, such as an ECAPA-TDNN model or a pre-trained voiceprint model. While the style reference encoder, on the other hand, can adopt architectures like transformer-based models that are better suited for capturing complex stylistic attributes.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "prompt",
-                    "embedding",
-                    "prediction",
                     "model",
-                    "encoder",
-                    "style"
+                    "prediction",
+                    "text",
+                    "embedding",
+                    "style",
+                    "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The first step involves quantifying speech style attributes into measurable parameters, where we calculate gender, speech rate, volume, pitch, and pitch fluctuation values<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib33\" title=\"\">33</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "volume",
-                    "gender",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
@@ -348,8 +348,8 @@
             {
                 "html": "<p class=\"ltx_p\">For gender, we fine-tune the ECAPA-TDNN<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib24\" title=\"\">24</a>]</cite> model on a large internal gender-labeled dataset to ensure robust generalization, then use its output probabilities for annotation. For pitch and its variability (pitch fluctuation), we use <span class=\"ltx_text ltx_font_smallcaps\">PyWorld</span> to extract the frame-level fundamental frequency (<math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math>) contour for each audio. To ensure accurate measurements, we remove abnormal zeros in the <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> array caused by unnatural pauses or noise. We then calculate the mean and standard deviation of the remaining non-zero <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m3\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> values, using them as the pitch and fluctuation of each recording, respectively.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "model",
+                    "pitch",
                     "gender",
                     "fluctuation"
                 ]
@@ -357,11 +357,11 @@
             {
                 "html": "<p class=\"ltx_p\">For gender annotation, we assign the category with the highest probability as the final gender label for each utterance. For the other attributes, we adopt a strategy that combines objective statistical thresholds with subjective auditory preference. Specifically, for speech rate, pitch, and pitch fluctuation, we use a three-level classification scheme. For each attribute, we compute the mean and standard deviation across the relevant data groups, calculating separately by gender for pitch and fluctuation, and separately by language for speech rate. Initial thresholds are then set using <math alttext=\"\\mu-\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>&#8722;</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu-\\sigma</annotation></semantics></math> and <math alttext=\"\\mu+\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>+</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu+\\sigma</annotation></semantics></math> as boundaries, where <math alttext=\"\\mu\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><mi>&#956;</mi><annotation encoding=\"application/x-tex\">\\mu</annotation></semantics></math> and <math alttext=\"\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m4\" intent=\":literal\"><semantics><mi>&#963;</mi><annotation encoding=\"application/x-tex\">\\sigma</annotation></semantics></math> are the mean and standard deviation for each group, providing a sound statistical foundation for grading.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "subjective",
-                    "objective",
+                    "fluctuation",
+                    "pitch",
                     "gender",
-                    "fluctuation"
+                    "objective"
                 ]
             },
             {
@@ -375,24 +375,24 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model and Training Details</span> The diffusion encoder in our system, including the speaker embedding predictor, and style embedding predictor consisting of 12 layers, each with a hidden size of 512. Each diffusion model contains approximately 30 million parameters. We train our two-stage embedding predictor using the Adam optimizer with a learning rate of <math alttext=\"2\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-4}</annotation></semantics></math>, employing a warmup schedule followed by cosine decay. The batch size is set to 128, and training is conducted on 8 NVIDIA A6000 GPUs.</p>\n\n",
                 "matched_terms": [
-                    "embedding",
-                    "model",
                     "encoder",
+                    "model",
+                    "embedding",
                     "style"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics</span> We first assess the accuracy of key speaking style attributes, including gender, speech rate, volume, pitch, and fluctuation. Gender accuracy is determined using an internal fine-tuned gender classifier. For the remaining attributes, we utilize the style annotation pipeline to annotate the synthesized speech, and then compare these labels with the corresponding style attributes in the text prompt to calculate the accuracy for each attribute. Additionally, we evaluate the overall quality of the synthesized speech in terms of Word Error Rate (WER), and UTMOS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib34\" title=\"\">34</a>]</cite>, following the evaluation protocols provided by Seed-TTS-eval<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib4\" title=\"\">4</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "pitch",
-                    "volume",
                     "prompt",
-                    "fluctuation",
-                    "objective",
-                    "gender",
+                    "text",
                     "metrics",
-                    "style"
+                    "volume",
+                    "fluctuation",
+                    "style",
+                    "pitch",
+                    "gender",
+                    "objective"
                 ]
             },
             {
@@ -406,128 +406,128 @@
             {
                 "html": "<p class=\"ltx_p\">In this section, we present a series of objective and subjective experiments to evaluate the effectiveness of various style embedding prediction strategies for speech style control. All methods are implemented on a unified backbone: a SingleCodec-based TTS system that utilizes a LLaMA<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib35\" title=\"\">35</a>]</cite> architecture as its language model. This backbone is chosen for its simplicity and strong baseline performance. We compare our method with five different approaches:</p>\n\n",
                 "matched_terms": [
-                    "performance",
+                    "model",
                     "prediction",
-                    "embedding",
-                    "methods",
                     "subjective",
                     "different",
-                    "objective",
-                    "model",
-                    "style"
+                    "methods",
+                    "style",
+                    "performance",
+                    "embedding",
+                    "objective"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Text Prompt Only</span> Following the implementation in PromptTTS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib15\" title=\"\">15</a>]</cite>, we directly use the text-prompt embedding extracted by the prompt encoder as the style embedding, without any audio supervision. The prediction network is optimized only by speech synthesis loss.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "prompt",
-                    "embedding",
-                    "prediction",
-                    "only",
-                    "network",
                     "encoder",
-                    "style"
+                    "prompt",
+                    "network",
+                    "text",
+                    "prediction",
+                    "style",
+                    "only",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Discriminative model</span> Following the implementation in <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib18\" title=\"\">18</a>]</cite>, we train a lightweight projection module to map the text-audio embedding space, taking the projected vector as the style embedding. The prediction network is optimized by discriminative loss and speech synthesis loss.</p>\n\n",
                 "matched_terms": [
-                    "prediction",
-                    "embedding",
-                    "network",
                     "model",
+                    "network",
+                    "prediction",
+                    "discriminative",
                     "style",
-                    "discriminative"
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Variation Network</span> Following the implementation in PromptTTS2<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib16\" title=\"\">16</a>]</cite>, we employ a generative variation network to generate a reference-audio embedding conditioned on the text-prompt embedding, using this synthesized embedding as the style embedding. The prediction network is optimized by generative loss and speech synthesis loss.</p>\n\n",
                 "matched_terms": [
-                    "variation",
-                    "prediction",
-                    "embedding",
                     "network",
-                    "style"
+                    "prediction",
+                    "variation",
+                    "style",
+                    "embedding"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Query Encoder</span> Following the implementation in FleSpeech<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib36\" title=\"\">36</a>]</cite>, we use the query encoder and diffusion network to map the text-to-audio embedding space, the prediction network is optimized by diffusion loss and speech synthesis loss.</p>\n\n",
                 "matched_terms": [
                     "prediction",
+                    "network",
                     "embedding",
                     "query",
-                    "network",
                     "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">HiStyle</span> Our proposed method, which using two transformer encoder based diffusion models to hierarchically predict style embeddings conditioned on text prompts. The prediction network is optimized by MSE loss, contrastive loss and speech synthesis loss.</p>\n\n",
                 "matched_terms": [
+                    "network",
                     "text",
                     "prediction",
-                    "network",
+                    "style",
                     "histyle",
-                    "encoder",
-                    "style"
+                    "encoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In contrast, the Text Prompt Only approach shows the lowest performance in all style dimensions except gender. This suggests that using text prompts alone, without leveraging reference audio embeddings, is insufficient for modeling the inherent variability in speaking styles, resulting in poor controllability. The Discriminative Model delivers modest performance, likely due to its overly simplistic projection architecture, which limits its capacity to capture complex style representations. The Variation Network demonstrates strong performance in speed accuracy (92.56%) but suffers from the highest WER (4.29%), revealing a clear trade-off between style precision and linguistic consistency. Meanwhile, the Query Encoder yields more balanced results across style dimensions but still falls short of our model in both accuracy and perceptual quality. These comparisons highlight the advantage of our hierarchical predicting strategy, which achieves both controllable and intelligible speech synthesis.</p>\n\n",
                 "matched_terms": [
-                    "text",
-                    "performance",
-                    "variation",
-                    "prompt",
-                    "only",
-                    "query",
-                    "network",
-                    "gender",
-                    "speed",
-                    "model",
                     "encoder",
+                    "prompt",
+                    "model",
+                    "network",
+                    "text",
+                    "only",
+                    "variation",
+                    "discriminative",
                     "style",
-                    "discriminative"
+                    "query",
+                    "performance",
+                    "gender",
+                    "speed"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S5.T3\" title=\"Table 3 &#8227; 5.4 Ablation Study &#8227; 5 Experiment &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents the ablation results of HiStyle across four configurations (full model, without contrastive learning, without style annotation, and without both). For objective evaluation, the full model (HiStyle) achieves the best performance, excelling across all style dimensions, particularly in gender (98.78%), speech rate (90.84%), and volume (95.43%). Removing contrastive learning results in a decline in all accuracy metrics, with gender accuracy dropping to 94.49%. While omitting style annotation leads to a significant decrease in style control accuracy (e.g., pitch drops to 80.02%), although the WER remains at a moderate 3.58%. Removing both contrastive learning and style annotation results in the worst performance, with a significant increase in WER to 4.08%, emphasizing the complementarity and importance of contrastive learning and style annotation.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
-                    "volume",
-                    "performance",
-                    "objective",
-                    "gender",
-                    "histyle",
                     "model",
                     "metrics",
-                    "style"
+                    "volume",
+                    "style",
+                    "histyle",
+                    "performance",
+                    "pitch",
+                    "gender",
+                    "objective"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In terms of subjective evaluation, HiStyle also shows excellent performance in N-MOS and Style-MOS. The full model achieves the highest scores in both N-MOS (3.86 &#177; 0.07) and Style-MOS (3.75 &#177; 0.03) among all configurations, indicating that HiStyle excels not only in speech naturalness but also in maintaining style consistency. Removing contrastive learning causes a slight decline in both N-MOS and Style-MOS, with scores of 3.78 &#177; 0.01 and 3.66 &#177; 0.06, respectively. Omitting style annotation has a more significant impact, particularly on Style-MOS, which drops to 3.68 &#177; 0.08. The configuration without both contrastive learning and style annotation further reduces these metrics to 3.69 &#177; 0.04 for N-MOS and 3.62 &#177; 0.02 for Style-MOS, highlighting the importance of contrastive learning and style annotation in improving both speech naturalness and style consistency.</p>\n\n",
                 "matched_terms": [
-                    "performance",
-                    "only",
-                    "subjective",
-                    "histyle",
                     "model",
+                    "subjective",
+                    "only",
                     "metrics",
-                    "style"
+                    "style",
+                    "histyle",
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this study, we introduce HiStyle, a hierarchical two-stage style embedding predictor for text-prompt-guided controllable speech synthesis. Through an in-depth analysis of the global style embedding distribution in text-to-speech systems, we identify a clear hierarchical structure, with embeddings initially clustered by timbre and further subdivided by specific style attributes. Leveraging this insight, HiStyle is designed to predict both coarse-grained speaker embeddings and fine-grained style embeddings. To further enhance alignment between textual prompts and acoustic representations, we incorporate contrastive learning, strengthening the connection between the text and audio embedding spaces. Additionally, our novel style annotation strategy, combining statistical methodologies and human perceptual evaluation, facilitated the creation of accurate, perceptually consistent text prompts for style control. Experimental results demonstrate that HiStyle outperforms existing style embedding prediction methods in both objective and subjective metrics, achieving superior style controllability and maintaining high naturalness and intelligibility in the generated speech. The proposed approach paves the way for more versatile and user-friendly style-controllable speech synthesis systems.</p>\n\n",
                 "matched_terms": [
-                    "text",
                     "prediction",
-                    "embedding",
-                    "methods",
+                    "text",
                     "subjective",
-                    "objective",
-                    "histyle",
                     "metrics",
-                    "style"
+                    "methods",
+                    "style",
+                    "histyle",
+                    "embedding",
+                    "objective"
                 ]
             }
         ]
@@ -538,25 +538,25 @@
         "body": "Model\nAccuracy(%)↑\nWER(%)↓\nUTMOS↑\nN-MOS↑\nStyle-MOS↑\n\n\nGender\nSpeed\nVolume\nPitch\nFluctuation\n\n\n\n\nHiStyle\n98.78\n90.84\n95.43\n91.97\n88.72\n3.25\n3.39\n3.86 ± 0.07\n3.75 ± 0.03\n\n\nw/o Contrastive Learning\n94.49\n88.10\n90.43\n89.78\n83.67\n3.96\n3.29\n3.78 ± 0.01\n3.66 ± 0.06\n\n\nw/o Style Annotation\n92.64\n85.98\n88.67\n80.02\n82.21\n3.58\n3.20\n3.84 ± 0.06\n3.68 ± 0.08\n\n\nw/o Both\n92.41\n85.48\n88.49\n83.88\n80.82\n4.08\n3.08\n3.69 ± 0.04\n3.62 ± 0.02",
         "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" colspan=\"5\">Accuracy(%)&#8593;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\">WER(%)&#8595;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\" rowspan=\"2\">UTMOS&#8593;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\">N-MOS&#8593;</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" rowspan=\"2\">Style-MOS&#8593;</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\">Gender</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\">Speed</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\">Volume</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column\">Pitch</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r\">Fluctuation</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">HiStyle</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">98.78</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">90.84</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">95.43</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">91.97</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">88.72</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.25</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.39</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.86 &#177; 0.07</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.75 &#177; 0.03</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">w/o Contrastive Learning</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">94.49</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">88.10</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">90.43</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">89.78</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">83.67</span></td>\n<td class=\"ltx_td ltx_align_center\">3.96</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.29</span></td>\n<td class=\"ltx_td ltx_align_center\">3.78 &#177; 0.01</td>\n<td class=\"ltx_td ltx_align_center\">3.66 &#177; 0.06</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">w/o Style Annotation</td>\n<td class=\"ltx_td ltx_align_center\">92.64</td>\n<td class=\"ltx_td ltx_align_center\">85.98</td>\n<td class=\"ltx_td ltx_align_center\">88.67</td>\n<td class=\"ltx_td ltx_align_center\">80.02</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">82.21</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.58</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">3.20</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.84 &#177; 0.06</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.68 &#177; 0.08</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">w/o Both</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">92.41</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">85.48</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">88.49</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">83.88</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">80.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">4.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r\">3.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">3.69 &#177; 0.04</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\">3.62 &#177; 0.02</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "both",
-            "study",
-            "gender",
-            "speed",
-            "pitch",
-            "volume",
-            "annotation",
-            "stylemos↑",
-            "nmos↑",
-            "histyle",
-            "wer↓",
-            "learning",
             "strategy",
             "ablation",
+            "volume",
             "utmos↑",
-            "accuracy↑",
-            "contrastive",
+            "learning",
+            "annotation",
+            "both",
+            "histyle",
+            "pitch",
+            "gender",
+            "speed",
             "model",
+            "nmos↑",
+            "contrastive",
             "fluctuation",
+            "stylemos↑",
+            "accuracy↑",
+            "study",
+            "wer↓",
             "style"
         ],
         "citing_paragraphs": [
@@ -566,26 +566,26 @@
             {
                 "html": "<p class=\"ltx_p\">Controllable speech synthesis refers to the precise control of speaking style by manipulating specific prosodic and paralinguistic attributes, such as gender, volume, speech rate, pitch, and pitch fluctuation. With the integration of advanced generative models, particularly large language models (LLMs) and diffusion models, controllable text-to-speech (TTS) systems have increasingly transitioned from label-based control to natural language description-based control, which is typically implemented by predicting global style embeddings from textual prompts. However, this straightforward prediction overlooks the underlying distribution of the style embeddings, which may hinder the full potential of controllable TTS systems. In this study, we use t-SNE analysis to visualize and analyze the global style embedding distribution of various mainstream TTS systems, revealing a clear hierarchical clustering pattern: embeddings first cluster by timbre and subsequently subdivide into finer clusters based on style attributes. Based on this observation, we propose HiStyle, a two-stage style embedding predictor that hierarchically predicts style embeddings conditioned on textual prompts, and further incorporate contrastive learning to help align the text and audio embedding spaces. Additionally, we propose a style annotation strategy that leverages the complementary strengths of statistical methodologies and human auditory preferences to generate more accurate and perceptually consistent textual prompts for style control. Comprehensive experiments demonstrate that when applied to the base TTS model, HiStyle achieves significantly better style controllability than alternative style embedding predicting approaches while preserving high speech quality in terms of naturalness and intelligibility. Audio samples are available at https://anonymous.4open.science/w/HiStyle-2517/.</p>\n\n",
                 "matched_terms": [
-                    "learning",
-                    "pitch",
-                    "strategy",
-                    "volume",
-                    "study",
-                    "annotation",
-                    "contrastive",
-                    "gender",
-                    "histyle",
                     "model",
+                    "strategy",
+                    "contrastive",
+                    "study",
+                    "volume",
+                    "learning",
+                    "annotation",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "histyle",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In recent years, there has been a growing research focus on developing style-controllable TTS systems that allow flexible control of speaking style attributes, such as speech rate, pitch, and volume. A common approach in prior work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib10\" title=\"\">10</a>]</cite> is to use categorical labels, e.g. speaking rate level or emotion category, to represent and control these style attributes. However, such label-based methods are constrained by a limited set of predefined style categories extracted from the training corpus, which inherently limits the system&#8217;s ability to generalize to new speaking styles not seen during training. To address this limitation, subsequent studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib13\" title=\"\">13</a>]</cite> introduced reference-audio-based style transfer, which uses acoustic representation extracted from a reference audio to guide synthesis and thus avoids constrained by predefined style categories. However, seeking suitable style reference audios that precisely match user intent remains time-consuming and often impractical.</p>\n\n",
                 "matched_terms": [
-                    "style",
+                    "volume",
                     "pitch",
-                    "volume"
+                    "style"
                 ]
             },
             {
@@ -599,20 +599,20 @@
             {
                 "html": "<p class=\"ltx_p\">To address these challenges, we visualize and analyze the style embedding distribution of various mainstream TTS systems, revealing that style embeddings exhibit a clear hierarchical distribution: globally grouped according to timbre and locally subdivided by specific style attributes. Building on this insight, we design a novel hierarchical two-stage style embedding predictor, named HiStyle, which first predict coarse-grained global embeddings and then predict fine-grained style embeddings. To further enhance the alignment between textual and acoustic spaces, we incorporate a contrastive learning objective during training. In addition, recognizing the limitations of fixed thresholds in style annotation, we develop a new data annotation pipeline that combines objective statistical methods with subjective human perceptual feedback, helping generate more accurate and perceptually consistent style labels.</p>\n\n",
                 "matched_terms": [
-                    "learning",
                     "contrastive",
+                    "learning",
                     "annotation",
-                    "histyle",
-                    "style"
+                    "style",
+                    "histyle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose HiStyle, a novel two-stage style embedding predictor with contrastive learning, which hierarchically predicts style embeddings conditioned on textual prompts and achieves significantly improved controllability and naturalness in speech synthesis.</p>\n\n",
                 "matched_terms": [
                     "histyle",
+                    "style",
                     "learning",
-                    "contrastive",
-                    "style"
+                    "contrastive"
                 ]
             },
             {
@@ -647,8 +647,8 @@
             {
                 "html": "<p class=\"ltx_p\">Inspired by the hierarchical structure observed in the previous section, we propose a novel hierarchical two-stage embedding predictor, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S3.F2\" title=\"Figure 2 &#8227; 3 HiStyle &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our predictor consists of three key components: the text prompt encoder, speaker embedding predictor and style embedding predictor. First, the text prompt encoder comprising a pre-trained BERT model followed by a linear projection encodes the input text description into a text-prompt embedding<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib26\" title=\"\">26</a>]</cite>. Next, we implement a speaker embedding predictor that predicts a global speaker-related embedding conditioned on the text-prompt embedding. This predicted embedding captures the speaker-related information comprising both timbre and style information and serves as an intermediate representation<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib27\" title=\"\">27</a>]</cite>. Then, we employ a style embedding predictor, which fuse the predicted speaker embedding with the original text-prompt embedding through a residual connection as condition to predict the final style embedding<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib28\" title=\"\">28</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "both",
                     "model",
+                    "both",
                     "style"
                 ]
             },
@@ -662,8 +662,8 @@
             {
                 "html": "<p class=\"ltx_p\">To further enhance the alignment between the textual and acoustic embedding spaces, we additionally incorporate a contrastive learning objective based on cosine similarity loss<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib31\" title=\"\">31</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib32\" title=\"\">32</a>]</cite>. For each training batch, we construct positive pairs by matching each predicted embedding with its corresponding text prompt embedding, and negative pairs by associating it with the text prompt embeddings of other samples within the same batch.</p>\n\n",
                 "matched_terms": [
-                    "contrastive",
-                    "learning"
+                    "learning",
+                    "contrastive"
                 ]
             },
             {
@@ -683,19 +683,19 @@
             {
                 "html": "<p class=\"ltx_p\">We leverage a high-quality internal dataset containing 2,000 hours of expressive speech with over 20 distinct timbres and diverse styles to provide rich stylistic variations. Our annotation pipeline integrates a dual approach combining statistical analysis with human perceptual evaluation, achieving both precise and perceptually consistent style labeling. Our annotation pipeline consequently follows three key steps:</p>\n\n",
                 "matched_terms": [
-                    "both",
                     "annotation",
+                    "both",
                     "style"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The first step involves quantifying speech style attributes into measurable parameters, where we calculate gender, speech rate, volume, pitch, and pitch fluctuation values<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib33\" title=\"\">33</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "volume",
-                    "gender",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
@@ -708,28 +708,28 @@
             {
                 "html": "<p class=\"ltx_p\">For gender, we fine-tune the ECAPA-TDNN<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib24\" title=\"\">24</a>]</cite> model on a large internal gender-labeled dataset to ensure robust generalization, then use its output probabilities for annotation. For pitch and its variability (pitch fluctuation), we use <span class=\"ltx_text ltx_font_smallcaps\">PyWorld</span> to extract the frame-level fundamental frequency (<math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math>) contour for each audio. To ensure accurate measurements, we remove abnormal zeros in the <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> array caused by unnatural pauses or noise. We then calculate the mean and standard deviation of the remaining non-zero <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p3.m3\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> values, using them as the pitch and fluctuation of each recording, respectively.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
-                    "annotation",
-                    "gender",
                     "model",
-                    "fluctuation"
+                    "annotation",
+                    "fluctuation",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For gender annotation, we assign the category with the highest probability as the final gender label for each utterance. For the other attributes, we adopt a strategy that combines objective statistical thresholds with subjective auditory preference. Specifically, for speech rate, pitch, and pitch fluctuation, we use a three-level classification scheme. For each attribute, we compute the mean and standard deviation across the relevant data groups, calculating separately by gender for pitch and fluctuation, and separately by language for speech rate. Initial thresholds are then set using <math alttext=\"\\mu-\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>&#8722;</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu-\\sigma</annotation></semantics></math> and <math alttext=\"\\mu+\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><mrow><mi>&#956;</mi><mo>+</mo><mi>&#963;</mi></mrow><annotation encoding=\"application/x-tex\">\\mu+\\sigma</annotation></semantics></math> as boundaries, where <math alttext=\"\\mu\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><mi>&#956;</mi><annotation encoding=\"application/x-tex\">\\mu</annotation></semantics></math> and <math alttext=\"\\sigma\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m4\" intent=\":literal\"><semantics><mi>&#963;</mi><annotation encoding=\"application/x-tex\">\\sigma</annotation></semantics></math> are the mean and standard deviation for each group, providing a sound statistical foundation for grading.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "strategy",
                     "annotation",
-                    "gender",
-                    "fluctuation"
+                    "fluctuation",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To further align these calculated thresholds with human perception, we design an iterative annotation workflow, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S4.F3\" title=\"Figure 3 &#8227; 4.3 Human Perception Adjustment &#8227; 4 Data Annotation &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. After using the initial thresholds to categorize utterances, we randomly sample a set of borderline cases. Specifically, samples falling within a &#177;5% margin of each threshold boundary for perceptual evaluation. In each iteration, we invite three annotators with basic speech knowledge to independently listen to 50 utterances per attribute (randomly selected and distributed across levels) and assign perceptual labels such as &#8220;slow,&#8221; &#8220;medium,&#8221; or &#8220;fast&#8221; for speech rate. After collecting the annotations, we analyze inter-annotator agreement and compare the perceptual labels with the current threshold-based labels. If consistent discrepancies are observed (for example, if more than 80% of listeners consistently classify a threshold-defined &#8220;medium&#8221; utterance as &#8220;fast&#8221;), we adjust the corresponding threshold accordingly. This process is repeated for 2&#8211;3 rounds until the classification results achieve over 85% agreement with human perceptual judgments, ensuring that the final attribute intervals are both statistically grounded and perceptually reliable.</p>\n\n",
                 "matched_terms": [
-                    "both",
-                    "annotation"
+                    "annotation",
+                    "both"
                 ]
             },
             {
@@ -742,20 +742,20 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Model and Training Details</span> The diffusion encoder in our system, including the speaker embedding predictor, and style embedding predictor consisting of 12 layers, each with a hidden size of 512. Each diffusion model contains approximately 30 million parameters. We train our two-stage embedding predictor using the Adam optimizer with a learning rate of <math alttext=\"2\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-4}</annotation></semantics></math>, employing a warmup schedule followed by cosine decay. The batch size is set to 128, and training is conducted on 8 NVIDIA A6000 GPUs.</p>\n\n",
                 "matched_terms": [
-                    "learning",
                     "model",
+                    "learning",
                     "style"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics</span> We first assess the accuracy of key speaking style attributes, including gender, speech rate, volume, pitch, and fluctuation. Gender accuracy is determined using an internal fine-tuned gender classifier. For the remaining attributes, we utilize the style annotation pipeline to annotate the synthesized speech, and then compare these labels with the corresponding style attributes in the text prompt to calculate the accuracy for each attribute. Additionally, we evaluate the overall quality of the synthesized speech in terms of Word Error Rate (WER), and UTMOS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib34\" title=\"\">34</a>]</cite>, following the evaluation protocols provided by Seed-TTS-eval<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#bib.bib4\" title=\"\">4</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "pitch",
                     "volume",
                     "annotation",
-                    "gender",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
@@ -776,56 +776,56 @@
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">HiStyle</span> Our proposed method, which using two transformer encoder based diffusion models to hierarchically predict style embeddings conditioned on text prompts. The prediction network is optimized by MSE loss, contrastive loss and speech synthesis loss.</p>\n\n",
                 "matched_terms": [
                     "histyle",
-                    "contrastive",
-                    "style"
+                    "style",
+                    "contrastive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.25842v1#S5.T2\" title=\"Table 2 &#8227; 5.3 Effectiveness of HiStyle &#8227; 5 Experiment &#8227; HiStyle: Hierarchical Style Embedding Predictor for Text-Prompt-Guided Controllable Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, our proposed two-stage embedding predictor consistently outperforms all compared approaches across multiple objective metrics. In terms of style attribute controllability, our method achieves the highest accuracy across key dimensions including volume (95.56%), pitch (92.87%), and fluctuation (88.02%), indicating its superior capability in capturing diverse speaking style characteristics from text prompts. In addition, it achieves the highest accuracy in gender prediction (98.88%), confirming the robustness of the model in handling both linguistic and paralinguistic cues. Moreover, our method maintains a low WER of 3.32% and a low UTMOS of 3.41, demonstrating that enhanced controllability does not come at the cost of speech intelligibility or naturalness. Additionally, for subjective indicators, our method achieves a Style-MOS score of 3.71 &#177; 0.05, the highest among all competing systems, demonstrating superior style controllability and a stronger alignment between the intended and perceived speaking style. In terms of naturalness, our method obtains a N-MOS of 3.80 &#177; 0.08, which is competitive with the best performing baseline (Query Encoder: 3.83 &#177; 0.09). Notably, our approach delivers the best overall trade-off between style controllability and speech naturalness.</p>\n\n",
                 "matched_terms": [
-                    "both",
-                    "pitch",
-                    "volume",
-                    "gender",
                     "model",
+                    "volume",
+                    "both",
                     "fluctuation",
-                    "style"
+                    "style",
+                    "pitch",
+                    "gender"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In contrast, the Text Prompt Only approach shows the lowest performance in all style dimensions except gender. This suggests that using text prompts alone, without leveraging reference audio embeddings, is insufficient for modeling the inherent variability in speaking styles, resulting in poor controllability. The Discriminative Model delivers modest performance, likely due to its overly simplistic projection architecture, which limits its capacity to capture complex style representations. The Variation Network demonstrates strong performance in speed accuracy (92.56%) but suffers from the highest WER (4.29%), revealing a clear trade-off between style precision and linguistic consistency. Meanwhile, the Query Encoder yields more balanced results across style dimensions but still falls short of our model in both accuracy and perceptual quality. These comparisons highlight the advantage of our hierarchical predicting strategy, which achieves both controllable and intelligible speech synthesis.</p>\n\n",
                 "matched_terms": [
-                    "both",
-                    "strategy",
-                    "gender",
-                    "speed",
                     "model",
-                    "style"
+                    "strategy",
+                    "both",
+                    "style",
+                    "gender",
+                    "speed"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In terms of subjective evaluation, HiStyle also shows excellent performance in N-MOS and Style-MOS. The full model achieves the highest scores in both N-MOS (3.86 &#177; 0.07) and Style-MOS (3.75 &#177; 0.03) among all configurations, indicating that HiStyle excels not only in speech naturalness but also in maintaining style consistency. Removing contrastive learning causes a slight decline in both N-MOS and Style-MOS, with scores of 3.78 &#177; 0.01 and 3.66 &#177; 0.06, respectively. Omitting style annotation has a more significant impact, particularly on Style-MOS, which drops to 3.68 &#177; 0.08. The configuration without both contrastive learning and style annotation further reduces these metrics to 3.69 &#177; 0.04 for N-MOS and 3.62 &#177; 0.02 for Style-MOS, highlighting the importance of contrastive learning and style annotation in improving both speech naturalness and style consistency.</p>\n\n",
                 "matched_terms": [
-                    "both",
-                    "learning",
-                    "contrastive",
-                    "annotation",
-                    "histyle",
                     "model",
-                    "style"
+                    "contrastive",
+                    "learning",
+                    "annotation",
+                    "both",
+                    "style",
+                    "histyle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this study, we introduce HiStyle, a hierarchical two-stage style embedding predictor for text-prompt-guided controllable speech synthesis. Through an in-depth analysis of the global style embedding distribution in text-to-speech systems, we identify a clear hierarchical structure, with embeddings initially clustered by timbre and further subdivided by specific style attributes. Leveraging this insight, HiStyle is designed to predict both coarse-grained speaker embeddings and fine-grained style embeddings. To further enhance alignment between textual prompts and acoustic representations, we incorporate contrastive learning, strengthening the connection between the text and audio embedding spaces. Additionally, our novel style annotation strategy, combining statistical methodologies and human perceptual evaluation, facilitated the creation of accurate, perceptually consistent text prompts for style control. Experimental results demonstrate that HiStyle outperforms existing style embedding prediction methods in both objective and subjective metrics, achieving superior style controllability and maintaining high naturalness and intelligibility in the generated speech. The proposed approach paves the way for more versatile and user-friendly style-controllable speech synthesis systems.</p>\n\n",
                 "matched_terms": [
-                    "both",
-                    "learning",
                     "strategy",
-                    "study",
-                    "annotation",
                     "contrastive",
-                    "histyle",
-                    "style"
+                    "study",
+                    "learning",
+                    "annotation",
+                    "both",
+                    "style",
+                    "histyle"
                 ]
             }
         ]

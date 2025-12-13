@@ -6,13 +6,13 @@
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\">System</th>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">AUC</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">ACC</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">REC</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">F1-score</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_b ltx_border_t\">Our Model</th>\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\">83.9</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\">0.81</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\">0.890</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\">0.813</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "system",
-            "result",
-            "f1score",
             "acc",
-            "rec",
-            "our",
             "model",
-            "auc"
+            "f1score",
+            "result",
+            "auc",
+            "our",
+            "rec"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">As summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#S5.T1\" title=\"TABLE I &#8227; V-A Quantitative Performance Analysis &#8227; V Results and Discussion &#8227; Temporal-Aware Iterative Speech Model for Dementia Detection\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>, our proposed architecture achieved a high level of discriminative performance, yielding an test AUC of 0.839. The model obtained an accuracy of 80.55%, recall of 0.890, and an F1-score of 0.813.</p>\n\n"
@@ -21,23 +21,23 @@
             {
                 "html": "<p class=\"ltx_p\">Deep learning systems often struggle with processing long sequences, where computational complexity can become a bottleneck. Current methods for automated dementia detection using speech frequently rely on static, time-agnostic features or aggregated linguistic content, lacking the flexibility to model the subtle, progressive deterioration inherent in speech production. These approaches often miss the dynamic temporal patterns that are critical early indicators of cognitive decline. In this paper, we introduce TAI-Speech, a Temporal Aware Iterative framework that dynamically models spontaneous speech for dementia detection. The flexibility of our method is demonstrated through two key innovations: 1) Optical Flow-inspired Iterative Refinement: By treating spectrograms as sequential frames, this component uses a convolutional GRU to capture the fine-grained, frame-to-frame evolution of acoustic features. 2) Cross-Attention Based Prosodic Alignment: This component dynamically aligns spectral features with prosodic patterns, such as pitch and pauses, to create a richer representation of speech production deficits linked to functional decline (IADL). TAI-Speech adaptively models the temporal evolution of each utterance, enhancing the detection of cognitive markers. Experimental results on the DementiaBank dataset show that TAI-Speech achieves a strong AUC of 0.839 and 80.6% accuracy, outperforming text-based baselines without relying on ASR. Our work provides a more flexible and robust solution for automated cognitive assessment, operating directly on the dynamics of raw audio.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "auc",
                     "model",
-                    "auc"
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present TAI-Speech, a deep learning framework that treats speech as a dynamic sequence of spectrogram frames. Our model adapts the Recurrent All-Pairs Field Transform (RAFT) paradigm <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib13\" title=\"\">13</a>]</cite>,<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib14\" title=\"\">14</a>]</cite>,<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib15\" title=\"\">15</a>]</cite> to audio analysis. A convolutional GRU serves as a recurrent update module that iteratively refines latent representations, while cross-attention aligns acoustic and prosodic cues. A Transformer encoder aggregates these temporally enriched features for utterance-level prediction. Unlike optical flow, we do not estimate motion vectors but leverage RAFT&#8217;s iterative refinement to construct a temporally aware embedding of the speech signal. Evaluated on the DementiaBank Pitt corpus, TAI-Speech outperforms strong linguistic baselines, demonstrating that temporally sensitive modeling substantially improves early dementia detection. While our conceptual framework highlights functional deterioration in IADLs, the current empirical evidence derives solely from speech-based classification; thus, the IADL connection remains theoretical.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "model"
+                    "model",
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our goal is to capture temporal markers of functional decline, particularly those linked to Instrumental Activities of Daily Living directly from raw speech. <span class=\"ltx_text ltx_font_bold\">TAI-Speech</span> integrates prosodic encodings, convolutional spectral processing, iterative temporal refinement, and sequence-level aggregation (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#S3.F2\" title=\"Figure 2 &#8227; III-B Model Architecture &#8227; III Methodology &#8227; Temporal-Aware Iterative Speech Model for Dementia Detection\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). The model is trained end-to-end with a joint objective combining cross-entropy classification and a temporal smoothness regularizer to enforce stability across successive frames.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "model"
+                    "model",
+                    "our"
                 ]
             },
             {
@@ -50,11 +50,11 @@
             {
                 "html": "<p class=\"ltx_p\">The proposed model was rigorously evaluated using a 5-fold cross-validation protocol. The primary metric for assessing the model&#8217;s ability to discriminate between dementia and healthy control classes was the Area Under the Curve (AUC), with Accuracy (ACC), Recall (REC), and F1-score also reported for a comprehensive analysis.</p>\n\n",
                 "matched_terms": [
-                    "f1score",
-                    "rec",
                     "acc",
                     "model",
-                    "auc"
+                    "f1score",
+                    "auc",
+                    "rec"
                 ]
             },
             {
@@ -68,41 +68,41 @@
                 "html": "<p class=\"ltx_p\">The TAI-Speech architecture achieved an AUC of 0.839, an accuracy of 80.55%, a recall of 89.0%, and an F1-score of 0.813. These results represent a significant improvement over purely linguistic baselines.\nWhen benchmarked against state-of-the-art systems in table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#S5.T2\" title=\"TABLE II &#8227; V-A Quantitative Performance Analysis &#8227; V Results and Discussion &#8227; Temporal-Aware Iterative Speech Model for Dementia Detection\"><span class=\"ltx_text ltx_ref_tag\">II</span></a>, our model demonstrates good performance across all evaluation metrics. The 8% improvement in AUC over <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib16\" title=\"\">16</a>]</cite>.&#8217;s pause-infused text model (77.2%) and competitive performance against <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib2\" title=\"\">2</a>]</cite> attention-based multimodal system (82.56% accuracy) underscore the efficacy of our temporatsively on acoustic signals without requiring error-prone ASR transcription or linguistic feature extraction.</p>\n\n",
                 "matched_terms": [
                     "system",
-                    "f1score",
-                    "our",
                     "model",
-                    "auc"
+                    "f1score",
+                    "auc",
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While systems incorporating ASR features achieve the highest AUC and accuracy, our purely acoustic model obtains the highest recall. It is notable that TAI-Speech achieves this level of performance without relying on a linguistic pipeline. This suggests that the temporal dynamics encoded within the acoustic signal contain sufficient information for effective dementia classification. This single-modality approach may offer advantages in robustness and simplicity, as it avoids potential cascading errors from ASR systems, which can struggle with the atypical speech patterns often present in clinical populations. The results indicate that direct modeling of speech dynamics is a viable and powerful alternative to multimodal approaches that require transcription.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "auc",
                     "model",
-                    "auc"
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model&#8217;s convolutional GRU-based update module may be effective at capturing hesitation patterns, variable speech rates, and prosodic irregularities characteristic of speech produced by individuals with dementia. In contrast to approaches that analyze the final linguistic product, our model is designed to capture patterns in the speech production process itself. While semantic errors and vocabulary limitations are important markers captured by linguistic models, they represent the endpoint of a cognitive process. Our method, by modeling the temporal trajectory of speech, aims to detect subtle perturbations that may precede overt linguistic deterioration.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "model"
+                    "model",
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Although direct IADL measurements were not incorporated into this study, the established link between speech production deficits and functional decline provides an interpretive context for our results. The model&#8217;s sensitivity to temporal speech features aligns with known correlations between communication difficulties and IADL impairment. For example, word-finding difficulties, which manifest acoustically as increased pause frequency and duration, can affect functional tasks that require verbal communication. The cross-attention mechanism aligns spectral embeddings with prosodic dynamics like pitch and pauses, which may encode information about the cognitive effort involved in speech planning and execution. The degradation of these processes, as captured by our model, may serve as an indicator of the executive dysfunction that can lead to IADL impairment.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "model"
+                    "model",
+                    "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we introduced TAI-Speech, a novel architecture for dementia detection that models the temporal dynamics of speech. By adapting the principle of iterative refinement from the field of optical flow, our model analyzes the evolution of acoustic-prosodic features over the course of an utterance. On the DementiaBank Pitt corpus, TAI-Speech achieved an AUC of 0.839, demonstrating performance that is competitive with state-of-the-art multimodal systems without requiring linguistic transcription. This result validates temporal modeling as an effective approach for this task. While the link between the captured speech dynamics and functional impairment is theoretically grounded, future work is required to empirically validate this connection using datasets that include clinical IADL assessments.</p>\n\n",
                 "matched_terms": [
+                    "auc",
                     "our",
-                    "result",
                     "model",
-                    "auc"
+                    "result"
                 ]
             }
         ]
@@ -114,20 +114,20 @@
         "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">System</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Modality</th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">AUC (%)</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">Acc (%)</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">Recall</span></th>\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">F1-score</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib36\" title=\"\">36</a>]</cite></th>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Lingustic</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">&#8211;</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">70.83</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">0.71</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">0.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib2\" title=\"\">2</a>]</cite></th>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Multimodal</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">&#8211;</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">82.56</span></td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">0.83</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.83</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib16\" title=\"\">16</a>]</cite></th>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Multimodal</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">77.2</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">&#8211;</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">&#8211;</td>\n<td class=\"ltx_td ltx_align_left\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Ours</th>\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">Acoustic-Temporal</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">83.9</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">80.55</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.89</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding-left:4.0pt;padding-right:4.0pt;\">0.83</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "system",
-            "ours",
-            "f1score",
-            "performance",
-            "acoustictemporal",
-            "comparison",
-            "proposed",
             "acc",
             "recall",
-            "multimodal",
-            "between",
-            "lingustic",
             "model",
-            "auc",
-            "modality"
+            "acoustictemporal",
+            "lingustic",
+            "f1score",
+            "ours",
+            "proposed",
+            "between",
+            "modality",
+            "multimodal",
+            "performance",
+            "comparison",
+            "auc"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">The TAI-Speech architecture achieved an AUC of 0.839, an accuracy of 80.55%, a recall of 89.0%, and an F1-score of 0.813. These results represent a significant improvement over purely linguistic baselines.\nWhen benchmarked against state-of-the-art systems in table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#S5.T2\" title=\"TABLE II &#8227; V-A Quantitative Performance Analysis &#8227; V Results and Discussion &#8227; Temporal-Aware Iterative Speech Model for Dementia Detection\"><span class=\"ltx_text ltx_ref_tag\">II</span></a>, our model demonstrates good performance across all evaluation metrics. The 8% improvement in AUC over <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib16\" title=\"\">16</a>]</cite>.&#8217;s pause-infused text model (77.2%) and competitive performance against <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib2\" title=\"\">2</a>]</cite> attention-based multimodal system (82.56% accuracy) underscore the efficacy of our temporatsively on acoustic signals without requiring error-prone ASR transcription or linguistic feature extraction.</p>\n\n"
@@ -136,73 +136,73 @@
             {
                 "html": "<p class=\"ltx_p\">Deep learning systems often struggle with processing long sequences, where computational complexity can become a bottleneck. Current methods for automated dementia detection using speech frequently rely on static, time-agnostic features or aggregated linguistic content, lacking the flexibility to model the subtle, progressive deterioration inherent in speech production. These approaches often miss the dynamic temporal patterns that are critical early indicators of cognitive decline. In this paper, we introduce TAI-Speech, a Temporal Aware Iterative framework that dynamically models spontaneous speech for dementia detection. The flexibility of our method is demonstrated through two key innovations: 1) Optical Flow-inspired Iterative Refinement: By treating spectrograms as sequential frames, this component uses a convolutional GRU to capture the fine-grained, frame-to-frame evolution of acoustic features. 2) Cross-Attention Based Prosodic Alignment: This component dynamically aligns spectral features with prosodic patterns, such as pitch and pauses, to create a richer representation of speech production deficits linked to functional decline (IADL). TAI-Speech adaptively models the temporal evolution of each utterance, enhancing the detection of cognitive markers. Experimental results on the DementiaBank dataset show that TAI-Speech achieves a strong AUC of 0.839 and 80.6% accuracy, outperforming text-based baselines without relying on ASR. Our work provides a more flexible and robust solution for automated cognitive assessment, operating directly on the dynamics of raw audio.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "auc"
+                    "auc",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multimodal fusion strategies integrate modalities through early feature concatenation, late decision-level aggregation, and cross-attention mechanisms that dynamically weight each modality. Although ASR errors can introduce noise, transcripts with relatively high Word Error Rates (WER) often perform on par with or better than manual transcriptions for dementia classification, suggesting that salient cognitive cues persist in noisy outputs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#bib.bib23\" title=\"\">23</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "modality"
+                    "modality",
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In order to guarantee a rigorous and unbiased evaluation of the proposed approach, we adopt a stratified five-fold cross-validation (5-fold CV) protocol. This strategy preserves the original class distribution within each fold, a critical consideration when working with imbalanced clinical datasets. The primary evaluation metric is the Area Under the Curve (AUC), which provides a robust measure of discriminative capability between dementia and healthy control groups. In addition, we report secondary performance indicators, namely accuracy, precision, recall, and F1-score, thereby offering a comprehensive assessment across multiple dimensions of classification performance.</p>\n\n",
                 "matched_terms": [
+                    "recall",
                     "f1score",
-                    "performance",
                     "proposed",
                     "between",
-                    "auc",
-                    "recall"
+                    "performance",
+                    "auc"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This section presents the performance of our proposed architecture, contextualizes the findings by comparing them against established baseline models, and discusses the broader implications of our results, with a specific focus on how the model&#8217;s design relates to the detection of functional decline.</p>\n\n",
                 "matched_terms": [
-                    "proposed",
-                    "performance"
+                    "performance",
+                    "proposed"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The proposed model was rigorously evaluated using a 5-fold cross-validation protocol. The primary metric for assessing the model&#8217;s ability to discriminate between dementia and healthy control classes was the Area Under the Curve (AUC), with Accuracy (ACC), Recall (REC), and F1-score also reported for a comprehensive analysis.</p>\n\n",
                 "matched_terms": [
+                    "acc",
+                    "recall",
+                    "model",
                     "f1score",
                     "proposed",
-                    "acc",
                     "between",
-                    "model",
-                    "auc",
-                    "recall"
+                    "auc"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.00030v1#S5.T1\" title=\"TABLE I &#8227; V-A Quantitative Performance Analysis &#8227; V Results and Discussion &#8227; Temporal-Aware Iterative Speech Model for Dementia Detection\"><span class=\"ltx_text ltx_ref_tag\">I</span></a>, our proposed architecture achieved a high level of discriminative performance, yielding an test AUC of 0.839. The model obtained an accuracy of 80.55%, recall of 0.890, and an F1-score of 0.813.</p>\n\n",
                 "matched_terms": [
-                    "f1score",
-                    "performance",
-                    "proposed",
+                    "recall",
                     "model",
-                    "auc",
-                    "recall"
+                    "f1score",
+                    "proposed",
+                    "performance",
+                    "auc"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While systems incorporating ASR features achieve the highest AUC and accuracy, our purely acoustic model obtains the highest recall. It is notable that TAI-Speech achieves this level of performance without relying on a linguistic pipeline. This suggests that the temporal dynamics encoded within the acoustic signal contain sufficient information for effective dementia classification. This single-modality approach may offer advantages in robustness and simplicity, as it avoids potential cascading errors from ASR systems, which can struggle with the atypical speech patterns often present in clinical populations. The results indicate that direct modeling of speech dynamics is a viable and powerful alternative to multimodal approaches that require transcription.</p>\n\n",
                 "matched_terms": [
-                    "performance",
+                    "recall",
                     "model",
                     "multimodal",
-                    "auc",
-                    "recall"
+                    "performance",
+                    "auc"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The performance of TAI-Speech can be attributed to its architectural design, which adapts principles from optical flow to model speech as a continuous, evolving signal. This approach facilitates the capture of micro-temporal variations in speech that are often associated with cognitive decline. The iterative refinement mechanism, inspired by the RAFT architecture, allows the model to progressively build a representation of speech dynamics across multiple time scales.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "performance"
+                    "performance",
+                    "model"
                 ]
             },
             {
@@ -215,17 +215,17 @@
             {
                 "html": "<p class=\"ltx_p\">Future work should aim to validate these findings on larger, more diverse, and longitudinal corpora. Incorporating patient IADL scores as an explicit modeling target could provide a more direct method for detecting functional decline. Exploring multimodal fusion, which would combine the temporal acoustic features from TAI-Speech with semantic embeddings from large language models, may also lead to improved robustness and performance. Finally, longitudinal studies are necessary to determine if changes in the model&#8217;s output correlate with cognitive trajectories over time, potentially enabling the use of personalized baselines for early detection.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "performance"
+                    "performance",
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we introduced TAI-Speech, a novel architecture for dementia detection that models the temporal dynamics of speech. By adapting the principle of iterative refinement from the field of optical flow, our model analyzes the evolution of acoustic-prosodic features over the course of an utterance. On the DementiaBank Pitt corpus, TAI-Speech achieved an AUC of 0.839, demonstrating performance that is competitive with state-of-the-art multimodal systems without requiring linguistic transcription. This result validates temporal modeling as an effective approach for this task. While the link between the captured speech dynamics and functional impairment is theoretically grounded, future work is required to empirically validate this connection using datasets that include clinical IADL assessments.</p>\n\n",
                 "matched_terms": [
-                    "performance",
+                    "model",
                     "multimodal",
                     "between",
-                    "model",
+                    "performance",
                     "auc"
                 ]
             }

@@ -20,10 +20,10 @@ public class IndexListener implements ApplicationListener<IndexingCompleteEvent>
     }
     @Override
     public void onApplicationEvent(@NonNull IndexingCompleteEvent event) {
-        System.err.println("------- AVVIO STATISTICHE ------");
+        System.err.println("\n\n=========== INIZIO SEZIONE STATISTICHE===========\n");
         StatsService statistiche = new StatsService();
-        statistiche.statsIndex(Paths.get(luceneConfig.getIndexDirectory()));
-        System.err.println("--------------------------------");
+        statistiche.statsIndex(Paths.get(luceneConfig.getIndexDirectory()), Paths.get(luceneConfig.getTableDirectory()));
+        System.err.println("\n-=========== FINE SEZIONE STATISTICHE ===========\n\n");
     }
 }
 
