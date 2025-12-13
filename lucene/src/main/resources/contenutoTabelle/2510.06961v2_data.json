@@ -1,35 +1,37 @@
 {
     "S2.T1": {
+        "source_file": "Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation",
         "caption": "Table 1: Datasets used for the Open ASR Leaderboard. The Task(s) column indicates which tasks (as denoted in Section 2.1) the dataset is used for. The duration is of the test-split. The Multilingual datasets indicate the range of durations for the evaluated languages. Note that for Earnings22 a subset of 5 h5\\text{\\,}\\mathrm{h} is used for short-form English (Leaderboard) comparison.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Leaderboard, Long-form</td>\n</tr>\n</table>\n",
+        "body": "Leaderboard, Long-form",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Leaderboard, Long-form</td>\n</tr>\n</table>\n",
         "informative_terms_identified": [
-            "evaluated",
-            "column",
+            "denoted",
+            "datasets",
             "h5textmathrmh",
-            "shortform",
-            "multilingual",
-            "which",
-            "testsplit",
-            "earnings22",
-            "durations",
-            "comparison",
             "open",
-            "leaderboard",
-            "longform",
-            "tasks",
+            "multilingual",
             "used",
             "range",
-            "indicate",
-            "english",
-            "note",
+            "leaderboard",
+            "longform",
             "asr",
-            "indicates",
-            "datasets",
+            "which",
             "languages",
-            "denoted",
-            "duration",
+            "note",
+            "column",
+            "earnings22",
+            "testsplit",
+            "indicates",
+            "evaluated",
+            "comparison",
+            "durations",
+            "shortform",
+            "dataset",
+            "english",
+            "indicate",
             "subset",
-            "dataset"
+            "duration",
+            "tasks"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T1\" title=\"In 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a> summarizes the datasets used for the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
@@ -40,21 +42,21 @@
                 "html": "<p class=\"ltx_p\">Despite rapid progress, ASR evaluation remains saturated with short-form English, and efficiency is rarely reported. We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a fully reproducible benchmark and interactive leaderboard comparing 60+ open-source and proprietary systems across 11 datasets, including dedicated multilingual and long-form tracks. We standardize text normalization and report both word error rate (WER) and inverse real-time factor (RTFx), enabling fair accuracy&#8211;efficiency comparisons. For English transcription, Conformer encoders paired with LLM decoders achieve the best average WER but are slower, while CTC and TDT decoders deliver much better RTFx, making them attractive for long-form and offline use. Whisper-derived encoders fine-tuned for English improve accuracy but often trade off multilingual coverage. All code and dataset loaders are open-sourced to support transparent, extensible evaluation.</p>\n\n",
                 "matched_terms": [
                     "english",
-                    "shortform",
-                    "multilingual",
-                    "open",
                     "leaderboard",
                     "longform",
                     "asr",
-                    "dataset",
-                    "datasets"
+                    "datasets",
+                    "open",
+                    "multilingual",
+                    "shortform",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nBenchmarking, automatic speech recognition, reproducible, multilingual, long-form</p>\n\n",
                 "matched_terms": [
-                    "longform",
-                    "multilingual"
+                    "multilingual",
+                    "longform"
                 ]
             },
             {
@@ -69,146 +71,146 @@
                 "html": "<p class=\"ltx_p\">Automatic speech recognition (ASR) has seen remarkable progress in recent years, fueled in part by open-source contributions.\nPublicly-available datasets&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib2\" title=\"\">2</a>]</cite> and pre-trained models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite> have enabled researchers across academia and industry to build on existing work.\nYet, as the number of datasets and models grows, it becomes increasingly difficult for developers of new models to know which baselines to compare against and how. Similarly, users focused on inference may find it difficult to identify which model,\nwhether open-source or proprietary,\nbest meets their needs in terms of application and/or efficiency.\nMoreover, most existing benchmarks and evaluations overwhelmingly emphasize English and short-form transcription.</p>\n\n",
                 "matched_terms": [
                     "english",
-                    "shortform",
-                    "which",
                     "asr",
-                    "datasets"
+                    "which",
+                    "datasets",
+                    "shortform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several efforts have sought to address parts of this problem,\nincluding benchmarks across multiple accents and diverse contexts in the French language&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib6\" title=\"\">6</a>]</cite>,\nunder noise and reverberation in far-field settings&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib7\" title=\"\">7</a>]</cite>,\ncomparing commercial and open-source models in English and Chinese&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib8\" title=\"\">8</a>]</cite>.\nSome common observations can be drawn from these efforts: (1)&#160;there is no &#8220;catch-all&#8221; model, (2)&#160;no single dataset is sufficient for evaluation, and (3)&#160;a single metric, <em class=\"ltx_emph ltx_font_italic\">i.e.</em>, word error rate (WER), is not enough.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "english"
+                    "english",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these challenges\nwe introduce the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>. Our contributions include:</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A comparison of models for long-form transcription.</p>\n\n",
                 "matched_terms": [
-                    "longform",
-                    "comparison"
+                    "comparison",
+                    "longform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For full transparency and to facilitate the addition of new models and datasets, the leaderboard&#8217;s codebase is open-sourced.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>Code: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/huggingface/open_asr_leaderboard\" title=\"\">github.com/huggingface/open_asr_leaderboard</a></span></span></span>\nThe above model, dataset, and languages count are as of 8 Oct 2025, and will continue to increase with new additions to the leaderboard.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
                     "languages",
-                    "datasets",
-                    "leaderboard"
+                    "dataset",
+                    "leaderboard",
+                    "datasets"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As part of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nthere are evaluations on three tasks, with the following tabs:</p>\n\n",
                 "matched_terms": [
-                    "asr",
-                    "open",
                     "tasks",
-                    "leaderboard"
+                    "asr",
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Leaderboard</span>, which evaluates English transcription.</p>\n\n",
                 "matched_terms": [
+                    "english",
                     "leaderboard",
-                    "which",
-                    "english"
+                    "which"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Multilingual</span>, which currently evaluates German, French, Italian, Spanish, and Portuguese transcription.</p>\n\n",
                 "matched_terms": [
-                    "multilingual",
-                    "which"
+                    "which",
+                    "multilingual"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Long-form</span>, which evaluates English transcription on audio longer than <math alttext=\"30\\text{\\,}\\mathrm{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>30</mn><mtext>&#160;</mtext><mi class=\"ltx_unit\" mathvariant=\"normal\">s</mi></mrow><annotation encoding=\"application/x-tex\">30\\text{\\,}\\mathrm{s}</annotation></semantics></math> (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, the receptive field of Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>).</p>\n\n",
                 "matched_terms": [
-                    "longform",
+                    "english",
                     "which",
-                    "english"
+                    "longform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A separate <span class=\"ltx_text ltx_font_italic\">Long-form</span> evaluation is necessary because some models employ chunking strategies to reduce inference time, which can in turn affect transcription quality.</p>\n\n",
                 "matched_terms": [
-                    "longform",
-                    "which"
+                    "which",
+                    "longform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The datasets used for evaluation are presented in&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS2\" title=\"2.2 Datasets &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.2</span></a>.\nThe models are evaluated according to WER,\nand can be dynamically sorted on the leaderboard page according to WER-performance on a particular dataset (more on metrics in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS3\" title=\"2.3 Metrics &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.3</span></a>).\n<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS4\" title=\"2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.4</span></a> presents models that are evaluated within the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nwhile <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a> describes the process of adding a new model.</p>\n\n",
                 "matched_terms": [
-                    "evaluated",
-                    "open",
                     "leaderboard",
                     "asr",
-                    "dataset",
+                    "evaluated",
+                    "datasets",
+                    "open",
                     "used",
-                    "datasets"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Dataset retrieval and usage is enabled through the <span class=\"ltx_text ltx_font_italic\">datasets</span> package&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib18\" title=\"\">18</a>]</cite>.\nThe datasets themselves are hosted on the Hugging Face Hub,<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><span class=\"ltx_text ltx_font_italic\">Leaderboard</span>: <a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/datasets/hf-audio/esb-datasets-test-only-sorted\" title=\"\">hf.co/datasets/hf-audio/esb-datasets-test-only-sorted</a>;\n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_italic\">Multilingual</span>: <a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/datasets/nithinraok/asr-leaderboard-datasets\" title=\"\">hf.co/datasets/nithinraok/asr-leaderboard-datasets</a>;\n<br class=\"ltx_break\"/><span class=\"ltx_text ltx_font_italic\">Long-form</span>: <a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/datasets/hf-audio/asr-leaderboard-longform\" title=\"\">hf.co/datasets/hf-audio/asr-leaderboard-longform</a></span></span></span>\nwhich allows for interactive exploration, <em class=\"ltx_emph ltx_font_italic\">e.g.</em>, listening to individual audio, viewing their metadata, and performing SQL queries, all from the browser and without having to download the datasets.\nWith the above engineering choices, the datasets can be conveniently downloaded and used in Python, as shown below:</p>\n\n",
                 "matched_terms": [
-                    "multilingual",
-                    "which",
                     "longform",
-                    "dataset",
+                    "which",
+                    "datasets",
+                    "multilingual",
                     "used",
-                    "datasets"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Of the 64 models currently listed in the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (as of 8 Oct 2025), 57 are open-source.\nThe 64 models come from 18 organizations: NVIDIA&#160;(18),\nMeta&#160;(12), OpenAI&#160;(8), Hugging Face&#160;(5), University of Washington&#160;(4), IBM&#160;(2), Rev AI&#160;(2), SpeechBrain&#160;(2), Useful Sensors&#160;(2), AssemblyAI&#160;(1), Aqua Voice&#160;(1), ElevenLabs&#160;(1), Kyutai&#160;(1), Microsoft&#160;(1), Mistral AI&#160;(1), Nyra Health&#160;(1), Speechmatics&#160;(1), and Ultravox&#160;(1).</p>\n\n",
                 "matched_terms": [
+                    "leaderboard",
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">All the evaluation code is open-sourced on GitHub.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><a class=\"ltx_ref ltx_href\" href=\"https://github.com/huggingface/open_asr_leaderboard\" title=\"\">github.com/huggingface/open_asr_leaderboard</a></span></span></span>\nAs such, the process of adding a new model or dataset consists of opening a <span class=\"ltx_text ltx_font_italic\">pull request</span> (PR).\nTo add a new model, a new folder should be created with: (1) a Python script for evaluating on a specific dataset and (optionally) with a specific model version;<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span>A template can be found in <span class=\"ltx_text ltx_font_typewriter\">transformers/run_eval.py</span></span></span></span> and (2) a Bash script which calls the Python script for each dataset and model combination.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "which"
+                    "which",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">All evaluation scripts, as described in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a>, were conducted on an NVIDIA A100-SXM4-80GB GPU (driver 560.28.03, CUDA 12.6), using a batch size of 64 whenever memory allowed, and reduced adaptively (48, 32, 16, &#8230;) when necessary to fit in device memory.\nSince the full results are continuously updated on the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> and are too extensive to include here, we present a condensed version of the English leaderboard in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, the multilingual results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>, and the long-form results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>.</p>\n\n",
                 "matched_terms": [
                     "english",
-                    "multilingual",
-                    "open",
                     "leaderboard",
                     "longform",
-                    "asr"
+                    "asr",
+                    "open",
+                    "multilingual"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For short-form English transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>), models with a Conformer encoder and an LLM-based decoder achieve the best results, with the top four models using this architecture.\nHowever, these approaches are significantly slower compared to models using TDT or CTC decoders. While the latter can achieve superior RTFx, this comes at the cost of accuracy: <em class=\"ltx_emph ltx_font_italic\">e.g.</em>, the best CTC-based model (<span class=\"ltx_text ltx_font_italic\">NVIDIA Parakeet CTC 1.1B</span>) ranks only 23rd in terms of WER.</p>\n\n",
                 "matched_terms": [
-                    "shortform",
-                    "english"
+                    "english",
+                    "shortform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Self-supervised learning (SSL) approaches have enabled ASR systems for 1K+ languages, yet the top SSL-based system for English transcription ranks only 52nd, <em class=\"ltx_emph ltx_font_italic\">i.e.</em>, last row of <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a> which uses <span class=\"ltx_text ltx_font_italic\">wav2vec2</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>.\nAs shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>, the leaderboard only covers SSL encoders with CTC decoders;\ncombining such encoders with more performant decoders may help bridge this gap.</p>\n\n",
                 "matched_terms": [
-                    "languages",
                     "english",
-                    "which",
                     "leaderboard",
-                    "asr"
+                    "asr",
+                    "which",
+                    "languages"
                 ]
             },
             {
@@ -221,81 +223,83 @@
             {
                 "html": "<p class=\"ltx_p\">The multilingual results of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>) highlight an important tradeoff in ASR: specialization versus broad coverage.\nNamely, the improvement in English performance of fine-tuned Whisper models often comes at the cost of multilingual coverage: Whisper-derived models typically train on fewer languages (often just English), while Whisper itself supports 99 languages.\nSimilarly, NVIDIA&#8217;s models demonstrate this tradeoff more clearly: <span class=\"ltx_text ltx_font_italic\">Parakeet TDT 0.6B</span> v3 adds multilingual support compared to v2, and <span class=\"ltx_text ltx_font_italic\">Canary 1B</span> v2 expands from 4 to 25 languages. In both cases, broader language coverage comes at the cost of English transcription accuracy.</p>\n\n",
                 "matched_terms": [
-                    "languages",
                     "english",
-                    "multilingual",
-                    "open",
                     "leaderboard",
-                    "asr"
+                    "asr",
+                    "languages",
+                    "open",
+                    "multilingual"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> (short-form and multilingual), open-source models show the strongest performance. The highest-ranking closed-source model (<span class=\"ltx_text ltx_font_italic\">Aqua Voice Avalon</span>) ranks 6th. Fairly computing RTFx for closed-source models is not possible due to upload latency and lack of GPU usage control, making direct efficiency comparisons infeasible.</p>\n\n",
                 "matched_terms": [
-                    "shortform",
-                    "multilingual"
+                    "multilingual",
+                    "shortform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">On the other hand, for long-form transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>), closed-source systems, such as <span class=\"ltx_text ltx_font_italic\">ElevenLabs</span> and <span class=\"ltx_text ltx_font_italic\">RevAI</span>, achieve the lowest error rates, likely benefiting from domain-specific tuning and production-grade infrastructure.\nAmong open-source models, <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span> is the strongest, with distilled variants providing faster inference. As in the short-form setting, NVIDIA&#8217;s CTC- and TDT-based models significantly improve throughput with only moderate losses in quality, making them particularly well suited for large-scale or offline transcription of lengthy audio.</p>\n\n",
                 "matched_terms": [
-                    "shortform",
-                    "longform"
+                    "longform",
+                    "shortform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a reproducible benchmark covering <math alttext=\"60+\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>60</mn><mo>+</mo></mrow><annotation encoding=\"application/x-tex\">60+</annotation></semantics></math> systems and <math alttext=\"11\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m2\" intent=\":literal\"><semantics><mn>11</mn><annotation encoding=\"application/x-tex\">11</annotation></semantics></math> datasets, including multilingual and long-form speech.\nStandardized text normalization enables a unified basis for comparing WER performance accuracy, and our RTFx evaluation allows for efficiency comparisons.\nConformer&#8211;LLM models achieve the strongest English WER but at the cost of higher latency, whereas CTC/TDT decoders offer faster inference with only modest accuracy trade-offs, making them attractive for long-form transcription. All code and datasets are fully open-sourced to support transparent and extensible evaluation.</p>\n\n",
                 "matched_terms": [
                     "english",
-                    "multilingual",
-                    "open",
                     "leaderboard",
                     "longform",
                     "asr",
-                    "datasets"
+                    "datasets",
+                    "open",
+                    "multilingual"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The authors would like to thank all the contributors to the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             }
         ]
     },
     "S2.T2": {
+        "source_file": "Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation",
         "caption": "Table 2: Distribution of encoder and decoder architectures for the open-source models in the Open ASR Leaderboard. Some models use hybrid architectures for the encoder or decoder, and are counted twice.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Enc <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math> / Dec <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Transformer</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">CTC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">RNN-T/TDT</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">LLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Total</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Conformer-based</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Whisper</td>\n<td class=\"ltx_td ltx_align_center\">18</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2</td>\n<td class=\"ltx_td ltx_align_center\">20</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Self-supervised</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Custom</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\">Total</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">26</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">20</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\">6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">60</td>\n</tr>\n</table>\n\n",
+        "body": "Enc ↓\\downarrow / Dec →\\rightarrow\nTransformer\nCTC\nRNN-T/TDT\nLLM\nTotal\n\n\nConformer-based\n5\n7\n8\n4\n24\n\n\nWhisper\n18\n0\n0\n2\n20\n\n\nSelf-supervised\n0\n13\n0\n0\n13\n\n\nCustom\n3\n0\n0\n0\n3\n\n\nTotal\n26\n20\n8\n6\n60",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Enc <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math> / Dec <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Transformer</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">CTC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">RNN-T/TDT</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">LLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Total</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Conformer-based</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Whisper</td>\n<td class=\"ltx_td ltx_align_center\">18</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">2</td>\n<td class=\"ltx_td ltx_align_center\">20</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Self-supervised</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Custom</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center\">0</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">0</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\">Total</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">26</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">20</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\">6</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">60</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "models",
-            "rnnttdt",
-            "selfsupervised",
-            "transformer",
-            "ctc",
-            "hybrid",
-            "↓downarrow",
-            "→rightarrow",
-            "dec",
-            "open",
-            "llm",
-            "leaderboard",
-            "encoder",
             "twice",
-            "enc",
-            "distribution",
-            "architectures",
-            "asr",
+            "counted",
+            "transformer",
             "custom",
-            "some",
+            "open",
+            "architectures",
+            "conformerbased",
+            "leaderboard",
+            "asr",
             "total",
             "use",
-            "counted",
-            "whisper",
-            "conformerbased",
+            "distribution",
+            "llm",
+            "encoder",
+            "selfsupervised",
+            "↓downarrow",
+            "some",
+            "decoder",
+            "enc",
+            "dec",
+            "hybrid",
             "opensource",
-            "decoder"
+            "whisper",
+            "rnnttdt",
+            "models",
+            "→rightarrow",
+            "ctc"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a> provides a breakdown of the encoder and decoder architectures of the models in the leaderboard,\nwhile some of the models are presented in our results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"Table 5 &#8227; 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nConformer-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>, Whisper-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>,\nself-supervised encoders (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>, HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite>, data2vec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib26\" title=\"\">26</a>]</cite>)\nand custom encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib27\" title=\"\">27</a>]</cite> are considered.\nWhisper-based encoders either use the encoder model as is&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>, apply low-rank adaptation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib29\" title=\"\">29</a>]</cite>, or fine-tune&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>.\nAs decoders, the following are represented: transformed-based, CTC (Connectionist Temporal Classification), Recurrent Neural Network Transducer (RNN-T), Token-and-Duration Transducer (TDT)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>, and LLM (Large Language Model)-based.\nWhile LLM-based decoders are transformer-based, we denote a separate category for approaches that use a pre-trained LLM.</p>\n\n",
@@ -307,12 +311,12 @@
             {
                 "html": "<p class=\"ltx_p\">Despite rapid progress, ASR evaluation remains saturated with short-form English, and efficiency is rarely reported. We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a fully reproducible benchmark and interactive leaderboard comparing 60+ open-source and proprietary systems across 11 datasets, including dedicated multilingual and long-form tracks. We standardize text normalization and report both word error rate (WER) and inverse real-time factor (RTFx), enabling fair accuracy&#8211;efficiency comparisons. For English transcription, Conformer encoders paired with LLM decoders achieve the best average WER but are slower, while CTC and TDT decoders deliver much better RTFx, making them attractive for long-form and offline use. Whisper-derived encoders fine-tuned for English improve accuracy but often trade off multilingual coverage. All code and dataset loaders are open-sourced to support transparent, extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "open",
-                    "ctc",
-                    "llm",
                     "leaderboard",
-                    "use",
                     "asr",
+                    "open",
+                    "use",
+                    "llm",
+                    "ctc",
                     "opensource"
                 ]
             },
@@ -320,24 +324,24 @@
                 "html": "<p class=\"ltx_p\">Automatic speech recognition (ASR) has seen remarkable progress in recent years, fueled in part by open-source contributions.\nPublicly-available datasets&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib2\" title=\"\">2</a>]</cite> and pre-trained models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite> have enabled researchers across academia and industry to build on existing work.\nYet, as the number of datasets and models grows, it becomes increasingly difficult for developers of new models to know which baselines to compare against and how. Similarly, users focused on inference may find it difficult to identify which model,\nwhether open-source or proprietary,\nbest meets their needs in terms of application and/or efficiency.\nMoreover, most existing benchmarks and evaluations overwhelmingly emphasize English and short-form transcription.</p>\n\n",
                 "matched_terms": [
                     "models",
-                    "opensource",
-                    "asr"
+                    "asr",
+                    "opensource"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several efforts have sought to address parts of this problem,\nincluding benchmarks across multiple accents and diverse contexts in the French language&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib6\" title=\"\">6</a>]</cite>,\nunder noise and reverberation in far-field settings&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib7\" title=\"\">7</a>]</cite>,\ncomparing commercial and open-source models in English and Chinese&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib8\" title=\"\">8</a>]</cite>.\nSome common observations can be drawn from these efforts: (1)&#160;there is no &#8220;catch-all&#8221; model, (2)&#160;no single dataset is sufficient for evaluation, and (3)&#160;a single metric, <em class=\"ltx_emph ltx_font_italic\">i.e.</em>, word error rate (WER), is not enough.</p>\n\n",
                 "matched_terms": [
-                    "models",
+                    "some",
                     "opensource",
-                    "some"
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these challenges\nwe introduce the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>. Our contributions include:</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
@@ -359,69 +363,69 @@
                 "html": "<p class=\"ltx_p\">As part of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nthere are evaluations on three tasks, with the following tabs:</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A separate <span class=\"ltx_text ltx_font_italic\">Long-form</span> evaluation is necessary because some models employ chunking strategies to reduce inference time, which can in turn affect transcription quality.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "some"
+                    "some",
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The datasets used for evaluation are presented in&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS2\" title=\"2.2 Datasets &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.2</span></a>.\nThe models are evaluated according to WER,\nand can be dynamically sorted on the leaderboard page according to WER-performance on a particular dataset (more on metrics in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS3\" title=\"2.3 Metrics &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.3</span></a>).\n<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS4\" title=\"2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.4</span></a> presents models that are evaluated within the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nwhile <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a> describes the process of adding a new model.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "open",
+                    "leaderboard",
                     "asr",
-                    "leaderboard"
+                    "open",
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T1\" title=\"In 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a> summarizes the datasets used for the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Of the 64 models currently listed in the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (as of 8 Oct 2025), 57 are open-source.\nThe 64 models come from 18 organizations: NVIDIA&#160;(18),\nMeta&#160;(12), OpenAI&#160;(8), Hugging Face&#160;(5), University of Washington&#160;(4), IBM&#160;(2), Rev AI&#160;(2), SpeechBrain&#160;(2), Useful Sensors&#160;(2), AssemblyAI&#160;(1), Aqua Voice&#160;(1), ElevenLabs&#160;(1), Kyutai&#160;(1), Microsoft&#160;(1), Mistral AI&#160;(1), Nyra Health&#160;(1), Speechmatics&#160;(1), and Ultravox&#160;(1).</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "open",
                     "leaderboard",
+                    "models",
                     "asr",
+                    "open",
                     "opensource"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">All evaluation scripts, as described in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a>, were conducted on an NVIDIA A100-SXM4-80GB GPU (driver 560.28.03, CUDA 12.6), using a batch size of 64 whenever memory allowed, and reduced adaptively (48, 32, 16, &#8230;) when necessary to fit in device memory.\nSince the full results are continuously updated on the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> and are too extensive to include here, we present a condensed version of the English leaderboard in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, the multilingual results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>, and the long-form results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>.</p>\n\n",
                 "matched_terms": [
+                    "leaderboard",
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For short-form English transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>), models with a Conformer encoder and an LLM-based decoder achieve the best results, with the top four models using this architecture.\nHowever, these approaches are significantly slower compared to models using TDT or CTC decoders. While the latter can achieve superior RTFx, this comes at the cost of accuracy: <em class=\"ltx_emph ltx_font_italic\">e.g.</em>, the best CTC-based model (<span class=\"ltx_text ltx_font_italic\">NVIDIA Parakeet CTC 1.1B</span>) ranks only 23rd in terms of WER.</p>\n\n",
                 "matched_terms": [
-                    "decoder",
                     "models",
+                    "encoder",
                     "ctc",
-                    "encoder"
+                    "decoder"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The multilingual results of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>) highlight an important tradeoff in ASR: specialization versus broad coverage.\nNamely, the improvement in English performance of fine-tuned Whisper models often comes at the cost of multilingual coverage: Whisper-derived models typically train on fewer languages (often just English), while Whisper itself supports 99 languages.\nSimilarly, NVIDIA&#8217;s models demonstrate this tradeoff more clearly: <span class=\"ltx_text ltx_font_italic\">Parakeet TDT 0.6B</span> v3 adds multilingual support compared to v2, and <span class=\"ltx_text ltx_font_italic\">Canary 1B</span> v2 expands from 4 to 25 languages. In both cases, broader language coverage comes at the cost of English transcription accuracy.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "open",
                     "leaderboard",
                     "whisper",
-                    "asr"
+                    "models",
+                    "asr",
+                    "open"
                 ]
             },
             {
@@ -435,108 +439,110 @@
                 "html": "<p class=\"ltx_p\">On the other hand, for long-form transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>), closed-source systems, such as <span class=\"ltx_text ltx_font_italic\">ElevenLabs</span> and <span class=\"ltx_text ltx_font_italic\">RevAI</span>, achieve the lowest error rates, likely benefiting from domain-specific tuning and production-grade infrastructure.\nAmong open-source models, <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span> is the strongest, with distilled variants providing faster inference. As in the short-form setting, NVIDIA&#8217;s CTC- and TDT-based models significantly improve throughput with only moderate losses in quality, making them particularly well suited for large-scale or offline transcription of lengthy audio.</p>\n\n",
                 "matched_terms": [
                     "models",
+                    "opensource",
                     "ctc",
-                    "whisper",
-                    "opensource"
+                    "whisper"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a reproducible benchmark covering <math alttext=\"60+\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>60</mn><mo>+</mo></mrow><annotation encoding=\"application/x-tex\">60+</annotation></semantics></math> systems and <math alttext=\"11\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m2\" intent=\":literal\"><semantics><mn>11</mn><annotation encoding=\"application/x-tex\">11</annotation></semantics></math> datasets, including multilingual and long-form speech.\nStandardized text normalization enables a unified basis for comparing WER performance accuracy, and our RTFx evaluation allows for efficiency comparisons.\nConformer&#8211;LLM models achieve the strongest English WER but at the cost of higher latency, whereas CTC/TDT decoders offer faster inference with only modest accuracy trade-offs, making them attractive for long-form transcription. All code and datasets are fully open-sourced to support transparent and extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "open",
+                    "leaderboard",
                     "asr",
-                    "leaderboard"
+                    "open",
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The authors would like to thank all the contributors to the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             }
         ]
     },
     "S2.T3": {
+        "source_file": "Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation",
         "caption": "Table 3: Subset of Open ASR Leaderboard results on English transcription. WER is averaged over datasets corresponding to the Leaderboard in Table 1. Whisper-FT stands for Whisper-finetuned.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER rank</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">RTFx <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T3.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Open</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Encoder</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Decoder</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\"># Lang.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">NVIDIA Canary Qwen 2.5B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">5.63</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">418.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">Yes</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">IBM Granite Speech 3.3 8B</td>\n<td class=\"ltx_td ltx_align_center\">5.74</td>\n<td class=\"ltx_td ltx_align_center\">2</td>\n<td class=\"ltx_td ltx_align_center\">145.42</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">IBM Granite Speech 3.3 2B</td>\n<td class=\"ltx_td ltx_align_center\">6.00</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">259.57</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Microsoft Phi 4 Multimodal Instruct</td>\n<td class=\"ltx_td ltx_align_center\">6.02</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n<td class=\"ltx_td ltx_align_center\">151.1</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v2</td>\n<td class=\"ltx_td ltx_align_center\">6.05</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n<td class=\"ltx_td ltx_align_center\">3386.02</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">TDT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Aqua Voice Avalon</td>\n<td class=\"ltx_td ltx_align_center\">6.24</td>\n<td class=\"ltx_td ltx_align_center\">6</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v3</td>\n<td class=\"ltx_td ltx_align_center\">6.32</td>\n<td class=\"ltx_td ltx_align_center\">7</td>\n<td class=\"ltx_td ltx_align_center\">3332.74</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">TDT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B Flash</td>\n<td class=\"ltx_td ltx_align_center\">6.35</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n<td class=\"ltx_td ltx_align_center\">1045.75</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Kyutai STT 2.6B en</td>\n<td class=\"ltx_td ltx_align_center\">6.40</td>\n<td class=\"ltx_td ltx_align_center\">9</td>\n<td class=\"ltx_td ltx_align_center\">88.37</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Mimi codec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B</td>\n<td class=\"ltx_td ltx_align_center\">6.50</td>\n<td class=\"ltx_td ltx_align_center\">10</td>\n<td class=\"ltx_td ltx_align_center\">235.34</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Nyra Health CrisperWhisper</td>\n<td class=\"ltx_td ltx_align_center\">6.67</td>\n<td class=\"ltx_td ltx_align_center\">11</td>\n<td class=\"ltx_td ltx_align_center\">84.05</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center\">6.88</td>\n<td class=\"ltx_td ltx_align_center\">12</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">99</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Speechmatic Enhanced</td>\n<td class=\"ltx_td ltx_align_center\">6.91</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Mistral AI Voxtral Mini 3B</td>\n<td class=\"ltx_td ltx_align_center\">7.05</td>\n<td class=\"ltx_td ltx_align_center\">16</td>\n<td class=\"ltx_td ltx_align_center\">109.86</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">RevAI Fusion</td>\n<td class=\"ltx_td ltx_align_center\">7.12</td>\n<td class=\"ltx_td ltx_align_center\">18</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B v2</td>\n<td class=\"ltx_td ltx_align_center\">7.15</td>\n<td class=\"ltx_td ltx_align_center\">20</td>\n<td class=\"ltx_td ltx_align_center\">749</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Distil-Whisper Large v3.5</td>\n<td class=\"ltx_td ltx_align_center\">7.21</td>\n<td class=\"ltx_td ltx_align_center\">21</td>\n<td class=\"ltx_td ltx_align_center\">202.03</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet CTC 1.1B</td>\n<td class=\"ltx_td ltx_align_center\">7.40</td>\n<td class=\"ltx_td ltx_align_center\">23</td>\n<td class=\"ltx_td ltx_align_center\">2728.52</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">CTC</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">7.44</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n<td class=\"ltx_td ltx_align_center\">145.51</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Whisper</td>\n<td class=\"ltx_td ltx_align_center\">99</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA FastConformer CTC Large</td>\n<td class=\"ltx_td ltx_align_center\">8.96</td>\n<td class=\"ltx_td ltx_align_center\">44</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">6399.25</span></td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">CTC</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">SpeechBrain ASR wav2vec2 Librispeech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">14.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">52</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">451.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">Yes</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">CTC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">1</td>\n</tr>\n</table>\n\n",
+        "body": "Model\nAvg. WER ↓\\downarrow\nAvg. WER rank\nRTFx ↑\\uparrow\nOpen\nEncoder\nDecoder\n# Lang.\n\n\nNVIDIA Canary Qwen 2.5B\n5.63\n1\n418.28\nYes\nFastConformer [20]\n\nLLM-based\n1\n\n\nIBM Granite Speech 3.3 8B\n5.74\n2\n145.42\nYes\nConformer [21]\n\nLLM-based\n5\n\n\nIBM Granite Speech 3.3 2B\n6.00\n3\n259.57\nYes\nConformer [21]\n\nLLM-based\n5\n\n\nMicrosoft Phi 4 Multimodal Instruct\n6.02\n4\n151.1\nYes\nConformer [21]\n\nLLM-based\n8\n\n\nNVIDIA Parakeet TDT 0.6B v2\n6.05\n5\n3386.02\nYes\nFastConformer [20]\n\nTDT [22]\n\n1\n\n\nAqua Voice Avalon\n6.24\n6\n-\nNo\n-\n-\n1\n\n\nNVIDIA Parakeet TDT 0.6B v3\n6.32\n7\n3332.74\nYes\nFastConformer [20]\n\nTDT [22]\n\n25\n\n\nNVIDIA Canary 1B Flash\n6.35\n8\n1045.75\nYes\nFastConformer [20]\n\nTransformer\n4\n\n\nKyutai STT 2.6B en\n6.40\n9\n88.37\nYes\nMimi codec [23]\n\nTransformer\n1\n\n\nNVIDIA Canary 1B\n6.50\n10\n235.34\nYes\nFastConformer [20]\n\nTransformer\n4\n\n\nNyra Health CrisperWhisper\n6.67\n11\n84.05\nYes\nWhisper-FT [24]\n\nWhisper-FT\n1\n\n\nElevenLabs Scribe v1\n6.88\n12\n-\nNo\n-\n-\n99\n\n\nSpeechmatic Enhanced\n6.91\n13\n-\nNo\n-\n-\n55\n\n\nMistral AI Voxtral Mini 3B\n7.05\n16\n109.86\nYes\nWhisper-FT [25]\n\nLLM-based\n8\n\n\nRevAI Fusion\n7.12\n18\n-\nNo\n-\n-\n1\n\n\nNVIDIA Canary 1B v2\n7.15\n20\n749\nYes\nFastConformer [20]\n\nTransformer\n25\n\n\nDistil-Whisper Large v3.5\n7.21\n21\n202.03\nYes\nWhisper [3]\n\nTransformer\n1\n\n\nNVIDIA Parakeet CTC 1.1B\n7.40\n23\n2728.52\nYes\nFastConformer [20]\n\nCTC\n1\n\n\nOpenAI Whisper Large v3\n7.44\n25\n145.51\nYes\nWhisper [3]\n\nWhisper\n99\n\n\nNVIDIA FastConformer CTC Large\n8.96\n44\n6399.25\nYes\nFastConformer [20]\n\nCTC\n1\n\n\nSpeechBrain ASR wav2vec2 Librispeech\n14.4\n52\n451.18\nYes\nwav2vec2 [4]\n\nCTC\n1",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER rank</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">RTFx <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.T3.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Open</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Encoder</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Decoder</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\"># Lang.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">NVIDIA Canary Qwen 2.5B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">5.63</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">418.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">Yes</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">IBM Granite Speech 3.3 8B</td>\n<td class=\"ltx_td ltx_align_center\">5.74</td>\n<td class=\"ltx_td ltx_align_center\">2</td>\n<td class=\"ltx_td ltx_align_center\">145.42</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">IBM Granite Speech 3.3 2B</td>\n<td class=\"ltx_td ltx_align_center\">6.00</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">259.57</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Microsoft Phi 4 Multimodal Instruct</td>\n<td class=\"ltx_td ltx_align_center\">6.02</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n<td class=\"ltx_td ltx_align_center\">151.1</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Conformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v2</td>\n<td class=\"ltx_td ltx_align_center\">6.05</td>\n<td class=\"ltx_td ltx_align_center\">5</td>\n<td class=\"ltx_td ltx_align_center\">3386.02</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">TDT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Aqua Voice Avalon</td>\n<td class=\"ltx_td ltx_align_center\">6.24</td>\n<td class=\"ltx_td ltx_align_center\">6</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v3</td>\n<td class=\"ltx_td ltx_align_center\">6.32</td>\n<td class=\"ltx_td ltx_align_center\">7</td>\n<td class=\"ltx_td ltx_align_center\">3332.74</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">TDT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B Flash</td>\n<td class=\"ltx_td ltx_align_center\">6.35</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n<td class=\"ltx_td ltx_align_center\">1045.75</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Kyutai STT 2.6B en</td>\n<td class=\"ltx_td ltx_align_center\">6.40</td>\n<td class=\"ltx_td ltx_align_center\">9</td>\n<td class=\"ltx_td ltx_align_center\">88.37</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Mimi codec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B</td>\n<td class=\"ltx_td ltx_align_center\">6.50</td>\n<td class=\"ltx_td ltx_align_center\">10</td>\n<td class=\"ltx_td ltx_align_center\">235.34</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Nyra Health CrisperWhisper</td>\n<td class=\"ltx_td ltx_align_center\">6.67</td>\n<td class=\"ltx_td ltx_align_center\">11</td>\n<td class=\"ltx_td ltx_align_center\">84.05</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center\">6.88</td>\n<td class=\"ltx_td ltx_align_center\">12</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">99</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Speechmatic Enhanced</td>\n<td class=\"ltx_td ltx_align_center\">6.91</td>\n<td class=\"ltx_td ltx_align_center\">13</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Mistral AI Voxtral Mini 3B</td>\n<td class=\"ltx_td ltx_align_center\">7.05</td>\n<td class=\"ltx_td ltx_align_center\">16</td>\n<td class=\"ltx_td ltx_align_center\">109.86</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper-FT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">LLM-based</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">RevAI Fusion</td>\n<td class=\"ltx_td ltx_align_center\">7.12</td>\n<td class=\"ltx_td ltx_align_center\">18</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">No</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B v2</td>\n<td class=\"ltx_td ltx_align_center\">7.15</td>\n<td class=\"ltx_td ltx_align_center\">20</td>\n<td class=\"ltx_td ltx_align_center\">749</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Distil-Whisper Large v3.5</td>\n<td class=\"ltx_td ltx_align_center\">7.21</td>\n<td class=\"ltx_td ltx_align_center\">21</td>\n<td class=\"ltx_td ltx_align_center\">202.03</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Transformer</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet CTC 1.1B</td>\n<td class=\"ltx_td ltx_align_center\">7.40</td>\n<td class=\"ltx_td ltx_align_center\">23</td>\n<td class=\"ltx_td ltx_align_center\">2728.52</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">CTC</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">7.44</td>\n<td class=\"ltx_td ltx_align_center\">25</td>\n<td class=\"ltx_td ltx_align_center\">145.51</td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">Whisper</td>\n<td class=\"ltx_td ltx_align_center\">99</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA FastConformer CTC Large</td>\n<td class=\"ltx_td ltx_align_center\">8.96</td>\n<td class=\"ltx_td ltx_align_center\">44</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">6399.25</span></td>\n<td class=\"ltx_td ltx_align_center\">Yes</td>\n<td class=\"ltx_td ltx_align_center\">FastConformer&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">CTC</td>\n<td class=\"ltx_td ltx_align_center\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">SpeechBrain ASR wav2vec2 Librispeech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">14.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">52</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">451.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">Yes</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">CTC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">1</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
+            "codec",
+            "elevenlabs",
             "wer",
-            "phi",
-            "canary",
-            "fastconformer",
+            "avalon",
+            "averaged",
+            "speech",
+            "datasets",
             "transformer",
-            "ctc",
-            "librispeech",
             "revai",
-            "yes",
-            "tdt",
-            "nyra",
-            "↓downarrow",
-            "voxtral",
-            "enhanced",
-            "instruct",
-            "crisperwhisper",
-            "corresponding",
-            "kyutai",
+            "v35",
+            "nvidia",
             "open",
+            "whisperfinetuned",
+            "25b",
+            "06b",
+            "avg",
+            "over",
+            "↑uparrow",
+            "qwen",
+            "phi",
+            "stands",
+            "microsoft",
             "mimi",
             "leaderboard",
-            "qwen",
-            "voice",
-            "stands",
-            "encoder",
+            "transcription",
+            "asr",
             "lang",
-            "microsoft",
-            "elevenlabs",
-            "health",
-            "whisperfinetuned",
-            "over",
+            "speechmatic",
+            "crisperwhisper",
+            "canary",
+            "results",
+            "conformer",
+            "fusion",
+            "distilwhisper",
+            "granite",
+            "multimodal",
+            "kyutai",
+            "mini",
+            "fastconformer",
+            "tdt",
+            "encoder",
             "aqua",
-            "avg",
+            "stt",
+            "voxtral",
+            "voice",
+            "26b",
+            "yes",
+            "↓downarrow",
             "openai",
+            "rtfx",
+            "decoder",
+            "llmbased",
+            "large",
+            "wav2vec2",
+            "mistral",
             "ibm",
+            "health",
+            "rank",
             "english",
             "scribe",
-            "averaged",
-            "06b",
-            "asr",
-            "results",
-            "25b",
-            "whisperft",
-            "speech",
-            "conformer",
-            "26b",
-            "datasets",
-            "speechmatic",
-            "distilwhisper",
-            "multimodal",
-            "speechbrain",
-            "↑uparrow",
-            "wav2vec2",
-            "rtfx",
-            "transcription",
-            "rank",
-            "model",
-            "parakeet",
-            "llmbased",
-            "codec",
-            "stt",
-            "mini",
-            "large",
-            "granite",
-            "flash",
-            "fusion",
-            "subset",
-            "nvidia",
             "whisper",
+            "librispeech",
+            "parakeet",
+            "speechbrain",
+            "nyra",
+            "subset",
+            "whisperft",
+            "corresponding",
+            "instruct",
             "11b",
-            "mistral",
-            "decoder",
-            "avalon",
-            "v35"
+            "flash",
+            "ctc",
+            "model",
+            "enhanced"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a> provides a breakdown of the encoder and decoder architectures of the models in the leaderboard,\nwhile some of the models are presented in our results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"Table 5 &#8227; 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nConformer-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>, Whisper-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>,\nself-supervised encoders (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>, HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite>, data2vec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib26\" title=\"\">26</a>]</cite>)\nand custom encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib27\" title=\"\">27</a>]</cite> are considered.\nWhisper-based encoders either use the encoder model as is&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>, apply low-rank adaptation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib29\" title=\"\">29</a>]</cite>, or fine-tune&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>.\nAs decoders, the following are represented: transformed-based, CTC (Connectionist Temporal Classification), Recurrent Neural Network Transducer (RNN-T), Token-and-Duration Transducer (TDT)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>, and LLM (Large Language Model)-based.\nWhile LLM-based decoders are transformer-based, we denote a separate category for approaches that use a pre-trained LLM.</p>\n\n",
@@ -551,17 +557,17 @@
             {
                 "html": "<p class=\"ltx_p\">Despite rapid progress, ASR evaluation remains saturated with short-form English, and efficiency is rarely reported. We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a fully reproducible benchmark and interactive leaderboard comparing 60+ open-source and proprietary systems across 11 datasets, including dedicated multilingual and long-form tracks. We standardize text normalization and report both word error rate (WER) and inverse real-time factor (RTFx), enabling fair accuracy&#8211;efficiency comparisons. For English transcription, Conformer encoders paired with LLM decoders achieve the best average WER but are slower, while CTC and TDT decoders deliver much better RTFx, making them attractive for long-form and offline use. Whisper-derived encoders fine-tuned for English improve accuracy but often trade off multilingual coverage. All code and dataset loaders are open-sourced to support transparent, extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "rtfx",
                     "english",
+                    "leaderboard",
                     "wer",
                     "transcription",
-                    "open",
-                    "ctc",
-                    "leaderboard",
-                    "tdt",
                     "asr",
+                    "rtfx",
+                    "datasets",
                     "conformer",
-                    "datasets"
+                    "ctc",
+                    "open",
+                    "tdt"
                 ]
             },
             {
@@ -569,206 +575,208 @@
                 "matched_terms": [
                     "english",
                     "transcription",
-                    "model",
-                    "asr",
                     "speech",
-                    "datasets"
+                    "asr",
+                    "datasets",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several efforts have sought to address parts of this problem,\nincluding benchmarks across multiple accents and diverse contexts in the French language&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib6\" title=\"\">6</a>]</cite>,\nunder noise and reverberation in far-field settings&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib7\" title=\"\">7</a>]</cite>,\ncomparing commercial and open-source models in English and Chinese&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib8\" title=\"\">8</a>]</cite>.\nSome common observations can be drawn from these efforts: (1)&#160;there is no &#8220;catch-all&#8221; model, (2)&#160;no single dataset is sufficient for evaluation, and (3)&#160;a single metric, <em class=\"ltx_emph ltx_font_italic\">i.e.</em>, word error rate (WER), is not enough.</p>\n\n",
                 "matched_terms": [
-                    "model",
+                    "wer",
                     "english",
-                    "wer"
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these challenges\nwe introduce the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>. Our contributions include:</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">An interactive leaderboard that compares <math alttext=\"60+\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I1.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>60</mn><mo>+</mo></mrow><annotation encoding=\"application/x-tex\">60+</annotation></semantics></math> open-source and proprietary models from <math alttext=\"18\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I1.i1.p1.m2\" intent=\":literal\"><semantics><mn>18</mn><annotation encoding=\"application/x-tex\">18</annotation></semantics></math> organizations, with evaluations over <math alttext=\"11\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I1.i1.p1.m3\" intent=\":literal\"><semantics><mn>11</mn><annotation encoding=\"application/x-tex\">11</annotation></semantics></math> datasets.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Leaderboard: <a class=\"ltx_ref ltx_href\" href=\"https://huggingface.co/spaces/hf-audio/open_asr_leaderboard\" title=\"\">hf.co/spaces/hf-audio/open_asr_leaderboard</a></span></span></span></p>\n\n",
                 "matched_terms": [
-                    "over",
-                    "leaderboard"
+                    "leaderboard",
+                    "over"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For full transparency and to facilitate the addition of new models and datasets, the leaderboard&#8217;s codebase is open-sourced.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>Code: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/huggingface/open_asr_leaderboard\" title=\"\">github.com/huggingface/open_asr_leaderboard</a></span></span></span>\nThe above model, dataset, and languages count are as of 8 Oct 2025, and will continue to increase with new additions to the leaderboard.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "datasets",
-                    "leaderboard"
+                    "leaderboard",
+                    "datasets"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As part of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nthere are evaluations on three tasks, with the following tabs:</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Leaderboard</span>, which evaluates English transcription.</p>\n\n",
                 "matched_terms": [
-                    "leaderboard",
                     "transcription",
-                    "english"
+                    "english",
+                    "leaderboard"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Long-form</span>, which evaluates English transcription on audio longer than <math alttext=\"30\\text{\\,}\\mathrm{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>30</mn><mtext>&#160;</mtext><mi class=\"ltx_unit\" mathvariant=\"normal\">s</mi></mrow><annotation encoding=\"application/x-tex\">30\\text{\\,}\\mathrm{s}</annotation></semantics></math> (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, the receptive field of Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>).</p>\n\n",
                 "matched_terms": [
                     "transcription",
-                    "whisper",
-                    "english"
+                    "english",
+                    "whisper"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The datasets used for evaluation are presented in&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS2\" title=\"2.2 Datasets &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.2</span></a>.\nThe models are evaluated according to WER,\nand can be dynamically sorted on the leaderboard page according to WER-performance on a particular dataset (more on metrics in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS3\" title=\"2.3 Metrics &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.3</span></a>).\n<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS4\" title=\"2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.4</span></a> presents models that are evaluated within the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nwhile <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a> describes the process of adding a new model.</p>\n\n",
                 "matched_terms": [
-                    "wer",
-                    "open",
-                    "model",
                     "leaderboard",
+                    "wer",
                     "asr",
-                    "datasets"
+                    "datasets",
+                    "open",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T1\" title=\"In 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a> summarizes the datasets used for the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
                 "matched_terms": [
                     "asr",
+                    "leaderboard",
                     "open",
-                    "datasets",
-                    "leaderboard"
+                    "datasets"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We report results on two metrics: <span class=\"ltx_text ltx_font_italic\">word error rate</span> (WER) for comparing transcription quality, and <span class=\"ltx_text ltx_font_italic\">inverse real-time factor</span> (RTFx) for comparing inference speed.</p>\n\n",
                 "matched_terms": [
-                    "transcription",
+                    "wer",
                     "rtfx",
-                    "results",
-                    "wer"
+                    "transcription",
+                    "results"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To account for differences in punctuation and casing between model outputs and the dataset transcriptions (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T1\" title=\"In 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>),\nwe normalize text before computing WER.\nPunctuation and casing are removed, and an English text normalization pipeline, closely following Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>, is applied.\nThis includes number normalization (<em class=\"ltx_emph ltx_font_italic\">e.g.</em>, &#8220;0&#8221; to &#8220;zero&#8221;), spelling standardization, and filler word removal (<em class=\"ltx_emph ltx_font_italic\">e.g.</em>, &#8220;uh&#8221;, &#8220;mhm&#8221;).</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "whisper",
+                    "wer",
                     "english",
-                    "wer"
+                    "model",
+                    "whisper"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Of the 64 models currently listed in the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (as of 8 Oct 2025), 57 are open-source.\nThe 64 models come from 18 organizations: NVIDIA&#160;(18),\nMeta&#160;(12), OpenAI&#160;(8), Hugging Face&#160;(5), University of Washington&#160;(4), IBM&#160;(2), Rev AI&#160;(2), SpeechBrain&#160;(2), Useful Sensors&#160;(2), AssemblyAI&#160;(1), Aqua Voice&#160;(1), ElevenLabs&#160;(1), Kyutai&#160;(1), Microsoft&#160;(1), Mistral AI&#160;(1), Nyra Health&#160;(1), Speechmatics&#160;(1), and Ultravox&#160;(1).</p>\n\n",
                 "matched_terms": [
-                    "openai",
-                    "aqua",
-                    "ibm",
-                    "kyutai",
-                    "open",
-                    "leaderboard",
-                    "voice",
-                    "nvidia",
-                    "speechbrain",
-                    "asr",
                     "microsoft",
-                    "nyra",
+                    "health",
+                    "leaderboard",
                     "elevenlabs",
+                    "openai",
+                    "voice",
+                    "asr",
+                    "nyra",
+                    "nvidia",
+                    "open",
+                    "kyutai",
+                    "speechbrain",
                     "mistral",
-                    "health"
+                    "ibm",
+                    "aqua"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The multilingual results of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>) highlight an important tradeoff in ASR: specialization versus broad coverage.\nNamely, the improvement in English performance of fine-tuned Whisper models often comes at the cost of multilingual coverage: Whisper-derived models typically train on fewer languages (often just English), while Whisper itself supports 99 languages.\nSimilarly, NVIDIA&#8217;s models demonstrate this tradeoff more clearly: <span class=\"ltx_text ltx_font_italic\">Parakeet TDT 0.6B</span> v3 adds multilingual support compared to v2, and <span class=\"ltx_text ltx_font_italic\">Canary 1B</span> v2 expands from 4 to 25 languages. In both cases, broader language coverage comes at the cost of English transcription accuracy.</p>\n\n",
                 "matched_terms": [
                     "english",
-                    "canary",
-                    "transcription",
-                    "open",
-                    "parakeet",
                     "leaderboard",
-                    "tdt",
-                    "06b",
                     "whisper",
+                    "parakeet",
+                    "transcription",
                     "asr",
-                    "results"
+                    "canary",
+                    "results",
+                    "open",
+                    "06b",
+                    "tdt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">On the other hand, for long-form transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>), closed-source systems, such as <span class=\"ltx_text ltx_font_italic\">ElevenLabs</span> and <span class=\"ltx_text ltx_font_italic\">RevAI</span>, achieve the lowest error rates, likely benefiting from domain-specific tuning and production-grade infrastructure.\nAmong open-source models, <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span> is the strongest, with distilled variants providing faster inference. As in the short-form setting, NVIDIA&#8217;s CTC- and TDT-based models significantly improve throughput with only moderate losses in quality, making them particularly well suited for large-scale or offline transcription of lengthy audio.</p>\n\n",
                 "matched_terms": [
                     "openai",
+                    "elevenlabs",
+                    "whisper",
                     "transcription",
-                    "ctc",
                     "revai",
                     "large",
-                    "whisper",
-                    "elevenlabs"
+                    "ctc"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a reproducible benchmark covering <math alttext=\"60+\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>60</mn><mo>+</mo></mrow><annotation encoding=\"application/x-tex\">60+</annotation></semantics></math> systems and <math alttext=\"11\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m2\" intent=\":literal\"><semantics><mn>11</mn><annotation encoding=\"application/x-tex\">11</annotation></semantics></math> datasets, including multilingual and long-form speech.\nStandardized text normalization enables a unified basis for comparing WER performance accuracy, and our RTFx evaluation allows for efficiency comparisons.\nConformer&#8211;LLM models achieve the strongest English WER but at the cost of higher latency, whereas CTC/TDT decoders offer faster inference with only modest accuracy trade-offs, making them attractive for long-form transcription. All code and datasets are fully open-sourced to support transparent and extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "rtfx",
                     "english",
+                    "leaderboard",
                     "wer",
                     "transcription",
-                    "open",
-                    "leaderboard",
-                    "asr",
                     "speech",
-                    "datasets"
+                    "asr",
+                    "rtfx",
+                    "datasets",
+                    "open"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The authors would like to thank all the contributors to the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>.</p>\n\n",
                 "matched_terms": [
                     "asr",
-                    "open",
-                    "leaderboard"
+                    "leaderboard",
+                    "open"
                 ]
             }
         ]
     },
     "S2.T4": {
+        "source_file": "Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation",
         "caption": "Table 4: Average WERs for different languages (German/French/Italian/Spanish/Portuguese) on the Multilingual datasets in Table 1.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">DE</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">FR</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">IT</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">ES</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">PT</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Microsoft Phi 4 Multimodal Instruct</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.50</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.13</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.15</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B v2</td>\n<td class=\"ltx_td ltx_align_center\">4.96</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.86</span></td>\n<td class=\"ltx_td ltx_align_center\">5.66</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.22</span></td>\n<td class=\"ltx_td ltx_align_center\">6.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">4.97</td>\n<td class=\"ltx_td ltx_align_center\">6.59</td>\n<td class=\"ltx_td ltx_align_center\">5.14</td>\n<td class=\"ltx_td ltx_align_center\">3.32</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.38</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v3</td>\n<td class=\"ltx_td ltx_align_center\">4.90</td>\n<td class=\"ltx_td ltx_align_center\">5.38</td>\n<td class=\"ltx_td ltx_align_center\">5.58</td>\n<td class=\"ltx_td ltx_align_center\">3.72</td>\n<td class=\"ltx_td ltx_align_center\">5.95</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Mistral AI Voxtral Mini 3B</td>\n<td class=\"ltx_td ltx_align_center\">5.36</td>\n<td class=\"ltx_td ltx_align_center\">5.96</td>\n<td class=\"ltx_td ltx_align_center\">5.88</td>\n<td class=\"ltx_td ltx_align_center\">3.81</td>\n<td class=\"ltx_td ltx_align_center\">4.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">10.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">15.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">7.71</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">9.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">22.8</td>\n</tr>\n</table>\n\n",
+        "body": "Model\nDE\nFR\nIT\nES\nPT\n\n\nMicrosoft Phi 4 Multimodal Instruct\n4.50\n5.13\n4.80\n3.59\n5.15\n\n\nNVIDIA Canary 1B v2\n4.96\n4.86\n5.66\n3.22\n6.23\n\n\nOpenAI Whisper Large v3\n4.97\n6.59\n5.14\n3.32\n4.38\n\n\nNVIDIA Parakeet TDT 0.6B v3\n4.90\n5.38\n5.58\n3.72\n5.95\n\n\nMistral AI Voxtral Mini 3B\n5.36\n5.96\n5.88\n3.81\n4.80\n\n\nElevenLabs Scribe v1\n10.8\n15.1\n7.71\n9.28\n22.8",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">DE</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">FR</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">IT</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">ES</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">PT</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Microsoft Phi 4 Multimodal Instruct</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.50</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.13</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.15</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Canary 1B v2</td>\n<td class=\"ltx_td ltx_align_center\">4.96</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.86</span></td>\n<td class=\"ltx_td ltx_align_center\">5.66</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.22</span></td>\n<td class=\"ltx_td ltx_align_center\">6.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">4.97</td>\n<td class=\"ltx_td ltx_align_center\">6.59</td>\n<td class=\"ltx_td ltx_align_center\">5.14</td>\n<td class=\"ltx_td ltx_align_center\">3.32</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">4.38</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v3</td>\n<td class=\"ltx_td ltx_align_center\">4.90</td>\n<td class=\"ltx_td ltx_align_center\">5.38</td>\n<td class=\"ltx_td ltx_align_center\">5.58</td>\n<td class=\"ltx_td ltx_align_center\">3.72</td>\n<td class=\"ltx_td ltx_align_center\">5.95</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Mistral AI Voxtral Mini 3B</td>\n<td class=\"ltx_td ltx_align_center\">5.36</td>\n<td class=\"ltx_td ltx_align_center\">5.96</td>\n<td class=\"ltx_td ltx_align_center\">5.88</td>\n<td class=\"ltx_td ltx_align_center\">3.81</td>\n<td class=\"ltx_td ltx_align_center\">4.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">10.8</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">15.1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">7.71</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">9.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">22.8</td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "phi",
+            "elevenlabs",
             "wers",
-            "canary",
+            "datasets",
+            "nvidia",
             "multilingual",
+            "06b",
+            "phi",
+            "microsoft",
+            "different",
+            "languages",
+            "canary",
             "germanfrenchitalianspanishportuguese",
+            "multimodal",
+            "mini",
             "tdt",
             "voxtral",
-            "instruct",
-            "average",
-            "microsoft",
-            "elevenlabs",
             "openai",
-            "scribe",
-            "06b",
-            "datasets",
-            "multimodal",
-            "languages",
-            "model",
-            "parakeet",
+            "average",
             "large",
-            "whisper",
-            "nvidia",
             "mistral",
-            "different",
-            "mini"
+            "scribe",
+            "whisper",
+            "parakeet",
+            "instruct",
+            "model"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a> provides a breakdown of the encoder and decoder architectures of the models in the leaderboard,\nwhile some of the models are presented in our results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"Table 5 &#8227; 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nConformer-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>, Whisper-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>,\nself-supervised encoders (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>, HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite>, data2vec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib26\" title=\"\">26</a>]</cite>)\nand custom encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib27\" title=\"\">27</a>]</cite> are considered.\nWhisper-based encoders either use the encoder model as is&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>, apply low-rank adaptation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib29\" title=\"\">29</a>]</cite>, or fine-tune&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>.\nAs decoders, the following are represented: transformed-based, CTC (Connectionist Temporal Classification), Recurrent Neural Network Transducer (RNN-T), Token-and-Duration Transducer (TDT)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>, and LLM (Large Language Model)-based.\nWhile LLM-based decoders are transformer-based, we denote a separate category for approaches that use a pre-trained LLM.</p>\n\n",
@@ -780,9 +788,9 @@
             {
                 "html": "<p class=\"ltx_p\">Despite rapid progress, ASR evaluation remains saturated with short-form English, and efficiency is rarely reported. We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a fully reproducible benchmark and interactive leaderboard comparing 60+ open-source and proprietary systems across 11 datasets, including dedicated multilingual and long-form tracks. We standardize text normalization and report both word error rate (WER) and inverse real-time factor (RTFx), enabling fair accuracy&#8211;efficiency comparisons. For English transcription, Conformer encoders paired with LLM decoders achieve the best average WER but are slower, while CTC and TDT decoders deliver much better RTFx, making them attractive for long-form and offline use. Whisper-derived encoders fine-tuned for English improve accuracy but often trade off multilingual coverage. All code and dataset loaders are open-sourced to support transparent, extensible evaluation.</p>\n\n",
                 "matched_terms": [
+                    "tdt",
                     "average",
                     "multilingual",
-                    "tdt",
                     "datasets"
                 ]
             },
@@ -825,39 +833,39 @@
             {
                 "html": "<p class=\"ltx_p\">Of the 64 models currently listed in the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (as of 8 Oct 2025), 57 are open-source.\nThe 64 models come from 18 organizations: NVIDIA&#160;(18),\nMeta&#160;(12), OpenAI&#160;(8), Hugging Face&#160;(5), University of Washington&#160;(4), IBM&#160;(2), Rev AI&#160;(2), SpeechBrain&#160;(2), Useful Sensors&#160;(2), AssemblyAI&#160;(1), Aqua Voice&#160;(1), ElevenLabs&#160;(1), Kyutai&#160;(1), Microsoft&#160;(1), Mistral AI&#160;(1), Nyra Health&#160;(1), Speechmatics&#160;(1), and Ultravox&#160;(1).</p>\n\n",
                 "matched_terms": [
-                    "openai",
                     "microsoft",
-                    "nvidia",
+                    "openai",
                     "elevenlabs",
+                    "nvidia",
                     "mistral"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For short-form English transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>), models with a Conformer encoder and an LLM-based decoder achieve the best results, with the top four models using this architecture.\nHowever, these approaches are significantly slower compared to models using TDT or CTC decoders. While the latter can achieve superior RTFx, this comes at the cost of accuracy: <em class=\"ltx_emph ltx_font_italic\">e.g.</em>, the best CTC-based model (<span class=\"ltx_text ltx_font_italic\">NVIDIA Parakeet CTC 1.1B</span>) ranks only 23rd in terms of WER.</p>\n\n",
                 "matched_terms": [
-                    "tdt",
-                    "model",
                     "parakeet",
-                    "nvidia"
+                    "nvidia",
+                    "model",
+                    "tdt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Another popular trend is to leverage Whisper&#8217;s encoder (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>), which has been trained on a large multilingual corpus. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, models that fine-tune Whisper&#8217;s encoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite> (or train a new decoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>) achieve better average WER than <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span>.</p>\n\n",
                 "matched_terms": [
                     "openai",
-                    "average",
-                    "multilingual",
+                    "whisper",
                     "large",
-                    "whisper"
+                    "average",
+                    "multilingual"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">On the other hand, for long-form transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"In 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>), closed-source systems, such as <span class=\"ltx_text ltx_font_italic\">ElevenLabs</span> and <span class=\"ltx_text ltx_font_italic\">RevAI</span>, achieve the lowest error rates, likely benefiting from domain-specific tuning and production-grade infrastructure.\nAmong open-source models, <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span> is the strongest, with distilled variants providing faster inference. As in the short-form setting, NVIDIA&#8217;s CTC- and TDT-based models significantly improve throughput with only moderate losses in quality, making them particularly well suited for large-scale or offline transcription of lengthy audio.</p>\n\n",
                 "matched_terms": [
                     "openai",
+                    "large",
                     "elevenlabs",
-                    "whisper",
-                    "large"
+                    "whisper"
                 ]
             },
             {
@@ -870,37 +878,39 @@
         ]
     },
     "S3.T5": {
+        "source_file": "Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation",
         "caption": "Table 5: Average WER (%) and RTFx on the Long-form datasets of Table 1.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER rank</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">RTFx</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.33</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">RevAI Fusion</td>\n<td class=\"ltx_td ltx_align_center\">5.04</td>\n<td class=\"ltx_td ltx_align_center\">2</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Speechmatics Enhanced</td>\n<td class=\"ltx_td ltx_align_center\">5.08</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">6.43</td>\n<td class=\"ltx_td ltx_align_center\">6</td>\n<td class=\"ltx_td ltx_align_center\">68.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Kyutai STT 2.6B en</td>\n<td class=\"ltx_td ltx_align_center\">6.64</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n<td class=\"ltx_td ltx_align_center\">52.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet CTC 1.1B</td>\n<td class=\"ltx_td ltx_align_center\">6.68</td>\n<td class=\"ltx_td ltx_align_center\">9</td>\n<td class=\"ltx_td ltx_align_center\">2793.75</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v2</td>\n<td class=\"ltx_td ltx_align_center\">6.91</td>\n<td class=\"ltx_td ltx_align_center\">10</td>\n<td class=\"ltx_td ltx_align_center\">955.87</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Distil-Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">7.27</td>\n<td class=\"ltx_td ltx_align_center\">14</td>\n<td class=\"ltx_td ltx_align_center\">153.26</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">NVIDIA FastConformer CTC Large</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">11.14</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">17</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">5531.13</span></td>\n</tr>\n</table>\n\n",
+        "body": "Model\nAvg. WER\nAvg. WER rank\nRTFx\n\n\nElevenLabs Scribe v1\n4.33\n1\n-\n\n\nRevAI Fusion\n5.04\n2\n-\n\n\nSpeechmatics Enhanced\n5.08\n3\n–\n\n\nOpenAI Whisper Large v3\n6.43\n6\n68.56\n\n\nKyutai STT 2.6B en\n6.64\n8\n52.56\n\n\nNVIDIA Parakeet CTC 1.1B\n6.68\n9\n2793.75\n\n\nNVIDIA Parakeet TDT 0.6B v2\n6.91\n10\n955.87\n\n\nDistil-Whisper Large v3\n7.27\n14\n153.26\n\n\nNVIDIA FastConformer CTC Large\n11.14\n17\n5531.13",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Model</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Avg. WER rank</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">RTFx</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">ElevenLabs Scribe v1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.33</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">1</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">RevAI Fusion</td>\n<td class=\"ltx_td ltx_align_center\">5.04</td>\n<td class=\"ltx_td ltx_align_center\">2</td>\n<td class=\"ltx_td ltx_align_center\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Speechmatics Enhanced</td>\n<td class=\"ltx_td ltx_align_center\">5.08</td>\n<td class=\"ltx_td ltx_align_center\">3</td>\n<td class=\"ltx_td ltx_align_center\">&#8211;</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">OpenAI Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">6.43</td>\n<td class=\"ltx_td ltx_align_center\">6</td>\n<td class=\"ltx_td ltx_align_center\">68.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Kyutai STT 2.6B en</td>\n<td class=\"ltx_td ltx_align_center\">6.64</td>\n<td class=\"ltx_td ltx_align_center\">8</td>\n<td class=\"ltx_td ltx_align_center\">52.56</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet CTC 1.1B</td>\n<td class=\"ltx_td ltx_align_center\">6.68</td>\n<td class=\"ltx_td ltx_align_center\">9</td>\n<td class=\"ltx_td ltx_align_center\">2793.75</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">NVIDIA Parakeet TDT 0.6B v2</td>\n<td class=\"ltx_td ltx_align_center\">6.91</td>\n<td class=\"ltx_td ltx_align_center\">10</td>\n<td class=\"ltx_td ltx_align_center\">955.87</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Distil-Whisper Large v3</td>\n<td class=\"ltx_td ltx_align_center\">7.27</td>\n<td class=\"ltx_td ltx_align_center\">14</td>\n<td class=\"ltx_td ltx_align_center\">153.26</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">NVIDIA FastConformer CTC Large</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">11.14</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">17</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">5531.13</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "wer",
-            "fastconformer",
-            "ctc",
-            "revai",
-            "tdt",
-            "enhanced",
-            "kyutai",
-            "average",
-            "longform",
             "elevenlabs",
-            "openai",
-            "avg",
-            "scribe",
-            "speechmatics",
-            "06b",
-            "26b",
-            "distilwhisper",
+            "wer",
             "datasets",
-            "rtfx",
-            "rank",
-            "model",
-            "parakeet",
-            "large",
-            "stt",
-            "11b",
+            "revai",
+            "nvidia",
+            "06b",
+            "avg",
+            "longform",
+            "distilwhisper",
             "fusion",
+            "kyutai",
+            "fastconformer",
+            "tdt",
+            "stt",
+            "openai",
+            "26b",
+            "rtfx",
+            "average",
+            "large",
+            "speechmatics",
+            "rank",
+            "scribe",
             "whisper",
-            "nvidia"
+            "parakeet",
+            "11b",
+            "ctc",
+            "model",
+            "enhanced"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a> provides a breakdown of the encoder and decoder architectures of the models in the leaderboard,\nwhile some of the models are presented in our results in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S3.T5\" title=\"Table 5 &#8227; 3 Results &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.\nConformer-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib20\" title=\"\">20</a>]</cite>, Whisper-based encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>,\nself-supervised encoders (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, wav2vec2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib4\" title=\"\">4</a>]</cite>, HuBERT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib5\" title=\"\">5</a>]</cite>, data2vec&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib26\" title=\"\">26</a>]</cite>)\nand custom encoders&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib27\" title=\"\">27</a>]</cite> are considered.\nWhisper-based encoders either use the encoder model as is&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>, apply low-rank adaptation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib29\" title=\"\">29</a>]</cite>, or fine-tune&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite>.\nAs decoders, the following are represented: transformed-based, CTC (Connectionist Temporal Classification), Recurrent Neural Network Transducer (RNN-T), Token-and-Duration Transducer (TDT)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib22\" title=\"\">22</a>]</cite>, and LLM (Large Language Model)-based.\nWhile LLM-based decoders are transformer-based, we denote a separate category for approaches that use a pre-trained LLM.</p>\n\n",
@@ -911,13 +921,13 @@
             {
                 "html": "<p class=\"ltx_p\">Despite rapid progress, ASR evaluation remains saturated with short-form English, and efficiency is rarely reported. We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a fully reproducible benchmark and interactive leaderboard comparing 60+ open-source and proprietary systems across 11 datasets, including dedicated multilingual and long-form tracks. We standardize text normalization and report both word error rate (WER) and inverse real-time factor (RTFx), enabling fair accuracy&#8211;efficiency comparisons. For English transcription, Conformer encoders paired with LLM decoders achieve the best average WER but are slower, while CTC and TDT decoders deliver much better RTFx, making them attractive for long-form and offline use. Whisper-derived encoders fine-tuned for English improve accuracy but often trade off multilingual coverage. All code and dataset loaders are open-sourced to support transparent, extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "rtfx",
-                    "wer",
-                    "average",
-                    "ctc",
                     "longform",
-                    "tdt",
-                    "datasets"
+                    "wer",
+                    "rtfx",
+                    "datasets",
+                    "ctc",
+                    "average",
+                    "tdt"
                 ]
             },
             {
@@ -930,8 +940,8 @@
             {
                 "html": "<p class=\"ltx_p\">Several efforts have sought to address parts of this problem,\nincluding benchmarks across multiple accents and diverse contexts in the French language&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib6\" title=\"\">6</a>]</cite>,\nunder noise and reverberation in far-field settings&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib7\" title=\"\">7</a>]</cite>,\ncomparing commercial and open-source models in English and Chinese&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib8\" title=\"\">8</a>]</cite>.\nSome common observations can be drawn from these efforts: (1)&#160;there is no &#8220;catch-all&#8221; model, (2)&#160;no single dataset is sufficient for evaluation, and (3)&#160;a single metric, <em class=\"ltx_emph ltx_font_italic\">i.e.</em>, word error rate (WER), is not enough.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "wer"
+                    "wer",
+                    "model"
                 ]
             },
             {
@@ -944,16 +954,16 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Long-form</span>, which evaluates English transcription on audio longer than <math alttext=\"30\\text{\\,}\\mathrm{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>30</mn><mtext>&#160;</mtext><mi class=\"ltx_unit\" mathvariant=\"normal\">s</mi></mrow><annotation encoding=\"application/x-tex\">30\\text{\\,}\\mathrm{s}</annotation></semantics></math> (<em class=\"ltx_emph ltx_font_italic\">i.e.</em>, the receptive field of Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>).</p>\n\n",
                 "matched_terms": [
-                    "longform",
-                    "whisper"
+                    "whisper",
+                    "longform"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The datasets used for evaluation are presented in&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS2\" title=\"2.2 Datasets &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.2</span></a>.\nThe models are evaluated according to WER,\nand can be dynamically sorted on the leaderboard page according to WER-performance on a particular dataset (more on metrics in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS3\" title=\"2.3 Metrics &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.3</span></a>).\n<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS4\" title=\"2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.4</span></a> presents models that are evaluated within the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>,\nwhile <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.SS5\" title=\"2.5 Adding a new model or dataset &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2.5</span></a> describes the process of adding a new model.</p>\n\n",
                 "matched_terms": [
+                    "wer",
                     "model",
-                    "datasets",
-                    "wer"
+                    "datasets"
                 ]
             },
             {
@@ -966,74 +976,74 @@
             {
                 "html": "<p class=\"ltx_p\">We report results on two metrics: <span class=\"ltx_text ltx_font_italic\">word error rate</span> (WER) for comparing transcription quality, and <span class=\"ltx_text ltx_font_italic\">inverse real-time factor</span> (RTFx) for comparing inference speed.</p>\n\n",
                 "matched_terms": [
-                    "rtfx",
-                    "wer"
+                    "wer",
+                    "rtfx"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To account for differences in punctuation and casing between model outputs and the dataset transcriptions (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T1\" title=\"In 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>),\nwe normalize text before computing WER.\nPunctuation and casing are removed, and an English text normalization pipeline, closely following Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib3\" title=\"\">3</a>]</cite>, is applied.\nThis includes number normalization (<em class=\"ltx_emph ltx_font_italic\">e.g.</em>, &#8220;0&#8221; to &#8220;zero&#8221;), spelling standardization, and filler word removal (<em class=\"ltx_emph ltx_font_italic\">e.g.</em>, &#8220;uh&#8221;, &#8220;mhm&#8221;).</p>\n\n",
                 "matched_terms": [
+                    "wer",
                     "model",
-                    "whisper",
-                    "wer"
+                    "whisper"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Of the 64 models currently listed in the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (as of 8 Oct 2025), 57 are open-source.\nThe 64 models come from 18 organizations: NVIDIA&#160;(18),\nMeta&#160;(12), OpenAI&#160;(8), Hugging Face&#160;(5), University of Washington&#160;(4), IBM&#160;(2), Rev AI&#160;(2), SpeechBrain&#160;(2), Useful Sensors&#160;(2), AssemblyAI&#160;(1), Aqua Voice&#160;(1), ElevenLabs&#160;(1), Kyutai&#160;(1), Microsoft&#160;(1), Mistral AI&#160;(1), Nyra Health&#160;(1), Speechmatics&#160;(1), and Ultravox&#160;(1).</p>\n\n",
                 "matched_terms": [
-                    "openai",
-                    "kyutai",
                     "speechmatics",
+                    "openai",
+                    "elevenlabs",
                     "nvidia",
-                    "elevenlabs"
+                    "kyutai"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For short-form English transcription (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>), models with a Conformer encoder and an LLM-based decoder achieve the best results, with the top four models using this architecture.\nHowever, these approaches are significantly slower compared to models using TDT or CTC decoders. While the latter can achieve superior RTFx, this comes at the cost of accuracy: <em class=\"ltx_emph ltx_font_italic\">e.g.</em>, the best CTC-based model (<span class=\"ltx_text ltx_font_italic\">NVIDIA Parakeet CTC 1.1B</span>) ranks only 23rd in terms of WER.</p>\n\n",
                 "matched_terms": [
-                    "rtfx",
                     "wer",
-                    "model",
-                    "ctc",
                     "parakeet",
-                    "tdt",
+                    "rtfx",
+                    "nvidia",
+                    "ctc",
                     "11b",
-                    "nvidia"
+                    "tdt",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Another popular trend is to leverage Whisper&#8217;s encoder (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T2\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>), which has been trained on a large multilingual corpus. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, models that fine-tune Whisper&#8217;s encoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib25\" title=\"\">25</a>]</cite> (or train a new decoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#bib.bib28\" title=\"\">28</a>]</cite>) achieve better average WER than <span class=\"ltx_text ltx_font_italic\">OpenAI Whisper Large v3</span>.</p>\n\n",
                 "matched_terms": [
                     "openai",
+                    "whisper",
                     "wer",
-                    "average",
                     "large",
-                    "whisper"
+                    "average"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The multilingual results of the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span> (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>) highlight an important tradeoff in ASR: specialization versus broad coverage.\nNamely, the improvement in English performance of fine-tuned Whisper models often comes at the cost of multilingual coverage: Whisper-derived models typically train on fewer languages (often just English), while Whisper itself supports 99 languages.\nSimilarly, NVIDIA&#8217;s models demonstrate this tradeoff more clearly: <span class=\"ltx_text ltx_font_italic\">Parakeet TDT 0.6B</span> v3 adds multilingual support compared to v2, and <span class=\"ltx_text ltx_font_italic\">Canary 1B</span> v2 expands from 4 to 25 languages. In both cases, broader language coverage comes at the cost of English transcription accuracy.</p>\n\n",
                 "matched_terms": [
-                    "whisper",
-                    "tdt",
                     "parakeet",
+                    "tdt",
+                    "whisper",
                     "06b"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T3\" title=\"In 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06961v2#S2.T4\" title=\"Table 4 &#8227; 2.4 Current models &#8227; 2 Open ASR Leaderboard &#8227; Open ASR Leaderboard: Towards Reproducible and Transparent Multilingual and Long-Form Speech Recognition Evaluation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> (short-form and multilingual), open-source models show the strongest performance. The highest-ranking closed-source model (<span class=\"ltx_text ltx_font_italic\">Aqua Voice Avalon</span>) ranks 6th. Fairly computing RTFx for closed-source models is not possible due to upload latency and lack of GPU usage control, making direct efficiency comparisons infeasible.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "rtfx"
+                    "rtfx",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present the <span class=\"ltx_text ltx_font_italic\">Open ASR Leaderboard</span>, a reproducible benchmark covering <math alttext=\"60+\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>60</mn><mo>+</mo></mrow><annotation encoding=\"application/x-tex\">60+</annotation></semantics></math> systems and <math alttext=\"11\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m2\" intent=\":literal\"><semantics><mn>11</mn><annotation encoding=\"application/x-tex\">11</annotation></semantics></math> datasets, including multilingual and long-form speech.\nStandardized text normalization enables a unified basis for comparing WER performance accuracy, and our RTFx evaluation allows for efficiency comparisons.\nConformer&#8211;LLM models achieve the strongest English WER but at the cost of higher latency, whereas CTC/TDT decoders offer faster inference with only modest accuracy trade-offs, making them attractive for long-form transcription. All code and datasets are fully open-sourced to support transparent and extensible evaluation.</p>\n\n",
                 "matched_terms": [
-                    "longform",
+                    "wer",
                     "rtfx",
-                    "datasets",
-                    "wer"
+                    "longform",
+                    "datasets"
                 ]
             }
         ]

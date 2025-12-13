@@ -1,86 +1,88 @@
 {
     "Sx4.T1": {
+        "source_file": "UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models",
         "caption": "Table 1: Performance Comparisons of UniVoice and prior works. A-WER-clean, A-WER-other represents the ASR WER evaluation result on LibriSpeech test-clean dataset and LibriSpeech test-other dataset, respectively. † represents that the results are reported in NaturalSpeech3(ju2024naturalspeech).",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Type</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Method</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Params</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Data-hrs</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">CMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">SMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m7\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">A-WER-clean<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m8\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">A-WER-other<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m9\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_t\" style=\"padding:3.5pt 5.0pt;\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">Ground Truth</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">2.43</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">+0.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Unified Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">SpeechT5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.14\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m10\" intent=\":literal\"><semantics><mn>0.14</mn><annotation encoding=\"application/x-tex\">0.14</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.96K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">5.91</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.32</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-0.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.35</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">10.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">LauraGPT</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"2.0\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m11\" intent=\":literal\"><semantics><mn>2.0</mn><annotation encoding=\"application/x-tex\">2.0</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.62</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">7.7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">OpusLM-0.4B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m12\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">213K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">19.8</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">OpusLM-7B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"7\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m13\" intent=\":literal\"><semantics><mn>7</mn><annotation encoding=\"application/x-tex\">7</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">213K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.60</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.3</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">5.2</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">UniVoice&#160;(Ours)</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.4B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.72</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.00</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.88</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.0</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">6.3</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"7\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Only Zero-shot TTS Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">CosyVoice</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m14\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">170K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.17</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">+0.06</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.96</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">MaskGCT</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.0\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m15\" intent=\":literal\"><semantics><mn>1.0</mn><annotation encoding=\"application/x-tex\">1.0</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">100K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.49</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.85</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.04</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.92</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">F5-TTS</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m16\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">100K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.54</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.84</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.03</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.90</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">FireRedTTS</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.6\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m17\" intent=\":literal\"><semantics><mn>0.6</mn><annotation encoding=\"application/x-tex\">0.6</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">248K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.69</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.91</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-0.01</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.85</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">VALL-E <sup class=\"ltx_sup\">&#8224;</sup>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m19\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">6.11</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.68</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">NaturalSpeech2 <sup class=\"ltx_sup\">&#8224;</sup>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m21\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.55</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.94</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.88</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">UniVoice-TTS&#160;(Ours)</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m22\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.56</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.92</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.02</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.86</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\" rowspan=\"7\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Only ASR Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">Whisper-small</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.2\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m23\" intent=\":literal\"><semantics><mn>0.2</mn><annotation encoding=\"application/x-tex\">0.2</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">7.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m24\" intent=\":literal\"><semantics><mn>1.5</mn><annotation encoding=\"application/x-tex\">1.5</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.7</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">5.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v3</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m25\" intent=\":literal\"><semantics><mn>1.5</mn><annotation encoding=\"application/x-tex\">1.5</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.9</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v3-turbo</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.8\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m26\" intent=\":literal\"><semantics><mn>0.8</mn><annotation encoding=\"application/x-tex\">0.8</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.9</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Paraformer</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.2\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m27\" intent=\":literal\"><semantics><mn>0.2</mn><annotation encoding=\"application/x-tex\">0.2</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">20K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.5</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Zipformer</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.15\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m28\" intent=\":literal\"><semantics><mn>0.15</mn><annotation encoding=\"application/x-tex\">0.15</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.96K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.0</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">UniVoice-ASR&#160;(Ours)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m29\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">2.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">4.2</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Type\nMethod\nParams\nData-hrs\nSIM↑\\uparrow\nWER↓\\downarrow\nUTMOS↑\\uparrow\nCMOS↑\\uparrow\nSMOS↑\\uparrow\nA-WER-clean↓\\downarrow\nA-WER-other↓\\downarrow\n\n\n\nGround Truth\n-\n-\n0.69\n2.43\n4.07\n+0.09\n3.82\n-\n-\n\n\nUnified Models\nSpeechT5\n\n0.140.14B\n0.96K\n0.33\n5.91\n3.32\n-0.28\n3.35\n4.4\n10.4\n\n\nLauraGPT\n\n2.02.0B\n60K\n-\n8.62\n-\n-\n-\n4.4\n7.7\n\n\nOpusLM-0.4B\n\n0.40.4B\n213K\n-\n19.8\n-\n-\n-\n4.2\n8.7\n\n\nOpusLM-7B\n\n77B\n213K\n-\n4.60\n-\n-\n-\n2.3\n5.2\n\n\nUniVoice (Ours)\n0.4B\n50K\n0.56\n4.06\n3.72\n0.00\n3.88\n3.0\n6.3\n\n\nOnly Zero-shot TTS Models\nCosyVoice\n\n0.40.4B\n170K\n0.66\n3.59\n4.17\n+0.06\n3.96\n-\n-\n\n\nMaskGCT\n\n1.01.0B\n100K\n0.66\n2.49\n3.85\n+0.04\n3.92\n-\n-\n\n\nF5-TTS\n\n0.30.3B\n100K\n0.66\n2.54\n3.84\n+0.03\n3.90\n-\n-\n\n\nFireRedTTS\n\n0.60.6B\n248K\n0.47\n2.69\n3.91\n-0.01\n3.85\n-\n-\n\n\nVALL-E †\n\n\n0.30.3B\n60K\n0.47\n6.11\n3.68\n-\n-\n-\n-\n\n\nNaturalSpeech2 †\n\n\n0.40.4B\n60K\n0.55\n1.94\n3.88\n-\n-\n-\n-\n\n\nUniVoice-TTS (Ours)\n\n0.40.4B\n50K\n0.56\n4.66\n3.92\n+0.02\n3.86\n-\n-\n\n\nOnly ASR Models\nWhisper-small\n\n0.20.2B\n680K\n-\n-\n-\n-\n-\n3.4\n7.6\n\n\nWhisper-large-v2\n\n1.51.5B\n680K\n-\n-\n-\n-\n-\n2.7\n5.2\n\n\nWhisper-large-v3\n\n1.51.5B\n680K\n-\n-\n-\n-\n-\n1.9\n3.6\n\n\nWhisper-large-v3-turbo\n\n0.80.8B\n680K\n-\n-\n-\n-\n-\n1.9\n3.5\n\n\nParaformer\n\n0.20.2B\n20K\n-\n-\n-\n-\n-\n3.5\n8.2\n\n\nZipformer\n\n0.150.15B\n0.96K\n-\n-\n-\n-\n-\n2.0\n4.4\n\n\nUniVoice-ASR (Ours)\n\n0.40.4B\n50K\n-\n-\n-\n-\n-\n2.5\n4.2",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Type</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Method</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Params</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">Data-hrs</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">CMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">SMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m7\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">A-WER-clean<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m8\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">A-WER-other<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m9\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_t\" style=\"padding:3.5pt 5.0pt;\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">Ground Truth</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">2.43</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">+0.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.82</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Unified Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">SpeechT5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.14\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m10\" intent=\":literal\"><semantics><mn>0.14</mn><annotation encoding=\"application/x-tex\">0.14</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.96K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">5.91</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.32</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-0.28</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.35</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">10.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">LauraGPT</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"2.0\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m11\" intent=\":literal\"><semantics><mn>2.0</mn><annotation encoding=\"application/x-tex\">2.0</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.62</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">7.7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">OpusLM-0.4B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m12\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">213K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">19.8</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.7</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">OpusLM-7B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"7\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m13\" intent=\":literal\"><semantics><mn>7</mn><annotation encoding=\"application/x-tex\">7</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">213K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.60</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.3</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">5.2</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">UniVoice&#160;(Ours)</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.4B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.72</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.00</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.88</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.0</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">6.3</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"7\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Only Zero-shot TTS Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">CosyVoice</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m14\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">170K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">4.17</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">+0.06</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.96</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">MaskGCT</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.0\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m15\" intent=\":literal\"><semantics><mn>1.0</mn><annotation encoding=\"application/x-tex\">1.0</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">100K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.49</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.85</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.04</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.92</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">F5-TTS</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m16\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">100K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.54</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.84</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.03</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.90</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">FireRedTTS</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.6\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m17\" intent=\":literal\"><semantics><mn>0.6</mn><annotation encoding=\"application/x-tex\">0.6</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">248K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.69</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.91</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-0.01</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.85</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">VALL-E <sup class=\"ltx_sup\">&#8224;</sup>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.3\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m19\" intent=\":literal\"><semantics><mn>0.3</mn><annotation encoding=\"application/x-tex\">0.3</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">6.11</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.68</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">NaturalSpeech2 <sup class=\"ltx_sup\">&#8224;</sup>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m21\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">60K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.55</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.94</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.88</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">UniVoice-TTS&#160;(Ours)</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m22\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.56</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.66</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.92</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">+0.02</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.86</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb ltx_border_t\" rowspan=\"7\" style=\"padding:3.5pt 5.0pt;\"><span class=\"ltx_text ltx_font_italic\">Only ASR Models</span></td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">Whisper-small</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.2\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m23\" intent=\":literal\"><semantics><mn>0.2</mn><annotation encoding=\"application/x-tex\">0.2</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">3.4</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:3.5pt 5.0pt;\">7.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v2</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m24\" intent=\":literal\"><semantics><mn>1.5</mn><annotation encoding=\"application/x-tex\">1.5</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.7</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">5.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v3</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"1.5\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m25\" intent=\":literal\"><semantics><mn>1.5</mn><annotation encoding=\"application/x-tex\">1.5</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.9</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.6</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Whisper-large-v3-turbo</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.8\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m26\" intent=\":literal\"><semantics><mn>0.8</mn><annotation encoding=\"application/x-tex\">0.8</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">680K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">1.9</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.5</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Paraformer</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.2\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m27\" intent=\":literal\"><semantics><mn>0.2</mn><annotation encoding=\"application/x-tex\">0.2</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">20K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">3.5</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">8.2</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:3.5pt 5.0pt;\">Zipformer</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.15\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m28\" intent=\":literal\"><semantics><mn>0.15</mn><annotation encoding=\"application/x-tex\">0.15</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">0.96K</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">2.0</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:3.5pt 5.0pt;\">4.4</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">UniVoice-ASR&#160;(Ours)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">\n<math alttext=\"0.4\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.T1.m29\" intent=\":literal\"><semantics><mn>0.4</mn><annotation encoding=\"application/x-tex\">0.4</annotation></semantics></math>B</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">50K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">2.5</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:3.5pt 5.0pt;\">4.2</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "100k",
-            "wer",
-            "unified",
-            "librispeech",
-            "0606b",
-            "evaluation",
-            "naturalspeech2",
-            "248k",
-            "1010b",
-            "zeroshot",
-            "tts",
-            "lauragpt",
-            "reported",
-            "paraformer",
-            "fireredtts",
-            "represents",
-            "zipformer",
-            "0808b",
             "opuslm7b",
-            "results",
-            "only",
-            "opuslm04b",
-            "ours",
-            "170k",
-            "whisperlargev2",
-            "whisperlargev3",
-            "method",
-            "awerclean↓downarrow",
-            "ground",
-            "testclean",
-            "type",
-            "datahrs",
-            "univoice",
-            "univoicetts",
+            "naturalspeech2",
             "2020b",
-            "params",
-            "04b",
-            "096k",
-            "truth",
-            "awerclean",
-            "50k",
-            "whisperlargev3turbo",
-            "1515b",
-            "f5tts",
-            "testother",
-            "respectively",
-            "speecht5",
-            "213k",
-            "utmos↑uparrow",
-            "models",
-            "valle",
-            "naturalspeech3ju2024naturalspeech",
-            "77b",
-            "0303b",
-            "20k",
-            "0202b",
-            "performance",
-            "cmos↑uparrow",
-            "univoiceasr",
-            "asr",
-            "smos↑uparrow",
-            "680k",
-            "whispersmall",
-            "wer↓downarrow",
-            "0404b",
-            "works",
+            "0808b",
             "cosyvoice",
-            "015015b",
+            "zipformer",
+            "0404b",
+            "univoicetts",
+            "170k",
+            "univoiceasr",
+            "fireredtts",
+            "paraformer",
+            "testclean",
+            "dataset",
             "awerother",
             "result",
-            "sim↑uparrow",
-            "maskgct",
-            "comparisons",
-            "60k",
-            "awerother↓downarrow",
+            "096k",
+            "ours",
+            "models",
+            "represents",
+            "cmos↑uparrow",
+            "respectively",
+            "univoice",
             "prior",
+            "naturalspeech3ju2024naturalspeech",
+            "smos↑uparrow",
+            "60k",
+            "f5tts",
+            "04b",
             "014014b",
-            "dataset"
+            "1515b",
+            "maskgct",
+            "015015b",
+            "0303b",
+            "comparisons",
+            "zeroshot",
+            "sim↑uparrow",
+            "77b",
+            "680k",
+            "ground",
+            "0202b",
+            "whisperlargev3",
+            "datahrs",
+            "type",
+            "whisperlargev2",
+            "whisperlargev3turbo",
+            "unified",
+            "opuslm04b",
+            "1010b",
+            "only",
+            "results",
+            "truth",
+            "awerother↓downarrow",
+            "awerclean↓downarrow",
+            "method",
+            "performance",
+            "248k",
+            "utmos↑uparrow",
+            "100k",
+            "testother",
+            "wer",
+            "reported",
+            "awerclean",
+            "evaluation",
+            "asr",
+            "whispersmall",
+            "lauragpt",
+            "valle",
+            "wer↓downarrow",
+            "works",
+            "0606b",
+            "speecht5",
+            "213k",
+            "params",
+            "librispeech",
+            "50k",
+            "tts",
+            "20k"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We evaluated model robustness through WER measurements on LibriSpeech test-clean. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx4.T1\" title=\"Table 1 &#8227; Attention Mask Design &#8227; UniVoice &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, UniVoice&#160;demonstrates significant improvements over existing unified approaches, achieving a 12% relative WER reduction compared to the best unified baseline. This performance gain highlights the effectiveness of our dual attention mechanism and text-prefix-guided speech-infilling approach in maintaining speech intelligibility.</p>\n\n",
@@ -90,61 +92,61 @@
             {
                 "html": "<p class=\"ltx_p\">Large language models (LLMs) have demonstrated promising performance in both automatic speech recognition (ASR) and text-to-speech (TTS) systems, gradually becoming the mainstream approach.\nHowever, most current approaches address these tasks separately rather than through a unified framework.\nThis work aims to integrate these two tasks into one unified model.\nAlthough discrete speech tokenization enables joint modeling, its inherent information loss limits performance in both recognition and generation.\nIn this work, we present UniVoice, a unified LLM framework through continuous representations that seamlessly integrates speech recognition and synthesis within a single model. Our approach combines the strengths of autoregressive modeling for speech recognition with flow matching for high-quality generation.\nTo mitigate the inherent divergence between autoregressive and flow-matching models, we further design a dual attention mechanism, which switches between a causal mask for recognition and a bidirectional attention mask for synthesis.\nFurthermore, the proposed text-prefix-conditioned speech infilling method enables high-fidelity zero-shot voice cloning.\nExperimental results demonstrate that our method\ncan achieve or exceed current single-task modeling methods\nin both ASR and zero-shot TTS tasks. This work explores new possibilities for end-to-end speech understanding and generation. Code is available at <span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/gwh22/UniVoice</span>.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "zeroshot",
-                    "tts",
-                    "unified",
                     "method",
-                    "results",
-                    "univoice",
+                    "performance",
+                    "models",
                     "asr",
-                    "performance"
+                    "tts",
+                    "univoice",
+                    "results",
+                    "unified",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This success has naturally been extended to speech processing, where researchers have adapted LLM frameworks to handle continuous speech signals through various discretization strategies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024vall</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024viola</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ma2024embarrassingly</span>)</cite>. The prevailing approach involves converting raw waveforms into discrete tokens using self-supervised learning representations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hsu2021hubert</span>)</cite> or quantization based on neural codecs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zeghidour2021soundstream</span>)</cite>. These tokenized representations enable the direct application of existing LLM architectures to speech tasks: for ASR tasks, Codec-ASR&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dhawan2024codec</span>)</cite> performs comprehensive analysis on building ASR systems with discrete codes; for TTS tasks, systems such as VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite> and AudioLM&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">borsos2023audiolm</span>)</cite> formulate speech generation as discrete token sequence modeling.\nConcurrently, diffusion models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ho2020denoising</span>)</cite> and flow matching models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lipman2022flow</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022flow</span>)</cite> have rapidly gained prominence in speech synthesis, establishing new benchmarks for generation quality. Pioneering works like Grad-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">popov2021grad</span>)</cite> and F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite> demonstrate their exceptional ability to directly model continuous speech representations, achieving unprecedented fidelity that has made them increasingly prevalent in recent research.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "tts",
-                    "valle",
                     "works",
+                    "models",
+                    "asr",
+                    "tts",
                     "f5tts",
-                    "asr"
+                    "valle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several pioneering efforts have attempted to unify ASR and TTS within single LLM frameworks using discrete representations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024viola</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025opuslm</span>)</cite>. Viola&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024viola</span>)</cite> converts speech utterances to discrete tokens using an offline neural codec encoder and treats all tasks as token-based sequence prediction problems, while LauraGPT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>)</cite> employs a novel data representation combining continuous and discrete features for audio signals.\nHowever, such methods face inherent limitations; quantization unavoidably eliminates perceptually critical acoustic details, driving our investigation of continuous representation alternatives.</p>\n\n",
                 "matched_terms": [
                     "lauragpt",
-                    "tts",
-                    "asr"
+                    "asr",
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present UniVoice, a novel architecture unifying ASR and TTS within a continuous signal space while retaining LLM framework scalability. The architecture maintains continuous representations across both tasks, employing autoregressive modeling (AR) for ASR to leverage its sequential prediction strengths, while utilizing flow matching (FM) for TTS to capitalize on its high-fidelity generation advantages. To resolve the inherent incompatibility between AR&#8217;s causal masking and FM&#8217;s non-autoregressive requirements, we design a dual attention mask mechanism that switches between causal masking for recognition and bidirectional attention for synthesis. Furthermore, our text-prefix guided speech infilling method enables high-fidelity zero-shot voice cloning.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "tts",
-                    "asr",
                     "method",
-                    "univoice"
+                    "asr",
+                    "tts",
+                    "univoice",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated the ASR and TTS performance of our method on the LibriHeavy dataset&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite>. Experiments demonstrate that our approach achieves speech synthesis performance comparable to that of current state-of-the-art methods while maintaining competitive speech recognition capability.</p>\n\n",
                 "matched_terms": [
-                    "tts",
                     "method",
+                    "performance",
                     "asr",
-                    "dataset",
-                    "performance"
+                    "tts",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Extensive experiments demonstrate that our unified approach matches or surpasses state-of-the-art specialized models in both speech recognition and zero-shot speech synthesis performance, while maintaining parameter efficiency.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "unified",
+                    "models",
                     "zeroshot",
                     "performance"
                 ]
@@ -152,49 +154,49 @@
             {
                 "html": "<p class=\"ltx_p\">The emergence of ChatGPT has demonstrated the remarkable capabilities of LLMs, inspiring significant advancements in audio and speech processing. Recent research has successfully adapted LLMs to model discrete speech tokens, enabling high-quality speech generation and editing.\nSeveral notable approaches have emerged in this field&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">meng2024melle</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2025llasa</span>)</cite>.\n<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span></cite> introduced VALL-E, framing TTS as a conditional audio codec language modeling task with in-context learning capabilities. This work was subsequently enhanced by <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024vall</span></cite> through repetition-aware sampling and grouped codec modeling in VALL-E 2. <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">copet2024simple</span></cite> developed MusicGen, utilizing delay patterns to model multiple parallel streams of audio tokens. Similarly, <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span></cite> presented VoiceCraft, which combines delay patterns with causal masking for zero-shot speech editing and synthesis.\n<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jiang2023mega</span></cite> proposed Mega-TTS, a zero-shot TTS system that decomposes mel-spectrograms into content, timbre, prosody, and phase attributes, modeling each component according to its intrinsic properties. <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2023uniaudio</span></cite> developed UniAudio, an audio foundation model capable of handling multiple generation tasks through multi-scale transformer-based codec modeling <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2023megabyte</span>)</cite>.\nSeed-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite> proposes utilizing both speech tokenizer based language model and diffusion acoustic modeling the first time for natural and high-quality speech generation.\nSimilarly, CosyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite> proposes supervised semantic tokens for audio codec modeling and flow matching for acoustic details modeling.\nMaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite> designs a masked generative codec transformer for zero-shot speech synthesis.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "tts",
                     "valle",
-                    "maskgct",
-                    "cosyvoice"
+                    "tts",
+                    "zeroshot",
+                    "cosyvoice",
+                    "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The diffusion&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ho2020denoising</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">song2020score</span>)</cite> models first achieved great success in the field of image generation, and then there are many works in the field of speech and audio using diffusion or flow matching&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lipman2022flow</span>)</cite> to model speech and audio generation. Due to the advantages of diffusion and flow matching in modeling continuous features, diffusion- or flow-based audio generative models can often generate high-quality audio&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022diffsinger</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan2024mmtts</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jiang2025sparse</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025discl</span>)</cite>.\nVoicebox&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">le2024voicebox</span>)</cite> proposes a text-guided speech infilling task to generate masked speech segments based on surrounding audio and a provided text transcript.\nMatcha-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mehta2024matcha</span>)</cite> and VoiceFlow&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2024voiceflow</span>)</cite> utilize the optimal transport conditional flow matching based on Grad-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">popov2021grad</span>)</cite> for high-quality and faster TTS. ReFlow-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan2024reflow</span>)</cite> models the Ordinary Differential Equation (ODE) based on Rectified Flow&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022flow</span>)</cite> for high-fidelity and efficient speech synthesis.\nNaturalSpeech2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2023naturalspeech</span>)</cite> models zero shot speech synthesis as a conditional latent diffusion model with codec-latent embeddings and attention-based in-context modeling. FlashSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2024flashspeech</span>)</cite> develops a large-scale zero-shot speech synthesis with a latent consistency model and adversarial consistency training approach for efficient zero-shot speech synthesis.\nF5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite> is a fully non-autoregressive text-to-speech system based on flow matching with Diffusion Transformer for zero-shot TTS.\nSome works also use latent diffusion or a latent flow matching model for text-to-audio generation&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023audioldm</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ghosal2023text</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan24b_lafma</span>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "zeroshot",
-                    "tts",
-                    "works",
                     "naturalspeech2",
-                    "f5tts"
+                    "works",
+                    "models",
+                    "tts",
+                    "f5tts",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">With the development of language models, they can handle various downstream tasks as a unified model in the field of text processing&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">raffel2020t5</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">brown2020gpt3</span>)</cite>. Some works have begun to explore the use of language models as the backbone of the unified model for processing speech and text tasks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ao2021speecht5</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rubenstein2023audiopalm</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023google</span>)</cite>, thus completing various related tasks in the speech modality. SpeechNet&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021speechnet</span>)</cite> and SpeechT5&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ao2021speecht5</span>)</cite> perform various speech tasks with an encoder-decoder model, specifically SpeechT5 needs to pre-train first and then fine-tune on subsequent tasks.\nViola&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024viola</span>)</cite> follows the VALL-E paradigm and integrates speech recognition, machine translation, and speech synthesis into a unified codec language model.\nLauraGPT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>)</cite> encodes the input audio into continuous representations using an audio encoder and generates the output audio from discrete codec codes.\nOpusLM&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025opuslm</span>)</cite> is designed to accept and generate multistream discrete tokens in both text and speech modalities with pre-trained LLM.\nWe propose UniVoice, which uses continuous speech representations as input and output features and combines autoregression and flow matching in one transformer, to make it more suitable for speech recognition and speech synthesis, respectively.</p>\n\n",
                 "matched_terms": [
+                    "works",
                     "respectively",
                     "models",
                     "lauragpt",
-                    "unified",
-                    "valle",
-                    "works",
                     "speecht5",
-                    "univoice"
+                    "univoice",
+                    "unified",
+                    "valle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"x=x_{1},x_{2},...,x_{n}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m1\" intent=\":literal\"><semantics><mrow><mi>x</mi><mo>=</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></mrow><annotation encoding=\"application/x-tex\">x=x_{1},x_{2},...,x_{n}</annotation></semantics></math> represents the sequence of words.\nThis formulation describes an autoregressive language modeling task, in which the model aims to predict the probability distribution of each token <math alttext=\"x_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m2\" intent=\":literal\"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">x_{i}</annotation></semantics></math> based on the preceding tokens <math alttext=\"x_{&lt;i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m3\" intent=\":literal\"><semantics><msub><mi>x</mi><mrow><mi/><mo>&lt;</mo><mi>i</mi></mrow></msub><annotation encoding=\"application/x-tex\">x_{&lt;i}</annotation></semantics></math> in the sequence. This prediction is made using a probability distribution <math alttext=\"p_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m4\" intent=\":literal\"><semantics><msub><mi>p</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">p_{\\theta}</annotation></semantics></math> that is parameterized by <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m5\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math>. The model is trained by minimizing the cross-entropy loss between the predicted distribution <math alttext=\"p_{\\theta}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p2.m6\" intent=\":literal\"><semantics><msub><mi>p</mi><mi>&#952;</mi></msub><annotation encoding=\"application/x-tex\">p_{\\theta}</annotation></semantics></math> and the empirical distribution of the training data. This optimization process results in the language model loss, which can be expressed as:</p>\n\n",
                 "matched_terms": [
-                    "represents",
-                    "results"
+                    "results",
+                    "represents"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx2.F1\" title=\"Figure 1 &#8227; Diffusion based Speech Generative Model &#8227; Related Work &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, our framework features a dual-branch hybrid architecture comprising: (1) a causal transformer for ASR tasks, and (2) a flow-matching-based Diffusion Transformer for TTS synthesis.</p>\n\n",
                 "matched_terms": [
-                    "tts",
-                    "asr"
+                    "asr",
+                    "tts"
                 ]
             },
             {
@@ -208,16 +210,16 @@
             {
                 "html": "<p class=\"ltx_p\">The complete loss function combines the ASR and TTS objectives through a weighted sum.</p>\n\n",
                 "matched_terms": [
-                    "tts",
-                    "asr"
+                    "asr",
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"L_{LM}(\\theta)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSSx3.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>L</mi><mrow><mi>L</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>M</mi></mrow></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">L_{LM}(\\theta)</annotation></semantics></math> represents the autoregressive loss for ASR, <math alttext=\"L_{audio}^{cfm}(\\theta)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSSx3.p1.m2\" intent=\":literal\"><semantics><mrow><msubsup><mi>L</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>u</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>d</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>i</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi></mrow><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>f</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>m</mi></mrow></msubsup><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">L_{audio}^{cfm}(\\theta)</annotation></semantics></math> denotes the optimal transport-based conditional flow matching loss for TTS, <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx2.SSSx3.p1.m3\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> serves as a balancing hyperparameter between the two objectives.</p>\n\n",
                 "matched_terms": [
                     "represents",
-                    "tts",
-                    "asr"
+                    "asr",
+                    "tts"
                 ]
             },
             {
@@ -237,17 +239,17 @@
             {
                 "html": "<p class=\"ltx_p\">We conduct the training of the proposed UniVoice&#160; using the LibriHeavy&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite> dataset for both ASR and TTS training, which contains a total of about 50K hours of duration, which are sampled at 16kHz. In practice, we upsample the sample rate to 22.05kHz.\nFor the zero-shot TTS evaluation, we use the LibriSpeech-PC test set the same as in F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite>.\nFor the ASR task, we directly use the LibriSpeech test-clean and test-other subsets for evaluation.\nWe extract the 80-bin mel-spectrogram with a frame size of 1024 and a hop size of 256.</p>\n\n",
                 "matched_terms": [
+                    "testother",
+                    "evaluation",
+                    "librispeech",
+                    "asr",
+                    "tts",
+                    "f5tts",
+                    "univoice",
                     "50k",
                     "testclean",
                     "zeroshot",
-                    "tts",
-                    "librispeech",
-                    "evaluation",
-                    "f5tts",
-                    "univoice",
-                    "asr",
-                    "dataset",
-                    "testother"
+                    "dataset"
                 ]
             },
             {
@@ -262,62 +264,62 @@
             {
                 "html": "<p class=\"ltx_p\">For zero-shot TTS, we conduct a comprehensive evaluation, encompassing both objective and subjective measures, to assess the sample quality (UTMOS, CMOS), speaker similarity (SIM, SMOS) and robustness (WER). In specific, 1) for speech quality, we employ UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/sarulab-speech/UTMOS22</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">saeki2022utmos</span>)</cite>, which is a surrogate objective metric of MOS; and we employ comparative mean option score (CMOS) to evaluate the sample naturalness subjectively;\n2) for speaker similarity, we use a WavLM-large-based speaker verification model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022wavlm</span>)</cite> to extract speaker embeddings for calculating the cosine similarity of synthesized and ground truth speeches as SIM,\nand we employ similarity mean option score (SMOS) to evaluate the similarity subjectively;\n3) for Word Error Rate (WER), we use an ASR model to transcribe generated speech. We use Whisper-large-v3 to compute the WER.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "tts",
                     "wer",
-                    "truth",
                     "evaluation",
-                    "whisperlargev3",
+                    "ground",
                     "asr",
-                    "ground"
+                    "tts",
+                    "truth",
+                    "whisperlargev3",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For ASR, we compare the WER of different systems evaluated on the LibriSpeech test-clean set and the test-other set using the Whisper-large-v3 ASR model.</p>\n\n",
                 "matched_terms": [
-                    "testclean",
+                    "testother",
                     "wer",
                     "librispeech",
-                    "whisperlargev3",
                     "asr",
-                    "testother"
+                    "testclean",
+                    "whisperlargev3"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For unified models, we compare our UniVoice&#160; with baselines:\nSpeechT5&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ao2021speecht5</span>)</cite>, LauraGPT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>)</cite>, OpusLM&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tian2025opuslm</span>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "lauragpt",
-                    "unified",
                     "speecht5",
-                    "univoice"
+                    "models",
+                    "univoice",
+                    "unified",
+                    "lauragpt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the zero-shot TTS task, we compare our UniVoice&#160;with baselines:\nVALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, NaturalSpeech2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2023naturalspeech</span>)</cite>, F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite>, CosyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>, FireRedTTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2024fireredtts</span>)</cite>, MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>, UniVoice-TTS.\nUniVoice-TTS is the model trained only for TTS using our model framework.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "tts",
-                    "valle",
-                    "maskgct",
                     "naturalspeech2",
+                    "valle",
                     "fireredtts",
-                    "univoicetts",
-                    "univoice",
-                    "f5tts",
                     "only",
-                    "cosyvoice"
+                    "tts",
+                    "f5tts",
+                    "univoice",
+                    "zeroshot",
+                    "univoicetts",
+                    "cosyvoice",
+                    "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the ASR task, we compare our UniVoice&#160; with baselines:\nWhisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite> series, Paraformer&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gao2022paraformer</span>)</cite>, Zipformer&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2023zipformer</span>)</cite>, UniVoice-ASR.\nUniVoice-ASR is the model trained only for ASR using our model framework.</p>\n\n",
                 "matched_terms": [
-                    "paraformer",
                     "univoiceasr",
-                    "asr",
-                    "univoice",
                     "zipformer",
-                    "only"
+                    "paraformer",
+                    "only",
+                    "asr",
+                    "univoice"
                 ]
             },
             {
@@ -330,170 +332,170 @@
             {
                 "html": "<p class=\"ltx_p\">However, our analysis reveals an important trade-off: while outperforming other unified models, UniVoice&#160;shows a slight but consistent WER gap compared to specialized single-task TTS systems. We attribute this difference to two key factors inherent in unified architectures:\n1) structural constraints imposed by shared parameters, which limit task-specific optimization.\n2) the competing objectives of maintaining both recognition accuracy and generation quality.</p>\n\n",
                 "matched_terms": [
+                    "wer",
                     "models",
                     "tts",
-                    "wer",
-                    "unified",
-                    "univoice"
+                    "univoice",
+                    "unified"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Notably, UniVoice&#160;demonstrates a 13% WER drop over UniVoice-TTS, confirming that joint ASR-TTS training enhances speech intelligibility through shared linguistic representations.</p>\n\n",
                 "matched_terms": [
-                    "univoicetts",
-                    "univoice",
-                    "wer"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">We evaluate speaker similarity through both objective SIM scores and subjective SMOS tests (8 listeners, 20 utterances). Our results show that UniVoice&#160;outperforms FireRedTTS, NaturalSpeech2, and VALL-E, while showing a modest performance degradation compared to CosyVoice, MaskGCT, and F5-TTS. This performance gap likely stems from insufficient utilization of the AdaLN-zero modulation mechanism inherited from DiT models.</p>\n\n",
-                "matched_terms": [
-                    "models",
-                    "valle",
-                    "maskgct",
-                    "naturalspeech2",
-                    "fireredtts",
-                    "univoice",
-                    "results",
-                    "f5tts",
-                    "cosyvoice",
-                    "performance"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">Interestingly, UniVoice&#160;achieves parity with UniVoice-TTS in similarity metrics, indicating that multitask learning preserves speaker characteristics effectively.</p>\n\n",
-                "matched_terms": [
-                    "univoice",
-                    "univoicetts"
-                ]
-            },
-            {
-                "html": "<p class=\"ltx_p\">Quality evaluation combines UTMOS scores and CMOS tests (8 listeners, 20 utterances). UniVoice&#160;sets a new state-of-the-art among unified models, with a 0.4 UTMOS improvement over previous approaches. However, we observe a 0.2 UTMOS degradation compared to UniVoice-TTS, suggesting that joint optimization involves subtle trade-offs in naturalness.</p>\n\n",
-                "matched_terms": [
-                    "models",
-                    "unified",
-                    "evaluation",
+                    "wer",
                     "univoicetts",
                     "univoice"
                 ]
             },
             {
+                "html": "<p class=\"ltx_p\">We evaluate speaker similarity through both objective SIM scores and subjective SMOS tests (8 listeners, 20 utterances). Our results show that UniVoice&#160;outperforms FireRedTTS, NaturalSpeech2, and VALL-E, while showing a modest performance degradation compared to CosyVoice, MaskGCT, and F5-TTS. This performance gap likely stems from insufficient utilization of the AdaLN-zero modulation mechanism inherited from DiT models.</p>\n\n",
+                "matched_terms": [
+                    "naturalspeech2",
+                    "valle",
+                    "fireredtts",
+                    "performance",
+                    "models",
+                    "f5tts",
+                    "univoice",
+                    "results",
+                    "cosyvoice",
+                    "maskgct"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Interestingly, UniVoice&#160;achieves parity with UniVoice-TTS in similarity metrics, indicating that multitask learning preserves speaker characteristics effectively.</p>\n\n",
+                "matched_terms": [
+                    "univoicetts",
+                    "univoice"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Quality evaluation combines UTMOS scores and CMOS tests (8 listeners, 20 utterances). UniVoice&#160;sets a new state-of-the-art among unified models, with a 0.4 UTMOS improvement over previous approaches. However, we observe a 0.2 UTMOS degradation compared to UniVoice-TTS, suggesting that joint optimization involves subtle trade-offs in naturalness.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "models",
+                    "univoice",
+                    "unified",
+                    "univoicetts"
+                ]
+            },
+            {
                 "html": "<p class=\"ltx_p\">These results collectively demonstrate that while our unified architecture achieves remarkable performance across all metrics, there remains an inherent tension between multitask generalization and single-task optimization that warrants further investigation.</p>\n\n",
                 "matched_terms": [
-                    "unified",
                     "results",
+                    "unified",
                     "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In conclusion, UniVoice demonstrates a trade-off in performance: while it achieves improved robustness in TTS (as evidenced by lower TTS WER), it experiences a slight degradation in both TTS naturalness and ASR performance compared to corresponding single-task models.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "tts",
+                    "performance",
                     "wer",
-                    "univoice",
+                    "models",
                     "asr",
-                    "performance"
+                    "tts",
+                    "univoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conduct a comprehensive comparison between two TTS variants within our UniVoice framework: (1) the proposed speech-infilling-based model and (2) a speaker-embedding-conditioned baseline. As detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx5.T2\" title=\"Table 2 &#8227; Ablation Study of TTS model variants &#8227; Main Results &#8227; Experiments &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the speech-infilling-based approach demonstrates consistent superiority across all evaluation metrics, robustness (WER reduction of 18%), generation similarity (0.27 SIM improvement) and speech quality (0.27 UTMOS gain). These results validate the effectiveness of our speech-infilling-based paradigm and its tighter integration with the unified architecture.</p>\n\n",
                 "matched_terms": [
-                    "tts",
                     "wer",
-                    "unified",
                     "evaluation",
+                    "tts",
                     "univoice",
-                    "results"
+                    "results",
+                    "unified"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">UniVoice&#160;is the first attempt in the audio field to integrate autoregression with flow matching on LLMs. It has some limitations:\n1) Although it can perform speech understanding and generation tasks, it is currently limited to ASR and TTS tasks. In the future, we will try to integrate more tasks;\n2) The current system is trained based on a relatively small dataset with a small language model, and there is still room for improvement in performance. We believe that using larger datasets and larger models will have better results;\n3) The current system utilizes LLM to unify ASR and TTS tasks for speech understanding and generation tasks, respectively. However, the original conversational ability of LLM has not been effectively utilized, and we will expand to conversational systems in the future.</p>\n\n",
                 "matched_terms": [
-                    "models",
+                    "performance",
                     "respectively",
-                    "tts",
+                    "models",
                     "asr",
+                    "tts",
                     "univoice",
                     "results",
-                    "dataset",
-                    "performance"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper presents UniVoice, a unified transformer framework that effectively integrates autoregressive speech recognition with flow-matching-based speech synthesis. We propose a dual attention mechanism that adaptively switches between causal and bidirectional attention patterns for ASR and TTS, respectively. Furthermore, a text-prefix-guided speech-infilling approach for high-fidelity zero-shot voice cloning is developed. The proposed unified architecture demonstrates robust performance in both speech understanding and generation tasks, establishing the viability of joint modeling through complementary paradigms. This work establishes new possibilities for end-to-end unified speech processing.\nDemo samples can be found at https://univoice-demo.github.io/UniVoice.\nTo support research reproducibility in this domain, we will open-source the codes and checkpoints.</p>\n\n",
                 "matched_terms": [
+                    "performance",
                     "respectively",
-                    "zeroshot",
-                    "tts",
-                    "unified",
-                    "univoice",
                     "asr",
-                    "performance"
+                    "tts",
+                    "univoice",
+                    "unified",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">F5-TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/SWivid/F5-TTS</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite>. It is a fully non-autoregressive\ntext-to-speech system based on flow matching with Diffusion Transformer, which is trained on Emilia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2024emilia</span>)</cite> dataset with around 100K hours Chinese and English speech dataset. We use the official checkpoint of F5-TTS for evaluation.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
                     "evaluation",
-                    "f5tts",
-                    "100k"
+                    "dataset",
+                    "100k",
+                    "f5tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">CosyVoice<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/FunAudioLLM/CosyVoice</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>. It is a two-stage large-scale TTS system, first for autoregressive text-to-token generation, then a flow matching diffusion model for Mel-spectrogram generation. The model is trained on 170K hours of multilingual speech data. We use the official checkpoint of CosyVoice for evaluation.</p>\n\n",
                 "matched_terms": [
                     "evaluation",
-                    "tts",
+                    "170k",
                     "cosyvoice",
-                    "170k"
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">FireRedTTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/FireRedTeam/FireRedTTS</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2024fireredtts</span>)</cite>. It is a foundation TTS framework for industry-level generative speech applications. It includes an autoregressive text-to-semantic token model and a token-to waveform generation model. The system is trained with 248K hours of labeled speech data. We use the official pre-trained checkpoint to evaluate.</p>\n\n",
                 "matched_terms": [
-                    "tts",
-                    "248k"
+                    "248k",
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/amphion/MaskGCT</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>. It is large-scale non autoregressive TTS model without precise alignment information between text and speech following the mask-and-predict learning paradigm. It is trained on Emilia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2024emilia</span>)</cite> dataset with around 100K hours Chinese and English speech dataset.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
+                    "100k",
                     "tts",
-                    "100k"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite>. It is an advanced ASR model developed by OpenAI, designed to transcribe speech with high accuracy. It is trained on a massive dataset of 680,000 hours of supervised audio data, covering a wide range of languages and acoustic conditions.\nWe use Whisper-small<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-small</span></span></span></span>,\nWhisper-large-v2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-large-v2</span></span></span></span> and Whisper-large-v3<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-large-v3</span></span></span></span> for evaluation.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
                     "evaluation",
-                    "asr"
+                    "asr",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Paraformer&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gao2022paraformer</span>)</cite>.\nParaformer is a non-autoregressive end-to-end ASR model that achieves fast parallel decoding via CIF-based acoustic modeling. It is trained on 20K hours of English data.</p>\n\n",
                 "matched_terms": [
                     "paraformer",
-                    "20k",
-                    "asr"
+                    "asr",
+                    "20k"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Zipformer&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yao2023zipformer</span>)</cite>.\nIt is a faster, more memory efficient, and better-performing transformer model for speech recognition. It is trained on 960 hours LibriSpeech dataset.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
                     "zipformer",
+                    "dataset",
                     "librispeech"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">LauraGPT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2023lauragpt</span>)</cite>. It is a novel unified GPT-based audio LLM for audio recognition, understanding, and generation by using continuous representations for audio input and generating output audio from audio codec tokens.</p>\n\n",
                 "matched_terms": [
-                    "lauragpt",
-                    "unified"
+                    "unified",
+                    "lauragpt"
                 ]
             },
             {
@@ -506,10 +508,10 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluated different attention mask configurations for our text-prefix-guided speech-infilling TTS approach. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T4\" title=\"Table 4 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that the use of full bidirectional attention masks consistently outperforms autoregressive masking in all evaluation metrics (WER, SIM and UTMOS). This result validates our design choice to use complete context access for high-quality speech synthesis.</p>\n\n",
                 "matched_terms": [
+                    "wer",
                     "result",
-                    "evaluation",
                     "tts",
-                    "wer"
+                    "evaluation"
                 ]
             },
             {
@@ -523,23 +525,25 @@
         ]
     },
     "Sx5.T2": {
+        "source_file": "UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models",
         "caption": "Table 2: Comparison of the zero-shot TTS capability of different TTS model variants of UniVoice.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">UniVoice-TTS-speaker</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.72</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.29</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.65</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">UniVoice-TTS-infilling</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">4.66</span></td>\n<td class=\"ltx_td ltx_align_center\">0.56</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.92</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">UniVoice</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.72</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Method\nWER↓\\downarrow\nSIM↑\\uparrow\nUTMOS↑\\uparrow\n\n\n\n\nUniVoice-TTS-speaker\n5.72\n0.29\n3.65\n\n\nUniVoice-TTS-infilling\n4.66\n0.56\n3.92\n\n\nUniVoice\n4.06\n0.56\n3.72",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.T2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">UniVoice-TTS-speaker</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">5.72</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.29</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">3.65</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">UniVoice-TTS-infilling</th>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">4.66</span></td>\n<td class=\"ltx_td ltx_align_center\">0.56</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">3.92</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">UniVoice</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">3.72</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "wer↓downarrow",
-            "zeroshot",
-            "tts",
-            "univoicettsinfilling",
-            "variants",
-            "model",
-            "sim↑uparrow",
-            "capability",
-            "utmos↑uparrow",
-            "univoice",
-            "method",
             "univoicettsspeaker",
+            "method",
+            "capability",
+            "model",
+            "tts",
+            "comparison",
             "different",
-            "comparison"
+            "univoice",
+            "utmos↑uparrow",
+            "variants",
+            "univoicettsinfilling",
+            "zeroshot",
+            "sim↑uparrow"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We conduct a comprehensive comparison between two TTS variants within our UniVoice framework: (1) the proposed speech-infilling-based model and (2) a speaker-embedding-conditioned baseline. As detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx5.T2\" title=\"Table 2 &#8227; Ablation Study of TTS model variants &#8227; Main Results &#8227; Experiments &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the speech-infilling-based approach demonstrates consistent superiority across all evaluation metrics, robustness (WER reduction of 18%), generation similarity (0.27 SIM improvement) and speech quality (0.27 UTMOS gain). These results validate the effectiveness of our speech-infilling-based paradigm and its tighter integration with the unified architecture.</p>\n\n"
@@ -548,11 +552,11 @@
             {
                 "html": "<p class=\"ltx_p\">Large language models (LLMs) have demonstrated promising performance in both automatic speech recognition (ASR) and text-to-speech (TTS) systems, gradually becoming the mainstream approach.\nHowever, most current approaches address these tasks separately rather than through a unified framework.\nThis work aims to integrate these two tasks into one unified model.\nAlthough discrete speech tokenization enables joint modeling, its inherent information loss limits performance in both recognition and generation.\nIn this work, we present UniVoice, a unified LLM framework through continuous representations that seamlessly integrates speech recognition and synthesis within a single model. Our approach combines the strengths of autoregressive modeling for speech recognition with flow matching for high-quality generation.\nTo mitigate the inherent divergence between autoregressive and flow-matching models, we further design a dual attention mechanism, which switches between a causal mask for recognition and a bidirectional attention mask for synthesis.\nFurthermore, the proposed text-prefix-conditioned speech infilling method enables high-fidelity zero-shot voice cloning.\nExperimental results demonstrate that our method\ncan achieve or exceed current single-task modeling methods\nin both ASR and zero-shot TTS tasks. This work explores new possibilities for end-to-end speech understanding and generation. Code is available at <span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/gwh22/UniVoice</span>.</p>\n\n",
                 "matched_terms": [
-                    "zeroshot",
-                    "tts",
-                    "model",
                     "method",
-                    "univoice"
+                    "tts",
+                    "zeroshot",
+                    "univoice",
+                    "model"
                 ]
             },
             {
@@ -565,8 +569,8 @@
             {
                 "html": "<p class=\"ltx_p\">We present UniVoice, a novel architecture unifying ASR and TTS within a continuous signal space while retaining LLM framework scalability. The architecture maintains continuous representations across both tasks, employing autoregressive modeling (AR) for ASR to leverage its sequential prediction strengths, while utilizing flow matching (FM) for TTS to capitalize on its high-fidelity generation advantages. To resolve the inherent incompatibility between AR&#8217;s causal masking and FM&#8217;s non-autoregressive requirements, we design a dual attention mask mechanism that switches between causal masking for recognition and bidirectional attention for synthesis. Furthermore, our text-prefix guided speech infilling method enables high-fidelity zero-shot voice cloning.</p>\n\n",
                 "matched_terms": [
-                    "method",
                     "zeroshot",
+                    "method",
                     "tts",
                     "univoice"
                 ]
@@ -575,24 +579,24 @@
                 "html": "<p class=\"ltx_p\">We evaluated the ASR and TTS performance of our method on the LibriHeavy dataset&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite>. Experiments demonstrate that our approach achieves speech synthesis performance comparable to that of current state-of-the-art methods while maintaining competitive speech recognition capability.</p>\n\n",
                 "matched_terms": [
                     "capability",
-                    "tts",
-                    "method"
+                    "method",
+                    "tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The emergence of ChatGPT has demonstrated the remarkable capabilities of LLMs, inspiring significant advancements in audio and speech processing. Recent research has successfully adapted LLMs to model discrete speech tokens, enabling high-quality speech generation and editing.\nSeveral notable approaches have emerged in this field&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">meng2024melle</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2025llasa</span>)</cite>.\n<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span></cite> introduced VALL-E, framing TTS as a conditional audio codec language modeling task with in-context learning capabilities. This work was subsequently enhanced by <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024vall</span></cite> through repetition-aware sampling and grouped codec modeling in VALL-E 2. <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">copet2024simple</span></cite> developed MusicGen, utilizing delay patterns to model multiple parallel streams of audio tokens. Similarly, <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024voicecraft</span></cite> presented VoiceCraft, which combines delay patterns with causal masking for zero-shot speech editing and synthesis.\n<cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jiang2023mega</span></cite> proposed Mega-TTS, a zero-shot TTS system that decomposes mel-spectrograms into content, timbre, prosody, and phase attributes, modeling each component according to its intrinsic properties. <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2023uniaudio</span></cite> developed UniAudio, an audio foundation model capable of handling multiple generation tasks through multi-scale transformer-based codec modeling <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2023megabyte</span>)</cite>.\nSeed-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>)</cite> proposes utilizing both speech tokenizer based language model and diffusion acoustic modeling the first time for natural and high-quality speech generation.\nSimilarly, CosyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite> proposes supervised semantic tokens for audio codec modeling and flow matching for acoustic details modeling.\nMaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite> designs a masked generative codec transformer for zero-shot speech synthesis.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "zeroshot",
-                    "tts"
+                    "tts",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The diffusion&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ho2020denoising</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">song2020score</span>)</cite> models first achieved great success in the field of image generation, and then there are many works in the field of speech and audio using diffusion or flow matching&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lipman2022flow</span>)</cite> to model speech and audio generation. Due to the advantages of diffusion and flow matching in modeling continuous features, diffusion- or flow-based audio generative models can often generate high-quality audio&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022diffsinger</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan2024mmtts</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jiang2025sparse</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025discl</span>)</cite>.\nVoicebox&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">le2024voicebox</span>)</cite> proposes a text-guided speech infilling task to generate masked speech segments based on surrounding audio and a provided text transcript.\nMatcha-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mehta2024matcha</span>)</cite> and VoiceFlow&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2024voiceflow</span>)</cite> utilize the optimal transport conditional flow matching based on Grad-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">popov2021grad</span>)</cite> for high-quality and faster TTS. ReFlow-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan2024reflow</span>)</cite> models the Ordinary Differential Equation (ODE) based on Rectified Flow&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022flow</span>)</cite> for high-fidelity and efficient speech synthesis.\nNaturalSpeech2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2023naturalspeech</span>)</cite> models zero shot speech synthesis as a conditional latent diffusion model with codec-latent embeddings and attention-based in-context modeling. FlashSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2024flashspeech</span>)</cite> develops a large-scale zero-shot speech synthesis with a latent consistency model and adversarial consistency training approach for efficient zero-shot speech synthesis.\nF5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite> is a fully non-autoregressive text-to-speech system based on flow matching with Diffusion Transformer for zero-shot TTS.\nSome works also use latent diffusion or a latent flow matching model for text-to-audio generation&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023audioldm</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ghosal2023text</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guan24b_lafma</span>)</cite>.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "zeroshot",
-                    "tts"
+                    "tts",
+                    "zeroshot"
                 ]
             },
             {
@@ -605,13 +609,13 @@
             {
                 "html": "<p class=\"ltx_p\">As illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx4.F2\" title=\"Figure 2 &#8227; TTS &#8227; Model &#8227; UniVoice &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we introduce two variants of the TTS model for systematic comparison: (1) our primary UniVoice-TTS-infilling model that implements the voice cloning task of our UniVoice framework and (2) UniVoice-TTS-speaker, a simplified architecture designed for baseline evaluation.\nFor UniVoice-TTS-speaker, we adopt a direct mel-spectrogram generation approach, bypassing masked infilling paradigms entirely. The system produces mel-spectrograms conditioned on input text embeddings while utilizing speaker embeddings to control vocal characteristics, enabling effective voice cloning. In this setting, for the speaker encoder, we utilize the first layer of the XLSR-53 model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">conneau2020unsupervised</span>)</cite> to extract a global embedding that effectively captures the speaker&#8217;s timbre characteristics.</p>\n\n",
                 "matched_terms": [
-                    "univoicettsinfilling",
-                    "tts",
-                    "variants",
-                    "model",
-                    "univoice",
                     "univoicettsspeaker",
-                    "comparison"
+                    "comparison",
+                    "tts",
+                    "univoice",
+                    "variants",
+                    "univoicettsinfilling",
+                    "model"
                 ]
             },
             {
@@ -624,8 +628,8 @@
             {
                 "html": "<p class=\"ltx_p\">When training the two tasks simultaneously, we need to pay special attention to the setting of attention masks for different tasks. UniVoice&#160;needs to meet the requirements for simultaneously training speech understanding and generation tasks.\nAs illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx2.F1\" title=\"Figure 1 &#8227; Diffusion based Speech Generative Model &#8227; Related Work &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>,\nfor ASR tasks, we use the same causal mask as the original LLMs.</p>\n\n",
                 "matched_terms": [
-                    "different",
-                    "univoice"
+                    "univoice",
+                    "different"
                 ]
             },
             {
@@ -655,23 +659,23 @@
                 "html": "<p class=\"ltx_p\">For zero-shot TTS, we conduct a comprehensive evaluation, encompassing both objective and subjective measures, to assess the sample quality (UTMOS, CMOS), speaker similarity (SIM, SMOS) and robustness (WER). In specific, 1) for speech quality, we employ UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/sarulab-speech/UTMOS22</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">saeki2022utmos</span>)</cite>, which is a surrogate objective metric of MOS; and we employ comparative mean option score (CMOS) to evaluate the sample naturalness subjectively;\n2) for speaker similarity, we use a WavLM-large-based speaker verification model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022wavlm</span>)</cite> to extract speaker embeddings for calculating the cosine similarity of synthesized and ground truth speeches as SIM,\nand we employ similarity mean option score (SMOS) to evaluate the similarity subjectively;\n3) for Word Error Rate (WER), we use an ASR model to transcribe generated speech. We use Whisper-large-v3 to compute the WER.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "zeroshot",
-                    "tts"
+                    "tts",
+                    "zeroshot"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For ASR, we compare the WER of different systems evaluated on the LibriSpeech test-clean set and the test-other set using the Whisper-large-v3 ASR model.</p>\n\n",
                 "matched_terms": [
-                    "different",
-                    "model"
+                    "model",
+                    "different"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For the zero-shot TTS task, we compare our UniVoice&#160;with baselines:\nVALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>, NaturalSpeech2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2023naturalspeech</span>)</cite>, F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite>, CosyVoice&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite>, FireRedTTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2024fireredtts</span>)</cite>, MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024maskgct</span>)</cite>, UniVoice-TTS.\nUniVoice-TTS is the model trained only for TTS using our model framework.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "zeroshot",
                     "tts",
+                    "zeroshot",
                     "univoice"
                 ]
             },
@@ -757,48 +761,50 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluated different attention mask configurations for our text-prefix-guided speech-infilling TTS approach. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T4\" title=\"Table 4 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that the use of full bidirectional attention masks consistently outperforms autoregressive masking in all evaluation metrics (WER, SIM and UTMOS). This result validates our design choice to use complete context access for high-quality speech synthesis.</p>\n\n",
                 "matched_terms": [
-                    "different",
-                    "tts"
+                    "tts",
+                    "different"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conducted experiments using different <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to balance the ASR and TTS objectives to train our proposed UniVoice.\nAs shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T3\" title=\"Table 3 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the set <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to 0.005 is better than 0.01.\nWe believe that training TTS based on flow matching is more difficult under the same transformer backbone, so it has a higher weight. However, ASR tasks are relatively simple and set with smaller weights, resulting in a greater contribution to the loss gradient of TTS during model training. This will make the model prioritize learning more difficult TTS tasks.</p>\n\n",
                 "matched_terms": [
-                    "different",
+                    "univoice",
                     "model",
                     "tts",
-                    "univoice"
+                    "different"
                 ]
             }
         ]
     },
     "A1.T3": {
+        "source_file": "UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models",
         "caption": "Table 3: Comparison of performance using different λ\\lambda. WER-c and WER-o represent the ASR WER evaluated on LibriSpeech test-clean dataset and test-other dataset, respectively.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER-c<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER-o<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m7\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\"><math alttext=\"\\lambda=0.01\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m8\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=0.01</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.54</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">3.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.21</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\"><math alttext=\"\\lambda=0.005\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m9\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>0.005</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=0.005</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">3.72</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.01</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">6.36</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Method\nWER↓\\downarrow\nSIM↑\\uparrow\nUTMOS↑\\uparrow\nWER-c↓\\downarrow\nWER-o↓\\downarrow\n\n\n\n\nλ=0.01\\lambda=0.01\n4.66\n0.54\n3.69\n4.21\n7.82\n\n\nλ=0.005\\lambda=0.005\n4.06\n0.56\n3.72\n3.01\n6.36",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER-c<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER-o<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m7\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\"><math alttext=\"\\lambda=0.01\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m8\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=0.01</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.54</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">3.69</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">4.21</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">7.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\"><math alttext=\"\\lambda=0.005\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T3.m9\" intent=\":literal\"><semantics><mrow><mi>&#955;</mi><mo>=</mo><mn>0.005</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda=0.005</annotation></semantics></math></th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.06</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\"><span class=\"ltx_text ltx_font_bold\">3.72</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.01</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">6.36</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "wer↓downarrow",
-            "testclean",
-            "evaluated",
+            "respectively",
+            "testother",
+            "wero",
             "wer",
-            "λ0005lambda0005",
-            "librispeech",
             "wero↓downarrow",
+            "asr",
+            "different",
+            "λ0005lambda0005",
+            "werc",
+            "wer↓downarrow",
+            "λ001lambda001",
+            "method",
+            "performance",
+            "evaluated",
             "comparison",
             "werc↓downarrow",
-            "λlambda",
-            "werc",
-            "performance",
-            "wero",
+            "testclean",
             "sim↑uparrow",
-            "asr",
-            "testother",
-            "λ001lambda001",
-            "respectively",
-            "represent",
-            "method",
-            "different",
             "dataset",
-            "utmos↑uparrow"
+            "librispeech",
+            "represent",
+            "utmos↑uparrow",
+            "λlambda"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We conducted experiments using different <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to balance the ASR and TTS objectives to train our proposed UniVoice.\nAs shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T3\" title=\"Table 3 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the set <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to 0.005 is better than 0.01.\nWe believe that training TTS based on flow matching is more difficult under the same transformer backbone, so it has a higher weight. However, ASR tasks are relatively simple and set with smaller weights, resulting in a greater contribution to the loss gradient of TTS during model training. This will make the model prioritize learning more difficult TTS tasks.</p>\n\n"
@@ -807,26 +813,26 @@
             {
                 "html": "<p class=\"ltx_p\">Large language models (LLMs) have demonstrated promising performance in both automatic speech recognition (ASR) and text-to-speech (TTS) systems, gradually becoming the mainstream approach.\nHowever, most current approaches address these tasks separately rather than through a unified framework.\nThis work aims to integrate these two tasks into one unified model.\nAlthough discrete speech tokenization enables joint modeling, its inherent information loss limits performance in both recognition and generation.\nIn this work, we present UniVoice, a unified LLM framework through continuous representations that seamlessly integrates speech recognition and synthesis within a single model. Our approach combines the strengths of autoregressive modeling for speech recognition with flow matching for high-quality generation.\nTo mitigate the inherent divergence between autoregressive and flow-matching models, we further design a dual attention mechanism, which switches between a causal mask for recognition and a bidirectional attention mask for synthesis.\nFurthermore, the proposed text-prefix-conditioned speech infilling method enables high-fidelity zero-shot voice cloning.\nExperimental results demonstrate that our method\ncan achieve or exceed current single-task modeling methods\nin both ASR and zero-shot TTS tasks. This work explores new possibilities for end-to-end speech understanding and generation. Code is available at <span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/gwh22/UniVoice</span>.</p>\n\n",
                 "matched_terms": [
-                    "method",
                     "asr",
+                    "method",
                     "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present UniVoice, a novel architecture unifying ASR and TTS within a continuous signal space while retaining LLM framework scalability. The architecture maintains continuous representations across both tasks, employing autoregressive modeling (AR) for ASR to leverage its sequential prediction strengths, while utilizing flow matching (FM) for TTS to capitalize on its high-fidelity generation advantages. To resolve the inherent incompatibility between AR&#8217;s causal masking and FM&#8217;s non-autoregressive requirements, we design a dual attention mask mechanism that switches between causal masking for recognition and bidirectional attention for synthesis. Furthermore, our text-prefix guided speech infilling method enables high-fidelity zero-shot voice cloning.</p>\n\n",
                 "matched_terms": [
-                    "method",
-                    "asr"
+                    "asr",
+                    "method"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated the ASR and TTS performance of our method on the LibriHeavy dataset&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite>. Experiments demonstrate that our approach achieves speech synthesis performance comparable to that of current state-of-the-art methods while maintaining competitive speech recognition capability.</p>\n\n",
                 "matched_terms": [
-                    "evaluated",
                     "method",
+                    "performance",
+                    "evaluated",
                     "asr",
-                    "dataset",
-                    "performance"
+                    "dataset"
                 ]
             },
             {
@@ -839,17 +845,17 @@
             {
                 "html": "<p class=\"ltx_p\">When training the two tasks simultaneously, we need to pay special attention to the setting of attention masks for different tasks. UniVoice&#160;needs to meet the requirements for simultaneously training speech understanding and generation tasks.\nAs illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx2.F1\" title=\"Figure 1 &#8227; Diffusion based Speech Generative Model &#8227; Related Work &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>,\nfor ASR tasks, we use the same causal mask as the original LLMs.</p>\n\n",
                 "matched_terms": [
-                    "different",
-                    "asr"
+                    "asr",
+                    "different"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conduct the training of the proposed UniVoice&#160; using the LibriHeavy&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite> dataset for both ASR and TTS training, which contains a total of about 50K hours of duration, which are sampled at 16kHz. In practice, we upsample the sample rate to 22.05kHz.\nFor the zero-shot TTS evaluation, we use the LibriSpeech-PC test set the same as in F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024f5</span>)</cite>.\nFor the ASR task, we directly use the LibriSpeech test-clean and test-other subsets for evaluation.\nWe extract the 80-bin mel-spectrogram with a frame size of 1024 and a hop size of 256.</p>\n\n",
                 "matched_terms": [
-                    "testclean",
                     "librispeech",
-                    "asr",
                     "testother",
+                    "asr",
+                    "testclean",
                     "dataset"
                 ]
             },
@@ -863,45 +869,45 @@
             {
                 "html": "<p class=\"ltx_p\">For zero-shot TTS, we conduct a comprehensive evaluation, encompassing both objective and subjective measures, to assess the sample quality (UTMOS, CMOS), speaker similarity (SIM, SMOS) and robustness (WER). In specific, 1) for speech quality, we employ UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/sarulab-speech/UTMOS22</span></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">saeki2022utmos</span>)</cite>, which is a surrogate objective metric of MOS; and we employ comparative mean option score (CMOS) to evaluate the sample naturalness subjectively;\n2) for speaker similarity, we use a WavLM-large-based speaker verification model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022wavlm</span>)</cite> to extract speaker embeddings for calculating the cosine similarity of synthesized and ground truth speeches as SIM,\nand we employ similarity mean option score (SMOS) to evaluate the similarity subjectively;\n3) for Word Error Rate (WER), we use an ASR model to transcribe generated speech. We use Whisper-large-v3 to compute the WER.</p>\n\n",
                 "matched_terms": [
-                    "asr",
-                    "wer"
+                    "wer",
+                    "asr"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For ASR, we compare the WER of different systems evaluated on the LibriSpeech test-clean set and the test-other set using the Whisper-large-v3 ASR model.</p>\n\n",
                 "matched_terms": [
-                    "testclean",
-                    "evaluated",
+                    "testother",
                     "wer",
                     "librispeech",
+                    "evaluated",
                     "asr",
-                    "testother",
-                    "different"
+                    "different",
+                    "testclean"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated model robustness through WER measurements on LibriSpeech test-clean. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx4.T1\" title=\"Table 1 &#8227; Attention Mask Design &#8227; UniVoice &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, UniVoice&#160;demonstrates significant improvements over existing unified approaches, achieving a 12% relative WER reduction compared to the best unified baseline. This performance gain highlights the effectiveness of our dual attention mechanism and text-prefix-guided speech-infilling approach in maintaining speech intelligibility.</p>\n\n",
                 "matched_terms": [
-                    "testclean",
-                    "evaluated",
-                    "wer",
+                    "performance",
                     "librispeech",
-                    "performance"
+                    "wer",
+                    "evaluated",
+                    "testclean"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In conclusion, UniVoice demonstrates a trade-off in performance: while it achieves improved robustness in TTS (as evidenced by lower TTS WER), it experiences a slight degradation in both TTS naturalness and ASR performance compared to corresponding single-task models.</p>\n\n",
                 "matched_terms": [
-                    "performance",
+                    "wer",
                     "asr",
-                    "wer"
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conduct a comprehensive comparison between two TTS variants within our UniVoice framework: (1) the proposed speech-infilling-based model and (2) a speaker-embedding-conditioned baseline. As detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx5.T2\" title=\"Table 2 &#8227; Ablation Study of TTS model variants &#8227; Main Results &#8227; Experiments &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the speech-infilling-based approach demonstrates consistent superiority across all evaluation metrics, robustness (WER reduction of 18%), generation similarity (0.27 SIM improvement) and speech quality (0.27 UTMOS gain). These results validate the effectiveness of our speech-infilling-based paradigm and its tighter integration with the unified architecture.</p>\n\n",
                 "matched_terms": [
-                    "comparison",
-                    "wer"
+                    "wer",
+                    "comparison"
                 ]
             },
             {
@@ -914,25 +920,25 @@
             {
                 "html": "<p class=\"ltx_p\">UniVoice&#160;is the first attempt in the audio field to integrate autoregression with flow matching on LLMs. It has some limitations:\n1) Although it can perform speech understanding and generation tasks, it is currently limited to ASR and TTS tasks. In the future, we will try to integrate more tasks;\n2) The current system is trained based on a relatively small dataset with a small language model, and there is still room for improvement in performance. We believe that using larger datasets and larger models will have better results;\n3) The current system utilizes LLM to unify ASR and TTS tasks for speech understanding and generation tasks, respectively. However, the original conversational ability of LLM has not been effectively utilized, and we will expand to conversational systems in the future.</p>\n\n",
                 "matched_terms": [
-                    "respectively",
-                    "dataset",
+                    "performance",
                     "asr",
-                    "performance"
+                    "dataset",
+                    "respectively"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper presents UniVoice, a unified transformer framework that effectively integrates autoregressive speech recognition with flow-matching-based speech synthesis. We propose a dual attention mechanism that adaptively switches between causal and bidirectional attention patterns for ASR and TTS, respectively. Furthermore, a text-prefix-guided speech-infilling approach for high-fidelity zero-shot voice cloning is developed. The proposed unified architecture demonstrates robust performance in both speech understanding and generation tasks, establishing the viability of joint modeling through complementary paradigms. This work establishes new possibilities for end-to-end unified speech processing.\nDemo samples can be found at https://univoice-demo.github.io/UniVoice.\nTo support research reproducibility in this domain, we will open-source the codes and checkpoints.</p>\n\n",
                 "matched_terms": [
-                    "respectively",
+                    "performance",
                     "asr",
-                    "performance"
+                    "respectively"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite>. It is an advanced ASR model developed by OpenAI, designed to transcribe speech with high accuracy. It is trained on a massive dataset of 680,000 hours of supervised audio data, covering a wide range of languages and acoustic conditions.\nWe use Whisper-small<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-small</span></span></span></span>,\nWhisper-large-v2<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-large-v2</span></span></span></span> and Whisper-large-v3<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://huggingface.co/openai/whisper-large-v3</span></span></span></span> for evaluation.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "asr"
+                    "asr",
+                    "dataset"
                 ]
             },
             {
@@ -945,29 +951,31 @@
             {
                 "html": "<p class=\"ltx_p\">We evaluated different attention mask configurations for our text-prefix-guided speech-infilling TTS approach. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T4\" title=\"Table 4 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that the use of full bidirectional attention masks consistently outperforms autoregressive masking in all evaluation metrics (WER, SIM and UTMOS). This result validates our design choice to use complete context access for high-quality speech synthesis.</p>\n\n",
                 "matched_terms": [
-                    "different",
+                    "wer",
                     "evaluated",
-                    "wer"
+                    "different"
                 ]
             }
         ]
     },
     "A1.T4": {
+        "source_file": "UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models",
         "caption": "Table 4: Comparison of performance using different attention masks for TTS.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">AR Mask</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">9.85</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.49</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Full Mask</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.66</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.92</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Method\nWER↓\\downarrow\nSIM↑\\uparrow\nUTMOS↑\\uparrow\n\n\n\n\nAR Mask\n9.85\n0.49\n2.23\n\n\nFull Mask\n4.66\n0.56\n3.92",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Method</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">WER<math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">SIM<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">UTMOS<math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"A1.T4.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">AR Mask</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">9.85</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.49</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">2.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Full Mask</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">4.66</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.56</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">3.92</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "mask",
             "wer↓downarrow",
-            "full",
-            "tts",
-            "sim↑uparrow",
-            "attention",
-            "masks",
-            "utmos↑uparrow",
             "method",
-            "different",
+            "attention",
+            "performance",
             "comparison",
-            "performance"
+            "tts",
+            "different",
+            "utmos↑uparrow",
+            "mask",
+            "masks",
+            "full",
+            "sim↑uparrow"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We evaluated different attention mask configurations for our text-prefix-guided speech-infilling TTS approach. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T4\" title=\"Table 4 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that the use of full bidirectional attention masks consistently outperforms autoregressive masking in all evaluation metrics (WER, SIM and UTMOS). This result validates our design choice to use complete context access for high-quality speech synthesis.</p>\n\n"
@@ -976,27 +984,27 @@
             {
                 "html": "<p class=\"ltx_p\">Large language models (LLMs) have demonstrated promising performance in both automatic speech recognition (ASR) and text-to-speech (TTS) systems, gradually becoming the mainstream approach.\nHowever, most current approaches address these tasks separately rather than through a unified framework.\nThis work aims to integrate these two tasks into one unified model.\nAlthough discrete speech tokenization enables joint modeling, its inherent information loss limits performance in both recognition and generation.\nIn this work, we present UniVoice, a unified LLM framework through continuous representations that seamlessly integrates speech recognition and synthesis within a single model. Our approach combines the strengths of autoregressive modeling for speech recognition with flow matching for high-quality generation.\nTo mitigate the inherent divergence between autoregressive and flow-matching models, we further design a dual attention mechanism, which switches between a causal mask for recognition and a bidirectional attention mask for synthesis.\nFurthermore, the proposed text-prefix-conditioned speech infilling method enables high-fidelity zero-shot voice cloning.\nExperimental results demonstrate that our method\ncan achieve or exceed current single-task modeling methods\nin both ASR and zero-shot TTS tasks. This work explores new possibilities for end-to-end speech understanding and generation. Code is available at <span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://github.com/gwh22/UniVoice</span>.</p>\n\n",
                 "matched_terms": [
-                    "mask",
-                    "tts",
-                    "attention",
                     "method",
-                    "performance"
+                    "performance",
+                    "attention",
+                    "tts",
+                    "mask"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present UniVoice, a novel architecture unifying ASR and TTS within a continuous signal space while retaining LLM framework scalability. The architecture maintains continuous representations across both tasks, employing autoregressive modeling (AR) for ASR to leverage its sequential prediction strengths, while utilizing flow matching (FM) for TTS to capitalize on its high-fidelity generation advantages. To resolve the inherent incompatibility between AR&#8217;s causal masking and FM&#8217;s non-autoregressive requirements, we design a dual attention mask mechanism that switches between causal masking for recognition and bidirectional attention for synthesis. Furthermore, our text-prefix guided speech infilling method enables high-fidelity zero-shot voice cloning.</p>\n\n",
                 "matched_terms": [
                     "mask",
-                    "attention",
+                    "method",
                     "tts",
-                    "method"
+                    "attention"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated the ASR and TTS performance of our method on the LibriHeavy dataset&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2024libriheavy</span>)</cite>. Experiments demonstrate that our approach achieves speech synthesis performance comparable to that of current state-of-the-art methods while maintaining competitive speech recognition capability.</p>\n\n",
                 "matched_terms": [
-                    "tts",
                     "method",
+                    "tts",
                     "performance"
                 ]
             },
@@ -1011,8 +1019,8 @@
                 "html": "<p class=\"ltx_p\">When training the two tasks simultaneously, we need to pay special attention to the setting of attention masks for different tasks. UniVoice&#160;needs to meet the requirements for simultaneously training speech understanding and generation tasks.\nAs illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx2.F1\" title=\"Figure 1 &#8227; Diffusion based Speech Generative Model &#8227; Related Work &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>,\nfor ASR tasks, we use the same causal mask as the original LLMs.</p>\n\n",
                 "matched_terms": [
                     "mask",
-                    "attention",
                     "masks",
+                    "attention",
                     "different"
                 ]
             },
@@ -1020,15 +1028,15 @@
                 "html": "<p class=\"ltx_p\">For TTS tasks, we use a bidirectional attention mask and utilize the characteristics of LLM text modeling to model the text content in TTS tasks, similar to in-context learning in VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2023neural</span>)</cite>.</p>\n\n",
                 "matched_terms": [
                     "mask",
-                    "attention",
-                    "tts"
+                    "tts",
+                    "attention"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated model robustness through WER measurements on LibriSpeech test-clean. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#Sx4.T1\" title=\"Table 1 &#8227; Attention Mask Design &#8227; UniVoice &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, UniVoice&#160;demonstrates significant improvements over existing unified approaches, achieving a 12% relative WER reduction compared to the best unified baseline. This performance gain highlights the effectiveness of our dual attention mechanism and text-prefix-guided speech-infilling approach in maintaining speech intelligibility.</p>\n\n",
                 "matched_terms": [
-                    "attention",
-                    "performance"
+                    "performance",
+                    "attention"
                 ]
             },
             {
@@ -1048,8 +1056,8 @@
             {
                 "html": "<p class=\"ltx_p\">For completeness, we performed ablation studies that examined the impact of different configurations of attention masks and task weighting coefficients (<math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"Sx5.SSx2.SSSx3.p2.m1\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math>), with detailed results and analysis provided in Appendix B.</p>\n\n",
                 "matched_terms": [
-                    "attention",
                     "masks",
+                    "attention",
                     "different"
                 ]
             },
@@ -1063,16 +1071,16 @@
             {
                 "html": "<p class=\"ltx_p\">This paper presents UniVoice, a unified transformer framework that effectively integrates autoregressive speech recognition with flow-matching-based speech synthesis. We propose a dual attention mechanism that adaptively switches between causal and bidirectional attention patterns for ASR and TTS, respectively. Furthermore, a text-prefix-guided speech-infilling approach for high-fidelity zero-shot voice cloning is developed. The proposed unified architecture demonstrates robust performance in both speech understanding and generation tasks, establishing the viability of joint modeling through complementary paradigms. This work establishes new possibilities for end-to-end unified speech processing.\nDemo samples can be found at https://univoice-demo.github.io/UniVoice.\nTo support research reproducibility in this domain, we will open-source the codes and checkpoints.</p>\n\n",
                 "matched_terms": [
-                    "attention",
+                    "performance",
                     "tts",
-                    "performance"
+                    "attention"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We conducted experiments using different <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to balance the ASR and TTS objectives to train our proposed UniVoice.\nAs shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04593v2#A1.T3\" title=\"Table 3 &#8227; Unified Models &#8227; Appendix A A. Baseline Details &#8227; UniVoice: Unifying Autoregressive ASR and Flow-Matching based TTS with Large Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the set <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> to 0.005 is better than 0.01.\nWe believe that training TTS based on flow matching is more difficult under the same transformer backbone, so it has a higher weight. However, ASR tasks are relatively simple and set with smaller weights, resulting in a greater contribution to the loss gradient of TTS during model training. This will make the model prioritize learning more difficult TTS tasks.</p>\n\n",
                 "matched_terms": [
-                    "different",
-                    "tts"
+                    "tts",
+                    "different"
                 ]
             }
         ]

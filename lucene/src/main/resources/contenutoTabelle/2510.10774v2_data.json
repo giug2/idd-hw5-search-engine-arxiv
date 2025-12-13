@@ -1,52 +1,54 @@
 {
     "S3.T1": {
+        "source_file": "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis",
         "caption": "Table 1: ParsVoice Dataset Statistics",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Before Filtering</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">After TTS Filtering</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">Total Hours</th>\n<td class=\"ltx_td ltx_align_right ltx_border_r ltx_border_t\">3,526.4</td>\n<td class=\"ltx_td ltx_align_right ltx_border_r ltx_border_t\">1,803.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r\">Segments</th>\n<td class=\"ltx_td ltx_align_right ltx_border_b ltx_border_r\">2,603,045</td>\n<td class=\"ltx_td ltx_align_right ltx_border_b ltx_border_r\">1,147,718</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Metric\nBefore Filtering\nAfter TTS Filtering\n\n\n\n\nTotal Hours\n3,526.4\n1,803.9\n\n\nSegments\n2,603,045\n1,147,718",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Metric</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Before Filtering</span></th>\n<th class=\"ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">After TTS Filtering</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">Total Hours</th>\n<td class=\"ltx_td ltx_align_right ltx_border_r ltx_border_t\">3,526.4</td>\n<td class=\"ltx_td ltx_align_right ltx_border_r ltx_border_t\">1,803.9</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r\">Segments</th>\n<td class=\"ltx_td ltx_align_right ltx_border_b ltx_border_r\">2,603,045</td>\n<td class=\"ltx_td ltx_align_right ltx_border_b ltx_border_r\">1,147,718</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "parsvoice",
+            "filtering",
+            "segments",
             "tts",
-            "hours",
+            "parsvoice",
             "before",
             "total",
             "statistics",
-            "filtering",
             "after",
-            "segments",
-            "dataset",
-            "metric"
+            "metric",
+            "hours",
+            "dataset"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">Existing Persian speech datasets are typically smaller than their English counterparts, which creates a key limitation for developing Persian speech technologies. We address this gap by introducing <span class=\"ltx_text ltx_font_bold\">ParsVoice</span>, the largest Persian speech corpus designed specifically for text-to-speech(TTS) applications. We created an automated pipeline that transforms raw audiobook content into TTS-ready data, incorporating components such as a BERT-based sentence completion detector, a binary search boundary optimization method for precise audio-text alignment, and audio-text quality assessment frameworks tailored to Persian. The pipeline processes 2,000 audiobooks, yielding 3,526 hours of clean speech, which was further filtered into a 1,804-hour high-quality subset suitable for TTS, featuring more than 470 speakers. To validate the dataset, we fine-tuned XTTS for Persian, achieving a naturalness Mean Opinion Score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5 demonstrating ParsVoice&#8217;s effectiveness for training multi-speaker TTS systems. ParsVoice is the largest high-quality Persian speech dataset, offering speaker diversity and audio quality comparable to major English corpora. The complete dataset has been made publicly available to accelerate the development of Persian speech technologies. The <span class=\"ltx_text ltx_font_italic\">ParsVoice</span> dataset is publicly available at <a class=\"ltx_ref ltx_href ltx_font_italic\" href=\"https://huggingface.co/datasets/MohammadJRanjbar/ParsVoice\" title=\"\">ParsVoice</a>.</p>\n\n",
                 "matched_terms": [
+                    "hours",
                     "dataset",
-                    "parsvoice",
                     "tts",
-                    "hours"
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Text-to-speech (TTS) systems present unique data requirements that differ substantially from automatic speech recognition (ASR) systems. While ASR models can benefit from training on noisy, real-world data that reflects actual usage conditions, TTS models require clean and precisely aligned audio-text pairs to generate natural-sounding speech. This requirement makes high-quality TTS datasets more challenging and expensive to create.\n<br class=\"ltx_break\"/>The need for high quality data is particularly evident in low-resource languages, where models tend to underperform such as Persian. The shortage of Persian data is not limited to speech but extends to text, creating cascading effects across multiple areas of Persian language processing. Speech-to-text alignment systems, optical character recognition (OCR) models, and other deep learning applications in Persian all suffer from insufficient training resources. This scarcity has slowed the development of robust Persian language technologies and further widened the digital divide between Persian and well-resourced languages.\n<br class=\"ltx_break\"/>We address the challenge of data scarcity in Persian speech processing by introducing <span class=\"ltx_text ltx_font_italic\">ParsVoice</span>, the largest and most comprehensive Persian speech corpus designed specifically for modern TTS applications. We develop a scalable, automated pipeline for transforming raw audiobook content into TTS-ready data, incorporating novel techniques for sentence-aware segmentation, boundary optimization, and Persian-specific quality assessment. The resulting corpus comprises 3,526 hours of speech from 470+ unique speakers, representing a 10&#215; increase over previous Persian speech resources and achieving speaker diversity comparable to major English corpora.\nTo validate the usability of ParsVoice, we fine-tuned XTTS&#8212;a zero-shot multilingual TTS model that operates directly on text without requiring phoneme representations&#8212;on our corpus, in contrast to traditional Persian TTS systems that rely on explicit phonetic transcription. Our model achieved a mean opinion score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5, demonstrating that ParsVoice enables high-quality, phoneme-free Persian speech synthesis and opens new possibilities for rapid speaker adaptation in Persian. An overview of the complete pipeline is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
+                    "hours",
                     "tts",
-                    "hours"
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Speech dataset development has been dominated by English resources such as LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib2\" title=\"\">2</a>]</cite>, LJSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib3\" title=\"\">3</a>]</cite>, and VCTK <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib4\" title=\"\">4</a>]</cite>. While multilingual efforts like Common Voice <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib5\" title=\"\">5</a>]</cite>, Multilingual LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib6\" title=\"\">6</a>]</cite>, and VoxPopuli <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib7\" title=\"\">7</a>]</cite> have expanded to 20+ languages, they remain skewed toward European languages with variable quality across linguistic communities. In contrast, many widely spoken non-European languages&#8212;such as Persian&#8212;have received comparatively little attention, leaving researchers with limited and often inaccessible data. Common Voice&#8217;s Persian portion lacks the quality required for TTS. Existing Persian datasets suffer from critical limitations: DeepMine+ <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib8\" title=\"\">8</a>]</cite> provides 480+ hours from 1850+ speakers but is commercially restricted; for TTS specifically, DeepMine-Multi-TTS provides 120 hours across 67 speakers, ArmanTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib9\" title=\"\">9</a>]</cite> contains &#160;9 hours from a single speaker, and ManaTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib10\" title=\"\">10</a>]</cite> offers 86 hours from one speaker. Recent Persian TTS training efforts include ManaTTS, achieving 3.74 and 3.9 MOS; DeepMine-Multi-TTS, achieving 3.94 and 4.12 MOS with two multi-speaker synthesizers; A variant of FastSpeech2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib11\" title=\"\">11</a>]</cite> trained on the DeepMine dataset achieved 3.95 MOS and 3.32 SMOS. Notably, some traditional approaches require explicit phoneme representations, adding complexity to the pipeline and limiting accessibility.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
                     "hours",
-                    "tts"
+                    "tts",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We selected IranSeda (<span class=\"ltx_text ltx_font_typewriter\">book.iranseda.ir</span>) as our primary data source based on several critical considerations. The platform hosts over 3,800 audiobooks across many categories, ensuring broad lexical and stylistic coverage essential for robust TTS training. Content is produced by professional narrators in controlled recording environments at 44.1 kHz sampling rate, providing consistent audio quality crucial for neural TTS model training. Importantly, all audiobook materials from IranSeda are freely accessible to the public without copyright restrictions, allowing the resulting dataset to be distributed, downloaded, and used for both academic research and practical speech technology development.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "tts"
+                    "tts",
+                    "dataset"
                 ]
             },
             {
@@ -74,8 +76,8 @@
             {
                 "html": "<p class=\"ltx_p\">Each local speaker cluster is represented by its weighted centroid embedding. Pairwise cosine similarities between all local speakers are computed and converted to distances (1 - similarity). Agglomerative clustering with average linkage groups them into global identities, filtering low-confidence clusters. These global IDs label the final dataset.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "filtering"
+                    "filtering",
+                    "dataset"
                 ]
             },
             {
@@ -106,15 +108,15 @@
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speaker Statistics.</span>\nIn our metadata, some narrator names were missing, and some books had multiple narrators. Gender analysis based on the available narrator names revealed that ParsVoice consists of approximately 33% female and 67% male narrators. Our speaker identification pipeline detected over 1,815 unique speaker instances across the entire dataset. When analyzing only the subset of audiobooks that have narrator metadata, we found that our global speaker IDs achieve 97.0% consistency with the known narrator labels, indicating highly reliable speaker identification.</p>\n\n",
                 "matched_terms": [
                     "dataset",
-                    "parsvoice",
-                    "statistics"
+                    "statistics",
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To validate ParsVoice for TTS applications, we fine-tuned XTTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib18\" title=\"\">18</a>]</cite>, a state-of-the-art multi-lingual TTS model with zero-shot capabilities.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "tts"
+                    "tts",
+                    "parsvoice"
                 ]
             },
             {
@@ -127,90 +129,92 @@
             {
                 "html": "<p class=\"ltx_p\">In this work, we address the scarcity of high-quality Persian speech datasets by introducing ParsVoice, the largest publicly available Persian dataset to date. ParsVoice consists of 1,804 hours of clean, segmented speech from 470+ distinct speakers suitable for TTS training, and an additional 2,000 hours of high-quality speech that can be used in a wide range of speech research applications.</p>\n\n",
                 "matched_terms": [
+                    "hours",
                     "dataset",
-                    "parsvoice",
                     "tts",
-                    "hours"
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Alongside the dataset, we provide a fully scalable and automated pipeline for dataset creation. This pipeline incorporates several key parts, including a BERT-based model to ensure sentence completeness, a binary search algorithm for precise audio-text boundary optimization, and comprehensive audio-text quality assessment frameworks specifically designed for Persian. Together, the dataset and the pipeline provide a valuable resource for advancing Persian speech research and TTS development.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "tts"
+                    "tts",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We validated ParsVoice by fine-tuning XTTS, achieving competitive performance with naturalness and speaker similarity MOS scores of 3.6/5 and 4.0/5, respectively. These results confirm the corpus&#8217;s quality and its suitability for developing robust multi-speaker TTS systems, addressing a critical resource gap in Persian language technology.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "tts"
+                    "tts",
+                    "parsvoice"
                 ]
             }
         ]
     },
     "S4.T2": {
+        "source_file": "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis",
         "caption": "Table 2: ParsVoice Dataset in Comparison to Other Datasets",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Size (Hours)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Speakers</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">ParsVoice (Ours)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">1,804</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">470+</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">ManaTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib10\" title=\"\">10</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">86</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r ltx_border_t\">DeepMine Multi-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">120</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">67</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Dataset\nSize (Hours)\nSpeakers\n\n\nParsVoice (Ours)\n1,804\n470+\n\n\n\n\nManaTTS [10]\n\n86\n1\n\n\nDeepMine Multi-TTS [12]\n\n120\n67",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Dataset</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Size (Hours)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">Speakers</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">ParsVoice (Ours)</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">1,804</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">470+</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t\">ManaTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib10\" title=\"\">10</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">86</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r ltx_border_t\">DeepMine Multi-TTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">120</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">67</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
             "ours",
             "multitts",
-            "parsvoice",
-            "hours",
-            "deepmine",
-            "size",
-            "other",
             "speakers",
-            "manatts",
-            "dataset",
+            "size",
+            "comparison",
             "datasets",
-            "comparison"
+            "parsvoice",
+            "deepmine",
+            "other",
+            "manatts",
+            "hours",
+            "dataset"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">Existing Persian speech datasets are typically smaller than their English counterparts, which creates a key limitation for developing Persian speech technologies. We address this gap by introducing <span class=\"ltx_text ltx_font_bold\">ParsVoice</span>, the largest Persian speech corpus designed specifically for text-to-speech(TTS) applications. We created an automated pipeline that transforms raw audiobook content into TTS-ready data, incorporating components such as a BERT-based sentence completion detector, a binary search boundary optimization method for precise audio-text alignment, and audio-text quality assessment frameworks tailored to Persian. The pipeline processes 2,000 audiobooks, yielding 3,526 hours of clean speech, which was further filtered into a 1,804-hour high-quality subset suitable for TTS, featuring more than 470 speakers. To validate the dataset, we fine-tuned XTTS for Persian, achieving a naturalness Mean Opinion Score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5 demonstrating ParsVoice&#8217;s effectiveness for training multi-speaker TTS systems. ParsVoice is the largest high-quality Persian speech dataset, offering speaker diversity and audio quality comparable to major English corpora. The complete dataset has been made publicly available to accelerate the development of Persian speech technologies. The <span class=\"ltx_text ltx_font_italic\">ParsVoice</span> dataset is publicly available at <a class=\"ltx_ref ltx_href ltx_font_italic\" href=\"https://huggingface.co/datasets/MohammadJRanjbar/ParsVoice\" title=\"\">ParsVoice</a>.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "hours",
                     "speakers",
-                    "dataset",
-                    "datasets"
+                    "parsvoice",
+                    "datasets",
+                    "hours",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Text-to-speech (TTS) systems present unique data requirements that differ substantially from automatic speech recognition (ASR) systems. While ASR models can benefit from training on noisy, real-world data that reflects actual usage conditions, TTS models require clean and precisely aligned audio-text pairs to generate natural-sounding speech. This requirement makes high-quality TTS datasets more challenging and expensive to create.\n<br class=\"ltx_break\"/>The need for high quality data is particularly evident in low-resource languages, where models tend to underperform such as Persian. The shortage of Persian data is not limited to speech but extends to text, creating cascading effects across multiple areas of Persian language processing. Speech-to-text alignment systems, optical character recognition (OCR) models, and other deep learning applications in Persian all suffer from insufficient training resources. This scarcity has slowed the development of robust Persian language technologies and further widened the digital divide between Persian and well-resourced languages.\n<br class=\"ltx_break\"/>We address the challenge of data scarcity in Persian speech processing by introducing <span class=\"ltx_text ltx_font_italic\">ParsVoice</span>, the largest and most comprehensive Persian speech corpus designed specifically for modern TTS applications. We develop a scalable, automated pipeline for transforming raw audiobook content into TTS-ready data, incorporating novel techniques for sentence-aware segmentation, boundary optimization, and Persian-specific quality assessment. The resulting corpus comprises 3,526 hours of speech from 470+ unique speakers, representing a 10&#215; increase over previous Persian speech resources and achieving speaker diversity comparable to major English corpora.\nTo validate the usability of ParsVoice, we fine-tuned XTTS&#8212;a zero-shot multilingual TTS model that operates directly on text without requiring phoneme representations&#8212;on our corpus, in contrast to traditional Persian TTS systems that rely on explicit phonetic transcription. Our model achieved a mean opinion score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5, demonstrating that ParsVoice enables high-quality, phoneme-free Persian speech synthesis and opens new possibilities for rapid speaker adaptation in Persian. An overview of the complete pipeline is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "hours",
-                    "other",
                     "speakers",
-                    "datasets"
+                    "parsvoice",
+                    "datasets",
+                    "other",
+                    "hours"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Speech dataset development has been dominated by English resources such as LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib2\" title=\"\">2</a>]</cite>, LJSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib3\" title=\"\">3</a>]</cite>, and VCTK <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib4\" title=\"\">4</a>]</cite>. While multilingual efforts like Common Voice <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib5\" title=\"\">5</a>]</cite>, Multilingual LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib6\" title=\"\">6</a>]</cite>, and VoxPopuli <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib7\" title=\"\">7</a>]</cite> have expanded to 20+ languages, they remain skewed toward European languages with variable quality across linguistic communities. In contrast, many widely spoken non-European languages&#8212;such as Persian&#8212;have received comparatively little attention, leaving researchers with limited and often inaccessible data. Common Voice&#8217;s Persian portion lacks the quality required for TTS. Existing Persian datasets suffer from critical limitations: DeepMine+ <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib8\" title=\"\">8</a>]</cite> provides 480+ hours from 1850+ speakers but is commercially restricted; for TTS specifically, DeepMine-Multi-TTS provides 120 hours across 67 speakers, ArmanTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib9\" title=\"\">9</a>]</cite> contains &#160;9 hours from a single speaker, and ManaTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib10\" title=\"\">10</a>]</cite> offers 86 hours from one speaker. Recent Persian TTS training efforts include ManaTTS, achieving 3.74 and 3.9 MOS; DeepMine-Multi-TTS, achieving 3.94 and 4.12 MOS with two multi-speaker synthesizers; A variant of FastSpeech2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib11\" title=\"\">11</a>]</cite> trained on the DeepMine dataset achieved 3.95 MOS and 3.32 SMOS. Notably, some traditional approaches require explicit phoneme representations, adding complexity to the pipeline and limiting accessibility.</p>\n\n",
                 "matched_terms": [
-                    "hours",
-                    "deepmine",
                     "speakers",
+                    "datasets",
+                    "deepmine",
                     "manatts",
-                    "dataset",
-                    "datasets"
+                    "hours",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our metadata contained information about the main narrators of each book; however, many entries (approximately 40% of the dataset) lacked narrator names. Additionally, some books had multiple narrators without a clear distinction. Therefore, the exact number of speakers in the audio was unknown, making precise speaker identification necessary. To assign consistent speaker labels, we used a two-stage identification pipeline based on ECAPA-TDNN embeddings <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib17\" title=\"\">17</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "speakers"
+                    "speakers",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each local speaker cluster is represented by its weighted centroid embedding. Pairwise cosine similarities between all local speakers are computed and converted to distances (1 - similarity). Agglomerative clustering with average linkage groups them into global identities, filtering low-confidence clusters. These global IDs label the final dataset.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "speakers"
+                    "speakers",
+                    "dataset"
                 ]
             },
             {
@@ -223,39 +227,41 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Training:</span> A BPE model was trained, and 2,500 new Persian tokens were extracted from Copera and added to the GPT model vocabulary. The model was then fine-tuned with a batch size of 16 for 170,000 steps on the ParsVoice dataset.</p>\n\n",
                 "matched_terms": [
-                    "size",
                     "dataset",
+                    "size",
                     "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we address the scarcity of high-quality Persian speech datasets by introducing ParsVoice, the largest publicly available Persian dataset to date. ParsVoice consists of 1,804 hours of clean, segmented speech from 470+ distinct speakers suitable for TTS training, and an additional 2,000 hours of high-quality speech that can be used in a wide range of speech research applications.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "hours",
                     "speakers",
-                    "dataset",
-                    "datasets"
+                    "parsvoice",
+                    "datasets",
+                    "hours",
+                    "dataset"
                 ]
             }
         ]
     },
     "S5.T3": {
+        "source_file": "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis",
         "caption": "Table 3: Comparison on Unseen Speakers",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">System</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">MOS</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">SMOS</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">XTTS + ParsVoice (Ours)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.60</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.00</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">FastSpeech2 End-to-End <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">3.72</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">4.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r ltx_border_t\">FastSpeech2 Cascaded <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">3.34</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">3.81</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "System\nMOS\nSMOS\n\n\n\n\nXTTS + ParsVoice (Ours)\n3.60\n4.00\n\n\nFastSpeech2 End-to-End [12]\n\n3.72\n4.02\n\n\nFastSpeech2 Cascaded [12]\n\n3.34\n3.81",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">System</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">MOS</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">SMOS</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">XTTS + ParsVoice (Ours)</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">3.60</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">4.00</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t\">FastSpeech2 End-to-End <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">3.72</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">4.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r ltx_border_t\">FastSpeech2 Cascaded <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">3.34</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t\">3.81</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "ours",
-            "mos",
-            "cascaded",
-            "parsvoice",
-            "xtts",
-            "unseen",
-            "speakers",
-            "endtoend",
             "system",
             "smos",
+            "xtts",
+            "ours",
+            "speakers",
             "comparison",
-            "fastspeech2"
+            "parsvoice",
+            "mos",
+            "cascaded",
+            "fastspeech2",
+            "endtoend",
+            "unseen"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation Protocol:</span> We synthesized 90 samples using random sentences from unseen Persian speakers. Subjective evaluation by 40 raters assessed naturalness, speaker similarity, and text accuracy on a 1&#8211;5 scale. Objective metrics included WER/CER (using Google STT) and speaker similarity measured as the cosine similarity between reference and synthesized speech embeddings extracted using ECAPA-TDNN.\n<span class=\"ltx_text ltx_font_bold\">Results:</span> Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#S5.T3\" title=\"Table 3 &#8227; 5 Evaluation: TTS Model Training &#8227; ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> demonstrates competitive performance with existing Persian zero-shot TTS systems. Our system achieved naturalness MOS of 3.6/5 and speaker similarity MOS of 4.0/5. Objective metrics showed WER of 22.57% and CER of 12.78%. However, these automatic metrics may underestimate quality due to limited Persian synthetic voice data in commercial STT systems. Human evaluation assessed how accurately the synthesized speech matched the input text, yielding 4.0/5 and confirming high quality. Additionally, speaker similarity of 80% based on ECAPA-TDNN embeddings demonstrates effective zero-shot capability.</p>\n\n"
@@ -264,51 +270,51 @@
             {
                 "html": "<p class=\"ltx_p\">Existing Persian speech datasets are typically smaller than their English counterparts, which creates a key limitation for developing Persian speech technologies. We address this gap by introducing <span class=\"ltx_text ltx_font_bold\">ParsVoice</span>, the largest Persian speech corpus designed specifically for text-to-speech(TTS) applications. We created an automated pipeline that transforms raw audiobook content into TTS-ready data, incorporating components such as a BERT-based sentence completion detector, a binary search boundary optimization method for precise audio-text alignment, and audio-text quality assessment frameworks tailored to Persian. The pipeline processes 2,000 audiobooks, yielding 3,526 hours of clean speech, which was further filtered into a 1,804-hour high-quality subset suitable for TTS, featuring more than 470 speakers. To validate the dataset, we fine-tuned XTTS for Persian, achieving a naturalness Mean Opinion Score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5 demonstrating ParsVoice&#8217;s effectiveness for training multi-speaker TTS systems. ParsVoice is the largest high-quality Persian speech dataset, offering speaker diversity and audio quality comparable to major English corpora. The complete dataset has been made publicly available to accelerate the development of Persian speech technologies. The <span class=\"ltx_text ltx_font_italic\">ParsVoice</span> dataset is publicly available at <a class=\"ltx_ref ltx_href ltx_font_italic\" href=\"https://huggingface.co/datasets/MohammadJRanjbar/ParsVoice\" title=\"\">ParsVoice</a>.</p>\n\n",
                 "matched_terms": [
-                    "mos",
-                    "parsvoice",
                     "xtts",
+                    "smos",
                     "speakers",
-                    "smos"
+                    "parsvoice",
+                    "mos"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Text-to-speech (TTS) systems present unique data requirements that differ substantially from automatic speech recognition (ASR) systems. While ASR models can benefit from training on noisy, real-world data that reflects actual usage conditions, TTS models require clean and precisely aligned audio-text pairs to generate natural-sounding speech. This requirement makes high-quality TTS datasets more challenging and expensive to create.\n<br class=\"ltx_break\"/>The need for high quality data is particularly evident in low-resource languages, where models tend to underperform such as Persian. The shortage of Persian data is not limited to speech but extends to text, creating cascading effects across multiple areas of Persian language processing. Speech-to-text alignment systems, optical character recognition (OCR) models, and other deep learning applications in Persian all suffer from insufficient training resources. This scarcity has slowed the development of robust Persian language technologies and further widened the digital divide between Persian and well-resourced languages.\n<br class=\"ltx_break\"/>We address the challenge of data scarcity in Persian speech processing by introducing <span class=\"ltx_text ltx_font_italic\">ParsVoice</span>, the largest and most comprehensive Persian speech corpus designed specifically for modern TTS applications. We develop a scalable, automated pipeline for transforming raw audiobook content into TTS-ready data, incorporating novel techniques for sentence-aware segmentation, boundary optimization, and Persian-specific quality assessment. The resulting corpus comprises 3,526 hours of speech from 470+ unique speakers, representing a 10&#215; increase over previous Persian speech resources and achieving speaker diversity comparable to major English corpora.\nTo validate the usability of ParsVoice, we fine-tuned XTTS&#8212;a zero-shot multilingual TTS model that operates directly on text without requiring phoneme representations&#8212;on our corpus, in contrast to traditional Persian TTS systems that rely on explicit phonetic transcription. Our model achieved a mean opinion score (MOS) of 3.6/5 and a Speaker Similarity Mean Opinion Score (SMOS) of 4.0/5, demonstrating that ParsVoice enables high-quality, phoneme-free Persian speech synthesis and opens new possibilities for rapid speaker adaptation in Persian. An overview of the complete pipeline is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
+                    "speakers",
                     "smos",
                     "mos",
-                    "parsvoice",
-                    "speakers"
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Speech dataset development has been dominated by English resources such as LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib2\" title=\"\">2</a>]</cite>, LJSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib3\" title=\"\">3</a>]</cite>, and VCTK <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib4\" title=\"\">4</a>]</cite>. While multilingual efforts like Common Voice <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib5\" title=\"\">5</a>]</cite>, Multilingual LibriSpeech <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib6\" title=\"\">6</a>]</cite>, and VoxPopuli <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib7\" title=\"\">7</a>]</cite> have expanded to 20+ languages, they remain skewed toward European languages with variable quality across linguistic communities. In contrast, many widely spoken non-European languages&#8212;such as Persian&#8212;have received comparatively little attention, leaving researchers with limited and often inaccessible data. Common Voice&#8217;s Persian portion lacks the quality required for TTS. Existing Persian datasets suffer from critical limitations: DeepMine+ <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib8\" title=\"\">8</a>]</cite> provides 480+ hours from 1850+ speakers but is commercially restricted; for TTS specifically, DeepMine-Multi-TTS provides 120 hours across 67 speakers, ArmanTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib9\" title=\"\">9</a>]</cite> contains &#160;9 hours from a single speaker, and ManaTTS <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib10\" title=\"\">10</a>]</cite> offers 86 hours from one speaker. Recent Persian TTS training efforts include ManaTTS, achieving 3.74 and 3.9 MOS; DeepMine-Multi-TTS, achieving 3.94 and 4.12 MOS with two multi-speaker synthesizers; A variant of FastSpeech2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib11\" title=\"\">11</a>]</cite> trained on the DeepMine dataset achieved 3.95 MOS and 3.32 SMOS. Notably, some traditional approaches require explicit phoneme representations, adding complexity to the pipeline and limiting accessibility.</p>\n\n",
                 "matched_terms": [
-                    "mos",
-                    "smos",
                     "speakers",
+                    "smos",
+                    "mos",
                     "fastspeech2"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To validate ParsVoice for TTS applications, we fine-tuned XTTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.10774v2#bib.bib18\" title=\"\">18</a>]</cite>, a state-of-the-art multi-lingual TTS model with zero-shot capabilities.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "xtts"
+                    "xtts",
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we address the scarcity of high-quality Persian speech datasets by introducing ParsVoice, the largest publicly available Persian dataset to date. ParsVoice consists of 1,804 hours of clean, segmented speech from 470+ distinct speakers suitable for TTS training, and an additional 2,000 hours of high-quality speech that can be used in a wide range of speech research applications.</p>\n\n",
                 "matched_terms": [
-                    "parsvoice",
-                    "speakers"
+                    "speakers",
+                    "parsvoice"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We validated ParsVoice by fine-tuning XTTS, achieving competitive performance with naturalness and speaker similarity MOS scores of 3.6/5 and 4.0/5, respectively. These results confirm the corpus&#8217;s quality and its suitability for developing robust multi-speaker TTS systems, addressing a critical resource gap in Persian language technology.</p>\n\n",
                 "matched_terms": [
+                    "xtts",
                     "mos",
-                    "parsvoice",
-                    "xtts"
+                    "parsvoice"
                 ]
             }
         ]

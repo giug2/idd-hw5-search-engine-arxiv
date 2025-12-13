@@ -1,73 +1,75 @@
 {
     "S4.T1.fig1": {
+        "source_file": "V-SAT: Video Subtitle Annotation Tool",
         "caption": "(a)",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\">System output</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">SUBER score</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Input subtitle file</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">9.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue1</th>\n<td class=\"ltx_td ltx_align_center\">9.10</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2</th>\n<td class=\"ltx_td ltx_align_center\">9.09</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3</th>\n<td class=\"ltx_td ltx_align_center\">6.57</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3+4</th>\n<td class=\"ltx_td ltx_align_center\">4.55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3+4+5</th>\n<td class=\"ltx_td ltx_align_center\">3.53</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">All_lang_issue</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">3.54</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "System output\nSUBER score\n\n\n\n\nInput subtitle file\n9.60\n\n\nIssue1\n9.10\n\n\nIssue_1+2\n9.09\n\n\nIssue_1+2+3\n6.57\n\n\nIssue_1+2+3+4\n4.55\n\n\nIssue_1+2+3+4+5\n3.53\n\n\nAll_lang_issue\n3.54",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\">System output</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">SUBER score</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Input subtitle file</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">9.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue1</th>\n<td class=\"ltx_td ltx_align_center\">9.10</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2</th>\n<td class=\"ltx_td ltx_align_center\">9.09</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3</th>\n<td class=\"ltx_td ltx_align_center\">6.57</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3+4</th>\n<td class=\"ltx_td ltx_align_center\">4.55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Issue_1+2+3+4+5</th>\n<td class=\"ltx_td ltx_align_center\">3.53</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">All_lang_issue</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">3.54</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "file",
+            "system",
             "issue1234",
             "score",
-            "alllangissue",
-            "issue1",
-            "output",
-            "issue12345",
             "suber",
-            "issue12",
-            "system",
-            "input",
+            "file",
             "issue123",
-            "subtitle"
+            "issue1",
+            "subtitle",
+            "issue12",
+            "alllangissue",
+            "issue12345",
+            "output",
+            "input"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\">The surge of audiovisual content on streaming platforms and social media has heightened the demand for accurate and accessible subtitles. However, existing subtitle generation methods&#8212;primarily speech-based transcription or OCR-based extraction&#8212;suffer from several shortcomings, including poor synchronization, incorrect or harmful text, inconsistent formatting, inappropriate reading speeds, and the inability to adapt to dynamic audio-visual contexts. Current approaches often address isolated issues, leaving post-editing as a labor-intensive and time-consuming process. In this paper, we introduce V-SAT (Video Subtitle Annotation Tool), a unified framework that automatically detects and corrects a wide range of subtitle quality issues. By combining Large Language Models (LLMs), Vision-Language Models (VLMs), Image Processing, and Automatic Speech Recognition (ASR), V-SAT leverages contextual cues from both audio and video. Subtitle quality improved, with the SUBER score reduced from 9.6 to 3.54 after resolving all language mode issues and F1-scores of ~0.80 for image mode issues. Human-in-the-loop validation ensures high-quality results, providing the first comprehensive solution for robust subtitle annotation.</p>\n\n",
                 "matched_terms": [
-                    "subtitle",
+                    "suber",
                     "score",
-                    "suber"
+                    "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Key Contributions:</span> In this work, we propose V-SAT (Video Subtitle Annotation Tool), a unified system designed to address all major challenges in subtitle generation and post-editing. Given a raw video and subtitle file, V-SAT automatically detects inconsistencies across timing, content accuracy, formatting, positioning, and reading speed. Importantly, it not only flags these issues but also suggests automated corrections, leveraging the combined potential of Large Language Models (LLMs), Vision-Language Models (VLMs), Image Processing (IP) techniques, and Automatic Speech Recognition (ASR).\nBy integrating multimodal contextual cues from both audio and video, our tool provides more accurate and adaptive subtitle generation.\nFinally, V-SAT includes an interactive human-in-the-loop validation step. In addition to automatically detecting and correcting issues, the tool also enables users to manually annotate content even when no issues are detected, thereby broadening the scope of correction. Subtitle quality was evaluated using SUBER for language mode issues and F1-score for image mode issues. The SUBER score improved from 9.6 to 3.54 after corrections, while subtitle positioning and font color issues achieved F1-scores of 0.82 and 0.80. To the best of our knowledge, this is the first comprehensive framework that attempts to jointly solve the wide range of subtitle quality issues in a single automated pipeline.</p>\n\n",
                 "matched_terms": [
-                    "file",
+                    "system",
                     "score",
                     "suber",
-                    "system",
+                    "file",
                     "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In sum, existing methods either (i) focus on subtitle generation or extraction without integrated quality assurance or (ii) address one or two isolated subtitle quality issues. There is no comprehensive system that jointly detects the broad spectrum of subtitle issues (timing, content, format, positioning, reading speed, and contextual adaptation) and proposes corrections while remaining human-in-the-loop. This gap motivates our V-SAT tool, which aims to unify detection and correction across these dimensions using multimodal models and interactive validation.</p>\n\n",
                 "matched_terms": [
-                    "subtitle",
-                    "system"
+                    "system",
+                    "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Input:</span> The system takes a raw video file (without subtitles) and a original subtitle file in .srt or .vtt format as input.</p>\n\n",
                 "matched_terms": [
+                    "system",
                     "file",
-                    "subtitle",
                     "input",
-                    "system"
+                    "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Output:</span> Outputs are the final subtitle file similar to the uploaded format\nand the video embedded with the subtitle.</p>\n\n",
                 "matched_terms": [
                     "file",
-                    "subtitle",
-                    "output"
+                    "output",
+                    "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this sub-section, we describe the pre-processing of input files. The system requires two inputs: (a) a raw video file without subtitles and (b) a subtitle file in .srt/.vtt format. The subtitle file is first converted into CSV, and its timestamp information is used as a reference. For each timestamp, the corresponding audio and video clips are extracted separately.</p>\n\n",
                 "matched_terms": [
+                    "system",
                     "file",
-                    "subtitle",
                     "input",
-                    "system"
+                    "subtitle"
                 ]
             },
             {
@@ -95,86 +97,88 @@
             {
                 "html": "<p class=\"ltx_p\">The V-SAT tool leverages multiple state-of-the-art models and libraries to detect and correct subtitle issues. For language-related issues, it employs the GPT-4o mini model as the Large Language Model (LLM). For video analysis, it uses the OpenCV library to extract and process frames. Automatic Speech Recognition (ASR) is performed using OpenAI&#8217;s Whisper model, which provides accurate transcripts along with word-level timestamps. For audio event detection, V-SAT integrates Google&#8217;s YamNet model. Together, these components enable robust multimodal analysis of subtitles across language, audio, and visual dimensions. The system requirements to run this tool includes python 3.10, 16gb ram, and i5 intel processor.</p>\n\n",
                 "matched_terms": [
-                    "subtitle",
-                    "system"
+                    "system",
+                    "subtitle"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To measure the quality of corrected subtitles after resolving each issue, two different metrics are used: the SUBER score <cite class=\"ltx_cite ltx_citemacro_citep\">(Wilken et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib20\" title=\"\">2022</a>)</cite> for language mode issues and the F1-score for image mode issues. Scores are measured with respect to the ground truths. A lower SUBER score indicates better alignment with the ground truth, while a higher F1-score reflects better detection accuracy.</p>\n\n",
                 "matched_terms": [
-                    "score",
-                    "suber"
+                    "suber",
+                    "score"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in the table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#S4.T1\" title=\"Table 1 &#8227; 4.5. Experimental Results &#8227; 4. System Overview &#8227; V-SAT: Video Subtitle Annotation Tool\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, input subtitle file uploaded by user with all issues had an initial SUBER score of 9.6. After gradually resolving all language-mode issues, this score was significantly reduced to 3.54. Furthermore, table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#S4.T1\" title=\"Table 1 &#8227; 4.5. Experimental Results &#8227; 4. System Overview &#8227; V-SAT: Video Subtitle Annotation Tool\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> illustrates for issues 6 and 7, we obtained F1-scores of 0.82 and 0.80, respectively.</p>\n\n",
                 "matched_terms": [
-                    "file",
                     "score",
                     "suber",
-                    "input",
-                    "subtitle"
+                    "file",
+                    "subtitle",
+                    "input"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This work has several applications. It includes real-time subtitle personalization <cite class=\"ltx_cite ltx_citemacro_citep\">(Arroyo&#160;Chavez et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib3\" title=\"\">2024</a>; Gorman et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib6\" title=\"\">2021</a>)</cite>, where subtitles can be dynamically adapted to user preferences such as reading speed, text size, or display position, thereby enhancing individual viewing experiences <cite class=\"ltx_cite ltx_citemacro_citep\">(Arroyo&#160;Chavez et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib3\" title=\"\">2024</a>; Gorman et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib6\" title=\"\">2021</a>)</cite>. In scenarios involving multiple speakers, the system can support selective subtitling, allowing viewers to focus on specific speakers or narrative threads to optimize video understanding. Further, this may help to explore different aspects of a story, optimizing their video understanding experience. It also enables movie and video subtitle translation, where subtitles can be corrected and adapted across languages while maintaining synchronization and contextual fidelity <cite class=\"ltx_cite ltx_citemacro_citep\">(Yu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib21\" title=\"\">2025</a>)</cite>. Furthermore, integration into object-based media workflows allows subtitles to function as modular components, enabling structured, context-aware adaptation across diverse devices and platforms. Beyond entertainment, the framework can be applied in education, accessibility for hearing-impaired users, live events, and multilingual conferencing, providing scalable and adaptive solutions for high-quality subtitling.</p>\n\n",
                 "matched_terms": [
-                    "subtitle",
-                    "system"
+                    "system",
+                    "subtitle"
                 ]
             }
         ]
     },
     "S4.T1.fig2": {
+        "source_file": "V-SAT: Video Subtitle Annotation Tool",
         "caption": "(b)",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">F1-score</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Issue 6</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Issue 7</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.80</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Model\nF1-score\n\n\n\n\nIssue 6\n0.82\n\n\nIssue 7\n0.80",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\">Model</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">F1-score</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Issue 6</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\">Issue 7</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">0.80</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "f1score",
+            "issue",
             "model",
-            "issue"
+            "f1score"
         ],
         "citing_paragraphs": [],
         "contextual_paragraphs": [
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Issue 1: Contextual spelling and grammar-</span> This issue arises when a word is spelled correctly but used incorrectly in context. For example, in a cooking video, dessert is contextually correct, whereas desert is not. To detect such cases, we prompt a Large Language Model (LLM) in zero-shot mode, using the current subtitle text along with its preceding context (subtitle texts). Unlike grammar checking, the goal is to identify contextually inappropriate words. Once identified, corrections are generated by prompting the LLM with a predefined set of rules, and each correction is validated against these rules. Overall, we find that this approach improves both detection and correction accuracy.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "issue"
+                    "issue",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Issue 2: Harmful words-</span> This issue involves filtering offensive or HAP content (hate speech, abusive language, and profanity). V-SAT uses a Large Language Model (LLM) to detect such words, which are then masked with asterisks.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "issue"
+                    "issue",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Issue 3: Time synchronization-</span> A time synchronization issue in subtitles occurs when the text on screen does not align with the corresponding audio, appearing too early, too late, or gradually drifting out of sync. In V-SAT, this issue is addressed by first extracting audio clips for each timestamp during pre-processing. Transcripts are then generated using the faster-whisper-medium model. The extracted transcripts are compared with the user-provided subtitle file using cosine similarity. If the similarity score falls below a defined threshold (i.e. 0.7), a time synchronization issue is flagged.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "issue"
+                    "issue",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Issue 4: Non word-</span> Non-word issues arise when subtitles include cues such as [music playing] or [silence] to represent background sounds instead of spoken words. In V-SAT, this is addressed by extracting audio clips for each timestamp and applying Google&#8217;s YamNet model for audio classification. YamNet predicts 521 event classes with associated probabilities, and if a class exceeds a set threshold (0.3), the corresponding event label is added to the subtitle text.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "issue"
+                    "issue",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Issue 5: Segmentation-</span> A segmentation issue occurs when subtitles are not properly divided into readable chunks, often due to lengthy text, poor line breaks, or merging multiple sentences. To detect such cases, we calculate the Characters Per Line (CPL); if it exceeds 50, a segmentation issue is flagged. The subtitle text is then split at the 50-character threshold. Since the original timestamps become inaccurate after splitting, the faster-whisper-medium model is used to generate word-level timestamps, and the last word of each split segment of subtitle texts is used to realign the timing.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "issue"
+                    "issue",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To measure the quality of corrected subtitles after resolving each issue, two different metrics are used: the SUBER score <cite class=\"ltx_cite ltx_citemacro_citep\">(Wilken et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24180v1#bib.bib20\" title=\"\">2022</a>)</cite> for language mode issues and the F1-score for image mode issues. Scores are measured with respect to the ground truths. A lower SUBER score indicates better alignment with the ground truth, while a higher F1-score reflects better detection accuracy.</p>\n\n",
                 "matched_terms": [
-                    "f1score",
-                    "issue"
+                    "issue",
+                    "f1score"
                 ]
             }
         ]

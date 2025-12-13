@@ -1,52 +1,54 @@
 {
     "S1.T1": {
+        "source_file": "AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning",
         "caption": "Table 1: Comparison with SOTA methods on MMAU-mini. The ‘/’ separates results from raw outputs vs. those after GPT-4o post-processing (see Implementation Details). Best performances are highlighted in bold, while second-best are underlined.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Methods</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Sound</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Music</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Speech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Easy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Medium</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Hard</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Avg</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Random Guess</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">49.25 / 49.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">30.24 / 30.24</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">39.94 / 39.94</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">33.93 / 33.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.70 / 43.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">36.44 / 36.44</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">39.80 / 39.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Gemini-2.5-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">74.77</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">65.27</span> / 65.57</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">72.97 / 75.58</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">64.29</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">65.62</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">75.93 / 76.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.10 / 70.19</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.00 / 71.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib13\" title=\"\">13</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">73.27 / 73.27</td>\n<td class=\"ltx_td ltx_align_center\">64.97 / 64.97</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">78.38</span> / <span class=\"ltx_text ltx_font_bold\">78.38</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">62.95 / 62.95</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">77.22</span> / <span class=\"ltx_text ltx_font_bold\">77.22</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">69.49</span> / <span class=\"ltx_text ltx_font_bold\">69.49</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">72.20</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">72.20</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.97 / 69.97</td>\n<td class=\"ltx_td ltx_align_center\">65.27 / 65.27</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">74.17 / 74.47</td>\n<td class=\"ltx_td ltx_align_center\">60.27 / 60.27</td>\n<td class=\"ltx_td ltx_align_center\">74.07 / 74.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">69.07</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">69.48</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.80 / 69.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">66.37 / 69.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.98 / 58.98</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">61.56 / 62.16</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">53.12 / 53.12</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">68.89 / 70.37</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">55.93 / 58.05</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">62.30 / 63.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">74.76 / <span class=\"ltx_text ltx_font_bold\">76.88</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">60.18 / 61.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">60.96 / 63.06</td>\n<td class=\"ltx_td ltx_align_center\">58.04 / 59.82</td>\n<td class=\"ltx_td ltx_align_center\">70.19 / 71.30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">61.02 / 63.98</td>\n<td class=\"ltx_td ltx_align_center\">65.30 / 67.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3 (T)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.97 / 74.47</td>\n<td class=\"ltx_td ltx_align_center\">59.28 / <span class=\"ltx_text ltx_font_bold\">67.37</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">44.74 / 61.26</td>\n<td class=\"ltx_td ltx_align_center\">56.70 / 63.84</td>\n<td class=\"ltx_td ltx_align_center\">61.85 / 74.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">50.42 / 56.78</td>\n<td class=\"ltx_td ltx_align_center\">58.00 / 67.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio-Reasoner&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">32.13 / 66.97</td>\n<td class=\"ltx_td ltx_align_center\">41.02 / 63.77</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.23 / 57.06</td>\n<td class=\"ltx_td ltx_align_center\">43.75 / 61.61</td>\n<td class=\"ltx_td ltx_align_center\">30.51 / 64.81</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.81 / 58.47</td>\n<td class=\"ltx_td ltx_align_center\">35.80 / 62.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">73.57 / 73.87</td>\n<td class=\"ltx_td ltx_align_center\">60.78 / 60.78</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">63.66 / 64.56</td>\n<td class=\"ltx_td ltx_align_center\">57.14 / 57.14</td>\n<td class=\"ltx_td ltx_align_center\">70.93 / 71.30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">63.14 / 63.98</td>\n<td class=\"ltx_td ltx_align_center\">66.00 / 66.40</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-0.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">26.43 / 47.15</td>\n<td class=\"ltx_td ltx_align_center\">17.96 / 35.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">15.32 / 27.93</td>\n<td class=\"ltx_td ltx_align_center\">24.11 / 36.61</td>\n<td class=\"ltx_td ltx_align_center\">16.10 / 38.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">19.81 / 34.32</td>\n<td class=\"ltx_td ltx_align_center\">19.90 / 37.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-1.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">42.34 / 50.15</td>\n<td class=\"ltx_td ltx_align_center\">35.63 / 46.71</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.53 / 37.54</td>\n<td class=\"ltx_td ltx_align_center\">36.16 / 41.52</td>\n<td class=\"ltx_td ltx_align_center\">34.75 / 48.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.26 / 39.83</td>\n<td class=\"ltx_td ltx_align_center\">37.50 / 44.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">62.46 / 63.96</td>\n<td class=\"ltx_td ltx_align_center\">50.60 / 55.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.34 / 47.15</td>\n<td class=\"ltx_td ltx_align_center\">49.11 / 52.23</td>\n<td class=\"ltx_td ltx_align_center\">53.52 / 58.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">46.19 / 50.85</td>\n<td class=\"ltx_td ltx_align_center\">50.80 / 55.40</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Kimi-Audio-7B-Instruct&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">59.46 / 74.17</td>\n<td class=\"ltx_td ltx_align_center\">42.51 / 58.38</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">61.56 / 66.07</td>\n<td class=\"ltx_td ltx_align_center\">44.64 / 56.70</td>\n<td class=\"ltx_td ltx_align_center\">59.26 / 71.48</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">52.97 / 63.14</td>\n<td class=\"ltx_td ltx_align_center\">54.50 / 66.20</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\" rowspan=\"2\">AudioGenie-Reasoner</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">75.08</span> / 75.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">66.17</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">66.17</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">69.20</span> / <span class=\"ltx_text ltx_font_bold\">69.20</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">76.67</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.67</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.53 / 66.53</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">72.60</span> / <span class=\"ltx_text ltx_font_bold\">72.60</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+5.4)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.2)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.2)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+15.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+14.4)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+16.1)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+16.1)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.8)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+6.3)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+10.6)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.5)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+10.3)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+9.0)</span>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Methods\nSound\nMusic\nSpeech\nEasy\nMedium\nHard\nAvg\n\n\nRandom Guess\n49.25 / 49.25\n30.24 / 30.24\n39.94 / 39.94\n33.93 / 33.93\n43.70 / 43.70\n36.44 / 36.44\n39.80 / 39.80\n\n\nGemini-2.5-Flash [12]\n\n\n74.77 / 76.58\n\n\n65.27 / 65.57\n72.97 / 75.58\n\n64.29 / 65.62\n\n75.93 / 76.66\n66.10 / 70.19\n71.00 / 71.90\n\n\nGemini-2.0-Flash [13]\n\n73.27 / 73.27\n64.97 / 64.97\n\n78.38 / 78.38\n\n62.95 / 62.95\n\n77.22 / 77.22\n\n\n69.49 / 69.49\n\n\n72.20 / 72.20\n\n\n\nGemini-2.0-Flash-Lite [14]\n\n69.97 / 69.97\n65.27 / 65.27\n74.17 / 74.47\n60.27 / 60.27\n74.07 / 74.07\n\n69.07 / 69.48\n\n69.80 / 69.90\n\n\nMiDashengLM-7B [15]\n\n66.37 / 69.67\n58.98 / 58.98\n61.56 / 62.16\n53.12 / 53.12\n68.89 / 70.37\n55.93 / 58.05\n62.30 / 63.60\n\n\nAudio Flamingo 3 [7]\n\n74.76 / 76.88\n\n60.18 / 61.08\n60.96 / 63.06\n58.04 / 59.82\n70.19 / 71.30\n61.02 / 63.98\n65.30 / 67.00\n\n\nAudio Flamingo 3 (T) [7]\n\n69.97 / 74.47\n59.28 / 67.37\n\n44.74 / 61.26\n56.70 / 63.84\n61.85 / 74.07\n50.42 / 56.78\n58.00 / 67.70\n\n\nAudio-Reasoner [6]\n\n32.13 / 66.97\n41.02 / 63.77\n34.23 / 57.06\n43.75 / 61.61\n30.51 / 64.81\n34.81 / 58.47\n35.80 / 62.60\n\n\nQwen2.5-Omni-3B [16]\n\n73.57 / 73.87\n60.78 / 60.78\n63.66 / 64.56\n57.14 / 57.14\n70.93 / 71.30\n63.14 / 63.98\n66.00 / 66.40\n\n\nAudio Flamingo 2-0.5B [17]\n\n26.43 / 47.15\n17.96 / 35.93\n15.32 / 27.93\n24.11 / 36.61\n16.10 / 38.33\n19.81 / 34.32\n19.90 / 37.00\n\n\nAudio Flamingo 2-1.5B [17]\n\n42.34 / 50.15\n35.63 / 46.71\n34.53 / 37.54\n36.16 / 41.52\n34.75 / 48.33\n39.26 / 39.83\n37.50 / 44.80\n\n\nAudio Flamingo 2-3B [17]\n\n62.46 / 63.96\n50.60 / 55.09\n39.34 / 47.15\n49.11 / 52.23\n53.52 / 58.70\n46.19 / 50.85\n50.80 / 55.40\n\n\nKimi-Audio-7B-Instruct [8]\n\n59.46 / 74.17\n42.51 / 58.38\n61.56 / 66.07\n44.64 / 56.70\n59.26 / 71.48\n52.97 / 63.14\n54.50 / 66.20\n\n\nAudioGenie-Reasoner\n\n75.08 / 75.08\n\n66.17 / 66.17\n\n\n76.58 / 76.58\n\n\n69.20 / 69.20\n\n\n76.67 / 76.67\n\n66.53 / 66.53\n\n72.60 / 72.60\n\n\n\n\n(+8.7) / (+5.4)\n\n\n(+7.2) / (+7.2)\n\n\n(+15.0) / (+14.4)\n\n\n(+16.1) / (+16.1)\n\n\n(+7.8) / (+6.3)\n\n\n(+10.6) / (+8.5)\n\n\n(+10.3) / (+9.0)",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Methods</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Sound</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Music</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Speech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Easy</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Medium</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Hard</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Avg</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Random Guess</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">49.25 / 49.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">30.24 / 30.24</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">39.94 / 39.94</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">33.93 / 33.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.70 / 43.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">36.44 / 36.44</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">39.80 / 39.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Gemini-2.5-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">74.77</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">65.27</span> / 65.57</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">72.97 / 75.58</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">64.29</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">65.62</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">75.93 / 76.66</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.10 / 70.19</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.00 / 71.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib13\" title=\"\">13</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">73.27 / 73.27</td>\n<td class=\"ltx_td ltx_align_center\">64.97 / 64.97</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">78.38</span> / <span class=\"ltx_text ltx_font_bold\">78.38</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">62.95 / 62.95</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">77.22</span> / <span class=\"ltx_text ltx_font_bold\">77.22</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">69.49</span> / <span class=\"ltx_text ltx_font_bold\">69.49</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">72.20</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">72.20</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.97 / 69.97</td>\n<td class=\"ltx_td ltx_align_center\">65.27 / 65.27</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">74.17 / 74.47</td>\n<td class=\"ltx_td ltx_align_center\">60.27 / 60.27</td>\n<td class=\"ltx_td ltx_align_center\">74.07 / 74.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">69.07</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">69.48</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.80 / 69.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">66.37 / 69.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.98 / 58.98</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">61.56 / 62.16</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">53.12 / 53.12</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">68.89 / 70.37</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">55.93 / 58.05</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">62.30 / 63.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">74.76 / <span class=\"ltx_text ltx_font_bold\">76.88</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">60.18 / 61.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">60.96 / 63.06</td>\n<td class=\"ltx_td ltx_align_center\">58.04 / 59.82</td>\n<td class=\"ltx_td ltx_align_center\">70.19 / 71.30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">61.02 / 63.98</td>\n<td class=\"ltx_td ltx_align_center\">65.30 / 67.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3 (T)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">69.97 / 74.47</td>\n<td class=\"ltx_td ltx_align_center\">59.28 / <span class=\"ltx_text ltx_font_bold\">67.37</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">44.74 / 61.26</td>\n<td class=\"ltx_td ltx_align_center\">56.70 / 63.84</td>\n<td class=\"ltx_td ltx_align_center\">61.85 / 74.07</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">50.42 / 56.78</td>\n<td class=\"ltx_td ltx_align_center\">58.00 / 67.70</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio-Reasoner&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">32.13 / 66.97</td>\n<td class=\"ltx_td ltx_align_center\">41.02 / 63.77</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.23 / 57.06</td>\n<td class=\"ltx_td ltx_align_center\">43.75 / 61.61</td>\n<td class=\"ltx_td ltx_align_center\">30.51 / 64.81</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.81 / 58.47</td>\n<td class=\"ltx_td ltx_align_center\">35.80 / 62.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">73.57 / 73.87</td>\n<td class=\"ltx_td ltx_align_center\">60.78 / 60.78</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">63.66 / 64.56</td>\n<td class=\"ltx_td ltx_align_center\">57.14 / 57.14</td>\n<td class=\"ltx_td ltx_align_center\">70.93 / 71.30</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">63.14 / 63.98</td>\n<td class=\"ltx_td ltx_align_center\">66.00 / 66.40</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-0.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">26.43 / 47.15</td>\n<td class=\"ltx_td ltx_align_center\">17.96 / 35.93</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">15.32 / 27.93</td>\n<td class=\"ltx_td ltx_align_center\">24.11 / 36.61</td>\n<td class=\"ltx_td ltx_align_center\">16.10 / 38.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">19.81 / 34.32</td>\n<td class=\"ltx_td ltx_align_center\">19.90 / 37.00</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-1.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">42.34 / 50.15</td>\n<td class=\"ltx_td ltx_align_center\">35.63 / 46.71</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">34.53 / 37.54</td>\n<td class=\"ltx_td ltx_align_center\">36.16 / 41.52</td>\n<td class=\"ltx_td ltx_align_center\">34.75 / 48.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.26 / 39.83</td>\n<td class=\"ltx_td ltx_align_center\">37.50 / 44.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">62.46 / 63.96</td>\n<td class=\"ltx_td ltx_align_center\">50.60 / 55.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.34 / 47.15</td>\n<td class=\"ltx_td ltx_align_center\">49.11 / 52.23</td>\n<td class=\"ltx_td ltx_align_center\">53.52 / 58.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">46.19 / 50.85</td>\n<td class=\"ltx_td ltx_align_center\">50.80 / 55.40</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Kimi-Audio-7B-Instruct&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">59.46 / 74.17</td>\n<td class=\"ltx_td ltx_align_center\">42.51 / 58.38</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">61.56 / 66.07</td>\n<td class=\"ltx_td ltx_align_center\">44.64 / 56.70</td>\n<td class=\"ltx_td ltx_align_center\">59.26 / 71.48</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">52.97 / 63.14</td>\n<td class=\"ltx_td ltx_align_center\">54.50 / 66.20</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\" rowspan=\"2\">AudioGenie-Reasoner</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">75.08</span> / 75.08</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">66.17</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">66.17</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.58</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">69.20</span> / <span class=\"ltx_text ltx_font_bold\">69.20</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">76.67</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">76.67</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">66.53 / 66.53</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">72.60</span> / <span class=\"ltx_text ltx_font_bold\">72.60</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+5.4)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.2)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.2)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+15.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+14.4)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+16.1)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+16.1)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+7.8)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+6.3)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+10.6)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.5)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+10.3)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+9.0)</span>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "while",
             "kimiaudio7binstruct",
-            "implementation",
-            "23b",
-            "details",
-            "215b",
-            "flamingo",
-            "raw",
-            "comparison",
-            "midashenglm7b",
-            "audiogeniereasoner",
-            "audio",
-            "gemini20flash",
-            "205b",
-            "after",
-            "from",
-            "audioreasoner",
-            "methods",
-            "mmaumini",
-            "sound",
-            "postprocessing",
-            "medium",
-            "avg",
-            "guess",
-            "see",
-            "performances",
-            "easy",
-            "bold",
-            "highlighted",
-            "gemini20flashlite",
-            "results",
-            "underlined",
-            "speech",
-            "sota",
             "separates",
-            "random",
-            "outputs",
+            "205b",
+            "see",
             "secondbest",
-            "gpt4o",
-            "best",
-            "music",
-            "qwen25omni3b",
+            "speech",
+            "underlined",
+            "raw",
+            "outputs",
+            "guess",
+            "215b",
             "hard",
-            "gemini25flash"
+            "postprocessing",
+            "qwen25omni3b",
+            "avg",
+            "midashenglm7b",
+            "random",
+            "implementation",
+            "best",
+            "gemini20flashlite",
+            "methods",
+            "details",
+            "results",
+            "gpt4o",
+            "sound",
+            "audio",
+            "bold",
+            "gemini25flash",
+            "while",
+            "music",
+            "audioreasoner",
+            "audiogeniereasoner",
+            "mmaumini",
+            "comparison",
+            "medium",
+            "sota",
+            "performances",
+            "from",
+            "gemini20flash",
+            "highlighted",
+            "23b",
+            "easy",
+            "after",
+            "flamingo"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Comparison with SOTA Methods.</span>\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents a comparison of AGR with SOTA audio reasoning methods on MMAU-mini. AGR not only surpasses open-source models but also outperforms the proprietary Gemini model, achieving the best performance. On MMAR (see Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S2.T2\" title=\"Table 2 &#8227; 2.2 Proactive Iterative Document Refinement Loop &#8227; 2 Our Method &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), AGR significantly outperforms all open-source models and achieves results comparable to Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>. Besides, our multi-agent framework yields substantial performance gains over direct inference with MiDahengLM, particularly on reasoning tasks involving speech and mixed audio types.</p>\n\n"
@@ -55,42 +57,42 @@
             {
                 "html": "<p class=\"ltx_p\">Audio deep reasoning is a challenging task that requires expert-level perception, multi-step logical inference, and the integration of contextual knowledge. However, existing models suffer from a gap between audio perception and reasoning abilities due to the lack of training data with explicit reasoning chains and the absence of mechanisms for active exploration and iterative refinement.\nTo address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, the <span class=\"ltx_text ltx_font_bold\">first</span> unified training-free multi-agent system that coordinates perception and reasoning over an evolving chain of textual evidence.\nOur key idea is a paradigm shift that transforms audio deep reasoning into complex text understanding task from a new perspective, thereby unlocking the full potential of large language models.\nSpecifically, the design of AGR mimics the human coarse-to-fine cognitive process. It first transforms the input audio into a coarse text-based document. Then, we design a novel proactive iterative document refinement loop, featuring tool-augmented routes and specialized agents, to continuously search for missing information and augment the evidence chain in a coarse-to-fine manner until sufficient question-related information is gathered for making final predictions.\nExperimental results show that AGR achieves state-of-the-art (SOTA) performance over existing open-source audio deep reasoning models across various benchmarks. The code will be available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/ryysayhi/AudioGenie-Reasoner\" title=\"\">https://github.com/ryysayhi/AudioGenie-Reasoner</a>.</p>\n\n",
                 "matched_terms": [
-                    "sota",
                     "audiogeniereasoner",
-                    "audio",
                     "from",
-                    "results"
+                    "results",
+                    "sota",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the literature, great progress in audio reasoning has been achieved by prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib9\" title=\"\">9</a>]</cite>. However, audio deep reasoning remains a significant challenge. The recently proposed audio deep reasoning benchmark, MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>, reveals the poor performance of existing audio models. On this challenging benchmark, many open-source models fail to achieve an accuracy better than random guessing, reflecting a gap between the abilities of audio perception and the cognitive reasoning. This gap stems from two fundamental challenges:\n<span class=\"ltx_text ltx_font_bold\">Firstly</span>, existing models are hindered by the lack of training data with explicit reasoning chains. Constructing high-quality, step-by-step reasoning annotations for audio is resource-intensive. Lacking this fine-grained supervision, most Audio Large Language Models (ALLMs) are trained on simpler objectives like audio-text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib10\" title=\"\">10</a>]</cite> or direct question-answering&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib11\" title=\"\">11</a>]</cite>. In particular, when it comes to complex scenarios with mixed audio sources (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, speech, music, and sound effects), their reasoning capabilities degrade sharply.\n<span class=\"ltx_text ltx_font_bold\">Secondly</span>, current methods lack a mechanism for active exploration and iterative refinement. Models typically function as passive information receivers, generating answers based on a single pass of perceptual results. This static, single-pass process prevents them from diagnosing evidence gaps, planning to acquire missing information, or progressively deepening their understanding. As a result, they are ill-equipped to handle complex problems that require multi-step and in-depth analysis.</p>\n\n",
                 "matched_terms": [
                     "random",
-                    "audio",
-                    "music",
                     "speech",
+                    "methods",
                     "from",
                     "results",
-                    "methods",
-                    "sound"
+                    "sound",
+                    "audio",
+                    "music"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address above two challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, a novel unified training-free multi-agent system (MAS) that coordinates perception and reasoning over an evolving chain of textual evidence. Our core design mimics the human coarse-to-fine cognitive process: forming an initial general understanding, conducting a detailed examination of relevant cues based on the specific query, and finally drawing a conclusion from sufficient evidence.\nSpecifically, <span class=\"ltx_text ltx_font_bold\">for the first challenge</span>, instead of directly training heavy audio-reasoning models, we introduce a paradigm shift that transforms audio deep reasoning into a complex text understanding task. This transformation decouples perception from cognition, elegantly bypassing the need for vast audio-specific reasoning data and unlocking the full potential of Large Language Models (LLMs).\n<span class=\"ltx_text ltx_font_bold\">For the second challenge</span>, instead of a conventional single-pass pipeline, we introduce a proactive iterative document refinement loop, driven by tool-augmented routes and specialized agents. This process empowers the model to dynamically find the potential missing information and augment these information within language space. Through this &#8220;diagnose-plan-act&#8221; loop, the model is transformed from a passive information receiver into an active, self-improving investigator.</p>\n\n",
                 "matched_terms": [
+                    "audiogeniereasoner",
                     "audio",
-                    "from",
-                    "audiogeniereasoner"
+                    "from"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In summary, the main contributions of this work are as follows:\n<span class=\"ltx_text ltx_font_bold\">(1)</span> A unified training-free MAS, named AudioGenie-Reasoner, which coordinates perception and reasoning over an evolving chain of textual evidence, is proposed. To the best of our knowledge, this is the first exploration of MAS in audio deep reasoning.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> We establish a coarse-to-fine cognitive framework that transforms audio reasoning into a text understanding task, featuring a novel proactive iterative document refinement loop to dynamically search for missing information and augment the evidence chain.\n<span class=\"ltx_text ltx_font_bold\">(3)</span> Experimental results show that AGR achieves SOTA performance over existing open-source models across various audio deep reasoning benchmarks.</p>\n\n",
                 "matched_terms": [
-                    "sota",
                     "audiogeniereasoner",
-                    "audio",
                     "best",
-                    "results"
+                    "results",
+                    "sota",
+                    "audio"
                 ]
             },
             {
@@ -110,38 +112,38 @@
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"P\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p3.m3\" intent=\":literal\"><semantics><mi>P</mi><annotation encoding=\"application/x-tex\">P</annotation></semantics></math> is a structured augmentation plan. The plan outlines one of three tool-based actions: audio question-answering, guided re-captioning, or automatic speech recognition.</p>\n\n",
                 "matched_terms": [
-                    "speech",
-                    "audio"
+                    "audio",
+                    "speech"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span> We evaluate our framework on two well-known audio deep reasoning benchmarks: MMAU-mini&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib3\" title=\"\">3</a>]</cite> and MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>. MMAU-mini consists of 1,000 closed-form questions covering three audio types: sound, music, and speech. MMAR is a more challenging benchmark that includes not only single audio types but also various mixtures of them. Since the audio data for MMAR is not directly provided, we successfully collected 905 samples after filtering for inaccessible data due to issues like expired links.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "after",
-                    "music",
                     "speech",
+                    "mmaumini",
+                    "after",
                     "sound",
-                    "mmaumini"
+                    "audio",
+                    "music"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Implementation Details.</span> We select MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite> and GPT-4o-2024-08-06&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> as the ALLM and LLM in our framework, respectively. Whisper-Turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib19\" title=\"\">19</a>]</cite> is employed as the transcription model in our tool-based actions. The max number of iterations is set to three.\nFor the evaluation metric, we follow the methodology of MMAU and MMAR, comparing the model&#8217;s prediction with the ground truth using regular expressions and string matching. To handle cases where some ALLMs produce semantically correct but improperly formatted answers, <span class=\"ltx_text ltx_font_bold\">we use GPT-4o-2024-08-06 to post-process the raw outputs</span>. This step normalizes the generated text by mapping it to the corresponding answer in the predefined list (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, mapping a free-form response like &#8220;The final answer is C&#8221; to the third item in the choice list), ensuring a fair and accurate evaluation.</p>\n\n",
                 "matched_terms": [
-                    "outputs",
-                    "midashenglm7b",
                     "implementation",
+                    "raw",
                     "details",
-                    "raw"
+                    "outputs",
+                    "midashenglm7b"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablation Studies.</span>\nThe results of ablation studies are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T3\" title=\"Table 3 &#8227; 3.1 Experimental Setup &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. A significant performance drop is observed when replacing GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> with GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite> in our iterative document refinement loop, particularly on the MMAR dataset. Since the LLM serves as the planning, interaction, and answering agent, its reasoning capability is a decisive factor in the final performance. We also replace our ALLM with Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite> (in configurations with and without the Whisper) and Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>, which results in only slight performance variations. We infer the reason is that current ALLMs have comparable perceptual abilities, but their reasoning capabilities still differ significantly. Furthermore, the removal of our iterative document refinement loop causes a consistent performance drop for all tested ALLMs, most notably on the MMAR dataset. This confirms the effectiveness of our loop, which allows the model to continuously reflect on existing information, complete any missing evidence, and build a comprehensive evidence chain to support the final reasoning result.</p>\n\n",
                 "matched_terms": [
-                    "gpt4o",
-                    "audio",
-                    "qwen25omni3b",
                     "results",
+                    "gpt4o",
+                    "qwen25omni3b",
+                    "audio",
                     "flamingo"
                 ]
             },
@@ -155,56 +157,58 @@
         ]
     },
     "S2.T2": {
+        "source_file": "AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning",
         "caption": "Table 2: Comparison with SOTA methods on MMAR. The ‘/’ separates results from raw outputs vs. those after GPT-4o post-processing (see Implementation Details). So, Mu, and Sp denote Sound, Music, and Speech, respectively. Best performances are highlighted in bold, while second-best are underlined.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Methods</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Sound</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Music</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Speech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">So-Mu</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">So-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Mu-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Sn-Mu-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Avg</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Random Guess</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">27.74 / 27.74</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24.58 / 24.58</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">35.38 / 35.38</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">18.18 / 18.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24.63 / 24.63</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.00 / 28.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">13.64 / 13.64</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.18 / 28.18</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Gemini-2.5-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">56.13</span> / <span class=\"ltx_text ltx_font_bold\">57.42</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">39.11 / <span class=\"ltx_text ltx_framed ltx_framed_underline\">48.04</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">76.92</span> / <span class=\"ltx_text ltx_font_bold\">79.23</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">73.40</span> / <span class=\"ltx_text ltx_font_bold\">75.37</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">68.00</span> / <span class=\"ltx_text ltx_font_bold\">74.67</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">54.55 / 54.55</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">63.43</span> / <span class=\"ltx_text ltx_font_bold\">67.07</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib13\" title=\"\">13</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">52.90</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">52.90</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">53.07</span> / <span class=\"ltx_text ltx_font_bold\">53.07</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">71.15</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">71.15</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">100</span> / <span class=\"ltx_text ltx_font_bold\">100</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">73.89</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">73.89</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">66.67</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">68.00</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">63.64</span> / <span class=\"ltx_text ltx_font_bold\">63.64</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">64.86</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">64.97</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">52.26 / 52.26</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">45.25</span> / 45.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">66.54 / 66.92</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">72.73</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">72.73</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">66.01 / 66.01</td>\n<td class=\"ltx_td ltx_align_center\">66.67 / 66.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">54.55 / 54.55</td>\n<td class=\"ltx_td ltx_align_center\">59.56 / 59.67</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.23 / 43.87</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">40.22 / 40.22</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">51.15 / 51.15</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">18.18 / 18.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.81 / 45.81</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">57.33 / 57.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">36.36 / 36.36</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">46.19 / 46.30</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">45.81 / 47.10</td>\n<td class=\"ltx_td ltx_align_center\">31.84 / 32.40</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">53.85 / 54.23</td>\n<td class=\"ltx_td ltx_align_center\">27.27 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">46.31 / 47.29</td>\n<td class=\"ltx_td ltx_align_center\">54.67 / 56.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">45.97 / 46.74</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3 (T)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">41.94 / 52.26</td>\n<td class=\"ltx_td ltx_align_center\">25.70 / 32.40</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.23 / 49.62</td>\n<td class=\"ltx_td ltx_align_center\">18.18 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">44.83 / 54.19</td>\n<td class=\"ltx_td ltx_align_center\">42.67 / 52.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.18 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">37.79 / 47.18</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio-Reasoner&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">26.45 / 39.35</td>\n<td class=\"ltx_td ltx_align_center\">20.67 / 35.75</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">24.23 / 39.62</td>\n<td class=\"ltx_td ltx_align_center\">36.36 / 54.55</td>\n<td class=\"ltx_td ltx_align_center\">28.57 / 44.33</td>\n<td class=\"ltx_td ltx_align_center\">38.67 / 48.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">27.27 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">26.30 / 40.55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">50.97 / 50.97</td>\n<td class=\"ltx_td ltx_align_center\">46.37 / 46.37</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">48.85 / 48.85</td>\n<td class=\"ltx_td ltx_align_center\">27.27 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">51.72 / 51.72</td>\n<td class=\"ltx_td ltx_align_center\">61.33 / 61.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">50.06 / 50.06</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-0.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">11.61 / 21.94</td>\n<td class=\"ltx_td ltx_align_center\">6.70 / 16.20</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">13.85 / 22.69</td>\n<td class=\"ltx_td ltx_align_center\">9.09 / 9.09</td>\n<td class=\"ltx_td ltx_align_center\">15.27 / 26.11</td>\n<td class=\"ltx_td ltx_align_center\">17.33 / 22.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.18 / 22.73</td>\n<td class=\"ltx_td ltx_align_center\">12.71 / 21.88</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-1.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">21.29 / 25.81</td>\n<td class=\"ltx_td ltx_align_center\">20.11 / 29.05</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">24.62 / 28.85</td>\n<td class=\"ltx_td ltx_align_center\">9.09 / 9.09</td>\n<td class=\"ltx_td ltx_align_center\">18.23 / 21.67</td>\n<td class=\"ltx_td ltx_align_center\">26.67 / 30.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">27.27 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">21.77 / 26.74</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">39.35 / 43.23</td>\n<td class=\"ltx_td ltx_align_center\">27.37 / 31.84</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">36.15 / 38.85</td>\n<td class=\"ltx_td ltx_align_center\">36.36 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">28.57 / 30.05</td>\n<td class=\"ltx_td ltx_align_center\">29.33 / 30.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">31.82 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">32.60 / 35.47</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Kimi-Audio-7B-Instruct&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">49.03 / 50.32</td>\n<td class=\"ltx_td ltx_align_center\">32.96 / 37.99</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">52.69 / 56.15</td>\n<td class=\"ltx_td ltx_align_center\">18.18 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">56.65 / 61.58</td>\n<td class=\"ltx_td ltx_align_center\">52.00 / 60.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">36.36 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">48.18 / 52.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\" rowspan=\"2\">AudioGenie-Reasoner</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">49.68 / 49.68</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.26 / 43.26</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">69.23 / 69.23</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">64.53 / 64.53</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">65.33 / 65.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">59.09</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">59.09</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.85 / 58.85</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+6.5)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+5.8)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+3.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+3.0)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.1)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.1)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+27.3)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+27.3)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.7)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.0)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+22.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+22.7)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+12.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+12.6)</span>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Methods\nSound\nMusic\nSpeech\nSo-Mu\nSo-Sp\nMu-Sp\nSn-Mu-Sp\nAvg\n\n\nRandom Guess\n27.74 / 27.74\n24.58 / 24.58\n35.38 / 35.38\n18.18 / 18.18\n24.63 / 24.63\n28.00 / 28.00\n13.64 / 13.64\n28.18 / 28.18\n\n\nGemini-2.5-Flash [12]\n\n\n56.13 / 57.42\n\n39.11 / 48.04\n\n\n76.92 / 79.23\n\n45.45 / 45.45\n\n73.40 / 75.37\n\n\n68.00 / 74.67\n\n54.55 / 54.55\n\n63.43 / 67.07\n\n\n\nGemini-2.0-Flash [13]\n\n\n52.90 / 52.90\n\n\n53.07 / 53.07\n\n\n71.15 / 71.15\n\n\n100 / 100\n\n\n73.89 / 73.89\n\n\n66.67 / 68.00\n\n\n63.64 / 63.64\n\n\n64.86 / 64.97\n\n\n\nGemini-2.0-Flash-Lite [14]\n\n52.26 / 52.26\n\n45.25 / 45.25\n66.54 / 66.92\n\n72.73 / 72.73\n\n66.01 / 66.01\n66.67 / 66.67\n54.55 / 54.55\n59.56 / 59.67\n\n\nMiDashengLM-7B [15]\n\n43.23 / 43.87\n40.22 / 40.22\n51.15 / 51.15\n18.18 / 18.18\n45.81 / 45.81\n57.33 / 57.33\n36.36 / 36.36\n46.19 / 46.30\n\n\nAudio Flamingo 3 [7]\n\n45.81 / 47.10\n31.84 / 32.40\n53.85 / 54.23\n27.27 / 27.27\n46.31 / 47.29\n54.67 / 56.00\n45.45 / 45.45\n45.97 / 46.74\n\n\nAudio Flamingo 3 (T) [7]\n\n41.94 / 52.26\n25.70 / 32.40\n39.23 / 49.62\n18.18 / 27.27\n44.83 / 54.19\n42.67 / 52.00\n18.18 / 31.82\n37.79 / 47.18\n\n\nAudio-Reasoner [6]\n\n26.45 / 39.35\n20.67 / 35.75\n24.23 / 39.62\n36.36 / 54.55\n28.57 / 44.33\n38.67 / 48.00\n27.27 / 31.82\n26.30 / 40.55\n\n\nQwen2.5-Omni-3B [16]\n\n50.97 / 50.97\n46.37 / 46.37\n48.85 / 48.85\n27.27 / 27.27\n51.72 / 51.72\n61.33 / 61.33\n45.45 / 45.45\n50.06 / 50.06\n\n\nAudio Flamingo 2-0.5B [17]\n\n11.61 / 21.94\n6.70 / 16.20\n13.85 / 22.69\n9.09 / 9.09\n15.27 / 26.11\n17.33 / 22.67\n18.18 / 22.73\n12.71 / 21.88\n\n\nAudio Flamingo 2-1.5B [17]\n\n21.29 / 25.81\n20.11 / 29.05\n24.62 / 28.85\n9.09 / 9.09\n18.23 / 21.67\n26.67 / 30.67\n27.27 / 31.82\n21.77 / 26.74\n\n\nAudio Flamingo 2-3B [17]\n\n39.35 / 43.23\n27.37 / 31.84\n36.15 / 38.85\n36.36 / 36.36\n28.57 / 30.05\n29.33 / 30.67\n31.82 / 36.36\n32.60 / 35.47\n\n\nKimi-Audio-7B-Instruct [8]\n\n49.03 / 50.32\n32.96 / 37.99\n52.69 / 56.15\n18.18 / 36.36\n56.65 / 61.58\n52.00 / 60.00\n36.36 / 45.45\n48.18 / 52.60\n\n\nAudioGenie-Reasoner\n49.68 / 49.68\n43.26 / 43.26\n69.23 / 69.23\n45.45 / 45.45\n64.53 / 64.53\n65.33 / 65.33\n\n59.09 / 59.09\n\n58.85 / 58.85\n\n\n\n(+6.5) / (+5.8)\n\n\n(+3.0) / (+3.0)\n\n\n(+18.1) / (+18.1)\n\n\n(+27.3) / (+27.3)\n\n\n(+18.7) / (+18.7)\n\n\n(+8.0) / (+8.0)\n\n\n(+22.7) / (+22.7)\n\n\n(+12.7) / (+12.6)",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Methods</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Sound</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Music</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Speech</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">So-Mu</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">So-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Mu-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Sn-Mu-Sp</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Avg</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Random Guess</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">27.74 / 27.74</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24.58 / 24.58</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">35.38 / 35.38</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">18.18 / 18.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">24.63 / 24.63</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.00 / 28.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">13.64 / 13.64</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">28.18 / 28.18</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">Gemini-2.5-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib12\" title=\"\">12</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">56.13</span> / <span class=\"ltx_text ltx_font_bold\">57.42</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">39.11 / <span class=\"ltx_text ltx_framed ltx_framed_underline\">48.04</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">76.92</span> / <span class=\"ltx_text ltx_font_bold\">79.23</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">73.40</span> / <span class=\"ltx_text ltx_font_bold\">75.37</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_font_bold\">68.00</span> / <span class=\"ltx_text ltx_font_bold\">74.67</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">54.55 / 54.55</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">63.43</span> / <span class=\"ltx_text ltx_font_bold\">67.07</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib13\" title=\"\">13</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">52.90</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">52.90</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">53.07</span> / <span class=\"ltx_text ltx_font_bold\">53.07</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">71.15</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">71.15</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">100</span> / <span class=\"ltx_text ltx_font_bold\">100</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">73.89</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">73.89</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">66.67</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">68.00</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">\n<span class=\"ltx_text ltx_font_bold\">63.64</span> / <span class=\"ltx_text ltx_font_bold\">63.64</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_font_bold\">64.86</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">64.97</span>\n</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">52.26 / 52.26</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">45.25</span> / 45.25</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">66.54 / 66.92</td>\n<td class=\"ltx_td ltx_align_center\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">72.73</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">72.73</span>\n</td>\n<td class=\"ltx_td ltx_align_center\">66.01 / 66.01</td>\n<td class=\"ltx_td ltx_align_center\">66.67 / 66.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">54.55 / 54.55</td>\n<td class=\"ltx_td ltx_align_center\">59.56 / 59.67</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.23 / 43.87</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">40.22 / 40.22</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">51.15 / 51.15</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">18.18 / 18.18</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.81 / 45.81</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">57.33 / 57.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">36.36 / 36.36</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">46.19 / 46.30</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">45.81 / 47.10</td>\n<td class=\"ltx_td ltx_align_center\">31.84 / 32.40</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">53.85 / 54.23</td>\n<td class=\"ltx_td ltx_align_center\">27.27 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">46.31 / 47.29</td>\n<td class=\"ltx_td ltx_align_center\">54.67 / 56.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">45.97 / 46.74</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 3 (T)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">41.94 / 52.26</td>\n<td class=\"ltx_td ltx_align_center\">25.70 / 32.40</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">39.23 / 49.62</td>\n<td class=\"ltx_td ltx_align_center\">18.18 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">44.83 / 54.19</td>\n<td class=\"ltx_td ltx_align_center\">42.67 / 52.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.18 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">37.79 / 47.18</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio-Reasoner&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">26.45 / 39.35</td>\n<td class=\"ltx_td ltx_align_center\">20.67 / 35.75</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">24.23 / 39.62</td>\n<td class=\"ltx_td ltx_align_center\">36.36 / 54.55</td>\n<td class=\"ltx_td ltx_align_center\">28.57 / 44.33</td>\n<td class=\"ltx_td ltx_align_center\">38.67 / 48.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">27.27 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">26.30 / 40.55</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">50.97 / 50.97</td>\n<td class=\"ltx_td ltx_align_center\">46.37 / 46.37</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">48.85 / 48.85</td>\n<td class=\"ltx_td ltx_align_center\">27.27 / 27.27</td>\n<td class=\"ltx_td ltx_align_center\">51.72 / 51.72</td>\n<td class=\"ltx_td ltx_align_center\">61.33 / 61.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">50.06 / 50.06</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-0.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">11.61 / 21.94</td>\n<td class=\"ltx_td ltx_align_center\">6.70 / 16.20</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">13.85 / 22.69</td>\n<td class=\"ltx_td ltx_align_center\">9.09 / 9.09</td>\n<td class=\"ltx_td ltx_align_center\">15.27 / 26.11</td>\n<td class=\"ltx_td ltx_align_center\">17.33 / 22.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">18.18 / 22.73</td>\n<td class=\"ltx_td ltx_align_center\">12.71 / 21.88</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-1.5B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">21.29 / 25.81</td>\n<td class=\"ltx_td ltx_align_center\">20.11 / 29.05</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">24.62 / 28.85</td>\n<td class=\"ltx_td ltx_align_center\">9.09 / 9.09</td>\n<td class=\"ltx_td ltx_align_center\">18.23 / 21.67</td>\n<td class=\"ltx_td ltx_align_center\">26.67 / 30.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">27.27 / 31.82</td>\n<td class=\"ltx_td ltx_align_center\">21.77 / 26.74</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Audio Flamingo 2-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib17\" title=\"\">17</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">39.35 / 43.23</td>\n<td class=\"ltx_td ltx_align_center\">27.37 / 31.84</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">36.15 / 38.85</td>\n<td class=\"ltx_td ltx_align_center\">36.36 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">28.57 / 30.05</td>\n<td class=\"ltx_td ltx_align_center\">29.33 / 30.67</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">31.82 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">32.60 / 35.47</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Kimi-Audio-7B-Instruct&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">49.03 / 50.32</td>\n<td class=\"ltx_td ltx_align_center\">32.96 / 37.99</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">52.69 / 56.15</td>\n<td class=\"ltx_td ltx_align_center\">18.18 / 36.36</td>\n<td class=\"ltx_td ltx_align_center\">56.65 / 61.58</td>\n<td class=\"ltx_td ltx_align_center\">52.00 / 60.00</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">36.36 / 45.45</td>\n<td class=\"ltx_td ltx_align_center\">48.18 / 52.60</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t\" rowspan=\"2\">AudioGenie-Reasoner</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">49.68 / 49.68</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">43.26 / 43.26</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">69.23 / 69.23</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">45.45 / 45.45</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">64.53 / 64.53</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">65.33 / 65.33</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_t\">\n<span class=\"ltx_text ltx_framed ltx_framed_underline\">59.09</span> / <span class=\"ltx_text ltx_framed ltx_framed_underline\">59.09</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">58.85 / 58.85</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+6.5)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+5.8)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+3.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+3.0)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.1)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.1)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+27.3)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+27.3)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+18.7)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.0)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+8.0)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+22.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+22.7)</span>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">\n<span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+12.7)</span> / <span class=\"ltx_text\" style=\"--ltx-fg-color:#4D4DFF;\">(+12.6)</span>\n</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "while",
             "kimiaudio7binstruct",
-            "implementation",
-            "23b",
-            "details",
-            "215b",
-            "flamingo",
-            "somu",
-            "raw",
-            "comparison",
-            "musp",
-            "midashenglm7b",
-            "audiogeniereasoner",
-            "mmar",
-            "gemini20flash",
-            "audio",
-            "205b",
-            "after",
-            "from",
-            "audioreasoner",
-            "methods",
-            "sound",
-            "postprocessing",
-            "avg",
-            "guess",
-            "see",
-            "performances",
-            "denote",
-            "bold",
-            "highlighted",
-            "gemini20flashlite",
-            "results",
-            "underlined",
-            "speech",
-            "sota",
             "separates",
             "respectively",
-            "outputs",
-            "secondbest",
-            "gpt4o",
-            "random",
-            "snmusp",
-            "best",
-            "music",
+            "205b",
             "sosp",
+            "see",
+            "speech",
+            "secondbest",
+            "underlined",
+            "raw",
+            "outputs",
+            "guess",
+            "215b",
+            "postprocessing",
+            "somu",
             "qwen25omni3b",
-            "gemini25flash"
+            "avg",
+            "midashenglm7b",
+            "random",
+            "implementation",
+            "best",
+            "gemini20flashlite",
+            "methods",
+            "details",
+            "results",
+            "gpt4o",
+            "snmusp",
+            "sound",
+            "audio",
+            "bold",
+            "gemini25flash",
+            "mmar",
+            "music",
+            "while",
+            "audioreasoner",
+            "audiogeniereasoner",
+            "musp",
+            "comparison",
+            "sota",
+            "performances",
+            "from",
+            "gemini20flash",
+            "highlighted",
+            "23b",
+            "denote",
+            "after",
+            "flamingo"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Comparison with SOTA Methods.</span>\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents a comparison of AGR with SOTA audio reasoning methods on MMAU-mini. AGR not only surpasses open-source models but also outperforms the proprietary Gemini model, achieving the best performance. On MMAR (see Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S2.T2\" title=\"Table 2 &#8227; 2.2 Proactive Iterative Document Refinement Loop &#8227; 2 Our Method &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), AGR significantly outperforms all open-source models and achieves results comparable to Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>. Besides, our multi-agent framework yields substantial performance gains over direct inference with MiDahengLM, particularly on reasoning tasks involving speech and mixed audio types.</p>\n\n"
@@ -213,43 +217,43 @@
             {
                 "html": "<p class=\"ltx_p\">Audio deep reasoning is a challenging task that requires expert-level perception, multi-step logical inference, and the integration of contextual knowledge. However, existing models suffer from a gap between audio perception and reasoning abilities due to the lack of training data with explicit reasoning chains and the absence of mechanisms for active exploration and iterative refinement.\nTo address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, the <span class=\"ltx_text ltx_font_bold\">first</span> unified training-free multi-agent system that coordinates perception and reasoning over an evolving chain of textual evidence.\nOur key idea is a paradigm shift that transforms audio deep reasoning into complex text understanding task from a new perspective, thereby unlocking the full potential of large language models.\nSpecifically, the design of AGR mimics the human coarse-to-fine cognitive process. It first transforms the input audio into a coarse text-based document. Then, we design a novel proactive iterative document refinement loop, featuring tool-augmented routes and specialized agents, to continuously search for missing information and augment the evidence chain in a coarse-to-fine manner until sufficient question-related information is gathered for making final predictions.\nExperimental results show that AGR achieves state-of-the-art (SOTA) performance over existing open-source audio deep reasoning models across various benchmarks. The code will be available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/ryysayhi/AudioGenie-Reasoner\" title=\"\">https://github.com/ryysayhi/AudioGenie-Reasoner</a>.</p>\n\n",
                 "matched_terms": [
-                    "sota",
                     "audiogeniereasoner",
-                    "audio",
                     "from",
-                    "results"
+                    "results",
+                    "sota",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the literature, great progress in audio reasoning has been achieved by prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib9\" title=\"\">9</a>]</cite>. However, audio deep reasoning remains a significant challenge. The recently proposed audio deep reasoning benchmark, MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>, reveals the poor performance of existing audio models. On this challenging benchmark, many open-source models fail to achieve an accuracy better than random guessing, reflecting a gap between the abilities of audio perception and the cognitive reasoning. This gap stems from two fundamental challenges:\n<span class=\"ltx_text ltx_font_bold\">Firstly</span>, existing models are hindered by the lack of training data with explicit reasoning chains. Constructing high-quality, step-by-step reasoning annotations for audio is resource-intensive. Lacking this fine-grained supervision, most Audio Large Language Models (ALLMs) are trained on simpler objectives like audio-text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib10\" title=\"\">10</a>]</cite> or direct question-answering&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib11\" title=\"\">11</a>]</cite>. In particular, when it comes to complex scenarios with mixed audio sources (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, speech, music, and sound effects), their reasoning capabilities degrade sharply.\n<span class=\"ltx_text ltx_font_bold\">Secondly</span>, current methods lack a mechanism for active exploration and iterative refinement. Models typically function as passive information receivers, generating answers based on a single pass of perceptual results. This static, single-pass process prevents them from diagnosing evidence gaps, planning to acquire missing information, or progressively deepening their understanding. As a result, they are ill-equipped to handle complex problems that require multi-step and in-depth analysis.</p>\n\n",
                 "matched_terms": [
                     "random",
-                    "mmar",
-                    "audio",
-                    "music",
                     "speech",
+                    "methods",
                     "from",
                     "results",
-                    "methods",
-                    "sound"
+                    "sound",
+                    "audio",
+                    "mmar",
+                    "music"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address above two challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, a novel unified training-free multi-agent system (MAS) that coordinates perception and reasoning over an evolving chain of textual evidence. Our core design mimics the human coarse-to-fine cognitive process: forming an initial general understanding, conducting a detailed examination of relevant cues based on the specific query, and finally drawing a conclusion from sufficient evidence.\nSpecifically, <span class=\"ltx_text ltx_font_bold\">for the first challenge</span>, instead of directly training heavy audio-reasoning models, we introduce a paradigm shift that transforms audio deep reasoning into a complex text understanding task. This transformation decouples perception from cognition, elegantly bypassing the need for vast audio-specific reasoning data and unlocking the full potential of Large Language Models (LLMs).\n<span class=\"ltx_text ltx_font_bold\">For the second challenge</span>, instead of a conventional single-pass pipeline, we introduce a proactive iterative document refinement loop, driven by tool-augmented routes and specialized agents. This process empowers the model to dynamically find the potential missing information and augment these information within language space. Through this &#8220;diagnose-plan-act&#8221; loop, the model is transformed from a passive information receiver into an active, self-improving investigator.</p>\n\n",
                 "matched_terms": [
+                    "audiogeniereasoner",
                     "audio",
-                    "from",
-                    "audiogeniereasoner"
+                    "from"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In summary, the main contributions of this work are as follows:\n<span class=\"ltx_text ltx_font_bold\">(1)</span> A unified training-free MAS, named AudioGenie-Reasoner, which coordinates perception and reasoning over an evolving chain of textual evidence, is proposed. To the best of our knowledge, this is the first exploration of MAS in audio deep reasoning.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> We establish a coarse-to-fine cognitive framework that transforms audio reasoning into a text understanding task, featuring a novel proactive iterative document refinement loop to dynamically search for missing information and augment the evidence chain.\n<span class=\"ltx_text ltx_font_bold\">(3)</span> Experimental results show that AGR achieves SOTA performance over existing open-source models across various audio deep reasoning benchmarks.</p>\n\n",
                 "matched_terms": [
-                    "sota",
                     "audiogeniereasoner",
-                    "audio",
                     "best",
-                    "results"
+                    "results",
+                    "sota",
+                    "audio"
                 ]
             },
             {
@@ -269,42 +273,42 @@
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"P\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p3.m3\" intent=\":literal\"><semantics><mi>P</mi><annotation encoding=\"application/x-tex\">P</annotation></semantics></math> is a structured augmentation plan. The plan outlines one of three tool-based actions: audio question-answering, guided re-captioning, or automatic speech recognition.</p>\n\n",
                 "matched_terms": [
-                    "speech",
-                    "audio"
+                    "audio",
+                    "speech"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span> We evaluate our framework on two well-known audio deep reasoning benchmarks: MMAU-mini&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib3\" title=\"\">3</a>]</cite> and MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>. MMAU-mini consists of 1,000 closed-form questions covering three audio types: sound, music, and speech. MMAR is a more challenging benchmark that includes not only single audio types but also various mixtures of them. Since the audio data for MMAR is not directly provided, we successfully collected 905 samples after filtering for inaccessible data due to issues like expired links.</p>\n\n",
                 "matched_terms": [
+                    "speech",
+                    "after",
+                    "sound",
                     "audio",
                     "mmar",
-                    "after",
-                    "music",
-                    "speech",
-                    "sound"
+                    "music"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Implementation Details.</span> We select MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite> and GPT-4o-2024-08-06&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> as the ALLM and LLM in our framework, respectively. Whisper-Turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib19\" title=\"\">19</a>]</cite> is employed as the transcription model in our tool-based actions. The max number of iterations is set to three.\nFor the evaluation metric, we follow the methodology of MMAU and MMAR, comparing the model&#8217;s prediction with the ground truth using regular expressions and string matching. To handle cases where some ALLMs produce semantically correct but improperly formatted answers, <span class=\"ltx_text ltx_font_bold\">we use GPT-4o-2024-08-06 to post-process the raw outputs</span>. This step normalizes the generated text by mapping it to the corresponding answer in the predefined list (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, mapping a free-form response like &#8220;The final answer is C&#8221; to the third item in the choice list), ensuring a fair and accurate evaluation.</p>\n\n",
                 "matched_terms": [
                     "respectively",
-                    "midashenglm7b",
-                    "outputs",
                     "implementation",
-                    "mmar",
+                    "outputs",
+                    "raw",
                     "details",
-                    "raw"
+                    "mmar",
+                    "midashenglm7b"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablation Studies.</span>\nThe results of ablation studies are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T3\" title=\"Table 3 &#8227; 3.1 Experimental Setup &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. A significant performance drop is observed when replacing GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> with GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite> in our iterative document refinement loop, particularly on the MMAR dataset. Since the LLM serves as the planning, interaction, and answering agent, its reasoning capability is a decisive factor in the final performance. We also replace our ALLM with Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite> (in configurations with and without the Whisper) and Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>, which results in only slight performance variations. We infer the reason is that current ALLMs have comparable perceptual abilities, but their reasoning capabilities still differ significantly. Furthermore, the removal of our iterative document refinement loop causes a consistent performance drop for all tested ALLMs, most notably on the MMAR dataset. This confirms the effectiveness of our loop, which allows the model to continuously reflect on existing information, complete any missing evidence, and build a comprehensive evidence chain to support the final reasoning result.</p>\n\n",
                 "matched_terms": [
-                    "gpt4o",
-                    "mmar",
-                    "audio",
-                    "qwen25omni3b",
                     "results",
-                    "flamingo"
+                    "gpt4o",
+                    "qwen25omni3b",
+                    "audio",
+                    "flamingo",
+                    "mmar"
                 ]
             },
             {
@@ -317,42 +321,44 @@
         ]
     },
     "S3.T3": {
+        "source_file": "AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning",
         "caption": "Table 3: Results of ablation studies on different model components. Best performances are highlighted in bold, while second-best are underlined.",
-        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt\">ALLM</th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">LLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Whisper</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">MMAU</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">MMAR</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" colspan=\"5\"><span class=\"ltx_text ltx_font_italic\">Our Framework (w/ Proactive Iterative Document Refinement Loop)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\">67.30</td>\n<td class=\"ltx_td ltx_align_center\">49.72</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">72.60</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">58.85</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">-</td>\n<td class=\"ltx_td ltx_align_center\">69.40</td>\n<td class=\"ltx_td ltx_align_center\">55.36</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">74.10</span></td>\n<td class=\"ltx_td ltx_align_center\">55.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Large</td>\n<td class=\"ltx_td ltx_align_center\">71.80</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">57.24</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\">70.64</td>\n<td class=\"ltx_td ltx_align_center\">56.35</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" colspan=\"5\"><span class=\"ltx_text ltx_font_italic\">Our Framework (w/o Proactive Iterative Document Refinement Loop)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center\">63.40</td>\n<td class=\"ltx_td ltx_align_center\">41.88</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center\">68.90</td>\n<td class=\"ltx_td ltx_align_center\">44.09</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">66.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">45.41</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "ALLM\nLLM\nWhisper\nMMAU\nMMAR\n\n\nOur Framework (w/ Proactive Iterative Document Refinement Loop)\n\n\nMiDashengLM-7B [15]\n\nGPT-3.5-turbo [20]\n\nTurbo\n67.30\n49.72\n\n\nMiDashengLM-7B [15]\n\nGPT-4o [18]\n\nTurbo\n72.60\n58.85\n\n\nAudio Flamingo 3 [7]\n\nGPT-4o [18]\n\n-\n69.40\n55.36\n\n\nAudio Flamingo 3 [7]\n\nGPT-4o [18]\n\nTurbo\n74.10\n55.80\n\n\nAudio Flamingo 3 [7]\n\nGPT-4o [18]\n\nLarge\n71.80\n57.24\n\n\nQwen2.5-Omni-3B [16]\n\nGPT-4o [18]\n\nTurbo\n70.64\n56.35\n\n\nOur Framework (w/o Proactive Iterative Document Refinement Loop)\n\n\nMiDashengLM-7B [15]\n\nGPT-4o [18]\n\n/\n63.40\n41.88\n\n\nAudio Flamingo 3 [7]\n\nGPT-4o [18]\n\n/\n68.90\n44.09\n\n\nQwen2.5-Omni-3B [16]\n\nGPT-4o [18]\n\n/\n66.70\n45.41",
+        "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt\">ALLM</th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">LLM</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r ltx_border_tt\">Whisper</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">MMAU</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">MMAR</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" colspan=\"5\"><span class=\"ltx_text ltx_font_italic\">Our Framework (w/ Proactive Iterative Document Refinement Loop)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\">67.30</td>\n<td class=\"ltx_td ltx_align_center\">49.72</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">72.60</span></td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">58.85</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">-</td>\n<td class=\"ltx_td ltx_align_center\">69.40</td>\n<td class=\"ltx_td ltx_align_center\">55.36</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">74.10</span></td>\n<td class=\"ltx_td ltx_align_center\">55.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Large</td>\n<td class=\"ltx_td ltx_align_center\">71.80</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_framed ltx_framed_underline\">57.24</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">Turbo</td>\n<td class=\"ltx_td ltx_align_center\">70.64</td>\n<td class=\"ltx_td ltx_align_center\">56.35</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" colspan=\"5\"><span class=\"ltx_text ltx_font_italic\">Our Framework (w/o Proactive Iterative Document Refinement Loop)</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center\">63.40</td>\n<td class=\"ltx_td ltx_align_center\">41.88</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row\">Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center\">68.90</td>\n<td class=\"ltx_td ltx_align_center\">44.09</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb\">Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>\n</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_r\">/</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">66.70</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">45.41</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "mmau",
-            "while",
-            "turbo",
-            "proactive",
-            "qwen25omni3b",
-            "flamingo",
-            "our",
-            "document",
-            "midashenglm7b",
-            "studies",
-            "mmar",
-            "audio",
-            "llm",
-            "ablation",
-            "performances",
-            "bold",
-            "highlighted",
-            "results",
-            "underlined",
-            "allm",
-            "refinement",
             "components",
             "secondbest",
-            "gpt4o",
-            "gpt35turbo",
-            "model",
-            "large",
+            "underlined",
+            "qwen25omni3b",
+            "refinement",
+            "turbo",
+            "midashenglm7b",
             "best",
-            "iterative",
+            "different",
+            "results",
+            "gpt4o",
+            "flamingo",
+            "llm",
+            "studies",
+            "allm",
+            "bold",
+            "proactive",
+            "audio",
+            "mmar",
+            "while",
+            "ablation",
             "loop",
-            "whisper",
+            "iterative",
+            "gpt35turbo",
             "framework",
-            "different"
+            "large",
+            "performances",
+            "mmau",
+            "highlighted",
+            "whisper",
+            "document",
+            "our",
+            "model"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablation Studies.</span>\nThe results of ablation studies are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T3\" title=\"Table 3 &#8227; 3.1 Experimental Setup &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. A significant performance drop is observed when replacing GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> with GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite> in our iterative document refinement loop, particularly on the MMAR dataset. Since the LLM serves as the planning, interaction, and answering agent, its reasoning capability is a decisive factor in the final performance. We also replace our ALLM with Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite> (in configurations with and without the Whisper) and Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>, which results in only slight performance variations. We infer the reason is that current ALLMs have comparable perceptual abilities, but their reasoning capabilities still differ significantly. Furthermore, the removal of our iterative document refinement loop causes a consistent performance drop for all tested ALLMs, most notably on the MMAR dataset. This confirms the effectiveness of our loop, which allows the model to continuously reflect on existing information, complete any missing evidence, and build a comprehensive evidence chain to support the final reasoning result.</p>\n\n"
@@ -361,97 +367,97 @@
             {
                 "html": "<p class=\"ltx_p\">Audio deep reasoning is a challenging task that requires expert-level perception, multi-step logical inference, and the integration of contextual knowledge. However, existing models suffer from a gap between audio perception and reasoning abilities due to the lack of training data with explicit reasoning chains and the absence of mechanisms for active exploration and iterative refinement.\nTo address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, the <span class=\"ltx_text ltx_font_bold\">first</span> unified training-free multi-agent system that coordinates perception and reasoning over an evolving chain of textual evidence.\nOur key idea is a paradigm shift that transforms audio deep reasoning into complex text understanding task from a new perspective, thereby unlocking the full potential of large language models.\nSpecifically, the design of AGR mimics the human coarse-to-fine cognitive process. It first transforms the input audio into a coarse text-based document. Then, we design a novel proactive iterative document refinement loop, featuring tool-augmented routes and specialized agents, to continuously search for missing information and augment the evidence chain in a coarse-to-fine manner until sufficient question-related information is gathered for making final predictions.\nExperimental results show that AGR achieves state-of-the-art (SOTA) performance over existing open-source audio deep reasoning models across various benchmarks. The code will be available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/ryysayhi/AudioGenie-Reasoner\" title=\"\">https://github.com/ryysayhi/AudioGenie-Reasoner</a>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "large",
-                    "proactive",
-                    "iterative",
                     "loop",
-                    "results",
+                    "iterative",
                     "document",
+                    "our",
+                    "results",
+                    "large",
                     "refinement",
-                    "our"
+                    "audio",
+                    "proactive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nAudio Deep Reasoning, Multi-Agent, Training-Free, Large Language Models, Iterative Refinement</p>\n\n",
                 "matched_terms": [
-                    "refinement",
-                    "audio",
                     "iterative",
-                    "large"
+                    "audio",
+                    "large",
+                    "refinement"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Audio deep reasoning&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib3\" title=\"\">3</a>]</cite> is a challenge task in audio understanding, requiring expert-level perception, multi-step logical inference, and the integration of contextual knowledge to interpret complex acoustic scenes. This technology has many applications in our daily life, such as embodied intelligence&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib4\" title=\"\">4</a>]</cite> and autonomous systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib5\" title=\"\">5</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "our"
+                    "our",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the literature, great progress in audio reasoning has been achieved by prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib9\" title=\"\">9</a>]</cite>. However, audio deep reasoning remains a significant challenge. The recently proposed audio deep reasoning benchmark, MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>, reveals the poor performance of existing audio models. On this challenging benchmark, many open-source models fail to achieve an accuracy better than random guessing, reflecting a gap between the abilities of audio perception and the cognitive reasoning. This gap stems from two fundamental challenges:\n<span class=\"ltx_text ltx_font_bold\">Firstly</span>, existing models are hindered by the lack of training data with explicit reasoning chains. Constructing high-quality, step-by-step reasoning annotations for audio is resource-intensive. Lacking this fine-grained supervision, most Audio Large Language Models (ALLMs) are trained on simpler objectives like audio-text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib10\" title=\"\">10</a>]</cite> or direct question-answering&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib11\" title=\"\">11</a>]</cite>. In particular, when it comes to complex scenarios with mixed audio sources (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, speech, music, and sound effects), their reasoning capabilities degrade sharply.\n<span class=\"ltx_text ltx_font_bold\">Secondly</span>, current methods lack a mechanism for active exploration and iterative refinement. Models typically function as passive information receivers, generating answers based on a single pass of perceptual results. This static, single-pass process prevents them from diagnosing evidence gaps, planning to acquire missing information, or progressively deepening their understanding. As a result, they are ill-equipped to handle complex problems that require multi-step and in-depth analysis.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
-                    "audio",
-                    "large",
                     "iterative",
                     "results",
-                    "refinement"
+                    "large",
+                    "refinement",
+                    "audio",
+                    "mmar"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address above two challenges, we propose <span class=\"ltx_text ltx_font_bold\">AudioGenie-Reasoner (AGR)</span>, a novel unified training-free multi-agent system (MAS) that coordinates perception and reasoning over an evolving chain of textual evidence. Our core design mimics the human coarse-to-fine cognitive process: forming an initial general understanding, conducting a detailed examination of relevant cues based on the specific query, and finally drawing a conclusion from sufficient evidence.\nSpecifically, <span class=\"ltx_text ltx_font_bold\">for the first challenge</span>, instead of directly training heavy audio-reasoning models, we introduce a paradigm shift that transforms audio deep reasoning into a complex text understanding task. This transformation decouples perception from cognition, elegantly bypassing the need for vast audio-specific reasoning data and unlocking the full potential of Large Language Models (LLMs).\n<span class=\"ltx_text ltx_font_bold\">For the second challenge</span>, instead of a conventional single-pass pipeline, we introduce a proactive iterative document refinement loop, driven by tool-augmented routes and specialized agents. This process empowers the model to dynamically find the potential missing information and augment these information within language space. Through this &#8220;diagnose-plan-act&#8221; loop, the model is transformed from a passive information receiver into an active, self-improving investigator.</p>\n\n",
                 "matched_terms": [
+                    "loop",
+                    "iterative",
+                    "document",
+                    "our",
+                    "large",
+                    "refinement",
                     "audio",
                     "model",
-                    "large",
-                    "proactive",
-                    "iterative",
-                    "loop",
-                    "document",
-                    "refinement",
-                    "our"
+                    "proactive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In summary, the main contributions of this work are as follows:\n<span class=\"ltx_text ltx_font_bold\">(1)</span> A unified training-free MAS, named AudioGenie-Reasoner, which coordinates perception and reasoning over an evolving chain of textual evidence, is proposed. To the best of our knowledge, this is the first exploration of MAS in audio deep reasoning.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> We establish a coarse-to-fine cognitive framework that transforms audio reasoning into a text understanding task, featuring a novel proactive iterative document refinement loop to dynamically search for missing information and augment the evidence chain.\n<span class=\"ltx_text ltx_font_bold\">(3)</span> Experimental results show that AGR achieves SOTA performance over existing open-source models across various audio deep reasoning benchmarks.</p>\n\n",
                 "matched_terms": [
-                    "framework",
-                    "audio",
-                    "proactive",
-                    "best",
-                    "iterative",
                     "loop",
-                    "results",
+                    "iterative",
+                    "best",
                     "document",
+                    "our",
+                    "results",
+                    "framework",
                     "refinement",
-                    "our"
+                    "audio",
+                    "proactive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our framework&#8217;s design is founded on two core innovations. First, we introduce a paradigm shift that transforms the audio reasoning problem into a text-based understanding task, thereby decoupling perception from cognition. Second, we design a proactive multi-agent loop for iterative evidence refinement, turning the system into an active investigator. The overall architecture is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S1.F2\" title=\"Figure 2 &#8227; 1 Introduction &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "proactive",
-                    "iterative",
                     "loop",
+                    "iterative",
+                    "our",
                     "refinement",
-                    "our"
+                    "audio",
+                    "proactive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Instead of attempting to build a data-hungry audio reasoning model, we transform the audio reasoning task into a complex text understanding problem. This is achieved by initially converting the raw input audio <math alttext=\"A\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m1\" intent=\":literal\"><semantics><mi>A</mi><annotation encoding=\"application/x-tex\">A</annotation></semantics></math> into a coarse-grained textual document <math alttext=\"D_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m2\" intent=\":literal\"><semantics><msub><mi>D</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">D_{0}</annotation></semantics></math>:</p>\n\n",
                 "matched_terms": [
+                    "document",
                     "audio",
-                    "model",
-                    "document"
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This initial transformation is the foundation of our paradigm shift. It decouples the system&#8217;s perceptual abilities, which are handled by the ALLM, from its cognitive reasoning, which is governed by LLM-based agents in the subsequent steps. By doing so, we elegantly bypass the need for specialized audio-reasoning datasets and instead unlock the vast, pre-existing reasoning capabilities of LLMs. The resulting document, <math alttext=\"D_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>D</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">D_{0}</annotation></semantics></math>, serves as the initial state of an evolving evidence chain, forming the textual foundation upon which all subsequent reasoning and refinement will be performed.</p>\n\n",
                 "matched_terms": [
-                    "document",
                     "refinement",
+                    "document",
                     "allm",
                     "our"
                 ]
@@ -459,94 +465,96 @@
             {
                 "html": "<p class=\"ltx_p\">To bridge the gap between the coarse initial description and the fine-grained details required for complex queries, we introduce a proactive iterative refinement loop. This loop is coordinated by a team of specialized agents that collaborate to progressively enrich the initial document into a comprehensive evidence chain. At its core, the loop operates iteratively: it first assesses the current evidence, then plans and executes actions to augment it with missing information via tool-augmented routes. This process repeats until the evidence is deemed sufficient for a confident answer.</p>\n\n",
                 "matched_terms": [
-                    "proactive",
-                    "iterative",
                     "loop",
+                    "iterative",
+                    "document",
                     "refinement",
-                    "document"
+                    "proactive"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Answering Agent.</span>\nOnce the iterative refinement loop concludes (<span class=\"ltx_text ltx_font_italic\">i.e.</span>, when <math alttext=\"s=\\text{Sufficient}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p5.m1\" intent=\":literal\"><semantics><mrow><mi>s</mi><mo>=</mo><mtext>Sufficient</mtext></mrow><annotation encoding=\"application/x-tex\">s=\\text{Sufficient}</annotation></semantics></math>) or the maximum number of iterations is reached, the answer agent <math alttext=\"\\mathcal{F}_{\\text{answer }}(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p5.m2\" intent=\":literal\"><semantics><mrow><msub><mi class=\"ltx_font_mathcaligraphic\">&#8497;</mi><mtext>answer&#160;</mtext></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{F}_{\\text{answer }}(\\cdot)</annotation></semantics></math> generates the final output from the enriched document <math alttext=\"D_{f}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p5.m3\" intent=\":literal\"><semantics><msub><mi>D</mi><mi>f</mi></msub><annotation encoding=\"application/x-tex\">D_{f}</annotation></semantics></math>:</p>\n\n",
                 "matched_terms": [
                     "refinement",
-                    "iterative",
+                    "document",
                     "loop",
-                    "document"
+                    "iterative"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets.</span> We evaluate our framework on two well-known audio deep reasoning benchmarks: MMAU-mini&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib3\" title=\"\">3</a>]</cite> and MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>. MMAU-mini consists of 1,000 closed-form questions covering three audio types: sound, music, and speech. MMAR is a more challenging benchmark that includes not only single audio types but also various mixtures of them. Since the audio data for MMAR is not directly provided, we successfully collected 905 samples after filtering for inaccessible data due to issues like expired links.</p>\n\n",
                 "matched_terms": [
-                    "framework",
-                    "mmar",
+                    "our",
                     "audio",
-                    "our"
+                    "framework",
+                    "mmar"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Implementation Details.</span> We select MiDashengLM-7B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib15\" title=\"\">15</a>]</cite> and GPT-4o-2024-08-06&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> as the ALLM and LLM in our framework, respectively. Whisper-Turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib19\" title=\"\">19</a>]</cite> is employed as the transcription model in our tool-based actions. The max number of iterations is set to three.\nFor the evaluation metric, we follow the methodology of MMAU and MMAR, comparing the model&#8217;s prediction with the ground truth using regular expressions and string matching. To handle cases where some ALLMs produce semantically correct but improperly formatted answers, <span class=\"ltx_text ltx_font_bold\">we use GPT-4o-2024-08-06 to post-process the raw outputs</span>. This step normalizes the generated text by mapping it to the corresponding answer in the predefined list (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, mapping a free-form response like &#8220;The final answer is C&#8221; to the third item in the choice list), ensuring a fair and accurate evaluation.</p>\n\n",
                 "matched_terms": [
                     "framework",
-                    "mmau",
                     "midashenglm7b",
-                    "mmar",
-                    "model",
                     "llm",
+                    "our",
                     "allm",
-                    "our"
+                    "model",
+                    "mmar",
+                    "mmau"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Comparison with SOTA Methods.</span>\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents a comparison of AGR with SOTA audio reasoning methods on MMAU-mini. AGR not only surpasses open-source models but also outperforms the proprietary Gemini model, achieving the best performance. On MMAR (see Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S2.T2\" title=\"Table 2 &#8227; 2.2 Proactive Iterative Document Refinement Loop &#8227; 2 Our Method &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), AGR significantly outperforms all open-source models and achieves results comparable to Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>. Besides, our multi-agent framework yields substantial performance gains over direct inference with MiDahengLM, particularly on reasoning tasks involving speech and mixed audio types.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
-                    "audio",
-                    "model",
                     "best",
                     "results",
                     "framework",
-                    "our"
+                    "our",
+                    "audio",
+                    "model",
+                    "mmar"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Effects of Iterative Rounds.</span>\nWe analyze the impact of the number of iterative rounds on model performance in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T4\" title=\"Table 4 &#8227; 3.2 Main Results &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The initial iteration yields the most significant performance gain on both datasets, as it recovers the most critical missing information, validating our framework&#8217;s effectiveness. Performance peaks at two rounds on MMAU-mini and at three rounds on MMAR, consistent with MMAR&#8217;s higher complexity and need for deeper exploration. With four rounds, performance drops on both datasets, likely because extra rounds introduce noise and irrelevant cues.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
                     "iterative",
                     "model",
+                    "mmar",
                     "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we proposed AGR, a unified, training-free MAS that transforms audio deep reasoning into a text-based task. By decoupling perception from reasoning and employing a proactive iterative refinement loop, our framework synergizes the perceptual strengths of ALLMs with the advanced reasoning capabilities of LLMs. Experiments validate the effectiveness of this &#8220;diagnose-plan-act&#8221; strategy, showing significant performance gains, particularly on high-level semantic tasks like speaker and content analysis.\nFuture work will focus on enhancing signal-level reasoning by developing more specialized evidence generators for low-level acoustic cues.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "proactive",
-                    "iterative",
                     "loop",
+                    "iterative",
+                    "our",
                     "framework",
                     "refinement",
-                    "our"
+                    "audio",
+                    "proactive"
                 ]
             }
         ]
     },
     "S3.T4": {
+        "source_file": "AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning",
         "caption": "Table 4: Performance of different rounds on MMAU-mini and MMAR. Best results are highlighted in bold.",
-        "body": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 0</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 1</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 2</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 3</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 4</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_r ltx_border_t\">MMAU-mini</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">68.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">72.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">73.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.80</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb ltx_border_r\">MMAR</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">44.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">54.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">56.35</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">57.24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">57.02</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Dataset\nIteration 0\nIteration 1\nIteration 2\nIteration 3\nIteration 4\n\n\n\n\nMMAU-mini\n68.90\n72.90\n73.80\n71.80\n71.90\n\n\nMMAR\n44.09\n54.59\n56.35\n57.24\n57.02",
+        "html_code": "<table class=\"ltx_tabular ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt\">Dataset</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 0</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 1</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 2</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 3</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\">Iteration 4</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_r ltx_border_t\">MMAU-mini</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">68.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">72.90</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\"><span class=\"ltx_text ltx_font_bold\">73.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.80</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">71.90</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_bb ltx_border_r\">MMAR</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">44.09</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">54.59</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">56.35</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">57.24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">57.02</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "mmar",
-            "iteration",
-            "bold",
-            "best",
             "highlighted",
-            "results",
+            "performance",
+            "best",
             "mmaumini",
-            "dataset",
-            "rounds",
             "different",
-            "performance"
+            "results",
+            "iteration",
+            "dataset",
+            "bold",
+            "rounds",
+            "mmar"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Effects of Iterative Rounds.</span>\nWe analyze the impact of the number of iterative rounds on model performance in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T4\" title=\"Table 4 &#8227; 3.2 Main Results &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The initial iteration yields the most significant performance gain on both datasets, as it recovers the most critical missing information, validating our framework&#8217;s effectiveness. Performance peaks at two rounds on MMAU-mini and at three rounds on MMAR, consistent with MMAR&#8217;s higher complexity and need for deeper exploration. With four rounds, performance drops on both datasets, likely because extra rounds introduce noise and irrelevant cues.</p>\n\n"
@@ -562,16 +570,16 @@
             {
                 "html": "<p class=\"ltx_p\">In the literature, great progress in audio reasoning has been achieved by prior works&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib9\" title=\"\">9</a>]</cite>. However, audio deep reasoning remains a significant challenge. The recently proposed audio deep reasoning benchmark, MMAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib2\" title=\"\">2</a>]</cite>, reveals the poor performance of existing audio models. On this challenging benchmark, many open-source models fail to achieve an accuracy better than random guessing, reflecting a gap between the abilities of audio perception and the cognitive reasoning. This gap stems from two fundamental challenges:\n<span class=\"ltx_text ltx_font_bold\">Firstly</span>, existing models are hindered by the lack of training data with explicit reasoning chains. Constructing high-quality, step-by-step reasoning annotations for audio is resource-intensive. Lacking this fine-grained supervision, most Audio Large Language Models (ALLMs) are trained on simpler objectives like audio-text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib10\" title=\"\">10</a>]</cite> or direct question-answering&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib11\" title=\"\">11</a>]</cite>. In particular, when it comes to complex scenarios with mixed audio sources (<span class=\"ltx_text ltx_font_italic\">e.g.</span>, speech, music, and sound effects), their reasoning capabilities degrade sharply.\n<span class=\"ltx_text ltx_font_bold\">Secondly</span>, current methods lack a mechanism for active exploration and iterative refinement. Models typically function as passive information receivers, generating answers based on a single pass of perceptual results. This static, single-pass process prevents them from diagnosing evidence gaps, planning to acquire missing information, or progressively deepening their understanding. As a result, they are ill-equipped to handle complex problems that require multi-step and in-depth analysis.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
                     "results",
+                    "mmar",
                     "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In summary, the main contributions of this work are as follows:\n<span class=\"ltx_text ltx_font_bold\">(1)</span> A unified training-free MAS, named AudioGenie-Reasoner, which coordinates perception and reasoning over an evolving chain of textual evidence, is proposed. To the best of our knowledge, this is the first exploration of MAS in audio deep reasoning.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> We establish a coarse-to-fine cognitive framework that transforms audio reasoning into a text understanding task, featuring a novel proactive iterative document refinement loop to dynamically search for missing information and augment the evidence chain.\n<span class=\"ltx_text ltx_font_bold\">(3)</span> Experimental results show that AGR achieves SOTA performance over existing open-source models across various audio deep reasoning benchmarks.</p>\n\n",
                 "matched_terms": [
-                    "best",
                     "results",
+                    "best",
                     "performance"
                 ]
             },
@@ -585,19 +593,19 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Comparison with SOTA Methods.</span>\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents a comparison of AGR with SOTA audio reasoning methods on MMAU-mini. AGR not only surpasses open-source models but also outperforms the proprietary Gemini model, achieving the best performance. On MMAR (see Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S2.T2\" title=\"Table 2 &#8227; 2.2 Proactive Iterative Document Refinement Loop &#8227; 2 Our Method &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), AGR significantly outperforms all open-source models and achieves results comparable to Gemini-2.0-Flash-Lite&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib14\" title=\"\">14</a>]</cite>. Besides, our multi-agent framework yields substantial performance gains over direct inference with MiDahengLM, particularly on reasoning tasks involving speech and mixed audio types.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
+                    "performance",
                     "best",
-                    "results",
                     "mmaumini",
-                    "performance"
+                    "results",
+                    "mmar"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ablation Studies.</span>\nThe results of ablation studies are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#S3.T3\" title=\"Table 3 &#8227; 3.1 Experimental Setup &#8227; 3 Experimental Results &#8227; AudioGenie-Reasoner: A Training-Free Multi-Agent Framework for Coarse-to-Fine Audio Deep Reasoning\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. A significant performance drop is observed when replacing GPT-4o&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib18\" title=\"\">18</a>]</cite> with GPT-3.5-turbo&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib20\" title=\"\">20</a>]</cite> in our iterative document refinement loop, particularly on the MMAR dataset. Since the LLM serves as the planning, interaction, and answering agent, its reasoning capability is a decisive factor in the final performance. We also replace our ALLM with Audio Flamingo 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib7\" title=\"\">7</a>]</cite> (in configurations with and without the Whisper) and Qwen2.5-Omni-3B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16971v2#bib.bib16\" title=\"\">16</a>]</cite>, which results in only slight performance variations. We infer the reason is that current ALLMs have comparable perceptual abilities, but their reasoning capabilities still differ significantly. Furthermore, the removal of our iterative document refinement loop causes a consistent performance drop for all tested ALLMs, most notably on the MMAR dataset. This confirms the effectiveness of our loop, which allows the model to continuously reflect on existing information, complete any missing evidence, and build a comprehensive evidence chain to support the final reasoning result.</p>\n\n",
                 "matched_terms": [
-                    "mmar",
-                    "dataset",
                     "results",
+                    "dataset",
+                    "mmar",
                     "performance"
                 ]
             }

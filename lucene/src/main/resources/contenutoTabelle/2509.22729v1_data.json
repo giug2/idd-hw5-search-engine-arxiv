@@ -1,40 +1,42 @@
 {
     "S4.T1": {
+        "source_file": "Multi-Modal Sentiment Analysis with Dynamic Attention Fusion",
         "caption": "TABLE I: Performance Comparison Across Different Modality Configurations. Arrows (↑,↓\\uparrow,\\downarrow) indicate whether higher or lower values correspond to better performance.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Modality</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Embedding</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Accuracy <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">F1-score <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">MAE <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">7-Class Acc. (%) <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Text only</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">BERT</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.822</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.870</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.541</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">53.30</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Text + Audio</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">BERT + COVAREP</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.822</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.869</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.543</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">53.24</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Text + Video</th>\n<td class=\"ltx_td ltx_align_center\">BERT + FACET</td>\n<td class=\"ltx_td ltx_align_center\">0.823</td>\n<td class=\"ltx_td ltx_align_center\">0.870</td>\n<td class=\"ltx_td ltx_align_center\">0.543</td>\n<td class=\"ltx_td ltx_align_center\">53.43</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\">Text + Audio + Video (Dynamic Fusion)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">BERT + COVAREP + FACET</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.827</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.874</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.539</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">53.41</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Modality\nEmbedding\nAccuracy ↑\\uparrow\nF1-score ↑\\uparrow\nMAE ↓\\downarrow\n7-Class Acc. (%) ↑\\uparrow\n\n\nText only\nBERT\n0.822\n0.870\n0.541\n53.30\n\n\n\n\nText + Audio\nBERT + COVAREP\n0.822\n0.869\n0.543\n53.24\n\n\nText + Video\nBERT + FACET\n0.823\n0.870\n0.543\n53.43\n\n\nText + Audio + Video (Dynamic Fusion)\nBERT + COVAREP + FACET\n0.827\n0.874\n0.539\n53.41",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Modality</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Embedding</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">Accuracy <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">F1-score <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">MAE <math alttext=\"\\downarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m5\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8595;</mo><annotation encoding=\"application/x-tex\">\\downarrow</annotation></semantics></math></span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"><span class=\"ltx_text ltx_font_bold\">7-Class Acc. (%) <math alttext=\"\\uparrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T1.m6\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8593;</mo><annotation encoding=\"application/x-tex\">\\uparrow</annotation></semantics></math></span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_t\">Text only</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">BERT</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.822</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.870</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">0.541</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\">53.30</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\">Text + Audio</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">BERT + COVAREP</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.822</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.869</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.543</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">53.24</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\">Text + Video</th>\n<td class=\"ltx_td ltx_align_center\">BERT + FACET</td>\n<td class=\"ltx_td ltx_align_center\">0.823</td>\n<td class=\"ltx_td ltx_align_center\">0.870</td>\n<td class=\"ltx_td ltx_align_center\">0.543</td>\n<td class=\"ltx_td ltx_align_center\">53.43</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\">Text + Audio + Video (Dynamic Fusion)</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">BERT + COVAREP + FACET</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.827</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.874</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">0.539</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb ltx_border_t\">53.41</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "embedding",
-            "configurations",
-            "↑↓uparrowdownarrow",
-            "facet",
-            "mae",
-            "↓downarrow",
-            "comparison",
-            "audio",
-            "modality",
-            "accuracy",
-            "dynamic",
-            "text",
-            "performance",
-            "7class",
-            "across",
-            "indicate",
             "f1score",
-            "higher",
+            "embedding",
             "lower",
-            "bert",
-            "arrows",
-            "only",
-            "values",
+            "facet",
+            "↑↓uparrowdownarrow",
+            "7class",
             "↑uparrow",
             "video",
-            "better",
-            "acc",
-            "whether",
-            "fusion",
+            "text",
             "correspond",
+            "only",
+            "accuracy",
             "different",
-            "covarep"
+            "whether",
+            "bert",
+            "audio",
+            "modality",
+            "performance",
+            "↓downarrow",
+            "comparison",
+            "acc",
+            "arrows",
+            "higher",
+            "configurations",
+            "across",
+            "indicate",
+            "covarep",
+            "better",
+            "dynamic",
+            "values",
+            "mae",
+            "fusion"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">To evaluate the effectiveness of our proposed Dynamic Attention Fusion (DAF) model, we conducted comprehensive experiments on the CMU-MOSEI dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib9\" title=\"\">9</a>]</cite> under multiple modality configurations. The performance was assessed using key metrics including Accuracy, F1-Score, Mean Absolute Error (MAE), and Correlation Coefficient (CC), across both the full 7-class and binary (positive/negative) sentiment classification settings. Below, we detail our findings for each configuration and analyze the implications of modality contributions. We summarize the results in Tab.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#S4.T1\" title=\"TABLE I &#8227; IV Experiments and Results &#8227; Multi-Modal Sentiment Analysis with Dynamic Attention Fusion\"><span class=\"ltx_text ltx_ref_tag\">I</span></a></p>\n\n",
@@ -44,49 +46,49 @@
             {
                 "html": "<p class=\"ltx_p\">Traditional sentiment analysis has long been a unimodal task, relying solely on text. This approach overlooks non-verbal cues such as vocal tone and prosody that are essential for capturing true emotional intent. We introduce Dynamic Attention Fusion (DAF), a lightweight framework that combines frozen text embeddings from a pretrained language model with acoustic features from a speech encoder, using an adaptive attention mechanism to weight each modality per utterance. Without any fine-tuning of the underlying encoders, our proposed DAF model consistently outperforms both static fusion and unimodal baselines on a large multimodal benchmark. We report notable gains in F1-score and reductions in prediction error and perform a variety of ablation studies that support our hypothesis that the dynamic weighting strategy is crucial for modeling emotionally complex inputs. By effectively integrating verbal and non-verbal information, our approach offers a more robust foundation for sentiment prediction and carries broader impact for affective computing applications&#8212;from emotion recognition and mental health assessment to more natural human&#8211;computer interaction.</p>\n\n",
                 "matched_terms": [
-                    "modality",
+                    "text",
                     "f1score",
-                    "fusion",
                     "dynamic",
-                    "text"
+                    "fusion",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Historically, sentiment analysis has been predominantly focused on analyzing textual data. This early focus centered on classifying opinions from written sources such as product reviews, survey responses, and social media posts to determine sentiment polarity. Initial research and subsequent techniques developed in this domain primarily relied on Natural Language Processing (NLP) and machine learning models designed specifically for text, such as Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib4\" title=\"\">4</a>]</cite>. These unimodal models were trained exclusively on large corpora of textual data, such as the IMDB and Amazon review datasets. As a result, traditional sentiment analysis methods were inherently limited in their ability to fully capture the depth and variation of human expression <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib5\" title=\"\">5</a>]</cite>, such as sarcasm, irony, or emotional tone shifts, leading to higher misclassification rates in many real-world settings <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib1\" title=\"\">1</a>]</cite>. Furthermore, text data omits prosodic information such as pitch, volume, and rhythm, which often signal emotional emphasis. There are some techniques to encode such non-verbal cues by manually appending by special characters into the input text, but such techniques still fall short of improving model performance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib1\" title=\"\">1</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "higher",
                     "text",
-                    "performance"
+                    "performance",
+                    "higher"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recognizing these shortcomings, researchers have increasingly advocated for multimodal sentiment analysis (MSA) to integrate heterogeneous data modalities like text, audio, and visual cues&#8212;to achieve a more holistic representation of emotion. Unlike traditional sentiment analysis, which typically relies on textual data alone, MSA aims for a more comprehensive and accurate understanding of sentiment by integrating information from various modalities available in the problem setting, such as facial expressions, speech, and physiological signals. For example, textual features capture lexical sentiment, audio features provide paralinguistic signals (tone, prosody), and visual features supply facial expressions and body language <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib6\" title=\"\">6</a>]</cite>. Early multimodal approaches employed feature-level fusion, where embeddings from distinct modalities were concatenated and fed into downstream classifiers <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib1\" title=\"\">1</a>]</cite>. These were enhanced by enabling decision-level fusion, combining modality-specific predictions via weighted voting or majority logic <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib7\" title=\"\">7</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "text",
+                    "audio",
                     "fusion"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While promising, multimodal learning presents its own set of difficulties. Non-text modalities, such as audio and video, lack a consistent, structured representation like language does. Audio signals convey valuable cues, such as pitch, tone, and prosody, but are also influenced by variations in pronunciation, noise, and temporal dynamics. Video data contributes facial expressions and gestures, but is sensitive to alignment and framing. Despite these challenges, audio is particularly suited for complementing textual input, as it offers crucial paralinguistic cues such as emphasis and emotional tone, making it an ideal candidate for fusion with language. <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib6\" title=\"\">6</a>]</cite>. Moreover, integrating modalities with fundamentally different distributions introduces further complexity. Direct concatenation or static fusion mechanisms can lead to information redundancy or even degradation in performance due to misaligned or noisy signals <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "video",
-                    "fusion",
+                    "performance",
                     "different",
-                    "performance"
+                    "audio",
+                    "fusion",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this paper, we address these limitations by proposing a Dynamic Attention Fusion (DAF) mechanism that adaptively assigns weights to each modality based on its relative informativeness for a given input sample. Rather than treating all modalities equally, our proposed DAF model learns to focus more on the modality providing clearer emotional cues&#8212;be it speech or text&#8212;on a case-by-case basis. To evaluate the effectiveness of our approach, we conduct experiments on the CMU-MOSEI dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib9\" title=\"\">9</a>]</cite>, leveraging pretrained BERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib10\" title=\"\">10</a>]</cite> for text and COVAREP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib11\" title=\"\">11</a>]</cite> for audio to extract rich embeddings without fine-tuning. We benchmark DAF against text-only and static fusion baselines, showing that our dynamic strategy consistently improves sentiment prediction metrics. Our findings demonstrate the value of adaptive fusion in capturing emotional nuance and validate our hypothesis that context-sensitive attention yields more robust sentiment classification. The contributions of our paper are as follows:</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "modality",
-                    "dynamic",
-                    "fusion",
-                    "bert",
                     "text",
-                    "covarep"
+                    "covarep",
+                    "dynamic",
+                    "bert",
+                    "audio",
+                    "fusion",
+                    "modality"
                 ]
             },
             {
@@ -99,9 +101,9 @@
             {
                 "html": "<p class=\"ltx_p\">We leverage frozen pretrained encoders (BERT for text and COVAREP for audio) to enable zero&#8211;fine-tuning deployment, minimizing training overhead and facilitating rapid adaptation to new domains.</p>\n\n",
                 "matched_terms": [
+                    "text",
                     "audio",
                     "bert",
-                    "text",
                     "covarep"
                 ]
             },
@@ -115,27 +117,27 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Promise of Multimodal Sentiment Analysis.</span>\nMultimodal sentiment analysis (MSA) seeks to enrich polarity detection by fusing textual, acoustic, and visual signals <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib6\" title=\"\">6</a>]</cite>. Early fusion schemes concatenated modality-specific features before classification, while late fusion combined independent predictions via voting or weighted averaging <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib7\" title=\"\">7</a>]</cite>. These methods demonstrated that audio and video data can complement text, capturing prosody and facial expressions that reveal user frustration or satisfaction beyond words alone. Nevertheless, static fusion strategies often suffer from modality imbalance and information redundancy, motivating dynamic fusion mechanisms in our proposed framework.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "modality",
-                    "video",
-                    "fusion",
+                    "text",
                     "dynamic",
-                    "text"
+                    "audio",
+                    "fusion",
+                    "video",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Key Multimodal Techniques and Their Gaps.</span>\nRecent MSA architectures include deep CNNs for audio-visual analysis, multitask learning frameworks aligning sentiment prediction with modality coherence, and cross-modal transformers (e.g., MulT) that learn inter-modal attention without explicit alignment <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib13\" title=\"\">13</a>]</cite>. Gated fusion models such as CMAGF dynamically weight modalities based on learned importance, while region-text alignment networks like ITIN improve image&#8211;text correspondence <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib13\" title=\"\">13</a>]</cite>. Despite these advances, existing models still struggle with noisy or missing modalities, lack fine-grained dynamic weighting, and offer limited interpretability of fusion decisions. Our Dynamic Attention Fusion (DAF) mechanism specifically tackles these shortcomings by adaptively weighting each modality per instance and providing transparent attention scores.</p>\n\n",
                 "matched_terms": [
-                    "modality",
                     "dynamic",
-                    "fusion"
+                    "fusion",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Ongoing MSA Research and Open Challenges.</span>\nThe MSA field continues to evolve, with surveys highlighting predominant late-fusion practices, emerging interest in aspect-level multimodal sentiment (MABSA), and the need for robust evaluation on benchmarks like CMU-MOSI and CMU-MOSEI <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib15\" title=\"\">15</a>]</cite>. Key challenges include handling asynchronous modality streams, mitigating text-driven biases, and improving cross-modal generalization under domain shifts. Moreover, the computational overhead of large LLMs raises practical deployment concerns. Our work contributes to this landscape by demonstrating scalable, context-aware fusion with minimal fine-tuning and by evaluating on diverse real-world app review datasets to validate generalizability and efficiency.</p>\n\n",
                 "matched_terms": [
-                    "modality",
-                    "fusion"
+                    "fusion",
+                    "modality"
                 ]
             },
             {
@@ -148,11 +150,11 @@
             {
                 "html": "<p class=\"ltx_p\">Given that text often conveys the dominant sentiment cues, a text-driven cross-modal attention mechanism is applied to guide focus over the time-aligned audio and video representations. Formally, the transformed text embedding <math alttext=\"t^{\\prime}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m1\" intent=\":literal\"><semantics><msup><mi>t</mi><mo>&#8242;</mo></msup><annotation encoding=\"application/x-tex\">t^{\\prime}</annotation></semantics></math> is computed by projecting the original text vector <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> via a learned weight matrix <math alttext=\"W_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m3\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">W_{t}</annotation></semantics></math>. The audio and video sequences, encoded as <math alttext=\"a^{\\prime}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m4\" intent=\":literal\"><semantics><msup><mi>a</mi><mo>&#8242;</mo></msup><annotation encoding=\"application/x-tex\">a^{\\prime}</annotation></semantics></math> and <math alttext=\"v^{\\prime}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m5\" intent=\":literal\"><semantics><msup><mi>v</mi><mo>&#8242;</mo></msup><annotation encoding=\"application/x-tex\">v^{\\prime}</annotation></semantics></math> respectively, are attended to by computing similarity scores between <math alttext=\"t^{\\prime}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p2.m6\" intent=\":literal\"><semantics><msup><mi>t</mi><mo>&#8242;</mo></msup><annotation encoding=\"application/x-tex\">t^{\\prime}</annotation></semantics></math> and the respective modality features. Attention weights are calculated by</p>\n\n",
                 "matched_terms": [
+                    "text",
                     "embedding",
                     "audio",
-                    "modality",
                     "video",
-                    "text"
+                    "modality"
                 ]
             },
             {
@@ -165,44 +167,44 @@
             {
                 "html": "<p class=\"ltx_p\">Rather than employing static fusion such as simple concatenation, the proposed Dynamic Attention Fusion (DAF) module adaptively weighs the importance of each modality on a per-sample basis. The gating network, implemented as a small multilayer perceptron (MLP), takes the concatenated intermediate vectors <math alttext=\"[t^{\\prime}\\parallel\\tilde{a}\\parallel\\tilde{v}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.p7.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mrow><msup><mi>t</mi><mo>&#8242;</mo></msup><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">&#8214;</mo><mover accent=\"true\"><mi>a</mi><mo>~</mo></mover><mo stretchy=\"false\">&#8214;</mo></mrow><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mover accent=\"true\"><mi>v</mi><mo>~</mo></mover></mrow><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[t^{\\prime}\\parallel\\tilde{a}\\parallel\\tilde{v}]</annotation></semantics></math> and outputs scalar weights</p>\n\n",
                 "matched_terms": [
-                    "modality",
                     "dynamic",
-                    "fusion"
+                    "fusion",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For baseline comparison, a static fusion method is also evaluated in which the modality features are concatenated directly without adaptive weighting:</p>\n\n",
                 "matched_terms": [
-                    "modality",
                     "fusion",
-                    "comparison"
+                    "comparison",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The model&#8217;s performance is evaluated from both regression and classification perspectives. Regression metrics include Mean Absolute Error (MAE), which measures the average absolute difference between predicted and true sentiment values, and the Pearson Correlation Coefficient (CC), which assesses linear correlation. For classification evaluation, sentiment predictions are discretized into seven classes reflecting the original Likert scale, enabling 7-class sentiment classification accuracy. In addition, binary classification (positive vs. negative) is performed by excluding neutral samples, with evaluation metrics such as Accuracy, F1-Score (including F1 without neutral), and the Receiver Operating Characteristic Area Under Curve (ROC-AUC) to assess discrimination capability.</p>\n\n",
                 "matched_terms": [
-                    "7class",
-                    "values",
                     "f1score",
-                    "mae",
+                    "performance",
                     "accuracy",
-                    "performance"
+                    "values",
+                    "7class",
+                    "mae"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Experiments are conducted across different modality combinations to isolate the contribution of each source. These include text-only (BERT embeddings), text with audio (BERT + COVAREP), text with video (BERT + FACET), and the full multimodal model with dynamic attention fusion integrating all three modalities. Comparisons are also made between static early fusion baselines and the proposed dynamic fusion approach to demonstrate the benefits of adaptive modality weighting.</p>\n\n",
                 "matched_terms": [
-                    "across",
-                    "audio",
-                    "modality",
-                    "video",
-                    "bert",
-                    "facet",
-                    "fusion",
-                    "different",
-                    "dynamic",
                     "text",
-                    "covarep"
+                    "across",
+                    "covarep",
+                    "different",
+                    "facet",
+                    "dynamic",
+                    "bert",
+                    "audio",
+                    "fusion",
+                    "video",
+                    "modality"
                 ]
             },
             {
@@ -216,37 +218,37 @@
                 "html": "<p class=\"ltx_p\">We utilize the CMU-MOSEI dataset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib9\" title=\"\">9</a>]</cite>, a richly annotated benchmark comprising over <math alttext=\"23,000\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p1.m1\" intent=\":literal\"><semantics><mrow><mn>23</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding=\"application/x-tex\">23,000</annotation></semantics></math> sentence-level opinion segments drawn from more than 1,000 YouTube videos. Each segment is aligned with textual transcripts, audio recordings, and video frames. Sentiment annotations are provided on a 7-point Likert scale from -3 (strongly negative) to +3 (strongly positive), enabling fine-grained sentiment modeling. The dataset&#8217;s scale, diversity of speakers, and modality richness make it well-suited for multimodal sentiment learning.</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "modality",
-                    "video"
+                    "video",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Each modality is independently encoded into fixed-dimensional latent vectors using pretrained models. The textual modality is represented by sentence-level BERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib10\" title=\"\">10</a>]</cite> embeddings, characterized by a 768-dimensional vector. For audio, we utilized COVAREP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib11\" title=\"\">11</a>]</cite> acoustic features, provided at a frame-level granularity with 74 dimensions. The video modality consists of FACET <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib16\" title=\"\">16</a>]</cite> facial expression features, also captured at a frame-level and comprising 35 dimensions. The dataset was systematically partitioned into standard splits for training, validation, and testing. All three modalities were pre-extracted and stored as .pkl files, ensuring accurate alignment through the original timestamps provided by the CMU-MultimodalSDK <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib9\" title=\"\">9</a>]</cite>. To maintain consistency and ensure complete input for our models, any sentences found to be missing data from any of the three modalities were systematically discarded.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "modality",
-                    "video",
+                    "covarep",
                     "facet",
                     "bert",
-                    "covarep"
+                    "audio",
+                    "video",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To prepare the raw data for model input, several crucial preprocessing steps were applied. Optional L2 normalization was performed on both audio and video features to standardize their respective scales, a common practice to mitigate issues arising from differing feature ranges. Furthermore, all instances of NaN (Not a Number) or inf (infinity) values identified within the audio and video sequences were diligently replaced with zeros to prevent computational errors and ensure data integrity. For attention-based models, sequences underwent appropriate padding to achieve uniform length, with corresponding masks applied to prevent the attention mechanism from attending to these introduced padding tokens. The text embeddings were specifically extracted from the BERT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib10\" title=\"\">10</a>]</cite> [CLS] tokens and subsequently organized into sequential training, validation, and test sets.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "video",
-                    "bert",
                     "text",
-                    "values"
+                    "bert",
+                    "values",
+                    "audio",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluated the fusion strategy implemented within our framework to assess its efficacy in multimodal sentiment analysis. These foundational architectures included the Attention-Based Model employed text-guided attention mechanisms to derive contextual representations of both audio and video features, leveraging separate Luong-style attention mechanisms for each.</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "video",
-                    "fusion"
+                    "fusion",
+                    "video"
                 ]
             },
             {
@@ -267,10 +269,10 @@
             {
                 "html": "<p class=\"ltx_p\">While conventional fusion strategies, such as early and late fusion, typically assign equal importance to all modalities<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#bib.bib14\" title=\"\">14</a>]</cite>, the reality of multimodal data often reveals significant variability in modality relevance and signal-to-noise ratio on a per-instance basis. For example, within an opinionated video segment, the textual content might overwhelmingly dominate the sentiment expression, whereas in another, salient facial expressions within the video stream could convey more critical information. The dynamic attention mechanism directly addresses this limitation by learning per-instance modality weights, thereby enabling the model to dynamically prioritize and focus on the most informative modalities.</p>\n\n",
                 "matched_terms": [
-                    "modality",
                     "dynamic",
                     "fusion",
-                    "video"
+                    "video",
+                    "modality"
                 ]
             },
             {
@@ -284,11 +286,11 @@
             {
                 "html": "<p class=\"ltx_p\">where <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> denotes the text embeddings, <math alttext=\"A\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m2\" intent=\":literal\"><semantics><mi>A</mi><annotation encoding=\"application/x-tex\">A</annotation></semantics></math> represents the audio features, and <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m3\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> corresponds to the video features. Following this, a sophisticated learnable gating mechanism processes these attended audio (<math alttext=\"h_{\\text{audio}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m4\" intent=\":literal\"><semantics><msub><mi>h</mi><mtext>audio</mtext></msub><annotation encoding=\"application/x-tex\">h_{\\text{audio}}</annotation></semantics></math>) and video (<math alttext=\"h_{\\text{video}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m5\" intent=\":literal\"><semantics><msub><mi>h</mi><mtext>video</mtext></msub><annotation encoding=\"application/x-tex\">h_{\\text{video}}</annotation></semantics></math>) representations to derive dynamic modality weights, <math alttext=\"w_{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m6\" intent=\":literal\"><semantics><msub><mi>w</mi><mi>a</mi></msub><annotation encoding=\"application/x-tex\">w_{a}</annotation></semantics></math> and <math alttext=\"w_{v}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p8.m7\" intent=\":literal\"><semantics><msub><mi>w</mi><mi>v</mi></msub><annotation encoding=\"application/x-tex\">w_{v}</annotation></semantics></math>. This reweighting can be formalized as:</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "modality",
-                    "video",
+                    "text",
                     "dynamic",
-                    "text"
+                    "audio",
+                    "video",
+                    "modality"
                 ]
             },
             {
@@ -301,67 +303,67 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Text + Audio:</span> Incorporating COVAREP audio embeddings produced no change in overall accuracy (82.2%), a slight dip in F1 to 0.869, a marginal MAE increase to 0.543, and a small drop in 7-class accuracy to 53.24%. These results suggest that paralinguistic cues&#8212;tone, pitch, prosody&#8212;offer complementary information primarily in ambiguous cases, but may introduce noise when the text signal is already strong. The Dynamic Attention Fusion module therefore must learn to attend to audio only when it clarifies uncertain textual sentiment.</p>\n\n",
                 "matched_terms": [
+                    "text",
+                    "only",
+                    "accuracy",
+                    "covarep",
+                    "dynamic",
                     "7class",
                     "audio",
-                    "fusion",
                     "mae",
-                    "accuracy",
-                    "dynamic",
-                    "only",
-                    "text",
-                    "covarep"
+                    "fusion"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Text + Video:</span> Adding FACET video features yielded a modest accuracy rise to 82.3% and maintained F1 at 0.870, while MAE remained at 0.543 and 7-class accuracy increased slightly to 53.43%. This demonstrates that facial expressions and visual gestures can enhance sentiment detection, especially for emotionally expressive utterances, although their impact is tempered by potential misalignment and feature variability.</p>\n\n",
                 "matched_terms": [
-                    "7class",
-                    "video",
-                    "facet",
-                    "mae",
+                    "text",
                     "accuracy",
-                    "text"
+                    "facet",
+                    "7class",
+                    "mae",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Text + Audio + Video:</span> The full tri-modal model attained the highest accuracy (82.7%) and F1-score (0.874), reduced MAE to 0.539, and achieved a 7-class accuracy of 53.41%. These gains&#8212;+0.5% accuracy and +0.4% F1 over text-only&#8212;confirm that integrating semantic, vocal, and facial information yields cumulative benefits. The Dynamic Attention Fusion module effectively weights each modality per sample, leading to more nuanced, context-aware sentiment predictions.</p>\n\n",
                 "matched_terms": [
-                    "7class",
-                    "audio",
-                    "modality",
-                    "video",
+                    "text",
                     "f1score",
-                    "fusion",
-                    "mae",
                     "accuracy",
                     "dynamic",
-                    "text"
+                    "7class",
+                    "audio",
+                    "mae",
+                    "fusion",
+                    "video",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We next compare our Dynamic Attention Fusion (DAF) against static fusion baselines, including early concatenation of modalities and fixed weighted fusion. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.22729v1#S4.F2\" title=\"Figure 2 &#8227; IV Experiments and Results &#8227; Multi-Modal Sentiment Analysis with Dynamic Attention Fusion\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, DAF yields consistently lower MAE, higher correlation coefficient (CC), and improved accuracy relative to static fusion&#8212;even when the absolute gains are modest. In particular, early concatenation treats all modalities equally, which can amplify noise from misaligned or uninformative channels. By contrast, DAF adaptively attenuates such signals on a per&#8208;instance basis, reducing the risk of overfitting to spurious cues and improving robustness in ambiguous contexts. This dynamic weighting mechanism not only enhances overall regression and classification metrics, but also offers insight into which modality predominates for each example, thereby improving interpretability.</p>\n\n",
                 "matched_terms": [
-                    "modality",
-                    "higher",
-                    "fusion",
-                    "mae",
-                    "lower",
+                    "only",
                     "accuracy",
+                    "lower",
                     "dynamic",
-                    "only"
+                    "modality",
+                    "mae",
+                    "fusion",
+                    "higher"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Several broader trends emerge from our experiments. First, fine&#8208;grained 7&#8208;class sentiment classification remains challenging across all modality configurations, with only marginal gains from fusion. This likely reflects the inherent difficulty of distinguishing subtle sentiment shifts and the subjectivity of human annotations. Second, despite relying solely on pretrained encoders without task&#8208;specific fine&#8208;tuning, our architecture design alone yields measurable improvements&#8212;underscoring the critical role of fusion strategy over model size or additional training data. Third, while the text&#8208;only BERT baseline performs remarkably well (indicating the strength of contextual embeddings), the addition of audio and video modalities via DAF proves most beneficial in emotionally rich or sarcastic utterances where nonverbal cues disambiguate sentiment.</p>\n\n",
                 "matched_terms": [
-                    "across",
                     "configurations",
-                    "modality",
-                    "audio",
-                    "video",
-                    "fusion",
+                    "across",
+                    "only",
                     "bert",
-                    "only"
+                    "audio",
+                    "fusion",
+                    "video",
+                    "modality"
                 ]
             },
             {
@@ -374,40 +376,40 @@
             {
                 "html": "<p class=\"ltx_p\">Overall, these results validate Dynamic Attention Fusion as a flexible, interpretable, and performance-effective framework for multimodal sentiment analysis, paving the way for extensions in emotion recognition, human-computer interaction, and affective computing. Lightweight dynamic fusion mechanisms, such as DAF, are promising for real-time applications, including empathetic dialogue systems, mental health monitoring, and social media sentiment analysis. Methodologically, DAF is encoder-agnostic and can operate with features from any pretrained modality encoder, while conceptually being architecture-agnostic and integrable into larger multimodal transformers or additional modalities such as vision or physiological signals.</p>\n\n",
                 "matched_terms": [
-                    "modality",
                     "dynamic",
-                    "fusion"
+                    "fusion",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">However, several limitations remain. For instance, performance gains over strong text baselines are modest, and the video modality contributes little, which we attribute to the coarse nature of the FACET features. Future work will therefore integrate stronger encoders, such as pre-trained video transformers or CLIP-based representations. As our evaluation is currently limited to the CMU-MOSEI dataset, further testing on datasets such as CMU-MOSI and MELD is necessary to confirm generalizability. Finally, while encoders were frozen to maintain efficiency, DAF readily supports fine-tuning, and we will explore robustness analyses with modality dropout or adversarial noise injection to clarify its resilience in noisy or sarcastic contexts.</p>\n\n",
                 "matched_terms": [
-                    "modality",
-                    "video",
-                    "facet",
                     "text",
-                    "performance"
+                    "performance",
+                    "facet",
+                    "video",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This paper has presented Dynamic Attention Fusion (DAF), a novel framework for multimodal sentiment analysis that adaptively weights textual, acoustic, and visual modalities based on their contextual informativeness. By leveraging pretrained BERT and COVAREP embeddings without task&#8208;specific fine&#8208;tuning, DAF consistently outperforms static fusion strategies and unimodal baselines on the CMU-MOSEI benchmark, achieving an F1-score of 87.38% and an MAE of 0.539. Our analysis demonstrates that while text alone captures much of the sentiment signal, the inclusion of audio and video cues via dynamic fusion yields meaningful gains, particularly in emotionally nuanced or ambiguous utterances. Moreover, DAF&#8217;s per-instance attention weights offer interpretable insights into which modalities drive each prediction.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "video",
-                    "f1score",
-                    "bert",
-                    "fusion",
-                    "mae",
-                    "dynamic",
                     "text",
-                    "covarep"
+                    "f1score",
+                    "covarep",
+                    "dynamic",
+                    "bert",
+                    "audio",
+                    "mae",
+                    "fusion",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Looking ahead, several avenues exist to enhance this work. Fine-tuning the underlying encoders on sentiment&#8208;specific corpora may further refine feature representations, while more sophisticated temporal modeling of visual data &#8212; such as transformer-based video encoders could improve alignment and leverage facial and gesture dynamics. Finally, evaluating DAF on additional multimodal datasets (e.g., MELD, CMU-MOSI, IEMOCAP, SEMAINE) will test its generalizability and robustness in real-world affective computing applications. Overall, Dynamic Attention Fusion represents a promising step toward more intelligent, emotionally aware AI systems that fully exploit the richness of human communication across modalities.</p>\n\n",
                 "matched_terms": [
-                    "across",
                     "dynamic",
+                    "across",
                     "fusion",
                     "video"
                 ]

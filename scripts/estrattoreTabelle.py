@@ -1,7 +1,7 @@
 import json
 import os
 import string
-from lxml import etree
+from lxml import etree, html
 
 # ---------------------------------------------------------
 # CONFIGURAZIONE STOP WORDS
@@ -50,6 +50,19 @@ def get_node_html(node):
     Restituisce la rappresentazione HTML (stringa) del nodo.
     """
     return etree.tostring(node, pretty_print=True).decode()
+
+def clean_html_text(html_content):
+    """
+    Rimuove tutti i tag HTML e restituisce solo il testo pulito.
+    """
+    if not html_content:
+        return ""
+    try:
+        # Usa lxml.html per parsare il frammento e estrarre il testo
+        tree = html.fromstring(html_content)
+        return tree.text_content().strip()
+    except Exception:
+        return ""
 
 def process_single_file(html_path, output_dir='output'):
     """
@@ -132,10 +145,12 @@ def process_single_file(html_path, output_dir='output'):
         if caption_node:
             caption_text = get_node_text(caption_node[0])
 
-        # --- B. Estrazione Corpo Tabella (HTML) ---
+        # --- B. Estrazione Corpo Tabella (HTML e Testo Pulito) ---
         # Qui usiamo direttamente il nodo tabella trovato
         table_body_html = get_node_html(table_node)
-        table_body_text_content = get_node_text(table_node) # Serve per estrarre i termini
+        
+        # MODIFICA: Estraiamo anche il testo pulito per la ricerca (rimuovendo i tag HTML)
+        table_body_text_content = get_node_text(table_node) # Serve per estrarre i termini e per il campo 'body'
 
         # --- C. Analisi Termini Informativi ---
         # Uniamo testo caption e testo interno della tabella per trovare le keywords
@@ -175,12 +190,13 @@ def process_single_file(html_path, output_dir='output'):
                     })
 
         # --- E. Salvataggio Dati Tabella ---
-        # MODIFICA 2: Aggiunto il campo source_file
+        # MODIFICA: Aggiornata la struttura per includere 'html_code' e usare 'body' per il testo pulito
         extracted_data[table_id] = {
-            "source_file": source_identifier,  # Nuovo campo con il titolo o nome file
+            "source_file": source_identifier,
             "caption": caption_text,
-            "body": table_body_html,
-            "informative_terms_identified": list(target_terms), # Per debug/verifica
+            "body": table_body_text_content,       # ORA contiene solo il testo pulito (ottimo per ricerca)
+            "html_code": table_body_html,          # NUOVO CAMPO: contiene l'HTML grezzo (per visualizzazione)
+            "informative_terms_identified": list(target_terms),
             "citing_paragraphs": citing_paragraphs,
             "contextual_paragraphs": contextual_paragraphs
         }
@@ -209,17 +225,18 @@ if __name__ == '__main__':
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
     # 2. Identifica la cartella genitore (es. .../Progetto)
-    #    Saliamo di un livello rispetto a 'script'
+    #    Saliamo di un livello rispetto a 'script' usando dirname
+    #    NOTA: dirname accetta un solo argomento.
     PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
     # 3. Definisci i percorsi relativi alla radice del progetto
-    #    Usiamo join per scendere nella struttura delle cartelle: lucene -> src -> main -> resources
-    RESOURCES_DIR = os.path.join(PROJECT_ROOT, 'lucene', 'src', 'main', 'resources')
-
-    #    input sta in .../resources/input
-    SOURCE_DIRECTORY = os.path.join(RESOURCES_DIR, 'input')                                                                           #percorso della cartella di input
     
-    #    output lo mettiamo in .../resources/contenutoTabelle
+    #    INPUT: Cartella 'papers' nella root del progetto (livello superiore rispetto allo script)
+    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'papers')                                                                           #percorso della cartella di input (file HTML)
+    
+    #    OUTPUT: Manteniamo l'output dentro le risorse del modulo Java per il funzionamento dell'app
+    #    Path: .../lucene/src/main/resources/contenutoTabelle
+    RESOURCES_DIR = os.path.join(PROJECT_ROOT, 'lucene', 'src', 'main', 'resources')
     OUTPUT_DIRECTORY = os.path.join(RESOURCES_DIR, 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
 
     # NUOVA FEATURE: Numero massimo di file da processare.
@@ -234,14 +251,13 @@ if __name__ == '__main__':
     print("-" * 60)
     print(f"Script Directory: {SCRIPT_DIR}")
     print(f"Project Root:     {PROJECT_ROOT}")
-    print(f"Resources Dir:    {RESOURCES_DIR}")
     print(f"Input Folder:     {SOURCE_DIRECTORY}")
     print(f"Output Folder:    {OUTPUT_DIRECTORY}")
     print("-" * 60)
 
     if not os.path.exists(SOURCE_DIRECTORY):
-        print(f"ERRORE: La cartella 'input' non esiste nel percorso atteso: {SOURCE_DIRECTORY}")
-        print("Verifica che la cartella 'input' sia dentro 'lucene/src/main/resources/'.")
+        print(f"ERRORE: La cartella 'papers' non esiste nel percorso atteso: {SOURCE_DIRECTORY}")
+        print("Verifica che la cartella 'papers' sia nella root del progetto, allo stesso livello della cartella 'script'.")
     else:
         # 1. Recupera tutti i file nella cartella che finiscono con .html
         all_files = [f for f in os.listdir(SOURCE_DIRECTORY) if f.endswith(".html")]
@@ -275,7 +291,8 @@ if __name__ == '__main__':
 #    id della tabella 1 :{
 #        "source_file": "Titolo del file HTML o nome del file",                                         NUOVO CAMPO: Identificativo del file di origine
 #        "caption": "Testo della didascalia",
-#        "body": "<html>...</html>",                                                                    codice html grezzo della tabella
+#        "body": "Testo pulito della tabella",                                                          AGGIORNATO: contiene solo testo pulito (ottimo per ricerca)
+#        "html_code": "<table>...</table>",                                                             NUOVO CAMPO: codice html grezzo della tabella
 #        "informative_terms_identified": ["termine1", "termine2", ...],                                 parole chiave individuate
 #        "citing_paragraphs": [                                                                         lista dei paragrafi che citano la tabella
 #            "<p>Paragrafo che cita la tabella</p>",

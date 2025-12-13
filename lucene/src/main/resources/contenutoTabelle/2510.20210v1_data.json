@@ -1,30 +1,32 @@
 {
     "Sx4.T1": {
+        "source_file": "Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator",
         "caption": "Table 1: Details of the FGES dataset.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt\">Types</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Size</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Avg. words</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Avg. audio len</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Common issue</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">12.0K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">36</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">19.3s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Repeated issue</td>\n<td class=\"ltx_td ltx_align_center\">3.9K</td>\n<td class=\"ltx_td ltx_align_center\">27</td>\n<td class=\"ltx_td ltx_align_center\">15.8s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Punctuation issue</td>\n<td class=\"ltx_td ltx_align_center\">3.5K</td>\n<td class=\"ltx_td ltx_align_center\">21</td>\n<td class=\"ltx_td ltx_align_center\">10.7s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">Abnormal issue</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">1.6K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">24</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">12.5s</td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Types\n# Size\n# Avg. words\n# Avg. audio len\n\n\n\n\nCommon issue\n12.0K\n36\n19.3s\n\n\nRepeated issue\n3.9K\n27\n15.8s\n\n\nPunctuation issue\n3.5K\n21\n10.7s\n\n\nAbnormal issue\n1.6K\n24\n12.5s",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt\">Types</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Size</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Avg. words</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt\"># Avg. audio len</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Common issue</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">12.0K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">36</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">19.3s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Repeated issue</td>\n<td class=\"ltx_td ltx_align_center\">3.9K</td>\n<td class=\"ltx_td ltx_align_center\">27</td>\n<td class=\"ltx_td ltx_align_center\">15.8s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Punctuation issue</td>\n<td class=\"ltx_td ltx_align_center\">3.5K</td>\n<td class=\"ltx_td ltx_align_center\">21</td>\n<td class=\"ltx_td ltx_align_center\">10.7s</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">Abnormal issue</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">1.6K</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">24</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\">12.5s</td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "abnormal",
-            "16k",
-            "size",
-            "details",
-            "words",
-            "audio",
-            "types",
             "193s",
-            "107s",
-            "125s",
-            "issue",
-            "punctuation",
             "fges",
-            "avg",
-            "repeated",
-            "120k",
-            "common",
             "35k",
-            "158s",
             "len",
+            "common",
+            "avg",
+            "abnormal",
+            "repeated",
+            "types",
+            "details",
+            "issue",
+            "audio",
+            "107s",
+            "158s",
             "39k",
-            "dataset"
+            "120k",
+            "dataset",
+            "16k",
+            "125s",
+            "size",
+            "words",
+            "punctuation"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">To train the Vox-Evaluator, we construct a dataset consisting of synthesized speech samples with various issues. These issues include: (1) common issue consisting of mispronunciations and omissions, (2) repeated issue consisting of repetitive and redundant pronunciation, and (3) punctuation issue consisting of unnatural pause and prosody. Specially, we first selected a subset text prompts from the Emilia-Large corpus &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(He et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib16\" title=\"\">2024</a>)</cite> which provides a rich source of real-world speech data across diverse topics and styles. Then we randomly sample speech prompts from LibriTTS &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib49\" title=\"\">2019</a>)</cite> and use the pretrained TTS model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib11\" title=\"\">2024c</a>; Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> to synthesize audio samples with varying temperature and guidance scale.\nBesides, we utilize data augmentation to produce low-quality samples with noise or abnormal pauses, which we classify as (4) abnormal issues shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T1\" title=\"Table 1 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The motivation behind this augmentation is to intentionally infuse the dataset with corrupted speech. This dataset enhances the model&#8217;s audio quality perception capability during training and facilitates the evaluation of its performance in detecting erroneous segments in synthesized speech.</p>\n\n",
@@ -41,22 +43,22 @@
             {
                 "html": "<p class=\"ltx_p\">To mitigate pronunciation errors in synthesized speech, previous studies have deployed a two-stage pipeline to address this issue. The first stage recognizes the specific text associated with pronunciation error and the corresponding range in speech. The second stage is based on a text-based speech editing process that regenerates mispronounced speech segments &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bae et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib2\" title=\"\">2025</a>; Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite>. Although these models indeed improve the fidelity and intelligence of generated speech, they depend on a complex apparatus of external tools (e.g., ASR models, SSL Models, MFA) to identify mispronunciations, and they cannot locate the segments with low audio quality.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "issue"
+                    "issue",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The speech editing which aims to alter specific words or phrases in the audio and keep the other regions unchanged. The traditional cut-copy-paste method &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Morrison et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib32\" title=\"\">2021</a>)</cite> involves a simple process of cutting and pasting audio segments, but it may lead to prosody mismatch or boundary artifacts. In recent years, text-based speech editing systems have seen significant development, enabling users to modify an audio waveform by simply editing its transcript. Previous systems, including CampNet &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib45\" title=\"\">2022</a>)</cite> and FluentSpeech &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Borsos, Sharifi, and Tagliasacchi <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib6\" title=\"\">2022</a>)</cite>, perform editing according to a masked reconstruction principle. They regenerate the target portion based on its surrounding acoustic context. While in the unified model, Voicebox &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite> provides a versatile framework based on flow matching to address both speech continuation and editing. VoiceCraft &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> relies on an AR model to predict multi-layer acoustic tokens, enabling it to perform long-form text editing. Speech editing is the crucial part of the overall erroneous speech correction task. The broader refinement process involves other stages, such as automatic error detection and quality evaluation.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "words"
+                    "words",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we present Vox-Evaluator, a multi-level evaluator that can identify the temporal location of errors and evaluate the overall quality of synthesized speech.\nGuided by the Vox-Evaluator, we first automatically locate faulty segments and then regenerate them in the speech refined process. To further improve the stability of the TTS model, the assessments of the evaluator are leveraged as a preference signal to efficiently guide fine-grained preference alignment. Moreover, for training the Vox-Evaluator, we introduce the FGES (fine-grained erroneous speech) dataset, a diverse dataset providing erroneous information and quality level.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "fges"
+                    "fges",
+                    "dataset"
                 ]
             },
             {
@@ -69,49 +71,51 @@
             {
                 "html": "<p class=\"ltx_p\">Since Vox-Evaluator is a multi-level evaluator, we employ a fine-tuned wav2vec2.0 model trained on our FGES dataset as a baseline. To assess its accuracy in transcription, we directly compare our Vox-Evaluator with high-performing ASR models, including SenseVoice and Whisper. In addition, we select F5-TTS and VoiceCraft for error correction experiments, since they are specifically designed for this purpose. We also employ several prominent zero-shot TTS models as baselines, including CosyVoice &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>, NaturalSpeech 3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>, MaskGCT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>, and Llasa &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "dataset",
-                    "fges"
+                    "fges",
+                    "dataset"
                 ]
             }
         ]
     },
     "Sx4.T2": {
+        "source_file": "Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator",
         "caption": "Table 2: Fine-grained prediction results on the FGES test set. ‘wo/pretrained’ denotes the Vox-Evaluator without pre-training.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" rowspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" rowspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Params</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Time Scope</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Quality Score</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Text Accuracy</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">MSE (&#8595;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">IOU (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">utt-PCC (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">sys-SRCC (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">WER (%&#8595;)</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 3.5pt;\">SenseVoice</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">234M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">3.43</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 3.5pt;\">Whisper-S</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">224M</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">3.05</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 3.5pt;\">Wav2vec2.0 (fine-tuned)</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">220M</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.0049</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.653</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.459</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.463</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">2.96</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 3.5pt;\">Vox-Evaluator wo/pretrained</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">185M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.0058</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.435</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.398</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.516</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">3.15</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding:1pt 3.5pt;\">Vox-Evaluator</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\">185M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.0028</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.782</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.541</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.630</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">2.64</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Model\nParams\nTime Scope\nQuality Score\nText Accuracy\n\n\nMSE (↓)\nIOU (↑)\nutt-PCC (↑)\nsys-SRCC (↑)\nWER (%↓)\n\n\nSenseVoice\n234M\n-\n-\n-\n-\n3.43\n\n\nWhisper-S\n224M\n-\n-\n-\n-\n3.05\n\n\nWav2vec2.0 (fine-tuned)\n220M\n0.0049\n0.653\n0.459\n0.463\n2.96\n\n\nVox-Evaluator wo/pretrained\n185M\n0.0058\n0.435\n0.398\n0.516\n3.15\n\n\nVox-Evaluator\n185M\n0.0028\n0.782\n0.541\n0.630\n2.64",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt\" rowspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" rowspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Params</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Time Scope</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" colspan=\"2\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Quality Score</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">Text Accuracy</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">MSE (&#8595;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">IOU (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">utt-PCC (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">sys-SRCC (&#8593;)</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">WER (%&#8595;)</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 3.5pt;\">SenseVoice</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">234M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">3.43</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 3.5pt;\">Whisper-S</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">224M</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">-</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">3.05</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 3.5pt;\">Wav2vec2.0 (fine-tuned)</th>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">220M</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.0049</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.653</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.459</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">0.463</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:1pt 3.5pt;\">2.96</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 3.5pt;\">Vox-Evaluator wo/pretrained</th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">185M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.0058</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.435</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.398</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">0.516</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:1pt 3.5pt;\">3.15</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding:1pt 3.5pt;\">Vox-Evaluator</th>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\">185M</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.0028</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.782</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.541</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">0.630</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\" style=\"padding:1pt 3.5pt;\"><span class=\"ltx_text ltx_font_bold\">2.64</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "wer",
-            "finetuned",
-            "voxevaluator",
-            "wopretrained",
-            "denotes",
-            "224m",
-            "time",
             "185m",
-            "finegrained",
-            "prediction",
-            "params",
-            "pretraining",
-            "test",
-            "scope",
-            "accuracy",
-            "text",
+            "wer",
             "fges",
-            "‘wopretrained’",
-            "220m",
+            "pretraining",
+            "finegrained",
+            "time",
+            "wav2vec20",
+            "text",
+            "mse",
+            "denotes",
+            "prediction",
+            "accuracy",
+            "wopretrained",
             "without",
-            "syssrcc",
-            "iou",
-            "234m",
+            "results",
             "whispers",
             "sensevoice",
-            "results",
-            "wav2vec20",
-            "set",
             "score",
-            "mse",
-            "model",
+            "234m",
+            "220m",
+            "224m",
+            "voxevaluator",
+            "iou",
+            "‘wopretrained’",
+            "params",
+            "test",
+            "finetuned",
+            "set",
+            "quality",
             "uttpcc",
-            "quality"
+            "syssrcc",
+            "model",
+            "scope"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T2\" title=\"Table 2 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents the performance comparison of Vox-Evaluator and baselines in different metrics. Regarding timestamp prediction, we first report MSE for test samples containing no erroneous segments. It evaluates the performance on correct samples that are free of any artifacts. For the mispronounced samples, the Vox-Evaluator achieves a high IOU of 0.782, surpassing the fine-tuned wav2vec2.0 baseline by a substantial margin (+19.7% gains). This result demonstrates that the Vox-Evaluator effectively models the alignment between the speech semantic representation and the ground-truth text content.\nThe performance of wo/pre-trained suggests that using a pre-trained checkpoint is crucial, as the fine-grained metric drops significantly when it is randomly initialized.\nIn terms of quality score prediction, the Vox-Evaluator achieves utt-PCC and sys-SRCC scores of 0.541 and 0.630, respectively, demonstrating the significant positive correlation between the annotated scores and the predicted scores.\nFor the text accuracy, we compare our Vox-Evaluator with several ASR models on the task of speech transcription. The results show that our model achieves a superior Word Error Rate (WER) of 2.64% with fewer parameters, outperforming other methods such as Whisper and SenseVoice. It is particularly remarkable that the Vox-Evaluator can perceive cross-modal information between text and speech, which directly boosts its effectiveness in fine-grained tasks.\n</p>\n\n"
@@ -120,11 +124,11 @@
             {
                 "html": "<p class=\"ltx_p\">Recent advances in zero-shot text-to-speech (TTS), driven by language models, diffusion models and masked generation, have achieved impressive naturalness in speech synthesis. Nevertheless, stability and fidelity remain key challenges, manifesting as mispronunciations, audible noise, and quality degradation. To address these issues, we introduce Vox-Evaluator, a multi-level evaluator designed to guide the correction of erroneous speech segments and preference alignment for TTS systems. It is capable of identifying the temporal boundaries of erroneous segments and providing a holistic quality assessment of the generated speech.\nSpecifically, to refine erroneous segments and enhance the robustness of the zero-shot TTS model, we propose to automatically identify acoustic errors with the evaluator, mask the erroneous segments, and finally regenerate speech conditioning on the correct portions. In addition, the fine-gained information obtained from Vox-Evaluator can guide the preference alignment for TTS model, thereby reducing the bad cases in speech synthesis. Due to the lack of suitable training datasets for the Vox-Evaluator, we also constructed a synthesized text-speech dataset annotated with fine-grained pronunciation errors or audio quality issues. The experimental results demonstrate the effectiveness of the proposed Vox-Evaluator in enhancing the stability and fidelity of TTS systems through the speech correction mechanism and preference optimization.\nThe demos are shown.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://voxevaluator.github.io/correction/</span></span></span></span></p>\n\n",
                 "matched_terms": [
-                    "model",
+                    "quality",
+                    "results",
                     "voxevaluator",
                     "finegrained",
-                    "results",
-                    "quality"
+                    "model"
                 ]
             },
             {
@@ -137,79 +141,79 @@
             {
                 "html": "<p class=\"ltx_p\">Moreover, inspired by the successful application of reinforcement learning from human feedback (RLHF) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Christiano et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib12\" title=\"\">2017</a>)</cite> in calibrating the output of LLMs to better align with human preferences &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ouyang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib33\" title=\"\">2022</a>)</cite>, recent studies explore different preference alignment methods to improve the intelligibility of zero-shot TTS models &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib50\" title=\"\">2024a</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib7\" title=\"\">2024a</a>; Hu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib18\" title=\"\">2024</a>; Tian et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib42\" title=\"\">2025</a>)</cite>. In particular, the preference alignment is performed by maximizing the rewards from diverse feedback to align the TTS model with human preference. However, collecting fine-grained preference rewards is challenging, hampered by costly annotations and complex pipelines that incorporate pre-trained assessment tools &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib47\" title=\"\">2025</a>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "finegrained"
+                    "finegrained",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address the above issues, we present a unified multi-level Vox-Evaluator to facilitate correction of erroneous speech segments and guide preference alignment. The Vox-Evaluator is capable of identifying the temporal scope of speech segment with pronunciation errors or quality issues, detecting mismatch text, and evaluating the overall quality level of the synthesized speech. Based on the detection information obtained from Vox-Evaluator, we develop a fine-grained speech correction to regenerate speech segments with mispronunciations or audio quality issues.\nIn addition, we demonstrate that the Vox-Evaluator can also serve as a fine-grained reward model to guide preference optimization on zero-shot TTS system.</p>\n\n",
                 "matched_terms": [
-                    "model",
+                    "text",
+                    "quality",
                     "voxevaluator",
                     "finegrained",
-                    "scope",
-                    "text",
-                    "quality"
+                    "model",
+                    "scope"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We introduce a novel multi-level Vox-Evaluator that provides a comprehensive evaluation of the generated speech for the correction process and fine-grained guidance for preference alignment. The information contains the location of specific segments, detection of content and quality evaluation for the synthesized speech.\n</p>\n\n",
                 "matched_terms": [
-                    "voxevaluator",
                     "finegrained",
+                    "voxevaluator",
                     "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Based on Vox-Evaluator, we utilizes speech correction mechanism to enhance the stability and provide effective guidance for preference alignment on zero-shot TTS system, boosting the overall performance of the TTS model.\n</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "voxevaluator"
+                    "voxevaluator",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Experimental results on different zero-shot TTS frameworks prove that the Vox-Evaluator effectively facilitate the stability and fidelity of the TTS model.</p>\n\n",
                 "matched_terms": [
+                    "results",
                     "model",
-                    "voxevaluator",
-                    "results"
+                    "voxevaluator"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The speech editing which aims to alter specific words or phrases in the audio and keep the other regions unchanged. The traditional cut-copy-paste method &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Morrison et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib32\" title=\"\">2021</a>)</cite> involves a simple process of cutting and pasting audio segments, but it may lead to prosody mismatch or boundary artifacts. In recent years, text-based speech editing systems have seen significant development, enabling users to modify an audio waveform by simply editing its transcript. Previous systems, including CampNet &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib45\" title=\"\">2022</a>)</cite> and FluentSpeech &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Borsos, Sharifi, and Tagliasacchi <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib6\" title=\"\">2022</a>)</cite>, perform editing according to a masked reconstruction principle. They regenerate the target portion based on its surrounding acoustic context. While in the unified model, Voicebox &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite> provides a versatile framework based on flow matching to address both speech continuation and editing. VoiceCraft &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> relies on an AR model to predict multi-layer acoustic tokens, enabling it to perform long-form text editing. Speech editing is the crucial part of the overall erroneous speech correction task. The broader refinement process involves other stages, such as automatic error detection and quality evaluation.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "text",
+                    "model",
                     "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recent works have performed preference alignment on zero-shot TTS models to enhance the overall system performance, including intelligibility, speaker similarity, emotional controllability and others.\nFor intelligibility, previous studies &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib50\" title=\"\">2024a</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib7\" title=\"\">2024a</a>)</cite> directly leveraged WER as a direct reward signal or guiding metric to construct preference pairs for preference alignment.\nFor speaker similarity, some works &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sun et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib40\" title=\"\">2025</a>; Hussain et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib19\" title=\"\">2025</a>)</cite> utilize speaker verification score between the embeddings of the prompt audio and the generated audio as the reward to conduct preference alignment.\nFor emotion controllability, emotional preferences and human-feedback have been introduced to improve emotional expressiveness and controllable style rendering &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib15\" title=\"\">2025</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib7\" title=\"\">2024a</a>)</cite>.\nNevertheless, the potential of employing a fine-grained, multi-level reward model for preference alignment receives limited attention in the context of preference optimization on zero-shot TTS systems.</p>\n\n",
                 "matched_terms": [
-                    "score",
-                    "model",
+                    "wer",
                     "finegrained",
-                    "wer"
+                    "model",
+                    "score"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we present Vox-Evaluator, a multi-level evaluator that can identify the temporal location of errors and evaluate the overall quality of synthesized speech.\nGuided by the Vox-Evaluator, we first automatically locate faulty segments and then regenerate them in the speech refined process. To further improve the stability of the TTS model, the assessments of the evaluator are leveraged as a preference signal to efficiently guide fine-grained preference alignment. Moreover, for training the Vox-Evaluator, we introduce the FGES (fine-grained erroneous speech) dataset, a diverse dataset providing erroneous information and quality level.</p>\n\n",
                 "matched_terms": [
+                    "quality",
                     "fges",
-                    "model",
                     "voxevaluator",
                     "finegrained",
-                    "quality"
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To overcome the computational burden of large automatic speech recognition (ASR) models and complex dynamic time warping (DTW) and Montreal Forced Aligner (MFA), we introduce a unified, multi-level Vox-Evaluator. The evaluator aims to predict the timestamps of faulty speech segments, detect semantic content, and predict a holistic quality score for the entire speech sample. Built on previous speech-text alignment works, such as SpeechLM &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib52\" title=\"\">2024b</a>)</cite> and STFT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib41\" title=\"\">2022</a>)</cite>, our evaluator is designed as an encoder-decoder architecture, which is shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx1.F2\" title=\"Figure 2 &#8227; Introduction &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>a, comprising a speech encoder, phoneme tokenizer, unit encoder, timestamp predictor, overall quality score predictor, and a text decoder.</p>\n\n",
                 "matched_terms": [
-                    "time",
-                    "score",
-                    "voxevaluator",
                     "text",
-                    "quality"
+                    "score",
+                    "quality",
+                    "voxevaluator",
+                    "time"
                 ]
             },
             {
@@ -222,8 +226,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Unit Encoder</span>\nThe unit encoder adopts the same architecture as the encoder of the pre-trained language model BART &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib27\" title=\"\">2019</a>)</cite>. The unit encoder receives concatenated dual-modal inputs, including speech semantic tokens extracted from the speech encoder and target text tokens obtained from a phoneme tokenizer. This unit encoder facilitates mutual attention between the two modality features through bidirectional self-attention.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "text"
+                    "text",
+                    "model"
                 ]
             },
             {
@@ -236,41 +240,41 @@
             {
                 "html": "<p class=\"ltx_p\">We employ the well-trained checkpoint from speech-text model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib41\" title=\"\">2022</a>)</cite> which is pre-trained with self-supervised speech masked token prediction, supervised speech phoneme alignment, and a supervised speech-to-text task.\nTo improve the model&#8217;s diverse capabilities, we employ a multi-task learning framework where each prediction head is trained with a specialized objective. To address the severe class imbalance in timestamp prediction, we utilize a frame-wise focal loss &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib28\" title=\"\">2017</a>)</cite>. The text token prediction is trained with a standard token-level cross-entropy loss, while the speech quality score prediction is optimized using a Mean Squared Error (MSE) loss.\nThe overall training objective is a composite loss combining frame-wise focal loss, MSE loss, and token-level cross-entropy loss. The loss function is formulated as follows:</p>\n\n",
                 "matched_terms": [
-                    "score",
-                    "mse",
-                    "model",
-                    "prediction",
                     "text",
-                    "quality"
+                    "mse",
+                    "score",
+                    "prediction",
+                    "quality",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx1.F2\" title=\"Figure 2 &#8227; Introduction &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>b, the error detection is a dual task that includes both locating the specific speech segments with pronunciation errors and verifying the text content against the ground-truth. Given the prompt and target text <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math>, a semantic generator will produce semantic representations which are passed to a wav generator for synthesizing speech <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m2\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math>. Our multi-level Vox-Evaluator is then employed to predict the corresponding text sequences <math alttext=\"\\hat{T}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m3\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>T</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{T}</annotation></semantics></math> and the time scope <math alttext=\"\\hat{S}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m4\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>S</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S}</annotation></semantics></math> associated with erroneous segments in the synthesized speech. Discrepancies between the reference text and the predicted text frequently occur in challenging cases. Consequently, it is necessary to perform error identification by comparing the predicted text <math alttext=\"\\hat{T}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m5\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>T</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{T}</annotation></semantics></math> with the ground-truth prompt <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p1.m6\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "time",
                     "text",
-                    "voxevaluator",
-                    "scope"
+                    "time",
+                    "scope",
+                    "voxevaluator"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address the erroneous segments, we utilize a mask when a non-empty time scope is predicted by Vox-Evaluator or the DTW alignment reveals discrepancies. With the <math alttext=\"\\hat{S}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p3.m1\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>S</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S}</annotation></semantics></math> time scope, we then create a speech mask that divides the sequence into parts to be corrected and parts to be preserved. To account for potential inaccuracies in the initial time detection, we apply a small margin to extend temporal masks. This margin is derived by uniformly partitioning the duration of the mismatched text, which guarantees the complete localization and removal of erroneous segments.\nWe refine segment-level speech errors with an editing TTS model that leverage the generated segmentation masks in the speech representation and the text prompt as conditions for the speech generation process, resulting in significantly lower computational costs compared to complete generation.\nThis process is repeated for two iterations to effectively enhance the generated stability. We empirically discuss this in the ablation study. The speech correction can be summarized in Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#alg1\" title=\"Algorithm 1 &#8227; Evaluation Mechanism &#8227; Synthesized Speech Correction &#8227; Methodology &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "time",
+                    "text",
                     "model",
                     "voxevaluator",
-                    "scope",
-                    "text"
+                    "time",
+                    "scope"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To judge whether synthesized speech requires error correction, we conduct a comprehensive evaluation to select low-fidelity synthesized samples for refinement. Our evaluation methodology considers two key aspects: (i) an overall audio quality score, predicted by a quality assessment module, and (ii) a word error rate, which quantifies the semantic divergence from the text decoder. By incorporating these two complementary aspects into our evaluation, we ensure that the refined synthesized speech maintains both acoustic quality and semantic integrity. Finally, through this process of continuous refinement, the stability and intelligibility of zero-shot TTS systems are significantly enhanced, without any additional model retraining or fine-tuning.</p>\n\n",
                 "matched_terms": [
+                    "text",
                     "score",
                     "without",
-                    "model",
-                    "text",
-                    "quality"
+                    "quality",
+                    "model"
                 ]
             },
             {
@@ -283,27 +287,27 @@
             {
                 "html": "<p class=\"ltx_p\">To train the Vox-Evaluator, we construct a dataset consisting of synthesized speech samples with various issues. These issues include: (1) common issue consisting of mispronunciations and omissions, (2) repeated issue consisting of repetitive and redundant pronunciation, and (3) punctuation issue consisting of unnatural pause and prosody. Specially, we first selected a subset text prompts from the Emilia-Large corpus &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(He et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib16\" title=\"\">2024</a>)</cite> which provides a rich source of real-world speech data across diverse topics and styles. Then we randomly sample speech prompts from LibriTTS &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib49\" title=\"\">2019</a>)</cite> and use the pretrained TTS model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib11\" title=\"\">2024c</a>; Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> to synthesize audio samples with varying temperature and guidance scale.\nBesides, we utilize data augmentation to produce low-quality samples with noise or abnormal pauses, which we classify as (4) abnormal issues shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T1\" title=\"Table 1 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The motivation behind this augmentation is to intentionally infuse the dataset with corrupted speech. This dataset enhances the model&#8217;s audio quality perception capability during training and facilitates the evaluation of its performance in detecting erroneous segments in synthesized speech.</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "text",
                     "voxevaluator",
+                    "model",
                     "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our annotation pipeline involves three distinct stages to label semantic content, timestamps of problematic pronunciations, and audio quality levels. First, we employ the Whisper-Large-v3 model to transcribe the synthesized speech and then compare the transcripts against the target text. Second, for fine-grained timestamp labeling, we utilize the Montreal Forced Aligner (MFA) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(K&#252;rzinger et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib24\" title=\"\">2020</a>)</cite> to locate the word-level pronunciation and ensure that the duration of word-level alignments matches the corresponding frame-level speech representations. Finally, for audio quality assessment, we perform sentence-level score annotation on the augmented synthesized speech using the Audiobox-Aesthetics &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tjandra et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib43\" title=\"\">2025</a>)</cite> and manual annotation. The overall speech quality annotation is a composite score that combines the average of the predicted content enjoyment score and the production quality score. The resulting score ranges from 1 to 10, representing an audio quality metric consistent with human aesthetic perception.</p>\n\n",
                 "matched_terms": [
-                    "score",
-                    "model",
-                    "finegrained",
                     "text",
-                    "quality"
+                    "score",
+                    "quality",
+                    "finegrained",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We designate the constructed synthesized speech corpus as FGES dataset, which consists of 22k speech samples annotated with timestamps of error segments and quality level. The dataset is divided into a training set of 20k samples, a validation set of 1k samples, and a test set of 1k samples. To ensure a balanced distribution, we specifically selected samples that cover a wide range of error types. Furthermore, we conducted a subjective evaluation to verify that the dataset&#8217;s annotations align with human perception of intelligibility.\nTable &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T1\" title=\"Table 1 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the statistics for each issue.</p>\n\n",
                 "matched_terms": [
-                    "set",
                     "fges",
+                    "set",
                     "quality",
                     "test"
                 ]
@@ -319,23 +323,23 @@
                 "html": "<p class=\"ltx_p\">The speech encoder of the Vox-Evaluator is composed of a 6-layer transformer with a 768-dimensional hidden state, a 3072-dimensional FFN, and 8 attention heads. For temporal error prediction, we employ a timestamp predictor consisting of 2 bidirectional LSTM layers and a final linear layer with sigmoid activation. The quality score predictor is an MLP with three dense layers (output sizes 768, 768, and 1), using Layer Normalization and GeLU activations. The entire model is fine-tuned for 50 epochs with batch size of 24 on our training dataset using the Adam optimizer and a learning rate of 1e-4. The long waveform is divided into small segments of 30 seconds.</p>\n\n",
                 "matched_terms": [
                     "score",
-                    "finetuned",
-                    "model",
-                    "voxevaluator",
                     "prediction",
-                    "quality"
+                    "quality",
+                    "voxevaluator",
+                    "model",
+                    "finetuned"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Metrics for Vox-Evaluator:</span> We adopt two standard metrics to measure the performance of Vox-Evaluator in predicting overall audio quality: the utterance-level Pearson linear correlation coefficient (utt-PCC) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Benesty et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib4\" title=\"\">2009</a>)</cite> and the system-level Spearman&#8217;s rank correlation coefficient (sys-SRCC) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sedgwick <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib38\" title=\"\">2014</a>)</cite>. For the localization of erroneous segments, we evaluate Vox-Evaluator using Intersection over Union (IOU). Additionally, to assess the model&#8217;s performance in identifying the absence of errors, we compute the Mean Squared Error on all well-pronounced speech samples. For assessing the transcription capability, we adopt word-level Error Rate (WER) as the measure metric. Specifically, these metrics are calculated across all test samples.</p>\n\n",
                 "matched_terms": [
                     "wer",
-                    "syssrcc",
+                    "quality",
+                    "uttpcc",
                     "iou",
                     "voxevaluator",
-                    "uttpcc",
-                    "test",
-                    "quality"
+                    "syssrcc",
+                    "test"
                 ]
             },
             {
@@ -343,28 +347,28 @@
                 "matched_terms": [
                     "score",
                     "wer",
-                    "model",
                     "prediction",
-                    "quality"
+                    "quality",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Since Vox-Evaluator is a multi-level evaluator, we employ a fine-tuned wav2vec2.0 model trained on our FGES dataset as a baseline. To assess its accuracy in transcription, we directly compare our Vox-Evaluator with high-performing ASR models, including SenseVoice and Whisper. In addition, we select F5-TTS and VoiceCraft for error correction experiments, since they are specifically designed for this purpose. We also employ several prominent zero-shot TTS models as baselines, including CosyVoice &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>, NaturalSpeech 3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>, MaskGCT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>, and Llasa &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "finetuned",
+                    "sensevoice",
+                    "accuracy",
+                    "fges",
                     "voxevaluator",
                     "model",
                     "wav2vec20",
-                    "sensevoice",
-                    "accuracy",
-                    "fges"
+                    "finetuned"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While the zero-shot TTS models are prone to generate low-quality or erroneous content for hard cases, the speech correction yields outputs demonstrating both semantic correctness and natural prosodic coherence.\nAs shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T3\" title=\"Table 3 &#8227; Benchmark Methods &#8227; Experimental Setups &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we validate the effectiveness of the speech correction mechanism on the Seed-TTS test-en and Librispeech-PC test-clean datasets. When we compare the performance with different baselines, we observe that NAR-based refinement models perform better than most models, achieving enhanced stability.\nBesides, compared to the original VoiceCraft, which is AR-based model, the correction process also improves the performance significantly.\nIn general, F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> and VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> obtain significant reductions in WER compared to the Common baseline by 21%, 32% respectively. The refined models demonstrate consistently strong performance and robustness across different datasets. These improvements can be attributed to Vox-Evaluator&#8217;s multi-level capability.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "wer"
+                    "wer",
+                    "model"
                 ]
             },
             {
@@ -379,70 +383,72 @@
                 "matched_terms": [
                     "score",
                     "wer",
-                    "model",
-                    "finegrained",
+                    "quality",
                     "results",
-                    "quality"
+                    "finegrained",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To demonstrate the effectiveness of Vox-Evaluator in guiding speech correction, we conducted ablation experiments on our proposed method.\nThe first experiment employed error detection solely to identify erroneous segments and mismatched text.\nThe second experiment employed only the quality evaluation method to assess the synthesized speech.\nThe third combined both the error detection and quality evaluation. We employ the failure rate introduced by TTSDS2 to evaluate stability and UTMOS to evaluate speech quality.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T4\" title=\"Table 4 &#8227; Fine-grained Preference Alignment &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that both error detection and quality evaluation can achieve performance improvement over the baseline, and error detection has a more significant impact. The combination of both achieved the best performance, though only slightly better than error detection alone. Notably, error detection is highly effective at reducing mispronunciations, reducing the failure rate of the F5-TTS model from 12% to 6%. Furthermore, a comparison of results on the quality evaluation suggests that F5-TTS is less prone to speech corruption than VoiceCraft.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "voxevaluator",
-                    "results",
                     "text",
-                    "quality"
+                    "quality",
+                    "results",
+                    "voxevaluator",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose a multi-level Vox-Evaluator to enhance stability and fidelity through speech correction mechanism and fine-grained preference alignment. The Vox-Evaluator facilitates the identification of erroneous speech segments and mismatched text tokens, providing guidance in the correction process. Moreover, leveraging the Vox-Evaluator, the speech correction process corrects erroneous segments in the speech generated by zero-shot TTS models and preserves the overall quality of the speech.\nWe show that using Vox-Evaluator can further guide preference alignment to enhance the performance of the TTS system. Extensive experiments demonstrate the effectiveness of the Vox-Evaluator in providing fine-grained reward. Our approach does not require fine-tuning generative model and is plug-gable to other existing TTS models.</p>\n\n",
                 "matched_terms": [
-                    "model",
+                    "text",
+                    "quality",
                     "voxevaluator",
                     "finegrained",
-                    "text",
-                    "quality"
+                    "model"
                 ]
             }
         ]
     },
     "Sx5.T3": {
+        "source_file": "Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator",
         "caption": "Table 3: Performance comparison of speech correction with other systems on Seed-TTS test-en. r​e​f​i​n​erefine denotes the proposed correction process.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">WER(%&#8595;)</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\">\n<span class=\"ltx_text ltx_font_bold\">SIM-o</span>(&#8593;)</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">CMOS(&#8593;)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_italic\">Seed-TTS test-en</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">CosyVoice<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">4.08</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.64</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">NaturalSpeech 3<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">1.94</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.67</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.16</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">MaskGCT<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.01</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.12</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">Llasa-1B<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.03</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.76</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">VoiceCraft<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">7.56</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-1.08</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib11\" title=\"\">2024c</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">1.73</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.67</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.31</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">5.11</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.78</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">1.42</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.68</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.33</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_italic\">LibriSpeech-PC test-clean</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceBox<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">2.03</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.64</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.41</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">MaskGCT</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.63</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.13</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">VoiceCraft</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">4.68</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.45</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-0.33</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.42</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-0.22</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.16</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.44</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.26</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding:1pt 1.0pt;\">F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.03</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.66</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">-0.18</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Model\nWER(%↓)\n\nSIM-o(↑)\nCMOS(↑)\n\n\nSeed-TTS test-en\n\n\nCosyVoice(Du et al. 2024)\n\n4.08\n0.64\n0.02\n\n\nNaturalSpeech 3(Ju et al. 2024)\n\n1.94\n0.67\n0.16\n\n\nMaskGCT(Wang et al. 2024)\n\n2.01\n0.69\n0.12\n\n\nLlasa-1B(Ye et al. 2025)\n\n2.03\n0.76\n0.23\n\n\nVoiceCraft(Peng et al. 2024)\n\n7.56\n0.47\n-1.08\n\n\nF5-TTS(Chen et al. 2024c)\n\n1.73\n0.67\n0.31\n\n\nVoiceCraftrefine\n\n5.11\n0.47\n-0.78\n\n\nF5-TTSrefine\n\n1.42\n0.68\n0.33\n\n\nLibriSpeech-PC test-clean\n\n\nVoiceBox(Le et al. 2023)\n\n2.03\n0.64\n-0.41\n\n\nMaskGCT\n2.63\n0.69\n0.13\n\n\nVoiceCraft\n4.68\n0.45\n-0.33\n\n\nF5-TTS\n2.42\n0.66\n-0.22\n\n\nVoiceCraftrefine\n\n3.16\n0.44\n-0.26\n\n\nF5-TTSrefine\n\n2.03\n0.66\n-0.18",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">WER(%&#8595;)</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\">\n<span class=\"ltx_text ltx_font_bold\">SIM-o</span>(&#8593;)</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_tt ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">CMOS(&#8593;)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_italic\">Seed-TTS test-en</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">CosyVoice<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">4.08</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.64</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.02</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">NaturalSpeech 3<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">1.94</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.67</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.16</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">MaskGCT<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.01</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.12</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">Llasa-1B<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.03</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.76</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.23</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">VoiceCraft<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">7.56</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-1.08</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib11\" title=\"\">2024c</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">1.73</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.67</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.31</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">5.11</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.47</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.78</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">1.42</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.68</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.33</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_align_center ltx_th ltx_th_row ltx_border_t\" colspan=\"4\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_italic\">LibriSpeech-PC test-clean</span></th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceBox<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">2.03</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.64</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.41</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">MaskGCT</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.63</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.69</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.13</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">VoiceCraft</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">4.68</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.45</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-0.33</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row\" style=\"padding:1pt 1.0pt;\">F5-TTS</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.42</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">0.66</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">-0.22</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:1pt 1.0pt;\">VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.16</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">0.44</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">-0.26</td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_bb\" style=\"padding:1pt 1.0pt;\">F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub>\n</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.03</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">0.66</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">-0.18</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "testclean",
+            "voicecraft",
+            "speech",
+            "proposed",
+            "naturalspeech",
+            "llasa1bye",
+            "cosyvoicedu",
+            "denotes",
+            "maskgctwang",
+            "f5ttschen",
+            "f5tts",
+            "testen",
             "voicecraftpeng",
+            "correction",
+            "maskgct",
+            "wer↓",
+            "systems",
+            "performance",
+            "f5ttsrefine",
+            "comparison",
+            "librispeechpc",
+            "3ju",
+            "process",
+            "testclean",
+            "r​e​f​i​n​erefine",
+            "voiceboxle",
+            "cmos↑",
+            "model",
             "2024c",
             "seedtts",
-            "naturalspeech",
-            "denotes",
-            "r​e​f​i​n​erefine",
-            "comparison",
-            "systems",
-            "3ju",
-            "correction",
-            "voicecraftrefine",
-            "simo↑",
-            "performance",
-            "wer↓",
-            "llasa1bye",
-            "cmos↑",
-            "maskgct",
-            "f5tts",
-            "speech",
-            "f5ttsrefine",
-            "proposed",
-            "process",
-            "voiceboxle",
-            "model",
-            "maskgctwang",
-            "cosyvoicedu",
-            "voicecraft",
             "other",
-            "librispeechpc",
-            "testen",
-            "f5ttschen"
+            "voicecraftrefine",
+            "simo↑"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">While the zero-shot TTS models are prone to generate low-quality or erroneous content for hard cases, the speech correction yields outputs demonstrating both semantic correctness and natural prosodic coherence.\nAs shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T3\" title=\"Table 3 &#8227; Benchmark Methods &#8227; Experimental Setups &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we validate the effectiveness of the speech correction mechanism on the Seed-TTS test-en and Librispeech-PC test-clean datasets. When we compare the performance with different baselines, we observe that NAR-based refinement models perform better than most models, achieving enhanced stability.\nBesides, compared to the original VoiceCraft, which is AR-based model, the correction process also improves the performance significantly.\nIn general, F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> and VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> obtain significant reductions in WER compared to the Common baseline by 21%, 32% respectively. The refined models demonstrate consistently strong performance and robustness across different datasets. These improvements can be attributed to Vox-Evaluator&#8217;s multi-level capability.</p>\n\n"
@@ -451,11 +457,11 @@
             {
                 "html": "<p class=\"ltx_p\">Recent advances in zero-shot text-to-speech (TTS), driven by language models, diffusion models and masked generation, have achieved impressive naturalness in speech synthesis. Nevertheless, stability and fidelity remain key challenges, manifesting as mispronunciations, audible noise, and quality degradation. To address these issues, we introduce Vox-Evaluator, a multi-level evaluator designed to guide the correction of erroneous speech segments and preference alignment for TTS systems. It is capable of identifying the temporal boundaries of erroneous segments and providing a holistic quality assessment of the generated speech.\nSpecifically, to refine erroneous segments and enhance the robustness of the zero-shot TTS model, we propose to automatically identify acoustic errors with the evaluator, mask the erroneous segments, and finally regenerate speech conditioning on the correct portions. In addition, the fine-gained information obtained from Vox-Evaluator can guide the preference alignment for TTS model, thereby reducing the bad cases in speech synthesis. Due to the lack of suitable training datasets for the Vox-Evaluator, we also constructed a synthesized text-speech dataset annotated with fine-grained pronunciation errors or audio quality issues. The experimental results demonstrate the effectiveness of the proposed Vox-Evaluator in enhancing the stability and fidelity of TTS systems through the speech correction mechanism and preference optimization.\nThe demos are shown.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://voxevaluator.github.io/correction/</span></span></span></span></p>\n\n",
                 "matched_terms": [
-                    "proposed",
                     "systems",
+                    "speech",
+                    "proposed",
                     "model",
-                    "correction",
-                    "speech"
+                    "correction"
                 ]
             },
             {
@@ -482,24 +488,24 @@
             {
                 "html": "<p class=\"ltx_p\">To address the above issues, we present a unified multi-level Vox-Evaluator to facilitate correction of erroneous speech segments and guide preference alignment. The Vox-Evaluator is capable of identifying the temporal scope of speech segment with pronunciation errors or quality issues, detecting mismatch text, and evaluating the overall quality level of the synthesized speech. Based on the detection information obtained from Vox-Evaluator, we develop a fine-grained speech correction to regenerate speech segments with mispronunciations or audio quality issues.\nIn addition, we demonstrate that the Vox-Evaluator can also serve as a fine-grained reward model to guide preference optimization on zero-shot TTS system.</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "model",
+                    "speech",
                     "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We introduce a novel multi-level Vox-Evaluator that provides a comprehensive evaluation of the generated speech for the correction process and fine-grained guidance for preference alignment. The information contains the location of specific segments, detection of content and quality evaluation for the synthesized speech.\n</p>\n\n",
                 "matched_terms": [
+                    "process",
                     "speech",
-                    "correction",
-                    "process"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Based on Vox-Evaluator, we utilizes speech correction mechanism to enhance the stability and provide effective guidance for preference alignment on zero-shot TTS system, boosting the overall performance of the TTS model.\n</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "model",
+                    "speech",
                     "correction",
                     "performance"
                 ]
@@ -507,28 +513,28 @@
             {
                 "html": "<p class=\"ltx_p\">The speech editing which aims to alter specific words or phrases in the audio and keep the other regions unchanged. The traditional cut-copy-paste method &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Morrison et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib32\" title=\"\">2021</a>)</cite> involves a simple process of cutting and pasting audio segments, but it may lead to prosody mismatch or boundary artifacts. In recent years, text-based speech editing systems have seen significant development, enabling users to modify an audio waveform by simply editing its transcript. Previous systems, including CampNet &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib45\" title=\"\">2022</a>)</cite> and FluentSpeech &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Borsos, Sharifi, and Tagliasacchi <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib6\" title=\"\">2022</a>)</cite>, perform editing according to a masked reconstruction principle. They regenerate the target portion based on its surrounding acoustic context. While in the unified model, Voicebox &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite> provides a versatile framework based on flow matching to address both speech continuation and editing. VoiceCraft &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> relies on an AR model to predict multi-layer acoustic tokens, enabling it to perform long-form text editing. Speech editing is the crucial part of the overall erroneous speech correction task. The broader refinement process involves other stages, such as automatic error detection and quality evaluation.</p>\n\n",
                 "matched_terms": [
-                    "process",
                     "systems",
-                    "model",
-                    "correction",
                     "voicecraft",
+                    "speech",
+                    "process",
                     "other",
-                    "speech"
+                    "model",
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Recent works have performed preference alignment on zero-shot TTS models to enhance the overall system performance, including intelligibility, speaker similarity, emotional controllability and others.\nFor intelligibility, previous studies &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib50\" title=\"\">2024a</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib7\" title=\"\">2024a</a>)</cite> directly leveraged WER as a direct reward signal or guiding metric to construct preference pairs for preference alignment.\nFor speaker similarity, some works &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sun et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib40\" title=\"\">2025</a>; Hussain et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib19\" title=\"\">2025</a>)</cite> utilize speaker verification score between the embeddings of the prompt audio and the generated audio as the reward to conduct preference alignment.\nFor emotion controllability, emotional preferences and human-feedback have been introduced to improve emotional expressiveness and controllable style rendering &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib15\" title=\"\">2025</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib7\" title=\"\">2024a</a>)</cite>.\nNevertheless, the potential of employing a fine-grained, multi-level reward model for preference alignment receives limited attention in the context of preference optimization on zero-shot TTS systems.</p>\n\n",
                 "matched_terms": [
                     "model",
-                    "performance",
-                    "systems"
+                    "systems",
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we present Vox-Evaluator, a multi-level evaluator that can identify the temporal location of errors and evaluate the overall quality of synthesized speech.\nGuided by the Vox-Evaluator, we first automatically locate faulty segments and then regenerate them in the speech refined process. To further improve the stability of the TTS model, the assessments of the evaluator are leveraged as a preference signal to efficiently guide fine-grained preference alignment. Moreover, for training the Vox-Evaluator, we introduce the FGES (fine-grained erroneous speech) dataset, a diverse dataset providing erroneous information and quality level.</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "model",
+                    "speech",
                     "process"
                 ]
             },
@@ -556,28 +562,28 @@
             {
                 "html": "<p class=\"ltx_p\">To address the erroneous segments, we utilize a mask when a non-empty time scope is predicted by Vox-Evaluator or the DTW alignment reveals discrepancies. With the <math alttext=\"\\hat{S}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p3.m1\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>S</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S}</annotation></semantics></math> time scope, we then create a speech mask that divides the sequence into parts to be corrected and parts to be preserved. To account for potential inaccuracies in the initial time detection, we apply a small margin to extend temporal masks. This margin is derived by uniformly partitioning the duration of the mismatched text, which guarantees the complete localization and removal of erroneous segments.\nWe refine segment-level speech errors with an editing TTS model that leverage the generated segmentation masks in the speech representation and the text prompt as conditions for the speech generation process, resulting in significantly lower computational costs compared to complete generation.\nThis process is repeated for two iterations to effectively enhance the generated stability. We empirically discuss this in the ablation study. The speech correction can be summarized in Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#alg1\" title=\"Algorithm 1 &#8227; Evaluation Mechanism &#8227; Synthesized Speech Correction &#8227; Methodology &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
+                    "process",
                     "speech",
-                    "model",
                     "correction",
-                    "process"
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To judge whether synthesized speech requires error correction, we conduct a comprehensive evaluation to select low-fidelity synthesized samples for refinement. Our evaluation methodology considers two key aspects: (i) an overall audio quality score, predicted by a quality assessment module, and (ii) a word error rate, which quantifies the semantic divergence from the text decoder. By incorporating these two complementary aspects into our evaluation, we ensure that the refined synthesized speech maintains both acoustic quality and semantic integrity. Finally, through this process of continuous refinement, the stability and intelligibility of zero-shot TTS systems are significantly enhanced, without any additional model retraining or fine-tuning.</p>\n\n",
                 "matched_terms": [
-                    "process",
                     "systems",
+                    "speech",
+                    "process",
                     "model",
-                    "correction",
-                    "speech"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To train the Vox-Evaluator, we construct a dataset consisting of synthesized speech samples with various issues. These issues include: (1) common issue consisting of mispronunciations and omissions, (2) repeated issue consisting of repetitive and redundant pronunciation, and (3) punctuation issue consisting of unnatural pause and prosody. Specially, we first selected a subset text prompts from the Emilia-Large corpus &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(He et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib16\" title=\"\">2024</a>)</cite> which provides a rich source of real-world speech data across diverse topics and styles. Then we randomly sample speech prompts from LibriTTS &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib49\" title=\"\">2019</a>)</cite> and use the pretrained TTS model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib11\" title=\"\">2024c</a>; Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> to synthesize audio samples with varying temperature and guidance scale.\nBesides, we utilize data augmentation to produce low-quality samples with noise or abnormal pauses, which we classify as (4) abnormal issues shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T1\" title=\"Table 1 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The motivation behind this augmentation is to intentionally infuse the dataset with corrupted speech. This dataset enhances the model&#8217;s audio quality perception capability during training and facilitates the evaluation of its performance in detecting erroneous segments in synthesized speech.</p>\n\n",
                 "matched_terms": [
+                    "2024c",
                     "speech",
                     "model",
-                    "2024c",
                     "performance"
                 ]
             },
@@ -591,12 +597,12 @@
             {
                 "html": "<p class=\"ltx_p\">For speech correction, we employ Seed-TTS test-en &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Anastassiou et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib1\" title=\"\">2024</a>)</cite> and LibriSpeech-PC &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Meister et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib30\" title=\"\">2023</a>)</cite> test-clean as test data. For ablation, we incorporate TTSDS2 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Minixhofer, Klejch, and Bell <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib31\" title=\"\">2025</a>)</cite> to evaluate system stability and audio quality.</p>\n\n",
                 "matched_terms": [
-                    "testclean",
-                    "correction",
-                    "seedtts",
+                    "speech",
                     "librispeechpc",
                     "testen",
-                    "speech"
+                    "seedtts",
+                    "testclean",
+                    "correction"
                 ]
             },
             {
@@ -616,8 +622,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Metrics for TTS Model:</span> To measure the performance of preference alignment and speech correction, we report the WER for objective evaluation, using Whisper-large-v3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib36\" title=\"\">2023</a>)</cite> for transcription. Speaker similarity is also assessed via the cosine similarity of speaker embeddings extracted by a WavLM-large-based model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib9\" title=\"\">2022</a>)</cite>. For subjective evaluation, we measure naturalness using Comparative Mean Opinion Scores (CMOS), where human evaluators compare the synthesized speech to the ground truth. And we also assess the naturalness of the synthesized speech using the UTokyo-sarulab mean opinion score (UTMOS) prediction system &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Saeki et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib37\" title=\"\">2022</a>)</cite>, which serves as an automatic and efficient metric of speech quality.</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "model",
+                    "speech",
                     "correction",
                     "performance"
                 ]
@@ -625,51 +631,51 @@
             {
                 "html": "<p class=\"ltx_p\">Since Vox-Evaluator is a multi-level evaluator, we employ a fine-tuned wav2vec2.0 model trained on our FGES dataset as a baseline. To assess its accuracy in transcription, we directly compare our Vox-Evaluator with high-performing ASR models, including SenseVoice and Whisper. In addition, we select F5-TTS and VoiceCraft for error correction experiments, since they are specifically designed for this purpose. We also employ several prominent zero-shot TTS models as baselines, including CosyVoice &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>, NaturalSpeech 3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>, MaskGCT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>, and Llasa &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
                 "matched_terms": [
+                    "voicecraft",
+                    "f5tts",
+                    "naturalspeech",
                     "model",
                     "correction",
-                    "maskgct",
-                    "naturalspeech",
-                    "voicecraft",
-                    "f5tts"
+                    "maskgct"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T2\" title=\"Table 2 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents the performance comparison of Vox-Evaluator and baselines in different metrics. Regarding timestamp prediction, we first report MSE for test samples containing no erroneous segments. It evaluates the performance on correct samples that are free of any artifacts. For the mispronounced samples, the Vox-Evaluator achieves a high IOU of 0.782, surpassing the fine-tuned wav2vec2.0 baseline by a substantial margin (+19.7% gains). This result demonstrates that the Vox-Evaluator effectively models the alignment between the speech semantic representation and the ground-truth text content.\nThe performance of wo/pre-trained suggests that using a pre-trained checkpoint is crucial, as the fine-grained metric drops significantly when it is randomly initialized.\nIn terms of quality score prediction, the Vox-Evaluator achieves utt-PCC and sys-SRCC scores of 0.541 and 0.630, respectively, demonstrating the significant positive correlation between the annotated scores and the predicted scores.\nFor the text accuracy, we compare our Vox-Evaluator with several ASR models on the task of speech transcription. The results show that our model achieves a superior Word Error Rate (WER) of 2.64% with fewer parameters, outperforming other methods such as Whisper and SenseVoice. It is particularly remarkable that the Vox-Evaluator can perceive cross-modal information between text and speech, which directly boosts its effectiveness in fine-grained tasks.\n</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "other",
+                    "performance",
                     "speech",
                     "comparison",
-                    "performance"
+                    "other",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.F4\" title=\"Figure 4 &#8227; Performance of the Vox-Evaluator &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows several examples in speech correction, demonstrating how Vox-Evaluator rectifies speech segments with errors. The first column demonstrates a case where the speech correction process accurately recovers missing semantic information, thereby enhancing the word-level duration alignment between the speech and text. The second column presents an instance where we successfully removes an unnecessary or erroneous speech segment.</p>\n\n",
                 "matched_terms": [
+                    "process",
                     "speech",
-                    "correction",
-                    "process"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Zero-shot TTS model benefits significantly from fine-grained multi-level preference alignment through Direct Preference Optimization (DPO). As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.F3\" title=\"Figure 3 &#8227; Performance of the Vox-Evaluator &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, with increasing iteration steps, the performance of F5-TTS shows a progressive improvement over the original model in terms of both subjective and objective evaluation metrics.\nNotably, in terms of objective evaluation, the WER decreases from 1.73% to 1.55% and Sim-o increases to a higher score of 0.683. In subjective evaluation, the preference optimization demonstrates a continuous improvement in CMOS and SMOS scores throughout the 2000 training steps. These results demonstrate that fine-grained alignment with DPO not only enhances perceptual quality but also improves semantic coherence, leading to a more holistic and stable generative TTS model.\nIn the early training stage, the preference information facilitate substantial adjustments and enable rapid improvements. However, continued training leads to a decrease in model performance. This is possibly because the feedback reward becomes saturated when high-quality samples exhibit minimal variation, which increases the difficulty of preference optimization and may even degrade system performance.</p>\n\n",
                 "matched_terms": [
+                    "performance",
                     "model",
-                    "f5tts",
-                    "performance"
+                    "f5tts"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To demonstrate the effectiveness of Vox-Evaluator in guiding speech correction, we conducted ablation experiments on our proposed method.\nThe first experiment employed error detection solely to identify erroneous segments and mismatched text.\nThe second experiment employed only the quality evaluation method to assess the synthesized speech.\nThe third combined both the error detection and quality evaluation. We employ the failure rate introduced by TTSDS2 to evaluate stability and UTMOS to evaluate speech quality.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T4\" title=\"Table 4 &#8227; Fine-grained Preference Alignment &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that both error detection and quality evaluation can achieve performance improvement over the baseline, and error detection has a more significant impact. The combination of both achieved the best performance, though only slightly better than error detection alone. Notably, error detection is highly effective at reducing mispronunciations, reducing the failure rate of the F5-TTS model from 12% to 6%. Furthermore, a comparison of results on the quality evaluation suggests that F5-TTS is less prone to speech corruption than VoiceCraft.</p>\n\n",
                 "matched_terms": [
-                    "proposed",
-                    "correction",
-                    "model",
                     "voicecraft",
-                    "f5tts",
+                    "performance",
                     "speech",
                     "comparison",
-                    "performance"
+                    "f5tts",
+                    "proposed",
+                    "model",
+                    "correction"
                 ]
             },
             {
@@ -682,35 +688,37 @@
             {
                 "html": "<p class=\"ltx_p\">We propose a multi-level Vox-Evaluator to enhance stability and fidelity through speech correction mechanism and fine-grained preference alignment. The Vox-Evaluator facilitates the identification of erroneous speech segments and mismatched text tokens, providing guidance in the correction process. Moreover, leveraging the Vox-Evaluator, the speech correction process corrects erroneous segments in the speech generated by zero-shot TTS models and preserves the overall quality of the speech.\nWe show that using Vox-Evaluator can further guide preference alignment to enhance the performance of the TTS system. Extensive experiments demonstrate the effectiveness of the Vox-Evaluator in providing fine-grained reward. Our approach does not require fine-tuning generative model and is plug-gable to other existing TTS models.</p>\n\n",
                 "matched_terms": [
-                    "process",
-                    "model",
-                    "correction",
-                    "other",
+                    "performance",
                     "speech",
-                    "performance"
+                    "process",
+                    "other",
+                    "model",
+                    "correction"
                 ]
             }
         ]
     },
     "Sx5.T4": {
+        "source_file": "Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator",
         "caption": "Table 4: Ablation study for speech correction process on TTSDS2.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Error Detect</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Quality Eval</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Failure(%&#8595;)</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">UTMOS (&#8593;)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"4\" style=\"padding:1pt 1.0pt;\">VoiceCraft</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">34.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">2.61</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">22.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">30.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">20.0</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.89</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\" rowspan=\"4\" style=\"padding:1pt 1.0pt;\">F5-TTS</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">14.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">3.35</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">6.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">3.59</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">10.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">3.66</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">6.0</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.70</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "Model\nError Detect\nQuality Eval\nFailure(%↓)\nUTMOS (↑)\n\n\n\n\nVoiceCraft\n\n\n34.0\n2.61\n\n\n✓\n\n22.0\n2.80\n\n\n\n✓\n30.0\n2.82\n\n\n✓\n✓\n20.0\n2.89\n\n\nF5-TTS\n\n\n14.0\n3.35\n\n\n✓\n\n6.0\n3.59\n\n\n\n✓\n10.0\n3.66\n\n\n✓\n✓\n6.0\n3.70",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Model</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Error Detect</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Quality Eval</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">Failure(%&#8595;)</span></th>\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">UTMOS (&#8593;)</span></th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_t\" rowspan=\"4\" style=\"padding:1pt 1.0pt;\">VoiceCraft</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">34.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">2.61</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">22.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.80</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">30.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">2.82</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">20.0</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">2.89</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t\" rowspan=\"4\" style=\"padding:1pt 1.0pt;\">F5-TTS</th>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_border_t\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">14.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_t\" style=\"padding:1pt 1.0pt;\">3.35</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">6.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">3.59</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r\" style=\"padding:1pt 1.0pt;\"/>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">10.0</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center\" style=\"padding:1pt 1.0pt;\">3.66</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\">&#10003;</td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">6.0</span></td>\n<td class=\"ltx_td ltx_nopad_l ltx_nopad_r ltx_align_center ltx_border_bb\" style=\"padding:1pt 1.0pt;\"><span class=\"ltx_text ltx_font_bold\">3.70</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "utmos",
             "ttsds2",
-            "failure↓",
-            "detect",
-            "process",
-            "study",
-            "correction",
-            "model",
-            "ablation",
             "voicecraft",
-            "f5tts",
-            "eval",
+            "ablation",
+            "error",
+            "failure↓",
             "speech",
+            "study",
             "quality",
-            "error"
+            "f5tts",
+            "process",
+            "utmos",
+            "detect",
+            "eval",
+            "model",
+            "correction"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">To demonstrate the effectiveness of Vox-Evaluator in guiding speech correction, we conducted ablation experiments on our proposed method.\nThe first experiment employed error detection solely to identify erroneous segments and mismatched text.\nThe second experiment employed only the quality evaluation method to assess the synthesized speech.\nThe third combined both the error detection and quality evaluation. We employ the failure rate introduced by TTSDS2 to evaluate stability and UTMOS to evaluate speech quality.\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T4\" title=\"Table 4 &#8227; Fine-grained Preference Alignment &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows that both error detection and quality evaluation can achieve performance improvement over the baseline, and error detection has a more significant impact. The combination of both achieved the best performance, though only slightly better than error detection alone. Notably, error detection is highly effective at reducing mispronunciations, reducing the failure rate of the F5-TTS model from 12% to 6%. Furthermore, a comparison of results on the quality evaluation suggests that F5-TTS is less prone to speech corruption than VoiceCraft.</p>\n\n"
@@ -719,9 +727,9 @@
             {
                 "html": "<p class=\"ltx_p\">Recent advances in zero-shot text-to-speech (TTS), driven by language models, diffusion models and masked generation, have achieved impressive naturalness in speech synthesis. Nevertheless, stability and fidelity remain key challenges, manifesting as mispronunciations, audible noise, and quality degradation. To address these issues, we introduce Vox-Evaluator, a multi-level evaluator designed to guide the correction of erroneous speech segments and preference alignment for TTS systems. It is capable of identifying the temporal boundaries of erroneous segments and providing a holistic quality assessment of the generated speech.\nSpecifically, to refine erroneous segments and enhance the robustness of the zero-shot TTS model, we propose to automatically identify acoustic errors with the evaluator, mask the erroneous segments, and finally regenerate speech conditioning on the correct portions. In addition, the fine-gained information obtained from Vox-Evaluator can guide the preference alignment for TTS model, thereby reducing the bad cases in speech synthesis. Due to the lack of suitable training datasets for the Vox-Evaluator, we also constructed a synthesized text-speech dataset annotated with fine-grained pronunciation errors or audio quality issues. The experimental results demonstrate the effectiveness of the proposed Vox-Evaluator in enhancing the stability and fidelity of TTS systems through the speech correction mechanism and preference optimization.\nThe demos are shown.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_ref_self\">https://voxevaluator.github.io/correction/</span></span></span></span></p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "speech",
                     "correction",
+                    "speech",
+                    "model",
                     "quality"
                 ]
             },
@@ -736,71 +744,71 @@
                 "html": "<p class=\"ltx_p\">Zero-shot TTS models are usually categorized into autoregressive (AR) and non-autoregressive (NAR) models. AR-based TTS models typically treat speech synthesis as a sequential prediction task and use LLM to autoregressively generate discrete tokens &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib53\" title=\"\">2023</a>; Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib8\" title=\"\">2024b</a>; &#321;ajszczak et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib25\" title=\"\">2024</a>; Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>. Although AR models exhibit rich prosodic diversity, they inherently suffer from error accumulation and potential instability. NAR-based models, including those based on diffusion &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Shen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib39\" title=\"\">2023</a>)</cite> and flow matching &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lipman et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib29\" title=\"\">2022</a>)</cite> models, treat speech synthesis as a parallel generation and abandon explicit phoneme alignment and duration predictor.\nHowever, the implicit speech-text alignment and randomness of the sampling process tend to induce hallucination artifacts in synthesized speech, resulting in mispronunciations, audile noise, and abnormal pauses (as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx1.F1\" title=\"Figure 1 &#8227; Introduction &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>).</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
-                    "process"
+                    "process",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To mitigate pronunciation errors in synthesized speech, previous studies have deployed a two-stage pipeline to address this issue. The first stage recognizes the specific text associated with pronunciation error and the corresponding range in speech. The second stage is based on a text-based speech editing process that regenerates mispronounced speech segments &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bae et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib2\" title=\"\">2025</a>; Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite>. Although these models indeed improve the fidelity and intelligence of generated speech, they depend on a complex apparatus of external tools (e.g., ASR models, SSL Models, MFA) to identify mispronunciations, and they cannot locate the segments with low audio quality.</p>\n\n",
                 "matched_terms": [
                     "speech",
+                    "process",
                     "quality",
-                    "error",
-                    "process"
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address the above issues, we present a unified multi-level Vox-Evaluator to facilitate correction of erroneous speech segments and guide preference alignment. The Vox-Evaluator is capable of identifying the temporal scope of speech segment with pronunciation errors or quality issues, detecting mismatch text, and evaluating the overall quality level of the synthesized speech. Based on the detection information obtained from Vox-Evaluator, we develop a fine-grained speech correction to regenerate speech segments with mispronunciations or audio quality issues.\nIn addition, we demonstrate that the Vox-Evaluator can also serve as a fine-grained reward model to guide preference optimization on zero-shot TTS system.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "speech",
                     "correction",
+                    "speech",
+                    "model",
                     "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We introduce a novel multi-level Vox-Evaluator that provides a comprehensive evaluation of the generated speech for the correction process and fine-grained guidance for preference alignment. The information contains the location of specific segments, detection of content and quality evaluation for the synthesized speech.\n</p>\n\n",
                 "matched_terms": [
-                    "speech",
-                    "quality",
                     "correction",
-                    "process"
+                    "speech",
+                    "process",
+                    "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Based on Vox-Evaluator, we utilizes speech correction mechanism to enhance the stability and provide effective guidance for preference alignment on zero-shot TTS system, boosting the overall performance of the TTS model.\n</p>\n\n",
                 "matched_terms": [
-                    "model",
                     "speech",
+                    "model",
                     "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The speech editing which aims to alter specific words or phrases in the audio and keep the other regions unchanged. The traditional cut-copy-paste method &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Morrison et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib32\" title=\"\">2021</a>)</cite> involves a simple process of cutting and pasting audio segments, but it may lead to prosody mismatch or boundary artifacts. In recent years, text-based speech editing systems have seen significant development, enabling users to modify an audio waveform by simply editing its transcript. Previous systems, including CampNet &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib45\" title=\"\">2022</a>)</cite> and FluentSpeech &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Borsos, Sharifi, and Tagliasacchi <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib6\" title=\"\">2022</a>)</cite>, perform editing according to a masked reconstruction principle. They regenerate the target portion based on its surrounding acoustic context. While in the unified model, Voicebox &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Le et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib26\" title=\"\">2023</a>)</cite> provides a versatile framework based on flow matching to address both speech continuation and editing. VoiceCraft &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib35\" title=\"\">2024</a>)</cite> relies on an AR model to predict multi-layer acoustic tokens, enabling it to perform long-form text editing. Speech editing is the crucial part of the overall erroneous speech correction task. The broader refinement process involves other stages, such as automatic error detection and quality evaluation.</p>\n\n",
                 "matched_terms": [
+                    "voicecraft",
+                    "error",
+                    "speech",
+                    "quality",
                     "process",
                     "model",
-                    "correction",
-                    "voicecraft",
-                    "speech",
-                    "error",
-                    "quality"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we present Vox-Evaluator, a multi-level evaluator that can identify the temporal location of errors and evaluate the overall quality of synthesized speech.\nGuided by the Vox-Evaluator, we first automatically locate faulty segments and then regenerate them in the speech refined process. To further improve the stability of the TTS model, the assessments of the evaluator are leveraged as a preference signal to efficiently guide fine-grained preference alignment. Moreover, for training the Vox-Evaluator, we introduce the FGES (fine-grained erroneous speech) dataset, a diverse dataset providing erroneous information and quality level.</p>\n\n",
                 "matched_terms": [
-                    "speech",
-                    "quality",
                     "model",
-                    "process"
+                    "speech",
+                    "process",
+                    "quality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To overcome the computational burden of large automatic speech recognition (ASR) models and complex dynamic time warping (DTW) and Montreal Forced Aligner (MFA), we introduce a unified, multi-level Vox-Evaluator. The evaluator aims to predict the timestamps of faulty speech segments, detect semantic content, and predict a holistic quality score for the entire speech sample. Built on previous speech-text alignment works, such as SpeechLM &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib52\" title=\"\">2024b</a>)</cite> and STFT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib41\" title=\"\">2022</a>)</cite>, our evaluator is designed as an encoder-decoder architecture, which is shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx1.F2\" title=\"Figure 2 &#8227; Introduction &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>a, comprising a speech encoder, phoneme tokenizer, unit encoder, timestamp predictor, overall quality score predictor, and a text decoder.</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "detect",
+                    "speech",
                     "quality"
                 ]
             },
@@ -821,8 +829,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Predictor</span>\nWe employ a multi-layer perceptron (MLP) to predict the overall quality of the input synthesized speech. The MLP consists of three linear layers, with each layer followed by layer normalization and GeLU activation &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hendrycks and Gimpel <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib17\" title=\"\">2016</a>)</cite>. A stack of two long-short-term memory (LSTM) layers, followed by a linear layer and a sigmoid activation, is used to predict the timestamps of the speech segments with errors. The hidden features corresponding to the speech modality in the unit encoder&#8217;s output are fed to the two predictors. Since the hidden features of speech have already addressed the information of the target text through the unit encoder, this facilitates the timestamp predictor to detect segments of synthesized speech that exhibit semantic mismatches with the target text.</p>\n\n",
                 "matched_terms": [
-                    "speech",
                     "detect",
+                    "speech",
                     "quality"
                 ]
             },
@@ -830,9 +838,9 @@
                 "html": "<p class=\"ltx_p\">We employ the well-trained checkpoint from speech-text model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib41\" title=\"\">2022</a>)</cite> which is pre-trained with self-supervised speech masked token prediction, supervised speech phoneme alignment, and a supervised speech-to-text task.\nTo improve the model&#8217;s diverse capabilities, we employ a multi-task learning framework where each prediction head is trained with a specialized objective. To address the severe class imbalance in timestamp prediction, we utilize a frame-wise focal loss &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib28\" title=\"\">2017</a>)</cite>. The text token prediction is trained with a standard token-level cross-entropy loss, while the speech quality score prediction is optimized using a Mean Squared Error (MSE) loss.\nThe overall training objective is a composite loss combining frame-wise focal loss, MSE loss, and token-level cross-entropy loss. The loss function is formulated as follows:</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
                     "model",
-                    "quality"
+                    "quality",
+                    "error"
                 ]
             },
             {
@@ -845,23 +853,23 @@
             {
                 "html": "<p class=\"ltx_p\">To address the erroneous segments, we utilize a mask when a non-empty time scope is predicted by Vox-Evaluator or the DTW alignment reveals discrepancies. With the <math alttext=\"\\hat{S}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.SSSx1.Px1.p3.m1\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>S</mi><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S}</annotation></semantics></math> time scope, we then create a speech mask that divides the sequence into parts to be corrected and parts to be preserved. To account for potential inaccuracies in the initial time detection, we apply a small margin to extend temporal masks. This margin is derived by uniformly partitioning the duration of the mismatched text, which guarantees the complete localization and removal of erroneous segments.\nWe refine segment-level speech errors with an editing TTS model that leverage the generated segmentation masks in the speech representation and the text prompt as conditions for the speech generation process, resulting in significantly lower computational costs compared to complete generation.\nThis process is repeated for two iterations to effectively enhance the generated stability. We empirically discuss this in the ablation study. The speech correction can be summarized in Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#alg1\" title=\"Algorithm 1 &#8227; Evaluation Mechanism &#8227; Synthesized Speech Correction &#8227; Methodology &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n",
                 "matched_terms": [
-                    "process",
-                    "study",
-                    "model",
-                    "correction",
                     "ablation",
-                    "speech"
+                    "speech",
+                    "study",
+                    "process",
+                    "model",
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To judge whether synthesized speech requires error correction, we conduct a comprehensive evaluation to select low-fidelity synthesized samples for refinement. Our evaluation methodology considers two key aspects: (i) an overall audio quality score, predicted by a quality assessment module, and (ii) a word error rate, which quantifies the semantic divergence from the text decoder. By incorporating these two complementary aspects into our evaluation, we ensure that the refined synthesized speech maintains both acoustic quality and semantic integrity. Finally, through this process of continuous refinement, the stability and intelligibility of zero-shot TTS systems are significantly enhanced, without any additional model retraining or fine-tuning.</p>\n\n",
                 "matched_terms": [
+                    "error",
+                    "speech",
+                    "quality",
                     "process",
                     "model",
-                    "correction",
-                    "speech",
-                    "error",
-                    "quality"
+                    "correction"
                 ]
             },
             {
@@ -891,82 +899,82 @@
                 "html": "<p class=\"ltx_p\">We designate the constructed synthesized speech corpus as FGES dataset, which consists of 22k speech samples annotated with timestamps of error segments and quality level. The dataset is divided into a training set of 20k samples, a validation set of 1k samples, and a test set of 1k samples. To ensure a balanced distribution, we specifically selected samples that cover a wide range of error types. Furthermore, we conducted a subjective evaluation to verify that the dataset&#8217;s annotations align with human perception of intelligibility.\nTable &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T1\" title=\"Table 1 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows the statistics for each issue.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
-                    "quality"
+                    "quality",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For speech correction, we employ Seed-TTS test-en &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Anastassiou et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib1\" title=\"\">2024</a>)</cite> and LibriSpeech-PC &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Meister et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib30\" title=\"\">2023</a>)</cite> test-clean as test data. For ablation, we incorporate TTSDS2 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Minixhofer, Klejch, and Bell <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib31\" title=\"\">2025</a>)</cite> to evaluate system stability and audio quality.</p>\n\n",
                 "matched_terms": [
                     "ttsds2",
-                    "correction",
                     "ablation",
                     "speech",
-                    "quality"
+                    "quality",
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The speech encoder of the Vox-Evaluator is composed of a 6-layer transformer with a 768-dimensional hidden state, a 3072-dimensional FFN, and 8 attention heads. For temporal error prediction, we employ a timestamp predictor consisting of 2 bidirectional LSTM layers and a final linear layer with sigmoid activation. The quality score predictor is an MLP with three dense layers (output sizes 768, 768, and 1), using Layer Normalization and GeLU activations. The entire model is fine-tuned for 50 epochs with batch size of 24 on our training dataset using the Adam optimizer and a learning rate of 1e-4. The long waveform is divided into small segments of 30 seconds.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
                     "model",
-                    "quality"
+                    "quality",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Metrics for Vox-Evaluator:</span> We adopt two standard metrics to measure the performance of Vox-Evaluator in predicting overall audio quality: the utterance-level Pearson linear correlation coefficient (utt-PCC) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Benesty et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib4\" title=\"\">2009</a>)</cite> and the system-level Spearman&#8217;s rank correlation coefficient (sys-SRCC) &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sedgwick <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib38\" title=\"\">2014</a>)</cite>. For the localization of erroneous segments, we evaluate Vox-Evaluator using Intersection over Union (IOU). Additionally, to assess the model&#8217;s performance in identifying the absence of errors, we compute the Mean Squared Error on all well-pronounced speech samples. For assessing the transcription capability, we adopt word-level Error Rate (WER) as the measure metric. Specifically, these metrics are calculated across all test samples.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
-                    "quality"
+                    "quality",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Metrics for TTS Model:</span> To measure the performance of preference alignment and speech correction, we report the WER for objective evaluation, using Whisper-large-v3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib36\" title=\"\">2023</a>)</cite> for transcription. Speaker similarity is also assessed via the cosine similarity of speaker embeddings extracted by a WavLM-large-based model &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib9\" title=\"\">2022</a>)</cite>. For subjective evaluation, we measure naturalness using Comparative Mean Opinion Scores (CMOS), where human evaluators compare the synthesized speech to the ground truth. And we also assess the naturalness of the synthesized speech using the UTokyo-sarulab mean opinion score (UTMOS) prediction system &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Saeki et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib37\" title=\"\">2022</a>)</cite>, which serves as an automatic and efficient metric of speech quality.</p>\n\n",
                 "matched_terms": [
+                    "speech",
+                    "quality",
                     "utmos",
                     "model",
-                    "correction",
-                    "speech",
-                    "quality"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Since Vox-Evaluator is a multi-level evaluator, we employ a fine-tuned wav2vec2.0 model trained on our FGES dataset as a baseline. To assess its accuracy in transcription, we directly compare our Vox-Evaluator with high-performing ASR models, including SenseVoice and Whisper. In addition, we select F5-TTS and VoiceCraft for error correction experiments, since they are specifically designed for this purpose. We also employ several prominent zero-shot TTS models as baselines, including CosyVoice &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Du et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib13\" title=\"\">2024</a>)</cite>, NaturalSpeech 3 &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ju et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib21\" title=\"\">2024</a>)</cite>, MaskGCT &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib46\" title=\"\">2024</a>)</cite>, and Llasa &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ye et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "model",
-                    "correction",
                     "voicecraft",
+                    "error",
                     "f5tts",
-                    "error"
+                    "model",
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx4.T2\" title=\"Table 2 &#8227; Data Summarization &#8227; Dataset for Vox-Evaluator &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents the performance comparison of Vox-Evaluator and baselines in different metrics. Regarding timestamp prediction, we first report MSE for test samples containing no erroneous segments. It evaluates the performance on correct samples that are free of any artifacts. For the mispronounced samples, the Vox-Evaluator achieves a high IOU of 0.782, surpassing the fine-tuned wav2vec2.0 baseline by a substantial margin (+19.7% gains). This result demonstrates that the Vox-Evaluator effectively models the alignment between the speech semantic representation and the ground-truth text content.\nThe performance of wo/pre-trained suggests that using a pre-trained checkpoint is crucial, as the fine-grained metric drops significantly when it is randomly initialized.\nIn terms of quality score prediction, the Vox-Evaluator achieves utt-PCC and sys-SRCC scores of 0.541 and 0.630, respectively, demonstrating the significant positive correlation between the annotated scores and the predicted scores.\nFor the text accuracy, we compare our Vox-Evaluator with several ASR models on the task of speech transcription. The results show that our model achieves a superior Word Error Rate (WER) of 2.64% with fewer parameters, outperforming other methods such as Whisper and SenseVoice. It is particularly remarkable that the Vox-Evaluator can perceive cross-modal information between text and speech, which directly boosts its effectiveness in fine-grained tasks.\n</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "error",
                     "model",
-                    "quality"
+                    "quality",
+                    "error"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">While the zero-shot TTS models are prone to generate low-quality or erroneous content for hard cases, the speech correction yields outputs demonstrating both semantic correctness and natural prosodic coherence.\nAs shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.T3\" title=\"Table 3 &#8227; Benchmark Methods &#8227; Experimental Setups &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, we validate the effectiveness of the speech correction mechanism on the Seed-TTS test-en and Librispeech-PC test-clean datasets. When we compare the performance with different baselines, we observe that NAR-based refinement models perform better than most models, achieving enhanced stability.\nBesides, compared to the original VoiceCraft, which is AR-based model, the correction process also improves the performance significantly.\nIn general, F5-TTS<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> and VoiceCraft<sub class=\"ltx_sub\"><span class=\"ltx_text ltx_font_italic\">refine</span></sub> obtain significant reductions in WER compared to the Common baseline by 21%, 32% respectively. The refined models demonstrate consistently strong performance and robustness across different datasets. These improvements can be attributed to Vox-Evaluator&#8217;s multi-level capability.</p>\n\n",
                 "matched_terms": [
+                    "voicecraft",
+                    "speech",
                     "process",
                     "model",
-                    "correction",
-                    "voicecraft",
-                    "speech"
+                    "correction"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20210v1#Sx5.F4\" title=\"Figure 4 &#8227; Performance of the Vox-Evaluator &#8227; Main Results &#8227; Experiments &#8227; Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> shows several examples in speech correction, demonstrating how Vox-Evaluator rectifies speech segments with errors. The first column demonstrates a case where the speech correction process accurately recovers missing semantic information, thereby enhancing the word-level duration alignment between the speech and text. The second column presents an instance where we successfully removes an unnecessary or erroneous speech segment.</p>\n\n",
                 "matched_terms": [
                     "speech",
-                    "correction",
-                    "process"
+                    "process",
+                    "correction"
                 ]
             },
             {
@@ -987,11 +995,11 @@
             {
                 "html": "<p class=\"ltx_p\">We propose a multi-level Vox-Evaluator to enhance stability and fidelity through speech correction mechanism and fine-grained preference alignment. The Vox-Evaluator facilitates the identification of erroneous speech segments and mismatched text tokens, providing guidance in the correction process. Moreover, leveraging the Vox-Evaluator, the speech correction process corrects erroneous segments in the speech generated by zero-shot TTS models and preserves the overall quality of the speech.\nWe show that using Vox-Evaluator can further guide preference alignment to enhance the performance of the TTS system. Extensive experiments demonstrate the effectiveness of the Vox-Evaluator in providing fine-grained reward. Our approach does not require fine-tuning generative model and is plug-gable to other existing TTS models.</p>\n\n",
                 "matched_terms": [
+                    "speech",
+                    "quality",
                     "process",
                     "model",
-                    "correction",
-                    "speech",
-                    "quality"
+                    "correction"
                 ]
             }
         ]

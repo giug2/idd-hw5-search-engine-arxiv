@@ -1,54 +1,56 @@
 {
     "S3.T1": {
+        "source_file": "Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?",
         "caption": "Table 1: Amount of data per language and total target tokens (considering transcriptions and translations as target in S2TT). The number of hours for S2TTpl corresponds to repeated utterances (one for each of the five target languages).",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"/>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">ca</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">de</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">en</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">es</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">fr</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">it</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">tgt tok.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" colspan=\"8\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Languages as Source (hours)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">ASR</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,775</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2,900</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">46,422</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,412</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,895</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">493</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">610M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">136</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">265</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,163</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">173</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">355</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">141</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span><sub class=\"ltx_sub\"><span class=\"ltx_text\" style=\"font-size:90%;\">pl</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">8,875</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">4,670</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">8,810</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2,470</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">4,090</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,230</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">384M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" colspan=\"8\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Languages as Target (samples)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">T2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">289k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">76k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">668k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">508k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">160k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">134M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">289k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">341k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">585k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">54k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">50k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding:0.9pt 3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span><sub class=\"ltx_sub\"><span class=\"ltx_text\" style=\"font-size:90%;\">pl</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1.35M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.05M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.63M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.18M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.10M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.36M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">384M</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "ca\nde\nen\nes\nfr\nit\ntgt tok.\n\n\nLanguages as Source (hours)\n\n\nASR\n1,775\n2,900\n46,422\n1,412\n1,895\n493\n610M\n\n\nS2TT\n136\n265\n1,163\n173\n355\n141\n48M\n\n\n\nS2TTpl\n\n8,875\n4,670\n8,810\n2,470\n4,090\n1,230\n384M\n\n\nLanguages as Target (samples)\n\n\nT2TT\n289k\n48k\n76k\n668k\n508k\n160k\n134M\n\n\nS2TT\n289k\n341k\n585k\n54k\n50k\n48k\n48M\n\n\n\nS2TTpl\n\n1.35M\n2.05M\n2.63M\n2.18M\n2.10M\n2.36M\n384M",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"/>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">ca</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">de</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">en</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">es</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">fr</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">it</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">tgt tok.</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" colspan=\"8\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Languages as Source (hours)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">ASR</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,775</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2,900</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">46,422</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,412</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,895</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">493</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">610M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">136</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">265</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,163</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">173</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">355</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">141</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span><sub class=\"ltx_sub\"><span class=\"ltx_text\" style=\"font-size:90%;\">pl</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">8,875</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">4,670</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">8,810</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2,470</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">4,090</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1,230</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">384M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" colspan=\"8\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Languages as Target (samples)</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">T2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">289k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">76k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">668k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">508k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">160k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">134M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">289k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">341k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">585k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">54k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">50k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48k</span></td>\n<td class=\"ltx_td ltx_align_center\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">48M</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b\" style=\"padding:0.9pt 3.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">S2TT</span><sub class=\"ltx_sub\"><span class=\"ltx_text\" style=\"font-size:90%;\">pl</span></sub>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">1.35M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.05M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.63M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.18M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.10M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">2.36M</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.9pt 3.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">384M</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "160k",
-            "134m",
-            "tok",
-            "289k",
-            "each",
-            "source",
-            "48k",
-            "considering",
-            "amount",
             "tgt",
-            "transcriptions",
-            "hours",
-            "s2tt",
             "corresponds",
-            "48m",
-            "target",
-            "76k",
-            "210m",
-            "384m",
-            "135m",
-            "50k",
-            "repeated",
-            "263m",
-            "language",
-            "54k",
-            "samples",
-            "t2tt",
             "one",
-            "asr",
-            "205m",
-            "number",
-            "tokens",
-            "languages",
-            "236m",
-            "total",
-            "translations",
-            "s2ttpl",
-            "five",
-            "668k",
-            "508k",
-            "610m",
             "data",
-            "585k",
-            "218m",
+            "translations",
+            "s2tt",
+            "135m",
+            "repeated",
+            "source",
+            "samples",
+            "610m",
+            "48k",
+            "508k",
+            "134m",
+            "384m",
+            "asr",
+            "languages",
+            "668k",
+            "total",
             "341k",
-            "utterances"
+            "48m",
+            "each",
+            "585k",
+            "263m",
+            "160k",
+            "number",
+            "76k",
+            "t2tt",
+            "transcriptions",
+            "236m",
+            "utterances",
+            "five",
+            "hours",
+            "tokens",
+            "205m",
+            "language",
+            "tok",
+            "amount",
+            "target",
+            "s2ttpl",
+            "289k",
+            "50k",
+            "218m",
+            "54k",
+            "210m",
+            "considering"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Our training framework includes four types of datasets: ASR, T2TT, S2TT and pseudo-labeled S2TT (S2TT<sub class=\"ltx_sub\">pl</sub>) in six languages: Catalan (<span class=\"ltx_text ltx_font_italic\">ca</span>), German (<span class=\"ltx_text ltx_font_italic\">de</span>), English (<span class=\"ltx_text ltx_font_italic\">en</span>), Spanish (<span class=\"ltx_text ltx_font_italic\">es</span>), French (<span class=\"ltx_text ltx_font_italic\">fr</span>), and Italian (<span class=\"ltx_text ltx_font_italic\">it</span>). Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.T1\" title=\"Table 1 &#8227; 3.1 Data &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> reports the amount of data per language. For ASR, we use the train splits of Common Voice 21.0&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib17\" title=\"\">17</a>]</cite> and Multilingual LibriSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib18\" title=\"\">18</a>]</cite>, totaling approximately 6,000 and 48,900 hours, respectively. For T2TT, we use Wikimedia&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib19\" title=\"\">19</a>]</cite> samples with 5 to 100 words, filtered using the same pipeline applied to pseudo-labeled S2TT data. For S2TT, we consider the train splits of Europarl-ST v1.1&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib20\" title=\"\">20</a>]</cite> and CoVoST 2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib21\" title=\"\">21</a>]</cite>, totaling around 630 and 1,600 hours, respectively. Finally, S2TT<sub class=\"ltx_sub\">pl</sub> data is generated by translating all Common Voice 21.0 samples into all possible target languages. We evaluate our models in CoVoST 2 and Fleurs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib22\" title=\"\">22</a>]</cite> test sets.</p>\n\n",
@@ -58,50 +60,50 @@
             {
                 "html": "<p class=\"ltx_p\">Recent work on Speech-to-Text Translation (S2TT) has focused on LLM-based models, introducing the increasingly adopted Chain-of-Thought (CoT) prompting, where the model is guided to first transcribe the speech and then translate it. CoT typically outperforms direct prompting primarily because it can exploit abundant Automatic Speech Recognition (ASR) and Text-to-Text Translation (T2TT) datasets to explicitly model its steps. In this paper, we systematically compare CoT and Direct prompting under increasing amounts of S2TT data. To this end, we pseudo-label an ASR corpus by translating its transcriptions into six European languages, and train LLM-based S2TT systems with both prompting strategies at different data scales. Our results show that Direct improves more consistently as the amount of data increases, suggesting that it may become a more effective approach as larger S2TT resources are created.</p>\n\n",
                 "matched_terms": [
-                    "languages",
-                    "transcriptions",
-                    "t2tt",
-                    "s2tt",
-                    "data",
+                    "amount",
                     "asr",
-                    "amount"
+                    "data",
+                    "languages",
+                    "t2tt",
+                    "transcriptions",
+                    "s2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">End-to-End (E2E) S2TT is increasingly preferred over the traditional cascaded pipeline of ASR followed by T2TT. Unlike cascaded approaches, E2E systems avoid error propagation across modules and can in principle exploit acoustic and prosodic cues that are lost in intermediate transcripts. Recent studies show that the performance of E2E systems is approaching that of cascaded methods, with some works even reporting improvements beyond them&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib1\" title=\"\">1</a>]</cite>.</p>\n\n",
                 "matched_terms": [
-                    "t2tt",
                     "s2tt",
-                    "asr"
+                    "asr",
+                    "t2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">A popular strategy for building E2E systems is to adapt a backbone LLM already fine-tuned for T2TT to the speech modality&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib3\" title=\"\">3</a>]</cite>. Within this framework, recent works adopt <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> prompting, where the model is guided to first transcribe and then translate&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib6\" title=\"\">6</a>]</cite>. <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> has gained attention because it outperforms <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> translation (without intermediate steps). More importantly, <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> allows to leverage widely available ASR and T2TT data by explicitly modeling these steps.</p>\n\n",
                 "matched_terms": [
-                    "data",
+                    "asr",
                     "t2tt",
-                    "asr"
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we revisit this comparison and argue that the advantage of <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> is mainly tied to the large quantity of ASR and T2TT data currently used for training. We show that as S2TT data becomes increasingly available, direct translation may emerge as a stronger alternative. To the best of our knowledge, this is the only systematic study that compares <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> and <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> prompting under large-scale pseudo-labeled S2TT data with this much language coverage.</p>\n\n",
                 "matched_terms": [
                     "language",
-                    "t2tt",
-                    "s2tt",
+                    "asr",
                     "data",
-                    "asr"
+                    "t2tt",
+                    "s2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The dominant trend for creating S2TT resources is to translate existing ASR corpora into target languages&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib8\" title=\"\">8</a>]</cite>. Following this approach, we construct a pseudo-labeled dataset through a translation pipeline (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>), and train models with both <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> and <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> while scaling the amount of data. Our results demonstrate that <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> exhibits more stable scaling than <span class=\"ltx_text ltx_font_smallcaps\">CoT</span>.</p>\n\n",
                 "matched_terms": [
-                    "languages",
-                    "s2tt",
+                    "amount",
                     "target",
-                    "data",
                     "asr",
-                    "amount"
+                    "data",
+                    "languages",
+                    "s2tt"
                 ]
             },
             {
@@ -114,40 +116,40 @@
             {
                 "html": "<p class=\"ltx_p\">We systematically compare how <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> and <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> prompting strategies scale in S2TT. To do so, we generate pseudo-labeled S2TT data (S2TT<sub class=\"ltx_sub\">pl</sub>) and evaluate a series of models trained with varying amounts of it.</p>\n\n",
                 "matched_terms": [
-                    "data",
                     "s2tt",
-                    "s2ttpl"
+                    "s2ttpl",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We generate pseudo-labeled data by translating the transcriptions of an ASR dataset (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>). We use the same translation LLM employed as backbone for the S2TT model. To filter out generation errors or low-quality translations, we first score the samples with a Quality Estimation (QE) system. We use BLASER 2.0&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib10\" title=\"\">10</a>]</cite> for this task because it provides reference-free, sentence-level translation scores that correlate strongly with human judgments. We compute the scores by evaluating the similarity of the transcription and translation with <span class=\"ltx_text ltx_font_typewriter\">blaser_2_0_qe<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_serif\">1</span></span><a class=\"ltx_ref ltx_url\" href=\"https://huggingface.co/facebook/blaser-2.0-qe\" style=\"font-size:70%;\" title=\"\">https://huggingface.co/facebook/blaser-2.0-qe</a></span></span></span></span> and remove samples below <math alttext=\"3.75\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m1\" intent=\":literal\"><semantics><mn>3.75</mn><annotation encoding=\"application/x-tex\">3.75</annotation></semantics></math>, which was chosen after inspecting samples in multiple languages. Despite estimating the quality of the translation, BLASER 2.0 is based on SONAR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib11\" title=\"\">11</a>]</cite> embeddings, which have a shared representation space for speech and text across languages. For this reason, we next use a Language Identification (LID) system to discard possible targets in the wrong language. We use GlotLID v3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib12\" title=\"\">12</a>]</cite> to compute the probabilities of each of the <math alttext=\"L\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m2\" intent=\":literal\"><semantics><mi>L</mi><annotation encoding=\"application/x-tex\">L</annotation></semantics></math> considered languages <math alttext=\"\\bm{p}=(p_{1},...,p_{L})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>&#119953;</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>p</mi><mi>L</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\bm{p}=(p_{1},...,p_{L})</annotation></semantics></math>, and remove samples in which the expected target language <math alttext=\"p_{e}&lt;0.5\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><msub><mi>p</mi><mi>e</mi></msub><mo>&lt;</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">p_{e}&lt;0.5</annotation></semantics></math>.</p>\n\n",
                 "matched_terms": [
-                    "languages",
-                    "transcriptions",
-                    "language",
                     "samples",
-                    "s2tt",
-                    "translations",
+                    "language",
                     "target",
-                    "each",
+                    "asr",
                     "data",
-                    "asr"
+                    "transcriptions",
+                    "languages",
+                    "translations",
+                    "s2tt",
+                    "each"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We build an LLM-based E2E S2TT system for our experimentation, following a similar approach as&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib13\" title=\"\">13</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib14\" title=\"\">14</a>]</cite>. Each speech utterance <math alttext=\"x\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mi>x</mi><annotation encoding=\"application/x-tex\">x</annotation></semantics></math> is first encoded with a self-supervised model <math alttext=\"f_{\\text{enc}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><msub><mi>f</mi><mtext>enc</mtext></msub><annotation encoding=\"application/x-tex\">f_{\\text{enc}}</annotation></semantics></math>, extracting continuous representations. These features are quantized into a sequence of discrete tokens:\n<math alttext=\"\\bm{s}=(s_{1},\\ldots,s_{T})=q\\bigl(f_{\\text{enc}}(x)\\bigr),\\quad s_{t}\\in V_{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m3\" intent=\":literal\"><semantics><mrow><mrow><mi>&#119956;</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>s</mi><mi>T</mi></msub><mo stretchy=\"false\">)</mo></mrow><mo>=</mo><mrow><mi>q</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\">(</mo><mrow><msub><mi>f</mi><mtext>enc</mtext></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\">)</mo></mrow></mrow></mrow><mo rspace=\"1.167em\">,</mo><mrow><msub><mi>s</mi><mi>t</mi></msub><mo>&#8712;</mo><msub><mi>V</mi><mi>s</mi></msub></mrow></mrow><annotation encoding=\"application/x-tex\">\\bm{s}=(s_{1},\\ldots,s_{T})=q\\bigl(f_{\\text{enc}}(x)\\bigr),\\quad s_{t}\\in V_{s}</annotation></semantics></math>,\nwhere <math alttext=\"q(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m4\" intent=\":literal\"><semantics><mrow><mi>q</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">q(\\cdot)</annotation></semantics></math> is the quantization function and <math alttext=\"V_{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m5\" intent=\":literal\"><semantics><msub><mi>V</mi><mi>s</mi></msub><annotation encoding=\"application/x-tex\">V_{s}</annotation></semantics></math> is the speech token vocabulary. To adapt the pretrained LLM for speech inputs, its original vocabulary <math alttext=\"V_{o}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m6\" intent=\":literal\"><semantics><msub><mi>V</mi><mi>o</mi></msub><annotation encoding=\"application/x-tex\">V_{o}</annotation></semantics></math> is expanded to <math alttext=\"V=V_{o}\\cup V_{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m7\" intent=\":literal\"><semantics><mrow><mi>V</mi><mo>=</mo><mrow><msub><mi>V</mi><mi>o</mi></msub><mo>&#8746;</mo><msub><mi>V</mi><mi>s</mi></msub></mrow></mrow><annotation encoding=\"application/x-tex\">V=V_{o}\\cup V_{s}</annotation></semantics></math>, alongside its corresponding token embedding matrix <math alttext=\"E=\\bigl[E_{o};\\,E_{s}\\bigr]\\in\\mathbb{R}^{(|V|)\\times d}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m8\" intent=\":literal\"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\">[</mo><msub><mi>E</mi><mi>o</mi></msub><mo rspace=\"0.337em\">;</mo><msub><mi>E</mi><mi>s</mi></msub><mo maxsize=\"1.200em\" minsize=\"1.200em\">]</mo></mrow><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><mrow><mo stretchy=\"false\">(</mo><mrow><mo stretchy=\"false\">|</mo><mi>V</mi><mo stretchy=\"false\">|</mo></mrow><mo rspace=\"0.055em\" stretchy=\"false\">)</mo></mrow><mo rspace=\"0.222em\">&#215;</mo><mi>d</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">E=\\bigl[E_{o};\\,E_{s}\\bigr]\\in\\mathbb{R}^{(|V|)\\times d}</annotation></semantics></math>, where <math alttext=\"E_{s}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m9\" intent=\":literal\"><semantics><msub><mi>E</mi><mi>s</mi></msub><annotation encoding=\"application/x-tex\">E_{s}</annotation></semantics></math> is randomly initialized.</p>\n\n",
                 "matched_terms": [
-                    "each",
                     "s2tt",
-                    "tokens"
+                    "tokens",
+                    "each"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Training is performed in two stages. In stage&#160;1, the backbone LLM is frozen and only the token embedding layer is trained on speech utterances from the ASR corpora, using next-token prediction. In stage&#160;2, the entire LLM is trained on the data described in &#167;&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.SS1\" title=\"3.1 Data &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3.1</span></a>.</p>\n\n",
                 "matched_terms": [
                     "utterances",
-                    "data",
-                    "asr"
+                    "asr",
+                    "data"
                 ]
             },
             {
@@ -160,137 +162,139 @@
             {
                 "html": "<p class=\"ltx_p\">To fully leverage ASR and T2TT performance in S2TT, <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> models use prompts derived from the template shown in&#160;Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S2.F2\" title=\"Figure 2 &#8227; 2.2 Speech Translation Model &#8227; 2 Methodology &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. The same template is applied during inference, and generation is performed with beam search using five beams.</p>\n\n",
                 "matched_terms": [
-                    "t2tt",
                     "s2tt",
                     "asr",
-                    "five"
+                    "five",
+                    "t2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We train two baseline models using all the ASR, T2TT and S2TT data described in &#167;&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.SS1\" title=\"3.1 Data &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3.1</span></a>, with direct (<span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">Base</sub></span>) and CoT (<span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span>) prompting.</p>\n\n",
                 "matched_terms": [
-                    "data",
-                    "t2tt",
                     "s2tt",
-                    "asr"
+                    "asr",
+                    "t2tt",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To analyze the impact of scaling S2TT data, we incrementally add S2TT<sub class=\"ltx_sub\">pl</sub> samples to each baseline, training 5 new systems with 20%, 40%, 60%, 80% and 100% of the full dataset respectively. We refer to these models as <span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">augXX</sub></span> and <span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">augXX</sub></span>, where <span class=\"ltx_text ltx_font_smallcaps\">xx</span> is the percentage of pseudo-labeled data used. These models are trained independently, they are not checkpoints of a single experiment.</p>\n\n",
                 "matched_terms": [
                     "samples",
-                    "s2tt",
                     "s2ttpl",
                     "data",
+                    "s2tt",
                     "each"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the CoT setting, each speech&#8211;transcription pair in the pseudo-labeled data is repeated six times, one for each target language. We hypothesize this repetition may bias the model and harm the ASR performance, which is particularly critical for CoT prompting. To validate this, we train two variants of <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">augXX</sub></span>: in <span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">augXX</sub></span>, the transcription step contributes to the loss, whereas in <span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">augXX</sub></span> it does not.</p>\n\n",
                 "matched_terms": [
-                    "repeated",
                     "language",
-                    "one",
                     "target",
-                    "each",
+                    "one",
+                    "asr",
                     "data",
-                    "asr"
+                    "each",
+                    "repeated"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We evaluate the models using Word Error Rate (WER) for ASR, and with BLEU&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib23\" title=\"\">23</a>]</cite>, computed with SacreBLEU&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib24\" title=\"\">24</a>]</cite>,<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>signature:&#160;<span class=\"ltx_text ltx_font_typewriter\">nrefs:1|case:mixed|eff:no|tok:13a|smooth:&#160;exp|version:2.5.1</span></span></span></span> as well as x<span class=\"ltx_text ltx_font_smallcaps\">comet</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib25\" title=\"\">25</a>]</cite><span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/Unbabel/XCOMET-XL\" style=\"font-size:70%;\" title=\"\">https://huggingface.co/Unbabel/XCOMET-XL</a></span></span></span> for T2TT and S2TT.</p>\n\n",
                 "matched_terms": [
-                    "t2tt",
                     "s2tt",
-                    "asr"
+                    "asr",
+                    "t2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">Direct<span class=\"ltx_text ltx_font_upright\"> scales better than </span>CoT</span>&#8196;&#160;Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf1\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a> shows that the two <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> variants peak at 20% of the S2TT<sub class=\"ltx_sub\">pl</sub> data and then degrade as more data is added. In contrast, <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug</sub></span> consistently improves, achieving a better score with <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug100</sub></span>. Although the peaks of <span class=\"ltx_text ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">aug</sub></span> and <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> are still higher, <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug</sub></span> demonstrates a steadier scaling trend, suggesting that this gap could be closed with additional data. These results indicate a potential advantage of direct prompting when sufficient S2TT<sub class=\"ltx_sub\">pl</sub> data is available.</p>\n\n",
                 "matched_terms": [
-                    "data",
-                    "s2ttpl"
+                    "s2ttpl",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<span class=\"ltx_text ltx_font_upright\"> degrades ASR as data scales</span></span>&#8196;&#160;Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf2\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a> shows that WER remains stable with <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug</sub></span> across all S2TT<sub class=\"ltx_sub\">pl</sub> data scales, whereas both <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> and <span class=\"ltx_text ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">aug</sub></span> gradually increase it by up to <math alttext=\"+7.4\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m1\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>7.4</mn></mrow><annotation encoding=\"application/x-tex\">+7.4</annotation></semantics></math>% and <math alttext=\"+13\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m2\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>13</mn></mrow><annotation encoding=\"application/x-tex\">+13</annotation></semantics></math>% relative to their baseline. These trends correlate with the steady decrease of S2TT performance, reflecting their critical reliance on the ASR sub-task. This is also observed at <math alttext=\"20\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m3\" intent=\":literal\"><semantics><mn>20</mn><annotation encoding=\"application/x-tex\">20</annotation></semantics></math>% of S2TT<sub class=\"ltx_sub\">pl</sub> data, where <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> reaches its minimum WER alongside its highest x<span class=\"ltx_text ltx_font_smallcaps\">comet</span> score. Additionally, <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span> shows a WER <math alttext=\"2\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m4\" intent=\":literal\"><semantics><mn>2</mn><annotation encoding=\"application/x-tex\">2</annotation></semantics></math>% lower than its counterpart strategy. This confirms the findings of&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib8\" title=\"\">8</a>]</cite>, indicating that direct S2TT data improve ASR performance.</p>\n\n",
                 "matched_terms": [
-                    "data",
                     "s2tt",
+                    "s2ttpl",
                     "asr",
-                    "s2ttpl"
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf3\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a> shows that <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> performs slightly worse on T2TT, likely due to the lower proportion of this task in the training recipe (in <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug</sub></span>, S2TT<sub class=\"ltx_sub\">pl</sub> samples do not contain the T2TT sub-task). Nevertheless, performance for all three methods remains stable around +2 x<span class=\"ltx_text ltx_font_smallcaps\">comet</span> points. These results make <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> appealing, showing that ASR and T2TT remain stable as pseudo-labeled S2TT data scales.</p>\n\n",
                 "matched_terms": [
                     "samples",
-                    "t2tt",
-                    "s2tt",
                     "s2ttpl",
+                    "asr",
                     "data",
-                    "asr"
+                    "t2tt",
+                    "s2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">aug</sub><span class=\"ltx_text ltx_font_upright\"> lags behind </span>CoT<sub class=\"ltx_sub\">aug</sub></span>&#8196;&#160;Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf1\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a> and <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf2\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a> support the hypothesis from &#167;&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.SS2\" title=\"3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3.2</span></a> that training the transcription step may negatively impact the model, as <span class=\"ltx_text ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">aug</sub></span> consistently underperforms <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> in ASR and S2TT. Nonetheless, <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> also leads to some degradation. A possible explanation is that, by not training the transcription step, all S2TT<sub class=\"ltx_sub\">pl</sub> data is treated as T2TT with speech as context, effectively reducing the proportion of the ASR task.</p>\n\n",
                 "matched_terms": [
-                    "t2tt",
-                    "s2tt",
                     "s2ttpl",
+                    "asr",
                     "data",
-                    "asr"
+                    "t2tt",
+                    "s2tt"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S4.F4.sf1\" title=\"In Figure 4 &#8227; 4 Results &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">4(a)</span></a> shows that <span class=\"ltx_text ltx_font_italic\">en</span> follows a similar trend to Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf1\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>, though performance on <span class=\"ltx_text ltx_font_italic\">en<math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p7.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math>x</span> remains nearly constant. This is likely due to the large amount of ASR data in <span class=\"ltx_text ltx_font_italic\">en</span>, which, similarly to&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib8\" title=\"\">8</a>]</cite>, allows <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">Base</sub></span> (at 0% S2TT<sub class=\"ltx_sub\">pl</sub> data) to perform close to <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span>. Both <span class=\"ltx_text ltx_font_italic\">ca</span> and <span class=\"ltx_text ltx_font_italic\">it</span> exhibit the same overall trend, confirming that the results are consistent across languages. Notably, for <span class=\"ltx_text ltx_font_italic\">ca<math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p7.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math>x</span>, <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug100</sub></span> nearly matches the peak of <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug20</sub></span>. This supports the hypothesis that, with sufficient S2TT<sub class=\"ltx_sub\">pl</sub> data, <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> can reach <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> performance.</p>\n\n",
                 "matched_terms": [
-                    "languages",
+                    "amount",
                     "s2ttpl",
-                    "data",
                     "asr",
-                    "amount"
+                    "data",
+                    "languages"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this work, we systematically compare <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> and <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> prompting strategies for S2TT using pseudo-labeled data, which has become the standard approach for scaling this task. Our experiments show that <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> struggles to improve with more data, regardless of whether the transcription step is trained or not. In contrast, <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> prompting demonstrates a consistent scaling trend: although its absolute performance has not yet surpassed <span class=\"ltx_text ltx_font_smallcaps\">CoT</span>, it steadily improves as more pseudo-labeled data is added, indicating strong potential for larger scale trainings.</p>\n\n",
                 "matched_terms": [
-                    "data",
-                    "s2tt"
+                    "s2tt",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">These findings position <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> prompting as a promising strategy for future research. Beyond its favorable scaling behavior, <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> also offers practical advantages: it requires roughly half the computational resources of <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> and is simpler to implement. Moreover, the observed trends raise important questions about its limits: it remains to be validated whether <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> could not only match but eventually surpass <span class=\"ltx_text ltx_font_smallcaps\">CoT</span> with an even larger scale of data, clarifying its potential as a primary strategy for S2TT training.</p>\n\n",
                 "matched_terms": [
-                    "data",
-                    "s2tt"
+                    "s2tt",
+                    "data"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Finally, beyond the current setup, a particularly relevant direction is paralinguistic-aware translation. E2E S2TT systems are not constrained by the transcription bottleneck, which gives them the potential to produce richer translations that reflect linguistic cues uniquely present in speech, such as prosody. However, because current training largely relies on ASR and T2TT datasets, especially in CoT prompting, this capacity is unlikely to emerge naturally. Progress may therefore require training with direct translations annotated for speech-specific cues, and it would be valuable to investigate whether <span class=\"ltx_text ltx_font_smallcaps\">Direct</span> prompting can better exploit the full richness of the speech signal compared to <span class=\"ltx_text ltx_font_smallcaps\">CoT</span>.</p>\n\n",
                 "matched_terms": [
-                    "t2tt",
                     "s2tt",
                     "asr",
+                    "t2tt",
                     "translations"
                 ]
             }
         ]
     },
     "S4.T2": {
+        "source_file": "Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?",
         "caption": "Table 2: Baselines evaluation on FLEURS.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">BLEU</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">comet</span>\n</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row\" style=\"padding:0.45pt 4.0pt;\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m1\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m2\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">en</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">en</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m3\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m4\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m5\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">en</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">en</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m6\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">Direct<sub class=\"ltx_sub\">Base</sub></span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">21.04</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">22.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">30.32</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">80.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">79.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">86.0</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">CoT<sub class=\"ltx_sub\">Base</sub></span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">26.39</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">29.76</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">33.24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">88.0</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">87.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">88.6</span></td>\n</tr>\n</tbody>\n</table>\n\n",
+        "body": "BLEU\n\nxcomet\n\n\n\n\n\nx→\\tox\n\n\nx→\\toen\n\n\nen→\\tox\n\n\nx→\\tox\n\n\nx→\\toen\n\n\nen→\\tox\n\n\n\n\n\nDirectBase\n21.04\n22.80\n30.32\n80.6\n79.7\n86.0\n\n\nCoTBase\n26.39\n29.76\n33.24\n88.0\n87.2\n88.6",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle\">\n<thead class=\"ltx_thead\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">BLEU</span></th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" colspan=\"3\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">comet</span>\n</th>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_th ltx_th_row\" style=\"padding:0.45pt 4.0pt;\"/>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m1\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m2\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">en</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">en</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m3\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m4\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">x</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m5\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">en</span>\n</th>\n<th class=\"ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_t\" style=\"padding:0.45pt 4.0pt;\">\n<span class=\"ltx_text\" style=\"font-size:90%;\">en</span><math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.T2.m6\" intent=\":literal\"><semantics><mo mathsize=\"0.900em\" stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math><span class=\"ltx_text\" style=\"font-size:90%;\">x</span>\n</th>\n</tr>\n</thead>\n<tbody class=\"ltx_tbody\">\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">Direct<sub class=\"ltx_sub\">Base</sub></span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">21.04</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">22.80</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">30.32</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">80.6</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">79.7</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text\" style=\"font-size:90%;\">86.0</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<th class=\"ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_smallcaps\" style=\"font-size:90%;\">CoT<sub class=\"ltx_sub\">Base</sub></span></th>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">26.39</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">29.76</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">33.24</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">88.0</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">87.2</span></td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\" style=\"padding:0.45pt 4.0pt;\"><span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">88.6</span></td>\n</tr>\n</tbody>\n</table>\n\n",
         "informative_terms_identified": [
-            "directbase",
-            "en→tox",
-            "x→tox",
-            "x→toen",
-            "fleurs",
-            "xcomet",
             "baselines",
+            "fleurs",
             "evaluation",
+            "en→tox",
+            "directbase",
             "cotbase",
-            "bleu"
+            "x→tox",
+            "bleu",
+            "x→toen",
+            "xcomet"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Initial <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span> superiority</span>&#8196;&#160;We first verify that our baselines reproduce trends reported in prior work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib4\" title=\"\">4</a>]</cite>. As expected, Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S4.T2\" title=\"Table 2 &#8227; 4 Results &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that the <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span> outperforms the <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">Base</sub></span> across all languages, confirming the benefit of decomposing the task into transcription and translation in this scenario. The average baseline gap is approximately 5 BLEU points and 7 x<span class=\"ltx_text ltx_font_smallcaps\">comet</span> points.</p>\n\n"
@@ -313,8 +317,8 @@
             {
                 "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_smallcaps\">CoT<span class=\"ltx_text ltx_font_upright\"> degrades ASR as data scales</span></span>&#8196;&#160;Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#S3.F3.sf2\" title=\"In Figure 3 &#8227; 3.2 Experiments &#8227; 3 Experimental Setup &#8227; Revisiting Direct Speech-to-Text Translation with Speech LLMs: Better Scaling than CoT Prompting?\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a> shows that WER remains stable with <span class=\"ltx_text ltx_font_smallcaps\">Direct<sub class=\"ltx_sub\">aug</sub></span> across all S2TT<sub class=\"ltx_sub\">pl</sub> data scales, whereas both <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> and <span class=\"ltx_text ltx_font_smallcaps\">CoT<sup class=\"ltx_sup\"><span class=\"ltx_text ltx_font_upright\">&#8224;</span></sup><sub class=\"ltx_sub\">aug</sub></span> gradually increase it by up to <math alttext=\"+7.4\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m1\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>7.4</mn></mrow><annotation encoding=\"application/x-tex\">+7.4</annotation></semantics></math>% and <math alttext=\"+13\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m2\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>13</mn></mrow><annotation encoding=\"application/x-tex\">+13</annotation></semantics></math>% relative to their baseline. These trends correlate with the steady decrease of S2TT performance, reflecting their critical reliance on the ASR sub-task. This is also observed at <math alttext=\"20\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m3\" intent=\":literal\"><semantics><mn>20</mn><annotation encoding=\"application/x-tex\">20</annotation></semantics></math>% of S2TT<sub class=\"ltx_sub\">pl</sub> data, where <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">aug</sub></span> reaches its minimum WER alongside its highest x<span class=\"ltx_text ltx_font_smallcaps\">comet</span> score. Additionally, <span class=\"ltx_text ltx_font_smallcaps\">CoT<sub class=\"ltx_sub\">Base</sub></span> shows a WER <math alttext=\"2\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m4\" intent=\":literal\"><semantics><mn>2</mn><annotation encoding=\"application/x-tex\">2</annotation></semantics></math>% lower than its counterpart strategy. This confirms the findings of&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03093v1#bib.bib8\" title=\"\">8</a>]</cite>, indicating that direct S2TT data improve ASR performance.</p>\n\n",
                 "matched_terms": [
-                    "cotbase",
-                    "xcomet"
+                    "xcomet",
+                    "cotbase"
                 ]
             },
             {

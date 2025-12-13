@@ -1,65 +1,67 @@
 {
     "S4.T1": {
+        "source_file": "It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models",
         "caption": "Table 1: The performance comparison of our method and other approaches on DAIC-WoZ development set. “*” denotes that the original results are reported with 2 significant digits. “MS” denoting the multi-scale strategy in our inference.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Modality</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Models</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">F1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"5\">Text</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">RoBERTa <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">poswiata-perelkiewicz-2022-opi</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.602</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Llama2-7B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.578</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Llama2-13B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.636</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Qwen2-7B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024qwen2</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.564</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">GPT4 <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.571</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"5\">Audio</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">HuBERT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.640</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">WavLM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.720</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SpeechFormer <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022speechformer</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.694</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SpeechFormer++ <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2023speechformer++</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.709</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Whisper-v3 <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.694</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"2\">Video</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">GSM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">williamson2016detecting</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.530</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SSL + CLS</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.668</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"3\">A+T</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">AudiBERT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">toto2021audibert</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.709</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">TOAT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2022topic</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.741</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">LSTM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">al2018detecting</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.770</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"3\">A+T+V</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">C-CNN <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">haque2018measuring</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.769</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">ConvBiLSTM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wei2022multi</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.70*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Ours w/o MS</td>\n<td class=\"ltx_td ltx_align_center\">0.789</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_bb\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">Ours</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.844</span></td>\n</tr>\n</table>\n\n",
+        "body": "Modality\nModels\nF1\n\n\nText\nRoBERTa poswiata-perelkiewicz-2022-opi\n\n0.602\n\n\nLlama2-7B zhang2024llms\n\n0.578\n\n\nLlama2-13B zhang2024llms\n\n0.636\n\n\nQwen2-7B yang2024qwen2\n\n0.564\n\n\nGPT4 zhang2024llms\n\n0.571\n\n\nAudio\nHuBERT wu2023self\n\n0.640\n\n\nWavLM wu2023self\n\n0.720\n\n\nSpeechFormer chen2022speechformer\n\n0.694\n\n\nSpeechFormer++ chen2023speechformer++\n\n0.709\n\n\nWhisper-v3 radford2023robust\n\n0.694\n\n\nVideo\nGSM williamson2016detecting\n\n0.530\n\n\nSSL + CLS\n0.668\n\n\nA+T\nAudiBERT toto2021audibert\n\n0.709\n\n\nTOAT guo2022topic\n\n0.741\n\n\nLSTM al2018detecting\n\n0.770\n\n\nA+T+V\nC-CNN haque2018measuring\n\n0.769\n\n\nConvBiLSTM wei2022multi\n\n0.70*\n\n\nOurs w/o MS\n0.789\n\n\n\nOurs\n0.844",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Modality</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Models</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">F1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"5\">Text</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">RoBERTa <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">poswiata-perelkiewicz-2022-opi</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.602</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Llama2-7B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.578</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Llama2-13B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.636</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Qwen2-7B <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2024qwen2</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.564</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">GPT4 <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.571</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"5\">Audio</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">HuBERT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.640</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">WavLM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.720</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SpeechFormer <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022speechformer</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.694</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SpeechFormer++ <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2023speechformer++</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.709</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Whisper-v3 <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.694</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"2\">Video</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">GSM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">williamson2016detecting</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.530</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">SSL + CLS</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.668</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"3\">A+T</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">AudiBERT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">toto2021audibert</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.709</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">TOAT <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2022topic</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.741</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">LSTM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">al2018detecting</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.770</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_t\" rowspan=\"3\">A+T+V</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">C-CNN <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">haque2018measuring</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.769</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">ConvBiLSTM <cite class=\"ltx_cite ltx_citemacro_citeyear\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wei2022multi</span></cite>\n</td>\n<td class=\"ltx_td ltx_align_center\">0.70*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left\">Ours w/o MS</td>\n<td class=\"ltx_td ltx_align_center\">0.789</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_border_bb\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_bb\">Ours</td>\n<td class=\"ltx_td ltx_align_center ltx_border_bb\"><span class=\"ltx_text ltx_font_bold\">0.844</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "models",
-            "chen2022speechformer",
             "original",
-            "hubert",
-            "significant",
-            "atv",
-            "strategy",
-            "whisperv3",
-            "denotes",
-            "convbilstm",
-            "inference",
-            "haque2018measuring",
-            "comparison",
-            "our",
-            "wu2023self",
-            "llama213b",
-            "poswiataperelkiewicz2022opi",
-            "gsm",
-            "“ms”",
-            "audio",
-            "daicwoz",
-            "modality",
-            "reported",
-            "digits",
-            "denoting",
-            "wavlm",
-            "text",
-            "zhang2024llms",
-            "multiscale",
-            "performance",
-            "guo2022topic",
-            "development",
-            "llama27b",
-            "radford2023robust",
-            "toat",
-            "audibert",
-            "results",
-            "gpt4",
-            "roberta",
-            "chen2023speechformer",
-            "lstm",
-            "cls",
-            "wei2022multi",
-            "set",
-            "ours",
-            "williamson2016detecting",
-            "toto2021audibert",
-            "yang2024qwen2",
-            "video",
-            "al2018detecting",
-            "other",
-            "ccnn",
-            "method",
             "ssl",
+            "poswiataperelkiewicz2022opi",
             "speechformer",
+            "convbilstm",
+            "approaches",
+            "reported",
+            "“ms”",
+            "development",
+            "inference",
+            "lstm",
+            "al2018detecting",
+            "gsm",
+            "roberta",
+            "daicwoz",
+            "video",
+            "haque2018measuring",
+            "text",
+            "radford2023robust",
+            "denotes",
+            "our",
+            "llama213b",
+            "results",
+            "zhang2024llms",
+            "toat",
+            "wei2022multi",
+            "audio",
+            "wavlm",
+            "cls",
+            "modality",
+            "gpt4",
+            "chen2023speechformer",
+            "atv",
+            "method",
+            "strategy",
+            "performance",
+            "comparison",
+            "multiscale",
+            "audibert",
+            "wu2023self",
             "qwen27b",
-            "approaches"
+            "ccnn",
+            "whisperv3",
+            "toto2021audibert",
+            "llama27b",
+            "ours",
+            "hubert",
+            "models",
+            "set",
+            "denoting",
+            "chen2022speechformer",
+            "williamson2016detecting",
+            "guo2022topic",
+            "other",
+            "digits",
+            "significant",
+            "yang2024qwen2"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We compare our methods with previous methods, including single-modal approaches, conventional multi-modal approaches, and multi-modal LLMs, on both the development set and test set of the DAIC-WoZ database. The detailed comparison results are illustrated in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T3\" title=\"Table 3 &#8227; Evaluation on DAIC-WoZ Test Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, respectively. Following previous works, we adopt the F1 score for evaluation.</p>\n\n",
@@ -71,47 +73,47 @@
             {
                 "html": "<p class=\"ltx_p\">Depression is one of the most prevalent mental health disorders globally. In recent years, multi-modal data, such as speech, video, and transcripts, has been increasingly used to develop AI-assisted depression assessment systems. Large language models have further advanced this field due to their strong language understanding and generalization capabilities. However, conventional LLMs remain text-centric and cannot process the rich non-verbal cues found in audio and visual modalities, which are critical components in mental health evaluation. While multi-modal LLMs offer a promising direction, few are tailored for psychological applications. In this study, we propose a novel multi-modal LLM framework for depression detection. Our approach augments an audio language model with visual understanding and aligns audio-visual features at the timestamp level. This fine-grained alignment improves modeling of temporal dynamics across modalities while reducing the need for extensive training data and computational resources. Experiments on the DAIC-WoZ dataset demonstrate that our model outperforms both single-modality approaches and previous multi-modal methods. Moreover, the proposed framework can be extended to incorporate additional physiological signals, paving the way for broader clinical applications beyond mental health.</p>\n\n",
                 "matched_terms": [
+                    "approaches",
                     "models",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "video",
-                    "approaches",
-                    "our"
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Depression has emerged as a critical concern in the field of mental health, affecting a broad population across various age groups.\nParticularly, the incidence of depression among adolescents has surged over the past decade, raising significant social and public health concerns <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">thapar2022depression</span>)</cite>.\nDiagnosing and treating depression often entails substantial labor and financial costs for both families and healthcare systems. With the advancement of natural language processing (NLP), increasing attention has been given to automated approaches for depression detection, reducing human intervention. Large language models (LLMs) have demonstrated remarkable capabilities across a wide array of NLP tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">naveed2023comprehensive</span>)</cite>, which has sparked interest in their application to mental health screening <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite>. Despite their success, a fundamental limitation of conventional LLMs lies in their confinement to textual inputs, lacking the capacity to interpret multi-modal signals such as speech and facial expressions that are also indicative of depressive symptoms <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">krause2021facial</span>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "approaches",
+                    "models",
                     "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal data, including acoustic and visual cues, can significantly enhance the accuracy of depression detection.\nPrior studies have shown that individuals at high risk of depression often exhibit reduced facial expressiveness, diminished vitality, and weakened responses to external stimuli such as decreased eye contact <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">perez2003nonverbal</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">waxer1974nonverbal</span>)</cite>. Similarly, specific acoustic features, such as monotonous tone, slow speech rate, disfluency, and low vocal energy, have been linked to depressive states <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>)</cite>. These behavioral signals offer valuable complementary information beyond what can be derived from text alone.\nMulti-modal large language models (MLLMs) offer an ideal solution to the integration of text and multi-modal data, which shows great promise in a lot of downstream tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024mm</span>)</cite>. However, current MLLMs face several limitations that hinder their application to depression detection. First, depression detection relies heavily on temporal data such as audio and video, yet most existing MLLMs are limited to static images <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">caffagni2024revolution</span>)</cite>.\nFurthermore, due to the relatively small size of depression-related datasets compared to standard NLP corpora, developing MLLMs for this domain demands careful consideration of model complexity to mitigate overfitting and ensure training efficiency.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "video",
+                    "text",
                     "audio",
-                    "text"
+                    "models",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these limitations, we propose a simple yet effective framework that adapts a multi-modal large language model for depression detection. Our method builds upon a pretrained audio language model (ALM) and augments it with visual understanding capabilities, forming a truly multi-modal system. This design leverages the shared temporal structure of audio and visual modalities, allowing for the alignment at the timestamp level. By incrementally integrating visual modules into the ALM with self-supervised visual pretraining and parameter-efficient fine-tuning (PEFT) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2022lora</span>)</cite>, our approach maintains the efficiency and modularity of the base model while enhancing its multi-modal capacity. This strategy also reduces the number of trainable parameters and mitigates the need for large-scale pretraining, making it efficient in data usage and computational requirements. Experiments on the public depression detection dataset, DAIC-WoZ, confirm the effectiveness of our approach, highlighting its potential for practical applications in mental health assessment.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "daicwoz",
-                    "strategy",
                     "method",
-                    "our"
+                    "strategy",
+                    "our",
+                    "audio",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We develop a multi-modal large language model for depression detection based on the Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> model by integrating a self-supervised vision encoder with parameter-efficient fine-tuning. To the best of our knowledge, this is the first study to propose <span class=\"ltx_text ltx_font_bold\">multi-modal depression detection using LLM across text, audio, and video modalities</span>;</p>\n\n",
                 "matched_terms": [
+                    "text",
                     "audio",
                     "video",
-                    "text",
                     "our"
                 ]
             },
@@ -119,51 +121,51 @@
                 "html": "<p class=\"ltx_p\">We implement a timestamp-level alignment strategy that enables fine-grained temporal fusion across modalities. This design leverages the inherent temporal characteristics of both audio and video signals, enhancing the model&#8217;s capacity to capture subtle behavioral cues indicative of depression.</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "video",
-                    "strategy"
+                    "strategy",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We validate our approach by the comparison with single-modality methods and previous LLM-based state-of-the-art methods on the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>. The experimental results demonstrate that our approach yields superior performance at a smaller model scale (7B versus 13B), compared with pioneering multi-modal LLMs.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "daicwoz",
-                    "results",
+                    "performance",
                     "comparison",
-                    "performance"
+                    "results",
+                    "our",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Deep learning has been widely adopted for automated depression detection using speech, text, and video modalities. Earlier works focused on single modality, such as self-supervised speech models <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>)</cite>, hierarchical acoustic representations <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022speechformer</span>)</cite>, or mobile speech data <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2023automatic</span>)</cite>. Visual features like facial expressions and eye movements have also shown promise, with methods leveraging weakly supervised learning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shangguan2022dual</span>)</cite>, gaze patterns <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zheng2024diagnosing</span>)</cite>, and combined facial-gaze analysis <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">stolicyn2022prediction</span>)</cite>.\nRecent studies have explored multi-modal fusion to capture richer cues, incorporating audio, video, and text <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024multimodal</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2022automatic</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xue2024fusing</span>)</cite>. However, most rely on late fusion strategies without joint pretraining, limiting their ability to fully exploit temporal and semantic correlations across modalities.</p>\n\n",
                 "matched_terms": [
-                    "wu2023self",
+                    "text",
                     "models",
                     "chen2022speechformer",
+                    "wu2023self",
                     "audio",
-                    "modality",
                     "video",
-                    "text"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Large language models have been applied to depression detection due to their strong ability to model long-range dependencies in dialogue, which is an essential feature for analyzing clinical interviews. For example, Liu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023chatcounselor</span>)</cite> introduced ChatCounselor, which leverages LLMs to assess depressive symptoms and provide mental health support. Other studies have employed LLMs to analyze social media content; Hengle <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>)</cite> constructed a benchmark for depression-stress classification from online posts, while Xu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite> used LLMs to infer depression status from various web-based sources.\nRecent efforts have extended LLMs to multi-modal settings for improved diagnostic accuracy. Sadeghi <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">sadeghi2024harnessing</span>)</cite> combined LLMs with facial expression analysis to estimate depression severity, and Zhang <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite> incorporated acoustic landmarks into LLMs to build an audio-text model for depression detection. While these approaches demonstrate the potential of LLMs in mental health applications, they remain limited to textual inputs or approximations thereof (e.g., acoustic landmarks). The inability to directly process rich multi-modal signals restricts their overall effectiveness.</p>\n\n",
                 "matched_terms": [
+                    "approaches",
                     "models",
                     "other",
-                    "zhang2024llms",
-                    "approaches"
+                    "zhang2024llms"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Integrating textual inputs with audio and visual modalities represents a major advancement in the development of generative AI. The fusion of LLMs with visual encoders has enabled impressive performance on tasks such as visual dialogue, visual question answering, and image captioning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023visual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhu2023minigpt</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dai2023instructblip</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024qwen2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lu2024deepseek</span>)</cite>. Similarly, audio language models have emerged to jointly process speech and text. For instance, Chu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> introduced Qwen2-Audio, extending the Qwen2-7B backbone <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qwen2025qwen25technicalreport</span>)</cite>, while Ding <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ding2025kimi</span>)</cite> proposed Kimi-Audio, which incorporates both discrete acoustic tokens and continuous audio embeddings into an LLM framework.\nDespite their success, these models are generally not well-suited for mental health applications due to substantial domain gaps in both training data and pretraining objectives. Moreover, most vision-language models lack the capacity to handle continuous video input, further limiting their applicability to tasks such as depression detection, where temporal visual cues are crucial.</p>\n\n",
                 "matched_terms": [
+                    "text",
+                    "performance",
                     "models",
                     "development",
-                    "audio",
-                    "video",
-                    "text",
                     "qwen27b",
-                    "performance"
+                    "audio",
+                    "video"
                 ]
             },
             {
@@ -177,37 +179,37 @@
                 "html": "<p class=\"ltx_p\">The training process is divided into three sequential stages. First, the visual encoder is pretrained using a self-supervised learning strategy inspired by masked autoencoders <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2022masked</span>)</cite>, which enhances its capacity to capture rich visual representations. In the second stage, the visual encoder is fine-tuned on a contrastive alignment task designed to match visual and audio embeddings at the utterance level, thereby improving cross-modal temporal synchronization. Finally, the projection layer and LLM are trained using parameter-efficient fine-tuning (PEFT) techniques to effectively incorporate the visual modality while minimizing additional computational overhead.</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "modality",
-                    "strategy"
+                    "strategy",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We adopt Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> as the foundation of our framework. This model integrates Whisper-large-v3 <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite> as the audio encoder and Qwen2-7B as the language model. The audio encoder processes raw waveforms resampled to 16 kHz and converts them into 128-channel Mel-spectrograms, with each frame representing a 10 ms segment. These spectrograms are subsequently downsampled via strided convolutions and average pooling, resulting in encoder outputs where each frame corresponds to a 40 ms segment of the original waveform. To ensure the universality of our method, we retain the pretrained weights of Qwen2-Audio throughout the initial stages and apply PEFT-based adaptation only in the final training phase. Notably, our framework is modular and can be extended to other audio language models, provided their audio encoders output sequences aligned with fixed temporal intervals.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "radford2023robust",
                     "original",
-                    "audio",
-                    "other",
+                    "radford2023robust",
                     "method",
+                    "models",
                     "qwen27b",
-                    "our"
+                    "other",
+                    "our",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">After obtaining audio and visual embeddings, the next step is to fuse them into a unified representation for input into the LLM. While a common fusion strategy involves concatenating modality embeddings along the sequence dimension <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2025qwen2</span>)</cite>, this approach is suboptimal for integrating new modalities into pretrained LLMs, as it disrupts the expected sequence length and can interfere with positional encoding. To preserve compatibility with pretrained LLMs, we propose a simple yet effective fusion method&#8212;element-wise addition of audio and visual embeddings, which is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. This is feasible due to our explicit timestamp-level synchronization, ensuring both sequences share the same temporal structure. Moreover, our three-stage training strategy progressively aligns the modalities, enabling effective fusion without representation collapse.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "audio",
-                    "modality",
                     "strategy",
-                    "our"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Building on <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>, we enhance the method by ensuring timestamp alignment across transcript, audio, and visual modalities. Each subdialogue is constrained to start with an interviewer&#8217;s</p>\n\n",
                 "matched_terms": [
-                    "wu2023self",
                     "audio",
+                    "wu2023self",
                     "method"
                 ]
             },
@@ -235,215 +237,217 @@
             {
                 "html": "<p class=\"ltx_p\">Since our model is trained on subdialogues rather than entire conversations, we adopt a multi-scale sliding-window inference strategy to derive a final prediction for each full conversation. This approach aggregates predictions from multiple subdialogue segments extracted at different temporal scales. Specifically, for each conversation, we generate a fixed number (200) of subdialogues at three predefined durations: 30s, 75s, and 120s. This multi-scale design ensures that each temporal resolution contributes equally to the final decision, capturing both short-term and long-term behavioral cues. The overlap between adjacent subdialogues is dynamically adjusted based on the conversation length and the total number of segments per setting.\nEach time-scale configuration yields an independent conversation-level prediction, and the final prediction is determined by majority voting across the three settings.</p>\n\n",
                 "matched_terms": [
-                    "inference",
+                    "our",
                     "strategy",
                     "multiscale",
-                    "our"
+                    "inference"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>, one of the most popular datasets for depression detection, to develop and evaluate our proposed multi-modal LLM in depression detection. The DAIC-WoZ database contains interview transcripts, speech records, and visual features from 189 participants, including healthy controls and depression cases. The golden labels of the dataset are based on PHQ-8 scores, where a PHQ-8 score higher than 10 is recognized as a depressed case. The training set contains 107 participants, 30 of whom are labeled as depressed, while the development set contains 35 participants, 12 of whom are labeled as depressed.\nFollowing our previous works <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite>, we report the evaluation results on the development set for comparison.\nIn addition to the training set and development set, we also evaluated our method on the test set, where 14 out of the 47 subjects are labeled as depressed.\nFor timestamp-synchronized data augmentation, we set the maximum length of each subdialogue to 120 seconds, generate 1,000 subdialogues per conversation with depression, which achieves a trade-off between data diversity and the risk of overfitting. The visual features generated by data augmentation are utilized for self-supervised visual pretraining and utterance level audio-visual alignment. Then the augmented transcripts, audio clips, and visual features are used for multi-modal instruction finetuning.\nOur multi-modal LLM for depression detection is developed on Qwen2-Audio-7B-Instruct model. We utilize 2 NVIDIA H200 141G GPUs during training. The detailed training hyperparameters have been demonstrated in the Appendix.</p>\n\n",
                 "matched_terms": [
-                    "wu2023self",
-                    "set",
-                    "development",
-                    "audio",
-                    "daicwoz",
-                    "results",
                     "method",
-                    "zhang2024llms",
+                    "set",
                     "comparison",
-                    "our"
+                    "development",
+                    "zhang2024llms",
+                    "results",
+                    "wu2023self",
+                    "our",
+                    "audio",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Text-based models show that Llama2-13B <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">touvron2023llama</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite> performs best among text-only models, likely due to its larger parameter scale. Among smaller models, Qwen2-7B and Llama2-7B exhibit similar performance but fall short of the 13B variant. Interestingly, GPT-4, despite its scale and zero-shot capabilities, underperforms relative to Llama2-13B. Likewise, RoBERTa surpasses GPT-4 despite its significantly smaller size as well. A similar phenomenon has been observed in <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span></cite>. This performance gap may be attributed to the nature of depression detection, which emphasizes representation learning over generative modeling, making encoder-based models more suitable.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "llama213b",
-                    "llama27b",
                     "gpt4",
-                    "roberta",
+                    "performance",
+                    "llama213b",
+                    "models",
                     "zhang2024llms",
                     "qwen27b",
-                    "performance"
+                    "roberta",
+                    "llama27b"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Audio-based models generally outperform text-only models, suggesting that acoustic cues carry richer information for detecting depressive symptoms.\nIn addition, the performance of audio models could benefit from downstream tasks such as speech recognition or emotion recognition <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>)</cite>. Notably, WavLM fine-tuned for emotion recognition shows superior performance, surpassing even Whisper-v3-large. This suggests that tasks closely related to depression, such as emotion recognition and ASR, provide transferable knowledge useful for this application.</p>\n\n",
                 "matched_terms": [
-                    "wu2023self",
+                    "performance",
                     "models",
+                    "wu2023self",
                     "audio",
-                    "wavlm",
-                    "performance"
+                    "wavlm"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For video models, our finetuned visual encoder with a classification head achieves the best performance. The main factor that could affect video-based models is the choice of visual feature sets. Since raw videos are not available at the DAIC-WoZ database, only facial feature sets, such as landmarks and action units, are available for depression detection. As the feature set could be rather redundant, the performance of video models could even deteriorate if the feature set selection is inappropriate. Self-supervised pretraining alleviates the issue significantly, as masked autoencoders are designed for images, which possess a redundant nature, and are suitable in our scenario.</p>\n\n",
                 "matched_terms": [
-                    "set",
+                    "performance",
                     "models",
+                    "set",
                     "our",
                     "daicwoz",
-                    "video",
-                    "performance"
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal approaches that incorporate both audio and text, or integrate all three modalities, generally outperform single-modal baselines. In particular, the inclusion of audio features often leads to significant performance improvements, highlighting the importance of acoustic information in depression detection. Compared with other multi-modal methods, our proposed framework consistently achieves superior results, demonstrating the effectiveness of timestamp-level alignment and the synergy of modality-specific encoders in capturing clinically relevant cues.</p>\n\n",
                 "matched_terms": [
-                    "significant",
-                    "audio",
-                    "other",
-                    "performance",
-                    "results",
-                    "approaches",
                     "text",
-                    "our"
+                    "performance",
+                    "approaches",
+                    "results",
+                    "other",
+                    "our",
+                    "audio",
+                    "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Notably, both our approach and Qwen2-Audio variants outperform LLMs with acoustic landmarks, despite relying on smaller language backbones (7B vs 13B). This suggests that native multi-modal architectures might be more adept at interpreting raw sensory inputs. While acoustic landmarks serve as a lightweight representation of audio, they may omit subtle prosodic or emotional cues that are preserved in the original waveforms. In contrast, models trained end-to-end on raw audio exhibit stronger modality comprehension and more effective feature fusion.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "original",
+                    "models",
+                    "our",
                     "audio",
-                    "modality",
-                    "our"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In addition, since the golden labels of the DAIC-WoZ test set have been released, we compare our method with previous state-of-the-art approaches on this benchmark. The quantitative results are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T3\" title=\"Table 3 &#8227; Evaluation on DAIC-WoZ Test Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. It can be observed that single-modal approaches yield similar or slightly lower F1 scores on the test set compared to their performance on the development set. In contrast, a recent multi-modal approach that integrates audio, video, and textual information <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite> achieves significantly better results than single-modal methods. Overall, our method outperforms both previous single-modal and multi-modal approaches on the test set, demonstrating its effectiveness and robustness.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "method",
+                    "performance",
+                    "approaches",
                     "set",
                     "development",
+                    "results",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "video",
-                    "results",
-                    "method",
-                    "approaches",
-                    "performance"
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we analyze the source of performance gain in our framework, including the contribution of each modality and the selection of the base model. In addition, we discuss the effectiveness of our proposed timestamp-synchronized data augmentation upon the removal of the interviewer&#8217;s utterance and context length in subdialogues. The experiments are all conducted on the development set of DAIC-WoZ.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "performance",
                     "set",
                     "development",
-                    "modality",
+                    "our",
                     "daicwoz",
-                    "performance"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">An interesting observation is that the addition of audio yields a greater performance gain compared to the inclusion of video, in both instruction-tuned and pre-trained variants. This discrepancy can be attributed to two primary factors. First, as pre-extracted visual features rather than raw video data are utilized in our framework, the model may face information loss, leading to reduced expressive power. Second, our model is fundamentally built upon an audio language modeling architecture. Removing audio embeddings may disrupt the alignment mechanism across modalities, thereby compromising the model&#8217;s ability to integrate non-verbal cues effectively.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "video",
+                    "our",
                     "performance",
-                    "our"
+                    "audio",
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Since both pretrained model and instruction-tuned model are available in Qwen2-Audio families, we compare the performance of these two model variants as the base model. The results in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate that the instruction-tuned model provides higher detection performance. The findings in our research are different from previous work <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite>, where instruction tuning leads to significant performance deterioration compared with the pretrained model. The reasons for the inconsistency could be the difference in instruction tuning in general LLMs and audio language models. Depression detection involves the analysis of both audio and text; a similar task has been used to finetune the model in instruction tuning. Thus, the instruction-tuned model could be better at the audio analysis task.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "significant",
-                    "audio",
                     "text",
                     "performance",
+                    "models",
                     "results",
                     "zhang2024llms",
-                    "our"
+                    "our",
+                    "audio",
+                    "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The length of subdialogues plays a crucial role in our framework, as longer contexts generally provide richer cues for depression detection. However, longer subdialogues do not necessarily improve the performance for detection, as the audio records for the interviewer do not contribute to the decision, but even interfere with the depression detection. To address this constraint, we propose to remove the interviewer&#8217;s utterances during data augmentation, allowing more content from the participant to be retained within the fixed audio window. While this enhances the availability of participant-specific acoustic cues, it also results in the loss of visual information associated with the removed segments.\nTo explore this trade-off, we conduct an ablation study under varying subdialogue lengths,\nas shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.F4\" title=\"Figure 4 &#8227; 4.3.3 The Effect of Context Length and Interviewer Utterance Removal &#8227; 4.3 Ablation Studies and Discussion &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. When the maximum subdialogue length is constrained to 30 seconds, removing the interviewer&#8217;s speech leads to degraded performance.\nIn this setting, the entire subdialogue can be encoded without truncation, and discarding the interviewer&#8217;s turns causes unnecessary loss of visual cues, thus impairing multi-modal inference. In contrast, as the subdialogue length increases beyond the model&#8217;s audio capacity, the removal of interviewer utterances proves beneficial. By prioritizing participant speech within the fixed input window, the model gains access to more relevant acoustic information, leading to improved detection accuracy. However, when the context length becomes excessively long, the performance gain diminishes. This is likely due to reduced dialogue diversity and increased risk of overfitting, as longer subdialogues tend to be less variable.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "audio",
+                    "performance",
                     "inference",
                     "results",
-                    "performance"
+                    "our",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this study, we propose a multi-modal large language model for depression detection, built upon audio-based language models and augmented with visual understanding capabilities. Experiments on the DAIC-WoZ dataset demonstrate the superiority of our framework over existing multi-modal LLMs. To our knowledge, this is the first work to develop a multi-modal LLM for depression detection that simultaneously integrates textual, audio, and visual modalities. We further provide detailed analyses of how model design and data augmentation strategies affect performance. Overall, our method offers an effective solution for adapting multi-modal LLMs to mental health applications, with potential for broader extension to other domains.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "models",
-                    "audio",
-                    "daicwoz",
-                    "other",
                     "method",
-                    "performance"
+                    "performance",
+                    "models",
+                    "other",
+                    "our",
+                    "audio",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This study is conducted using the DAIC-WoZ database, a publicly available resource accessible to qualified researchers upon request. All data collection procedures for this dataset were carried out with informed consent from participants, and the data have been fully anonymized to protect individual privacy. We have obtained proper authorization by signing the DAIC-WoZ End-User License Agreement and strictly adhere to its terms of use.\nOur model is built upon the Qwen2-Audio architecture, and all research activities related to it comply with the Apache-2.0 license under which the model is released.\nWhile our method achieves state-of-the-art performance on the DAIC-WoZ benchmark, it is intended for research purposes only and should not be used for clinical diagnosis, treatment, or intervention of depression. We further acknowledge that, like many large language models, our framework may be vulnerable to hallucinations, harmful outputs, or systemic biases. We disclaim responsibility for any misuse, misinterpretation, or unintended consequences resulting from the deployment of this model outside its intended research context.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "models",
-                    "daicwoz",
                     "method",
-                    "performance"
+                    "performance",
+                    "models",
+                    "our",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our framework is implemented using the HuggingFace <span class=\"ltx_text ltx_font_italic\">transformers</span> library with PyTorch 2.1. The full hyperparameter configurations used during training are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#A1.T4\" title=\"Table 4 &#8227; Appendix A Implementation Details &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. We adopt the AdamW optimizer <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">loshchilov2017decoupled</span>)</cite> for model optimization. To improve training speed without compromising performance, we enable TensorFloat32 (TF32) computation and apply automatic mixed-precision training using BFloat16 (BF16). For parameter-efficient fine-tuning (PEFT) of the Qwen2-Audio model on the depression detection task, we employ QLoRA <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dettmers2023qlora</span>)</cite>, which compresses the base model to 4-bit precision to reduce memory usage and improve computational efficiency. The full training process requires approximately 90+ GPU hours on an NVIDIA H200 141GB GPU. This includes around 40 hours for self-supervised visual pretraining, 20 hours for utterance-level audio-visual alignment, and 30 hours for multimodal instruction tuning. Early stopping is applied in all stages when training loss plateaus.</p>\n\n",
                 "matched_terms": [
-                    "performance",
-                    "our"
+                    "our",
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following the approach of <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>, we generate subdialogues from the original interview transcripts to mitigate class imbalance and expand the size of the training set. In our data augmentation pipeline, we enforce strict synchronization among transcripts, audio, and video to ensure precise timestamp-level alignment. However, due to varying frame rates across modalities, achieving synchronization presents a technical challenge. For example, audio recordings are typically captured at a 16,000 Hz sampling rate and later converted into Mel-spectrograms with a frame rate of 100 Hz, while video recordings are collected at 30 frames per second (FPS). To address this discrepancy, we constrain the start and end timestamps of each subdialogue to align with whole seconds (i.e., integer-second boundaries).</p>\n\n",
                 "matched_terms": [
-                    "wu2023self",
-                    "set",
                     "original",
+                    "set",
+                    "wu2023self",
+                    "our",
                     "audio",
-                    "video",
-                    "our"
+                    "video"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During instruction tuning, we design a system prompt to guide the behavior of the language model. Given that the Qwen2-Audio-Instruct model has been fine-tuned on audio analysis tasks, we adopt a chat-based prompt template to elicit model responses. Notably, we use the same prompt design for both the Qwen2-Audio family and our multi-modal LLM. This consistency is based on our integration strategy, where visual embeddings are directly added to the audio embeddings without modifying the model architecture. Therefore, we assume that the model can still function effectively even without explicitly referencing visual information in the prompt.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "audio",
-                    "strategy",
-                    "our"
+                    "strategy"
                 ]
             }
         ]
     },
     "S4.T2": {
+        "source_file": "It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models",
         "caption": "Table 2: The performance comparison of our method and multi-modal LLMs on DAIC-WoZ development set. Note that for fair comparison we do not employ model ensemble or multi-scale inference.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Qwen2-Audio</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\"><cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite></td>\n</tr>\n</table> \n",
+        "body": "Qwen2-Audio\n\n\n(chu2024qwen2)",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Qwen2-Audio</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\"><cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite></td>\n</tr>\n</table> \n",
         "informative_terms_identified": [
             "inference",
-            "not",
-            "comparison",
-            "our",
+            "development",
             "qwen2audio",
-            "employ",
             "daicwoz",
             "fair",
-            "multiscale",
-            "performance",
-            "development",
+            "llms",
+            "chu2024qwen2",
             "note",
             "multimodal",
-            "llms",
-            "set",
-            "model",
-            "chu2024qwen2",
             "method",
-            "ensemble"
+            "performance",
+            "comparison",
+            "employ",
+            "multiscale",
+            "ensemble",
+            "set",
+            "our",
+            "model",
+            "not"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We compare our methods with previous methods, including single-modal approaches, conventional multi-modal approaches, and multi-modal LLMs, on both the development set and test set of the DAIC-WoZ database. The detailed comparison results are illustrated in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T3\" title=\"Table 3 &#8227; Evaluation on DAIC-WoZ Test Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, respectively. Following previous works, we adopt the F1 score for evaluation.</p>\n\n",
@@ -454,108 +458,108 @@
             {
                 "html": "<p class=\"ltx_p\">Depression is one of the most prevalent mental health disorders globally. In recent years, multi-modal data, such as speech, video, and transcripts, has been increasingly used to develop AI-assisted depression assessment systems. Large language models have further advanced this field due to their strong language understanding and generalization capabilities. However, conventional LLMs remain text-centric and cannot process the rich non-verbal cues found in audio and visual modalities, which are critical components in mental health evaluation. While multi-modal LLMs offer a promising direction, few are tailored for psychological applications. In this study, we propose a novel multi-modal LLM framework for depression detection. Our approach augments an audio language model with visual understanding and aligns audio-visual features at the timestamp level. This fine-grained alignment improves modeling of temporal dynamics across modalities while reducing the need for extensive training data and computational resources. Experiments on the DAIC-WoZ dataset demonstrate that our model outperforms both single-modality approaches and previous multi-modal methods. Moreover, the proposed framework can be extended to incorporate additional physiological signals, paving the way for broader clinical applications beyond mental health.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
                     "llms",
-                    "daicwoz",
+                    "multimodal",
+                    "our",
                     "model",
-                    "our"
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Depression has emerged as a critical concern in the field of mental health, affecting a broad population across various age groups.\nParticularly, the incidence of depression among adolescents has surged over the past decade, raising significant social and public health concerns <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">thapar2022depression</span>)</cite>.\nDiagnosing and treating depression often entails substantial labor and financial costs for both families and healthcare systems. With the advancement of natural language processing (NLP), increasing attention has been given to automated approaches for depression detection, reducing human intervention. Large language models (LLMs) have demonstrated remarkable capabilities across a wide array of NLP tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">naveed2023comprehensive</span>)</cite>, which has sparked interest in their application to mental health screening <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite>. Despite their success, a fundamental limitation of conventional LLMs lies in their confinement to textual inputs, lacking the capacity to interpret multi-modal signals such as speech and facial expressions that are also indicative of depressive symptoms <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">krause2021facial</span>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "llms"
+                    "llms",
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal data, including acoustic and visual cues, can significantly enhance the accuracy of depression detection.\nPrior studies have shown that individuals at high risk of depression often exhibit reduced facial expressiveness, diminished vitality, and weakened responses to external stimuli such as decreased eye contact <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">perez2003nonverbal</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">waxer1974nonverbal</span>)</cite>. Similarly, specific acoustic features, such as monotonous tone, slow speech rate, disfluency, and low vocal energy, have been linked to depressive states <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>)</cite>. These behavioral signals offer valuable complementary information beyond what can be derived from text alone.\nMulti-modal large language models (MLLMs) offer an ideal solution to the integration of text and multi-modal data, which shows great promise in a lot of downstream tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024mm</span>)</cite>. However, current MLLMs face several limitations that hinder their application to depression detection. First, depression detection relies heavily on temporal data such as audio and video, yet most existing MLLMs are limited to static images <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">caffagni2024revolution</span>)</cite>.\nFurthermore, due to the relatively small size of depression-related datasets compared to standard NLP corpora, developing MLLMs for this domain demands careful consideration of model complexity to mitigate overfitting and ensure training efficiency.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "model"
+                    "model",
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these limitations, we propose a simple yet effective framework that adapts a multi-modal large language model for depression detection. Our method builds upon a pretrained audio language model (ALM) and augments it with visual understanding capabilities, forming a truly multi-modal system. This design leverages the shared temporal structure of audio and visual modalities, allowing for the alignment at the timestamp level. By incrementally integrating visual modules into the ALM with self-supervised visual pretraining and parameter-efficient fine-tuning (PEFT) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2022lora</span>)</cite>, our approach maintains the efficiency and modularity of the base model while enhancing its multi-modal capacity. This strategy also reduces the number of trainable parameters and mitigates the need for large-scale pretraining, making it efficient in data usage and computational requirements. Experiments on the public depression detection dataset, DAIC-WoZ, confirm the effectiveness of our approach, highlighting its potential for practical applications in mental health assessment.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "daicwoz",
-                    "model",
                     "method",
-                    "our"
+                    "multimodal",
+                    "our",
+                    "model",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We develop a multi-modal large language model for depression detection based on the Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> model by integrating a self-supervised vision encoder with parameter-efficient fine-tuning. To the best of our knowledge, this is the first study to propose <span class=\"ltx_text ltx_font_bold\">multi-modal depression detection using LLM across text, audio, and video modalities</span>;</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
-                    "multimodal",
-                    "model",
                     "chu2024qwen2",
-                    "our"
+                    "multimodal",
+                    "qwen2audio",
+                    "our",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We validate our approach by the comparison with single-modality methods and previous LLM-based state-of-the-art methods on the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>. The experimental results demonstrate that our approach yields superior performance at a smaller model scale (7B versus 13B), compared with pioneering multi-modal LLMs.</p>\n\n",
                 "matched_terms": [
+                    "performance",
+                    "llms",
+                    "comparison",
                     "multimodal",
                     "our",
-                    "llms",
-                    "daicwoz",
                     "model",
-                    "comparison",
-                    "performance"
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Large language models have been applied to depression detection due to their strong ability to model long-range dependencies in dialogue, which is an essential feature for analyzing clinical interviews. For example, Liu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023chatcounselor</span>)</cite> introduced ChatCounselor, which leverages LLMs to assess depressive symptoms and provide mental health support. Other studies have employed LLMs to analyze social media content; Hengle <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>)</cite> constructed a benchmark for depression-stress classification from online posts, while Xu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite> used LLMs to infer depression status from various web-based sources.\nRecent efforts have extended LLMs to multi-modal settings for improved diagnostic accuracy. Sadeghi <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">sadeghi2024harnessing</span>)</cite> combined LLMs with facial expression analysis to estimate depression severity, and Zhang <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite> incorporated acoustic landmarks into LLMs to build an audio-text model for depression detection. While these approaches demonstrate the potential of LLMs in mental health applications, they remain limited to textual inputs or approximations thereof (e.g., acoustic landmarks). The inability to directly process rich multi-modal signals restricts their overall effectiveness.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
+                    "model",
                     "llms",
-                    "model"
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Integrating textual inputs with audio and visual modalities represents a major advancement in the development of generative AI. The fusion of LLMs with visual encoders has enabled impressive performance on tasks such as visual dialogue, visual question answering, and image captioning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023visual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhu2023minigpt</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dai2023instructblip</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024qwen2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lu2024deepseek</span>)</cite>. Similarly, audio language models have emerged to jointly process speech and text. For instance, Chu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> introduced Qwen2-Audio, extending the Qwen2-7B backbone <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qwen2025qwen25technicalreport</span>)</cite>, while Ding <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ding2025kimi</span>)</cite> proposed Kimi-Audio, which incorporates both discrete acoustic tokens and continuous audio embeddings into an LLM framework.\nDespite their success, these models are generally not well-suited for mental health applications due to substantial domain gaps in both training data and pretraining objectives. Moreover, most vision-language models lack the capacity to handle continuous video input, further limiting their applicability to tasks such as depression detection, where temporal visual cues are crucial.</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
+                    "performance",
                     "llms",
-                    "development",
                     "chu2024qwen2",
-                    "not",
-                    "performance"
+                    "development",
+                    "qwen2audio",
+                    "not"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We propose a multi-modal large language model (MLLM) for depression detection, constructed upon a pretrained audio language model (ALM) as the backbone. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the framework consists of three key components:\n(1) an <span class=\"ltx_text ltx_font_bold\">audio encoder</span> that processes raw audio signals and extracts temporal embeddings;\n(2) a <span class=\"ltx_text ltx_font_bold\">visual encoder</span> that receives video frames and produces visual embeddings aligned with the audio stream at the timestamp level;\n(3) a <span class=\"ltx_text ltx_font_bold\">large language model</span> that integrates the audio-visual features along with textual inputs to perform depression classification.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "model"
+                    "model",
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We adopt Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> as the foundation of our framework. This model integrates Whisper-large-v3 <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite> as the audio encoder and Qwen2-7B as the language model. The audio encoder processes raw waveforms resampled to 16 kHz and converts them into 128-channel Mel-spectrograms, with each frame representing a 10 ms segment. These spectrograms are subsequently downsampled via strided convolutions and average pooling, resulting in encoder outputs where each frame corresponds to a 40 ms segment of the original waveform. To ensure the universality of our method, we retain the pretrained weights of Qwen2-Audio throughout the initial stages and apply PEFT-based adaptation only in the final training phase. Notably, our framework is modular and can be extended to other audio language models, provided their audio encoders output sequences aligned with fixed temporal intervals.</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
-                    "chu2024qwen2",
-                    "model",
                     "method",
-                    "our"
+                    "chu2024qwen2",
+                    "qwen2audio",
+                    "our",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">After obtaining audio and visual embeddings, the next step is to fuse them into a unified representation for input into the LLM. While a common fusion strategy involves concatenating modality embeddings along the sequence dimension <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2025qwen2</span>)</cite>, this approach is suboptimal for integrating new modalities into pretrained LLMs, as it disrupts the expected sequence length and can interfere with positional encoding. To preserve compatibility with pretrained LLMs, we propose a simple yet effective fusion method&#8212;element-wise addition of audio and visual embeddings, which is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. This is feasible due to our explicit timestamp-level synchronization, ensuring both sequences share the same temporal structure. Moreover, our three-stage training strategy progressively aligns the modalities, enabling effective fusion without representation collapse.</p>\n\n",
                 "matched_terms": [
-                    "llms",
-                    "our"
+                    "our",
+                    "llms"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In the final stage, we integrate the pretrained visual encoder with the audio language model to construct a multi-modal large language model tailored for depression detection, which is illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Since traditional LLMs are not inherently designed to process visual information, additional instruction tuning is required to adapt the model to this task. We employ Low-Rank Adaptation (LoRA) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2022lora</span>)</cite> to update the parameters of both the LLM and the modality projection layer. As audio and visual features have been temporally synchronized and aligned at the utterance level in previous stages, the complexity of cross-modal fusion is substantially reduced.</p>\n\n",
                 "matched_terms": [
                     "llms",
-                    "multimodal",
                     "employ",
+                    "multimodal",
                     "model",
                     "not"
                 ]
@@ -563,207 +567,209 @@
             {
                 "html": "<p class=\"ltx_p\">Since our model is trained on subdialogues rather than entire conversations, we adopt a multi-scale sliding-window inference strategy to derive a final prediction for each full conversation. This approach aggregates predictions from multiple subdialogue segments extracted at different temporal scales. Specifically, for each conversation, we generate a fixed number (200) of subdialogues at three predefined durations: 30s, 75s, and 120s. This multi-scale design ensures that each temporal resolution contributes equally to the final decision, capturing both short-term and long-term behavioral cues. The overlap between adjacent subdialogues is dynamically adjusted based on the conversation length and the total number of segments per setting.\nEach time-scale configuration yields an independent conversation-level prediction, and the final prediction is determined by majority voting across the three settings.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "model",
-                    "inference",
                     "multiscale",
-                    "our"
+                    "inference"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>, one of the most popular datasets for depression detection, to develop and evaluate our proposed multi-modal LLM in depression detection. The DAIC-WoZ database contains interview transcripts, speech records, and visual features from 189 participants, including healthy controls and depression cases. The golden labels of the dataset are based on PHQ-8 scores, where a PHQ-8 score higher than 10 is recognized as a depressed case. The training set contains 107 participants, 30 of whom are labeled as depressed, while the development set contains 35 participants, 12 of whom are labeled as depressed.\nFollowing our previous works <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite>, we report the evaluation results on the development set for comparison.\nIn addition to the training set and development set, we also evaluated our method on the test set, where 14 out of the 47 subjects are labeled as depressed.\nFor timestamp-synchronized data augmentation, we set the maximum length of each subdialogue to 120 seconds, generate 1,000 subdialogues per conversation with depression, which achieves a trade-off between data diversity and the risk of overfitting. The visual features generated by data augmentation are utilized for self-supervised visual pretraining and utterance level audio-visual alignment. Then the augmented transcripts, audio clips, and visual features are used for multi-modal instruction finetuning.\nOur multi-modal LLM for depression detection is developed on Qwen2-Audio-7B-Instruct model. We utilize 2 NVIDIA H200 141G GPUs during training. The detailed training hyperparameters have been demonstrated in the Appendix.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "set",
-                    "development",
-                    "daicwoz",
-                    "model",
                     "method",
+                    "set",
                     "comparison",
-                    "our"
+                    "development",
+                    "multimodal",
+                    "our",
+                    "model",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present a comprehensive comparison between our proposed multi-modal LLM and previous methods on the DAIC-WoZ development set in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. Additionally, we evaluate the contribution of each individual module in our framework, including the Qwen2-7B model, the Whisper-v3 audio encoder, and a self-supervised vision encoder. Overall, our multi-modal model achieves superior classification performance on the development set of the DAIC-WoZ dataset, consistently outperforming all single-modality baselines.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "multimodal",
+                    "performance",
                     "set",
-                    "development",
-                    "daicwoz",
-                    "model",
                     "comparison",
-                    "performance"
+                    "development",
+                    "multimodal",
+                    "our",
+                    "model",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For video models, our finetuned visual encoder with a classification head achieves the best performance. The main factor that could affect video-based models is the choice of visual feature sets. Since raw videos are not available at the DAIC-WoZ database, only facial feature sets, such as landmarks and action units, are available for depression detection. As the feature set could be rather redundant, the performance of video models could even deteriorate if the feature set selection is inappropriate. Self-supervised pretraining alleviates the issue significantly, as masked autoencoders are designed for images, which possess a redundant nature, and are suitable in our scenario.</p>\n\n",
                 "matched_terms": [
+                    "performance",
                     "set",
                     "our",
                     "daicwoz",
-                    "not",
-                    "performance"
+                    "not"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal approaches that incorporate both audio and text, or integrate all three modalities, generally outperform single-modal baselines. In particular, the inclusion of audio features often leads to significant performance improvements, highlighting the importance of acoustic information in depression detection. Compared with other multi-modal methods, our proposed framework consistently achieves superior results, demonstrating the effectiveness of timestamp-level alignment and the synergy of modality-specific encoders in capturing clinically relevant cues.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
+                    "our",
                     "performance",
-                    "our"
+                    "multimodal"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Notably, both our approach and Qwen2-Audio variants outperform LLMs with acoustic landmarks, despite relying on smaller language backbones (7B vs 13B). This suggests that native multi-modal architectures might be more adept at interpreting raw sensory inputs. While acoustic landmarks serve as a lightweight representation of audio, they may omit subtle prosodic or emotional cues that are preserved in the original waveforms. In contrast, models trained end-to-end on raw audio exhibit stronger modality comprehension and more effective feature fusion.</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
+                    "our",
                     "llms",
                     "multimodal",
-                    "our"
+                    "qwen2audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In addition, since the golden labels of the DAIC-WoZ test set have been released, we compare our method with previous state-of-the-art approaches on this benchmark. The quantitative results are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T3\" title=\"Table 3 &#8227; Evaluation on DAIC-WoZ Test Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. It can be observed that single-modal approaches yield similar or slightly lower F1 scores on the test set compared to their performance on the development set. In contrast, a recent multi-modal approach that integrates audio, video, and textual information <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite> achieves significantly better results than single-modal methods. Overall, our method outperforms both previous single-modal and multi-modal approaches on the test set, demonstrating its effectiveness and robustness.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "our",
+                    "method",
+                    "performance",
                     "set",
                     "development",
-                    "daicwoz",
-                    "method",
-                    "performance"
+                    "multimodal",
+                    "our",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we analyze the source of performance gain in our framework, including the contribution of each modality and the selection of the base model. In addition, we discuss the effectiveness of our proposed timestamp-synchronized data augmentation upon the removal of the interviewer&#8217;s utterance and context length in subdialogues. The experiments are all conducted on the development set of DAIC-WoZ.</p>\n\n",
                 "matched_terms": [
+                    "performance",
                     "set",
-                    "our",
                     "development",
-                    "daicwoz",
+                    "our",
                     "model",
-                    "performance"
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We further investigate the individual contribution of each modality within our framework. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, both audio and video modalities enhance depression detection performance. The baseline Qwen2-7B model achieves an F1 score of 0.564 using text alone. Introducing audio features leads to a substantial improvement, raising the F1 score to 0.720. Further incorporation of video features elevates the performance to 0.789. Additionally, our proposed multi-scale sliding-window strategy contributes to model performance significantly, improving the F1 score to 0.844.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "model",
                     "performance",
-                    "multiscale",
-                    "our"
+                    "multiscale"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">An interesting observation is that the addition of audio yields a greater performance gain compared to the inclusion of video, in both instruction-tuned and pre-trained variants. This discrepancy can be attributed to two primary factors. First, as pre-extracted visual features rather than raw video data are utilized in our framework, the model may face information loss, leading to reduced expressive power. Second, our model is fundamentally built upon an audio language modeling architecture. Removing audio embeddings may disrupt the alignment mechanism across modalities, thereby compromising the model&#8217;s ability to integrate non-verbal cues effectively.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "model",
-                    "performance",
-                    "our"
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The length of subdialogues plays a crucial role in our framework, as longer contexts generally provide richer cues for depression detection. However, longer subdialogues do not necessarily improve the performance for detection, as the audio records for the interviewer do not contribute to the decision, but even interfere with the depression detection. To address this constraint, we propose to remove the interviewer&#8217;s utterances during data augmentation, allowing more content from the participant to be retained within the fixed audio window. While this enhances the availability of participant-specific acoustic cues, it also results in the loss of visual information associated with the removed segments.\nTo explore this trade-off, we conduct an ablation study under varying subdialogue lengths,\nas shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.F4\" title=\"Figure 4 &#8227; 4.3.3 The Effect of Context Length and Interviewer Utterance Removal &#8227; 4.3 Ablation Studies and Discussion &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. When the maximum subdialogue length is constrained to 30 seconds, removing the interviewer&#8217;s speech leads to degraded performance.\nIn this setting, the entire subdialogue can be encoded without truncation, and discarding the interviewer&#8217;s turns causes unnecessary loss of visual cues, thus impairing multi-modal inference. In contrast, as the subdialogue length increases beyond the model&#8217;s audio capacity, the removal of interviewer utterances proves beneficial. By prioritizing participant speech within the fixed input window, the model gains access to more relevant acoustic information, leading to improved detection accuracy. However, when the context length becomes excessively long, the performance gain diminishes. This is likely due to reduced dialogue diversity and increased risk of overfitting, as longer subdialogues tend to be less variable.</p>\n\n",
                 "matched_terms": [
+                    "performance",
+                    "inference",
                     "multimodal",
                     "our",
                     "model",
-                    "inference",
-                    "not",
-                    "performance"
+                    "not"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this study, we propose a multi-modal large language model for depression detection, built upon audio-based language models and augmented with visual understanding capabilities. Experiments on the DAIC-WoZ dataset demonstrate the superiority of our framework over existing multi-modal LLMs. To our knowledge, this is the first work to develop a multi-modal LLM for depression detection that simultaneously integrates textual, audio, and visual modalities. We further provide detailed analyses of how model design and data augmentation strategies affect performance. Overall, our method offers an effective solution for adapting multi-modal LLMs to mental health applications, with potential for broader extension to other domains.</p>\n\n",
                 "matched_terms": [
-                    "multimodal",
-                    "llms",
-                    "our",
-                    "daicwoz",
-                    "model",
                     "method",
-                    "performance"
+                    "performance",
+                    "llms",
+                    "multimodal",
+                    "our",
+                    "model",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This study is conducted using the DAIC-WoZ database, a publicly available resource accessible to qualified researchers upon request. All data collection procedures for this dataset were carried out with informed consent from participants, and the data have been fully anonymized to protect individual privacy. We have obtained proper authorization by signing the DAIC-WoZ End-User License Agreement and strictly adhere to its terms of use.\nOur model is built upon the Qwen2-Audio architecture, and all research activities related to it comply with the Apache-2.0 license under which the model is released.\nWhile our method achieves state-of-the-art performance on the DAIC-WoZ benchmark, it is intended for research purposes only and should not be used for clinical diagnosis, treatment, or intervention of depression. We further acknowledge that, like many large language models, our framework may be vulnerable to hallucinations, harmful outputs, or systemic biases. We disclaim responsibility for any misuse, misinterpretation, or unintended consequences resulting from the deployment of this model outside its intended research context.</p>\n\n",
                 "matched_terms": [
+                    "method",
+                    "performance",
                     "qwen2audio",
                     "our",
-                    "daicwoz",
                     "model",
-                    "method",
-                    "not",
-                    "performance"
+                    "daicwoz",
+                    "not"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our framework is implemented using the HuggingFace <span class=\"ltx_text ltx_font_italic\">transformers</span> library with PyTorch 2.1. The full hyperparameter configurations used during training are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#A1.T4\" title=\"Table 4 &#8227; Appendix A Implementation Details &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. We adopt the AdamW optimizer <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">loshchilov2017decoupled</span>)</cite> for model optimization. To improve training speed without compromising performance, we enable TensorFloat32 (TF32) computation and apply automatic mixed-precision training using BFloat16 (BF16). For parameter-efficient fine-tuning (PEFT) of the Qwen2-Audio model on the depression detection task, we employ QLoRA <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dettmers2023qlora</span>)</cite>, which compresses the base model to 4-bit precision to reduce memory usage and improve computational efficiency. The full training process requires approximately 90+ GPU hours on an NVIDIA H200 141GB GPU. This includes around 40 hours for self-supervised visual pretraining, 20 hours for utterance-level audio-visual alignment, and 30 hours for multimodal instruction tuning. Early stopping is applied in all stages when training loss plateaus.</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
-                    "multimodal",
-                    "our",
+                    "performance",
                     "employ",
-                    "model",
-                    "performance"
+                    "multimodal",
+                    "qwen2audio",
+                    "our",
+                    "model"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following the approach of <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>, we generate subdialogues from the original interview transcripts to mitigate class imbalance and expand the size of the training set. In our data augmentation pipeline, we enforce strict synchronization among transcripts, audio, and video to ensure precise timestamp-level alignment. However, due to varying frame rates across modalities, achieving synchronization presents a technical challenge. For example, audio recordings are typically captured at a 16,000 Hz sampling rate and later converted into Mel-spectrograms with a frame rate of 100 Hz, while video recordings are collected at 30 frames per second (FPS). To address this discrepancy, we constrain the start and end timestamps of each subdialogue to align with whole seconds (i.e., integer-second boundaries).</p>\n\n",
                 "matched_terms": [
-                    "set",
-                    "our"
+                    "our",
+                    "set"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During instruction tuning, we design a system prompt to guide the behavior of the language model. Given that the Qwen2-Audio-Instruct model has been fine-tuned on audio analysis tasks, we adopt a chat-based prompt template to elicit model responses. Notably, we use the same prompt design for both the Qwen2-Audio family and our multi-modal LLM. This consistency is based on our integration strategy, where visual embeddings are directly added to the audio embeddings without modifying the model architecture. Therefore, we assume that the model can still function effectively even without explicitly referencing visual information in the prompt.</p>\n\n",
                 "matched_terms": [
-                    "qwen2audio",
-                    "multimodal",
+                    "our",
                     "model",
-                    "our"
+                    "multimodal",
+                    "qwen2audio"
                 ]
             }
         ]
     },
     "S4.T3": {
+        "source_file": "It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models",
         "caption": "Table 3: The performance comparison of our method and previous approaches on DAIC-WoZ test set. “*” denotes that the original results are reported with 2 significant digits.",
-        "body": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\">Dataset</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Models</td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\">Modality</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">F1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\">DAIC-WoZ</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">GloVe-CNN <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">campbell2022speech</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Text</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.68*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">TOAT <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2022topic</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.647</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">EmoAudioNet <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">othmani2021towards</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.66*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">HiQuE <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\">0.79*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">MultiDepNet </td>\n<td class=\"ltx_td ltx_align_left\">A+T</td>\n<td class=\"ltx_td ltx_align_center\">0.785</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_center\">Ours</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.825</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\">E-DAIC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">HiQuE <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.70*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">sadeghi2024harnessing</span>)</cite></td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\">0.743</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td\"/>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">MultiDepNet </td>\n<td class=\"ltx_td ltx_align_left\">A+T</td>\n<td class=\"ltx_td ltx_align_center\">0.768</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">Ours</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.857</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\" rowspan=\"5\">DVlog</td>\n<td class=\"ltx_td ltx_border_t\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Text</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.68*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.647</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_center\">0.66*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">A+V</td>\n<td class=\"ltx_td ltx_align_center\">0.79*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b\">Ours</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\">A+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">0.650</span></td>\n</tr>\n</table>\n\n",
+        "body": "Dataset\nModels\nModality\nF1\n\n\nDAIC-WoZ\nGloVe-CNN (campbell2022speech)\n\nText\n0.68*\n\n\nTOAT (guo2022topic)\n\nAudio\n0.647\n\n\nEmoAudioNet (othmani2021towards)\n\nAudio\n0.66*\n\n\nHiQuE (jung2024hique)\n\nA+T+V\n0.79*\n\n\nMultiDepNet \nA+T\n0.785\n\n\n\nOurs\nA+T+V\n0.825\n\n\nE-DAIC\nHiQuE (jung2024hique)\n\nA+T+V\n0.70*\n\n\n(sadeghi2024harnessing)\nA+T+V\n0.743\n\n\n\nA+T+V\n\n\n\nMultiDepNet \nA+T\n0.768\n\n\nOurs\nA+T+V\n0.857\n\n\nDVlog\n\nText\n0.68*\n\n\n\nAudio\n0.647\n\n\n\n\n0.66*\n\n\n\nA+V\n0.79*\n\n\nOurs\nA+V\n0.650",
+        "html_code": "<table class=\"ltx_tabular ltx_centering ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_tt\">Dataset</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">Models</td>\n<td class=\"ltx_td ltx_align_left ltx_border_tt\">Modality</td>\n<td class=\"ltx_td ltx_align_center ltx_border_tt\">F1</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\">DAIC-WoZ</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">GloVe-CNN <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">campbell2022speech</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Text</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.68*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">TOAT <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2022topic</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.647</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">EmoAudioNet <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">othmani2021towards</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.66*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">HiQuE <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\">0.79*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">MultiDepNet </td>\n<td class=\"ltx_td ltx_align_left\">A+T</td>\n<td class=\"ltx_td ltx_align_center\">0.785</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_center\">Ours</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.825</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_t\" rowspan=\"5\">E-DAIC</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">HiQuE <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jung2024hique</span>)</cite>\n</td>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.70*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\"><cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">sadeghi2024harnessing</span>)</cite></td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\">0.743</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td\"/>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">MultiDepNet </td>\n<td class=\"ltx_td ltx_align_left\">A+T</td>\n<td class=\"ltx_td ltx_align_center\">0.768</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center\">Ours</td>\n<td class=\"ltx_td ltx_align_left\">A+T+V</td>\n<td class=\"ltx_td ltx_align_center\"><span class=\"ltx_text ltx_font_bold\">0.857</span></td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_left ltx_border_b ltx_border_t\" rowspan=\"5\">DVlog</td>\n<td class=\"ltx_td ltx_border_t\"/>\n<td class=\"ltx_td ltx_align_left ltx_border_t\">Text</td>\n<td class=\"ltx_td ltx_align_center ltx_border_t\">0.68*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">Audio</td>\n<td class=\"ltx_td ltx_align_center\">0.647</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_center\">0.66*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td\"/>\n<td class=\"ltx_td ltx_align_left\">A+V</td>\n<td class=\"ltx_td ltx_align_center\">0.79*</td>\n</tr>\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_align_center ltx_border_b\">Ours</td>\n<td class=\"ltx_td ltx_align_left ltx_border_b\">A+V</td>\n<td class=\"ltx_td ltx_align_center ltx_border_b\"><span class=\"ltx_text ltx_font_bold\">0.650</span></td>\n</tr>\n</table>\n\n",
         "informative_terms_identified": [
-            "models",
             "original",
-            "significant",
-            "atv",
-            "multidepnet",
-            "denotes",
-            "campbell2022speech",
-            "comparison",
-            "our",
-            "audio",
-            "daicwoz",
-            "modality",
-            "othmani2021towards",
+            "jung2024hique",
+            "approaches",
             "reported",
-            "digits",
-            "test",
-            "text",
-            "performance",
-            "guo2022topic",
-            "emoaudionet",
-            "dvlog",
-            "toat",
-            "edaic",
-            "results",
             "glovecnn",
-            "set",
-            "ours",
+            "campbell2022speech",
+            "daicwoz",
+            "text",
+            "hique",
+            "denotes",
+            "our",
+            "results",
+            "toat",
+            "multidepnet",
+            "audio",
+            "emoaudionet",
+            "modality",
+            "atv",
+            "method",
+            "performance",
             "sadeghi2024harnessing",
             "previous",
-            "jung2024hique",
-            "hique",
-            "method",
+            "comparison",
+            "dvlog",
             "dataset",
-            "approaches"
+            "test",
+            "ours",
+            "othmani2021towards",
+            "models",
+            "set",
+            "guo2022topic",
+            "edaic",
+            "digits",
+            "significant"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">We compare our methods with previous methods, including single-modal approaches, conventional multi-modal approaches, and multi-modal LLMs, on both the development set and test set of the DAIC-WoZ database. The detailed comparison results are illustrated in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T3\" title=\"Table 3 &#8227; Evaluation on DAIC-WoZ Test Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, respectively. Following previous works, we adopt the F1 score for evaluation.</p>\n\n",
@@ -773,83 +779,83 @@
             {
                 "html": "<p class=\"ltx_p\">Depression is one of the most prevalent mental health disorders globally. In recent years, multi-modal data, such as speech, video, and transcripts, has been increasingly used to develop AI-assisted depression assessment systems. Large language models have further advanced this field due to their strong language understanding and generalization capabilities. However, conventional LLMs remain text-centric and cannot process the rich non-verbal cues found in audio and visual modalities, which are critical components in mental health evaluation. While multi-modal LLMs offer a promising direction, few are tailored for psychological applications. In this study, we propose a novel multi-modal LLM framework for depression detection. Our approach augments an audio language model with visual understanding and aligns audio-visual features at the timestamp level. This fine-grained alignment improves modeling of temporal dynamics across modalities while reducing the need for extensive training data and computational resources. Experiments on the DAIC-WoZ dataset demonstrate that our model outperforms both single-modality approaches and previous multi-modal methods. Moreover, the proposed framework can be extended to incorporate additional physiological signals, paving the way for broader clinical applications beyond mental health.</p>\n\n",
                 "matched_terms": [
-                    "models",
+                    "approaches",
                     "previous",
+                    "models",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "dataset",
-                    "approaches",
-                    "our"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Depression has emerged as a critical concern in the field of mental health, affecting a broad population across various age groups.\nParticularly, the incidence of depression among adolescents has surged over the past decade, raising significant social and public health concerns <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">thapar2022depression</span>)</cite>.\nDiagnosing and treating depression often entails substantial labor and financial costs for both families and healthcare systems. With the advancement of natural language processing (NLP), increasing attention has been given to automated approaches for depression detection, reducing human intervention. Large language models (LLMs) have demonstrated remarkable capabilities across a wide array of NLP tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">naveed2023comprehensive</span>)</cite>, which has sparked interest in their application to mental health screening <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite>. Despite their success, a fundamental limitation of conventional LLMs lies in their confinement to textual inputs, lacking the capacity to interpret multi-modal signals such as speech and facial expressions that are also indicative of depressive symptoms <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">krause2021facial</span>)</cite>.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "approaches",
+                    "models",
                     "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal data, including acoustic and visual cues, can significantly enhance the accuracy of depression detection.\nPrior studies have shown that individuals at high risk of depression often exhibit reduced facial expressiveness, diminished vitality, and weakened responses to external stimuli such as decreased eye contact <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">perez2003nonverbal</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">waxer1974nonverbal</span>)</cite>. Similarly, specific acoustic features, such as monotonous tone, slow speech rate, disfluency, and low vocal energy, have been linked to depressive states <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">koops2023speech</span>)</cite>. These behavioral signals offer valuable complementary information beyond what can be derived from text alone.\nMulti-modal large language models (MLLMs) offer an ideal solution to the integration of text and multi-modal data, which shows great promise in a lot of downstream tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024mm</span>)</cite>. However, current MLLMs face several limitations that hinder their application to depression detection. First, depression detection relies heavily on temporal data such as audio and video, yet most existing MLLMs are limited to static images <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">caffagni2024revolution</span>)</cite>.\nFurthermore, due to the relatively small size of depression-related datasets compared to standard NLP corpora, developing MLLMs for this domain demands careful consideration of model complexity to mitigate overfitting and ensure training efficiency.</p>\n\n",
                 "matched_terms": [
-                    "models",
+                    "text",
                     "audio",
-                    "text"
+                    "models"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">To address these limitations, we propose a simple yet effective framework that adapts a multi-modal large language model for depression detection. Our method builds upon a pretrained audio language model (ALM) and augments it with visual understanding capabilities, forming a truly multi-modal system. This design leverages the shared temporal structure of audio and visual modalities, allowing for the alignment at the timestamp level. By incrementally integrating visual modules into the ALM with self-supervised visual pretraining and parameter-efficient fine-tuning (PEFT) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2022lora</span>)</cite>, our approach maintains the efficiency and modularity of the base model while enhancing its multi-modal capacity. This strategy also reduces the number of trainable parameters and mitigates the need for large-scale pretraining, making it efficient in data usage and computational requirements. Experiments on the public depression detection dataset, DAIC-WoZ, confirm the effectiveness of our approach, highlighting its potential for practical applications in mental health assessment.</p>\n\n",
                 "matched_terms": [
+                    "method",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "method",
-                    "dataset",
-                    "our"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We develop a multi-modal large language model for depression detection based on the Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> model by integrating a self-supervised vision encoder with parameter-efficient fine-tuning. To the best of our knowledge, this is the first study to propose <span class=\"ltx_text ltx_font_bold\">multi-modal depression detection using LLM across text, audio, and video modalities</span>;</p>\n\n",
                 "matched_terms": [
-                    "audio",
                     "text",
+                    "audio",
                     "our"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We validate our approach by the comparison with single-modality methods and previous LLM-based state-of-the-art methods on the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>. The experimental results demonstrate that our approach yields superior performance at a smaller model scale (7B versus 13B), compared with pioneering multi-modal LLMs.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "performance",
                     "previous",
-                    "daicwoz",
-                    "results",
                     "comparison",
-                    "performance"
+                    "results",
+                    "our",
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Deep learning has been widely adopted for automated depression detection using speech, text, and video modalities. Earlier works focused on single modality, such as self-supervised speech models <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>)</cite>, hierarchical acoustic representations <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022speechformer</span>)</cite>, or mobile speech data <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2023automatic</span>)</cite>. Visual features like facial expressions and eye movements have also shown promise, with methods leveraging weakly supervised learning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shangguan2022dual</span>)</cite>, gaze patterns <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zheng2024diagnosing</span>)</cite>, and combined facial-gaze analysis <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">stolicyn2022prediction</span>)</cite>.\nRecent studies have explored multi-modal fusion to capture richer cues, incorporating audio, video, and text <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024multimodal</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shen2022automatic</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xue2024fusing</span>)</cite>. However, most rely on late fusion strategies without joint pretraining, limiting their ability to fully exploit temporal and semantic correlations across modalities.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "modality",
+                    "text",
                     "audio",
-                    "text"
+                    "models",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Large language models have been applied to depression detection due to their strong ability to model long-range dependencies in dialogue, which is an essential feature for analyzing clinical interviews. For example, Liu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023chatcounselor</span>)</cite> introduced ChatCounselor, which leverages LLMs to assess depressive symptoms and provide mental health support. Other studies have employed LLMs to analyze social media content; Hengle <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hengle2024still</span>)</cite> constructed a benchmark for depression-stress classification from online posts, while Xu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024mental</span>)</cite> used LLMs to infer depression status from various web-based sources.\nRecent efforts have extended LLMs to multi-modal settings for improved diagnostic accuracy. Sadeghi <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">sadeghi2024harnessing</span>)</cite> combined LLMs with facial expression analysis to estimate depression severity, and Zhang <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite> incorporated acoustic landmarks into LLMs to build an audio-text model for depression detection. While these approaches demonstrate the potential of LLMs in mental health applications, they remain limited to textual inputs or approximations thereof (e.g., acoustic landmarks). The inability to directly process rich multi-modal signals restricts their overall effectiveness.</p>\n\n",
                 "matched_terms": [
+                    "approaches",
                     "models",
-                    "sadeghi2024harnessing",
-                    "approaches"
+                    "sadeghi2024harnessing"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Integrating textual inputs with audio and visual modalities represents a major advancement in the development of generative AI. The fusion of LLMs with visual encoders has enabled impressive performance on tasks such as visual dialogue, visual question answering, and image captioning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2023visual</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhu2023minigpt</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dai2023instructblip</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2024qwen2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lu2024deepseek</span>)</cite>. Similarly, audio language models have emerged to jointly process speech and text. For instance, Chu <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> introduced Qwen2-Audio, extending the Qwen2-7B backbone <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">qwen2025qwen25technicalreport</span>)</cite>, while Ding <em class=\"ltx_emph ltx_font_italic\">et&#160;al.</em> <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ding2025kimi</span>)</cite> proposed Kimi-Audio, which incorporates both discrete acoustic tokens and continuous audio embeddings into an LLM framework.\nDespite their success, these models are generally not well-suited for mental health applications due to substantial domain gaps in both training data and pretraining objectives. Moreover, most vision-language models lack the capacity to handle continuous video input, further limiting their applicability to tasks such as depression detection, where temporal visual cues are crucial.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "audio",
                     "text",
+                    "audio",
+                    "models",
                     "performance"
                 ]
             },
@@ -863,19 +869,19 @@
             {
                 "html": "<p class=\"ltx_p\">We adopt Qwen2-Audio <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chu2024qwen2</span>)</cite> as the foundation of our framework. This model integrates Whisper-large-v3 <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">radford2023robust</span>)</cite> as the audio encoder and Qwen2-7B as the language model. The audio encoder processes raw waveforms resampled to 16 kHz and converts them into 128-channel Mel-spectrograms, with each frame representing a 10 ms segment. These spectrograms are subsequently downsampled via strided convolutions and average pooling, resulting in encoder outputs where each frame corresponds to a 40 ms segment of the original waveform. To ensure the universality of our method, we retain the pretrained weights of Qwen2-Audio throughout the initial stages and apply PEFT-based adaptation only in the final training phase. Notably, our framework is modular and can be extended to other audio language models, provided their audio encoders output sequences aligned with fixed temporal intervals.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "original",
-                    "audio",
                     "method",
-                    "our"
+                    "models",
+                    "our",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">After obtaining audio and visual embeddings, the next step is to fuse them into a unified representation for input into the LLM. While a common fusion strategy involves concatenating modality embeddings along the sequence dimension <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2025qwen2</span>)</cite>, this approach is suboptimal for integrating new modalities into pretrained LLMs, as it disrupts the expected sequence length and can interfere with positional encoding. To preserve compatibility with pretrained LLMs, we propose a simple yet effective fusion method&#8212;element-wise addition of audio and visual embeddings, which is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. This is feasible due to our explicit timestamp-level synchronization, ensuring both sequences share the same temporal structure. Moreover, our three-stage training strategy progressively aligns the modalities, enabling effective fusion without representation collapse.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "audio",
-                    "modality",
-                    "our"
+                    "modality"
                 ]
             },
             {
@@ -896,36 +902,36 @@
                 "html": "<p class=\"ltx_p\">In the final stage, we integrate the pretrained visual encoder with the audio language model to construct a multi-modal large language model tailored for depression detection, which is illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overview of the Framework &#8227; 3 Method &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Since traditional LLMs are not inherently designed to process visual information, additional instruction tuning is required to adapt the model to this task. We employ Low-Rank Adaptation (LoRA) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2022lora</span>)</cite> to update the parameters of both the LLM and the modality projection layer. As audio and visual features have been temporally synchronized and aligned at the utterance level in previous stages, the complexity of cross-modal fusion is substantially reduced.</p>\n\n",
                 "matched_terms": [
                     "audio",
-                    "modality",
-                    "previous"
+                    "previous",
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We utilize the DAIC-WoZ database <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gratch2014distress</span>)</cite>, one of the most popular datasets for depression detection, to develop and evaluate our proposed multi-modal LLM in depression detection. The DAIC-WoZ database contains interview transcripts, speech records, and visual features from 189 participants, including healthy controls and depression cases. The golden labels of the dataset are based on PHQ-8 scores, where a PHQ-8 score higher than 10 is recognized as a depressed case. The training set contains 107 participants, 30 of whom are labeled as depressed, while the development set contains 35 participants, 12 of whom are labeled as depressed.\nFollowing our previous works <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite>, we report the evaluation results on the development set for comparison.\nIn addition to the training set and development set, we also evaluated our method on the test set, where 14 out of the 47 subjects are labeled as depressed.\nFor timestamp-synchronized data augmentation, we set the maximum length of each subdialogue to 120 seconds, generate 1,000 subdialogues per conversation with depression, which achieves a trade-off between data diversity and the risk of overfitting. The visual features generated by data augmentation are utilized for self-supervised visual pretraining and utterance level audio-visual alignment. Then the augmented transcripts, audio clips, and visual features are used for multi-modal instruction finetuning.\nOur multi-modal LLM for depression detection is developed on Qwen2-Audio-7B-Instruct model. We utilize 2 NVIDIA H200 141G GPUs during training. The detailed training hyperparameters have been demonstrated in the Appendix.</p>\n\n",
                 "matched_terms": [
-                    "set",
+                    "method",
                     "previous",
+                    "set",
+                    "comparison",
+                    "results",
+                    "our",
+                    "test",
                     "audio",
                     "daicwoz",
-                    "results",
-                    "test",
-                    "method",
-                    "dataset",
-                    "comparison",
-                    "our"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We present a comprehensive comparison between our proposed multi-modal LLM and previous methods on the DAIC-WoZ development set in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. Additionally, we evaluate the contribution of each individual module in our framework, including the Qwen2-7B model, the Whisper-v3 audio encoder, and a self-supervised vision encoder. Overall, our multi-modal model achieves superior classification performance on the development set of the DAIC-WoZ dataset, consistently outperforming all single-modality baselines.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "set",
+                    "performance",
                     "previous",
+                    "set",
+                    "comparison",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "dataset",
-                    "comparison",
-                    "performance"
+                    "dataset"
                 ]
             },
             {
@@ -938,163 +944,165 @@
             {
                 "html": "<p class=\"ltx_p\">Audio-based models generally outperform text-only models, suggesting that acoustic cues carry richer information for detecting depressive symptoms.\nIn addition, the performance of audio models could benefit from downstream tasks such as speech recognition or emotion recognition <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span>)</cite>. Notably, WavLM fine-tuned for emotion recognition shows superior performance, surpassing even Whisper-v3-large. This suggests that tasks closely related to depression, such as emotion recognition and ASR, provide transferable knowledge useful for this application.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "audio",
+                    "models",
                     "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">For video models, our finetuned visual encoder with a classification head achieves the best performance. The main factor that could affect video-based models is the choice of visual feature sets. Since raw videos are not available at the DAIC-WoZ database, only facial feature sets, such as landmarks and action units, are available for depression detection. As the feature set could be rather redundant, the performance of video models could even deteriorate if the feature set selection is inappropriate. Self-supervised pretraining alleviates the issue significantly, as masked autoencoders are designed for images, which possess a redundant nature, and are suitable in our scenario.</p>\n\n",
                 "matched_terms": [
-                    "set",
+                    "performance",
                     "models",
+                    "set",
                     "our",
-                    "daicwoz",
-                    "performance"
+                    "daicwoz"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Multi-modal approaches that incorporate both audio and text, or integrate all three modalities, generally outperform single-modal baselines. In particular, the inclusion of audio features often leads to significant performance improvements, highlighting the importance of acoustic information in depression detection. Compared with other multi-modal methods, our proposed framework consistently achieves superior results, demonstrating the effectiveness of timestamp-level alignment and the synergy of modality-specific encoders in capturing clinically relevant cues.</p>\n\n",
                 "matched_terms": [
-                    "significant",
-                    "audio",
-                    "performance",
-                    "results",
-                    "approaches",
                     "text",
-                    "our"
+                    "performance",
+                    "approaches",
+                    "results",
+                    "our",
+                    "audio",
+                    "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> presents the performance comparison between our method and existing multi-modal LLMs. Together with Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, the results demonstrate that incorporating audio significantly enhances the classification performance of LLMs. For instance, augmenting Llama2-13B with acoustic landmarks improves its F1 score from 0.636 to 0.695. A similar trend is observed with Qwen2-7B, where the inclusion of audio elevates the F1 score from 0.578 to 0.720. Our proposed multi-modal framework, which jointly models text, audio, and visual signals, achieves the highest F1 score of 0.789, validating the benefit of integrating visual cues alongside audio and language inputs. This underscores the advantage of leveraging complementary modalities for capturing the complex and multi-faceted nature of depressive symptoms.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "audio",
-                    "performance",
-                    "results",
-                    "method",
                     "text",
+                    "method",
+                    "performance",
+                    "models",
                     "comparison",
-                    "our"
+                    "results",
+                    "our",
+                    "audio"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Notably, both our approach and Qwen2-Audio variants outperform LLMs with acoustic landmarks, despite relying on smaller language backbones (7B vs 13B). This suggests that native multi-modal architectures might be more adept at interpreting raw sensory inputs. While acoustic landmarks serve as a lightweight representation of audio, they may omit subtle prosodic or emotional cues that are preserved in the original waveforms. In contrast, models trained end-to-end on raw audio exhibit stronger modality comprehension and more effective feature fusion.</p>\n\n",
                 "matched_terms": [
-                    "models",
                     "original",
+                    "models",
+                    "our",
                     "audio",
-                    "modality",
-                    "our"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this section, we analyze the source of performance gain in our framework, including the contribution of each modality and the selection of the base model. In addition, we discuss the effectiveness of our proposed timestamp-synchronized data augmentation upon the removal of the interviewer&#8217;s utterance and context length in subdialogues. The experiments are all conducted on the development set of DAIC-WoZ.</p>\n\n",
                 "matched_terms": [
+                    "performance",
                     "set",
                     "our",
-                    "modality",
                     "daicwoz",
-                    "performance"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">We further investigate the individual contribution of each modality within our framework. As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T1\" title=\"Table 1 &#8227; Evaluation on DAIC-WoZ Dev Set &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, both audio and video modalities enhance depression detection performance. The baseline Qwen2-7B model achieves an F1 score of 0.564 using text alone. Introducing audio features leads to a substantial improvement, raising the F1 score to 0.720. Further incorporation of video features elevates the performance to 0.789. Additionally, our proposed multi-scale sliding-window strategy contributes to model performance significantly, improving the F1 score to 0.844.</p>\n\n",
                 "matched_terms": [
+                    "text",
+                    "performance",
                     "our",
                     "audio",
-                    "modality",
-                    "text",
-                    "performance"
+                    "modality"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">An interesting observation is that the addition of audio yields a greater performance gain compared to the inclusion of video, in both instruction-tuned and pre-trained variants. This discrepancy can be attributed to two primary factors. First, as pre-extracted visual features rather than raw video data are utilized in our framework, the model may face information loss, leading to reduced expressive power. Second, our model is fundamentally built upon an audio language modeling architecture. Removing audio embeddings may disrupt the alignment mechanism across modalities, thereby compromising the model&#8217;s ability to integrate non-verbal cues effectively.</p>\n\n",
                 "matched_terms": [
+                    "our",
                     "audio",
-                    "performance",
-                    "our"
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Since both pretrained model and instruction-tuned model are available in Qwen2-Audio families, we compare the performance of these two model variants as the base model. The results in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.T2\" title=\"Table 2 &#8227; Comparison with Multi-Modal LLMs &#8227; 4.2 Results &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate that the instruction-tuned model provides higher detection performance. The findings in our research are different from previous work <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024llms</span>)</cite>, where instruction tuning leads to significant performance deterioration compared with the pretrained model. The reasons for the inconsistency could be the difference in instruction tuning in general LLMs and audio language models. Depression detection involves the analysis of both audio and text; a similar task has been used to finetune the model in instruction tuning. Thus, the instruction-tuned model could be better at the audio analysis task.</p>\n\n",
                 "matched_terms": [
-                    "models",
-                    "previous",
-                    "significant",
-                    "audio",
-                    "performance",
-                    "results",
                     "text",
-                    "our"
+                    "performance",
+                    "previous",
+                    "models",
+                    "results",
+                    "our",
+                    "audio",
+                    "significant"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">The length of subdialogues plays a crucial role in our framework, as longer contexts generally provide richer cues for depression detection. However, longer subdialogues do not necessarily improve the performance for detection, as the audio records for the interviewer do not contribute to the decision, but even interfere with the depression detection. To address this constraint, we propose to remove the interviewer&#8217;s utterances during data augmentation, allowing more content from the participant to be retained within the fixed audio window. While this enhances the availability of participant-specific acoustic cues, it also results in the loss of visual information associated with the removed segments.\nTo explore this trade-off, we conduct an ablation study under varying subdialogue lengths,\nas shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#S4.F4\" title=\"Figure 4 &#8227; 4.3.3 The Effect of Context Length and Interviewer Utterance Removal &#8227; 4.3 Ablation Studies and Discussion &#8227; 4 Experiments &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. When the maximum subdialogue length is constrained to 30 seconds, removing the interviewer&#8217;s speech leads to degraded performance.\nIn this setting, the entire subdialogue can be encoded without truncation, and discarding the interviewer&#8217;s turns causes unnecessary loss of visual cues, thus impairing multi-modal inference. In contrast, as the subdialogue length increases beyond the model&#8217;s audio capacity, the removal of interviewer utterances proves beneficial. By prioritizing participant speech within the fixed input window, the model gains access to more relevant acoustic information, leading to improved detection accuracy. However, when the context length becomes excessively long, the performance gain diminishes. This is likely due to reduced dialogue diversity and increased risk of overfitting, as longer subdialogues tend to be less variable.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "performance",
+                    "our",
                     "results",
-                    "our"
+                    "audio",
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">In this study, we propose a multi-modal large language model for depression detection, built upon audio-based language models and augmented with visual understanding capabilities. Experiments on the DAIC-WoZ dataset demonstrate the superiority of our framework over existing multi-modal LLMs. To our knowledge, this is the first work to develop a multi-modal LLM for depression detection that simultaneously integrates textual, audio, and visual modalities. We further provide detailed analyses of how model design and data augmentation strategies affect performance. Overall, our method offers an effective solution for adapting multi-modal LLMs to mental health applications, with potential for broader extension to other domains.</p>\n\n",
                 "matched_terms": [
-                    "our",
+                    "method",
+                    "performance",
                     "models",
+                    "our",
                     "audio",
                     "daicwoz",
-                    "method",
-                    "dataset",
-                    "performance"
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">This study is conducted using the DAIC-WoZ database, a publicly available resource accessible to qualified researchers upon request. All data collection procedures for this dataset were carried out with informed consent from participants, and the data have been fully anonymized to protect individual privacy. We have obtained proper authorization by signing the DAIC-WoZ End-User License Agreement and strictly adhere to its terms of use.\nOur model is built upon the Qwen2-Audio architecture, and all research activities related to it comply with the Apache-2.0 license under which the model is released.\nWhile our method achieves state-of-the-art performance on the DAIC-WoZ benchmark, it is intended for research purposes only and should not be used for clinical diagnosis, treatment, or intervention of depression. We further acknowledge that, like many large language models, our framework may be vulnerable to hallucinations, harmful outputs, or systemic biases. We disclaim responsibility for any misuse, misinterpretation, or unintended consequences resulting from the deployment of this model outside its intended research context.</p>\n\n",
                 "matched_terms": [
-                    "our",
-                    "models",
-                    "daicwoz",
                     "method",
-                    "dataset",
-                    "performance"
+                    "performance",
+                    "models",
+                    "our",
+                    "daicwoz",
+                    "dataset"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Our framework is implemented using the HuggingFace <span class=\"ltx_text ltx_font_italic\">transformers</span> library with PyTorch 2.1. The full hyperparameter configurations used during training are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#A1.T4\" title=\"Table 4 &#8227; Appendix A Implementation Details &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. We adopt the AdamW optimizer <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">loshchilov2017decoupled</span>)</cite> for model optimization. To improve training speed without compromising performance, we enable TensorFloat32 (TF32) computation and apply automatic mixed-precision training using BFloat16 (BF16). For parameter-efficient fine-tuning (PEFT) of the Qwen2-Audio model on the depression detection task, we employ QLoRA <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dettmers2023qlora</span>)</cite>, which compresses the base model to 4-bit precision to reduce memory usage and improve computational efficiency. The full training process requires approximately 90+ GPU hours on an NVIDIA H200 141GB GPU. This includes around 40 hours for self-supervised visual pretraining, 20 hours for utterance-level audio-visual alignment, and 30 hours for multimodal instruction tuning. Early stopping is applied in all stages when training loss plateaus.</p>\n\n",
                 "matched_terms": [
-                    "performance",
-                    "our"
+                    "our",
+                    "performance"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">Following the approach of <cite class=\"ltx_cite ltx_citemacro_citet\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023self</span></cite>, we generate subdialogues from the original interview transcripts to mitigate class imbalance and expand the size of the training set. In our data augmentation pipeline, we enforce strict synchronization among transcripts, audio, and video to ensure precise timestamp-level alignment. However, due to varying frame rates across modalities, achieving synchronization presents a technical challenge. For example, audio recordings are typically captured at a 16,000 Hz sampling rate and later converted into Mel-spectrograms with a frame rate of 100 Hz, while video recordings are collected at 30 frames per second (FPS). To address this discrepancy, we constrain the start and end timestamps of each subdialogue to align with whole seconds (i.e., integer-second boundaries).</p>\n\n",
                 "matched_terms": [
-                    "set",
-                    "audio",
+                    "our",
                     "original",
-                    "our"
+                    "audio",
+                    "set"
                 ]
             },
             {
                 "html": "<p class=\"ltx_p\">During instruction tuning, we design a system prompt to guide the behavior of the language model. Given that the Qwen2-Audio-Instruct model has been fine-tuned on audio analysis tasks, we adopt a chat-based prompt template to elicit model responses. Notably, we use the same prompt design for both the Qwen2-Audio family and our multi-modal LLM. This consistency is based on our integration strategy, where visual embeddings are directly added to the audio embeddings without modifying the model architecture. Therefore, we assume that the model can still function effectively even without explicitly referencing visual information in the prompt.</p>\n\n",
                 "matched_terms": [
-                    "audio",
-                    "our"
+                    "our",
+                    "audio"
                 ]
             }
         ]
     },
     "A1.T4": {
+        "source_file": "It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models",
         "caption": "Table 4: Training hyperparameters.",
-        "body": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Grad Accum Steps</td>\n</tr>\n</table>\n",
+        "body": "Grad Accum Steps",
+        "html_code": "<table class=\"ltx_tabular ltx_align_middle\">\n<tr class=\"ltx_tr\">\n<td class=\"ltx_td ltx_nopad_r ltx_align_center\">Grad Accum Steps</td>\n</tr>\n</table>\n",
         "informative_terms_identified": [
-            "accum",
-            "steps",
-            "training",
             "hyperparameters",
-            "grad"
+            "steps",
+            "grad",
+            "training",
+            "accum"
         ],
         "citing_paragraphs": [
             "<p class=\"ltx_p\">Our framework is implemented using the HuggingFace <span class=\"ltx_text ltx_font_italic\">transformers</span> library with PyTorch 2.1. The full hyperparameter configurations used during training are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.19877v1#A1.T4\" title=\"Table 4 &#8227; Appendix A Implementation Details &#8227; It Hears, It Sees too: Multi-Modal LLM for Depression Detection By Integrating Visual Understanding into Audio Language Models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. We adopt the AdamW optimizer <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">loshchilov2017decoupled</span>)</cite> for model optimization. To improve training speed without compromising performance, we enable TensorFloat32 (TF32) computation and apply automatic mixed-precision training using BFloat16 (BF16). For parameter-efficient fine-tuning (PEFT) of the Qwen2-Audio model on the depression detection task, we employ QLoRA <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dettmers2023qlora</span>)</cite>, which compresses the base model to 4-bit precision to reduce memory usage and improve computational efficiency. The full training process requires approximately 90+ GPU hours on an NVIDIA H200 141GB GPU. This includes around 40 hours for self-supervised visual pretraining, 20 hours for utterance-level audio-visual alignment, and 30 hours for multimodal instruction tuning. Early stopping is applied in all stages when training loss plateaus.</p>\n\n"
