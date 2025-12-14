@@ -12,6 +12,6 @@ public class WebConfig implements WebMvcConfigurer {
         // Mappa /raw_articles/** alla cartella papers/ nella root del workspace
         // Assumendo che l'applicazione giri nella cartella 'lucene', papers è in ../papers
         registry.addResourceHandler("/raw_articles/**")
-                .addResourceLocations("file:../papers/");
+                .addResourceLocations("file:../input/papers/");
     }
 }
