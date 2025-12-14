@@ -10,7 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ContextualParagraph {
-/*modello utile per immagazzinare i paragrafi direttamente connessi alle tabelle*/
+    
+    // --- Modello utile per immagazzinare i paragrafi direttamente connessi alle tabelle e immagini ---
 
     // Lucene: Index as StoredField (for display) or maybe distinct TextField if you want to search inside context
     @JsonProperty("html")

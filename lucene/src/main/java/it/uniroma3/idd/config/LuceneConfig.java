@@ -44,8 +44,16 @@ public class LuceneConfig {
     private String tablesPath;
 
     @Getter
+    @Value("${data.figures.path}")
+    private String figuresPath;
+
+    @Getter
     @Value("${lucene.index_table.directory}")
     private String tableDirectory;
+
+    @Getter
+    @Value("${lucene.index_figure.directory}")
+    private String figureDirectory;
 
     @Bean
     public Analyzer customAnalyzer() {

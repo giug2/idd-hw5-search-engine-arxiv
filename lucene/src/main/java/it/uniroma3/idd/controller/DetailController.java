@@ -97,10 +97,21 @@ public class DetailController {
             case "tabelle":
                 title = "Tabella: " + doc.get("caption");
                 results.put("HTML Tabella", doc.get("html_table")); 
-                results.put("Contesto", doc.get("context_paragraphs"));
-                results.put("ID Articolo Padre", doc.get("fileName")); 
-                results.put("Menzioni", doc.get("mentions")); 
-                results.put("Termini Chiave", doc.get("terms")); 
+                results.put("Caption", doc.get("caption"));
+                results.put("Contesto", doc.get("contextual_paragraphs"));
+                results.put("ID Articolo Padre", doc.get("sourceFilename")); 
+                results.put("Menzioni", doc.get("citing_paragraphs")); 
+                results.put("Termini Chiave", doc.get("informative_terms")); 
+                break;
+
+            case "figure":
+                title = "Figura: " + doc.get("caption");
+                results.put("URL Immagine", doc.get("imageUrl"));
+                results.put("Caption", doc.get("caption"));
+                results.put("Termini Informativi", doc.get("informative_terms"));
+                results.put("Paragrafi Citanti", doc.get("citing_paragraphs"));
+                results.put("Paragrafi Contestuali", doc.get("contextual_paragraphs"));
+                results.put("File Sorgente", doc.get("sourceFilename"));
                 break;
     
             default:

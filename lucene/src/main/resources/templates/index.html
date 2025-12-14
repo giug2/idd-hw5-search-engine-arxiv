@@ -8,7 +8,7 @@
 <body>
 
     <div class="container">
-        <h1>🔍 Motore di Ricerca Lucene</h1>
+        <h1>Motore di Ricerca Lucene</h1>
 
         <form th:action="@{/}" method="post">
             
@@ -21,15 +21,16 @@
                     Guida alla Ricerca Lucene Avanzata:
                     <ul>
                         <li>
-                            Ricerca Combinata (Multi-campo): Inserisci solo la parola chiave (es. `protein gene`).
+                            Ricerca Combinata (Multi-campo): Inserisci solo la parola chiave (es. `text to speech`).
                         </li>
                         <li>
                             Ricerca Specifica (Campo:Valore):
                             <div style="margin-left: 20px; margin-top: 5px;">
                                 <strong>Articoli:</strong> `title`, `authors`, `articleAbstract`, `paragraphs`<br>
-                                <strong>Tabelle:</strong> `caption`, `body`, `mentions`, `terms`, `context_paragraphs`
+                                <strong>Tabelle:</strong> `caption`, `body`, `informative_terms`, `citing_paragraphs`, `contextual_paragraphs`<br>
+                                <strong>Figure:</strong> `caption`, `informative_terms`, `citing_paragraphs`, `contextual_paragraphs`
                             </div>
-                            Esempio: `title:cancer AND authors:Smith`
+                            Esempio: `title:speech AND authors:Smith`
                         </li>
                         <li>
                             Operatori Logici: `AND`, `OR`, `NOT`. Wildcard: `*`, `?`.
@@ -51,6 +52,12 @@
                     <input type="checkbox" name="indices" value="tabelle" 
                            th:checked="${indicesScelti != null and #lists.contains(indicesScelti, 'tabelle')}"> 
                     Tabelle 
+                </label>
+
+                <label style="margin-right: 15px;">
+                    <input type="checkbox" name="indices" value="figure" 
+                           th:checked="${indicesScelti != null and #lists.contains(indicesScelti, 'figure')}"> 
+                    Figure/Immagini 
                 </label>
             </div>
 
@@ -88,7 +95,7 @@
                             <span class="score" th:text="'(Score: ' + ${#numbers.formatDecimal(result.score, 1, 4)} + ')'"></span>
                         </h4>
 
-                        <p th:text="${result.snippet}">Snippet: Anteprima del contenuto...</p>
+                        <p th:if="${entry.key == 'articoli'}" th:text="${result.snippet}">Snippet: Anteprima del contenuto...</p>
                     </div>
                     
                 </div>

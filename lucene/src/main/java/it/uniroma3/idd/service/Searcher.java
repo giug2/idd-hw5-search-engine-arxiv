@@ -24,9 +24,11 @@ import org.apache.lucene.store.FSDirectory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.event.EventListener;
 
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.dto.SearchResult;
+import it.uniroma3.idd.event.IndexingCompleteEvent;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
@@ -78,6 +80,44 @@ public class Searcher {
                 System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
             }
         }
+    }
+
+    /**
+     * Ricarica tutti gli indici dopo che l'indicizzazione è completata.
+     * Questo metodo viene chiamato automaticamente quando viene pubblicato l'evento IndexingCompleteEvent.
+     */
+    @EventListener
+    public void onIndexingComplete(IndexingCompleteEvent event) {
+        System.out.println("Ricaricamento indici dopo indicizzazione...");
+        
+        // Chiudi prima i reader esistenti
+        for (DirectoryReader reader : readerMap.values()) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
+            }
+        }
+        readerMap.clear();
+        searcherMap.clear();
+        
+        // Ricarica gli indici
+        for (Map.Entry<String, String> entry : indexPaths.entrySet()) {
+            String indexKey = entry.getKey();
+            String path = entry.getValue();
+            
+            try {
+                DirectoryReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(path)));
+                IndexSearcher searcher = new IndexSearcher(reader);
+                
+                readerMap.put(indexKey, reader);
+                searcherMap.put(indexKey, searcher);
+                System.out.println("-> Ricaricato indice: " + indexKey + " da: " + path + " (docs: " + reader.numDocs() + ")");
+            } catch (IOException e) {
+                System.err.println("Errore nel ricaricamento dell'indice '" + indexKey + "': " + e.getMessage());
+            }
+        }
+        System.out.println("Indici ricaricati con successo!");
     }
 
 
@@ -135,7 +175,10 @@ public class Searcher {
                 defaultFields = new String[]{"title", "authors", "articleAbstract", "paragraphs"};
                 break;
             case "tabelle":
-                defaultFields = new String[]{"caption", "body", "mentions", "terms", "context_paragraphs"};
+                defaultFields = new String[]{"caption", "body", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                break;
+            case "figure":
+                defaultFields = new String[]{"caption", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
                 break;
             default:
                 defaultFields = new String[]{}; 
@@ -174,10 +217,15 @@ public class Searcher {
                 urlDettaglio = "/raw_articles/" + id;
             } else if ("tabelle".equals(indexKey)) { 
                 titolo = doc.get("caption");
-                String context = doc.get("context_paragraphs");
+                String context = doc.get("contextual_paragraphs");
                 snippet = (context != null) ? context.substring(0, Math.min(context.length(), 150)) + "..." : "Contesto non disponibile.";
-                String articleId = doc.get("fileName");
+                String articleId = doc.get("sourceFilename");
                 urlDettaglio = "/dettaglio/tabelle/" + id + "?articleId=" + articleId; 
+            } else if ("figure".equals(indexKey)) {
+                titolo = doc.get("caption");
+                String imageUrl = doc.get("imageUrl");
+                snippet = (imageUrl != null) ? imageUrl : "URL immagine non disponibile.";
+                urlDettaglio = "/dettaglio/figure/" + id;
             } else {
                 titolo = doc.get("title") != null ? doc.get("title") : doc.get("id"); 
                 snippet = "Dettagli non ancora mappati per questo tipo di indice.";

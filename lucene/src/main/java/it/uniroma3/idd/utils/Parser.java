@@ -3,6 +3,7 @@ package it.uniroma3.idd.utils;
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.model.Article;
 import it.uniroma3.idd.model.ContextualParagraph;
+import it.uniroma3.idd.model.Figure;
 import it.uniroma3.idd.model.Table;
 
 import org.jsoup.Jsoup;
@@ -304,6 +305,86 @@ private List<String> extractContextFromComplexList(JsonNode parentNode, String f
     public String cleanHtml(String htmlContent) {
         Document doc = Jsoup.parse(htmlContent);
         return doc.text();
+    }
+
+    /**
+     * Parser per i file JSON delle figure estratte dallo script Python.
+     */
+    public List<Figure> figureParser() {
+        File dir = new File(luceneConfig.getFiguresPath());
+        
+        if (!dir.exists() || !dir.isDirectory()) {
+            System.err.println("Figures directory not found: " + dir.getAbsolutePath());
+            return new ArrayList<>();
+        }
+
+        File[] files = dir.listFiles((dir1, name) -> name.endsWith(".json"));
+        if (files == null) {
+            System.err.println("Error listing files in: " + dir.getAbsolutePath());
+            return new ArrayList<>();
+        }
+
+        System.out.println("Number of Figure JSON files found: " + files.length);
+        List<Figure> figures = new ArrayList<>();
+
+        for (File file : files) {
+            try {
+                ObjectMapper objectMapper = new ObjectMapper();
+                JsonNode rootNode = objectMapper.readTree(file);
+
+                if (!rootNode.isObject()) {
+                    System.err.println("WARNING: File " + file.getName() + " is NOT a JSON Object. Skipping.");
+                    continue;
+                }
+
+                // Ricaviamo il Paper ID dal nome del file (es. 2510.12175v3)
+                String filename = file.getName();
+                String paperId = filename.replace("_figures.json", "").replace(".json", "");
+
+                Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
+                
+                while (fields.hasNext()) {
+                    Map.Entry<String, JsonNode> entry = fields.next();
+                    
+                    String partialFigureId = entry.getKey();
+                    JsonNode figureData = entry.getValue();
+
+                    // ID univoco: paperId + "_" + figureId
+                    String uniqueId = paperId + "_" + partialFigureId;
+
+                    // Estrazione campi
+                    String sourceFilename = figureData.path("source_file").asText(paperId);
+                    String imageUrl = figureData.path("image_url").asText("");
+                    String caption = figureData.path("caption").asText("");
+
+                    List<String> terms = extractStringList(figureData, "informative_terms_identified");
+                    List<String> citingParagraphs = extractStringList(figureData, "citing_paragraphs");
+                    List<String> contextParagraphs = extractContextFromComplexList(figureData, "contextual_paragraphs");
+
+                    // Conversione contextParagraphs in List<ContextualParagraph>
+                    List<ContextualParagraph> cpList = new ArrayList<>();
+                    for (String html : contextParagraphs) {
+                        cpList.add(new ContextualParagraph(html, null));
+                    }
+
+                    Figure figure = new Figure(
+                        uniqueId,
+                        sourceFilename,
+                        imageUrl,
+                        caption,
+                        terms,
+                        citingParagraphs,
+                        cpList
+                    );
+
+                    figures.add(figure);
+                }
+            } catch (IOException e) {
+                System.err.println("CRITICAL JSON PARSING ERROR in figure file: " + file.getName() + ". Message: " + e.getMessage());
+            }
+        }
+        System.out.println("Successfully parsed a total of " + figures.size() + " figures.");
+        return figures;
     }
 
 }

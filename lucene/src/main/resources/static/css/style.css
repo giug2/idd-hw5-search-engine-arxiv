@@ -218,3 +218,140 @@ hr {
     border-bottom: 2px solid #007bff;
     text-align: center;
 }
+
+/* Stili per i termini chiave (tags) */
+.terms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.term-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.term-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Stili per le sezioni di dettaglio */
+.detail-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.detail-section h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.paragraph-box {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    line-height: 1.7;
+}
+
+/* Separatore tra i paragrafi all'interno del box */
+.paragraph-box p {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.paragraph-box p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.figure-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.figure-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Stili per le didascalie (Figure e Tabelle) */
+.caption-container {
+    text-align: center;
+    margin: 10px auto 30px auto;
+    font-style: italic;
+    color: #555;
+    max-width: 90%;
+}
+
+.caption-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Stili specifici per la tabella */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0; /* Rimosso margine inferiore perché è nel container */
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f1f3f5;
+}

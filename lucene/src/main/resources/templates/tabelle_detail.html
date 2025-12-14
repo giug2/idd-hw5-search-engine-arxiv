@@ -2,41 +2,51 @@
 <html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${document.title}">Dettaglio Tabella</title>
+    <title th:text="${document.results['ID Articolo Padre']}">Dettaglio Tabella</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
 
 <div class="container">
     <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
 
-    <h1 th:text="${document.title}">Titolo Tabella</h1>
+    <h1 th:text="${document.results['ID Articolo Padre']}">Titolo Tabella</h1>
     
-    <div class="detail-section" th:each="entry : ${document.results}">
-        <h3 th:text="${entry.key}">Chiave</h3>
-        
-        <div th:if="${entry.key == 'HTML Tabella'}">
-             <div th:utext="${entry.value}"></div>
+    <!-- Sezione Tabella Principale -->
+    <div class="table-container" th:if="${document.results['HTML Tabella'] != null and document.results['HTML Tabella'] != ''}">
+         <div th:utext="${document.results['HTML Tabella']}"></div>
+    </div>
+    
+    <!-- Didascalia Tabella -->
+    <div class="caption-container" th:if="${document.results['Caption'] != null}">
+        <strong class="caption-label">Didascalia:</strong>
+        <span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
+    </div>
+
+    <!-- File Sorgente -->
+    <div class="detail-section" th:if="${document.results['ID Articolo Padre'] != null}">
+        <h3>Articolo di Origine</h3>
+        <p th:text="${document.results['ID Articolo Padre']}">Sorgente</p>
+    </div>
+
+    <!-- Termini Informativi -->
+    <div class="detail-section" th:if="${document.results['Termini Chiave'] != null and document.results['Termini Chiave'] != ''}">
+        <h3>Termini Chiave</h3>
+        <div class="terms-list">
+            <span class="term-tag" th:each="term : ${#strings.arraySplit(document.results['Termini Chiave'], ',')}" th:text="${#strings.trim(term)}">termine</span>
         </div>
-        
-        <div th:unless="${entry.key == 'HTML Tabella'}">
-            <p th:text="${entry.value}" style="white-space: pre-wrap;">Valore</p>
-        </div>
+    </div>
+
+    <!-- Paragrafi Citanti -->
+    <div class="detail-section" th:if="${document.results['Menzioni'] != null and document.results['Menzioni'] != ''}">
+        <h3>Paragrafi che Citano la Tabella</h3>
+        <div class="paragraph-box" th:utext="${document.results['Menzioni']}">Paragrafi</div>
+    </div>
+
+    <!-- Paragrafi Contestuali -->
+    <div class="detail-section" th:if="${document.results['Contesto'] != null and document.results['Contesto'] != ''}">
+        <h3>Paragrafi Contestualmente Rilevanti</h3>
+        <div class="paragraph-box" th:utext="${document.results['Contesto']}">Paragrafi contestuali</div>
     </div>
 
 </div>

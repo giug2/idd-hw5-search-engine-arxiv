@@ -3,6 +3,7 @@ package it.uniroma3.idd.service;
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.event.IndexingCompleteEvent;
 import it.uniroma3.idd.model.Article;
+import it.uniroma3.idd.model.Figure;
 import it.uniroma3.idd.model.Table;
 import it.uniroma3.idd.utils.Parser;
 import jakarta.annotation.PostConstruct;
@@ -44,11 +45,15 @@ public class LuceneIndexer {
             // Log to monitor the flow
             System.out.println("Index initialization in progress...");
             if (luceneConfig.isShouldInitializeIndex()) {
-                System.out.println("Deleting the index directory...");
+                System.out.println("Deleting the index directories...");
+                // Delete all index directories to prevent duplicate entries
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // svuota l'idex dei documenti prima di indicizzarli nuovamente
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getTableDirectory())); // svuota l'idex delle tabelle prima di indicizzarli nuovamente
+                deleteNonEmptyDirectory(Paths.get(luceneConfig.getFigureDirectory())); // svuota l'idex delle figure prima di indicizzarli nuovamente
+                
                 indexArticles(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
                 indexTables(luceneConfig.getTableDirectory(), Codec.getDefault());
+                indexFigures(luceneConfig.getFigureDirectory(), Codec.getDefault());
             }
             System.out.println("Index initialized, publishing event.");
             eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // lancio l'evento "completeIndexing"
@@ -127,7 +132,7 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
             // --- GESTIONE LISTE (Join in stringa unica per Lucene) ---
 
             // Informative Terms (ex "terms")
-            String termsString = table.getInformativeTerms() != null ? String.join(" ", table.getInformativeTerms()) : "";
+            String termsString = table.getInformativeTerms() != null ? String.join(", ", table.getInformativeTerms()) : "";
             doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
 
             // Citing Paragraphs (ex "mentions")
@@ -159,6 +164,66 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
         writer.commit();
         writer.close();
 
+    }
+
+    /**
+     * Indicizza le figure estratte dagli articoli.
+     */
+    public void indexFigures(String Pathdir, Codec codec) throws Exception {
+        Path path = Paths.get(Pathdir);
+        Directory dir = FSDirectory.open(path);
+
+        IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
+        config.setCodec(codec);
+
+        IndexWriter writer = new IndexWriter(dir, config);
+
+        List<Figure> figures = parser.figureParser();
+
+        for (Figure figure : figures) {
+            Document doc = new Document();
+
+            // --- CAMPI IDENTIFICATIVI ---
+            doc.add(new StringField("id", figure.getId(), Field.Store.YES));
+
+            String sourceFile = figure.getSourceFilename() != null ? figure.getSourceFilename() : "Unknown";
+            doc.add(new StringField("sourceFilename", sourceFile, Field.Store.YES));
+
+            // --- URL IMMAGINE (StoredField - non indicizzato, solo memorizzato) ---
+            String imageUrl = figure.getImageUrl() != null ? figure.getImageUrl() : "";
+            doc.add(new StoredField("imageUrl", imageUrl));
+
+            // --- CAMPI TESTUALI (TextField -> Ricerca Full-Text) ---
+            String caption = figure.getCaption() != null ? figure.getCaption() : "";
+            doc.add(new TextField("caption", caption, Field.Store.YES));
+
+            // --- GESTIONE LISTE ---
+            String termsString = figure.getInformativeTerms() != null ? String.join(", ", figure.getInformativeTerms()) : "";
+            doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
+
+            String citingString = figure.getCitingParagraphs() != null ? String.join(" ", figure.getCitingParagraphs()) : "";
+            doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
+
+            // Contextual Paragraphs
+            StringBuilder contextSb = new StringBuilder();
+            if (figure.getContextualParagraphs() != null) {
+                for (var cp : figure.getContextualParagraphs()) {
+                    if (cp.getHtml() != null) {
+                        contextSb.append(cp.getHtml()).append(" ");
+                    }
+                }
+            }
+            doc.add(new TextField("contextual_paragraphs", contextSb.toString().trim(), Field.Store.YES));
+
+            writer.addDocument(doc);
+        }
+
+        writer.commit();
+        writer.close();
+        System.out.println("==========================================");
+        System.out.println("Indicizzazione delle figure completata");
+        System.out.println("Figure indicizzate: " + figures.size());
+        System.out.println("==========================================");
     }
 
     public void deleteNonEmptyDirectory(Path directory) throws IOException {
