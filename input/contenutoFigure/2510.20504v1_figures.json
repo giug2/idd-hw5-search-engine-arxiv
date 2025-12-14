@@ -1,0 +1,352 @@
+{
+    "S1.F1": {
+        "source_file": "Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding",
+        "image_url": "https://arxiv.org/html/2510.20504v1/x1.png",
+        "caption": "Fig. 1: Overview of SimWhisper-Codec. A simplified Whisper encoder\nwith FSQ discretization and a symmetric decoder. Model architecture\nand training procedure are detailed in Section 3.",
+        "informative_terms_identified": [
+            "simplified",
+            "simwhispercodec",
+            "training",
+            "encoder",
+            "detailed",
+            "overview",
+            "fsq",
+            "symmetric",
+            "model",
+            "decoder",
+            "architecture",
+            "discretization",
+            "whisper",
+            "procedure"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this work, we explore the opposite direction: instead of enhancing acoustic codecs with semantic supervision, we start from Whisper </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib14\" title=\"\">14</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a text-aligned ASR model, and adapt it for high-fidelity acoustic reconstruction. However, this adaptation encounters a task mismatch&#8212;ASR systems are designed to achieve invariance to acoustic variations for content extraction </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib15\" title=\"\">15</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while acoustic reconstruction requires preserving fine-grained acoustic details for fidelity. To investigate this task mismatch, we conduct empirical analysis examining how different architectural components of Whisper affect its acoustic reconstruction capabilities. Through empirical analysis presented in Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S2\" style=\"font-size:90%;\" title=\"2 EMPIRICAL ANALYSIS OF COMPONENTS HINDERING ACOUSTIC RECONSTRUCTION &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we discover that targeted architectural simplification&#8212;specifically removing the convolutional front-end nonlinearity (GELU activation) and absolute positional encodings </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8212;substantially enhances the model&#8217;s ability to preserve fine-grained acoustic information. Based on this finding, we propose SimWhisper-Codec (see Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S1.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">), a low-bitrate (1.1 kbps at 16 kHz) codec that combines a </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">simplified</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Whisper encoder, Finite Scalar Quantization (FSQ) </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib17\" title=\"\">17</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and a symmetric decoder, enabling </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">single-stage</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> training without semantic supervision.</span>\n</p>\n\n",
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S1.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, the SimWhisper-Codec architecture is an end-to-end model comprising a simplified Whisper encoder, a downsampling module, a quantizer, an upsampling module, and a symmetric decoder. The downsampling module and quantizer collectively form an information bottleneck, compressing the encoder&#8217;s output by reducing both temporal resolution and feature dimensionality.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Speech codecs serve as bridges between continuous speech signals and large language models, yet face an inherent conflict between acoustic fidelity and semantic preservation. To mitigate this conflict, prevailing methods augment acoustic codecs with complex semantic supervision. We explore the opposite direction: a semantic-first approach that starts from a semantically-capable model and adapts it for high-fidelity acoustic reconstruction. Through empirical analysis, we discover that targeted architectural simplification can unlock the acoustic modeling potential of Whisper, a text-aligned Automatic Speech Recognition (ASR) model. Based on this finding, we propose <span class=\"ltx_text ltx_font_bold\">SimWhisper-Codec</span>, a novel codec that balances the semantic and acoustic preservation by leveraging a frozen, simplified Whisper encoder without requiring external supervision. Experimental results demonstrate that SimWhisper-Codec achieves superior performance in both semantic preservation and acoustic quality compared to semantically-supervised codecs such as Mimi Codec and SpeechTokenizer at similar bitrates, validating the effectiveness of our semantic-first approach. Code is available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/ZhangXinWhut/SimWhisper-Codec\" title=\"\">https://github.com/ZhangXinWhut/SimWhisper-Codec</a>.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "simplified",
+                    "simwhispercodec",
+                    "encoder",
+                    "model",
+                    "whisper"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">However, current speech codecs face an inherent conflict between the preservation of semantic content and acoustic fidelity, where optimizing for one typically degrades the other </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib7\" title=\"\">7</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. This trade-off is particularly pronounced at low bitrates, where achieving high performance in both dimensions remains difficult. To mitigate this conflict, prevailing methods augment acoustic-centric codecs with external semantic supervision through various strategies. For instance, SpeechTokenizer </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> guides the first residual vector quantization (RVQ) layer through semantic distillation from HuBERT </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while Mimi Codec in Moshi </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs split RVQ </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> with SSL model </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> supervision on one quantization branch. PAST </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib12\" title=\"\">12</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> incorporates auxiliary phonetic tasks such as phoneme classification and ASR, and XY-Tokenizer </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib13\" title=\"\">13</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs multi-task learning with LLM-based ASR supervision and multi-stage training. While effective, these methods typically rely on complex semantic supervision.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We propose SimWhisper-Codec, a novel codec that simultaneously models semantic and acoustic information through targeted architectural simplifications of Whisper&#8217;s encoder combined with FSQ quantization and symmetric decoding, eliminating the need for external semantic supervision.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "symmetric",
+                    "simwhispercodec",
+                    "fsq",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To validate our hypotheses, we conduct controlled analysis experiments using LJSpeech </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib21\" title=\"\">21</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. We extract frame-level hidden states from the final layer of each Whisper encoder variant, then condition identical HiFiGAN vocoders </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib22\" title=\"\">22</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on these features to assess reconstruction quality. This setup allows us to isolate the impact of specific architectural components on acoustic modeling capability while keeping the vocoder constant. Crucially, all encoder variants remain </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">frozen</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> during HiFiGAN training to serve as feature extractors.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "whisper",
+                    "training",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Having established that simultaneously removing both components achieves optimal reconstruction performance, these findings provide the foundation for our codec design. The substantial improvements in acoustic reconstruction quality (+2.43 PESQ-NB, +0.15 STOI) demonstrate that architectural simplification can effectively unlock Whisper&#8217;s potential for high-fidelity acoustic modeling. Based on these insights, we next present SimWhisper-Codec, which leverages the simplified Whisper encoder as a frozen feature extractor in a complete speech codec framework.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "whisper",
+                    "simplified",
+                    "simwhispercodec",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Motivation.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Rather than augmenting acoustic codecs with external semantic supervision, we explore the opposite direction: starting from Whisper&#8217;s inherent semantic capabilities and adapting it for high-quality acoustic reconstruction. The key insight is that Whisper&#8217;s extensive multilingual training and text alignment provide natural semantic grounding, eliminating the need for additional semantic models. However, certain architectural components designed for ASR invariance may hinder fine-grained acoustic preservation. Based on our empirical findings, we propose SimWhisper-Codec, which employs a frozen simplified Whisper encoder paired with FSQ quantization and a symmetric trainable decoder. By leveraging Whisper&#8217;s inherent semantic capabilities while enhancing its acoustic modeling through architectural simplification, our approach enables single-stage training without external semantic supervision.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "simplified",
+                    "simwhispercodec",
+                    "training",
+                    "encoder",
+                    "fsq",
+                    "symmetric",
+                    "decoder",
+                    "whisper"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Encoder.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> The encoder adopts the Whisper architecture initialized with\npre-trained weights, with two key modifications to enhance acoustic preservation.\nFirst, we remove the GELU non-linearities from the initial two convolutional layers\nwhile preserving both the layer structure and learned weights from pre-training\nto maintain compatibility with the pre-trained Whisper model. Second,\nwe completely remove the absolute positional encodings from the\nTransformer blocks. This simplified encoder remains frozen\nduring codec training to serve as a powerful feature extractor, leveraging\nthe rich representations learned during Whisper&#8217;s original ASR pre-training.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "simplified",
+                    "training",
+                    "encoder",
+                    "model",
+                    "architecture",
+                    "whisper"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Quantizer.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We employ a Finite Scalar Quantization (FSQ) module </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib17\" title=\"\">17</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, which mitigates codebook collapse and obviates the need for complex training machinery such as exponential moving averages and commitment losses required by traditional VQ methods.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "fsq"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Decoder.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> The decoder adopts a symmetric architecture to the encoder, with symmetry achieved by replacing the encoder&#8217;s convolutional layers with transposed convolutions while maintaining the same architectural depth and feature dimensions. This design enables effective reversal of the encoding process to reconstruct mel-spectrogram representations from the upsampled features. A Vocos model </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib24\" title=\"\">24</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> subsequently converts the spectral features to the final audio waveform.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "encoder",
+                    "symmetric",
+                    "model",
+                    "architecture",
+                    "decoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Framework Configuration.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Our framework features a symmetric encoder-decoder architecture. Both components are 12-layer Transformers based on the Whisper-small architecture, with 768-dimensional hidden states and 12 attention heads. The model processes 16&#160;kHz audio, extracting 50&#160;Hz feature sequences using a 25&#160;ms window and a 10&#160;ms hop size. The </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">downsampler</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> reduces the temporal resolution to 12.5&#160;Hz via 4</span>\n  <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\">\n    <semantics>\n      <mo mathsize=\"0.900em\">&#215;</mo>\n      <annotation encoding=\"application/x-tex\">\\times</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> frame stacking and compresses the feature dimension from 768 to 32 using residual blocks with Snake activations </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib23\" title=\"\">23</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and multi-scale dilated convolutions (dilations: 1, 3, 5, 9). The </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">upsampler</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs a mirrored architecture, restoring the 50&#160;Hz resolution and 768 dimensions through stages of 2</span>\n  <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\">\n    <semantics>\n      <mo mathsize=\"0.900em\">&#215;</mo>\n      <annotation encoding=\"application/x-tex\">\\times</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> nearest-neighbor upsampling and corresponding residual blocks. Following </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib28\" title=\"\">28</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we use a Finite Scalar Quantization (FSQ) module configured with eight codebooks, four dimensions per code, and levels of [8, 7, 6, 6] to achieve a 1.1&#160;kbps bitrate. The decoder then reconstructs mel-spectrograms from the upsampled features, which are synthesized into the final waveform by a 24-layer Vocos model.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "symmetric",
+                    "fsq",
+                    "model",
+                    "architecture",
+                    "decoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 4.3 Experimental Results &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> presents a comprehensive comparison of SimWhisper-Codec against representative baselines. Our model effectively models both semantic and acoustic information simultaneously, validating our architectural simplification approach.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "simwhispercodec",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Acoustic Quality.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> In terms of acoustic reconstruction, SimWhisper-Codec delivers competitive results. It achieves a PESQ-NB of </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">2.98</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and a STOI of </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0.91</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, placing it among the top-performing models and significantly outperforming acoustic-only codecs like EnCodec and DAC-RVQ3. Furthermore, with a speaker similarity (SIM) score of </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">0.83</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, it demonstrates good preservation of speaker identity. These results show that the simplified Whisper encoder can effectively extract acoustic features even at low bitrates of 1.1 kbps.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "whisper",
+                    "simplified",
+                    "simwhispercodec",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To validate the impact of removing different architectural components on codec performance, we conduct ablation studies on SimWhisper-Codec. For training simplicity, we maintain symmetric encoder-decoder architectures throughout all variants.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "simwhispercodec",
+                    "symmetric"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The ablation study demonstrates that our architectural modifications yield superior codec performance. To further validate that the simplified encoder retains fine-grained acoustic cues essential for high-quality synthesis, we conduct a layer-wise probing experiment analyzing its preservation of pitch information.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "simplified",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.F3\" style=\"font-size:90%;\" title=\"Figure 3 &#8227; 4.5 Preservation of Acoustic Attributes &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, the results reveal that simplified Whisper maintains stable </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> tracking (PCC </span>\n  <math alttext=\"\\approx 0.76\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mi/>\n        <mo mathsize=\"0.900em\">&#8776;</mo>\n        <mn mathsize=\"0.900em\">0.76</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\approx 0.76</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) across all layers, while standard Whisper degrades from layer 6 onward (0.78&#8594;0.58). This indicates that our architectural modifications better preserve prosodic information essential for high-quality speech synthesis, providing additional evidence that the simplified encoder successfully retains acoustic details while maintaining semantic capabilities.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "whisper",
+                    "simplified",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We presented SimWhisper-Codec, a low-bitrate speech codec that mitigates the semantic-acoustic conflict through architectural simplification rather than complex supervision. We removed convolutional front-end nonlinearity and absolute positional encodings from the frozen Whisper encoder. This architectural simplification maintains competitive acoustic quality while achieving superior semantic preservation. Results demonstrate that such simplification of Whisper can be more effective than semantic supervision approaches for speech codec design.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "whisper",
+                    "simwhispercodec",
+                    "encoder"
+                ]
+            }
+        ]
+    },
+    "S2.F2": {
+        "source_file": "Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding",
+        "image_url": "https://arxiv.org/html/2510.20504v1/x2.png",
+        "caption": "Fig. 2: Self-attention maps (log-weights, head-averaged) from a middle Transformer layer for the utterance “one, two, three, four, four, three, two, one”. The maps demonstrate how absolute positional encodings affect attention patterns in repetitive structures.",
+        "informative_terms_identified": [
+            "positional",
+            "attention",
+            "structures",
+            "logweights",
+            "middle",
+            "utterance",
+            "layer",
+            "encodings",
+            "patterns",
+            "“one",
+            "how",
+            "affect",
+            "maps",
+            "transformer",
+            "three",
+            "two",
+            "four",
+            "absolute",
+            "headaveraged",
+            "one”",
+            "from",
+            "repetitive",
+            "selfattention"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To further understand how positional encodings affect attention mechanisms, we visualize self-attention patterns from a middle Transformer layer. Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S2.F2\" style=\"font-size:90%;\" title=\"Figure 2 &#8227; 2.2 Validation Analysis &#8227; 2 EMPIRICAL ANALYSIS OF COMPONENTS HINDERING ACOUSTIC RECONSTRUCTION &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> provides compelling evidence for our positional encoding hypothesis: removing absolute positional encodings reduces diagonal dominance in self-attention patterns (0.031&#8594;0.005), enabling attention to spread across the sequence and reveal content-driven interactions around repeated segments.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In recent years, Speech Large Language Models (Speech LLMs) have garnered significant attention from the research community, demonstrating remarkable performance across a range of tasks&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib5\" title=\"\">5</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. The success of Speech LLMs is critically underpinned by a core component: the speech codec. This component serves as a crucial bridge, converting continuous audio signals into discrete tokens suitable for LLM modeling, thereby connecting raw audio with the model&#8217;s semantic understanding.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "attention",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">However, current speech codecs face an inherent conflict between the preservation of semantic content and acoustic fidelity, where optimizing for one typically degrades the other </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib7\" title=\"\">7</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. This trade-off is particularly pronounced at low bitrates, where achieving high performance in both dimensions remains difficult. To mitigate this conflict, prevailing methods augment acoustic-centric codecs with external semantic supervision through various strategies. For instance, SpeechTokenizer </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> guides the first residual vector quantization (RVQ) layer through semantic distillation from HuBERT </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while Mimi Codec in Moshi </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs split RVQ </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> with SSL model </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> supervision on one quantization branch. PAST </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib12\" title=\"\">12</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> incorporates auxiliary phonetic tasks such as phoneme classification and ASR, and XY-Tokenizer </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib13\" title=\"\">13</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs multi-task learning with LLM-based ASR supervision and multi-stage training. While effective, these methods typically rely on complex semantic supervision.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this work, we explore the opposite direction: instead of enhancing acoustic codecs with semantic supervision, we start from Whisper </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib14\" title=\"\">14</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a text-aligned ASR model, and adapt it for high-fidelity acoustic reconstruction. However, this adaptation encounters a task mismatch&#8212;ASR systems are designed to achieve invariance to acoustic variations for content extraction </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib15\" title=\"\">15</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, while acoustic reconstruction requires preserving fine-grained acoustic details for fidelity. To investigate this task mismatch, we conduct empirical analysis examining how different architectural components of Whisper affect its acoustic reconstruction capabilities. Through empirical analysis presented in Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S2\" style=\"font-size:90%;\" title=\"2 EMPIRICAL ANALYSIS OF COMPONENTS HINDERING ACOUSTIC RECONSTRUCTION &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we discover that targeted architectural simplification&#8212;specifically removing the convolutional front-end nonlinearity (GELU activation) and absolute positional encodings </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8212;substantially enhances the model&#8217;s ability to preserve fine-grained acoustic information. Based on this finding, we propose SimWhisper-Codec (see Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S1.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">), a low-bitrate (1.1 kbps at 16 kHz) codec that combines a </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">simplified</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Whisper encoder, Finite Scalar Quantization (FSQ) </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib17\" title=\"\">17</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and a symmetric decoder, enabling </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">single-stage</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> training without semantic supervision.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "absolute",
+                    "positional",
+                    "affect",
+                    "encodings",
+                    "from",
+                    "how"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Absolute Positional Encodings.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Absolute positional encodings assign fixed &#8221;identity markers&#8221; to each temporal position in the sequence </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib19\" title=\"\">19</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib20\" title=\"\">20</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. We hypothesize that absolute positional encodings are detrimental to acoustic reconstruction because: (1) acoustic features should remain position-invariant&#8212;a phoneme /a/ should have identical representation regardless of temporal location; (2) speech contains repetitive structures that absolute encodings differentiate, hindering pattern recognition for reconstruction. These theoretical considerations motivate our experimental validation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "absolute",
+                    "positional",
+                    "encodings",
+                    "structures",
+                    "repetitive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To validate our hypotheses, we conduct controlled analysis experiments using LJSpeech </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib21\" title=\"\">21</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. We extract frame-level hidden states from the final layer of each Whisper encoder variant, then condition identical HiFiGAN vocoders </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib22\" title=\"\">22</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on these features to assess reconstruction quality. This setup allows us to isolate the impact of specific architectural components on acoustic modeling capability while keeping the vocoder constant. Crucially, all encoder variants remain </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">frozen</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> during HiFiGAN training to serve as feature extractors.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We systematically examine the effect of removing each component individually, followed by their combined removal. The results validate our hypotheses: removing convolutional front-end nonlinearity yields substantial improvements with PESQ-NB increasing from 1.24 to 3.60 (+2.36), STOI from 0.82 to 0.96 (+0.14), and SIM from 0.81 to 0.86 (+0.05). Removing absolute positional encodings also confirms our hypothesis with PESQ-NB increasing from 1.24 to 2.95 (+1.71), STOI from 0.82 to 0.94 (+0.12), and SIM from 0.81 to 0.84 (+0.03).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "encodings",
+                    "absolute",
+                    "from",
+                    "positional"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Simultaneously removing both components yields the best reconstruction performance: PESQ-NB reaches 3.67 (+2.43), STOI achieves 0.97 (+0.15), and SIM attains 0.87 (+0.06). This demonstrates complementary hindering effects&#8212;the nonlinearity suppresses spectral details while positional encodings interfere with flexible attention patterns. Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.2 Validation Analysis &#8227; 2 EMPIRICAL ANALYSIS OF COMPONENTS HINDERING ACOUSTIC RECONSTRUCTION &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> summarizes these results, with objective metrics defined in Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.SS2\" style=\"font-size:90%;\" title=\"4.2 Evaluation Metrics &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">4.2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "attention",
+                    "encodings",
+                    "patterns",
+                    "positional"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Encoder.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> The encoder adopts the Whisper architecture initialized with\npre-trained weights, with two key modifications to enhance acoustic preservation.\nFirst, we remove the GELU non-linearities from the initial two convolutional layers\nwhile preserving both the layer structure and learned weights from pre-training\nto maintain compatibility with the pre-trained Whisper model. Second,\nwe completely remove the absolute positional encodings from the\nTransformer blocks. This simplified encoder remains frozen\nduring codec training to serve as a powerful feature extractor, leveraging\nthe rich representations learned during Whisper&#8217;s original ASR pre-training.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "absolute",
+                    "positional",
+                    "layer",
+                    "encodings",
+                    "from",
+                    "transformer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Feature Matching Loss.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We compute an L1 loss between the feature maps of the discriminators for the real and generated audio, which prevents the generator from overtraining on the current discriminator and improves generation quality. The feature matching loss is formulated as:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "maps",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">where </span>\n  <math alttext=\"D_{i}^{j}(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p13.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <msubsup>\n          <mi mathsize=\"0.900em\">D</mi>\n          <mi mathsize=\"0.900em\">i</mi>\n          <mi mathsize=\"0.900em\">j</mi>\n        </msubsup>\n        <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n        <mrow>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">(</mo>\n          <mo lspace=\"0em\" mathsize=\"0.900em\" rspace=\"0em\">&#8901;</mo>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">)</mo>\n        </mrow>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">D_{i}^{j}(\\cdot)</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> denotes the </span>\n  <math alttext=\"j\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p13.m2\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">j</mi>\n      <annotation encoding=\"application/x-tex\">j</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-th layer feature map from the </span>\n  <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p13.m3\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">i</mi>\n      <annotation encoding=\"application/x-tex\">i</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-th discriminator, </span>\n  <math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p13.m4\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">K</mi>\n      <annotation encoding=\"application/x-tex\">K</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> is the number of feature layers, and </span>\n  <math alttext=\"\\epsilon\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p13.m5\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">&#1013;</mi>\n      <annotation encoding=\"application/x-tex\">\\epsilon</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> is a small constant for numerical stability.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Framework Configuration.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Our framework features a symmetric encoder-decoder architecture. Both components are 12-layer Transformers based on the Whisper-small architecture, with 768-dimensional hidden states and 12 attention heads. The model processes 16&#160;kHz audio, extracting 50&#160;Hz feature sequences using a 25&#160;ms window and a 10&#160;ms hop size. The </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">downsampler</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> reduces the temporal resolution to 12.5&#160;Hz via 4</span>\n  <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\">\n    <semantics>\n      <mo mathsize=\"0.900em\">&#215;</mo>\n      <annotation encoding=\"application/x-tex\">\\times</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> frame stacking and compresses the feature dimension from 768 to 32 using residual blocks with Snake activations </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib23\" title=\"\">23</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and multi-scale dilated convolutions (dilations: 1, 3, 5, 9). The </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">upsampler</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs a mirrored architecture, restoring the 50&#160;Hz resolution and 768 dimensions through stages of 2</span>\n  <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\">\n    <semantics>\n      <mo mathsize=\"0.900em\">&#215;</mo>\n      <annotation encoding=\"application/x-tex\">\\times</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> nearest-neighbor upsampling and corresponding residual blocks. Following </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib28\" title=\"\">28</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we use a Finite Scalar Quantization (FSQ) module configured with eight codebooks, four dimensions per code, and levels of [8, 7, 6, 6] to achieve a 1.1&#160;kbps bitrate. The decoder then reconstructs mel-spectrograms from the upsampled features, which are synthesized into the final waveform by a 24-layer Vocos model.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "attention",
+                    "four",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 4.4 Ablation Study &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> demonstrates that both architectural modifications contribute to performance improvements. Removing GELU activations from the convolutional front-end has a more substantial impact on semantic preservation (WER: 5.95&#8594;3.74), while removing positional encodings provides moderate gains across all metrics. The combination of both modifications yields the best results, achieving a WER of 3.10, SIM of 0.83, and PESQ-WB of 2.36, validating our architectural design choices.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "encodings",
+                    "from",
+                    "positional"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We train ridge regression models to predict frame-level fundamental frequency (</span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p2.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) from hidden states extracted from each encoder layer using THCHS-30 </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib33\" title=\"\">33</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a tonal Mandarin dataset with rich prosodic variation. Ground truth </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p2.m2\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> values are extracted using Parselmouth </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#bib.bib34\" title=\"\">34</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, evaluating only voiced frames with Pearson correlation coefficient (PCC).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.F3\" style=\"font-size:90%;\" title=\"Figure 3 &#8227; 4.5 Preservation of Acoustic Attributes &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, the results reveal that simplified Whisper maintains stable </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> tracking (PCC </span>\n  <math alttext=\"\\approx 0.76\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mi/>\n        <mo mathsize=\"0.900em\">&#8776;</mo>\n        <mn mathsize=\"0.900em\">0.76</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\approx 0.76</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) across all layers, while standard Whisper degrades from layer 6 onward (0.78&#8594;0.58). This indicates that our architectural modifications better preserve prosodic information essential for high-quality speech synthesis, providing additional evidence that the simplified encoder successfully retains acoustic details while maintaining semantic capabilities.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We presented SimWhisper-Codec, a low-bitrate speech codec that mitigates the semantic-acoustic conflict through architectural simplification rather than complex supervision. We removed convolutional front-end nonlinearity and absolute positional encodings from the frozen Whisper encoder. This architectural simplification maintains competitive acoustic quality while achieving superior semantic preservation. Results demonstrate that such simplification of Whisper can be more effective than semantic supervision approaches for speech codec design.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "encodings",
+                    "absolute",
+                    "from",
+                    "positional"
+                ]
+            }
+        ]
+    },
+    "S4.F3": {
+        "source_file": "Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding",
+        "image_url": "https://arxiv.org/html/2510.20504v1/x4.png",
+        "caption": "Fig. 3: Pitch tracking performance.",
+        "informative_terms_identified": [
+            "pitch",
+            "tracking",
+            "performance"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.20504v1#S4.F3\" style=\"font-size:90%;\" title=\"Figure 3 &#8227; 4.5 Preservation of Acoustic Attributes &#8227; 4 Experiments &#8227; Speaking Clearly: A Simplified Whisper-based Codec for Low-Bitrate Speech Coding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, the results reveal that simplified Whisper maintains stable </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> tracking (PCC </span>\n  <math alttext=\"\\approx 0.76\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.p3.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mi/>\n        <mo mathsize=\"0.900em\">&#8776;</mo>\n        <mn mathsize=\"0.900em\">0.76</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\approx 0.76</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">) across all layers, while standard Whisper degrades from layer 6 onward (0.78&#8594;0.58). This indicates that our architectural modifications better preserve prosodic information essential for high-quality speech synthesis, providing additional evidence that the simplified encoder successfully retains acoustic details while maintaining semantic capabilities.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The ablation study demonstrates that our architectural modifications yield superior codec performance. To further validate that the simplified encoder retains fine-grained acoustic cues essential for high-quality synthesis, we conduct a layer-wise probing experiment analyzing its preservation of pitch information.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "pitch",
+                    "performance"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,330 @@
+{
+    "S1.F1": {
+        "source_file": "AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation",
+        "image_url": "https://arxiv.org/html/2510.14570v1/x1.png",
+        "caption": "Fig. 1: Top: score distributions of expert and non-expert raters across five evaluation dimensions. Bottom: correlations between expert and non-expert scores at the clip level (individual utterances) and the system level (per-system averages).",
+        "informative_terms_identified": [
+            "utterances",
+            "individual",
+            "system",
+            "persystem",
+            "scores",
+            "expert",
+            "between",
+            "nonexpert",
+            "five",
+            "across",
+            "dimensions",
+            "raters",
+            "evaluation",
+            "distributions",
+            "correlations",
+            "averages",
+            "level",
+            "clip",
+            "score"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> (top row) illustrates that audio scores cluster around the mid-range. Usefulness and enjoyment exhibit narrow, centralized distributions, indicating stable medium-level performance, whereas production quality and textual alignment are more widely spread, reflecting larger variability. Production complexity is consistently low across samples. Experts tend to assign lower ratings for complexity and enjoyment but higher ones for quality and alignment, while usefulness shows nearly identical patterns across groups.</p>\n\n",
+            "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> (bottom row) demonstrates that expert&#8211;non-expert correlations are weak at the clip level, underscoring perceptual variability, yet they improve substantially when aggregated at the system level. Agreement is strongest for usefulness and alignment, but weaker for complexity and enjoyment. Taken together, these findings reinforce the value of separating expert and non-expert ratings to capture complementary perspectives for analysis and model development.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Text-to-audio (TTA) is rapidly advancing, with broad potential in virtual reality, accessibility, and creative media. However, evaluating TTA quality remains difficult: human ratings are costly and limited, while existing objective metrics capture only partial aspects of perceptual quality. To address this gap, we introduce AudioEval, the first large-scale TTA evaluation dataset, containing 4,200 audio samples from 24 systems with 126,000 ratings across five perceptual dimensions, annotated by both experts and non-experts. Based on this resource, we propose Qwen-DisQA, a multimodal scoring model that jointly processes text prompts and generated audio to predict human-like quality ratings. Experiments show its effectiveness in providing reliable and scalable evaluation. The dataset will be made publicly available to accelerate future research.</p>\n\n",
+                "matched_terms": [
+                    "dimensions",
+                    "five",
+                    "evaluation",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite these rapid advances, the evaluation of TTA systems remains a significant challenge. Current practices often rely on subjective human ratings, typically reported as Mean Opinion Scores (MOS). While human judgment is considered the gold standard, this approach is expensive and time-consuming <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib5\" title=\"\">5</a>]</cite>. In parallel, objective metrics from related domains such as Frechet Inception Distance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib6\" title=\"\">6</a>]</cite> and CLAP <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib7\" title=\"\">7</a>]</cite> have been applied to TTA evaluation. Although useful, these metrics provide a limited perspective, but do not accurately reflect perceptual quality<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib8\" title=\"\">8</a>]</cite>. Furthermore, the requirement for reference audio in some of these metrics further limits their application.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic perceptual evaluation has gained attention in the areas of synthetic speech, generated music, and general audio, underscoring both its feasibility and the critical need for reliable evaluation tools for generative models <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib12\" title=\"\">12</a>]</cite>. However, predicting human perceptual quality in TTA systems presents considerable challenges. Firstly, the rapid growth of TTA methods has created a varied system landscape, which requires the collection of diverse audio data for rigorous evaluation. Moreover, the inherent complexity of audio and its prompt-driven generation necessitate attention to multiple evaluative dimensions such as aesthetic quality and textual consistency. Additionally, the broad application potential of TTA highlights the need to consider both general audiences and professional users. Together, these factors make the acquisition of reliable data and the development of effective methodologies particularly difficult.</p>\n\n",
+                "matched_terms": [
+                    "dimensions",
+                    "system",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address these challenges, we introduce AudioEval. As far as we know, it is the first dataset for evaluation of TTA-generated audio, enabling automated, dual-perspective, and multi-dimensional assessment. It includes 4,200 audio samples from 24 systems, with 25,200 records and 126,000 dimension-level ratings. Both experts and non-experts contribute, capturing complementary perspectives of audio perception. We extend prior evaluation framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib10\" title=\"\">10</a>]</cite> by annotating each sample along five perceptual dimensions, as summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, to establish a comprehensive evaluation protocol. Building on this dataset, we propose Qwen-DisQA, an automatic quality scoring model based on Qwen2.5-Omni <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib13\" title=\"\">13</a>]</cite>. It jointly processes textual prompts and generated audio to predict human-like multi-dimensional ratings from expert and non-expert perspectives. Through distribution modeling, it provides more reliable and nuanced automatic evaluations.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "five",
+                    "expert",
+                    "dimensions",
+                    "nonexpert"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We develop an automatic quality scoring model, <span class=\"ltx_text ltx_font_bold\">Qwen-DisQA</span>, which predicts perceptual ratings across five dimensions from text&#8211;audio pairs, capturing quality from both expert and general listener perspectives.</p>\n\n",
+                "matched_terms": [
+                    "dimensions",
+                    "expert",
+                    "five",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use a 10-point Likert scale, where higher scores always indicate better performance. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> defines five perceptual dimensions, which together cover both functional utility and subjective experience.</p>\n\n",
+                "matched_terms": [
+                    "dimensions",
+                    "five",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To reduce bias, samples appear in random order and annotators follow standardized instructions with examples for each dimension. During evaluation, we use a consistency probe: if ratings on the same sample differ by more than two points, we discard the record. This procedure, combined with multiple raters per group, ensures reliable and consistent annotations.</p>\n\n",
+                "matched_terms": [
+                    "raters",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">On the top of AudioEval, We formulate TTA quality assessment as a multi-dimensional distribution prediction task. Given a text prompt <math alttext=\"x^{(t)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(t)}</annotation></semantics></math> and generated audio <math alttext=\"x^{(a)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(a)}</annotation></semantics></math>, the goal is to predict perceptual ratings across five dimensions <math alttext=\"\\{d_{1},\\dots,d_{5}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mn>5</mn></msub><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{d_{1},\\dots,d_{5}\\}</annotation></semantics></math> from two perspectives <math alttext=\"v\\in\\{\\text{expert},\\text{non-expert}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>v</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mtext>expert</mtext><mo>,</mo><mtext>non-expert</mtext><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v\\in\\{\\text{expert},\\text{non-expert}\\}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "dimensions",
+                    "five",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For each <math alttext=\"(d,v)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>d</mi><mo>,</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(d,v)</annotation></semantics></math>, three annotators provide discrete scores\n<math alttext=\"y^{(m)}\\in\\{1,\\dots,10\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><msup><mi>y</mi><mrow><mo stretchy=\"false\">(</mo><mi>m</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><mn>10</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">y^{(m)}\\in\\{1,\\dots,10\\}</annotation></semantics></math> <math alttext=\"(m=1,2,3)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mrow><mi>m</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn></mrow></mrow><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(m=1,2,3)</annotation></semantics></math>.\nEach score is mapped into a soft distribution over <math alttext=\"k=1,\\dots,10\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m4\" intent=\":literal\"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><mn>10</mn></mrow></mrow><annotation encoding=\"application/x-tex\">k=1,\\dots,10</annotation></semantics></math> using a Gaussian kernel <math alttext=\"p^{(m)}(k)\\propto\\exp\\!\\big(-\\tfrac{1}{2}(\\tfrac{y^{(m)}-k}{\\sigma})^{2}\\big)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><msup><mi>p</mi><mrow><mo stretchy=\"false\">(</mo><mi>m</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>k</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>&#8733;</mo><mrow><mpadded style=\"width:1.370em;\" width=\"1.370em\"><mi>exp</mi></mpadded><mo>&#8289;</mo><mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\">(</mo><mrow><mo>&#8722;</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><msup><mrow><mo stretchy=\"false\">(</mo><mfrac><mrow><msup><mi>y</mi><mrow><mo stretchy=\"false\">(</mo><mi>m</mi><mo stretchy=\"false\">)</mo></mrow></msup><mo>&#8722;</mo><mi>k</mi></mrow><mi>&#963;</mi></mfrac><mo stretchy=\"false\">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\">)</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">p^{(m)}(k)\\propto\\exp\\!\\big(-\\tfrac{1}{2}(\\tfrac{y^{(m)}-k}{\\sigma})^{2}\\big)</annotation></semantics></math>. The final target distribution is obtained by averaging across annotators:</p>\n\n",
+                "matched_terms": [
+                    "score",
+                    "scores",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our loss combines distribution matching and mean regression.\nFor each dimension&#8211;perspective pair <math alttext=\"(d,v)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>d</mi><mo>,</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(d,v)</annotation></semantics></math>, we minimize the KL divergence between predicted and empirical distributions, together with the mean squared error (MSE) between predicted and ground-truth average scores:</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "distributions",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mu_{d,v}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><msub><mi>&#956;</mi><mrow><mi>d</mi><mo>,</mo><mi>v</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\mu_{d,v}</annotation></semantics></math> and <math alttext=\"\\hat{\\mu}_{d,v}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><msub><mover accent=\"true\"><mi>&#956;</mi><mo>^</mo></mover><mrow><mi>d</mi><mo>,</mo><mi>v</mi></mrow></msub><annotation encoding=\"application/x-tex\">\\hat{\\mu}_{d,v}</annotation></semantics></math> denote the ground-truth and predicted mean scores, respectively, and <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\lambda\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m5\" intent=\":literal\"><semantics><mi>&#955;</mi><annotation encoding=\"application/x-tex\">\\lambda</annotation></semantics></math> control the balance between the two terms.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation Metrics.</span> We evaluate the automatic assessment model at both the utterance level and the system level. Mean Squared Error (MSE) is employed to quantify prediction error, while Pearson&#8217;s Correlation Coefficient (PCC) is used to assess the degree of correlation.</p>\n\n",
+                "matched_terms": [
+                    "system",
+                    "level",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S3.T2\" title=\"Table 2 &#8227; 3.2 Model Overview &#8227; 3 Proposed Method &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we observe clear differences across model categories. Zero-shot models (CLAP, AES) perform poorly on TTA quality evaluation, as they can only provide coarse judgments and fail to capture quality differences. Traditional supervised fine-tuning methods (e.g., MusicEval-baseline, Clap-SFT) achieve moderate improvements over zero-shot baselines, but their performance remains limited and inconsistent across different dimensions and annotator groups. In contrast, large-model-based fine-tuning approaches show clear advantages. Among them, Qwen-DisQA achieves the best or comparable results on most dimensions, demonstrating stronger correlations and robustness at the utterance level.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "correlations",
+                    "across",
+                    "dimensions",
+                    "level"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S4.F4\" title=\"Figure 4 &#8227; 4.1 Experimental Details &#8227; 4 Experiments &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> further illustrates the detailed performance of Qwen-DisQA. The model achieves significantly higher correlations and lower errors at the system level than at the utterance level, indicating more reliable capability in ranking overall system quality. Moreover, the trends across both expert and non-expert annotations remain consistent with only minor differences, which highlights the stability and generalization ability under diverse annotation conditions.</p>\n\n",
+                "matched_terms": [
+                    "system",
+                    "expert",
+                    "correlations",
+                    "across",
+                    "nonexpert",
+                    "level"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduced AudioEval, the first large-scale multi-dimensional dataset for text-to-audio evaluation, annotated by both experts and non-experts across five perceptual dimensions. Building upon this resource, we proposed Qwen-DisQA, a multimodal scoring model that predicts human-like quality ratings from text&#8211;audio pairs. Experimental results demonstrate that our method achieves superior correlations and robustness compared to existing baselines, providing a reliable and scalable solution for automatic TTA evaluation.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "five",
+                    "correlations",
+                    "across",
+                    "dimensions"
+                ]
+            }
+        ]
+    },
+    "S1.F2": {
+        "source_file": "AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation",
+        "image_url": "https://arxiv.org/html/2510.14570v1/x2.png",
+        "caption": "Fig. 2: Prompt characteristics. Left: distribution of prompt lengths. Right: t-SNE visualization of TF-IDF features.",
+        "informative_terms_identified": [
+            "prompt",
+            "visualization",
+            "tfidf",
+            "characteristics",
+            "distribution",
+            "lengths",
+            "tsne",
+            "features"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In terms of prompts, we assess this variation in Figure.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.F2\" title=\"Figure 2 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>: the left panel presents the distribution of prompt lengths, indicating wide lexical coverage, while the right panel visualizes prompt embeddings via t-SNE, where dispersed clusters highlight semantic diversity. Together, these analyses show that the dataset includes diverse inputs, providing a solid research basis for automatic TTA evaluation.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">On the top of AudioEval, We formulate TTA quality assessment as a multi-dimensional distribution prediction task. Given a text prompt <math alttext=\"x^{(t)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(t)}</annotation></semantics></math> and generated audio <math alttext=\"x^{(a)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(a)}</annotation></semantics></math>, the goal is to predict perceptual ratings across five dimensions <math alttext=\"\\{d_{1},\\dots,d_{5}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mn>5</mn></msub><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{d_{1},\\dots,d_{5}\\}</annotation></semantics></math> from two perspectives <math alttext=\"v\\in\\{\\text{expert},\\text{non-expert}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>v</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mtext>expert</mtext><mo>,</mo><mtext>non-expert</mtext><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v\\in\\{\\text{expert},\\text{non-expert}\\}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "distribution",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose <span class=\"ltx_text ltx_font_bold\">Qwen-DisQA</span>, a multimodal model for automatic TTA quality assessment. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S2.F3\" title=\"Figure 3 &#8227; 2.3 Dataset Statistics and Analysis &#8227; 2 AudioEval Dataset &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the model is built on Qwen2.5-Omni and takes as input both the text prompt <math alttext=\"x^{(t)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(t)}</annotation></semantics></math> and the generated audio <math alttext=\"x^{(a)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(a)}</annotation></semantics></math>. We design a prompt template that explicitly integrates textual and acoustic information into a unified input sequence as shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S2.F3\" title=\"Figure 3 &#8227; 2.3 Dataset Statistics and Analysis &#8227; 2 AudioEval Dataset &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The fused representation is then fed into task-specific prediction heads. Concretely, Qwen-DisQA employs ten independent heads, each corresponding to one dimension-perspective pair <math alttext=\"(d,v)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>d</mi><mo>,</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(d,v)</annotation></semantics></math>.\nEach head is implemented as a linear projection layer followed by a softmax function, producing a probability distribution <math alttext=\"\\hat{P}_{d,v}(s)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m4\" intent=\":literal\"><semantics><mrow><msub><mover accent=\"true\"><mi>P</mi><mo>^</mo></mover><mrow><mi>d</mi><mo>,</mo><mi>v</mi></mrow></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>s</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\hat{P}_{d,v}(s)</annotation></semantics></math> over discrete scores <math alttext=\"s\\in\\{1,\\dots,10\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m5\" intent=\":literal\"><semantics><mrow><mi>s</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><mn>10</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">s\\in\\{1,\\dots,10\\}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "distribution",
+                    "prompt"
+                ]
+            }
+        ]
+    },
+    "S2.F3": {
+        "source_file": "AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation",
+        "image_url": "https://arxiv.org/html/2510.14570v1/x3.png",
+        "caption": "Fig. 3: Overview of Qwen-DisQA for TTA quality assessment, trained with distributional alignment.",
+        "informative_terms_identified": [
+            "trained",
+            "assessment",
+            "alignment",
+            "overview",
+            "distributional",
+            "tta",
+            "qwendisqa",
+            "quality"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We propose <span class=\"ltx_text ltx_font_bold\">Qwen-DisQA</span>, a multimodal model for automatic TTA quality assessment. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S2.F3\" title=\"Figure 3 &#8227; 2.3 Dataset Statistics and Analysis &#8227; 2 AudioEval Dataset &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the model is built on Qwen2.5-Omni and takes as input both the text prompt <math alttext=\"x^{(t)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(t)}</annotation></semantics></math> and the generated audio <math alttext=\"x^{(a)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(a)}</annotation></semantics></math>. We design a prompt template that explicitly integrates textual and acoustic information into a unified input sequence as shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S2.F3\" title=\"Figure 3 &#8227; 2.3 Dataset Statistics and Analysis &#8227; 2 AudioEval Dataset &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The fused representation is then fed into task-specific prediction heads. Concretely, Qwen-DisQA employs ten independent heads, each corresponding to one dimension-perspective pair <math alttext=\"(d,v)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>d</mi><mo>,</mo><mi>v</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(d,v)</annotation></semantics></math>.\nEach head is implemented as a linear projection layer followed by a softmax function, producing a probability distribution <math alttext=\"\\hat{P}_{d,v}(s)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m4\" intent=\":literal\"><semantics><mrow><msub><mover accent=\"true\"><mi>P</mi><mo>^</mo></mover><mrow><mi>d</mi><mo>,</mo><mi>v</mi></mrow></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>s</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\hat{P}_{d,v}(s)</annotation></semantics></math> over discrete scores <math alttext=\"s\\in\\{1,\\dots,10\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m5\" intent=\":literal\"><semantics><mrow><mi>s</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><mn>10</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">s\\in\\{1,\\dots,10\\}</annotation></semantics></math>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Text-to-audio (TTA) is rapidly advancing, with broad potential in virtual reality, accessibility, and creative media. However, evaluating TTA quality remains difficult: human ratings are costly and limited, while existing objective metrics capture only partial aspects of perceptual quality. To address this gap, we introduce AudioEval, the first large-scale TTA evaluation dataset, containing 4,200 audio samples from 24 systems with 126,000 ratings across five perceptual dimensions, annotated by both experts and non-experts. Based on this resource, we propose Qwen-DisQA, a multimodal scoring model that jointly processes text prompts and generated audio to predict human-like quality ratings. Experiments show its effectiveness in providing reliable and scalable evaluation. The dataset will be made publicly available to accelerate future research.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "quality",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nText-to-Audio, Automatic Evaluation, Perceptual Quality Assessment</p>\n\n",
+                "matched_terms": [
+                    "assessment",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic perceptual evaluation has gained attention in the areas of synthetic speech, generated music, and general audio, underscoring both its feasibility and the critical need for reliable evaluation tools for generative models <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib12\" title=\"\">12</a>]</cite>. However, predicting human perceptual quality in TTA systems presents considerable challenges. Firstly, the rapid growth of TTA methods has created a varied system landscape, which requires the collection of diverse audio data for rigorous evaluation. Moreover, the inherent complexity of audio and its prompt-driven generation necessitate attention to multiple evaluative dimensions such as aesthetic quality and textual consistency. Additionally, the broad application potential of TTA highlights the need to consider both general audiences and professional users. Together, these factors make the acquisition of reliable data and the development of effective methodologies particularly difficult.</p>\n\n",
+                "matched_terms": [
+                    "quality",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address these challenges, we introduce AudioEval. As far as we know, it is the first dataset for evaluation of TTA-generated audio, enabling automated, dual-perspective, and multi-dimensional assessment. It includes 4,200 audio samples from 24 systems, with 25,200 records and 126,000 dimension-level ratings. Both experts and non-experts contribute, capturing complementary perspectives of audio perception. We extend prior evaluation framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib10\" title=\"\">10</a>]</cite> by annotating each sample along five perceptual dimensions, as summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, to establish a comprehensive evaluation protocol. Building on this dataset, we propose Qwen-DisQA, an automatic quality scoring model based on Qwen2.5-Omni <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib13\" title=\"\">13</a>]</cite>. It jointly processes textual prompts and generated audio to predict human-like multi-dimensional ratings from expert and non-expert perspectives. Through distribution modeling, it provides more reliable and nuanced automatic evaluations.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "assessment",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We develop an automatic quality scoring model, <span class=\"ltx_text ltx_font_bold\">Qwen-DisQA</span>, which predicts perceptual ratings across five dimensions from text&#8211;audio pairs, capturing quality from both expert and general listener perspectives.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct experiments to explore the capabilities of different methods in the task of automatic TTA quality prediction, and demonstrated the effectiveness of the framework based on large multimodal models.</p>\n\n",
+                "matched_terms": [
+                    "quality",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> (top row) illustrates that audio scores cluster around the mid-range. Usefulness and enjoyment exhibit narrow, centralized distributions, indicating stable medium-level performance, whereas production quality and textual alignment are more widely spread, reflecting larger variability. Production complexity is consistently low across samples. Experts tend to assign lower ratings for complexity and enjoyment but higher ones for quality and alignment, while usefulness shows nearly identical patterns across groups.</p>\n\n",
+                "matched_terms": [
+                    "quality",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">On the top of AudioEval, We formulate TTA quality assessment as a multi-dimensional distribution prediction task. Given a text prompt <math alttext=\"x^{(t)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(t)}</annotation></semantics></math> and generated audio <math alttext=\"x^{(a)}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><msup><mi>x</mi><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow></msup><annotation encoding=\"application/x-tex\">x^{(a)}</annotation></semantics></math>, the goal is to predict perceptual ratings across five dimensions <math alttext=\"\\{d_{1},\\dots,d_{5}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mn>5</mn></msub><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{d_{1},\\dots,d_{5}\\}</annotation></semantics></math> from two perspectives <math alttext=\"v\\in\\{\\text{expert},\\text{non-expert}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>v</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mtext>expert</mtext><mo>,</mo><mtext>non-expert</mtext><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v\\in\\{\\text{expert},\\text{non-expert}\\}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "assessment",
+                    "quality",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate three categories of models on our proposed dataset for TTA quality assessment: (1) Zero-shot models, CLAP and Audiobox-Aesthetics, which are widely used for audio evaluation. (2) Fine-tuned pretrained encoders, representing the classical supervised paradigm. Following prior setups <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#bib.bib11\" title=\"\">11</a>]</cite>, we adapt MusicEval-Baseline and Audio-CLAP-Finetune, which differ in their pretraining datasets. (3) LoRA-fine-tuned multimodal large language models (MLLMs), which include our primary method. We compare our proposed training strategy with two baselines: conventional regression (+R) and simple distribution alignment (+KL).</p>\n\n",
+                "matched_terms": [
+                    "assessment",
+                    "quality",
+                    "alignment",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S3.T2\" title=\"Table 2 &#8227; 3.2 Model Overview &#8227; 3 Proposed Method &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we observe clear differences across model categories. Zero-shot models (CLAP, AES) perform poorly on TTA quality evaluation, as they can only provide coarse judgments and fail to capture quality differences. Traditional supervised fine-tuning methods (e.g., MusicEval-baseline, Clap-SFT) achieve moderate improvements over zero-shot baselines, but their performance remains limited and inconsistent across different dimensions and annotator groups. In contrast, large-model-based fine-tuning approaches show clear advantages. Among them, Qwen-DisQA achieves the best or comparable results on most dimensions, demonstrating stronger correlations and robustness at the utterance level.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "quality",
+                    "tta"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S4.F4\" title=\"Figure 4 &#8227; 4.1 Experimental Details &#8227; 4 Experiments &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> further illustrates the detailed performance of Qwen-DisQA. The model achieves significantly higher correlations and lower errors at the system level than at the utterance level, indicating more reliable capability in ranking overall system quality. Moreover, the trends across both expert and non-expert annotations remain consistent with only minor differences, which highlights the stability and generalization ability under diverse annotation conditions.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduced AudioEval, the first large-scale multi-dimensional dataset for text-to-audio evaluation, annotated by both experts and non-experts across five perceptual dimensions. Building upon this resource, we proposed Qwen-DisQA, a multimodal scoring model that predicts human-like quality ratings from text&#8211;audio pairs. Experimental results demonstrate that our method achieves superior correlations and robustness compared to existing baselines, providing a reliable and scalable solution for automatic TTA evaluation.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "quality",
+                    "tta"
+                ]
+            }
+        ]
+    },
+    "S4.F4": {
+        "source_file": "AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation",
+        "image_url": "https://arxiv.org/html/2510.14570v1/x4.png",
+        "caption": "Fig. 4: Performance of Qwen-DisQA at different level.",
+        "informative_terms_identified": [
+            "qwendisqa",
+            "level",
+            "performance"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S4.F4\" title=\"Figure 4 &#8227; 4.1 Experimental Details &#8227; 4 Experiments &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> further illustrates the detailed performance of Qwen-DisQA. The model achieves significantly higher correlations and lower errors at the system level than at the utterance level, indicating more reliable capability in ranking overall system quality. Moreover, the trends across both expert and non-expert annotations remain consistent with only minor differences, which highlights the stability and generalization ability under diverse annotation conditions.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">From Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.14570v1#S3.T2\" title=\"Table 2 &#8227; 3.2 Model Overview &#8227; 3 Proposed Method &#8227; AudioEval: Automatic Dual-Perspective and Multi-Dimensional Evaluation of Text-to-Audio-Generation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we observe clear differences across model categories. Zero-shot models (CLAP, AES) perform poorly on TTA quality evaluation, as they can only provide coarse judgments and fail to capture quality differences. Traditional supervised fine-tuning methods (e.g., MusicEval-baseline, Clap-SFT) achieve moderate improvements over zero-shot baselines, but their performance remains limited and inconsistent across different dimensions and annotator groups. In contrast, large-model-based fine-tuning approaches show clear advantages. Among them, Qwen-DisQA achieves the best or comparable results on most dimensions, demonstrating stronger correlations and robustness at the utterance level.</p>\n\n",
+                "matched_terms": [
+                    "qwendisqa",
+                    "level",
+                    "performance"
+                ]
+            }
+        ]
+    }
+}

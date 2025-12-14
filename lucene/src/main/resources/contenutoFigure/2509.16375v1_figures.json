@@ -1,0 +1,259 @@
+{
+    "S2.F1": {
+        "source_file": "Whisper-UT: A Unified Translation Framework for Speech and Text",
+        "image_url": "https://arxiv.org/html/2509.16375v1/fig1.png",
+        "caption": "Figure 1: Overview of our approach. ASR-HYP refers to the ASR hypothesis generated. When GT is used, the task is MMT, otherwise it is referred as 2-Stage-ST. The ⊕\\oplus symbol refers to the XOR operation. Note that special tokens are omitted to simplify illustration.",
+        "informative_terms_identified": [
+            "hypothesis",
+            "2stagest",
+            "simplify",
+            "note",
+            "asrhyp",
+            "tokens",
+            "referred",
+            "symbol",
+            "refers",
+            "operation",
+            "xor",
+            "otherwise",
+            "omitted",
+            "generated",
+            "⊕oplus",
+            "task",
+            "overview",
+            "when",
+            "special",
+            "asr",
+            "mmt",
+            "approach"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In light of the remarkable performance observed with decoder-only language models in machine translation, we presume that encoder-decoder models&#8217; audio-conditioned decoder possesses the potential for undertaking the audio-conditioned text translation task. In particular, one may prompt the decoder with source language text, generated either by human annotators or any ASR system, in the translation process, as shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#S2.F1\" title=\"Figure 1 &#8227; 2.2 Multi-modal/-task Speech Systems &#8227; 2 Related Work &#8227; Whisper-UT: A Unified Translation Framework for Speech and Text\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(b). Consequently, the resulting model is trained to learn the distribution <math alttext=\"P(Z|X,Y)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mi>P</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><mi>Z</mi><mo fence=\"false\">|</mo><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></mrow><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">P(Z|X,Y)</annotation></semantics></math>.</p>\n\n",
+            "<p class=\"ltx_p\">Inspired by the success of decoder-only MT models such as GPT-like systems, we adopt an alternative strategy: instead of modifying the encoder to accommodate text, we encode the source text directly within the decoder, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#S2.F1\" title=\"Figure 1 &#8227; 2.2 Multi-modal/-task Speech Systems &#8227; 2 Related Work &#8227; Whisper-UT: A Unified Translation Framework for Speech and Text\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(a). Specifically, we prepend the source text as a prefix to the decoder input, leveraging the self-attention mechanism to implicitly model source-target dependencies. However, implementing this method within an encoder-decoder framework requires careful handling of the cross-attention mechanism. Since the decoder in our system is designed to attend to encoded speech representations, directly bypassing the encoder would disrupt the model&#8217;s expected structure. To address this, we introduce a single learnable vector in the encoder, serving as an indicator that informs the decoder that text input is being processed. The remaining encoder output is padded with zeros, and we modify the cross-attention mask such that the decoder attends only to this learnable embedding. This design ensures that the model&#8217;s architecture remains structurally intact while effectively repurposing the decoder for text-based translation.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Encoder-decoder models have achieved remarkable success in speech and text tasks, yet efficiently adapting these models to diverse uni/multi-modal scenarios remains an open challenge. In this paper, we propose Whisper-UT, a unified and efficient framework that leverages lightweight adapters to enable seamless adaptation across tasks, including a multi-modal machine translation (MMT) task that explicitly conditions translation on both speech and source language text inputs. By incorporating ASR hypotheses or ground-truth transcripts as prompts, this approach not only enables the system to process both modalities simultaneously but also enhances speech translation (ST) performance through a 2-stage decoding strategy. We demonstrate our methods using the Whisper model, though in principle they are general and could be applied to similar multitask models. We highlight the effectiveness of cross-modal and cross-task fine-tuning, which improves performance without requiring 3-way parallel data. Our results underscore the flexibility, efficiency, and general applicability of the proposed framework for multi-modal translation.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr",
+                    "mmt",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The task of speech-to-text translation (ST) encompasses converting spoken content from one language to another, aiming to overcome language barriers to communication. Traditionally, the task involves an automatic speech recognition (ASR) module to transcribe spoken words, followed by a machine translation (MT) module to convert the transcribed text into the target language in a cascaded manner&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ney (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib21\" title=\"\">1999</a>)</cite>. The recent development of end-to-end neural architectures and large pre-trained models have substantially propelled advancements in downstream speech tasks, via either self-supervised learning (SSL)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Baevski et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib1\" title=\"\">2020</a>); Hsu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib11\" title=\"\">2021</a>); Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib4\" title=\"\">2022</a>)</cite> or fully supervised learning. Among the pre-trained acoustic models, Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Radford et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib27\" title=\"\">2022</a>)</cite>, a transformer-based encoder-decoder multi-task model trained with large-scale data in a supervised manner, has exhibited good performance on various ST corpora.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Multi-modal inputs (speech + text) consistently enhance translation quality when fused</span>, even with imperfect ASR transcripts.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "when"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">A two-stage decoding strategy</span>, where the decoder first generates an ASR transcript from speech, then reuses it as context for translation, perhaps emulating human thought processes, even when a transcript is not provided.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "when"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Experiments on CoVoST2&#8217;s&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib36\" title=\"\">2020b</a>)</cite> French-English (<span class=\"ltx_text ltx_font_typewriter\">fr-en</span>) and German-English (<span class=\"ltx_text ltx_font_typewriter\">de-en</span>) subsets demonstrate strong performance. Extended evaluations on conversational telephone speech (CTS) corpora&#8212;Fisher-CallHome Spanish&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Post et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib26\" title=\"\">2013</a>)</cite>, and BBN Mandarin-English&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wotherspoon et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib39\" title=\"\">2024</a>)</cite> further confirm the robustness of our approach across diverse domains. Notably, Whisper-UT outperforms the 1.3B-parameter NLLB model in multi-modal settings (speech + ground-truth text) and achieves superior speech-only translation via hypothesis prompting.</p>\n\n",
+                "matched_terms": [
+                    "hypothesis",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Whisper&#8217;s decoder supports a prompting mechanism, originally designed for better capturing long-range dependencies of the transcripts/translations to resolve local audio ambiguities. Particularly, long utterances are segmented into chunks and the decoder generates its hypothesis for the current segment conditioning on the previous segment&#8217;s transcripts. Inspired by the effectiveness of GPT-like decoder-only models in machine translation, we hypothesize that Whisper&#8217;s decoder, which may be viewed as an audio-conditional language model, is also capable of performing audio-augmented text generation conditioning on <span class=\"ltx_text ltx_font_italic\">both inputs</span>. Our work extends recent work showing that the Whisper can be adapted via fine-tuning to perform a number of novel tasks including, audio-visual speech recognition <cite class=\"ltx_cite ltx_citemacro_cite\">Rouditchenko et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib29\" title=\"\">2024</a>)</cite>, target-speaker ASR <cite class=\"ltx_cite ltx_citemacro_cite\">Guo et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib10\" title=\"\">2024</a>); Polok et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib25\" title=\"\">2024</a>); Ma et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib19\" title=\"\">2024a</a>)</cite>, translation to non-English languages <cite class=\"ltx_cite ltx_citemacro_cite\">Peng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib23\" title=\"\">2023</a>)</cite>, by showing that Whisper can be extended to enable multi-modal translation, i.e., using either only text or both text and speech inputs simultaneously.</p>\n\n",
+                "matched_terms": [
+                    "hypothesis",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A number of related works <cite class=\"ltx_cite ltx_citemacro_cite\">Ma et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib20\" title=\"\">2024b</a>); Zhang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib42\" title=\"\">2023</a>); Liu and Niehues (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib18\" title=\"\">2024</a>); Le et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib17\" title=\"\">2024</a>)</cite> have also demonstrated that multi-task learning can greatly improve speech translation performance.\nHere, we focus on model fine-tuning and demonstrate that training end-to-end models for either ASR or ST alone improves performance on the other task, enabling fine-tuning with data that was not original annotated for the target domain task.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Traditional translation systems treat ST, MT, and ASR as distinct tasks, each requiring separate models or specialized architectures. In this work, we propose a <span class=\"ltx_text ltx_font_bold\">unified translation</span> framework that unifies these tasks under a single encoder-decoder paradigm, treating all forms of language conversion&#8212;including audio-to-text, text-to-text, and multi-modal translation&#8212;as conditional generation tasks. Our approach enables seamless adaptation to various input modalities and data conditions without requiring fundamental architectural changes.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At the core of our method is the insight that ASR can be reformulated as a source-language transcription task, ST as a direct speech-to-text translation task, and MT as a standard text-to-text translation task&#8212;all of which can be expressed as instances of sequence-to-sequence learning. Extending this idea, we introduce a <span class=\"ltx_text ltx_font_bold\">multi-modal translation</span> task, for which the model conditions on both speech and its corresponding transcript (either human-annotated or ASR-generated) to improve translation quality. This formulation generalizes the conventional ST and MT paradigms, leveraging available transcripts to enhance translation in scenarios where speech alone may be ambiguous or error-prone.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We first provide a formal definition of the multi-modal translation\n(MMT) task, or more precisely, the task of speech-and-text-conditioned translation. Let <math alttext=\"X=(x_{1},x_{2},\\cdots,x_{T})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8943;</mi><mo>,</mo><msub><mi>x</mi><mi>T</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">X=(x_{1},x_{2},\\cdots,x_{T})</annotation></semantics></math> denote the speech signal of an utterance, <math alttext=\"Y=(y_{1},y_{2},\\cdots,y_{M})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi>Y</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8943;</mi><mo>,</mo><msub><mi>y</mi><mi>M</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Y=(y_{1},y_{2},\\cdots,y_{M})</annotation></semantics></math> denote the ground-truth transcript of the utterance, and <math alttext=\"Z=(z_{1},z_{2},\\cdots,z_{N})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>Z</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8943;</mi><mo>,</mo><msub><mi>z</mi><mi>N</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Z=(z_{1},z_{2},\\cdots,z_{N})</annotation></semantics></math> denote its corresponding text translation. The goal of the task is then to find the conditional distribution <math alttext=\"P(Z|X,Y)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>P</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><mi>Z</mi><mo fence=\"false\">|</mo><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></mrow><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">P(Z|X,Y)</annotation></semantics></math>. We hypothesize that often <math alttext=\"H(Z|X,Y)&lt;H(Z|Y)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><mi>H</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><mi>Z</mi><mo fence=\"false\">|</mo><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></mrow><mo stretchy=\"false\">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>H</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><mi>Z</mi><mo fence=\"false\">|</mo><mi>Y</mi></mrow><mo stretchy=\"false\">)</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">H(Z|X,Y)&lt;H(Z|Y)</annotation></semantics></math> in practice, where <math alttext=\"H\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m6\" intent=\":literal\"><semantics><mi>H</mi><annotation encoding=\"application/x-tex\">H</annotation></semantics></math> denotes the information entropy. In other words, the speech signal may contain additional information for a more accurate translation of the utterance, as it may be able to aid resolving ambiguities such as homographs, tonal variations, and omitted content&#8212;such as repetitions and filler words&#8212;that may be present in human-annotated transcripts.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "omitted",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">An alternative perspective on this modeling is that it fully leverages the system&#8217;s source-language modeling capability. In end-to-end multi-task models, the decoder can be viewed as implicitly &#8220;partitioned&#8221; into two roles: source-language modeling and target-language generation. While these functions share parameters and benefit from joint optimization, they may still develop distinct competencies. By conditioning translation on both speech and textual transcripts, this approach explicitly harnesses a well-trained source-language model&#8212;potentially even from an external ASR system&#8212;allowing the decoder to generate more accurate translations. This perspective highlights how multi-modal conditioning can serve as a mechanism to refine and reinforce the system&#8217;s understanding of the source language, ultimately improving translation quality.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To achieve a unified translation framework that encompasses multiple translation paradigms, we propose Whisper-UT, a system designed to handle ASR, ST, MT, and MMT within a single model. Our approach is built on multi-task learning, leveraging 3-way parallel data and text-only MT data to optimize multiple objectives in a stochastic fashion.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "mmt",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For MMT and MT objectives, we allow gradients to propagate back through the source language tokens, implicitly enhancing the model&#8217;s source language modeling ability.</p>\n\n",
+                "matched_terms": [
+                    "tokens",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathcal{L}^{CE}_{\\text{asr}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.SSS3.p1.m1\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>asr</mtext><mrow><mi>C</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>E</mi></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{L}^{CE}_{\\text{asr}}</annotation></semantics></math> is the ASR loss (or SLM loss for text-only samples), and <math alttext=\"\\mathcal{L}^{CE}_{\\text{st}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.SSS3.p1.m2\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>st</mtext><mrow><mi>C</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>E</mi></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{L}^{CE}_{\\text{st}}</annotation></semantics></math> is either the ST loss or the MMT loss, selected via stochastic task selection.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ST vs. MMT Objective:</span>\nWith probability <math alttext=\"q\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m1\" intent=\":literal\"><semantics><mi>q</mi><annotation encoding=\"application/x-tex\">q</annotation></semantics></math>, apply standard ST loss; for text-only data, this is equivalent to the TLM loss.\nWith probability <math alttext=\"(1-q)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m2\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mrow><mn>1</mn><mo>&#8722;</mo><mi>q</mi></mrow><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(1-q)</annotation></semantics></math>, apply MMT loss, where the decoder cross-attends to both speech features and source text tokens; for text-only data, this becomes the conventional MT loss.</p>\n\n",
+                "matched_terms": [
+                    "tokens",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For MMT, we introduce an ASR error simulation mechanism to enhance robustness. With probability <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.SSS5.p1.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math>, we perturb a batch by replacing the source language tokens, sampled with probability <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.SSS5.p1.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math>, with a similar alternative sampled randomly from the top-<math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.SSS5.p1.m3\" intent=\":literal\"><semantics><mi>k</mi><annotation encoding=\"application/x-tex\">k</annotation></semantics></math> nearest neighbors in the embeddings space. To explicitly signal perturbed inputs, we prepend a special token to the modified sequence, allowing for the model to dynamically re-weight its reliance on the noisy text prefix and the corresponding audio input at inference time. This aims to simulate real-world noise in transcripts (e.g., ASR errors, omissions), encouraging the model to rely on both modalities for translation.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "special",
+                    "tokens",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In summary, our unified training framework integrates ASR, ST, MMT, and MT into a single multi-task learning process. To achieve this, we first concatenate both speech-text and text-only datasets, allowing for random sampling within each batch. For every batch, we compute the ASR loss, which corresponds to the source language modeling loss when dealing with text-only samples. The ASR and ST loss weights are dynamically balanced by sampling a weight <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS5.p1.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> from a Beta distribution. Next, we stochastically determine whether the batch follows the ST/TLM objective or the MMT/MT objective. If the batch is selected for MMT training, ASR error simulation is applied with a certain probability to mimic transcription imperfections and enhance robustness. By combining these components, Whisper-UT serves as a unified model for ASR, ST, MT, and MMT, leveraging both textual and speech inputs efficiently.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "when",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#S4.T1\" title=\"Table 1 &#8227; 4.4 Experimental Results &#8227; 4 Experiments &#8227; Whisper-UT: A Unified Translation Framework for Speech and Text\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> presents results from directly fine-tuning Whisper, which reveals a cross-task synergy phenomenon: optimizing for one task (e.g., ASR) not only preserves but often enhances performance on another (e.g., ST), as indicated by underlined improvements across both datasets.\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#S4.T2\" title=\"Table 2 &#8227; 4.4.1 Overview &#8227; 4.4 Experimental Results &#8227; 4 Experiments &#8227; Whisper-UT: A Unified Translation Framework for Speech and Text\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> reports Whisper-UT results on three corpora: CoVoST2 (French <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.SSS1.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> English, German <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.SSS1.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> English), Fisher&#8209;Spanish, and BBN&#8209;Mandarin. Across all settings, our proposed Whisper&#8209;UT variants demonstrate consistent improvements in transcription accuracy (WER&#8595;) and translation quality (BLEU&#8593;).</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#S4.T1\" title=\"Table 1 &#8227; 4.4 Experimental Results &#8227; 4 Experiments &#8227; Whisper-UT: A Unified Translation Framework for Speech and Text\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> reveals that fine-tuning on one task does not only improve performance on the target task but also benefits other tasks as well. Notably, ASR fine-tuning enhances ST performance (51.6 to 54.9 on Fisher and 13.0 to 16.2 on BBN), and ST fine-tuning reciprocally benefits ASR (26.7 to 20.3 on Fisher and 32.2 to 23.1 on BBN).\nThis suggests that cross-task fine-tuning may mutually reinforce capabilities without architectural changes, inspiring Whisper-UT&#8217;s unified speech-text framework.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the ST setting, Whisper-UT achieves competitive performance with single-pass end-to-end decoding: 40.8/37.7 BLEU on CoVoST2 (<span class=\"ltx_text ltx_font_typewriter\">fr-en</span>/<span class=\"ltx_text ltx_font_typewriter\">de-en</span>), 62.0 BLEU on Fisher-Spanish, and 19.8 BLEU on BBN-Mandarin, surpassing QWen2-Audio, SeamlessM4T, and STAC-ST by margins of 2&#8211;8 BLEU points. Crucially, the 2-Stage inference variant yields systematic improvements over promptless decoding: +0.6/+0.4 BLEU on CoVoST2 (41.4/38.1 vs. 40.8/37.7), +0.1 BLEU on Fisher-Spanish (62.1 vs. 62.0), and +1.8 BLEU on BBN-Mandarin (21.6 vs. 19.8). These improvements are amplified in error-prone conditions, reflecting successful mitigation of ASR error propagation&#8212;a key challenge in cascaded systems. By prepending the special token during training (with simulated ASR noise) and inference (for 2-Stage decoding), the model learns to conditionally distrust imperfect transcripts while retaining their partial utility, rebalancing reliance on audio signals to correct latent errors. These consistent incremental gains validate the effectiveness of our two-stage modeling, demonstrating that even imperfect intermediate transcripts enhance translation fidelity through explicit cross-modal grounding when combined with learned distrust mechanisms.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "special",
+                    "when"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduced Whisper-UT, a unified translation framework that integrates ASR, ST, MT, and MMT within a single multi-task learning paradigm. In addition to this unified framework, we propose an explicit modeling approach for speech translation that conditions on both speech signals and textual prompts, effectively leveraging ASR hypotheses or ground-truth transcripts. Our training strategy, incorporating stochastic task selection and modality-aware error simulation, ensures effective multi-task learning while mitigating catastrophic forgetting. Experimental results show that Whisper-UT achieves strong performance across various translation tasks, demonstrating the benefits of cross-task synergy. Future work will explore scaling to more languages and extending to broader multi-modal scenarios.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr",
+                    "mmt",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Due to resource constraints, we fine-tuned Whisper rather than training from scratch, which might limit the full integration of the objectives. Ideally, to demonstrate cross-task fine-tuning, we would start from a pretrained model that natively support each of our tasks, (MT, MMT, ST, ASR), but building state-of-the-art, or close to state-of-the-art systems requires building from existing models, such as Whisper, and adapting to Whisper to additionally perform these tasks, while a contribution in its own right, ultimately requires a two-stage fine-tuning approach that complicates analysis of the effectiveness of cross-task fine-tuning. Furthermore, while we believe our method to be general, i.e., it could be applied to similar models such as the OWSM model <cite class=\"ltx_cite ltx_citemacro_cite\">Peng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.16375v1#bib.bib24\" title=\"\">2024</a>)</cite>, we have only demonstrated our results using the Whisper model.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "mmt",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ASR Preservation of Linguistic Salience:</span> The 2-Stage decoding system successfully retains the code-switched terms &#8220;master&#8221; and &#8220;popular&#8221; (WER <math alttext=\"\\approx\" class=\"ltx_Math\" display=\"inline\" id=\"A3.I1.i1.p1.m1\" intent=\":literal\"><semantics><mo>&#8776;</mo><annotation encoding=\"application/x-tex\">\\approx</annotation></semantics></math> 0% for these tokens), while E2E-ST completely omits &#8220;master&#8221;. This suggests that: 1) direct audio-to-translation mapping struggles with lexical disambiguation of homophones (&#8220;master&#8221; vs. contextually expected &#8220;computer&#8221;), and 2) explicit intermediate ASR provides discrete textual anchors that guide translation decisions.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "tokens"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-Modal Faithfulness:</span> While the reference MT (REF-MT) omits the final &#8220;&#24456;&#8221; (translated as \"very\") from the source utterance &#8220;&#24456;&#24212;&#35813;&#24456;&#8221;, our ASR transcript preserves all repetitions. This discrepancy highlights how audio-derived prosodic cues (e.g., emphatic stress on the final &#8220;&#24456;&#8221;) enable 2Stage-ST and MMT to retain pragmatic emphasis (&#8220;&#8230;that&#8217;s right very should be very&#8221;) where text-only MT truncates for conciseness. By aligning acoustic signals (stress patterns) with textual redundancy, our framework distinguishes intentional repetition&#8212;a discourse marker of conviction in Mandarin&#8212;from superficial noise, demonstrating superior faithfulness to both linguistic content and pragmatic intent compared to E2E ST pipelines.</p>\n\n",
+                "matched_terms": [
+                    "mmt",
+                    "asr",
+                    "2stagest"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The example validates our hypothesis that two-stage processing particularly benefits scenarios where: 1) ASR can reliably capture linguistically salient content (code-switches, proper nouns), and 2) Audio signals contain complementary paralinguistic information (prosodic boundaries, emphasis) that each modality alone cannot convey. This dual-modality advantage explains 2-Stage-ST&#8217;s performance gain over E2E-ST on BBN-Mandarin despite identical model parameters.</p>\n\n",
+                "matched_terms": [
+                    "hypothesis",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Rows 7 and 17 show the results of the MT-only fine-tuning experiment, demonstrating that the model achieves strong text translation performance even with limited in-domain data&#8212;BLEU 63.4 on Fisher-Spanish and 16.0 on BBN-Mandarin. This outperforms the original NLLB-1.3B model, though it remains modestly behind its fine-tuned counterpart. This suggests that Whisper&#8217;s decoder inherently possesses some text translation capabilities or at least has sufficiently strong source and target language modeling abilities such that minimal adaptation enables it to perform the MT task. Interestingly, this MT training also gives the system MMT ability, as suggested by the 61.1/20.4 (Fisher/BBN) BLEU score, despite MMT being a novel objective that the model was not explicitly trained on. In fact, on the BBN corpus, the MT-trained model exhibits MMT capabilities that surpass its original training objective, achieving a BLEU score of 20.4 (MMT) compared to 16.0 (MT). This finding reinforces our earlier observation of cross-task synergy.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, a gap remains between different MMT settings. Specifically, when using the ASR hypothesis as input instead of the ground-truth transcript, i.e., the 2-Stage-ST decoding, performance drops from 67.5 to 58.6 on Fisher and from 25.2 to 20.6 on BBN. While this still exceeds the results from direct ST (52.4 vs. 51.0 on Fisher and 20.6 vs. 19.5 on BBN), the model tends to over-rely on the transcript in the absence of explicit modeling. Specifically, without the special tag to signal potential errors, the model treats the input transcript as fully reliable ground truth&#8212;an assumption that breaks down when using ASR outputs, which may contain recognition errors. These highlight both the effectiveness of explicit modeling and the limitations introduced by ASR errors.</p>\n\n",
+                "matched_terms": [
+                    "special",
+                    "when",
+                    "hypothesis",
+                    "asr",
+                    "2stagest",
+                    "mmt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, the UT-trained system (rows 11 and 22) achieves the best MMT and 2-Stage-ST results, with MMT reaching 70.4/26.0 BLEU and 62.1/21.6 BLEU, respectively, on the Fisher-Spanish and BBN-Mandarin corpora, proving the method&#8217;s effectiveness. Applying the error simulation strategy in this training scheme improves the robustness of the two-stage approach, narrowing the performance gap between MMT and 2-Stage-ST decoding. Specifically, on Fisher, the gap decreases from 8.9 to 8.3 BLEU (row 9 vs. 11), and on BBN, from 4.6 to 4.4 BLEU (row 20 vs. 22), indicating more stable performance under ASR-transcript input.</p>\n\n",
+                "matched_terms": [
+                    "mmt",
+                    "2stagest",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A similar story unfolds on BBN. On BBN, the impact of injecting OOD text is most pronounced in the MT task. Under UT&#8209;OOD (row 21), the model&#8217;s MT performance barely improves over the base unified setting and remains far below the CTS&#8209;matched variant&#8212;rising only to 11.1 BLEU compared with 15.7 BLEU for UT&#8209;CTS (row 22). In contrast, UT&#8209;CTS consistently lifts MT and MMT performance by several BLEU points and slightly improves ASR quality. Together, these findings imply that substituting in&#8209;domain transcripts with heterogeneous text corpora does not generalize well in a cross&#8209;modal training regime and can inadvertently weaken the model&#8217;s ability to leverage the unified translation objective.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "asr",
+                    "mmt"
+                ]
+            }
+        ]
+    }
+}

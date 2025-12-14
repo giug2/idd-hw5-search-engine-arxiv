@@ -1,0 +1,261 @@
+{
+    "S2.F1": {
+        "source_file": "Towards Responsible Evaluation for Text-to-Speech",
+        "image_url": "https://arxiv.org/html/2510.06927v1/x1.png",
+        "caption": "Figure 1: Evolution of TTS technology and TTS evaluation across three phases.",
+        "informative_terms_identified": [
+            "tts",
+            "evolution",
+            "across",
+            "evaluation",
+            "technology",
+            "phases",
+            "three"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Over the past two decades, speech synthesis has undergone a remarkable transformation, evolving from manually crafted statistical models to end-to-end deep learning systems, and more recently to approaches based on diffusion models and large language models (LLMs)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Tan et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib62\" title=\"\">2021</a>); Xie et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib75\" title=\"\">2025</a>)</cite>. Throughout this evolution, subjective evaluation has remained the foundation of TTS assessment. As new capabilities have emerged, such as zero-shot speaker adaptation and fine-grained prosody control, objective metrics like MCD and Word Error Rate (WER) have become increasingly important. These metrics provide faster and more reproducible assessments of spectral fidelity, intelligibility, and overall clarity, effectively complementing traditional subjective evaluations. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#S2.F1\" title=\"Figure 1 &#8227; 2 Background: The Co-evolution of TTS Technologies and Evaluation Methods &#8227; Towards Responsible Evaluation for Text-to-Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, we examine three main phases in the development of TTS technology: the statistical parametric synthesis era, the end-to-end deep learning era, and the era of diffusion models and foundation models. We analyze how evaluation methodologies have evolved alongside advances in model architectures and capabilities.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in text-to-speech (TTS) technology have enabled systems to produce human-indistinguishable speech, bringing benefits across accessibility, content creation, and human-computer interaction. However, current evaluation practices are increasingly inadequate for capturing the full range of capabilities, limitations, and societal implications. This position paper introduces the concept of Responsible Evaluation and argues that it is essential and urgent for the next phase of TTS development, structured through three progressive levels: (1) ensuring the faithful and accurate reflection of a model&#8217;s true capabilities, with more robust, discriminative, and comprehensive objective and subjective scoring methodologies; (2) enabling comparability, standardization, and transferability through standardized benchmarks, transparent reporting, and transferable evaluation metrics; and (3) assessing and mitigating ethical risks associated with forgery, misuse, privacy violations, and security vulnerabilities. Through this concept, we critically examine current evaluation practices, identify systemic shortcomings, and propose actionable recommendations. We hope this concept of Responsible Evaluation will foster more trustworthy and reliable TTS technology and guide its development toward ethically sound and societally beneficial applications.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "evaluation",
+                    "across",
+                    "technology",
+                    "three"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Text-to-speech (TTS) technology has made rapid progress, driven by advances in generative modeling&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Shen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib59\" title=\"\">2018</a>); Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib40\" title=\"\">2019</a>); Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib37\" title=\"\">2021</a>); Ren et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib56\" title=\"\">2021</a>); Jeong et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib31\" title=\"\">2021</a>); Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite> and the growing computational power and data&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Zen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib81\" title=\"\">2019</a>); Panayotov et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib50\" title=\"\">2015</a>); Ma et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib43\" title=\"\">2024</a>); Kang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib34\" title=\"\">2024</a>); He et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib29\" title=\"\">2024</a>)</cite>. Modern TTS systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib11\" title=\"\">2024</a>); Ju et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib33\" title=\"\">2024</a>); Du et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib21\" title=\"\">2024b</a>); Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib13\" title=\"\">2025</a>); Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib71\" title=\"\">2024b</a>)</cite> produce speech that is increasingly natural, expressive, and human-indistinguishable, offering broad benefits across accessibility, education, content creation, and voice-based human-computer interaction.\nAt the same time, these capabilities are inherently dual-use.\nRealistic voice synthesis and voice cloning have already been exploited in misinformation campaigns, telecom fraud via audio deepfakes&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib73\" title=\"\">2025</a>)</cite>.\nMoreover, biased training data can reinforce societal inequities&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Pinhanez et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib51\" title=\"\">2024</a>)</cite>,\nyielding uneven quality across demographic groups and reinforcing harmful stereotypes.</p>\n\n",
+                "matched_terms": [
+                    "technology",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current TTS evaluation practices, narrowly focused on technical performance in terms of naturalness, intelligibility, speaker similarity, and efficiency, have not kept pace with the growing complexity and societal reach of modern TTS applications, revealing a critical imbalance between technological advancement and its evaluation.\nWe argue that TTS evaluation must move beyond technical performance to encompass dimensions of trustworthiness, responsibility, and ethical consideration.\nTo this end, we put forward the concept of <span class=\"ltx_text ltx_font_italic\">Responsible Evaluation</span> for TTS, which calls for a comprehensive rethinking of how evaluation should evolve amid the rapid advancement of TTS technology across three progressive levels, and <span class=\"ltx_text ltx_font_bold\">we argue that this concept is essential and urgent for the next phase of TTS development.</span></p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "evaluation",
+                    "across",
+                    "technology",
+                    "three"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Level Three: Ethical and Risk Oversight.</span>\nArgues that evaluation incorporates ethical and societal implications, aligning TTS development with the public interest and broader principles of responsible AI.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our contributions to the ongoing discourse on TTS evaluation can be summarized in three aspects:\n(1) <span class=\"ltx_text ltx_font_bold ltx_font_italic\">comprehensive and critical diagnosis of current TTS evaluation practices.</span>\nWe systematically dissect standard evaluation methodologies across the TTS pipeline, covering data, training, inference, and evaluation, revealing fundamental flaws concerning fidelity, transparency, comparability, standardization, reproducibility, transferability, and ethical considerations, which collectively hinder genuine progress in TTS technology;\n(2) <span class=\"ltx_text ltx_font_bold ltx_font_italic\">introduction and elaboration of the concept of Responsible Evaluation.</span>\nWe propose the concept of Responsible Evaluation built upon three progressive levels, which extend far beyond the current primary focus on technical performance, to address existing deficiencies in TTS evaluation, and align with broader responsible AI principles;\n(3) <span class=\"ltx_text ltx_font_bold ltx_font_italic\">actionable recommendations for inspire future work on Responsible Evaluation for TTS.</span>\nWe articulate concrete calls to action for each level of Responsible Evaluation: (i) advancing more robust, discriminative, and comprehensive objective and subjective scoring methodologies to ensure genuine fidelity and accuracy; (ii) establishing standardized benchmarks, transparent reporting, and transferable evaluation metrics to foster comparability and transferability; and (iii) embedding systematic risk and ethical oversight, associated with forgery, misuse, privacy violations, and security vulnerabilities, aiming to steer TTS technology towards trustworthy, reliable, and societally beneficial outcomes.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "evaluation",
+                    "across",
+                    "technology",
+                    "three"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In parallel, the evaluation of TTS systems began with modest, informal approaches and has since evolved into standardized, multi-dimensional methodologies. Early research primarily relied on visual inspection of spectrograms and pitch contours, alongside informal listening tests, to assess synthesis quality&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Tokuda et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib63\" title=\"\">2000</a>); Yoshimura et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib80\" title=\"\">1999</a>)</cite>. Subsequently, objective metrics such as mel-cepstral distortion (MCD), <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">F_{0}</annotation></semantics></math> root mean square error (RMSE), and voiced/unvoiced classification error are introduced to quantitatively evaluate acoustic modeling performance&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Zen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib83\" title=\"\">2013</a>); Zen and Sak (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib82\" title=\"\">2015</a>)</cite>. Meanwhile, subjective evaluation methods also evolved. Informal listening was gradually replaced by structured AB preference tests, enabling statistical comparisons between systems based on listener choices. Later, Mean Opinion Score (MOS) evaluations became the standard for capturing absolute judgments of naturalness on a defined scale. These methods are increasingly conducted via crowd-sourcing platforms such as Amazon Mechanical Turk, which allow for large-scale and diverse listener participation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Fan et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib23\" title=\"\">2014</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech synthesis technology enters a transformative era with the rise of fully neural, end-to-end architectures that significantly enhance speech naturalness and simplify the synthesis process. WaveNet&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Van Den&#160;Oord et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib64\" title=\"\">2016</a>)</cite> generates high-quality raw audio by learning the long-range patterns in sound. Building on this, Tacotron&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib72\" title=\"\">2017</a>); Shen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib59\" title=\"\">2018</a>)</cite> uses attention-based sequence-to-sequence networks to turn text into mel-spectrograms, which a neural vocoder then converts into final waveforms. These models eliminate the need for hand-crafted linguistic features and complex alignment procedures, producing speech with more natural prosody and near-human quality. The introduction of Transformer-based models marks a further breakthrough&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ren et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib57\" title=\"\">2019</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib56\" title=\"\">2021</a>)</cite>. In parallel, more diverse generative modeling approaches begin to emerge, including variational&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib39\" title=\"\">2020</a>); Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib37\" title=\"\">2021</a>)</cite>, adversarial&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ma et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib44\" title=\"\">2018</a>)</cite>, and flow-based models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Miao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib46\" title=\"\">2020</a>); Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib36\" title=\"\">2020</a>)</cite>, which unify acoustic modeling and waveform generation within a single probabilistic framework. These models reflect a broader trend toward integrated, data-driven, and highly expressive TTS systems capable of capturing the variability and richness of natural speech across different speakers, styles, and diverse contexts.</p>\n\n",
+                "matched_terms": [
+                    "technology",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Meanwhile, TTS evaluation practice has gradually evolved to become more comprehensive, centered on subjective assessment, especially MOS, and increasingly supported by diverse objective metrics. MOS becomes the primary method for evaluating naturalness&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ar&#305;k et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib4\" title=\"\">2017</a>); Gibiansky et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib25\" title=\"\">2017</a>)</cite>. Comparison MOS (CMOS)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib36\" title=\"\">2020</a>); Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib40\" title=\"\">2019</a>)</cite> and Similarity MOS (SMOS)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib10\" title=\"\">2021b</a>)</cite> are introduced to measure relative quality and speaker similarity. Objective evaluation gains traction&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib36\" title=\"\">2020</a>)</cite> through metrics such as pitch and energy errors, and Character Error Rate (CER), which quantify acoustic fidelity and intelligibility. As non-autoregressive (NAR) systems, such as FastSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ren et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib57\" title=\"\">2019</a>)</cite> and Glow-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Kim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib36\" title=\"\">2020</a>)</cite>, emerge, inference latency and model efficiency become standard evaluation criteria. Adaptation efficiency also becomes essential. Then evaluation of controllability and diversity enters an exploratory stage, with initial efforts focused on prosodic variation via pitch, duration, and sampling-based methods, though systematic evaluation metrics remain limited.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The evaluation of modern TTS systems has increasingly adopted a dual-track framework that combines subjective and objective measures&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>); Du et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib20\" title=\"\">2024a</a>); Anastassiou et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib3\" title=\"\">2024</a>)</cite>. CMOS and SMOS are now widely used to assess perceived naturalness and speaker similarity, forming the core of human evaluation protocols. On the objective side, metrics such as word error rate, speaker embedding similarity, and model-based predictions of speech quality have become standard practice. Many recent approaches rely on pre-trained automatic speech recognition models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Radford et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib52\" title=\"\">2022</a>); Hsu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib30\" title=\"\">2021</a>); Gulati et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib26\" title=\"\">2020</a>)</cite>, speaker verification models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib12\" title=\"\">2022</a>)</cite>, and perceptual quality prediction models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Baba et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib6\" title=\"\">2024</a>); Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib67\" title=\"\">2023b</a>)</cite> to provide consistent and scalable assessments. This shift reflects a broader trend toward using neural models as evaluation tools. Despite these advances, current evaluation practices largely overlook the ethical and societal implications of highly realistic speech synthesis&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Lv et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib42\" title=\"\">2022</a>); Yi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib79\" title=\"\">2024</a>)</cite>. Issues such as identity spoofing, misinformation, and unauthorized voice replication are typically addressed only in brief disclaimers. There remains a critical need for standardized methodologies that integrate safety and misuse considerations into the core evaluation of speech generation systems.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The first level of Responsible Evaluation argues the necessity of evaluation metrics that faithfully reflect both the perceptual quality of synthesized speech and underlying system performance. When evaluation methodologies are flawed or unreliable, higher-level claims regarding comparability, standardization, or ethical considerations become unsubstantiated and ineffective.\nModern TTS evaluations primarily consider dimensions including naturalness, intelligibility and robustness, speaker similarity, prosody, and system efficiency.\nThese aspects are assessed through a combination of subjective and objective metrics. However, limitations persist in both the effectiveness of these metrics and the comprehensiveness of the evaluation dimensions covered.\nOn the one hand, commonly used metrics sometimes fail to reflect the true capabilities of models, where objective metrics may fail to align with human perceptual judgments while subjective metrics suffer from methodological inconsistencies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chiang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib14\" title=\"\">2023</a>)</cite>.\nOn the other hand, the scope of evaluation dimensions remains incomplete, particularly for complex, real-world scenarios such as long-form generation and expressive content.\nWe elaborate on these issues in the following subsections.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Subjective evaluation remains the primary choice for assessing perceptual quality in TTS, with MOS serving as the dominant protocol. MOS employs a five-point absolute category rating scale to rate individual utterances. Variants such as CMOS and MUSHRA are used for pairwise or comparative assessments. Although broadly regarded as the gold standard, these methods fall short in terms of sensitivity, consistency, and practical feasibility.\nOne major drawback of MOS stems from its limited resolution. As the quality of synthetic speech continues to improve, MOS scores tend to saturate&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib70\" title=\"\">2025c</a>)</cite>. This ceiling effect obscures perceptual differences between high-performing systems, making it increasingly difficult to distinguish among them.\nAnother issue arises from the inherent variability in subjective ratings. Factors such as listener bias, contextual framing, playback conditions, and even day-to-day mood can introduce substantial noise. Without rigorous rater calibration and experimental controls, evaluations become unreliable.\nMoreover, the high cost associated with subjective evaluations presents a practical barrier. The process of recruiting a large and diverse pool of listeners, along with the need to ensure controlled testing conditions, demands considerable time and resources. These requirements often limit the feasibility and scale of such evaluations.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Existing evaluation dimensions in TTS fail to keep pace with the growing complexity of real-world applications. Widely used metrics capture only a narrow portion of what matters in practical synthesis scenarios. We identify three critical yet underexplored dimensions that are essential for responsible and forward-looking TTS evaluation.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent TTS models demonstrate growing capability in synthesizing expressive speech, yet evaluation methods lag. There is no consensus on emotion taxonomies or scales for emotion intensity, and subjective metrics like emotion MOS often lack sensitivity to subtle distinctions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib76\" title=\"\">2025a</a>)</cite>. Available datasets typically contain discrete labels and limited emotional diversity.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To promote fidelity and accuracy in TTS evaluation, we propose the following actionable recommendations, grounded in a reevaluation of current practices:\n(1) <span class=\"ltx_text ltx_font_italic\">greater attention to perceptual validity and uncertainty in objective metrics.</span>\nInterpretation of objective score differences should be approached with caution due to their nonlinear scaling, diminishing returns, domain-specific biases, and inherent uncertainty.\nWe advocate reporting uncertainty estimates of predicted MOS, particularly under out-of-distribution scenarios.\nWithout explicit consideration of uncertainty and prediction errors, small differences in predicted MOS should not be interpreted as genuine performance gains;\n(2) <span class=\"ltx_text ltx_font_italic\">development of practical, discriminative, and scalable evaluation protocols.</span>\nWe encourage the development of improved subjective and objective evaluation metrics, as exemplified by&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib70\" title=\"\">2025c</a>)</cite> for subjective evaluation to address score saturation, reduce environmental inconsistencies, and enhance interpretability, and by&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib77\" title=\"\">2025b</a>)</cite> for objective evaluation to better correlate with human perception;\n(3) <span class=\"ltx_text ltx_font_italic\">expanding the evaluation scope to underexplored dimensions.</span>\nWe advocate for a broader evaluation scope that includes dimensions such as long-form coherence, emotional expressiveness, punctuation sensitivity, and polyphonic word disambiguation.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The second level of Responsible Evaluation builds upon the foundation of fidelity and accuracy established in the first level, arguing the importance of scientific rigor and fairness for meaningful system comparisons.\nWithout standardized practices, even technically valid assessments fall short of supporting reliable cross-system comparisons or drawing generalizable conclusions.\nCurrent evaluation practices in TTS research remain fragmented, characterized by inconsistent methodologies, limited transparency, and poor metric transferability.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A primary challenge to comparability stems from the inconsistent usage of evaluation datasets. The most commonly used test set, LibriSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Panayotov et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib50\" title=\"\">2015</a>)</cite> test-clean, is employed in divergent ways across various TTS studies. For example, VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite> utilizes 1234 utterances for zero-shot evaluation, while NatureSpeech3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ju et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib33\" title=\"\">2024</a>)</cite> and MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib71\" title=\"\">2024b</a>)</cite> employ only 40 utterance subsets, and F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib13\" title=\"\">2025</a>)</cite> uses 1127 utterances with punctuation and capitalization. Such disparities in test set size significantly influence evaluation metrics like WER, as detailed in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#A1\" title=\"Appendix A Case Study on Variants of LibriSpeech test-clean Subsets &#8227; Towards Responsible Evaluation for Text-to-Speech\"><span class=\"ltx_text ltx_ref_tag\">A</span></a>, making cross-study comparisons unreliable.\nFurthermore, most TTS studies do not release their prompt speech lists, while a few&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite> only describe how the prompt lists are constructed. However, the sequence of prompt speech can impact performance, making results difficult to reproduce or compare.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Inference tasks to evaluate zero-shot TTS are also fragmented. VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite> introduced two tasks, <span class=\"ltx_text ltx_font_italic\">Continuation</span>, which uses the first three seconds of an utterance as a prompt and continues the speech, and <span class=\"ltx_text ltx_font_italic\">Cross-Sentence</span>, which prompts with a full utterance from the same speaker. However, later work such as E2 TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Eskimez et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib22\" title=\"\">2024</a>)</cite> redefines the <span class=\"ltx_text ltx_font_italic\">Continuation</span> task by using the last three seconds of a truncated segment as the prompt. These inconsistencies in task definition lead to incomparable evaluation results across different works.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "evaluation",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The computation of SIM scores also varies across studies. SIM-o measures the similarity between the synthesized speech and the original prompt, while SIM-r measures the similarity between the synthesized speech and the reconstructed prompt. SIM-r is not comparable across systems using different reconstruction methods. Even for SIM-o, evaluation practices differ. VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite> excludes the prompt segment from the synthesized audio when computing similarity, whereas VALL-E 2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib11\" title=\"\">2024</a>)</cite> includes the prompt in both the synthesized and reference speech. As detailed in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#A2\" title=\"Appendix B Case Study on Inconsistencies in SIM-o Evaluation Protocols &#8227; Towards Responsible Evaluation for Text-to-Speech\"><span class=\"ltx_text ltx_ref_tag\">B</span></a>, this leads to incomparability across different works.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The reporting of MOS in TTS research also lacks transparency. Despite the importance of standardized reporting in human evaluations, many TTS studies underreport details of testing methodologies. Information regarding listener recruitment, screening procedures, compensation, and the evaluation interface is often omitted, which complicates the assessment of result replicability.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The computation of SIM requires access to reference speech, which limits its applicability in horizontal comparisons across different TTS research. External evaluators often lack access to the original reference speech, hence are unable to directly compare the newly generated speech to previous ones, further hindering the transferability of this metric across studies.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To advance comparability, standardization, and transferability in TTS evaluation, we propose the following actionable recommendations:\n(1) <span class=\"ltx_text ltx_font_italic\">clear distinctions between comparable and incomparable results in evaluation reporting.</span>\nMetrics derived under different datasets, tasks, or configurations must not be treated as interchangeable. Any deviations should be reported explicitly to avoid misleading comparisons;\n(2) <span class=\"ltx_text ltx_font_italic\">stick to existing standardized evaluation protocols.</span>\nWhen formal standards such as ITU-T P.808 for MOS are available, researchers should adhere to them consistently. In the absence of formal standards, alignment with widely adopted practices is encouraged to promote practical convergence across studies;\n(3) <span class=\"ltx_text ltx_font_italic\">ensuring transparency in evaluation reporting.</span>\nEvaluation details should be disclosed, including but not limited to dataset splits, prompt lists, inference task definitions, metric configurations, human listening test procedures for MOS, and measurement setups for RTF;\n(4) <span class=\"ltx_text ltx_font_italic\">development of transferable metrics.</span>\nModel-based evaluation, including the use of LLMs as judges, offers a scalable and cost-effective alternative to human evaluation. We advocate for the creation and validation of metrics whose scores are reliably comparable across systems and studies without requiring simultaneous re-evaluation.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The third and most advanced level of Responsible Evaluation centers on the ethical and societal implications of TTS technology. While technical fidelity and scientific fairness form the foundation of sound evaluation, they are not sufficient to ensure TTS systems align with the public interest or broader goals of responsible AI.\nAs TTS technology becomes increasingly realistic and pervasive, concerns arise, such as deepfakes, bias amplification, and privacy violations.\nThese risks underscore the need to move beyond narrow technical performance and incorporate responsible AI principles, explicitly encompassing risk mitigation, fairness, transparency, accountability, and societal impact.\nCurrent evaluation practices often overlook these aspects. As a result, many TTS models are developed and deployed without adequate scrutiny of potential ethical and social consequences.</p>\n\n",
+                "matched_terms": [
+                    "technology",
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A core concern in responsible TTS evaluation lies in the legal and ethical status of training data. Many models are trained on large-scale speech datasets&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ma et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib43\" title=\"\">2024</a>); Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib9\" title=\"\">2021a</a>); He et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib29\" title=\"\">2024</a>)</cite> collected from public or semi-public sources, which may lack clear copyright clearance, informed consent, or transparent data provenance. This is particularly problematic given that voice data are personally identifiable and biometric. These unresolved issues create ethical and legal blind spots. Ambiguous licensing, absence of consent for voice use or imitation, and opaque sourcing practices undermine the legitimacy of TTS systems and expose developers to reputational and legal risks. However, current evaluation practices rarely address these issues explicitly, weakening alignment with responsible AI principles in terms of data transparency, accountability in dataset construction, respect for individual consent, and protection of personal privacy.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Bias in TTS systems emerges from multiple sources, including imbalanced training data, biased annotations, and model inductive biases. Such biases manifest as accent and gender stereotyping, as well as underrepresentation of minority speech patterns&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Pinhanez et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib51\" title=\"\">2024</a>)</cite>, reinforcing stereotypes and marginalizing certain communities. Despite growing attention to fairness in related AI areas, systematic bias auditing remains absent from current TTS evaluations. Prevailing evaluation practices implicitly assume universal desirability of speaker similarity or naturalness, neglecting whose voices are idealized or excluded.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To promote ethical and risk oversight in TTS evaluation, we propose the following actionable recommendations:\n(1) <span class=\"ltx_text ltx_font_italic\">mandatory disclosure of training data provenance.</span>\nEvaluation reports should move beyond ambiguous descriptors like &#8220;in-house data&#8221; by requiring detailed specifications of data sources, licensing status, and collection procedures to ensure verifiable transparency and accountability, in alignment with the EU AI Act;\n(2) <span class=\"ltx_text ltx_font_italic\">integration of traceability indicators.</span>\nWe encourage the adoption of imperceptible watermarking or similar mechanisms in TTS systems. Evaluations are recommended to include metrics assessing detectability and attribution of synthetic speech;\n(3) <span class=\"ltx_text ltx_font_italic\">construction of fairness-oriented evaluation datasets.</span>\nWe encourage the development of benchmarks covering diverse accents, genders, and languages to enable fair assessment of performance across underrepresented groups.\n(4) <span class=\"ltx_text ltx_font_italic\">standardization of adversarial risk and misuse evaluation.</span>\nWe advocate the establishment of standardized evaluation protocols that include testing against impersonation, fraud, and other high-risk misuse scenarios.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As TTS technology continues to advance, current evaluation practices have become increasingly inadequate for capturing its full range of performance and implications.\nIn response to this urgent need, we introduce the concept of Responsible Evaluation, structured around three progressive levels.\nAt the first level, we advocate moving beyond conventional technical performance toward evaluation practices that faithfully and accurately reflect a model&#8217;s true capabilities, with more robust, discriminative, and comprehensive objective and subjective scoring methodologies.\nAt the second level, we call for the adoption of standardized protocols and datasets that support meaningful comparisons and ensure high reproducibility across models and studies.\nAt the third level, we emphasize the importance of embedding ethical and risk-aware considerations throughout the evaluation pipeline, from dataset provenance to deployment-related risks.\nWe believe that embracing Responsible Evaluation is not only essential for advancing scientific progress in TTS but also critical for guiding TTS development in alignment with broader societal interests and responsible AI principles.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "evaluation",
+                    "across",
+                    "technology",
+                    "three"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This is a position paper that presents a conceptual and argumentative perspective aimed at advancing responsible evaluation in TTS research. Accordingly, it does not include empirical validation or implementation details. While some arguments may be controversial, they are primarily intended to provoke constructive debate and to inspire further discussion and research.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Multiple versions of the LibriSpeech <span class=\"ltx_text ltx_font_italic\">test-clean</span> subset are used across recent TTS works, which leads to inconsistencies in reported results. One version contains 1234 utterances and is used in systems such as VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib65\" title=\"\">2023a</a>)</cite>, VALL-E 2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib11\" title=\"\">2024</a>)</cite>, MELLE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Meng et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib45\" title=\"\">2025</a>)</cite>, and PALLE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib78\" title=\"\">2025c</a>)</cite>. Another version contains 40 utterances and is used in works including NatureSpeech 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Ju et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib33\" title=\"\">2024</a>)</cite> and MaskGCT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib71\" title=\"\">2024b</a>)</cite>. Other subsets, such as the one used in F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Chen et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib13\" title=\"\">2025</a>)</cite>, also exist. These differences cause substantial variation in WER evaluations even for the same model.</p>\n\n",
+                "matched_terms": [
+                    "tts",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate this issue, we evaluate the open-sourced MaskGCT<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/amphion/MaskGCT\" title=\"\">https://huggingface.co/amphion/MaskGCT</a></span></span></span> on two commonly used variants of the <span class=\"ltx_text ltx_font_italic\">test-clean</span> subset. WER is computed between ASR transcription of synthesized audio and the ground-truth text, using the HuBERT-Large ASR model<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/facebook/hubert-large-ls960-ft\" title=\"\">https://huggingface.co/facebook/hubert-large-ls960-ft</a></span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Hsu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#bib.bib30\" title=\"\">2021</a>)</cite>. The WER differs significantly across the two versions, ranging from 2.63 to 4.22, as shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.06927v1#A1.T1\" title=\"Table 1 &#8227; Appendix A Case Study on Variants of LibriSpeech test-clean Subsets &#8227; Towards Responsible Evaluation for Text-to-Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. This observation argues the importance of clearly reporting dataset versions and evaluation protocols to ensure fair and reproducible comparisons.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Some researchers and practitioners caution that introducing additional evaluation metrics could complicate the evaluation process, particularly in industrial contexts where scalability and efficiency are critical. They also note that an overabundance of criteria might risk fragmenting TTS evaluation practices, thereby reducing comparability and standardization.</p>\n\n",
+                "matched_terms": [
+                    "evaluation",
+                    "tts"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Response</span>\nWhile expanding evaluation dimensions and introducing new metrics may pose short-term challenges, such efforts are essential to ensure that TTS evaluation evolves in step with technological advances and real-world requirements. As in many areas of technology, development often moves from diversification to convergence, ultimately leading to more unified and stable practices.</p>\n\n",
+                "matched_terms": [
+                    "technology",
+                    "evaluation",
+                    "tts"
+                ]
+            }
+        ]
+    }
+}

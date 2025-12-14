@@ -1,0 +1,31 @@
+{
+    "S3.F1": {
+        "source_file": "Sidon: Fast and Robust Open-Source Multilingual Speech Restoration for Large-scale Dataset Cleansing",
+        "image_url": "https://arxiv.org/html/2509.17052v2/x1.png",
+        "caption": "Fig. 1: Overall architecture of Sidon",
+        "informative_terms_identified": [
+            "architecture",
+            "overall",
+            "sidon"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#S3.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 3 Sidon &#8227; Sidon: Fast and Robust Open-Source Multilingual Speech Restoration for Large-scale Dataset Cleansing\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> shows the overall architecture of Sidon. Sidon is\nbased on a parametric resynthesis framework used in previous work&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#bib.bib7\" title=\"\">7</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Sidon follows similar architecture to Miipher-2 apart from three main differences.\nThe first difference is the SSL model. Miipher-2 uses the 13th layer hidden state of 2B parameter USM model. However, this USM model is closed source. Therefore, Sidon uses the 8th layer hidden state of open-sourced 600M parameter w2v-BERT 2.0 model.\nThe second difference is that Sidon produces 48&#160;kHz full-fidelity speech using HiFi-GAN with snake activation as its vocoder while Miipher-2 produces 24&#160;kHz speech using WaveFiT&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#bib.bib30\" title=\"\">30</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nLastly, Miipher-2 was trained on the 3,195 hours of Google internal data while Sidon is trained on 2,219 hours of curated high-quality public datasets.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "sidon"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In the multilingual setting, we used the test set of FLEURS&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#bib.bib40\" title=\"\">40</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nSimilar to LibriTTS-R, FLEURS-R contains Miipher-restored samples in the test\nset. Note that Miipher used for restoring FLEURS in our experiment differed\nfrom the one used in LibriTTS-R and it had identical architecture to Miipher-2&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17052v2#bib.bib7\" title=\"\">7</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nHowever, details of the model used in FLEURS-R such as training dataset are not disclosed in any\npapers. We refer to this model as &#8220;Miipher-2&#8221; in this paper for convenience.\nWe noticed that FLEURS-R lacks approximately 10% of samples from FLEURS.\nTherefore, we only used test set samples included in FLEURS-R.\nUnlike Miipher, Miipher-2 is not a text-conditioned model. Therefore, we can expect fair comparison between Sidon and Miipher-2 regarding the text conditioning.\nEvaluation was conducted on 100 languages selected from 102 languages in FLEURS as we\ncould not find any publicly available ASR models supporting Filipino (fil_ph) and Oriya (or_in).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "sidon"
+                ]
+            }
+        ]
+    }
+}

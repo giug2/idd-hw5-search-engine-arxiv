@@ -1,0 +1,375 @@
+{
+    "S1.F1": {
+        "source_file": "TASU: Text-Only Alignment for Speech Understanding",
+        "image_url": "https://arxiv.org/html/2511.03310v1/x1.png",
+        "caption": "Fig. 1: An Overview of TASU: during training (left), only text inputs are used: transcriptions are tokenized into one-hot vectors and converted into pseudo CTC posteriors via simulation. During inference (right), speech is encoded to generate real CTC posteriors, which are refined by label-synchronous decoding. Both pseudo and real CTC posteriors are mapped by a trainable projector into the frozen LLM, producing outputs such as transcriptions or other speech understanding tasks.",
+        "informative_terms_identified": [
+            "inference",
+            "only",
+            "converted",
+            "onehot",
+            "which",
+            "refined",
+            "text",
+            "tasu",
+            "simulation",
+            "posteriors",
+            "decoding",
+            "mapped",
+            "inputs",
+            "vectors",
+            "pseudo",
+            "encoded",
+            "understanding",
+            "tasks",
+            "into",
+            "real",
+            "projector",
+            "generate",
+            "trainable",
+            "outputs",
+            "labelsynchronous",
+            "speech",
+            "frozen",
+            "overview",
+            "transcriptions",
+            "producing",
+            "during",
+            "llm",
+            "via",
+            "ctc",
+            "training",
+            "tokenized"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Conventional alignment strategies for Speech LLMs often rely on encoder hidden states with heuristic subsampling, which either produce redundant and noisy representations or risk discarding critical information. In addition, acoustic features exhibit high temporal variability that mismatches the structured nature of text embeddings, making cross-modal alignment challenging. To address these issues, we propose </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">TASU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, which aligns speech and text directly at the </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">CTC posterior level</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> (Fig.&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S1.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 1 Introduction &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">). The key idea is to establish a unified posterior interface for both training and inference:</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Recent advances in Speech Large Language Models (Speech LLMs) have paved the way for unified architectures across diverse speech understanding tasks. However, prevailing alignment paradigms rely heavily on large-scale audio-text paired data and computationally intensive training, yet often exhibit limited generalization to unseen domains or tasks. To address these limitations, we propose TASU (Text-only Alignment for Speech Understanding), a novel alignment paradigm that can leverage only unpaired text data to guide cross-modal alignment. Experiments show that TASU achieves competitive zero-shot speech recognition. Leveraging this property, it can further function as a pre-training stage in curriculum learning, enhancing domain generalization in speech recognition. Ultimately, TASU can extend its zero-shot generalization to a wide range of speech understanding tasks and notably outperforms prominent Speech LLMs including </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">GLM-4-Voice</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Step-Audio</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on the </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> benchmark, establishing TASU as an efficient and scalable alignment paradigm for Speech LLMs.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "only",
+                    "tasks",
+                    "training",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold ltx_font_italic\" style=\"font-size:90%;\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nAutomatic speech recognition, Speech large language model, Speech understanding</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In recent years, large language models (LLMs) have demonstrated remarkable capability in contextual reasoning and multitask learning, and have been increasingly applied to speech understanding&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib2\" title=\"\">2</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Unlike traditional cascaded systems that rely on automatic speech recognition (ASR) to provide textual input, modern Speech LLMs align speech and text modalities directly through mechanisms such as continuous feature projection or discrete token augmentation&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib6\" title=\"\">6</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. These approaches have enabled state-of-the-art (SOTA) performance in both single-task settings and broad multi-task speech understanding&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib9\" title=\"\">9</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">However, existing alignment paradigms face two major limitations.\nFirst, continuous feature projection, though capable of preserving detailed audio information, often introduces substantial redundancy.\nSuch redundancy not only increases computational cost during training and inference but also raises the risk of overfitting&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Second, mitigating these issues typically requires massive amounts of paired audio&#8211;text data and complex training pipelines in order to achieve competitive multitask performance&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib12\" title=\"\">12</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "inference",
+                    "only",
+                    "during",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To alleviate the issue of redundancy in continuous audio features, earlier studies explored alternative representation refinement techniques. The </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">CTC lattice</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, first introduced in&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib13\" title=\"\">13</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, organizes frame-level CTC posterior distributions into a compact structure that represents all possible alignment paths. Building on this lattice, Chen </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">et al.</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> proposed the Phoneme Synchronous Decoding (PSD) and Label Synchronous Decoding (LSD) methods&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib13\" title=\"\">13</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib15\" title=\"\">15</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, which exploit CTC&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> posteriors to perform efficient variable frame rate search and effectively reduce redundant acoustic frames.\nLiu </span>\n  <em class=\"ltx_emph ltx_font_italic\" style=\"font-size:90%;\">et al.</em>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> further proposed PSD joint training within end-to-end ASR models&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib17\" title=\"\">17</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, verifying that the extracted audio semantic representations accelerate model training with almost no loss of semantic information. This representation also enables the speech and text modalities to be aligned at a comparable level of information flow.\nMoreover, compared with raw audio hidden embeddings, CTC posteriors exhibit stronger structural similarity to text, which makes it possible to approximate them using one-hot vectors derived from transcripts.\nThis insight suggests that training can rely on minimal, or even no, real speech data, substantially mitigating the two limitations discussed earlier.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "ctc",
+                    "speech",
+                    "posteriors",
+                    "decoding",
+                    "into",
+                    "onehot",
+                    "real",
+                    "vectors",
+                    "which",
+                    "text",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Motivated by these, we propose </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">TASU (<span class=\"ltx_text ltx_font_bold\">T</span>ext-only <span class=\"ltx_text ltx_font_bold\">A</span>lignment for <span class=\"ltx_text ltx_font_bold\">S</span>peech <span class=\"ltx_text ltx_font_bold\">U</span>nderstanding)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a novel alignment paradigm that achieves robust cross-modal alignment without relying on audio supervision. We similarly use LSD to extract audio CTC posteriors into compact &#8220;codebook&#8221;-like features, preserving semantic content while removing redundancy. From the text side, we introduce </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">CTC posterior simulation (CPS)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, which mimics real CTC distributions, including frame dropping and repetition, to generate pseudo-&#8220;codebooks&#8221; from text-only data. This dual design allows TASU to bridge modalities efficiently while keeping the LLM backbone frozen, thus retaining its inherent multitask capability. In this work, we focus on semantic speech understanding tasks, which are representative of core challenges in spoken language processing and well-suited for evaluating multitask performance in Speech LLMs.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "ctc",
+                    "speech",
+                    "frozen",
+                    "posteriors",
+                    "understanding",
+                    "tasks",
+                    "into",
+                    "llm",
+                    "real",
+                    "generate",
+                    "which",
+                    "tasu",
+                    "text",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Zero-shot Speech Recognition and Domain Generalization:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We show that TASU alone delivers zero-shot ASR with small accuracy degradation relative to audio-text supervision in in-domain evaluation; when leveraged as a curriculum pre-training stage, it further enhances domain generalization while preserving source-domain accuracy.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "tasu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Multitask Generalization in Speech Understanding:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> TASU enables Speech LLMs to achieve strong zero-shot generalization on speech understanding tasks using limited task-specific text data. On the </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> benchmark&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib18\" title=\"\">18</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, TASU surpasses mainstream alignment paradigms such as SLAM at the same data scale, and further outperforms large-scale speech models including </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SALMONN-13B</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">GLM-4-Voice</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Step-Audio</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "tasks",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">TASU: Audio-Efficient and Generalizable Speech&#8211;Text Alignment:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> LSD achieves nearly 6</span>\n  <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I1.i3.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mo mathsize=\"0.900em\">&#215;</mo>\n      <annotation encoding=\"application/x-tex\">\\times</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> downsampling, greatly accelerating while enhancing semantic extraction and also alleviating overfitting; meanwhile, CPS markedly reduces the reliance on audio data and helps domain generalization in recognition and multitask generalization in speech understanding.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech",
+                    "tasu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Connectionist Temporal Classification (CTC) introduces an explicit </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">blank</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> symbol and marginalizes over all possible alignments, thereby mapping unsegmented acoustic sequences into variable-length label sequences. Its &#8220;collapse&#8221; operation, which removes blanks and merges repetitions, projects frame-level posteriors into a compact representation that can be directly exploited for decoding&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib14\" title=\"\">14</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "posteriors",
+                    "decoding",
+                    "into",
+                    "ctc",
+                    "which"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">There are already methods that leverage CTC posterior probabilities to address the two issues outlined in the Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S1\" style=\"font-size:90%;\" title=\"1 Introduction &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. First, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">AlignFormer</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> uses CTC signals to downsample acoustic features more effectively and&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib19\" title=\"\">19</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, to some extent, demonstrates strong instruction-following ability. However, when relying only on a small amount of paired audio-text data, its multitask performance degrades markedly, with accuracy on multiple-choice tasks approaching chance. In contrast, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LegoSLM</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> employs CTC posteriors as weights to reweight LLM word embeddings for acoustic representation&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib20\" title=\"\">20</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, yielding more structured representations; yet it sacrifices multitask capability and requires large-scale data to re-align the LLM&#8217;s vocabulary.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "posteriors",
+                    "only",
+                    "tasks",
+                    "llm",
+                    "ctc"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Training:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> text transcriptions are tokenized into one-hot vectors and transformed into pseudo-posteriors by the CPS module, which supervise the trainable projector.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vectors",
+                    "transcriptions",
+                    "into",
+                    "onehot",
+                    "projector",
+                    "trainable",
+                    "which",
+                    "text",
+                    "training",
+                    "tokenized"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Inference:</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> raw speech is encoded into real CTC posteriors, refined by LSD, and mapped by the pretrained projector into the frozen LLM.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "inference",
+                    "speech",
+                    "encoded",
+                    "posteriors",
+                    "real",
+                    "mapped",
+                    "into",
+                    "llm",
+                    "ctc",
+                    "projector",
+                    "refined",
+                    "frozen"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this way, TASU enables text-only training while ensuring that both modalities share compact, structured, and semantically aligned posterior representations.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasu",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">CTC decoding typically involves large portions of blank symbols and consecutive repetitions of the same token&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib13\" title=\"\">13</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nDirectly feeding such posteriors into a Speech LLM would propagate redundancy and obscure semantics.\nLSD is designed to compact the sequence while preserving semantic fidelity through two operations.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "posteriors",
+                    "decoding",
+                    "into",
+                    "llm",
+                    "ctc"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To enable training with text-only data, we propose CPS, which converts each ground-truth token into a pseudo-posterior sequence </span>\n  <math alttext=\"\\tilde{\\mathbf{S}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mover accent=\"true\">\n        <mi mathsize=\"0.900em\">&#119826;</mi>\n        <mo mathsize=\"0.900em\">~</mo>\n      </mover>\n      <annotation encoding=\"application/x-tex\">\\tilde{\\mathbf{S}}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. CPS consists of three stochastic stages that mimic the variability of real CTC outputs, as detailed in Algorithm&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#algorithm1\" style=\"font-size:90%;\" title=\"In 3.1 Label-Synchronous Decoding (LSD) &#8227; 3 TEXT-ONLY ALIGNMENT FOR SPEECH UNDERSTANDING &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "ctc",
+                    "into",
+                    "real",
+                    "outputs",
+                    "which",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">This yields the initial sequence </span>\n  <math alttext=\"\\tilde{\\mathbf{S}}=[\\tilde{\\mathbf{p}}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m3\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mover accent=\"true\">\n          <mi mathsize=\"0.900em\">&#119826;</mi>\n          <mo mathsize=\"0.900em\">~</mo>\n        </mover>\n        <mo mathsize=\"0.900em\">=</mo>\n        <mrow>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">[</mo>\n          <mover accent=\"true\">\n            <mi mathsize=\"0.900em\">&#119849;</mi>\n            <mo mathsize=\"0.900em\">~</mo>\n          </mover>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">]</mo>\n        </mrow>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\tilde{\\mathbf{S}}=[\\tilde{\\mathbf{p}}]</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nThe random factor </span>\n  <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m4\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">&#945;</mi>\n      <annotation encoding=\"application/x-tex\">\\alpha</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> ensures that the generated distributions cover a wide range of confidence levels, resembling the uncertainty of real acoustic posteriors.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "real",
+                    "posteriors"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">where </span>\n  <math alttext=\"p_{\\text{ins}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">p</mi>\n        <mtext mathsize=\"0.900em\">ins</mtext>\n      </msub>\n      <annotation encoding=\"application/x-tex\">p_{\\text{ins}}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> controls the insertion rate. For each insertion, a position </span>\n  <math alttext=\"pos\\in{0,\\dots,|\\tilde{\\mathbf{S}}|}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mrow>\n          <mi mathsize=\"0.900em\">p</mi>\n          <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n          <mi mathsize=\"0.900em\">o</mi>\n          <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n          <mi mathsize=\"0.900em\">s</mi>\n        </mrow>\n        <mo mathsize=\"0.900em\">&#8712;</mo>\n        <mrow>\n          <mn mathsize=\"0.900em\">0</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mi mathsize=\"0.900em\" mathvariant=\"normal\">&#8230;</mi>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mrow>\n            <mo maxsize=\"0.900em\" minsize=\"0.900em\" stretchy=\"true\">|</mo>\n            <mover accent=\"true\">\n              <mi mathsize=\"0.900em\">&#119826;</mi>\n              <mo mathsize=\"0.900em\">~</mo>\n            </mover>\n            <mo maxsize=\"0.900em\" minsize=\"0.900em\" stretchy=\"true\">|</mo>\n          </mrow>\n        </mrow>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">pos\\in{0,\\dots,|\\tilde{\\mathbf{S}}|}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> is sampled, and either:\n(i) a duplicate of </span>\n  <math alttext=\"\\tilde{\\mathbf{S}}[\\max(0,pos-1)]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m3\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mover accent=\"true\">\n          <mi mathsize=\"0.900em\">&#119826;</mi>\n          <mo mathsize=\"0.900em\">~</mo>\n        </mover>\n        <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n        <mrow>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">[</mo>\n          <mrow>\n            <mi mathsize=\"0.900em\">max</mi>\n            <mo>&#8289;</mo>\n            <mrow>\n              <mo maxsize=\"0.900em\" minsize=\"0.900em\">(</mo>\n              <mn mathsize=\"0.900em\">0</mn>\n              <mo mathsize=\"0.900em\">,</mo>\n              <mrow>\n                <mrow>\n                  <mi mathsize=\"0.900em\">p</mi>\n                  <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n                  <mi mathsize=\"0.900em\">o</mi>\n                  <mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo>\n                  <mi mathsize=\"0.900em\">s</mi>\n                </mrow>\n                <mo mathsize=\"0.900em\">&#8722;</mo>\n                <mn mathsize=\"0.900em\">1</mn>\n              </mrow>\n              <mo maxsize=\"0.900em\" minsize=\"0.900em\">)</mo>\n            </mrow>\n          </mrow>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">]</mo>\n        </mrow>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\tilde{\\mathbf{S}}[\\max(0,pos-1)]</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, or\n(ii) a blank one-hot vector </span>\n  <math alttext=\"\\mathbf{e}_{\\text{blank}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m4\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">&#119838;</mi>\n        <mtext mathsize=\"0.900em\">blank</mtext>\n      </msub>\n      <annotation encoding=\"application/x-tex\">\\mathbf{e}_{\\text{blank}}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">,\nis inserted with equal probability.\nThis step introduces alignment jitter to capture CTC-specific repetitions and blank separations, mitigating CTC imprecision and enhancing robustness, without which performance degrades notably based on experiments.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "ctc",
+                    "which",
+                    "onehot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">By combining these three operations, CPS transforms clean symbolic labels into noisy multi-frame pseudo-posteriors that closely approximate the distributional properties of real audio. To provide a more intuitive understanding of how TASU differs from other alignment paradigms, Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S3.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 3.2 CTC Posterior Simulation (CPS) &#8227; 3 TEXT-ONLY ALIGNMENT FOR SPEECH UNDERSTANDING &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> provides a concise comparison of alignment paradigms for speech LLMs. In particular, only TASU, trained solely on text, achieves zero-shot performance across multiple tasks with projector parameters trainable only. It is worth noting that LSD achieves an average downsampling ratio of nearly 6 on the experimental data, leading to substantial speedups in both training and inference.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "inference",
+                    "speech",
+                    "understanding",
+                    "only",
+                    "tasks",
+                    "into",
+                    "training",
+                    "real",
+                    "projector",
+                    "trainable",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">With the two core processes described in Sec.&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S3\" style=\"font-size:90%;\" title=\"3 TEXT-ONLY ALIGNMENT FOR SPEECH UNDERSTANDING &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, TASU can enable zero-shot transfer from text-only training to speech inference.\nTo validate its rationality and effectiveness, we conduct a series of controlled experiments with step-by-step verification.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "inference",
+                    "tasu",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Model Architecture.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nSince TASU relies on reliable CTC posterior probabilities, we employ </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SenseVoice-Small</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> as the speech encoder and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Qwen2.5-1.5B</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> as the language model backbone.\nThe projector is instantiated as a </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Linear&#8211;SiLU&#8211;Linear</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> module, with only its parameters being trainable. Bottleneck is typically set to 1024. For broader speech understanding tasks, it is set to 2048, as in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S5.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 5.1 Zero-Shot Recognition and Domain Generalization via TASU Curriculum Pre-training &#8227; 5 Results and Evaluation &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "only",
+                    "tasks",
+                    "ctc",
+                    "projector",
+                    "trainable",
+                    "tasu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Training Data.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nFor ASR, the datasets include </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LibriSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SlideSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">CommonVoice4</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nFor speech-to-text translation (ST), we use </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">CoVoST2 En<math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p3.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math>Zh</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and for spoken instruction understanding, we adopt </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SLURP</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib22\" title=\"\">22</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib24\" title=\"\">24</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib25\" title=\"\">25</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Evaluation Dataset and Setup.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nWe evaluate our model on both ASR and Speech Understanding tasks. For ASR, we report Word Error Rate (WER) on the standard in-domain test sets. To further assess generalization, we employ </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">TED-LIUM 3</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib26\" title=\"\">26</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, testing robustness to a distinct topical and acoustic domain (lectures). For speech understanding task, we assess performance on the </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> benchmark&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib18\" title=\"\">18</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. WER is computed using the official </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Wenet</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> toolkit&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib27\" title=\"\">27</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech",
+                    "tasks"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this section, we present experimental results in two parts. First, we show that TASU enables zero-shot speech recognition and, when used as a curriculum pre-training stage, allows models fine-tuned only on source-domain audio data to generalize effectively to new domains.\nSecond, we evaluate TASU on multitask speech understanding, where it achieves zero-shot generalization from limited text and delivers strong performance on </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> benchmark.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "only",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To evaluate the effectiveness of TASU in speech recognition, we conduct a series of experiments as summarized in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S4.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 4 Experimental Details &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. To enable a controlled comparison, we implement the SLAM alignment strategy proposed in </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SLAM-LLM</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> without performing downsampling to avoid potential performance degradation&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib5\" title=\"\">5</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. On the </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LibriSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> test-clean and test-other sets, TASU shows only less than 1.5% WER gap compared to the baseline, demonstrating that it can achieve reasonable semantic alignment without paired audio&#8211;text training. Furthermore, when </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SlideSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> transcripts are incorporated into TASU training, we observe consistent improvements on </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SlideSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> itself, and even surpass the baseline on </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">TedLium-3</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> in new domain.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "only",
+                    "into",
+                    "tasu",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To further explore scalability, we extend TASU as the pre-training stage of Curriculum Learning. In this stage, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Slidespeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LibriSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> text transcripts are used to simulate CTC posteriors for training, followed by fine-tuning with </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LibriSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> audio&#8211;text pairs. Results show that TASU not only maintains performance on the </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Librispeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> but also yields substantial gains in both </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">TedLium-3</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">Slidespeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. These findings highlight the scalability of TASU in leveraging large-scale text-only resources for domain generalization.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "posteriors",
+                    "only",
+                    "training",
+                    "ctc",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Model architecture and training setup kept unchanged in Table </span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S5.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 5.1 Zero-Shot Recognition and Domain Generalization via TASU Curriculum Pre-training &#8227; 5 Results and Evaluation &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. SLAM refers to the alignment paradigm adopted in </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SLAM-LLM</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Considering the differences in training configurations and convergence issues of the alignment paradigms, results for </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LegoSLM</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">AlignFormer</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> are not reported. We find that LSD can almost fully preserve the semantic information of speech and also alleviates model overfitting, while playing an indispensable role within TASU.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "tasu",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To further investigate the performance of TASU on multi-task speech semantic understanding, we conduct the experiments summarized in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#S5.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 5.1 Zero-Shot Recognition and Domain Generalization via TASU Curriculum Pre-training &#8227; 5 Results and Evaluation &#8227; TASU: Text-Only Alignment for Speech Understanding\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. We still consider SLAM method as the baseline: using hidden states as projection features without downsampling, which reflects the prevalent alignment paradigm in most existing Speech LLMs. Given that the SLAM architecture fails to develop multitask capabilities when trained on limited task-specific data, we expanded the training data to ensure a fair comparison: </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">LibriSpeech</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">CommonVoice4</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for ASR, </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">CoVoST2 En<math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math>Zh</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for ST, and </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">SLURP</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for instruction understanding. TASU only uses text, while TASU (+SFT) uses half of audio-text pairs for the second-stage SFT. In addition, to provide a more intuitive assessment of TASU, we further compare it with the results of other Speech LLMs in </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> benchmark&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.03310v1#bib.bib18\" title=\"\">18</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "only",
+                    "training",
+                    "which",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As we can see, TASU demonstrates strong zero-shot multitask generalization for speech understanding: without any audio&#8211;text pairs, it achieves better result on </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">MMSU</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> than SLAM. When half of audio-text data is incorporated for SFT, the model shows rapid improvement on the ASR and ST tasks. Notably, TASU even surpasses several large-scale Speech LLMs, underscoring its efficiency as a lightweight yet effective paradigm for speech understanding.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech",
+                    "tasu",
+                    "tasks"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this work, we propose TASU, a novel alignment paradigm for Speech LLMs trained solely on text data. On the one hand, TASU enables zero-shot speech recognition with only a minor accuracy drop. It can further serve as the first stage of curriculum learning in ASR, improving performance on new target domains while preserving recognition accuracy on the source domain. On the other hand, TASU delivers strong zero-shot multitask speech understanding with limited text data, highlighting its potential as a simple yet effective paradigm for scalable and generalizable Speech LLMs.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "understanding",
+                    "only",
+                    "tasu",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In the future, we aim to further refine the CPS approach to narrow the gap between real CTC posteriors derived from audio and pseudo-posteriors generated from text. This will enable a more accurate audio-free alignment paradigm. Moreover, by incorporating large-scale text data, we plan to explore the scalability and performance of this alignment method on a greater scale.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "real",
+                    "posteriors",
+                    "ctc",
+                    "text"
+                ]
+            }
+        ]
+    }
+}

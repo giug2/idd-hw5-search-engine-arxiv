@@ -1,0 +1,345 @@
+{
+    "S1.F1": {
+        "source_file": "Bridging the Gap between Training and Inference in LM-based TTS models",
+        "image_url": "https://arxiv.org/html/2509.17021v1/frame.png",
+        "caption": "Fig. 1: The proposed Hybrid framework.",
+        "informative_terms_identified": [
+            "framework",
+            "hybrid"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To mitigate exposure bias, we propose a prompt-guided hybrid training scheme that gradually transitions from fully guided supervision to self-conditioned generation. As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, our approach operates iteratively within each training step. First, it replaces a portion of the GT input tokens with self-generated tokens in a previous pass. Concurrently, we use a prompt protection strategy to ensure a specific part of the GT tokens is always preserved. This controlled exposure not only maintains training stability but also enhances generalization. We further introduce an adaptive free running strategy guided by End-of-Sequence (EOS) prediction. If the EOS is mispredicted, we end free running early by masking subsequent steps and proceed directly to gradient updates.\nOur experimental results demonstrate that the iterative hybrid training strategy enhances the model&#8217;s dependency on its token history, compensating for the absence of GT tokens during inference. This approach also narrows the gap between training and inference modes, leading to more stable and coherent sequence modeling.</p>\n\n",
+            "<p class=\"ltx_p\">Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right) illustrates our training framework in comparison with standard teacher forcing training (left). We propose a prompt-guided hybrid training scheme that integrates teacher forcing with free running. The basic idea of our training strategy is to iteratively put the self-generated tokens into the LLM being trained to simulate auto-regressive inference process and back propagate both teacher forcing loss and accumulated free running loss in a single training step. To further strengthen its prompt following ability, we randomly replace the starting speech tokens with GT tokens in later iterations. This design leverages the stability of teacher forcing while gradually introducing self-generated prefixes, thereby improving robustness against exposure bias.</p>\n\n",
+            "<p class=\"ltx_p\">The overall training objective is influenced by two components: teacher forcing loss, which provides stable supervision using GT tokens, and a weighted sum of free running losses, which improves prediction quality under autoregressive conditions. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right), the first iteration of our training framework involves computing the teacher forcing loss <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math>, identical to the cross-entropy loss in conventional LLM training. <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math> can be described as follow:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We propose a novel training framework for LM-based TTS to align the training process with autoregressive inference. By constructing a hybrid input that mixes GT tokens with the model&#8217;s self-generated tokens, our method effectively mitigates exposure bias. This strategy effectively simulates the data distribution encountered during inference. The prompt protection mechanism guides the model to gradually shift from supervised guidance to self-sufficient autoregressive generation. Concurrently, it offers a reliable feedback EOS signal for dynamically tng the free-running scheduling strategy.\nIn our experiments, we first visualize the significant exposure bias between the training and inference stages. Furthermore, the framework alleviates the problem of the model struggling to predict the EOS token during free running generation, a classic symptom of exposure bias. The results demonstrate that our proposed training framework significantly improves speech synthesis quality, especially for long-form speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "hybrid"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "Bridging the Gap between Training and Inference in LM-based TTS models",
+        "image_url": "https://arxiv.org/html/2509.17021v1/ABtest.png",
+        "caption": "Fig. 2: Objective Evaluation",
+        "informative_terms_identified": [
+            "evaluation",
+            "objective"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">For objective evaluation, we evaluate our method using both mean opinion score (MOS) and A/B preference tests with human listeners.\nThirty samples are obtained from the LibriSpeech test-clean set, and the MOS results are shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F2\" title=\"Figure 2 &#8227; 3.3 Objective evaluation &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our method outperforms teacher forcing training and yield comparable results with GT speech samples.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S3.F3": {
+        "source_file": "Bridging the Gap between Training and Inference in LM-based TTS models",
+        "image_url": "https://arxiv.org/html/2509.17021v1/exposure_max.png",
+        "caption": "Fig. 3: Exposure bias illustrated by accuracy gap between teacher forcing and free running.",
+        "informative_terms_identified": [
+            "free",
+            "gap",
+            "forcing",
+            "accuracy",
+            "teacher",
+            "running",
+            "bias",
+            "exposure",
+            "between"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To visualize the impact of exposure bias, we compute token-level accuracy by comparing the predicted token index with the ground-truth token index at each position and calculating the proportion of exact matches.\nAs shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F3\" title=\"Figure 3 &#8227; 3.4 Visualization of exposure bias &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the blue line indicates the token prediction accuracy under teacher forcing, where GT tokens are used as context, while the yellow line corresponds to the accuracy when tokens are generated auto-regressively. We point out that speech token accuracy is inherently low, which is determined by the nature of speech token. To be specific, after speech is tokenized, similar sounds can be represented by different speech tokens, making sound-token mapping is not strictly one-to-one.</p>\n\n",
+            "<p class=\"ltx_p\">Despite the low accuracy, the relative difference between teacher forcing and free running inference remains informative for analyzing exposure bias.\nAs demonstrated in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F3\" title=\"Figure 3 &#8227; 3.4 Visualization of exposure bias &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, a clear accuracy gap appears between teacher forcing (blue) and free-running inference (yellow). This discrepancy highlights the presence of exposure bias. In contrast, our hybrid-trained model not only boosts the absolute accuracy in both modes but also significantly narrows the gap between them.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in text-to-speech (TTS) have shown that language model (LM) based systems offer competitive performance compared to traditional approaches. However, in training, TTS models use ground-truth (GT) tokens as prefixes to predict the next token, while in inference these tokens are not available, a gap between training and inference that is often neglected. In this study, we propose a prompt-guided hybrid training scheme to mitigate exposure bias in popular LM-based TTS systems. Our core idea is to adopt a hybrid training paradigm that combines teacher forcing with free running, thereby introducing self-generated tokens into the training process. This makes the training mode more consistent with inference, reducing the training&#8211;inference gap. In addition, we incorporate an EOS prediction mechanism during training to detect incorrect sequence termination and adaptively control the free running process. Experimental results provide a comprehensive evaluation of the impact of exposure bias on LM-based TTS, and demonstrate that our method effectively narrows the training&#8211;inference gap, thereby improving the quality of synthesized long-form speech.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "gap",
+                    "forcing",
+                    "running",
+                    "teacher",
+                    "bias",
+                    "exposure",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Index Terms<span class=\"ltx_text ltx_font_upright\">&#8212;&#8201;</span></span>\nExposure bias, TTS, training - inference gap</p>\n\n",
+                "matched_terms": [
+                    "gap",
+                    "bias",
+                    "exposure"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent years have witnessed rapid advancements in TTS synthesis models, enabling them to generate highly natural and expressive speech.<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib2\" title=\"\">2</a>]</cite>. These models commonly discretize speech signals into token sequences and adopt autoregressive next - token prediction, leveraging the generative capabilities of pre-trained Large Language Models (LLMs) for sequence modeling <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib3\" title=\"\">3</a>]</cite>. Most LM-based TTS models<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib6\" title=\"\">6</a>]</cite> suffer from a fundamental limitation, the training - inference gap, commonly known as exposure bias<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib8\" title=\"\">8</a>]</cite>. While training relies on teacher forcing with GT tokens as input, inference requires the model to generate tokens autoregressively based on its own previous predictions<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib3\" title=\"\">3</a>]</cite>. This discrepancy between training and inference often leads to cascading prediction errors.</p>\n\n",
+                "matched_terms": [
+                    "gap",
+                    "forcing",
+                    "teacher",
+                    "exposure",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Exposure bias is a common challenge in autoregressive sequence modeling tasks<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib11\" title=\"\">11</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib12\" title=\"\">12</a>]</cite>.\nIn text generation tasks such as neural machine translation<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib10\" title=\"\">10</a>]</cite>, exposure bias may lead to semantic drift. To alleviate exposure bias, scheduled sampling <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib13\" title=\"\">13</a>]</cite> is proposed to mitigate the training-inference gap.\nHowever, its impact is magnified in speech synthesis due to the high density of acoustic tokens.\nUnlike text, token-based speech synthesis operates at a much higher temporal resolution, where minor errors are not as easily tolerated. This high resolution typically requires 50&#8211;100 discrete tokens per second to represent continuous speech.\nA single syllable or phoneme is often mapped to several tokens. Consequently, even minor prediction errors can spread rapidly and negatively impact the listener&#8217;s experience.\nMoreover, speech exhibits additional attributes such as speaking rate and prosody, which are absent in textual representations but play a important role in evaluation in TTS.\nThis effect amplifies the impact of exposure bias, particularly for long-form speech synthesis.<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib15\" title=\"\">15</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "gap",
+                    "bias",
+                    "exposure"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The manifestations of exposure bias are diverse. First, TTS models tend to generate speech at an accelerated speed during long utterance synthesis. The second issue is EOS misprediction, which results in early stopping or repeating parts of the speech. Additionally, the synthesized speech exhibits excessive prosodic flatness relative to ground truth. Thus, training-inference gap is obviously a significant challenge for LM-based TTS models.</p>\n\n",
+                "matched_terms": [
+                    "gap",
+                    "bias",
+                    "exposure"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To mitigate exposure bias, we propose a prompt-guided hybrid training scheme that gradually transitions from fully guided supervision to self-conditioned generation. As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, our approach operates iteratively within each training step. First, it replaces a portion of the GT input tokens with self-generated tokens in a previous pass. Concurrently, we use a prompt protection strategy to ensure a specific part of the GT tokens is always preserved. This controlled exposure not only maintains training stability but also enhances generalization. We further introduce an adaptive free running strategy guided by End-of-Sequence (EOS) prediction. If the EOS is mispredicted, we end free running early by masking subsequent steps and proceed directly to gradient updates.\nOur experimental results demonstrate that the iterative hybrid training strategy enhances the model&#8217;s dependency on its token history, compensating for the absence of GT tokens during inference. This approach also narrows the gap between training and inference modes, leading to more stable and coherent sequence modeling.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "gap",
+                    "running",
+                    "bias",
+                    "exposure",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right) illustrates our training framework in comparison with standard teacher forcing training (left). We propose a prompt-guided hybrid training scheme that integrates teacher forcing with free running. The basic idea of our training strategy is to iteratively put the self-generated tokens into the LLM being trained to simulate auto-regressive inference process and back propagate both teacher forcing loss and accumulated free running loss in a single training step. To further strengthen its prompt following ability, we randomly replace the starting speech tokens with GT tokens in later iterations. This design leverages the stability of teacher forcing while gradually introducing self-generated prefixes, thereby improving robustness against exposure bias.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "forcing",
+                    "running",
+                    "teacher",
+                    "bias",
+                    "exposure"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Moreover, when prompt protection strategy is enabled and the first few speech tokens of input sequence is replaced by GT tokens, the replaced portion also provides an additional teacher forcing loss to further stabilize training process. As training progresses, we increase the number of replaced tokens to make a smooth shift from initial teacher forcing dominated training to self-generated token dominated training. This fosters a smooth transition, guiding the model toward robust and reliable self-generation.</p>\n\n",
+                "matched_terms": [
+                    "forcing",
+                    "teacher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Earlier studies have found that teacher forcing demonstrates greater stability and faster convergence compared to free running. Therefore, too many iterations of free running may interfere with model convergence. To address this issue, adaptive free running scheduling via EOS prediction is introduced as a compensatory solution.\n</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "forcing",
+                    "running",
+                    "teacher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We observe that the predicted EOS token serves as a reliable indicator of exposure bias and training stability, allowing dynamic adjustment of free running iterations. When the EOS token is not correctly predicted, it suggests potential exposure bias or model degradation during training. In such cases, the model should increase its reliance on ground-truth supervision to correct its learning trajectory in subsequent steps. Conversely, when EOS token is successfully predicted in several consecutive training steps, the model increases the number of free running iterations to better align the inference procedure. This adaptive mechanism dynamically adjusts the number of free running iterations based on output quality, thereby improving both training efficiency and generation stability.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "bias",
+                    "exposure",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The overall training objective is influenced by two components: teacher forcing loss, which provides stable supervision using GT tokens, and a weighted sum of free running losses, which improves prediction quality under autoregressive conditions. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right), the first iteration of our training framework involves computing the teacher forcing loss <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math>, identical to the cross-entropy loss in conventional LLM training. <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math> can be described as follow:</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "forcing",
+                    "running",
+                    "teacher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This free running loss <math alttext=\"\\mathcal{L}_{\\text{FR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>FR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{FR}}</annotation></semantics></math> is a sum of two terms. The first term refers to the cross entropy between GT and the first <math alttext=\"T_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">T_{1}</annotation></semantics></math> speech tokens of model output. These tokens are generated based on GT prefixes <math alttext=\"y_{i&lt;t}^{\\text{gt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m3\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><mi>i</mi><mo>&lt;</mo><mi>t</mi></mrow><mtext>gt</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{i&lt;t}^{\\text{gt}}</annotation></semantics></math> and <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m4\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math>. The second term refers to the cross entropy between GT and the rest of the speech tokens which is generated based on GT tokens <math alttext=\"y_{i&lt;T_{1}}^{\\text{gt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m5\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><mi>i</mi><mo>&lt;</mo><msub><mi>T</mi><mn>1</mn></msub></mrow><mtext>gt</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{i&lt;T_{1}}^{\\text{gt}}</annotation></semantics></math>, predicted tokens <math alttext=\"y_{T_{1}&lt;i&lt;t}^{\\text{pred}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m6\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>&lt;</mo><mi>i</mi><mo>&lt;</mo><mi>t</mi></mrow><mtext>pred</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{T_{1}&lt;i&lt;t}^{\\text{pred}}</annotation></semantics></math>, and <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m7\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math>. Our overall training objective can be formulated as follow:</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "between",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathcal{L}_{\\text{FR}}^{(n)}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m1\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>FR</mtext><mrow><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{FR}}^{(n)}</annotation></semantics></math> represents the free running loss from iteration <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>, and <math alttext=\"w_{n}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m3\" intent=\":literal\"><semantics><msub><mi>w</mi><mi>n</mi></msub><annotation encoding=\"application/x-tex\">w_{n}</annotation></semantics></math> is its associated weight. We use the weighted average of the loss from each iteration as the final loss to balance the effects across iterations.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.T1\" title=\"Table 1 &#8227; 3.2 Subjective evaluation &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, we compare against the baselines IndexTTS<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#bib.bib20\" title=\"\">20</a>]</cite>, CosyVoice and CosyVoice2. CosyVoice-TF denotes fine-tuning the pretrained CosyVoice model using the standard teacher forcing scheme. CosyVoice2-TF is defined analogously. On CosyVoice2, our prompt-guided hybrid training strategy achieves the best overall performance. It yields superior Word Error Rate (WER) and speaker smilarity performance over baselines on LibriSpeech and relatively smaller improvement on Seed-TTS (where utterances are <math alttext=\"&lt;10s\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi/><mo>&lt;</mo><mrow><mn>10</mn><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi></mrow></mrow><annotation encoding=\"application/x-tex\">&lt;10s</annotation></semantics></math>). The relatively small improvement on Seed-TTS dataset may be attributed to the shorter duration of its speech samples, as our method tends to perform better on longer speech samples by mitigating the accumulated error caused by exposure bias. It is also quite intuitive that longer sequence is easier to suffer from accumulated error in the process of autoregressive generation.</p>\n\n",
+                "matched_terms": [
+                    "forcing",
+                    "bias",
+                    "exposure",
+                    "teacher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For objective evaluation, we evaluate our method using both mean opinion score (MOS) and A/B preference tests with human listeners.\nThirty samples are obtained from the LibriSpeech test-clean set, and the MOS results are shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F2\" title=\"Figure 2 &#8227; 3.3 Objective evaluation &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our method outperforms teacher forcing training and yield comparable results with GT speech samples.</p>\n\n",
+                "matched_terms": [
+                    "forcing",
+                    "teacher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate EOS guided adaptive iteration introduced in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S2.SS2\" title=\"2.2 Adaptive free running scheduling via EOS prediction &#8227; 2 proposed approach &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">2.2</span></a>, we track the number of iterations before the model incorrectly predicts a premature EOS token.\nExperiments are conducted under different maximum iteration settings (2, 4, and 6). As shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F4\" title=\"Figure 4 &#8227; 3.5 Validation of EOS-guided scheduling &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, during the early phase of hybrid training, premature EOS often occurs within the first few iterations, suggesting that the model is not fully prepared for free running. As training goes on, the occurrence of premature EOS shifts to later steps, suggesting improved robustness under free running conditions. Based on this observation, we increase the number of free running iterations when premature EOS predictions are less frequent. Notably, despite the gradual increase in iterations during training, our method requires only 1.5&#215; the computation of the baseline and converges in fewer steps.\nThis training efficiency attributed to the fact that we only do backward pass once in a training step.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a novel training framework for LM-based TTS to align the training process with autoregressive inference. By constructing a hybrid input that mixes GT tokens with the model&#8217;s self-generated tokens, our method effectively mitigates exposure bias. This strategy effectively simulates the data distribution encountered during inference. The prompt protection mechanism guides the model to gradually shift from supervised guidance to self-sufficient autoregressive generation. Concurrently, it offers a reliable feedback EOS signal for dynamically tng the free-running scheduling strategy.\nIn our experiments, we first visualize the significant exposure bias between the training and inference stages. Furthermore, the framework alleviates the problem of the model struggling to predict the EOS token during free running generation, a classic symptom of exposure bias. The results demonstrate that our proposed training framework significantly improves speech synthesis quality, especially for long-form speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running",
+                    "bias",
+                    "exposure",
+                    "between"
+                ]
+            }
+        ]
+    },
+    "S3.F4": {
+        "source_file": "Bridging the Gap between Training and Inference in LM-based TTS models",
+        "image_url": "https://arxiv.org/html/2509.17021v1/iteration.png",
+        "caption": "Fig. 4: Frequency of early termination vs. iteration number. The rising trend indicates improved EOS error detection and adaptive free running, with increased quality control at the cost of computation.",
+        "informative_terms_identified": [
+            "early",
+            "computation",
+            "increased",
+            "cost",
+            "detection",
+            "rising",
+            "eos",
+            "indicates",
+            "improved",
+            "free",
+            "running",
+            "error",
+            "quality",
+            "termination",
+            "number",
+            "iteration",
+            "control",
+            "frequency",
+            "adaptive",
+            "trend"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To validate EOS guided adaptive iteration introduced in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S2.SS2\" title=\"2.2 Adaptive free running scheduling via EOS prediction &#8227; 2 proposed approach &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">2.2</span></a>, we track the number of iterations before the model incorrectly predicts a premature EOS token.\nExperiments are conducted under different maximum iteration settings (2, 4, and 6). As shown in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F4\" title=\"Figure 4 &#8227; 3.5 Validation of EOS-guided scheduling &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, during the early phase of hybrid training, premature EOS often occurs within the first few iterations, suggesting that the model is not fully prepared for free running. As training goes on, the occurrence of premature EOS shifts to later steps, suggesting improved robustness under free running conditions. Based on this observation, we increase the number of free running iterations when premature EOS predictions are less frequent. Notably, despite the gradual increase in iterations during training, our method requires only 1.5&#215; the computation of the baseline and converges in fewer steps.\nThis training efficiency attributed to the fact that we only do backward pass once in a training step.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advancements in text-to-speech (TTS) have shown that language model (LM) based systems offer competitive performance compared to traditional approaches. However, in training, TTS models use ground-truth (GT) tokens as prefixes to predict the next token, while in inference these tokens are not available, a gap between training and inference that is often neglected. In this study, we propose a prompt-guided hybrid training scheme to mitigate exposure bias in popular LM-based TTS systems. Our core idea is to adopt a hybrid training paradigm that combines teacher forcing with free running, thereby introducing self-generated tokens into the training process. This makes the training mode more consistent with inference, reducing the training&#8211;inference gap. In addition, we incorporate an EOS prediction mechanism during training to detect incorrect sequence termination and adaptively control the free running process. Experimental results provide a comprehensive evaluation of the impact of exposure bias on LM-based TTS, and demonstrate that our method effectively narrows the training&#8211;inference gap, thereby improving the quality of synthesized long-form speech.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "control",
+                    "eos",
+                    "running",
+                    "quality",
+                    "termination"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The manifestations of exposure bias are diverse. First, TTS models tend to generate speech at an accelerated speed during long utterance synthesis. The second issue is EOS misprediction, which results in early stopping or repeating parts of the speech. Additionally, the synthesized speech exhibits excessive prosodic flatness relative to ground truth. Thus, training-inference gap is obviously a significant challenge for LM-based TTS models.</p>\n\n",
+                "matched_terms": [
+                    "eos",
+                    "early"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To mitigate exposure bias, we propose a prompt-guided hybrid training scheme that gradually transitions from fully guided supervision to self-conditioned generation. As illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, our approach operates iteratively within each training step. First, it replaces a portion of the GT input tokens with self-generated tokens in a previous pass. Concurrently, we use a prompt protection strategy to ensure a specific part of the GT tokens is always preserved. This controlled exposure not only maintains training stability but also enhances generalization. We further introduce an adaptive free running strategy guided by End-of-Sequence (EOS) prediction. If the EOS is mispredicted, we end free running early by masking subsequent steps and proceed directly to gradient updates.\nOur experimental results demonstrate that the iterative hybrid training strategy enhances the model&#8217;s dependency on its token history, compensating for the absence of GT tokens during inference. This approach also narrows the gap between training and inference modes, leading to more stable and coherent sequence modeling.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "early",
+                    "adaptive",
+                    "eos",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right) illustrates our training framework in comparison with standard teacher forcing training (left). We propose a prompt-guided hybrid training scheme that integrates teacher forcing with free running. The basic idea of our training strategy is to iteratively put the self-generated tokens into the LLM being trained to simulate auto-regressive inference process and back propagate both teacher forcing loss and accumulated free running loss in a single training step. To further strengthen its prompt following ability, we randomly replace the starting speech tokens with GT tokens in later iterations. This design leverages the stability of teacher forcing while gradually introducing self-generated prefixes, thereby improving robustness against exposure bias.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Earlier studies have found that teacher forcing demonstrates greater stability and faster convergence compared to free running. Therefore, too many iterations of free running may interfere with model convergence. To address this issue, adaptive free running scheduling via EOS prediction is introduced as a compensatory solution.\n</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "eos",
+                    "adaptive",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We observe that the predicted EOS token serves as a reliable indicator of exposure bias and training stability, allowing dynamic adjustment of free running iterations. When the EOS token is not correctly predicted, it suggests potential exposure bias or model degradation during training. In such cases, the model should increase its reliance on ground-truth supervision to correct its learning trajectory in subsequent steps. Conversely, when EOS token is successfully predicted in several consecutive training steps, the model increases the number of free running iterations to better align the inference procedure. This adaptive mechanism dynamically adjusts the number of free running iterations based on output quality, thereby improving both training efficiency and generation stability.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "adaptive",
+                    "eos",
+                    "running",
+                    "quality",
+                    "number"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The overall training objective is influenced by two components: teacher forcing loss, which provides stable supervision using GT tokens, and a weighted sum of free running losses, which improves prediction quality under autoregressive conditions. As depicted in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>(right), the first iteration of our training framework involves computing the teacher forcing loss <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math>, identical to the cross-entropy loss in conventional LLM training. <math alttext=\"\\mathcal{L}_{\\text{TF}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>TF</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{TF}}</annotation></semantics></math> can be described as follow:</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "iteration",
+                    "quality",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This free running loss <math alttext=\"\\mathcal{L}_{\\text{FR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m1\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>FR</mtext></msub><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{FR}}</annotation></semantics></math> is a sum of two terms. The first term refers to the cross entropy between GT and the first <math alttext=\"T_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">T_{1}</annotation></semantics></math> speech tokens of model output. These tokens are generated based on GT prefixes <math alttext=\"y_{i&lt;t}^{\\text{gt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m3\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><mi>i</mi><mo>&lt;</mo><mi>t</mi></mrow><mtext>gt</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{i&lt;t}^{\\text{gt}}</annotation></semantics></math> and <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m4\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math>. The second term refers to the cross entropy between GT and the rest of the speech tokens which is generated based on GT tokens <math alttext=\"y_{i&lt;T_{1}}^{\\text{gt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m5\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><mi>i</mi><mo>&lt;</mo><msub><mi>T</mi><mn>1</mn></msub></mrow><mtext>gt</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{i&lt;T_{1}}^{\\text{gt}}</annotation></semantics></math>, predicted tokens <math alttext=\"y_{T_{1}&lt;i&lt;t}^{\\text{pred}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m6\" intent=\":literal\"><semantics><msubsup><mi>y</mi><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>&lt;</mo><mi>i</mi><mo>&lt;</mo><mi>t</mi></mrow><mtext>pred</mtext></msubsup><annotation encoding=\"application/x-tex\">y_{T_{1}&lt;i&lt;t}^{\\text{pred}}</annotation></semantics></math>, and <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p5.m7\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math>. Our overall training objective can be formulated as follow:</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\mathcal{L}_{\\text{FR}}^{(n)}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m1\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#8466;</mi><mtext>FR</mtext><mrow><mo stretchy=\"false\">(</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{L}_{\\text{FR}}^{(n)}</annotation></semantics></math> represents the free running loss from iteration <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>, and <math alttext=\"w_{n}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p7.m3\" intent=\":literal\"><semantics><msub><mi>w</mi><mi>n</mi></msub><annotation encoding=\"application/x-tex\">w_{n}</annotation></semantics></math> is its associated weight. We use the weighted average of the loss from each iteration as the final loss to balance the effects across iterations.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "iteration",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite the low accuracy, the relative difference between teacher forcing and free running inference remains informative for analyzing exposure bias.\nAs demonstrated in Figure &#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.F3\" title=\"Figure 3 &#8227; 3.4 Visualization of exposure bias &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, a clear accuracy gap appears between teacher forcing (blue) and free-running inference (yellow). This discrepancy highlights the presence of exposure bias. In contrast, our hybrid-trained model not only boosts the absolute accuracy in both modes but also significantly narrows the gap between them.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "running"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As summarized in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.17021v1#S3.T2\" title=\"Table 2 &#8227; 3.6 Ablation Study &#8227; 3 Experiments &#8227; Bridging the Gap between Training and Inference in LM-based TTS models\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we conduct an ablation study to validate the effectiveness. The results show that removing either prompt protection or EOS adaptive leads to higher WER and lower speaker similarity. The degradation is more pronounced when Prompt Protection is removed.</p>\n\n",
+                "matched_terms": [
+                    "eos",
+                    "adaptive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a novel training framework for LM-based TTS to align the training process with autoregressive inference. By constructing a hybrid input that mixes GT tokens with the model&#8217;s self-generated tokens, our method effectively mitigates exposure bias. This strategy effectively simulates the data distribution encountered during inference. The prompt protection mechanism guides the model to gradually shift from supervised guidance to self-sufficient autoregressive generation. Concurrently, it offers a reliable feedback EOS signal for dynamically tng the free-running scheduling strategy.\nIn our experiments, we first visualize the significant exposure bias between the training and inference stages. Furthermore, the framework alleviates the problem of the model struggling to predict the EOS token during free running generation, a classic symptom of exposure bias. The results demonstrate that our proposed training framework significantly improves speech synthesis quality, especially for long-form speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "free",
+                    "eos",
+                    "quality",
+                    "running"
+                ]
+            }
+        ]
+    }
+}

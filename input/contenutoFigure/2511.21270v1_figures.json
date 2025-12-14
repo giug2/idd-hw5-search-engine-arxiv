@@ -1,0 +1,151 @@
+{
+    "S1.F1": {
+        "source_file": "Multi-Reward GRPO for Stable and Prosodic Single-Codebook TTS LLMs at Scale",
+        "image_url": "https://arxiv.org/html/2511.21270v1/x1.png",
+        "caption": "Figure 1. Overview of our framework.\nMultiple rollouts are evaluated with WER/SIM, length penalty, entropy regularization, and an LLM-annotated prosody alignment reward to guide policy updates.",
+        "informative_terms_identified": [
+            "framework",
+            "policy",
+            "prosody",
+            "multiple",
+            "wersim",
+            "penalty",
+            "regularization",
+            "updates",
+            "guide",
+            "overview",
+            "llmannotated",
+            "length",
+            "alignment",
+            "reward",
+            "evaluated",
+            "rollouts",
+            "entropy"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in Large Language Models (LLMs) have transformed text-to-speech (TTS) synthesis, inspiring autoregressive frameworks that represent speech as sequences of discrete codec tokens. Among them, single-codebook TTS LLMs have emerged as compact and streamable architectures that jointly model semantic and acoustic integration. However, despite their efficiency, these models often exhibit unstable prosody, speaker drift, and degraded naturalness. To address these issues, we propose a multi-reward Group Relative Policy Optimization (GRPO) framework that directly optimizes the token generation policy of single-codebook TTS LLMs. Beyond standard intelligibility and speaker similarity objectives, our design integrates three rule-based rewards: a length penalty for duration consistency, an entropy regularization reward for decoding stability, and an LLM-annotated prosody alignment reward that explicitly supervises rhythm. In this prosody reward, an external reasoning LLM predicts multiple plausible pause structures via in-context learning, providing a human-preference-aligned supervisory signal for GRPO training. To assess universality, we further attach a flow-matching (FM) decoder on top of the GRPO-optimized AR backbone and observe consistent additional gains, indicating that our reinforcement optimization enhances the intrinsic AR policy. We further conduct a scalability analysis across data sizes and model scales, revealing that the proposed method consistently enhances prosodic stability, speaker similarity, and overall speech naturalness in single-codebook TTS LLMs.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "policy",
+                    "prosody",
+                    "multiple",
+                    "regularization",
+                    "penalty",
+                    "llmannotated",
+                    "length",
+                    "alignment",
+                    "reward",
+                    "entropy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in Large Language Models (LLMs) have reshaped text-to-speech (TTS) synthesis, enabling autoregressive (AR) decoding over discrete codec tokens. Among these, single-codebook TTS LLMs stand out for their compactness and native streaming capability. Currently, zero-shot TTS systems span three main families: (1) LLM-based acoustic-token models with strong linguistic&#8211;acoustic modeling <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025maskgct</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025spark</span>)</cite>; (2) diffusion-based architectures that implicitly learn text&#8211;speech alignment with fine-grained control <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2025f5</span>)</cite>; and (3) coarse-to-fine pipelines where AR LLMs predict semantic tokens refined by diffusion or flow-matching modules <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">anastassiou2024seed</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2025cosyvoice</span>)</cite>. Within the single-codebook paradigm, semantic-focused systems rely on secondary models to recover acoustic detail, whereas joint semantic&#8211;acoustic systems directly generate tokens encoding both linguistic and paralinguistic cues <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ye2025llasa</span>)</cite>. While the latter offers more expressivity and lower latency, unified modeling often introduces suboptimal decoding policies, leading to prosody instability, speaker drift, and weakened temporal controllability. Reinforcement learning (RL) provides a natural mechanism to directly optimize these AR policies but remains underexplored.</p>\n\n",
+                "matched_terms": [
+                    "prosody",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Prior RL efforts include uncertainty aware learning <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024enhancing</span>)</cite> and synthetic positive construction via reverse inference optimization <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2024robust</span>)</cite>. Differentiable reward frameworks such as DiffRO <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gao2025differentiable</span>)</cite> further enable supervised optimization with programmatic objectives, though DPO-style methods are sensitive to preference noise and costly to scale. In contrast, Group Relative Policy Optimization (GRPO) <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shao2024deepseekmath</span>)</cite> stabilizes learning through group-wise advantage normalization and avoids dependence on dense preference labels.</p>\n\n",
+                "matched_terms": [
+                    "policy",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce a multi-reward GRPO framework that integrates objective metrics with three rule-based rewards: a length penalty for duration consistency, an entropy reward for stable decoding, and an LLM-annotated Prosody Alignment Reward for explicit rhythm supervision. To obtain prosodic templates, a reasoning LLM (e.g., DeepSeek-R1 <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">guo2025deepseek</span>)</cite>) generates multiple plausible pause patterns via in-context learning offline; these templates then guide online optimization toward natural rhythm. We further conduct a systematic scaling study across 1K&#8211;1M data and 1B&#8211;8B models, revealing a strong correlation between RL effectiveness and data scale. Experiments show robust gains in prosodic stability, speaker similarity, and naturalness. Moreover, adding a Flow Matching refinement module after RL continues to yield improvements, confirming that our method strengthens the intrinsic AR policy in a manner complementary to acoustic refiners.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "policy",
+                    "prosody",
+                    "multiple",
+                    "penalty",
+                    "guide",
+                    "llmannotated",
+                    "length",
+                    "alignment",
+                    "reward",
+                    "entropy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a reinforcement learning framework based on Group Relative Policy Optimization (GRPO) to enhance the stability, prosody, and speaker similarity of single-codebook TTS large language models (LLMs).\nStarting from a single-codebook LLM as a policy <math alttext=\"\\pi_{\\theta}(a_{t}|s_{t})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>&#960;</mi><mi>&#952;</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><msub><mi>a</mi><mi>t</mi></msub><mo fence=\"false\">|</mo><msub><mi>s</mi><mi>t</mi></msub></mrow><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\pi_{\\theta}(a_{t}|s_{t})</annotation></semantics></math>, we employ GRPO to optimize the model with multiple complementary rewards that reflect both objective and rule-based criteria.\nThe objective is to maximize the expected cumulative reward across the generated trajectory <math alttext=\"\\tau=(s_{1},a_{1},\\ldots,s_{T},a_{T})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m2\" intent=\":literal\"><semantics><mrow><mi>&#964;</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>s</mi><mi>T</mi></msub><mo>,</mo><msub><mi>a</mi><mi>T</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\tau=(s_{1},a_{1},\\ldots,s_{T},a_{T})</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "policy",
+                    "prosody",
+                    "multiple",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\alpha_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m4\" intent=\":literal\"><semantics><msub><mi>&#945;</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">\\alpha_{i}</annotation></semantics></math> are tunable scaling coefficients that balance the contribution of different reward terms. The policy parameters <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m5\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> are updated via GRPO to maximize <math alttext=\"\\mathcal{J}(\\theta)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS1.p1.m6\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#119973;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{J}(\\theta)</annotation></semantics></math> under the combined signal.</p>\n\n",
+                "matched_terms": [
+                    "policy",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To prevent premature stopping or overly long generations&#8212;a common instability issue in AR TTS&#8212;we constrain the generated speech duration <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> relative to a target <math alttext=\"T_{\\text{target}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mtext>target</mtext></msub><annotation encoding=\"application/x-tex\">T_{\\text{target}}</annotation></semantics></math>.\nThe target is estimated from the reference text length and the reference speech speed ratio.\nGiven a tolerance range <math alttext=\"[a,b]\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS3.p1.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[a,b]</annotation></semantics></math>, the reward is defined as:</p>\n\n",
+                "matched_terms": [
+                    "length",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To encourage stable and deterministic token generation, we regularize the policy entropy along the generation trajectory.\nLet <math alttext=\"\\bar{H}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS4.p1.m1\" intent=\":literal\"><semantics><mover accent=\"true\"><mi>H</mi><mo>&#175;</mo></mover><annotation encoding=\"application/x-tex\">\\bar{H}</annotation></semantics></math> denote the average token-level entropy across the sequence, and <math alttext=\"H_{\\text{target}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS4.p1.m2\" intent=\":literal\"><semantics><msub><mi>H</mi><mtext>target</mtext></msub><annotation encoding=\"application/x-tex\">H_{\\text{target}}</annotation></semantics></math> be the entropy target estimated from high-quality samples.\nThe entropy reward is formulated as:</p>\n\n",
+                "matched_terms": [
+                    "policy",
+                    "entropy",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This reward penalizes excessively high entropy that leads to erratic prosodic variations, encouraging smoother generation paths.</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "entropy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"\\hat{P}(A)\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS5.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mrow><mover accent=\"true\"><mi>P</mi><mo>^</mo></mover><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\hat{P}(A)</annotation></semantics></math> denotes the predicted pause structure from generated audio, and <math alttext=\"\\{P(S)\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS5.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">{</mo><mrow><mi>P</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>S</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\{P(S)\\}</annotation></semantics></math> is the annotated reference pattern set.\nThis binary reward encourages alignment with human-preferred pause structures and suppresses unnatural rhythm patterns.</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All experiments are conducted on <span class=\"ltx_text ltx_font_bold\">8<math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p1.m1\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math>H20 GPUs</span> with mixed-precision training.\nThe GRPO optimization adopts a batch size of <span class=\"ltx_text ltx_font_bold\">16</span>, a learning rate of <span class=\"ltx_text ltx_font_bold\">1e&#8211;6</span>, and a group size of <span class=\"ltx_text ltx_font_bold\">12</span>.\nDuring generation, we employ the <span class=\"ltx_text ltx_font_typewriter\">vLLM</span> decoding configuration with\n<span class=\"ltx_text ltx_font_italic\">top-k = 75</span>, <span class=\"ltx_text ltx_font_italic\">top-p = 0.9</span>, <span class=\"ltx_text ltx_font_italic\">temperature = 1.1</span>, and <span class=\"ltx_text ltx_font_italic\">repetition penalty = 1.1</span>.\nThe reward coefficients are empirically set as:</p>\n\n",
+                "matched_terms": [
+                    "reward",
+                    "penalty"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">On the challenging <span class=\"ltx_text ltx_font_italic\">test-hard</span> split, GRPO delivers notable gains in both CER and SIM, demonstrating improved robustness under difficult scenarios. Importantly, our method also achieves the highest MOS, indicating strong alignment with human preference. Adding FM after RL further improves performance, especially SIM and MOS, confirming that our RL optimization strengthens the intrinsic AR policy in a manner complementary to acoustic refinement.</p>\n\n",
+                "matched_terms": [
+                    "policy",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.21270v1#S3.T2\" title=\"Table 2 &#8227; 3.4. Ablation Study &#8227; 3. Experiments &#8227; Multi-Reward GRPO for Stable and Prosodic Single-Codebook TTS LLMs at Scale\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> reports the incremental effect of each reward term across both objective (CER/WER, SIM) and subjective (MOS) metrics. <math alttext=\"R_{\\text{intl}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><msub><mi>R</mi><mtext>intl</mtext></msub><annotation encoding=\"application/x-tex\">R_{\\text{intl}}</annotation></semantics></math> &amp; <math alttext=\"R_{\\text{sim}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><msub><mi>R</mi><mtext>sim</mtext></msub><annotation encoding=\"application/x-tex\">R_{\\text{sim}}</annotation></semantics></math> establish strong initial gains, while the length penalty further reduces duration mismatch. <math alttext=\"R_{ent}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><msub><mi>R</mi><mrow><mi>e</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">R_{ent}</annotation></semantics></math> yields notable improvements in both stability and MOS, indicating smoother and more natural token dynamics. <math alttext=\"R_{pro}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><msub><mi>R</mi><mrow><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi></mrow></msub><annotation encoding=\"application/x-tex\">R_{pro}</annotation></semantics></math> delivers the largest additional boost across all metrics&#8212;especially in MOS&#8212;showing that explicit rhythmic supervision not only improves prosodic structure but also better aligns the model&#8217;s outputs with human perceptual preferences.</p>\n\n",
+                "matched_terms": [
+                    "length",
+                    "penalty",
+                    "reward"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduced a GRPO-based RL framework that directly improves the intrinsic autoregressive policy of single-codebook TTS LLMs. By integrating objective, rule-based, and LLM-assisted prosody rewards, our method enhances prosodic stability, speaker similarity, and naturalness across model and data scales. These gains further compound with flow-matching refinement, indicating that our RL optimization strengthens the core AR decoder rather than overlapping with downstream token-refinement methods.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "policy",
+                    "prosody"
+                ]
+            }
+        ]
+    }
+}

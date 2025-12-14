@@ -1,0 +1,147 @@
+{
+    "S4.F1": {
+        "source_file": "Measuring Prosody Diversity in Zero-Shot TTS: A New Metric, Benchmark, and Exploration",
+        "image_url": "https://arxiv.org/html/2509.19928v2/x1.png",
+        "caption": "Fig. 1: \nAblation of average correlations between DS-WED and human ratings across models, layers, and cluster sizes on ProsodyEval.",
+        "informative_terms_identified": [
+            "between",
+            "models",
+            "human",
+            "average",
+            "ablation",
+            "layers",
+            "prosodyeval",
+            "correlations",
+            "sizes",
+            "cluster",
+            "across",
+            "ratings",
+            "dswed"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Results</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#S4.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 4.3 Ablation Studies of DS-WED &#8227; 4 Experiments &#8227; Measuring Prosody Diversity in Zero-Shot TTS: A New Metric, Benchmark, and Exploration\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> shows that DS-WED remains quite robust across different layers, models, and vocabulary sizes, with correlations consistently around 0.7.\nMiddle layers 6-9 achieve stronger correlations, consistent with the richer encoded prosody information.\nRelative smaller cluster sizes perform best, while larger ones reduce peak correlations, making the edit-distance calculation overly sensitive and misaligned with human perceptual sensitivity to prosody.\nOverall, WavLM-base provides more stable correlations, while HuBERT-base exhibits larger variance. The 8th layer of HuBERT-base using 50 clusters achieves the strongest correlations.\nWe also tried the large versions, which yield slightly higher correlations but at much greater cost, hence we use the base versions for all experiments.</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Prosody diversity is essential for achieving naturalness and expressiveness in zero-shot text-to-speech (TTS).\nHowever, frequently used acoustic metrics capture only partial views of prosodic variation and correlate poorly with human perception, leaving the problem of reliably quantifying prosody diversity underexplored.\nTo bridge this gap, we introduce ProsodyEval, a prosody diversity assessment dataset that provides Prosody Mean Opinion Score (PMOS) alongside conventional acoustic metrics.\nProsodyEval comprises 1000 speech samples derived from 7 mainstream TTS systems, with 2000 human ratings.\nBuilding on this, we propose the Discretized Speech Weighted Edit Distance (DS-WED), a new objective diversity metric that quantifies prosodic variation via weighted edit distance over semantic tokens.\nExperiments on ProsodyEval show that DS-WED achieves substantially higher correlation with human judgments than existing acoustic metrics, while remaining highly robust in speech tokenization from HuBERT and WavLM.\nLeveraging DS-WED, we benchmark state-of-the-art open-source TTS systems on LibriSpeech test-clean and Seed-TTS test-en, and further explorations uncover several factors that influence prosody diversity, including generative modeling paradigms, duration control, and reinforcement learning. Moreover, we find that current large audio language models (LALMs) remain limited in capturing prosodic variations.\nAudio samples are available at https://prosodyeval.github.io.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "dswed",
+                    "prosodyeval",
+                    "ratings",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Prosody plays a central role in spoken communication, conveying paralinguistic information such as emotion, attitude, and intent that shapes how listeners interpret meaning. Subtle variations in pitch, intensity, and duration can fundamentally alter the interpretation of an utterance even with identical text, making prosody crucial to naturalness and expressiveness in speech synthesis.\nWhile zero-shot TTS&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib3\" title=\"\">3</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> has advanced in intelligibility and speaker similarity, prosody diversity has received far less attention.\nExisting evaluation practices&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> rely largely on log </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p1.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> root mean squared error (RMSE), which correlates weakly with human judgments, captures pitch but neglects rhythm and intensity&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib5\" title=\"\">5</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and requires costly dynamic time warping (DTW).\nConsequently, a clear gap remains between automatic metrics and human perception of prosody diversity.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Recent efforts have shown that both continuous&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib6\" title=\"\">6</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and discrete&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib7\" title=\"\">7</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> self-supervised (SSL) speech representations effectively encode prosodic information.\nConcurrently, NLP automatic evaluation metrics have been adapted to discrete speech representations for reference-free&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib8\" title=\"\">8</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and reference-aware&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> speech quality assessment. In particular, SpeechTokenDistance&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib9\" title=\"\">9</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> is a simple approach but remains preliminary, as it focuses solely on measuring correlation with acoustic metrics without examining what the differences represent or further analyzing correlations with human perception.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "correlations",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">With this perspective in mind, we introduce </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">ProsodyEval</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, the first human-annotated dataset for prosody diversity assessment, and </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">DS-WED</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> (</span>\n  <span class=\"ltx_text ltx_framed ltx_framed_underline\" style=\"font-size:90%;\">D</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">iscretized </span>\n  <span class=\"ltx_text ltx_framed ltx_framed_underline\" style=\"font-size:90%;\">S</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">peech </span>\n  <span class=\"ltx_text ltx_framed ltx_framed_underline\" style=\"font-size:90%;\">W</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">eighted </span>\n  <span class=\"ltx_text ltx_framed ltx_framed_underline\" style=\"font-size:90%;\">E</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">dit </span>\n  <span class=\"ltx_text ltx_framed ltx_framed_underline\" style=\"font-size:90%;\">D</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">istance), a new objective diversity metric that quantifies prosodic variation via weighted edit distance over semantic token sequences derived from speech SSL models such as HuBERT&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and WavLM&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> through </span>\n  <math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p3.m1\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">k</mi>\n      <annotation encoding=\"application/x-tex\">k</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-kmeans clustering.\nProsodyEval contains 1000 synthetic samples from 7 mainstream TTS systems, paired with 2000 human ratings of prosody diversity.\nExperiments show that DS-WED achieves substantially higher correlation with human judgments than frequently used acoustic metrics, including log </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p3.m2\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> RMSE and Mel cepstral distortion (MCD), while remaining robust across models, layers, and cluster sizes.\nBuilding on DS-WED, we establish the first systematic benchmark of prosody diversity across state-of-the-art open-source TTS systems on LibriSpeech </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">test-clean</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and Seed-TTS </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">test-en</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nOur further explorations reveal the impact of modeling paradigms, duration control, and reinforcement learning (RL), and demonstrate that even advanced large audio language models (LALMs) like Gemini 2.5 Pro remain unreliable for prosody evaluation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "dswed",
+                    "layers",
+                    "prosodyeval",
+                    "sizes",
+                    "cluster",
+                    "across",
+                    "ratings",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold ltx_font_italic\" style=\"font-size:90%;\">Metrics.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> We propose DS-WED, a new objective prosody diversity metric based on semantic token weighted edit distance that better correlates with human ratings than existing acoustic metrics.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dswed",
+                    "ratings",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Setup</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;We evaluate correlations between human ratings and the three objective metrics DS-WED, log </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> RMSE, and MCD on the ProsodyEval dataset across all groups.\nFor DS-WED, speech is discretized by applying a 50-cluster </span>\n  <math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m2\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">k</mi>\n      <annotation encoding=\"application/x-tex\">k</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-means model trained on LibriSpeech 960h to the hidden embeddings from the 8th Transformer encoder layer.\nSince PMOS ratings are relative within groups and not comparable across groups, we compute Pearson correlation for each group and then aggregate the group-wise correlations using Fisher&#8217;s </span>\n  <math alttext=\"Z\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m3\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">Z</mi>\n      <annotation encoding=\"application/x-tex\">Z</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> transformation.\nStatistical significance is tested with a two-sided one-sample </span>\n  <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m4\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">t</mi>\n      <annotation encoding=\"application/x-tex\">t</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-test against zero, and 95% confidence intervals are obtained in the Fisher space and back-transformed.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "dswed",
+                    "prosodyeval",
+                    "correlations",
+                    "across",
+                    "ratings",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Results</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;As shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.3 Acoustic Prosody Metrics &#8227; 2 ProsodyEval Dataset &#8227; Measuring Prosody Diversity in Zero-Shot TTS: A New Metric, Benchmark, and Exploration\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, PMOS exhibits the strongest correlation with DS-WED (</span>\n  <math alttext=\"\\bar{r}=0.77\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mover accent=\"true\">\n          <mi mathsize=\"0.900em\">r</mi>\n          <mo mathsize=\"0.900em\">&#175;</mo>\n        </mover>\n        <mo mathsize=\"0.900em\">=</mo>\n        <mn mathsize=\"0.900em\">0.77</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\bar{r}=0.77</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">), followed by a substantial correlation with MCD (</span>\n  <math alttext=\"\\bar{r}=0.66\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mover accent=\"true\">\n          <mi mathsize=\"0.900em\">r</mi>\n          <mo mathsize=\"0.900em\">&#175;</mo>\n        </mover>\n        <mo mathsize=\"0.900em\">=</mo>\n        <mn mathsize=\"0.900em\">0.66</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\bar{r}=0.66</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">).\nThe correlation with log </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m3\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> RMSE is weaker but still significant (</span>\n  <math alttext=\"\\bar{r}=0.30\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m4\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mover accent=\"true\">\n          <mi mathsize=\"0.900em\">r</mi>\n          <mo mathsize=\"0.900em\">&#175;</mo>\n        </mover>\n        <mo mathsize=\"0.900em\">=</mo>\n        <mn mathsize=\"0.900em\">0.30</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\bar{r}=0.30</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">), suggesting that pitch deviations contribute to perceived differences but capture only part of the variability.\nOverall, these results demonstrate that DS-WED aligns most closely with subjective human judgments, substantially outperforming widely used acoustic metrics.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dswed",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Setup</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;Computational efficiency is measured on ProsodyEval by Real-Time Factor (RTF), computed as processing time divided by average speech-pair duration, on NVIDIA A100 with batch size 1.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "prosodyeval",
+                    "average"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Setup</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;We study the effect of the SSL backbone, the encoder layer, and the number of </span>\n  <math alttext=\"k\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">k</mi>\n      <annotation encoding=\"application/x-tex\">k</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-means clusters on the correlation between DS-WED and human ratings, using the ProsodyEval dataset.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "human",
+                    "prosodyeval",
+                    "ratings",
+                    "dswed"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Setup</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8194;&#8196;&#8202;Our evaluations are conducted on two widely used benchmarks: professionally read audiobooks LibriSpeech </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">test-clean</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and crowdsourced read speech Seed-TTS </span>\n  <span class=\"ltx_text ltx_font_italic\" style=\"font-size:90%;\">test-en</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nTo measure prosody diversity, we report two conventional acoustic metrics, log </span>\n  <math alttext=\"F_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p2.m1\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi mathsize=\"0.900em\">F</mi>\n        <mn mathsize=\"0.900em\">0</mn>\n      </msub>\n      <annotation encoding=\"application/x-tex\">F_{0}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> RMSE and MCD, together with our proposed DS-WED. Each metric is computed in two ways: (1) micro average across all samples, and (2) rank-based Borda aggregation, where systems are ranked within each group and assigned scores from seven for the best system to one for the worst, and the average score across groups is reported, thereby eliminating the influence of absolute metric values.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "dswed",
+                    "average",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">AR models generate speech sequentially, providing explicit temporal modeling and natural variation in duration.\nIn contrast, NAR flow-matching systems such as E2-TTS, F5-TTS, and ZipVoice pursue architectural simplicity by adopting implicit alignment.\nWhen regression objectives are applied to these weakly aligned and entangled representations, the models collapse toward mean predictions of highly multimodal and diverse prosodic patterns, resulting in blurry and over-smoothed outputs&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib28\" title=\"\">28</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nAverage upsampling-based alignment combined with a text encoder in ZipVoice partly alleviates this issue, but the problem remains non-trivial.\nBy comparison, MGM introduces stochasticity through iterative mask-and-prediction.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "average"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold ltx_font_italic\" style=\"font-size:90%;\">Can large audio language models (LALMs) serve as reliable evaluators of prosodic differences?</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">\nWe test Gemini 2.5 Pro&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#bib.bib31\" title=\"\">31</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> by prompting it to rate the relative prosodic difference between two samples within a group of five. It listens to all five samples to form a reference range of variation and then assigns a score from 1 to 5.\nAs shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19928v2#S4.T5\" style=\"font-size:90%;\" title=\"Table 5 &#8227; 4.4 Benchmarking Zero-shot TTS Systems &#8227; 4 Experiments &#8227; Measuring Prosody Diversity in Zero-Shot TTS: A New Metric, Benchmark, and Exploration\">\n    <span class=\"ltx_text ltx_ref_tag\">5</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, Gemini&#8217;s scores show a statistically significant but weak correlation with human ratings, while correlations with objective metrics fluctuate with wide confidence intervals.\nCombined with high prompt sensitivity, these findings suggest that Gemini 2.5 Pro is not a reliable evaluator of prosodic variation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "models",
+                    "correlations",
+                    "ratings",
+                    "human"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this work, we introduce ProsodyEval, the first human-annotated dataset for assessing prosody diversity in zero-shot TTS, together with DS-WED, a new objective diversity metric based on weighted edit distance over semantic tokens.\nDS-WED outperforms frequently used acoustic metrics in correlating with human judgments and remains robust in speech discretization across models, layers, and cluster sizes, enabling more reliable evaluation of prosodic variation.\nLeveraging DS-WED, we systematically benchmark and analyze mainstream zero-shot TTS systems.\nOur findings indicate that (1) AR systems outperform NAR flow-matching models but not MGM, (2) duration variation strongly shapes prosody diversity, yet NAR systems lack duration control, and flow-matching models with implicit alignment suffer from inherent architectural limitations, (3) RL via DPO improves intelligibility while reducing prosody diversity, and (4) even advanced LALMs like Gemini 2.5 Pro remain unreliable for prosody evaluation.\nOne limitation lies in the cross-lingual applicability of DS-WED, validated only on English.\nLooking ahead, ProsodyEval and DS-WED fill a gap in zero-shot TTS evaluation and open new avenues for speech data engineering.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "dswed",
+                    "layers",
+                    "prosodyeval",
+                    "sizes",
+                    "cluster",
+                    "across",
+                    "human"
+                ]
+            }
+        ]
+    }
+}

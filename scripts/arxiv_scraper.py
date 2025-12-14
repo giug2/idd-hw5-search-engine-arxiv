@@ -21,7 +21,7 @@ BATCH_SIZE = 25  # Numero massimo di articoli da scaricare per ogni batch
 
 # Ottieni il percorso assoluto della directory in cui si trova lo script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, 'papers')
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers')
 
 
 def download_articles(query, k):

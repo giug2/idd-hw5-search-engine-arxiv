@@ -1,0 +1,94 @@
+{
+    "S3.F1": {
+        "source_file": "FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features",
+        "image_url": "https://arxiv.org/html/2511.10112v1/x1.png",
+        "caption": "Figure 1. Architecture of FabasedVC.",
+        "informative_terms_identified": [
+            "fabasedvc",
+            "architecture"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Our proposed end-to-end VC system is shown in Fig.<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10112v1#S3.F1\" title=\"Figure 1 &#8227; 3. Proposed Methods &#8227; FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The backbone of FabasedVC is inspired by VITS<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2021conditional</span>)</cite>, we describe it as comprising a feature extractor and a Conditional Variational Autoencoder (CVAE)<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">Kingma2014</span>)</cite>. The CVAE primarily consisting of a posterior encoder, a prior encoder, and a decoder. The key modifications and contributions of this paper focus on front-end feature processing and the prior encoder. The front-end feature processing supplements a large amount of textual modality information for the speech through a series of automated workflows. In the prior encoder of the VC model, we introduce a text feature encoder, an SSL feature encoder that processes SSL features at the phoneme level, and a duration predictor. First, we will introduce the various features utilized by the model, followed by a detailed description of the specific architecture of the model&#8217;s encoder and decoder.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S3.F2": {
+        "source_file": "FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features",
+        "image_url": "https://arxiv.org/html/2511.10112v1/x2.png",
+        "caption": "Figure 2. Architecture of SSL Encoder.",
+        "informative_terms_identified": [
+            "architecture",
+            "ssl",
+            "encoder"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Fig.<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10112v1#S3.F2\" title=\"Figure 2 &#8227; 3.2.2. SSL Feature Encoder &#8227; 3.2. Prior Encoder &#8227; 3. Proposed Methods &#8227; FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows how the SSL encoder converts all frames of a phoneme in speech into a phoneme-level representation. After this process, the length of the <math alttext=\"c_{ssl}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.SSS2.p9.m1\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{ssl}</annotation></semantics></math> feature matches the phoneme feature length of the speech.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In voice conversion (VC), it is crucial to preserve complete semantic information while accurately modeling the target speaker&#8217;s timbre and prosody. This paper proposes FabasedVC to achieve VC with enhanced similarity in timbre, prosody, and duration to the target speaker, as well as improved content integrity. It is an end-to-end VITS-based VC system that integrates relevant textual modality information, phoneme-level self-supervised learning (SSL) features, and a duration predictor. Specifically, we employ a text feature encoder to encode attributes such as text, phonemes, tones and BERT features. We then process the frame-level SSL features into phoneme-level features using two methods: average pooling and attention mechanism based on each phoneme&#8217;s duration. Moreover, a duration predictor is incorporated to better align the speech rate and prosody of the target speaker. Experimental results demonstrate that our method outperforms competing systems in terms of naturalness, similarity, and content integrity. We strongly recommend that readers listen to our samples.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://fabased-vc.github.io/fabasedvc/</span></span></span></p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed end-to-end VC system is shown in Fig.<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10112v1#S3.F1\" title=\"Figure 1 &#8227; 3. Proposed Methods &#8227; FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The backbone of FabasedVC is inspired by VITS<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2021conditional</span>)</cite>, we describe it as comprising a feature extractor and a Conditional Variational Autoencoder (CVAE)<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">Kingma2014</span>)</cite>. The CVAE primarily consisting of a posterior encoder, a prior encoder, and a decoder. The key modifications and contributions of this paper focus on front-end feature processing and the prior encoder. The front-end feature processing supplements a large amount of textual modality information for the speech through a series of automated workflows. In the prior encoder of the VC model, we introduce a text feature encoder, an SSL feature encoder that processes SSL features at the phoneme level, and a duration predictor. First, we will introduce the various features utilized by the model, followed by a detailed description of the specific architecture of the model&#8217;s encoder and decoder.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The prior encoder consists of a text feature encoder, an SSL feature encoder, a frame-level prior network, and a duration predictor.</p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The SSL feature encoder utilizes both phoneme-level average pooling and an attention-based encoding module to reduce the dimensions of the Contentvec feature <math alttext=\"vec\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.SSS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>v</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">vec</annotation></semantics></math> from the frame level to the phoneme level, resulting in the final representation <math alttext=\"c_{ssl}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.SSS2.p1.m2\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>l</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{ssl}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The posterior encoder is designed to extract the latent representation <math alttext=\"z\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m1\" intent=\":literal\"><semantics><mi>z</mi><annotation encoding=\"application/x-tex\">z</annotation></semantics></math> from the linear spectrogram. In line with VITS, we employ non-causal WaveNet<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">oord2016wavenet</span>)</cite> residual blocks as the primary architecture of the posterior encoder.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The decoder generates audio waveforms based on the intermediate representation <math alttext=\"z\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mi>z</mi><annotation encoding=\"application/x-tex\">z</annotation></semantics></math> obtained from the encoder. In our decoder, we utilize the HiFi-GAN architecture <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kong2020hifi</span>)</cite>, which comprises a generator and two discriminators. The generator accepts <math alttext=\"z\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><mi>z</mi><annotation encoding=\"application/x-tex\">z</annotation></semantics></math> as input and progressively upsamples the data until the generated sequence matches the temporal resolution of the original waveform. The two discriminators are the multi-period discriminator (MPD) and the multi-scale discriminator (MSD), which assess the audio across different periodic windows and scales, respectively. GAN-based training is employed to improve the quality of the reconstructed speech.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate the performance of the proposed FabasedVC across various aspects of voice conversion, we compared it with several VC systems. The comparison systems include VQMIVC <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2021vqmivc</span>)</cite>, PPGVC <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">Liu2021</span>)</cite>, FreeVC <cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">li2023freevc</span>)</cite>, SOVITS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/svc-develop-team/so-vits-svc</span></span></span>, Cosyvoice<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span>)</cite> in voice conversion task, and SeedVC<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2024zero</span>)</cite>. VQMIVC achieves effective VC by disentangling speech representations; PPGVC is a VC system based on the BNF framework; FreeVC employs the VITS framework to provide high-quality waveform reconstruction for VC; and SOVITS is a well-regarded open-source SVC and VC project. Cosyvoice is a highly effective zero-shot TTS model that significantly enhances content consistency and speaker similarity. It also supports voice conversion capabilities. SeedVC achieves high-fidelity, low-leakage zero-shot voice conversion via external timbre perturbation and a diffusion Transformer. For CosyVoice and SeedVC, we used the official open-source models for voice conversion, and we trained other VC comparison models using the same dataset as FabasedVC. Additionally, we conducted ablation studies on the SSL encoder and duration predictor to verify the effectiveness of each component.</p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.10112v1#S4.T2\" title=\"Table 2 &#8227; 4.1. Experimental setup &#8227; 4. Experiments &#8227; FabasedVC: Enhancing Voice Conversion with Text Modality Fusion and Phoneme-Level SSL Features\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> indicate that our model achieves the highest scores on the majority of metrics for both speech naturalness and speaker similarity, surpassing all baseline models, with the exception of a single metric where it ranks second. Even when converting Databaker data to AISHELL speakers, our model maintains a high level of similarity. Despite the significant differences in style and Mandarin proficiency between the source and target speakers, the model achieves it. This clearly demonstrates the role of phoneme-level SSL features and the duration predictor in enhancing speaker similarity. The higher Cos.sim scores further confirm that our model maintains high speaker similarity. Additionally, more comprehensive feature information can facilitate the model in generating speech with higher naturalness. Our proposed model achieves lower CER and PER compared to all other models. This also demonstrates the effectiveness of FabasedVC in addressing the loss of content completeness and better preserving the linguistic content of the source speech. In the ablation experiments, we separately removed the SSL feature encoder modules <math alttext=\"c_{att}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{att}</annotation></semantics></math> and <math alttext=\"c_{avg}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m2\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>v</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{avg}</annotation></semantics></math> as well as the duration predictor. It was observed that removing <math alttext=\"c_{att}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m3\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{att}</annotation></semantics></math> or <math alttext=\"c_{avg}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS3.p1.m4\" intent=\":literal\"><semantics><msub><mi>c</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>v</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi></mrow></msub><annotation encoding=\"application/x-tex\">c_{avg}</annotation></semantics></math> leads to a noticeable decline in both speech naturalness and similarity. This removal also results in some loss of content completeness. Additionally, disabling the duration predictor results in generating speech with the same timing as the source, which can lead to a decrease in perceived speaker similarity.</p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we propose FabasedVC, a VC system with high timbre similarity and content integrity. We adopted a VITS-based framework for waveform reconstruction. To improve content completeness in voice conversion, we enhanced the prior encoder by introducing textual information through front-end feature processing. Moreover, we processed SSL features from the frame-level to the phoneme-level to disentangle timbre information. We also incorporated a duration predictor to adjust duration. Experimental results demonstrate the high naturalness and similarity achieved by our method. In the future, we will continue to focus on enhancing prosody and content integrity in voice conversion.</p>\n\n",
+                "matched_terms": [
+                    "ssl",
+                    "encoder"
+                ]
+            }
+        ]
+    }
+}

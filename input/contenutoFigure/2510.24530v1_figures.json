@@ -1,0 +1,144 @@
+{
+    "S2.F1": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-1.jpg",
+        "caption": "Figure 1: un automate acyclique pour Il traverse le chemin de fer.",
+        "informative_terms_identified": [
+            "automate",
+            "fer",
+            "chemin",
+            "pour",
+            "traverse",
+            "acyclique"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Les &#233;tiquettes des mots d&#8217;une m&#234;me phrase ne sont pas ind&#233;pendantes, c&#8217;est pourquoi le r&#233;sultat d&#8217;un syst&#232;me &#224; plusieurs solutions pour une s&#233;quence donn&#233;e de mots est un ensemble d&#8217;une ou plusieurs s&#233;quences d&#8217;&#233;tiquettes. L&#8217;ensemble des s&#233;quences d&#8217;&#233;tiquettes s&#233;lectionn&#233;es pour une s&#233;quence d&#8217;entr&#233;e donn&#233;e est repr&#233;sent&#233; sous une forme appropri&#233;e. Comme il s&#8217;agit d&#8217;un ensemble fini de s&#233;quences qui ont g&#233;n&#233;ralement beaucoup en commun, cette forme est toujours celle d&#8217;un automate fini acyclique, &#233;galement appel&#233; graphe orient&#233; acyclique (DAG ou DAWG en anglais), machine &#224; &#233;tats finis ou r&#233;seau &#224; &#233;tats finis (Koskenniemi, 1990), graphe de phrase (Rimon, Herz, 1991) ou treillis de mots (Vosse, 1992). Un des avantages des automates acycliques dans ce contexte est qu&#8217;ils permettent de syst&#233;matiser la repr&#233;sentation des ambigu&#239;t&#233;s lexicales. Ils sont en effet utilisables avant comme apr&#232;s la lev&#233;e des ambigu&#239;t&#233;s, et que celles-ci soient li&#233;es aux cat&#233;gories grammaticales, aux traits flexionnels, ou &#224; la d&#233;limitation des compos&#233;s (pour repr&#233;senter la distinction entre un compos&#233; et une s&#233;quence de mots simples). La figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S2.F1\" title=\"Figure 1 &#8227; 2.2 La forme du texte d&#233;sambigu&#239;s&#233; &#8227; 2 M&#233;thodologie &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> illustre l&#8217;ambigu&#239;t&#233; entre cat&#233;gories grammaticales pour <span class=\"ltx_text ltx_font_italic\">traverse</span> et l&#8217;ambigu&#239;t&#233; entre compos&#233; et mots simples pour <span class=\"ltx_text ltx_font_italic\">chemin de fer</span>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">La suite de cet article concerne une m&#233;thode de lev&#233;e d&#8217;ambigu&#239;t&#233;s lexicales adapt&#233;e &#224; l&#8217;objectif d&#8217;un taux de silence nul (Silberztein, 1989, 1993) et mise en &#339;uvre dans le syst&#232;me <span class=\"ltx_text ltx_font_typewriter\">INTEX</span> de Silberztein (1993). Nous pr&#233;sentons ici une description formelle de cette m&#233;thode. Elle combine la possibilit&#233; de plusieurs solutions &#8212; le r&#233;sultat produit pour une s&#233;quence de mots donn&#233;e est un automate acyclique &#8212;, le parti pris modulaire &#8212; l&#8217;&#233;tiquetage lexical et la lev&#233;e des ambigu&#239;t&#233;s sont consid&#233;r&#233;s comme ind&#233;pendants une fois choisi un ensemble d&#8217;&#233;tiquettes &#8212;, et l&#8217;utilisation de connaissances linguistiques &#233;labor&#233;es &#224; la main, pour l&#8217;&#233;tiquetage initial &#8212; de grands dictionnaires morphologiques &#8212; comme pour la lev&#233;e des ambigu&#239;t&#233;s &#8212; des donn&#233;es grammaticales appel&#233;es grammaires locales. La seule autre contribution qui rentre dans ce cadre est, &#224; notre connaissance, celle de Roche (1992). Toutes les deux comprennent des algorithmes et leur mise en &#339;uvre et elles utilisent les m&#234;mes dictionnaires. Pour une comparaison entre ces deux syst&#232;mes, cf. Laporte (1994).</p>\n\n",
+                "matched_terms": [
+                    "acyclique",
+                    "pour",
+                    "automate"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-2.jpg",
+        "caption": "Figure 2: le transducteur T1T_{1}.",
+        "informative_terms_identified": [
+            "t1t1",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Nous utilisons l&#8217;&#233;diteur d&#8217;automates <span class=\"ltx_text ltx_font_typewriter\">Editor</span> de Max Silberztein pour repr&#233;senter graphiquement les transducteurs de lev&#233;e d&#8217;ambigu&#239;t&#233;s (exemple : le transducteur <math alttext=\"T_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p2.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">T_{1}</annotation></semantics></math>, figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F2\" title=\"Figure 2 &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). Chaque transition comporte deux &#233;tiquettes grammaticales incompl&#232;tes, une dite &#8220;d&#8217;entr&#233;e&#8221; (dans la bo&#238;te) et une &#8220;de sortie&#8221; (sous la bo&#238;te). Dans un transducteur, une s&#233;quence d&#8217;entr&#233;e est une s&#233;quence d&#8217;&#233;tiquettes grammaticales d&#8217;entr&#233;e. Le transducteur sert &#224; mettre en relation des s&#233;quences d&#8217;entr&#233;e et des s&#233;quences de sortie. Par exemple, le transducteur <math alttext=\"T_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p2.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">T_{1}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F2\" title=\"Figure 2 &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) met en relation la s&#233;quence d&#8217;entr&#233;e</p>\n\n",
+            "<p class=\"ltx_p\">Dans ce premier cas particulier, on a une r&#232;gle plus simple que dans le cas g&#233;n&#233;ral. Nous illustrerons cette r&#232;gle en prenant l&#8217;exemple du transducteur <math alttext=\"T_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">T_{1}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F2\" title=\"Figure 2 &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) et de la s&#233;quence grammaticale compl&#232;te</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S4.F3": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-3.jpg",
+        "caption": "Figure 3: le transducteur T2T_{2}.",
+        "informative_terms_identified": [
+            "t2t2",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Par exemple, c&#8217;est le cas pour le transducteur <math alttext=\"T_{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding=\"application/x-tex\">T_{2}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F3\" title=\"Figure 3 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) et pour toutes les grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s du chapitre 8 de Silberztein (1993). La r&#232;gle est alors la suivante.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\">INTEX</span> permet d&#8217;appliquer plusieurs grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#224; un m&#234;me texte. Dans ce cas, tout se passe comme si on avait combin&#233; les diff&#233;rents transducteurs en leur donnant le m&#234;me &#233;tat initial et le m&#234;me &#233;tat final. Par exemple, la combinaison de <math alttext=\"T_{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding=\"application/x-tex\">T_{2}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F3\" title=\"Figure 3 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) et de <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>), not&#233;e <math alttext=\"T_{2}|T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo fence=\"false\">|</mo><msub><mi>T</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">T_{2}|T_{3}</annotation></semantics></math>, est repr&#233;sent&#233;e figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F5\" title=\"Figure 5 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Les r&#232;gles ci-dessus s&#8217;appliquent alors &#224; l&#8217;ensemble.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S4.F4": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-4.jpg",
+        "caption": "Figure 4: le transducteur T3T_{3}.",
+        "informative_terms_identified": [
+            "t3t3",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Il n&#8217;est pas absurde d&#8217;avoir des transitions dans lesquelles l&#8217;&#233;tiquette d&#8217;entr&#233;e est la m&#234;me que l&#8217;&#233;tiquette de sortie. Par exemple, le transducteur <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p4.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>) accepte la s&#233;quence ci-dessus mais la rejette si on remplace <math alttext=\"&lt;\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p4.m2\" intent=\":literal\"><semantics><mo>&lt;</mo><annotation encoding=\"application/x-tex\">&lt;</annotation></semantics></math><span class=\"ltx_text ltx_font_italic\">faire V:P3s<math alttext=\"&gt;\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p4.m3\" intent=\":literal\"><semantics><mo>&gt;</mo><annotation encoding=\"application/x-tex\">&gt;</annotation></semantics></math></span> par <math alttext=\"&lt;\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p4.m4\" intent=\":literal\"><semantics><mo>&lt;</mo><annotation encoding=\"application/x-tex\">&lt;</annotation></semantics></math><span class=\"ltx_text ltx_font_italic\">fait N:ms<math alttext=\"&gt;\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p4.m5\" intent=\":literal\"><semantics><mo>&gt;</mo><annotation encoding=\"application/x-tex\">&gt;</annotation></semantics></math></span> (table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.T3\" title=\"Table 3 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\">INTEX</span> permet d&#8217;appliquer plusieurs grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#224; un m&#234;me texte. Dans ce cas, tout se passe comme si on avait combin&#233; les diff&#233;rents transducteurs en leur donnant le m&#234;me &#233;tat initial et le m&#234;me &#233;tat final. Par exemple, la combinaison de <math alttext=\"T_{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding=\"application/x-tex\">T_{2}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F3\" title=\"Figure 3 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) et de <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>), not&#233;e <math alttext=\"T_{2}|T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo fence=\"false\">|</mo><msub><mi>T</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">T_{2}|T_{3}</annotation></semantics></math>, est repr&#233;sent&#233;e figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F5\" title=\"Figure 5 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Les r&#232;gles ci-dessus s&#8217;appliquent alors &#224; l&#8217;ensemble.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Si une grammaire locale rejette une s&#233;quence grammaticale, et si on combine la grammaire avec une autre, la combinaison obtenue peut accepter la s&#233;quence. Par exemple, le transducteur <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> rejette &#224; tort la s&#233;quence</p>\n\n",
+                "matched_terms": [
+                    "t3t3",
+                    "transducteur"
+                ]
+            }
+        ]
+    },
+    "S5.F5": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-5.jpg",
+        "caption": "Figure 5: le transducteur T2|T3T_{2}|T_{3}.",
+        "informative_terms_identified": [
+            "t2t3t2t3",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_typewriter\">INTEX</span> permet d&#8217;appliquer plusieurs grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#224; un m&#234;me texte. Dans ce cas, tout se passe comme si on avait combin&#233; les diff&#233;rents transducteurs en leur donnant le m&#234;me &#233;tat initial et le m&#234;me &#233;tat final. Par exemple, la combinaison de <math alttext=\"T_{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding=\"application/x-tex\">T_{2}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F3\" title=\"Figure 3 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>) et de <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Deuxi&#232;me cas particulier &#8227; 4 Grammaires locales de lev&#233;e d&#8217;ambigu&#239;t&#233;s &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>), not&#233;e <math alttext=\"T_{2}|T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo fence=\"false\">|</mo><msub><mi>T</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">T_{2}|T_{3}</annotation></semantics></math>, est repr&#233;sent&#233;e figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F5\" title=\"Figure 5 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Les r&#232;gles ci-dessus s&#8217;appliquent alors &#224; l&#8217;ensemble.</p>\n\n",
+            "<p class=\"ltx_p\">mais la combinaison <math alttext=\"T_{2}|T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p4.m13\" intent=\":literal\"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo fence=\"false\">|</mo><msub><mi>T</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">T_{2}|T_{3}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F5\" title=\"Figure 5 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>) la rejette (table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.T5\" title=\"Table 5 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F6": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-6.jpg",
+        "caption": "Figure 6: le transducteur T4T_{4}.",
+        "informative_terms_identified": [
+            "t4t4",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">qui est l&#8217;&#233;tiquetage correct de <span class=\"ltx_text ltx_font_italic\">Ne lui dis pas</span>, &#224; cause du fait que <span class=\"ltx_text ltx_font_italic\">lui</span> est aussi une forme du verbe <span class=\"ltx_text ltx_font_italic\">luire</span> : <math alttext=\"&lt;\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m10\" intent=\":literal\"><semantics><mo>&lt;</mo><annotation encoding=\"application/x-tex\">&lt;</annotation></semantics></math><span class=\"ltx_text ltx_font_italic\">luire V:Kms<math alttext=\"&gt;\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m11\" intent=\":literal\"><semantics><mo>&gt;</mo><annotation encoding=\"application/x-tex\">&gt;</annotation></semantics></math></span>. Pour tenter de corriger ce d&#233;faut, on peut combiner <math alttext=\"T_{3}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m12\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>3</mn></msub><annotation encoding=\"application/x-tex\">T_{3}</annotation></semantics></math> avec <math alttext=\"T_{4}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m13\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>4</mn></msub><annotation encoding=\"application/x-tex\">T_{4}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F6\" title=\"Figure 6 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>). La s&#233;quence correcte ci-dessus est accept&#233;e par <math alttext=\"T_{4}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m14\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>4</mn></msub><annotation encoding=\"application/x-tex\">T_{4}</annotation></semantics></math> et aussi par la combinaison <math alttext=\"T_{3}|T_{4}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p2.m15\" intent=\":literal\"><semantics><mrow><msub><mi>T</mi><mn>3</mn></msub><mo fence=\"false\">|</mo><msub><mi>T</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">T_{3}|T_{4}</annotation></semantics></math> (table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.T4\" title=\"Table 4 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F7": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-7.jpg",
+        "caption": "Figure 7: le transducteur T5T_{5}.",
+        "informative_terms_identified": [
+            "t5t5",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Si deux grammaires locales rejettent une m&#234;me s&#233;quence grammaticale, la combinaison des deux grammaires peut accepter la s&#233;quence. Par exemple, chacun des deux transducteurs <math alttext=\"T_{5}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p5.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>5</mn></msub><annotation encoding=\"application/x-tex\">T_{5}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F7\" title=\"Figure 7 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>) et <math alttext=\"T_{6}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p5.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>6</mn></msub><annotation encoding=\"application/x-tex\">T_{6}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F8\" title=\"Figure 8 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>), utilis&#233; s&#233;par&#233;ment, rejette la s&#233;quence incorrecte</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F8": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-8.jpg",
+        "caption": "Figure 8: le transducteur T6T_{6}.",
+        "informative_terms_identified": [
+            "t6t6",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Si deux grammaires locales rejettent une m&#234;me s&#233;quence grammaticale, la combinaison des deux grammaires peut accepter la s&#233;quence. Par exemple, chacun des deux transducteurs <math alttext=\"T_{5}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p5.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>5</mn></msub><annotation encoding=\"application/x-tex\">T_{5}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F7\" title=\"Figure 7 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>) et <math alttext=\"T_{6}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.p5.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>6</mn></msub><annotation encoding=\"application/x-tex\">T_{6}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S5.F8\" title=\"Figure 8 &#8227; 5 Combinaisons de grammaires locales &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>), utilis&#233; s&#233;par&#233;ment, rejette la s&#233;quence incorrecte</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S6.F9": {
+        "source_file": "Levée d’ambiguïtés par grammaires locales",
+        "image_url": "https://arxiv.org/html/2510.24530v1/fig-9.jpg",
+        "caption": "Figure 9: le transducteur T7T_{7}.",
+        "informative_terms_identified": [
+            "t7t7",
+            "transducteur"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Exemple : le transducteur <math alttext=\"T_{7}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.p4.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mn>7</mn></msub><annotation encoding=\"application/x-tex\">T_{7}</annotation></semantics></math> (figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.24530v1#S6.F9\" title=\"Figure 9 &#8227; 6 Cas g&#233;n&#233;ral &#8227; Lev&#233;e d&#8217;ambigu&#239;t&#233;s par grammaires locales\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>) accepte la s&#233;quence</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    }
+}

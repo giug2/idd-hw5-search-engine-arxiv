@@ -1,0 +1,187 @@
+{
+    "S2.F2": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/x2.png",
+        "caption": "Figure 2: The overview of Step-Audio-R1",
+        "informative_terms_identified": [
+            "overview",
+            "stepaudior1"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Drawing from the architecture of our previous Step-Audio 2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#bib.bib13\" title=\"\">13</a>]</cite>, Step-Audio-R1 is designed for audio-based reasoning tasks. As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S2.F2\" title=\"Figure 2 &#8227; 2 Model Overview &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, the model consists of an audio encoder, an audio adaptor, and an LLM decoder.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S4.F3": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/x3.png",
+        "caption": "Figure 3: Modality-Grounded Reasoning Distillation",
+        "informative_terms_identified": [
+            "modalitygrounded",
+            "distillation",
+            "reasoning"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\">Recent advances in reasoning models have demonstrated remarkable success in text and vision domains through extended chain-of-thought deliberation. However, a perplexing phenomenon persists in audio language models: they consistently perform better with minimal or no reasoning, raising a fundamental question&#8212;<span class=\"ltx_text ltx_font_bold\">can audio intelligence truly benefit from deliberate thinking?</span> We introduce Step-Audio-R1, the first audio reasoning model that successfully unlocks reasoning capabilities in the audio domain. Through our proposed Modality-Grounded Reasoning Distillation (MGRD) framework, Step-Audio-R1 learns to generate audio-relevant reasoning chains that genuinely ground themselves in acoustic features rather than hallucinating disconnected deliberations. Our model exhibits strong audio reasoning capabilities, surpassing Gemini 2.5 Pro and achieving performance comparable to the state-of-the-art Gemini 3 Pro across comprehensive audio understanding and reasoning benchmarks spanning speech, environmental sounds, and music. These results demonstrate that reasoning is a transferable capability across modalities when appropriately anchored, transforming extended deliberation from a liability into a powerful asset for audio intelligence. By establishing the first successful audio reasoning model, Step-Audio-R1 opens new pathways toward building truly multimodal reasoning systems that think deeply across all sensory modalities.\n\n<span class=\"ltx_figure\" id=\"S0.F1\"><img alt=\"Refer to caption\" class=\"ltx_graphics ltx_centering ltx_img_landscape\" height=\"215\" id=\"S0.F1.g1\" src=\"x1.png\" width=\"561\"/>\n<span class=\"ltx_caption ltx_centering\"><span class=\"ltx_tag ltx_tag_figure\">Figure 1: </span>Benchmark performance of Step-Audio-R1</span>\n</span></span>\n</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate this hypothesis and unlock reasoning capabilities in audio, we propose <span class=\"ltx_text ltx_font_italic\">Modality-Grounded Reasoning Distillation</span> (MGRD), an iterative training framework that progressively shifts reasoning from textual abstractions to acoustic properties. Starting from text-based reasoning initialization, MGRD employs iterative cycles of self-distillation and refinement on audio tasks, systematically curating reasoning chains that genuinely ground in acoustic analysis. Through these iterations, we obtain Step-Audio-R1, the first audio reasoning model that successfully benefits from test-time compute scaling, outperforming Gemini 2.5 Pro <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#bib.bib14\" title=\"\">14</a>]</cite> and demonstrating capabilities competitive with the latest Gemini 3 Pro <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#bib.bib18\" title=\"\">18</a>]</cite> across comprehensive audio benchmarks. These results confirm that reasoning is a transferable capability across modalities when appropriately anchored, transforming extended deliberation from a liability into a powerful asset for audio intelligence.</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A key innovation in this process is the Modality-Grounded Reasoning Distillation (MGRD) method. Initially, the model&#8217;s reasoning process may operate on a purely semantic level. MGRD iteratively refines these thoughts, progressively strengthening their connection to the underlying audio features until they evolve into \"native audio think.\" This distillation process ensures that the model&#8217;s reasoning is not merely about the transcribed text, but is deeply grounded in the acoustic nuances of the audio itself, leading to a more holistic and accurate final response.</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"(q,r,a)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p4.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(q,r,a)</annotation></semantics></math> denotes task questions with reasoning chains and answers, <math alttext=\"(c,r,s)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p4.m2\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>c</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(c,r,s)</annotation></semantics></math> represents conversational contexts with deliberation and responses, and <math alttext=\"(x_{\\text{audio}},q,a)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p4.m3\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mtext>audio</mtext></msub><mo>,</mo><mi>q</mi><mo>,</mo><mi>a</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(x_{\\text{audio}},q,a)</annotation></semantics></math> indicates audio questions with direct answers. For audio data, we use empty reasoning markers (i.e., &lt;think&gt;\\n\\n&lt;/think&gt;\\n) to maintain the structural format without actual deliberation content. This tri-modal training instills diverse reasoning patterns in text domains&#8212;spanning analytical problem-solving, code generation, logical inference, and contextual dialogue&#8212;while preserving the model&#8217;s audio understanding capabilities for subsequent acoustic reasoning distillation.</p>\n\n",
+                "matched_terms": [
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Iterative Refinement.</span> We repeat this cycle for <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p15.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> iterations, with each iteration <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p15.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> producing model <math alttext=\"\\pi_{\\theta_{t+1}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p15.m3\" intent=\":literal\"><semantics><msub><mi>&#960;</mi><msub><mi>&#952;</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></msub><annotation encoding=\"application/x-tex\">\\pi_{\\theta_{t+1}}</annotation></semantics></math> that generates progressively more acoustically-grounded reasoning. As iterations advance, the model&#8217;s reasoning chains shift from textual surrogates&#8212;such as inferring emotion from \"lyrics mentioning sadness\"&#8212;to genuine acoustic analysis&#8212;such as \"minor key progressions and descending melodic contours.\" This iterative distillation progressively transforms the model&#8217;s reasoning substrate from linguistic to acoustic grounding.</p>\n\n",
+                "matched_terms": [
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Progressive Error Reduction.</span> Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.T3\" title=\"Table 3 &#8227; 6.3 Self-Cognition Correction Through Iterative Refinement &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> demonstrates the effectiveness of our multi-stage approach. The base model exhibits noticeable self-cognition errors (6.76%), reflecting the bias from text training data. Through iterative self-distillation, we successfully reduce the error rate to 2.63% by filtering misaligned responses and reinforcing correct self-perception. However, the most dramatic improvement comes from the final DPO alignment with 8,000 preference pairs: error rates plummet to near-zero (0.02%), effectively eliminating self-cognition misalignment. This final stage proves crucial&#8212;while self-distillation significantly improves cognition, only explicit preference optimization achieves complete correction. The efficiency of this approach highlights the power of targeted preference learning for addressing specific behavioral biases. For a detailed qualitative comparison of model responses before and after Modality-Grounded Reasoning Distillation, please refer to Appendix <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#A1.SS2\" title=\"A.2 Case Studies in Self-Recognition &#8227; Appendix A Appendix &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">A.2</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we address the challenging problem where audio language models historically fail to benefit from long reasoning processes, often performing worse as the reasoning length increases. We identify the primary cause of this failure as &#8220;textual surrogate reasoning&#8221;&#8212;a persistent tendency for models to reason based on text descriptions, such as transcripts or captions, rather than focusing on actual acoustic properties. We introduce Step-Audio-R1, the first model to successfully unlock and benefit from deliberate thinking in the audio domain. Our core contribution is Modality-Grounded Reasoning Distillation (MGRD), an iterative framework that progressively shifts the model&#8217;s reasoning basis from text-based patterns to genuine acoustic analysis. Comprehensive evaluations confirm that Step-Audio-R1 outperforms strong baselines, including Gemini 2.5 Pro, and achieves performance comparable to the state-of-the-art Gemini 3 Pro across a wide range of complex audio understanding and reasoning benchmarks. These results provide clear evidence that reasoning is a capability that works across modalities; when properly connected to the correct input, extended reasoning transforms from a weakness into a powerful asset for audio intelligence, opening new paths for building truly multimodal systems.</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section illustrates the effectiveness of Modality-Grounded Reasoning Distillation (introduced in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S4.SS2\" title=\"4.2 Modality-Grounded Reasoning Distillation &#8227; 4 Post-Training Recipes &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">4.2</span></a>) in establishing correct self-recognition. We compare the model&#8217;s responses before and after this training stage. The &#8220;Before&#8221; case reveals a common issue where the model, influenced by its text-only backbone initialization, incorrectly claims inability to process audio. The &#8220;After&#8221; case demonstrates how the distillation process corrects this, enabling the model to acknowledge and utilize its audio modality for in-depth reasoning.</p>\n\n",
+                "matched_terms": [
+                    "modalitygrounded",
+                    "distillation",
+                    "reasoning"
+                ]
+            }
+        ]
+    },
+    "S6.F4": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/figures/audio_reward.png",
+        "caption": "(a) Mean reward evolution",
+        "informative_terms_identified": [
+            "mean",
+            "reward",
+            "evolution"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Format Reward Drives Stable Convergence.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F4.sf1\" title=\"Figure 4(a) &#8227; Figure 4 &#8227; 6.1 Extended Reasoning Benefits Audio: Evidence from Format Reward Ablation &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">4(a)</span></a> presents the evolution of mean reward on audio tasks across training iterations. Both configurations eventually converge to similar reward levels (approximately 0.75-0.80), but their trajectories differ significantly. The model <span class=\"ltx_text ltx_font_italic\">with</span> think format reward (cyan line) achieves stable performance earlier, reaching the 0.70 threshold around iteration 35-40, while the model <span class=\"ltx_text ltx_font_italic\">without</span> format reward (blue line) requires nearly 25 iterations to reach comparable performance. More critically, the format-rewarded model maintains more stable training dynamics in later iterations (30-60), whereas the baseline exhibits higher variance and occasional performance drops. This stability advantage translates to meaningful performance gains: on the MMAU benchmark, incorporating the format reward improves accuracy from 76.5 to 77.7.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Format Rewards Prevent Reasoning Collapse.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F4.sf2\" title=\"Figure 4(b) &#8227; Figure 4 &#8227; 6.1 Extended Reasoning Benefits Audio: Evidence from Format Reward Ablation &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">4(b)</span></a> reveals a striking phenomenon that explains the performance difference. Without format rewards, the model exhibits systematic collapse of reasoning length: starting from approximately 3000 tokens in early iterations, it progressively decays to below 1500 tokens by iteration 60, with a particularly sharp decline after iteration 30. In contrast, the model with format rewards maintains substantially longer and more stable reasoning chains throughout training, consistently generating 2300-2800 tokens even in later iterations. This 50-80% increase in reasoning length is not merely superficial verbosity&#8212;the accompanying performance improvements on MMAU confirm that these extended deliberations contain meaningful acoustic analysis.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S6.F4.sf2": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/figures/think_vs_nothink.png",
+        "caption": "(b) Reasoning token count",
+        "informative_terms_identified": [
+            "count",
+            "token",
+            "reasoning"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Format Rewards Prevent Reasoning Collapse.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F4.sf2\" title=\"Figure 4(b) &#8227; Figure 4 &#8227; 6.1 Extended Reasoning Benefits Audio: Evidence from Format Reward Ablation &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">4(b)</span></a> reveals a striking phenomenon that explains the performance difference. Without format rewards, the model exhibits systematic collapse of reasoning length: starting from approximately 3000 tokens in early iterations, it progressively decays to below 1500 tokens by iteration 60, with a particularly sharp decline after iteration 30. In contrast, the model with format rewards maintains substantially longer and more stable reasoning chains throughout training, consistently generating 2300-2800 tokens even in later iterations. This 50-80% increase in reasoning length is not merely superficial verbosity&#8212;the accompanying performance improvements on MMAU confirm that these extended deliberations contain meaningful acoustic analysis.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Our cold-start phase is designed to jointly elicit audio reasoning capabilities through a combination of Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verified Reward (RLVR). This phase utilizes a total dataset of 5 million samples. This token budget is comprised of 1B tokens from text-only data, with the remaining 4B tokens derived from our audio-side data.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RL Implementation Details</span> We employ an on-policy Proximal Policy Optimization framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#bib.bib22\" title=\"\">22</a>]</cite> with binary verification rewards: responses receive a reward of 1.0 when matching verified solutions and 0.0 otherwise. Critically, we remove reference model KL penalties by setting the penalty coefficient to zero, allowing the model to freely explore reasoning strategies without being constrained by its initialization distribution. During training, we sample 16 candidate responses per prompt, assigning rewards exclusively at the final token position to encourage complete reasoning trajectories. We configure PPO with a clipping parameter of 0.2 and set both the discount factor and GAE lambda to 1.0, training on sequences up to 10,240 tokens to accommodate extended deliberation.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "reasoning"
+                ]
+            }
+        ]
+    },
+    "S6.F5": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/figures/audio_reward_data.png",
+        "caption": "(a) Mean reward evolution",
+        "informative_terms_identified": [
+            "mean",
+            "reward",
+            "evolution"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Learning from Partial Success Outperforms Learning from Failure.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F5.sf1\" title=\"Figure 5(a) &#8227; Figure 5 &#8227; 6.2 Strategic Data Selection: Quality Over Quantity in Audio RL &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">5(a)</span></a> reveals striking differences in training dynamics. Models trained on moderately difficult problems (cyan line, \"correct passed problem\") achieve substantially higher and more stable rewards, converging to approximately 0.75-0.80 by iteration 20 and maintaining this performance throughout training. In sharp contrast, models trained exclusively on consistently-failed problems (blue line, \"failed problem\") exhibit significantly lower rewards (0.45-0.70) with higher variance and unstable convergence, eventually collapsing after iteration 50.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Reasoning Complexity Reflects Learning Quality.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F5.sf2\" title=\"Figure 5(b) &#8227; Figure 5 &#8227; 6.2 Strategic Data Selection: Quality Over Quantity in Audio RL &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">5(b)</span></a> corroborates this finding through reasoning length analysis. Initially, both strategies generate similar reasoning lengths (approximately 3000-3500 tokens in early iterations), as they start from the same SFT checkpoint. However, their trajectories diverge significantly after iteration 20. Models trained on moderately difficult problems (cyan line) maintain substantial reasoning chains, stabilizing at 2300-2800 tokens throughout later training, demonstrating sustained deliberation. Models trained on consistently-failed problems (blue line), however, show progressive decline: reasoning length gradually decreases from iteration 20 onward, eventually settling around 1800-2000 tokens by iteration 60&#8212;a 30-40% reduction from the moderately difficult setting.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Format Reward Drives Stable Convergence.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F4.sf1\" title=\"Figure 4(a) &#8227; Figure 4 &#8227; 6.1 Extended Reasoning Benefits Audio: Evidence from Format Reward Ablation &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">4(a)</span></a> presents the evolution of mean reward on audio tasks across training iterations. Both configurations eventually converge to similar reward levels (approximately 0.75-0.80), but their trajectories differ significantly. The model <span class=\"ltx_text ltx_font_italic\">with</span> think format reward (cyan line) achieves stable performance earlier, reaching the 0.70 threshold around iteration 35-40, while the model <span class=\"ltx_text ltx_font_italic\">without</span> format reward (blue line) requires nearly 25 iterations to reach comparable performance. More critically, the format-rewarded model maintains more stable training dynamics in later iterations (30-60), whereas the baseline exhibits higher variance and occasional performance drops. This stability advantage translates to meaningful performance gains: on the MMAU benchmark, incorporating the format reward improves accuracy from 76.5 to 77.7.</p>\n\n",
+                "matched_terms": [
+                    "mean",
+                    "reward",
+                    "evolution"
+                ]
+            }
+        ]
+    },
+    "S6.F5.sf2": {
+        "source_file": "Step-Audio-R1 Technical Report",
+        "image_url": "https://arxiv.org/html/2511.15848v2/figures/rollout_avg_tokens_data.png",
+        "caption": "(b) Reasoning token count",
+        "informative_terms_identified": [
+            "count",
+            "token",
+            "reasoning"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Reasoning Complexity Reflects Learning Quality.</span> Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#S6.F5.sf2\" title=\"Figure 5(b) &#8227; Figure 5 &#8227; 6.2 Strategic Data Selection: Quality Over Quantity in Audio RL &#8227; 6 Empirical Study and Analysis &#8227; Step-Audio-R1 Technical Report\"><span class=\"ltx_text ltx_ref_tag\">5(b)</span></a> corroborates this finding through reasoning length analysis. Initially, both strategies generate similar reasoning lengths (approximately 3000-3500 tokens in early iterations), as they start from the same SFT checkpoint. However, their trajectories diverge significantly after iteration 20. Models trained on moderately difficult problems (cyan line) maintain substantial reasoning chains, stabilizing at 2300-2800 tokens throughout later training, demonstrating sustained deliberation. Models trained on consistently-failed problems (blue line), however, show progressive decline: reasoning length gradually decreases from iteration 20 onward, eventually settling around 1800-2000 tokens by iteration 60&#8212;a 30-40% reduction from the moderately difficult setting.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Our cold-start phase is designed to jointly elicit audio reasoning capabilities through a combination of Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verified Reward (RLVR). This phase utilizes a total dataset of 5 million samples. This token budget is comprised of 1B tokens from text-only data, with the remaining 4B tokens derived from our audio-side data.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "reasoning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RL Implementation Details</span> We employ an on-policy Proximal Policy Optimization framework <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.15848v2#bib.bib22\" title=\"\">22</a>]</cite> with binary verification rewards: responses receive a reward of 1.0 when matching verified solutions and 0.0 otherwise. Critically, we remove reference model KL penalties by setting the penalty coefficient to zero, allowing the model to freely explore reasoning strategies without being constrained by its initialization distribution. During training, we sample 16 candidate responses per prompt, assigning rewards exclusively at the final token position to encourage complete reasoning trajectories. We configure PPO with a clipping parameter of 0.2 and set both the discount factor and GAE lambda to 1.0, training on sequences up to 10,240 tokens to accommodate extended deliberation.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "reasoning"
+                ]
+            }
+        ]
+    }
+}

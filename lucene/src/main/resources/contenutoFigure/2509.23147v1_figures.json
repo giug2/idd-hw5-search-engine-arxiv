@@ -1,0 +1,72 @@
+{
+    "S1.F1": {
+        "source_file": "BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT",
+        "image_url": "https://arxiv.org/html/2509.23147v1/x1.png",
+        "caption": "Fig. 1: Histograms of error distances from ground truth phoneme boundaries to their nearest predicted boundaries.",
+        "informative_terms_identified": [
+            "truth",
+            "distances",
+            "phoneme",
+            "nearest",
+            "error",
+            "ground",
+            "from",
+            "histograms",
+            "predicted",
+            "boundaries"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We present Bournemouth Forced Aligner (BFA), a system that combines a Contextless Universal Phoneme Encoder (CUPE) with a connectionist temporal classification (CTC)&#8211;based decoder. BFA introduces explicit modelling of inter-phoneme gaps and silences and hierarchical decoding strategies, enabling fine-grained boundary prediction. Evaluations on TIMIT and Buckeye corpora show that BFA achieves competitive recall relative to Montreal Forced Aligner at relaxed tolerance levels, while predicting both onset and offset boundaries for richer temporal structure. BFA processes speech up to 240&#215; faster than MFA, enabling faster than real-time alignment. This combination of speed and silence-aware alignment opens opportunities for interactive speech applications previously constrained by slow aligners.</p>\n\n",
+                "matched_terms": [
+                    "boundaries",
+                    "phoneme"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Accurate phoneme-level time alignment is important for speech processing pipelines, yet existing forced alignment tools are often language-specific and computationally expensive. Forced alignment&#8212;determining precise temporal boundaries for phonemes given known transcription&#8212;underpins applications from speech synthesis to audio-visual synchronization. Despite decades of research, current approaches face significant limitations constraining their applicability in modern pipelines.</p>\n\n",
+                "matched_terms": [
+                    "boundaries",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Research in universal phoneme representation has developed through IPA-based approaches, with systems employing 87-95 core phoneme sets <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib7\" title=\"\">7</a>]</cite>. These developments parallel BFA&#8217;s classification system but focus on multilingual scenarios. Silent gaps have been largely overlooked in existing systems. Recent prosody-aware alignment work demonstrates that silence periods and prosodic boundaries significantly impact alignment quality <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#bib.bib8\" title=\"\">8</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "boundaries",
+                    "phoneme"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We employ espeak-ng for text-to-phoneme conversion, mapping International Phonetic Alphabet symbols to our data-driven phoneme mapping system. We derive phonemes from frequency analysis of multilingual speech data, optimized for Indo-European languages in our training corpora. This reduces dependence on language-specific pronunciation dictionaries while maintaining phonetic precision. The phoneme selection can adapt to different language families by adjusting vocabulary based on target characteristics. We generate broader phoneme groups enabling coarse-grained alignment when needed.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "phoneme"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Interval Boundary Prediction</span>: We extend conventional onset-only prediction to estimate both phoneme start and end boundaries. The predicted end boundaries often occur before the subsequent phoneme onset, creating explicit inter-phoneme gaps that capture natural pause patterns in speech. However, the tolerance to gaps is an adjustable parameter since some applications may require more context between phonemes.</p>\n\n",
+                "matched_terms": [
+                    "predicted",
+                    "phoneme",
+                    "boundaries"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">End Boundary</span>: By predicting phoneme end boundaries that often occur before the next phoneme onset, our approach explicitly models inter-phoneme gaps that conventional aligners ignore entirely. While this results in approximately twice the boundary predictions and consequently lower precision scores (since the annotations are also onset-only), it provides a more complete representation of speech temporal structure where 30-40% of phonemes exhibit small inter-phoneme gaps as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.23147v1#S2.T3\" title=\"Table 3 &#8227; 2.4 Alignment Optimization Strategies &#8227; 2 Methodology &#8227; BFA: REAL-TIME MULTILINGUAL TEXT-TO-SPEECH FORCED ALIGNMENT\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "boundaries",
+                    "phoneme"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented a forced alignment approach addressing limitations in phoneme-level temporal boundary detection. Combining universal phoneme representation with contextless processing and explicit prosodic modeling achieves substantial computational improvements while maintaining competitive accuracy. Evaluation on TIMIT and Buckeye shows competitive recall performance versus established baselines with acceptable boundary distance accuracy. The approach shows promising results across different training configurations, from English-optimized to models trained on non-English data that generalize to English evaluation.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "phoneme"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,753 @@
+{
+    "S3.F1": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x1.png",
+        "caption": "Figure 1: The hierarchical taxonomy of prompt datasets",
+        "informative_terms_identified": [
+            "datasets",
+            "hierarchical",
+            "taxonomy",
+            "prompt"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We categorize our collected prompt datasets across multiple dimensions and hierarchies, creating a detailed taxonomy illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S3.F1\" title=\"Figure 1 &#8227; 3 Prompt Datasets Discovery and Refinement &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. We discuss certain key aspects in this taxonomy below.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">A prompt is a natural language instruction that defines a specific task for a large language model (LLM) and serves as the primary interface for human-LLM interaction. With the growing deployment of LLMs, diverse prompt datasets are emerging from platforms such as GitHub and social media. These datasets span a wide array of applications and content types, facilitating both broader LLM utilization and improved prompt engineering.\nIn this work, we&#8211;for the first time&#8211;have compiled an extensive list of prompt datasets sourced from various channels, representing a spectrum of downstream tasks, languages, engineering techniques, attributes, and modalities. We select key representative datasets for systematic analysis, revealing commonalities and differences in prompt construction across categories, distinguishing them from other text corpora like literature and web.\nWe further propose a prompt optimization approach that leverages syntactic embeddings of part-of-speech and dependency structures. By identifying a centroid representation of prompts and guiding LLMs to rewrite prompts toward this centroid, our method improves the meaningfulness of model outputs.\nWe have made our datasets and code available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://anonymous.4open.science/r/LLM-Prompt-Datasets-7416\" title=\"\">https://anonymous.4open.science/r/LLM-Prompt-Datasets-7416</a>.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent large language model (LLM) advancements have spurred the proliferation of custom prompts optimized for specific tasks. This trend spans technology communities&#8211;from GitHub repositories (e.g., f/awesome-chatgpt-prompts <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib17\" title=\"\">Ak&#305;n, </a>)</cite>) and Reddit forums (e.g., ChatGPTPromptGenius <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib2\" title=\"\">Cha, </a>)</cite>) to platforms like PromptBase and PromptGenius <cite class=\"ltx_cite ltx_citemacro_citep\">(Pro, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib6\" title=\"\">a</a>)</cite>. AI researchers and domain experts also share prompts to promote transparency, reproducibility, and collaborative innovation <cite class=\"ltx_cite ltx_citemacro_citep\">(Conover et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib25\" title=\"\">2023</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib22\" title=\"\">2024</a>)</cite>. Collectively, these datasets enable detailed analysis of usage patterns and high-performing prompt designs.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Notably, prior research has largely neglected comprehensive examinations of available prompt datasets. To address this gap, we apply stringent criteria to select, refine, and evaluate datasets that enable analysis of diverse prompts across multiple sources, content types, and target applications. Our survey encompasses over 1.22 TB of data, comprising more than 673M prompt instances from 129 heterogeneous sources. Our first contribution is a hierarchical taxonomy of LLM prompt datasets that serves as a detailed reference for researchers and informs future studies.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "hierarchical",
+                    "taxonomy",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Next, we perform multi-level linguistic analysis&#8212;lexical, syntactic, and semantic&#8212;across seven meticulously selected, large-scale, diverse, and representative prompt datasets. By integrating statistical and machine learning methods, our study reveals key insights into compositional patterns, domain-specific variations, and unique linguistic properties that distinguish these prompts from other text corpora, such as literature and web content.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Datasets for LLMs.</span>\nLiu et al. <cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib39\" title=\"\">2024</a>)</cite> discuss broadly the topic of datasets for LLMs, but emphasize more on corpus datasets for training and fine-tuning LLMs rather than providing a detailed analysis of prompt datasets.\nA few works consider LLM prompt datasets but with a narrower objective compared to ours. For instance, <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib70\" title=\"\">2023</a>)</cite> and OpenCodeInstruct&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ahmad et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib15\" title=\"\">2025a</a>)</cite> focus only on datasets for instruction tuning&#8211;a technique for fine-tuning LLMs using carefully constructed instruction-response pairs. LLMSecEval&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tony et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib62\" title=\"\">2023</a>)</cite> introduces a prompt dataset specifically designed for evaluating the safety of codes generated by LLMs, whereas\n<cite class=\"ltx_cite ltx_citemacro_citet\">Lu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib41\" title=\"\">2024</a>)</cite> survey datasets for LLMs&#8217; evaluation.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast to previous studies, our work is the first to compile a comprehensive list of prompt datasets and we also extract valuable insights through their analysis.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Data discovery guideline.</span> We employ a systematic dataset discovery process across multiple sources to compile a diverse repository of prompt datasets. Our objective is to capture real-world, user-generated prompts, instruction-following interactions, and domain-specific scenarios. In particular, our primary objectives for datasets discovery are three-fold: <span class=\"ltx_text ltx_font_bold\">(1)</span> collecting datasets that are composed of prompts, i.e., natural language instructions that describe a certain task the LLM should perform and guide the LLM towards generating a desired output; <span class=\"ltx_text ltx_font_bold\">(2)</span> ensuring that the extracted data cover various domains, including day-to-day scenarios such as travel planning, professional scenarios such as academic writing, and specialized scenarios such as healthcare and finance; and <span class=\"ltx_text ltx_font_bold\">(3)</span> allowing different forms of prompts, e.g., single instruction, conversations, etc.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Data discovery process.</span> We collect publicly available datasets from the following four types of sources. <span class=\"ltx_text ltx_font_bold\">First</span>, we consult <span class=\"ltx_text ltx_font_italic\">dataset collection platforms</span>, including Hugging Face Datasets <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib12\" title=\"\">hug, </a>)</cite>, Kaggle <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib13\" title=\"\">kag, </a>)</cite>, Google Dataset Search <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib11\" title=\"\">goo, </a>)</cite>, and Papers with Code <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib14\" title=\"\">pap, </a>)</cite>. Targeted searches using keywords, e.g., \"prompt dataset\", \"instruction-following dataset\", and \"conversation dataset\" yield 60 prompt datasets. <span class=\"ltx_text ltx_font_bold\">Second</span>, we review the latest <span class=\"ltx_text ltx_font_italic\">academic publications</span>, specifically papers on prompt engineering, natural language understanding, and dialogue systems, published at NeurIPS, ICLR, and ICML between 2023-2024 and identify 73 datasets shared across them. <span class=\"ltx_text ltx_font_bold\">Third</span>, we also examine <span class=\"ltx_text ltx_font_italic\">public repositories</span> by systematically surveying open-source GitHub projects using keywords, e.g., &#8220;prompt collection&#8221;, &#8220;LLM prompts&#8221;, and &#8220;instruction dataset&#8221;. We identify 21 prompt repositories that typically contain curated prompt lists derived from user interactions or synthesized from public APIs. Some of these repositories are &#8220;awesome-lists&#8221;, which are curated collections of high-quality prompts or links to prompt datasets.\nNotable examples include <span class=\"ltx_text ltx_font_sansserif\">Awesome Instruction Datasets</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib46\" title=\"\">Nie, </a>)</cite>, <span class=\"ltx_text ltx_font_sansserif\">Prompt Engineering Guide</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Saravia, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib56\" title=\"\">2022</a>)</cite>, and <span class=\"ltx_text ltx_font_sansserif\">LLMDataHub</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib71\" title=\"\">Zhao, </a>)</cite>. <span class=\"ltx_text ltx_font_bold\">Finally</span>, we extract 14 datasets from <span class=\"ltx_text ltx_font_italic\">popular websites dedicated to prompt-sharing</span>, including <span class=\"ltx_text ltx_font_sansserif\">Prompt Genius</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Pro, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib7\" title=\"\">b</a>)</cite> and <span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib10\" title=\"\">bor, </a>)</cite>. These platforms feature user-written prompts for practical purposes.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Data filtering.</span>\nWe remove duplicate entries (e.g., CVQA <cite class=\"ltx_cite ltx_citemacro_citep\">(Romero et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib51\" title=\"\">2024</a>)</cite> appears in both Hugging Face and NeurIPS 2024) and then filter the remaining candidates using four quality criteria for inclusion in this paper.\n<span class=\"ltx_text ltx_font_bold\">First</span>, <span class=\"ltx_text ltx_font_italic\">Dataset size.</span> We prioritize datasets containing at least 1K prompts to ensure robustness in diversity and statistical power. In contrast, due to their generally limited scope, user-shared datasets are filtered with a minimum threshold of 50 prompts.\n<span class=\"ltx_text ltx_font_bold\">Second</span>, <span class=\"ltx_text ltx_font_italic\">Data quality.</span> We evaluate the quality of prompts based on their cleanliness. Most datasets (e.g., <span class=\"ltx_text ltx_font_sansserif\">OpenCodeReasoning</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Ahmad et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib16\" title=\"\">2025b</a>)</cite>) on data hosting platforms (e.g., Hugging Face and Kaggle) are well-formatted and clean. For the remaining data, we exclude samples with inconsistent formatting or unclear structure. For instance, the <span class=\"ltx_text ltx_font_sansserif\">Prompt Engineering Guide</span>&#8211;a resource that offers both curated prompt datasets and instructional examples&#8211;contains many illustrative prompts scattered throughout the material and are thus omitted from our datasets.\n<span class=\"ltx_text ltx_font_bold\">Third</span>, <span class=\"ltx_text ltx_font_italic\">Data relevance.</span> We assess whether the prompts are aligned with our data discovery guidelines, specifically emphasizing on those that represent common usage scenarios for broad audiences (e.g., <span class=\"ltx_text ltx_font_sansserif\">Chinese-DeepSeek-R1-Distill-data-110k</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib38\" title=\"\">2025a</a>)</cite>), and tasks from various domains (e.g., <span class=\"ltx_text ltx_font_sansserif\">Medical Verifiable Problems</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib22\" title=\"\">2024</a>)</cite>, <span class=\"ltx_text ltx_font_sansserif\">OpenMathReasoning</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Moshkov et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib44\" title=\"\">2025</a>)</cite>). Datasets that violate our discovery guidelines are omitted. For instance, the <span class=\"ltx_text ltx_font_sansserif\">PersonaHub</span> dataset <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib5\" title=\"\">Per, </a>)</cite> is excluded because it does not meet <span class=\"ltx_text ltx_font_bold\">data discovery guideline (1)</span>, which mandates that prompts be linked to specific, well-defined tasks. Although <span class=\"ltx_text ltx_font_sansserif\">PersonaHub</span> demonstrates the potential of synthetic personas in generating diverse content (e.g., reasoning problems, dialogues, or non-player character behaviors), it predominantly comprises persona descriptions without clear task formulation.\n<span class=\"ltx_text ltx_font_bold\">Fourth</span>, <span class=\"ltx_text ltx_font_italic\">Accessibility.</span> Datasets must be publicly accessible or retrievable via automated crawling, and their licensing terms must permit research use. After filtering, we identify 129 distinct prompt datasets for taxonomic analysis (&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S4\" title=\"4 Dataset Taxonomy &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Content.</span>\nPrompt datasets are characterized by distinct linguistic and structural attributes.\n<span class=\"ltx_text ltx_font_bold\">Linguistically</span>, they may be <span class=\"ltx_text ltx_font_italic\">monolingual</span> or <span class=\"ltx_text ltx_font_italic\">multilingual</span>; in the latter case, datasets are deemed <span class=\"ltx_text ltx_font_italic\">semantically aligned</span> if each entry includes multilingual counterparts with identical semantics, thereby enhancing LLM performance <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib35\" title=\"\">2023b</a>)</cite>.\nIn terms of <span class=\"ltx_text ltx_font_bold\">display form</span>, prompts appear either as <span class=\"ltx_text ltx_font_italic\">conversation</span> (e.g., single-round, multi-round, or tree-structured) or <span class=\"ltx_text ltx_font_italic\">instruction</span> (e.g., user prompt, system prompt). The prompt <span class=\"ltx_text ltx_font_bold\">format</span>&#8211;ranging from <span class=\"ltx_text ltx_font_italic\">free-form</span> to <span class=\"ltx_text ltx_font_italic\">structured</span> (e.g., JSON, Markdown, HTML), or a combination thereof&#8211;substantially influences LLM response quality <cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib40\" title=\"\">2025b</a>)</cite>.\nFinally, datasets differ in their use of <span class=\"ltx_text ltx_font_bold\">placeholders</span>, which allow for text substitution and enable diversified prompt transformations <cite class=\"ltx_cite ltx_citemacro_citep\">(Shin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib58\" title=\"\">2020</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Prompt engineering</span> methods are critical for enhancing prompt performance <cite class=\"ltx_cite ltx_citemacro_citep\">(Sahoo et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib52\" title=\"\">2025</a>)</cite>. Common techniques include <span class=\"ltx_text ltx_font_italic\">few-shot</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Brown et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib20\" title=\"\">2020</a>)</cite>, <span class=\"ltx_text ltx_font_italic\">role playing</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib69\" title=\"\">2018</a>)</cite>, <span class=\"ltx_text ltx_font_italic\">chain-of-thought</span> (CoT) <cite class=\"ltx_cite ltx_citemacro_citep\">(Wei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib67\" title=\"\">2022</a>)</cite>, and <span class=\"ltx_text ltx_font_italic\">rephrase-and-respond</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Deng et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib27\" title=\"\">2023</a>)</cite>. Some datasets adopt a single method (e.g., <span class=\"ltx_text ltx_font_sansserif\">awesome-chatgpt-prompts</span> uses role playing), while others combine multiple techniques (e.g., <span class=\"ltx_text ltx_font_sansserif\">PromptBench</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib72\" title=\"\">2024</a>)</cite> integrates six methods), or leave the strategy unspecified.\nMoreover, datasets may include <span class=\"ltx_text ltx_font_bold\">extra attributes</span>, including <span class=\"ltx_text ltx_font_italic\">labeled data</span> (e.g., response supervision, safety labels), <span class=\"ltx_text ltx_font_italic\">analytical data</span> (e.g., token count, user behavior), <span class=\"ltx_text ltx_font_italic\">structural information</span> (e.g., timestamp, multi-turn context), and <span class=\"ltx_text ltx_font_italic\">ground truth</span> (e.g., gold answers, attribution references)&#8211;as seen in datasets including <span class=\"ltx_text ltx_font_sansserif\">hh-rlhf</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib18\" title=\"\">2022</a>)</cite>, <span class=\"ltx_text ltx_font_sansserif\">UltraFeedback</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Cui et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib26\" title=\"\">2023</a>)</cite>, and <span class=\"ltx_text ltx_font_sansserif\">databricks-dolly-15k</span>. <span class=\"ltx_text ltx_font_italic\">Additional tags</span> may indicate <span class=\"ltx_text ltx_font_italic\">usage context</span>, such as associated models, cultural regions, or domain specificity.\nFinally, datasets vary in <span class=\"ltx_text ltx_font_bold\">dynamicity</span> (i.e., static vs. dynamically updated) and <span class=\"ltx_text ltx_font_bold\">modality</span> (i.e., single-modal vs. cross-/multi-modal). For example, <span class=\"ltx_text ltx_font_sansserif\">awesome-chatgpt-prompts</span> is a dynamically updated prompts collection, while <span class=\"ltx_text ltx_font_sansserif\">PLM-Video-Human</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Cho et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib24\" title=\"\">2025</a>)</cite> supports multi-modal learning for video understanding.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Target.</span>\nTarget defines the purpose and applications of prompt datasets. From <span class=\"ltx_text ltx_font_bold\">cognitive intents and applications</span> perspective, prompts may aim for <span class=\"ltx_text ltx_font_italic\">information retrieval</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">databricks-dolly-15k</span> includes information extraction category), <span class=\"ltx_text ltx_font_italic\">text processing</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">StrategyQA</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib9\" title=\"\">Str, </a>)</cite> requires implicit reasoning steps in the question), <span class=\"ltx_text ltx_font_italic\">analytical decision-making</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">medical-o1-reasoning-SFT</span>\n<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib22\" title=\"\">2024</a>)</cite>\nfor consultation decision), <span class=\"ltx_text ltx_font_italic\">logical reasoning</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">DeepSeek-Prover-V1</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Xin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib68\" title=\"\">2024</a>)</cite>), <span class=\"ltx_text ltx_font_italic\">creative generation</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">No Robots</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Rajani et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib49\" title=\"\">2023</a>)</cite> includes generation category), or <span class=\"ltx_text ltx_font_italic\">emotion-oriented</span> (e.g., <span class=\"ltx_text ltx_font_sansserif\">empathetic-dialogues-facebook-ai</span>\n<cite class=\"ltx_cite ltx_citemacro_citep\">(<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib3\" title=\"\">Emp, </a>)</cite>) tasks. In terms of <span class=\"ltx_text ltx_font_bold\">downstream tasks</span>, we identify three major categories: <span class=\"ltx_text ltx_font_italic\">data-oriented</span> (e.g., synthetic data generation, data augmentation), <span class=\"ltx_text ltx_font_italic\">model-oriented</span> (e.g., model training, finetuning, benchmarking, RLHF), and <span class=\"ltx_text ltx_font_italic\">prompt-oriented</span> (e.g., prompt composition studies, prompt engineering effectiveness analysis, instruction pattern analysis).</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Among these, instruction fine-tuning datasets represent a prominent and widely-used subset of prompt datasets <cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib39\" title=\"\">2024</a>)</cite>. These datasets comprise instruction-response pairs, where the \"instruction\" serves as a prompt and the \"response\" represents the target model output. They are primarily employed for supervised fine-tuning to enhance model capability and controllability. As a result, models trained on these datasets exhibit superior alignment with human intent, improved instruction-following, and increased safety characteristics <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib70\" title=\"\">2023</a>)</cite>. Furthermore, the instructions in these datasets often reflect real-world user queries, making them both practical for deployment and valuable for prompt-related research. Notable examples are <span class=\"ltx_text ltx_font_sansserif\">Alpaca</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Taori et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib61\" title=\"\">2023</a>)</cite>, <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(K&#246;pf et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib31\" title=\"\">2023</a>)</cite>, and <span class=\"ltx_text ltx_font_sansserif\">FLAN 2022</span>.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We summarize the key characetristics and metadata attributes&#8211; including sources&#8211;of all our collected and filtered 129 prompt datasets in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A5\" title=\"Appendix E Summary of Prompt Datasets for Taxonomic Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">E</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to ensure reliable analysis of prompt characteristics, we curate multiple prompt-centric datasets with the following selection principles.\n<span class=\"ltx_text ltx_font_bold\">(1)</span> <span class=\"ltx_text ltx_font_italic\">Language consistency.</span> Only English-language data have been included to ensure uniform linguistic features and avoid cross-linguistic biases.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> <span class=\"ltx_text ltx_font_italic\">Exclusion of benchmark-style prompts.</span> Prompts designed for LLM performance evaluations (e.g., <span class=\"ltx_text ltx_font_sansserif\">PHYBench</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Qiu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib48\" title=\"\">2025</a>)</cite>) are excluded to focus on natural usage scenarios.\n<span class=\"ltx_text ltx_font_bold\">(3)</span> <span class=\"ltx_text ltx_font_italic\">Source and content diversity.</span> To achieve sufficient coverage and reduce sampling bias, we have selected datasets that differ in <span class=\"ltx_text ltx_font_italic\">publisher type</span> (i.e., end user vs. LLM researcher and domain scientist), <span class=\"ltx_text ltx_font_italic\">instruction generation method</span> (i.e., human vs. model generated), and <span class=\"ltx_text ltx_font_italic\">domain scope</span> (i.e., general vs. domain-specific tasks).</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following our selection principles, we curated seven representative datasets spanning different user types, instruction methods, and domains. For <span class=\"ltx_text ltx_font_bold\">end users</span>, general-domain prompts include single-turn prompts (<span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span>) and multi-turn conversations (<span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>), while business-domain single-turn prompts are represented by <span class=\"ltx_text ltx_font_sansserif\">1100+ ChatGPT Prompts for Business</span>. For <span class=\"ltx_text ltx_font_bold\">LLM researchers</span>, human-generated datasets include <span class=\"ltx_text ltx_font_sansserif\">databricks-dolly-15k</span> and <span class=\"ltx_text ltx_font_sansserif\">OASST1</span>, and model-generated prompts are captured by <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span>. For <span class=\"ltx_text ltx_font_bold\">domain scientists</span>, we include model-generated medical prompts from <span class=\"ltx_text ltx_font_sansserif\">medical-o1-reasoning-SFT</span>. This collection ensures diversity in publisher type, prompt structure, and application domain.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> High-frequency <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams reveal domain and prompt-engineering differences, such as role-playing cues in <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> (&#8220;you to act as&#8221;) versus medical reasoning in <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> (&#8220;what be the,&#8221; &#8220;the most likely diagnosis&#8221;). <span class=\"ltx_text ltx_font_bold\">(2)</span> While 3-grams capture general-purpose queries or commands (e.g., &#8220;what be the,&#8221; &#8220;I want to&#8221;), longer <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams (4&#8211;5) reflect task-specific patterns, as in <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> where frequent 5-grams (&#8220;please write in English language,&#8221; &#8220;write a comprehensive reply to&#8221;) highlight its instruction-following orientation. <span class=\"ltx_text ltx_font_bold\">(3)</span> Compared to Google Books 5-grams (e.g., &#8220;at the end of the,&#8221; &#8220;in whole or in part&#8221;) that serve narrative or descriptive purposes, prompt datasets exhibit inquiry- or command-focused <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m3\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams, underscoring a clear divergence in linguistic patterns across corpora.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Analysis of Results.</span>\nTable <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.T2\" title=\"Table 2 &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows the distribution of eight common dependency types across seven prompt datasets and two reference corpora (EWT and ParTUT), revealing three key findings.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These findings highlight the stylistic diversity among prompt datasets, where domain and intent directly influence grammatical structure. Medical prompts stress detailed specificity and descriptive richness, while business prompts favor concise, directive clarity, illustrating the functional interplay between form and purpose.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We analyze lexical patterns across prompt datasets using TF-IDF. Each dataset&#8217;s prompts are concatenated into a single document (yielding seven corpus-level documents), and a TF-IDF vectorizer (with a 5000-word limit and English stopwords removed) computes sparse term importance representations. We then assess <span class=\"ltx_text ltx_font_bold\">inter-dataset lexical similarity</span> via pairwise cosine similarity (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.F3.sf3\" title=\"In Figure 3 &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a>) and extract the top three highest-weight tokens per dataset for <span class=\"ltx_text ltx_font_bold\">intra-dataset characterization</span> (Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.T4\" title=\"Table 4 &#8227; 5.3.2 Part-of-Speech Tagging &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Analysis of results.</span>\n<span class=\"ltx_text ltx_font_bold\">(1) Intra-dataset analysis</span>\ndelineates each dataset&#8217;s lexical focus and stylistic characteristics. For instance, <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> emphasizes business-specific terms like &#8220;content&#8221; and &#8220;email&#8221;, while <span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span> features imperatives such as &#8220;act&#8221;, indicative of role-playing instructions. Similarly, <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> shows a dominant TF-IDF score for &#8220;output&#8221; (0.772), highlighting a structural prompt style based on explicit instruction&#8211;response formats.\n<span class=\"ltx_text ltx_font_bold\">(2) Inter-dataset comparison.</span>\nTF-IDF vectors show varying overlaps across datasets. The highest cosine similarity between <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> suggests a similar vocabulary&#8212;likely due to shared human-generation processes. In contrast, <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> is lexically distant from the others, especially <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> and <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span>, reflecting stylistic and domain-specific differences.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We addressed the underexplored challenge of collecting and categorizing LLM prompt datasets into a structured taxonomy. Our lexical, syntactic, and semantic explorations uncover key linguistic patterns, inter-dataset similarities, differences, and distinctions from other corpora such as literature and web content. Our novel application enhances domain-specific prompt filtering pipelines by automatically flagging irrelevant or malformed prompts in an unsupervised, data-driven manner before inference. Future work should leverage these extensive datasets to advance LLM architectures, prompt engineering, and human-AI interactions&#8212;including adaptive quality assessments and pricing models in AI prompt marketplaces.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "taxonomy",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Due to the diversity of tasks among our selected datasets, this study does not include an evaluation of prompt effects. Our research primarily focuses on Natural Language Processing and Machine Learning methods, and thus does not leverage Large Language Models to analyze the impact of prompts. We recognize this as a limitation and suggest that future research incorporate prompt-based approaches for a more thorough assessment.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The amount of prompt data is growing rapidly. Based on our proposed taxonomy, we encourage further studies to continuously explore and update analyses in accordance with emerging trends. Additionally, we hope that future research will conduct more in-depth experiments on prompt datasets, which could be vital for advancing prompt design.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "taxonomy",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work conforms to the ICLR Code of Ethics by responsibly compiling and analyzing existing prompt datasets rather than collecting new sensitive data. We ensure proper documentation of all datasets analyzed, respect original licenses and sources, and have made our code and datasets publicly available for transparency and reproducibility. The research poses minimal risk for misuse as it focuses on analytical insights rather than creating potentially harmful technologies, and we have documented our methodology thoroughly to enable external scrutiny.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We briefly discuss all 129 prompt datasets collected for taxonomic analysis (&#167;3 and &#167;4).</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Description</span>: Firefly is a Chinese instruction-tuning dataset comprising 1.15 million high-quality examples drawn from 23 common Chinese natural language processing datasets. Each example includes a task type, an input prompt, and a target output, ensuring diverse coverage. Data templates were manually designed for each task to ensure quality and richness. Token length analysis shows that most examples are under 600 tokens. Firefly was used to train the Firefly-1b4 Chinese dialogue LLM, available on GitHub and Hugging Face, fostering reproducibility, community collaboration.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Description</span>: Flan-mini is a curated 1.34 M-example subset of the FLAN instruction-tuning collection augmented with code and conversational tasks. It pools 388K Flan2021 instructions, 320K public prompt templates, 200K Natural Instructions v2 instances, 100K chain-of-thought examples, plus code datasets (100K Code Search, 50K Code Contests, 50K APPS). It further integrates 132K ChatGPT-generated examples from GPT-4-Alpaca, Code-Alpaca, and ShareGPT. Each example is randomly paired with handcrafted prompt templates for zero- or few-shot fine-tuning, ensuring diverse task coverage. Released under a permissive CC license.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Description</span>: PromptSource is a comprehensive toolkit designed for creating, sharing, and using natural language prompts, facilitating zero-shot and few-shot learning research with large language models. It hosts the Public Pool of Prompts (P3), containing around 2,000 English prompts for over 170 datasets. By providing a simple templating language (Jinja) and API, PromptSource enables reproducible prompt engineering and systematic evaluation, supporting advances in multitask fine-tuning and zero-shot generalization across diverse NLP tasks.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we present the complete experimental data for all identified dependency types, along with their proportions in the datasets, as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T5\" title=\"Table 5 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Additionally, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T6\" title=\"Table 6 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> lists all detected Part-of-Speech tags and their corresponding proportions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F8\" title=\"Figure 8 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">8</span></a> further illustrates the ten most common verbs and their top five direct noun objects found in the prompt datasets except <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which are shown in the main paper.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "datasets"
+                ]
+            }
+        ]
+    },
+    "S5.F2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x2.png",
+        "caption": "(a) Top-5 nn-grams of ShareGPT (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "sharegpt",
+            "nn3",
+            "top5",
+            "nngrams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> High-frequency <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams reveal domain and prompt-engineering differences, such as role-playing cues in <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> (&#8220;you to act as&#8221;) versus medical reasoning in <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> (&#8220;what be the,&#8221; &#8220;the most likely diagnosis&#8221;). <span class=\"ltx_text ltx_font_bold\">(2)</span> While 3-grams capture general-purpose queries or commands (e.g., &#8220;what be the,&#8221; &#8220;I want to&#8221;), longer <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams (4&#8211;5) reflect task-specific patterns, as in <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> where frequent 5-grams (&#8220;please write in English language,&#8221; &#8220;write a comprehensive reply to&#8221;) highlight its instruction-following orientation. <span class=\"ltx_text ltx_font_bold\">(3)</span> Compared to Google Books 5-grams (e.g., &#8220;at the end of the,&#8221; &#8220;in whole or in part&#8221;) that serve narrative or descriptive purposes, prompt datasets exhibit inquiry- or command-focused <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m3\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams, underscoring a clear divergence in linguistic patterns across corpora.</p>\n\n",
+                "matched_terms": [
+                    "sharegpt",
+                    "nngrams"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "sharegpt",
+                    "top5",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "S5.F2.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x3.png",
+        "caption": "(b) Top-5 5-grams of medical-o1, OASST1, ShareGPT",
+        "informative_terms_identified": [
+            "sharegpt",
+            "top5",
+            "5grams",
+            "oasst1",
+            "medicalo1"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Following our selection principles, we curated seven representative datasets spanning different user types, instruction methods, and domains. For <span class=\"ltx_text ltx_font_bold\">end users</span>, general-domain prompts include single-turn prompts (<span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span>) and multi-turn conversations (<span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>), while business-domain single-turn prompts are represented by <span class=\"ltx_text ltx_font_sansserif\">1100+ ChatGPT Prompts for Business</span>. For <span class=\"ltx_text ltx_font_bold\">LLM researchers</span>, human-generated datasets include <span class=\"ltx_text ltx_font_sansserif\">databricks-dolly-15k</span> and <span class=\"ltx_text ltx_font_sansserif\">OASST1</span>, and model-generated prompts are captured by <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span>. For <span class=\"ltx_text ltx_font_bold\">domain scientists</span>, we include model-generated medical prompts from <span class=\"ltx_text ltx_font_sansserif\">medical-o1-reasoning-SFT</span>. This collection ensures diversity in publisher type, prompt structure, and application domain.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "sharegpt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> High-frequency <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams reveal domain and prompt-engineering differences, such as role-playing cues in <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> (&#8220;you to act as&#8221;) versus medical reasoning in <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> (&#8220;what be the,&#8221; &#8220;the most likely diagnosis&#8221;). <span class=\"ltx_text ltx_font_bold\">(2)</span> While 3-grams capture general-purpose queries or commands (e.g., &#8220;what be the,&#8221; &#8220;I want to&#8221;), longer <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams (4&#8211;5) reflect task-specific patterns, as in <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> where frequent 5-grams (&#8220;please write in English language,&#8221; &#8220;write a comprehensive reply to&#8221;) highlight its instruction-following orientation. <span class=\"ltx_text ltx_font_bold\">(3)</span> Compared to Google Books 5-grams (e.g., &#8220;at the end of the,&#8221; &#8220;in whole or in part&#8221;) that serve narrative or descriptive purposes, prompt datasets exhibit inquiry- or command-focused <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m3\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams, underscoring a clear divergence in linguistic patterns across corpora.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "5grams",
+                    "sharegpt",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> The <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> dataset is characterized by its high use of adjectival modifiers (amod, 0.11) and low direct object frequency (dobj, 0.03), reflecting a preference for precise, state-oriented descriptions over action-driven narratives, often framed through linking verbs&#8212;typical of medical contexts detailing conditions, symptoms, and diagnoses. <span class=\"ltx_text ltx_font_bold\">(2)</span> In contrast, the <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> dataset favors concise, goal-driven imperatives with bare noun phrases as direct objects (dobj, 0.09) and minimal use of determiners (det, 0.05), aligning with its project-planning focus. <span class=\"ltx_text ltx_font_bold\">(3)</span> Verb&#8211;noun dependency analysis further distinguishes domains: medical instructions cluster around technical, domain-specific pairs like &#8220;have history&#8221; and &#8220;experience pain,&#8221; while datasets such as <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> use broader, generic pairs like &#8220;write answer&#8221; and &#8220;use code&#8221;. These syntactic patterns highlight each corpus&#8217; thematic priorities and inform strategies for domain-aware model training.</p>\n\n",
+                "matched_terms": [
+                    "sharegpt",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Analysis of results.</span>\n<span class=\"ltx_text ltx_font_bold\">(1) Intra-dataset analysis</span>\ndelineates each dataset&#8217;s lexical focus and stylistic characteristics. For instance, <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> emphasizes business-specific terms like &#8220;content&#8221; and &#8220;email&#8221;, while <span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span> features imperatives such as &#8220;act&#8221;, indicative of role-playing instructions. Similarly, <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> shows a dominant TF-IDF score for &#8220;output&#8221; (0.772), highlighting a structural prompt style based on explicit instruction&#8211;response formats.\n<span class=\"ltx_text ltx_font_bold\">(2) Inter-dataset comparison.</span>\nTF-IDF vectors show varying overlaps across datasets. The highest cosine similarity between <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> suggests a similar vocabulary&#8212;likely due to shared human-generation processes. In contrast, <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> is lexically distant from the others, especially <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> and <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span>, reflecting stylistic and domain-specific differences.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "sharegpt",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Analysis of results.</span>\n<span class=\"ltx_text ltx_font_bold\">(1) Wide coverage in Self-Instruct:</span> The <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> dataset exhibits the most dispersed and evenly distributed semantic space, suggesting a broad topical coverage. This aligns with the self-instruction paradigm&#8217;s goal of generating diverse instruction types.\n<span class=\"ltx_text ltx_font_bold\">(2) Semantic cohesion in specific domains:</span> Prompts from <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> and <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> form more concentrated clusters, indicating domain-specific semantic cohesion.\n<span class=\"ltx_text ltx_font_bold\">(3) Overlap among human-generated sets:</span> The embeddings of <span class=\"ltx_text ltx_font_sansserif\">dolly-15k</span>, <span class=\"ltx_text ltx_font_sansserif\">OASST1</span>, and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> overlap substantially across both PCA dimensions. This suggests that these datasets share stylistic and semantic characteristics, possibly due to their common reliance on human-LLM interactions for data generation.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "sharegpt",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "sharegpt",
+                    "top5"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we present the complete experimental data for all identified dependency types, along with their proportions in the datasets, as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T5\" title=\"Table 5 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Additionally, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T6\" title=\"Table 6 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> lists all detected Part-of-Speech tags and their corresponding proportions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F8\" title=\"Figure 8 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">8</span></a> further illustrates the ten most common verbs and their top five direct noun objects found in the prompt datasets except <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which are shown in the main paper.</p>\n\n",
+                "matched_terms": [
+                    "sharegpt",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These additional data further support our conclusions.\n<span class=\"ltx_text ltx_font_bold\">(1)</span> The <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> dataset, which consists of professionally crafted medical prompts, exhibits a relatively high proportion of numerical modifiers (nummod, 0.0276) and passive auxiliaries (auxpass, 0.0101) in dependency analysis, as well as a notably high usage of numerals (NUM, 0.0309) in POS tagging. These features reflect a terminology-dense and precision-oriented language style that emphasizes processes and outcomes rather than agents.\n<span class=\"ltx_text ltx_font_bold\">(2)</span> In the <span class=\"ltx_text ltx_font_sansserif\">1.1k-business</span> dataset, the verb-noun pairs reflect language commonly used in business contexts, such as <span class=\"ltx_text ltx_font_italic\">&#8220;create plan&#8221;</span> and <span class=\"ltx_text ltx_font_italic\">&#8220;create strategy&#8221;</span>. In contrast, the verb-noun pairs observed in <span class=\"ltx_text ltx_font_sansserif\">BoredHumans</span>, <span class=\"ltx_text ltx_font_sansserif\">OASST1</span>, and <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span> suggest more generic and broadly applicable usage scenarios.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "medicalo1"
+                ]
+            }
+        ]
+    },
+    "S5.F3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x4.png",
+        "caption": "(a) medical-o1",
+        "informative_terms_identified": [
+            "medicalo1"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We apply the spaCy <span class=\"ltx_text ltx_font_typewriter\">en_core_web_sm</span> parser <cite class=\"ltx_cite ltx_citemacro_citep\">(Honnibal &amp; Montani, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib29\" title=\"\">2017</a>)</cite> to extract syntactic dependencies and determine the frequency of key grammatical relations in each dataset. For the EWT and ParTUT corpora, we rely on officially published dependency type annotations. This analysis reveals systematic variations in linguistic style across prompt sources. Additionally, we track verb&#8211;object (dobj) pairs to capture the task-oriented diversity of the prompts (see Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.F3\" title=\"Figure 3 &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n",
+            "<p class=\"ltx_p\">We analyze lexical patterns across prompt datasets using TF-IDF. Each dataset&#8217;s prompts are concatenated into a single document (yielding seven corpus-level documents), and a TF-IDF vectorizer (with a 5000-word limit and English stopwords removed) computes sparse term importance representations. We then assess <span class=\"ltx_text ltx_font_bold\">inter-dataset lexical similarity</span> via pairwise cosine similarity (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.F3.sf3\" title=\"In Figure 3 &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a>) and extract the top three highest-weight tokens per dataset for <span class=\"ltx_text ltx_font_bold\">intra-dataset characterization</span> (Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.T4\" title=\"Table 4 &#8227; 5.3.2 Part-of-Speech Tagging &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F3.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x5.png",
+        "caption": "(b) ShareGPT",
+        "informative_terms_identified": [
+            "sharegpt"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S5.F3.sf3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x6.png",
+        "caption": "(c) TF-IDF",
+        "informative_terms_identified": [
+            "tfidf"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We analyze lexical patterns across prompt datasets using TF-IDF. Each dataset&#8217;s prompts are concatenated into a single document (yielding seven corpus-level documents), and a TF-IDF vectorizer (with a 5000-word limit and English stopwords removed) computes sparse term importance representations. We then assess <span class=\"ltx_text ltx_font_bold\">inter-dataset lexical similarity</span> via pairwise cosine similarity (Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.F3.sf3\" title=\"In Figure 3 &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a>) and extract the top three highest-weight tokens per dataset for <span class=\"ltx_text ltx_font_bold\">intra-dataset characterization</span> (Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.T4\" title=\"Table 4 &#8227; 5.3.2 Part-of-Speech Tagging &#8227; 5.3 Syntactic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F4": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x7.png",
+        "caption": "(a) human-generated",
+        "informative_terms_identified": [
+            "humangenerated"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We analyze prompt semantics by encoding each prompt into a 384-dimensional dense vector using Sentence-BERT&#8217;s pretrained model <span class=\"ltx_text ltx_font_typewriter\">all-MiniLM-L6-v2</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Reimers &amp; Gurevych, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib50\" title=\"\">2019</a>)</cite>. Each prompt is encoded into a 384-dimensional dense vector that captures its semantic content. These embeddings serve as the foundation for classification, clustering, and visualization analysis. We perform Principal Component Analysis (PCA) to reduce sentence embeddings to two dimensions. For fair comparison, we uniformly at random sample 500 prompts per dataset and visualize their distribution (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S5.F4\" title=\"Figure 4 &#8227; 5.4 Semantic-level Analysis &#8227; 5 Prompt Data Analysis &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F4.fig2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x8.png",
+        "caption": "(b) medical-o1",
+        "informative_terms_identified": [
+            "medicalo1"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S5.F4.fig3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x9.png",
+        "caption": "(c) Self-Instruct",
+        "informative_terms_identified": [
+            "selfinstruct"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S6.F5": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x10.png",
+        "caption": "Figure 5: A case study of prompt optimization",
+        "informative_terms_identified": [
+            "optimization",
+            "case",
+            "study",
+            "prompt"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To illustrate the practical impact of this approach, we present one representative case study in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#S6.F5\" title=\"Figure 5 &#8227; 6 Application &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, where our prompt optimization successfully corrected the model&#8217;s initial incorrect responses, while another case study and the complete text are provided in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.SS4\" title=\"F.4 Application &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">F.4</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">A prompt is a natural language instruction that defines a specific task for a large language model (LLM) and serves as the primary interface for human-LLM interaction. With the growing deployment of LLMs, diverse prompt datasets are emerging from platforms such as GitHub and social media. These datasets span a wide array of applications and content types, facilitating both broader LLM utilization and improved prompt engineering.\nIn this work, we&#8211;for the first time&#8211;have compiled an extensive list of prompt datasets sourced from various channels, representing a spectrum of downstream tasks, languages, engineering techniques, attributes, and modalities. We select key representative datasets for systematic analysis, revealing commonalities and differences in prompt construction across categories, distinguishing them from other text corpora like literature and web.\nWe further propose a prompt optimization approach that leverages syntactic embeddings of part-of-speech and dependency structures. By identifying a centroid representation of prompts and guiding LLMs to rewrite prompts toward this centroid, our method improves the meaningfulness of model outputs.\nWe have made our datasets and code available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://anonymous.4open.science/r/LLM-Prompt-Datasets-7416\" title=\"\">https://anonymous.4open.science/r/LLM-Prompt-Datasets-7416</a>.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Next, we perform multi-level linguistic analysis&#8212;lexical, syntactic, and semantic&#8212;across seven meticulously selected, large-scale, diverse, and representative prompt datasets. By integrating statistical and machine learning methods, our study reveals key insights into compositional patterns, domain-specific variations, and unique linguistic properties that distinguish these prompts from other text corpora, such as literature and web content.</p>\n\n",
+                "matched_terms": [
+                    "study",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, we propose a prompt optimization method leveraging part-of-speech and dependency embeddings. By aligning target prompts with a centroid of high-performing syntactic patterns, our approach improves the meaningfulness and quality of LLM responses. This data-driven method provides a foundation for more effective prompt selection and refinement in LLMs.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Content.</span>\nPrompt datasets are characterized by distinct linguistic and structural attributes.\n<span class=\"ltx_text ltx_font_bold\">Linguistically</span>, they may be <span class=\"ltx_text ltx_font_italic\">monolingual</span> or <span class=\"ltx_text ltx_font_italic\">multilingual</span>; in the latter case, datasets are deemed <span class=\"ltx_text ltx_font_italic\">semantically aligned</span> if each entry includes multilingual counterparts with identical semantics, thereby enhancing LLM performance <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib35\" title=\"\">2023b</a>)</cite>.\nIn terms of <span class=\"ltx_text ltx_font_bold\">display form</span>, prompts appear either as <span class=\"ltx_text ltx_font_italic\">conversation</span> (e.g., single-round, multi-round, or tree-structured) or <span class=\"ltx_text ltx_font_italic\">instruction</span> (e.g., user prompt, system prompt). The prompt <span class=\"ltx_text ltx_font_bold\">format</span>&#8211;ranging from <span class=\"ltx_text ltx_font_italic\">free-form</span> to <span class=\"ltx_text ltx_font_italic\">structured</span> (e.g., JSON, Markdown, HTML), or a combination thereof&#8211;substantially influences LLM response quality <cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib40\" title=\"\">2025b</a>)</cite>.\nFinally, datasets differ in their use of <span class=\"ltx_text ltx_font_bold\">placeholders</span>, which allow for text substitution and enable diversified prompt transformations <cite class=\"ltx_cite ltx_citemacro_citep\">(Shin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib58\" title=\"\">2020</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "case",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Due to the diversity of tasks among our selected datasets, this study does not include an evaluation of prompt effects. Our research primarily focuses on Natural Language Processing and Machine Learning methods, and thus does not leverage Large Language Models to analyze the impact of prompts. We recognize this as a limitation and suggest that future research incorporate prompt-based approaches for a more thorough assessment.</p>\n\n",
+                "matched_terms": [
+                    "study",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Description</span>: Intellect-2-RL-Dataset is a large-scale collection of 284,741 training examples, designed for reinforcement learning in mathematical and coding problem solving. Each entry includes a unique problem_id, a task_type label, the problem prompt, verification_info detailing solution validity, and a baseline solve_rate from the Qwen-R1-Distill-7B model. Released under Apache-2.0 license, this dataset supports fine-tuning and evaluation of reasoning-oriented language models, facilitating research on algorithmic proficiency and reward-driven optimization within distributed asynchronous RL frameworks.</p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Description</span>: This dataset facilitates the study of prompt engineering by examining how different prompt types&#8212;questions, commands, and open-ended statements&#8212;influence generated text responses. With over 5,000 records, it enables analysis of prompt effectiveness across natural language generation, conversational agents, and sentiment influence.</p>\n\n",
+                "matched_terms": [
+                    "study",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we present detailed information for two case studies illustrating the effects of prompt optimization on language model responses. For each case, we include the prompts used both before and after optimization, as well as the responses generated by the language model for each version. The two questions are selected from <span class=\"ltx_text ltx_font_sansserif\">PRM800K</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Lightman et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib37\" title=\"\">2023</a>)</cite> and <span class=\"ltx_text ltx_font_sansserif\">MMLU-Pro</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#bib.bib66\" title=\"\">2024c</a>)</cite></p>\n\n",
+                "matched_terms": [
+                    "optimization",
+                    "case",
+                    "prompt"
+                ]
+            }
+        ]
+    },
+    "A6.F6": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x11.png",
+        "caption": "(a) Top-5 nn-grams of 1.1k-business (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "11kbusiness",
+            "nn3",
+            "top5",
+            "nngrams"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A6.F6.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x12.png",
+        "caption": "(b) Top-5 nn-grams of BoredHumans (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "boredhumans",
+            "nn3",
+            "top5",
+            "nngrams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "top5",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "A6.F6.sf3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x13.png",
+        "caption": "(c) Top-5 nn-grams of dolly-15k (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "nn3",
+            "top5",
+            "nngrams",
+            "dolly15k"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "top5",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "A6.F6.sf4": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x14.png",
+        "caption": "(d) Top-5 nn-grams of medical-o1 (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "nn3",
+            "top5",
+            "nngrams",
+            "medicalo1"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> High-frequency <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams reveal domain and prompt-engineering differences, such as role-playing cues in <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> (&#8220;you to act as&#8221;) versus medical reasoning in <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> (&#8220;what be the,&#8221; &#8220;the most likely diagnosis&#8221;). <span class=\"ltx_text ltx_font_bold\">(2)</span> While 3-grams capture general-purpose queries or commands (e.g., &#8220;what be the,&#8221; &#8220;I want to&#8221;), longer <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams (4&#8211;5) reflect task-specific patterns, as in <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> where frequent 5-grams (&#8220;please write in English language,&#8221; &#8220;write a comprehensive reply to&#8221;) highlight its instruction-following orientation. <span class=\"ltx_text ltx_font_bold\">(3)</span> Compared to Google Books 5-grams (e.g., &#8220;at the end of the,&#8221; &#8220;in whole or in part&#8221;) that serve narrative or descriptive purposes, prompt datasets exhibit inquiry- or command-focused <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m3\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams, underscoring a clear divergence in linguistic patterns across corpora.</p>\n\n",
+                "matched_terms": [
+                    "nngrams",
+                    "medicalo1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "top5",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "A6.F6.sf5": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x15.png",
+        "caption": "(e) Top-5 nn-grams of OASST1 (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "oasst1",
+            "nn3",
+            "top5",
+            "nngrams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">(1)</span> High-frequency <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams reveal domain and prompt-engineering differences, such as role-playing cues in <span class=\"ltx_text ltx_font_sansserif\">OASST1</span> (&#8220;you to act as&#8221;) versus medical reasoning in <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> (&#8220;what be the,&#8221; &#8220;the most likely diagnosis&#8221;). <span class=\"ltx_text ltx_font_bold\">(2)</span> While 3-grams capture general-purpose queries or commands (e.g., &#8220;what be the,&#8221; &#8220;I want to&#8221;), longer <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams (4&#8211;5) reflect task-specific patterns, as in <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span> where frequent 5-grams (&#8220;please write in English language,&#8221; &#8220;write a comprehensive reply to&#8221;) highlight its instruction-following orientation. <span class=\"ltx_text ltx_font_bold\">(3)</span> Compared to Google Books 5-grams (e.g., &#8220;at the end of the,&#8221; &#8220;in whole or in part&#8221;) that serve narrative or descriptive purposes, prompt datasets exhibit inquiry- or command-focused <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p3.m3\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams, underscoring a clear divergence in linguistic patterns across corpora.</p>\n\n",
+                "matched_terms": [
+                    "oasst1",
+                    "nngrams"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "top5",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "A6.F6.sf6": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x16.png",
+        "caption": "(f) Top-5 nn-grams of Self-Instruct (nn=3, 4, 5)",
+        "informative_terms_identified": [
+            "selfinstruct",
+            "nn3",
+            "top5",
+            "nngrams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "top5",
+                    "nngrams"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.I1.i1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams phrases of some datasets include abnormal content (e.g. &#8220;<span class=\"ltx_text ltx_font_italic\">identify which instrument be string</span>&#8221; in <span class=\"ltx_text ltx_font_sansserif\">dolly-15</span> and &#8220;<span class=\"ltx_text ltx_font_italic\">The quick brown fox jumps over the lazy dog</span>&#8221; in <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span>), which indicates that there is a lot of repetition in the input content of the template tasks or some instructions used to construct the dataset, which may affect the balance of the dataset.</p>\n\n",
+                "matched_terms": [
+                    "selfinstruct",
+                    "nngrams"
+                ]
+            }
+        ]
+    },
+    "A6.F7": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x17.png",
+        "caption": "(a) 3-grams",
+        "informative_terms_identified": [
+            "3grams"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In this section, we provide the comparision of 3/4/5-grams for all datasets (except <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which is displayed in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F6\" title=\"Figure 6 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>, and the top-5 <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"A6.SS1.p1.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>-grams comparison across datasets in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F7\" title=\"Figure 7 &#8227; F.1 Token-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A6.F7.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x18.png",
+        "caption": "(b) 4-grams",
+        "informative_terms_identified": [
+            "4grams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F7.sf3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x19.png",
+        "caption": "(c) 5-grams",
+        "informative_terms_identified": [
+            "5grams"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F8": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x20.png",
+        "caption": "(a) 1.1k-business",
+        "informative_terms_identified": [
+            "11kbusiness"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In this section, we present the complete experimental data for all identified dependency types, along with their proportions in the datasets, as shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T5\" title=\"Table 5 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Additionally, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.T6\" title=\"Table 6 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> lists all detected Part-of-Speech tags and their corresponding proportions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F8\" title=\"Figure 8 &#8227; F.2 Syntactic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">8</span></a> further illustrates the ten most common verbs and their top five direct noun objects found in the prompt datasets except <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> and <span class=\"ltx_text ltx_font_sansserif\">ShareGPT</span>, which are shown in the main paper.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A6.F8.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x21.png",
+        "caption": "(b) BoredHumans",
+        "informative_terms_identified": [
+            "boredhumans"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F8.sf3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x22.png",
+        "caption": "(c) dolly-15k",
+        "informative_terms_identified": [
+            "dolly15k"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F8.sf4": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x23.png",
+        "caption": "(d) OASST1",
+        "informative_terms_identified": [
+            "oasst1"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F8.sf5": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x24.png",
+        "caption": "(e) Self-Instruct",
+        "informative_terms_identified": [
+            "selfinstruct"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F9": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x25.png",
+        "caption": "(a) 1.1k-business",
+        "informative_terms_identified": [
+            "11kbusiness"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In this section, we show the distribution of sampled embedding points after PCA for all datasets (except for <span class=\"ltx_text ltx_font_sansserif\">medical-o1</span> and <span class=\"ltx_text ltx_font_sansserif\">Self-Instruct</span>, which are shown in the main paper) in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.09316v1#A6.F9\" title=\"Figure 9 &#8227; F.3 Semantic-level Analysis &#8227; Appendix F Additional Experimental Results &#8227; Large Language Model Prompt Datasets: An In-depth Analysis and Insights\"><span class=\"ltx_text ltx_ref_tag\">9</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A6.F9.sf2": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x26.png",
+        "caption": "(b) BoredHumans",
+        "informative_terms_identified": [
+            "boredhumans"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F9.sf3": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x27.png",
+        "caption": "(c) dolly-15k",
+        "informative_terms_identified": [
+            "dolly15k"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F9.sf4": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x28.png",
+        "caption": "(d) OASST1",
+        "informative_terms_identified": [
+            "oasst1"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A6.F9.sf5": {
+        "source_file": "Large Language Model Prompt Datasets: An In-depth Analysis and Insights",
+        "image_url": "https://arxiv.org/html/2510.09316v1/x29.png",
+        "caption": "(e) ShareGPT",
+        "informative_terms_identified": [
+            "sharegpt"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    }
+}

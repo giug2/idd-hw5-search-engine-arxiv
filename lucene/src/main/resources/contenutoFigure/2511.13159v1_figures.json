@@ -1,0 +1,655 @@
+{
+    "S1.F1": {
+        "source_file": "Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis",
+        "image_url": "https://arxiv.org/html/2511.13159v1/x1.png",
+        "caption": "\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 1: Illustration of the Bangla Repetition Classification task, highlighting the distinction between unintentional disfluencies (Repetition), grammatical forms (Reduplication), and coincidental occurrences (Neither).",
+        "informative_terms_identified": [
+            "between",
+            "occurrences",
+            "distinction",
+            "neither",
+            "disfluencies",
+            "repetition",
+            "forms",
+            "task",
+            "grammatical",
+            "coincidental",
+            "classification",
+            "highlighting",
+            "fontspeciflanguagentfengaddfontfeaturelanguageenglishfigure",
+            "reduplication",
+            "bangla",
+            "unintentional"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">This structural ambiguity, visually detailed in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#S1.F1\" title=\"\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 1 &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English1 Introduction &#8227; Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis\"><span class=\"ltx_text ltx_ref_tag\"><span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span>ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=English1</span></a>, presents a formidable challenge. Generic disfluency detection models designed with a &#8220;subtractive&#8221; philosophy would fail by erroneously stripping away valid linguistic information, catastrophically altering the semantic content of the text. Resolving this requires a fine-grained, context-aware classification model.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) transcripts, especially in low-resource languages like Bangla, contain a critical ambiguity: word-word repetitions can be either Repetition Disfluency (unintentional ASR error/hesitation) or Morphological Reduplication (a deliberate grammatical construct). Standard disfluency correction fails by erroneously deleting valid linguistic information. To solve this, we introduce the first publicly available, 20,000-row Bangla corpus, manually annotated to explicitly distinguish between these two phenomena in noisy ASR transcripts. We benchmark this novel resource using two paradigms: state-of-the-art multilingual Large Language Models (LLMs) and task-specific fine-tuning of encoder models. LLMs achieve competitive performance (up to 82.68% accuracy) with few-shot prompting. However, fine-tuning proves superior, with the language-specific BanglaBERT model achieving the highest accuracy of 84.78% and an F1 score of 0.677. This establishes a strong, linguistically-informed baseline and provides essential data for developing sophisticated, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "repetition",
+                    "grammatical",
+                    "unintentional",
+                    "bangla",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The conventional DC approach treats repetitions as universal &#8220;noise&#8221; to be removed. This fails in languages with specific morphological properties that structurally align with disfluent phenomena. This paper addresses a critical ambiguity in Bangla, an Indo-Aryan language with over 270 million speakers&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib17\" title=\"\">17</a>]</cite>. In Bangla ASR transcripts, the identical surface form <math alttext=\"word\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">word</annotation></semantics></math>-<math alttext=\"word\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">word</annotation></semantics></math> can represent two phenomena with opposing grammatical implications:</p>\n\n",
+                "matched_terms": [
+                    "grammatical",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Repetition Disfluency:</span> An unintentional, non-grammatical repetition (speaker hesitation or ASR error), often described by the Reparandum-Interregnum-Repair (RiR) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. <em class=\"ltx_emph ltx_font_italic\">Example:</em> <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2447;&#2439; &#2479;&#2503; &#2474;&#2494;&#2433;&#2458; &#2468;&#2494;&#2480;&#2495;&#2454; &#2469;&#2503;&#2453;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2503; <span class=\"ltx_text ltx_font_bold\">&#2453;&#2480;&#2503;</span> &#2468;&#2507;&#2478;&#2494;&#2480; 12 &#2468;&#2494;&#2480;&#2495;&#2454; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404;&#8221; (<em class=\"ltx_emph ltx_font_italic\">&#8230;shuru kore kore&#8230;</em>). Here, the repeated <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2453;&#2480;&#2503;&#8221; (<em class=\"ltx_emph ltx_font_italic\">kore</em>) is an error and should be deleted.</p>\n\n",
+                "matched_terms": [
+                    "unintentional",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Developing models to resolve such language-specific ambiguities requires large-scale, high-quality annotated data. Despite its massive speaker base, Bangla is a low-resource language in NLP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib17\" title=\"\">17</a>]</cite> due to a scarcity of standardized, publicly available datasets. For the specific task of distinguishing repetition disfluency from morphological reduplication in Bangla, no publicly available annotated corpus existed prior to this work. This resource gap has been the primary impediment to developing and rigorously evaluating computational systems for this task, hindering the shift from generic, one-size-fits-all NLP solutions toward models sensitive to the unique grammatical structures of low-resource languages.</p>\n\n",
+                "matched_terms": [
+                    "repetition",
+                    "task",
+                    "grammatical",
+                    "bangla",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Corpus Creation:</span> We introduce the first publicly available, <math alttext=\"\\mathbf{20,000}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I2.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>&#120784;&#120782;</mn><mo>,</mo><mn>&#120782;&#120782;&#120782;</mn></mrow><annotation encoding=\"application/x-tex\">\\mathbf{20,000}</annotation></semantics></math>-row Bangla corpus, manually annotated to explicitly distinguish between Repetition Disfluency and Morphological Reduplication in noisy ASR transcripts. Furthermore, we provide a fine-grained linguistic analysis by subcategorizing all Morphological Reduplication instances into nine distinct semantic and functional classes.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "bangla",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our research is situated at the intersection of speech processing, computational linguistics, and low-resource NLP. We contextualize our contribution by reviewing the distinct treatment of repetition as an error in disfluency correction versus a meaningful construct in morphological reduplication, and by outlining the standard methodological paradigms our work builds upon.</p>\n\n",
+                "matched_terms": [
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, a fundamental limitation of the dominant DC paradigm is its inherently subtractive nature that treats all repetitions as &#8220;noise&#8221; to be deleted&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib11\" title=\"\">11</a>]</cite>. This approach is incompatible with languages like Bangla, where repetition is also a productive grammatical device. In linguistics, morphological reduplication is a rule-governed process where a word is repeated to encode specific semantic nuances, such as continuity, iterativity, or intensity&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib1\" title=\"\">1</a>]</cite>. This creates a critical structural ambiguity where the surface form &#8216;word-word&#8216; can be either an error or a meaningful linguistic construct.</p>\n\n",
+                "matched_terms": [
+                    "grammatical",
+                    "bangla",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This specific challenge is recognized across the Indo-Aryan language family. Recent parallel work has successfully benchmarked this classification task in Hindi, Marathi, and Telugu, achieving Macro F1 scores up to 85.62% and demonstrating the necessity of context-aware models that can distinguish grammatical reduplication from disfluent structures like the Reparandum-Interregnum-Repair (RiR) pattern&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. While early computational work on reduplication in Indic languages relied on rule-based systems or finite-state transducers&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib8\" title=\"\">8</a>]</cite>, our work addresses this problem using modern neural architectures. We bridge the gap between the subtractive ASR-processing paradigm and principled linguistic analysis by creating a resource to train models for this nuanced classification task.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "task",
+                    "grammatical",
+                    "classification",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the classification task itself, we evaluate the two dominant paradigms for applying pre-trained models: in-context learning &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib20\" title=\"\">20</a>]</cite> via prompting and task-specific fine-tuning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib15\" title=\"\">15</a>]</cite>. The former tests the ability of massive LLMs to perform the task with zero or few examples, while the latter adapts the weights of smaller, pre-trained encoder models to the specific dataset. Our experiments provide a direct comparison of these approaches, utilizing both general multilingual models (mBERT, XLM-RoBERTa) and the language-specific BanglaBERT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib5\" title=\"\">5</a>]</cite> to establish a strong, linguistically-informed baseline.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our methodological framework is structured around three key phases: <span class=\"ltx_text ltx_font_bold\">Corpus Creation</span>, <span class=\"ltx_text ltx_font_bold\">LLM Benchmarking (Prompting)</span>, and <span class=\"ltx_text ltx_font_bold\">Task-Specific Fine-Tuning</span>. The comprehensive workflow for the corpus creation phase is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#S2.F2\" title=\"\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 2 &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English2.2 Methodological Context and Modeling Paradigms &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English2 Related Works &#8227; Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis\"><span class=\"ltx_text ltx_ref_tag\"><span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span>ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=English2</span></a>. This overall design establishes a strong performance baseline by rigorously comparing the capabilities of in-context learning against transfer learning for this fine-grained linguistic classification task.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The Bangla Repetition Corpus was synthesized from real-world, noisy Automatic Speech Recognition (ASR) transcripts, ensuring a naturalistic distribution of both errors and grammatical forms. This process involved four steps: Scalable Data Acquisition, Automated Filtering, Expert Annotation, and Fine-Grained Sub-categorization.</p>\n\n",
+                "matched_terms": [
+                    "forms",
+                    "grammatical",
+                    "bangla",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">LLM-Aided Initial Labeling:</span> To accelerate the annotation of the vast corpus, the sentences were first processed using the leading commercial model, GPT-4o, as an initial categorization engine. The model utilized the structured, few-shot prompt strategy, providing preliminary labels (Reduplication, Repetition, or Neither) for the entire set.</p>\n\n",
+                "matched_terms": [
+                    "neither",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Expert Manual Review and Verification:</span> The corpus with the preliminary LLM labels was then subjected to a rigorous manual review by expert Bengali speakers. This critical step served to correct any inaccuracies introduced by the LLM and to ensure linguistic fidelity, particularly for nuanced cases where the distinction between a complex reduplication form and a speaker hesitation was ambiguous.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "distinction",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Reduplication (Grammatical):</span> The repetition is an intentional, rule-governed morphological process that conveys semantic nuances such as iterativity, continuity, intensity, or plurality. <em class=\"ltx_emph ltx_font_italic\">Example:</em> <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2437;&#2434;&#2453;&#2455;&#2497;&#2482;&#2507; <span class=\"ltx_text ltx_font_bold\">&#2453;&#2480;&#2503; &#2453;&#2480;&#2503;</span> &#2438;&#2478;&#2480;&#2494; &#2447;&#2453;&#2463;&#2497; &#2438;&#2472;&#2509;&#2465;&#2494;&#2480;&#2488;&#2509;&#2463;&#2509;&#2479;&#2494;&#2472;&#2509;&#2465;&#2495;&#2434; &#2465;&#2503;&#2477;&#2503;&#2482;&#2474; &#2453;&#2480;&#2494; &#2458;&#2503;&#2487;&#2509;&#2463;&#2494; &#2453;&#2480;&#2476;&#2507;&#8221; (<em class=\"ltx_emph ltx_font_italic\">Onkogulo <math alttext=\"\\mathbf{kore\\text{ }kore}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I4.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>&#119844;&#119848;&#119851;&#119838;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mtext class=\"ltx_mathvariant_italic\">&#160;</mtext><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>&#119844;&#119848;&#119851;&#119838;</mi></mrow><annotation encoding=\"application/x-tex\">\\mathbf{kore\\text{ }kore}</annotation></semantics></math> amra&#8230;</em>)</p>\n\n",
+                "matched_terms": [
+                    "grammatical",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Repetition (Disfluency):</span> The repetition is an unintentional error, either a speaker-induced hesitation or an ASR transcription error. <em class=\"ltx_emph ltx_font_italic\">Example:</em> <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2447;&#2439; &#2479;&#2503; &#2474;&#2494;&#2433;&#2458; &#2468;&#2494;&#2480;&#2495;&#2454; &#2469;&#2503;&#2453;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2503; <span class=\"ltx_text ltx_font_bold\">&#2453;&#2480;&#2503;</span> &#2468;&#2507;&#2478;&#2494;&#2480; 12 &#2468;&#2494;&#2480;&#2495;&#2454; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404;&#8221; (<em class=\"ltx_emph ltx_font_italic\">&#8230;shuru kore <math alttext=\"\\mathbf{kore}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I4.i2.p1.m1\" intent=\":literal\"><semantics><mi>&#119844;&#119848;&#119851;&#119838;</mi><annotation encoding=\"application/x-tex\">\\mathbf{kore}</annotation></semantics></math> tomar&#8230;</em>)</p>\n\n",
+                "matched_terms": [
+                    "unintentional",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Neither:</span> Coincidental repetitions that are not clear disfluencies or productive reduplications.</p>\n\n",
+                "matched_terms": [
+                    "coincidental",
+                    "neither",
+                    "disfluencies"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following the primary classification, all instances identified as Morphological Reduplication underwent a second stage of fine-grained annotation to determine their specific semantic function. This was accomplished using a Large Language Model guided by a carefully constructed few-shot prompt that defined nine distinct subcategories:\n<span class=\"ltx_text ltx_font_bold\">Intensity/Emphasis</span>, <span class=\"ltx_text ltx_font_bold\">Frequency/Iteration</span>, <span class=\"ltx_text ltx_font_bold\">Continuity/Ongoing Action</span>, <span class=\"ltx_text ltx_font_bold\">Plurality/Multiplicity</span>, <span class=\"ltx_text ltx_font_bold\">Distributive/Separateness</span>, <span class=\"ltx_text ltx_font_bold\">Vagueness/Approximation</span>, <span class=\"ltx_text ltx_font_bold\">Echo Word/Rhyming</span>, <span class=\"ltx_text ltx_font_bold\">Reciprocal/Correlative</span>, and <span class=\"ltx_text ltx_font_bold\">Onomatopoeia</span>.\nFor instance, in the sentence <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#8230;&#2447;&#2453;&#2509;&#2488; &#2447;&#2480; &#2477;&#2509;&#2479;&#2494;&#2482;&#2497; &#2474;&#2503;&#2479;&#2492;&#2503; &#2455;&#2503;&#2459;&#2495; &#2453;&#2468; &#2453;&#2468; &#2476;&#2482;&#2507;&#8230;&#8221; (&#8230;we got the values of x, tell me what what&#8230;), the repeated word <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2453;&#2468; &#2453;&#2468;&#8221; (<span class=\"ltx_text ltx_font_italic\">koto koto</span>) implies an iterative query for multiple values, leading to its classification as <span class=\"ltx_text ltx_font_bold\">Frequency / Iteration</span>. This two-tiered annotation process enriches the corpus, providing a detailed linguistic layer for future research.</p>\n\n",
+                "matched_terms": [
+                    "classification",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We established a prompting baseline by evaluating seven state-of-the-art Large Language Models (LLMs) on this classification task. This set included leading proprietary models (GPT-4o, Claude 4, and Gemini 2.5 Flash) and several prominent open-source alternatives (Gemma 3, Mistral 7b instruct, Llama 3 8b Instruct, and Phi-4). The models were tested under Zero-shot, One-shot, and Few-shot (<math alttext=\"\\text{N}\\leq 5\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mtext>N</mtext><mo>&#8804;</mo><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">\\text{N}\\leq 5</annotation></semantics></math>) conditions.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Explicit Context:</span> For few-shot tests, the prompt included explicit linguistic definitions and examples for the three target categories (Reduplication, Repetition, and Neither) to guide the LLMs&#8217; in-context learning capability.</p>\n\n",
+                "matched_terms": [
+                    "neither",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We established robust performance baselines by conducting task-specific fine-tuning on three prominent Transformer-based encoder models: a Bangla-specific model and two high-performing multilingual models. The task was framed as a three-way sequence classification (sentence-level classification into Reduplication, Repetition, or Neither).</p>\n\n",
+                "matched_terms": [
+                    "neither",
+                    "repetition",
+                    "task",
+                    "classification",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This approach directly compares the efficacy of using general multilingual pre-trained knowledge (mBERT/XLM-R) against specialized language pre-training (BanglaBERT) when adapting to a novel, linguistically-sensitive classification task on limited, noisy data.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The zero-shot performance of the leading LLMs (e.g., Gemini 2.5 Flash at 78.51%) demonstrates that massive multilingual pre-training imparts a strong baseline capability to resolve word repetition ambiguity, likely leveraging latent knowledge across the Indo-European family. For the top models, few-shot prompting was the most effective method, consistently boosting accuracy to over 81%. This confirms that explicit in-context examples are necessary to guide the LLMs toward the subtle grammatical cues that distinguish morphological reduplication from disfluency. Claude 4, for instance, achieved the highest LLM performance at 82.68%. However, providing examples was inconsistent for the lower-tier models, sometimes degrading performance, which suggests that their internal representations are less robustly aligned with the task, and their ability to generalize from few-shot examples is limited.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "grammatical",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">BanglaBERT <cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib5\" title=\"\">5</a>]</cite> Superiority and Cross-Linguistic Context:</span> BanglaBERT achieved the highest performance across the board after fine-tuning, with an accuracy of <span class=\"ltx_text ltx_font_bold\">84.78%</span> and the highest precision (<math alttext=\"\\mathbf{0.901}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i1.p1.m1\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.901</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.901}</annotation></semantics></math>) and F1 score (<math alttext=\"\\mathbf{0.677}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i1.p1.m2\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.677</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.677}</annotation></semantics></math>). This result is competitive and consistent with state-of-the-art Macro F1 scores achieved in parallel research on this specific reduplication/repetition classification task in related Indo-Aryan languages, such as Hindi (up to 85.62%) and Marathi (up to 84.82%)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. This highlights the value of using a language-specific model for a nuanced task in a low-resource language.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-Tuning vs. Prompting:</span> The best fine-tuned model (BanglaBERT, <math alttext=\"84.78\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>84.78</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">84.78\\%</annotation></semantics></math> accuracy) significantly outperformed the best-prompted LLM (Claude 4, <math alttext=\"82.68\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>82.68</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">82.68\\%</annotation></semantics></math> accuracy), demonstrating that for this specific, linguistically-motivated classification task, the comprehensive parameter updates of fine-tuning are more effective than in-context learning.</p>\n\n",
+                "matched_terms": [
+                    "task",
+                    "classification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Metric Disparity Analysis:</span> A key observation is the substantial disparity between Precision (<math alttext=\"\\mathbf{0.901}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i3.p1.m1\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.901</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.901}</annotation></semantics></math>) and Recall (<math alttext=\"\\mathbf{0.646}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i3.p1.m2\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.646</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.646}</annotation></semantics></math>) for the Fine-Tuned BanglaBERT model. This disparity reflects the consequence of the highly imbalanced dataset (66.3% Reduplication vs. 32.9% Repetition). The high precision is highly desirable for normalization, as it indicates the model is extremely conservative, successfully avoiding False Positives (i.e., erroneously deleting meaningful Reduplication instances). Conversely, the lower recall shows that the model still misses a significant number of true Repetition Disfluency instances (False Negatives), allowing noise to remain in the transcript. This conservatism represents a strategic trade-off, prioritizing semantic preservation over comprehensive noise removal.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "reduplication",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper addresses the critical ambiguity between grammatical Morphological Reduplication and erroneous Repetition Disfluency in Bangla ASR transcripts. To solve this, we introduce the first publicly available, annotated corpus for this classification task. Our experiments demonstrate that task-specific fine-tuning is superior to few-shot prompting of large language models. The language-specific BanglaBERT model established the strongest performance baseline, achieving an accuracy of <span class=\"ltx_text ltx_font_bold\">84.78%</span>. This work provides the essential data and a validated benchmark, paving the way for developing robust, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "repetition",
+                    "task",
+                    "grammatical",
+                    "classification",
+                    "bangla",
+                    "reduplication"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The primary limitation of this work stems from the high degree of dataset imbalance, with Reduplication instances significantly outnumbering Repetition instances (66.3% vs. 32.9%). While fine-tuning improved the F1 score, a substantial gap remains between precision and recall (e.g., BanglaBERT Fine Tuned: Precision 0.901, Recall 0.646), especially for the minority classes, suggesting that models may still be prone to bias towards the dominant Reduplication category. Future work must focus on mitigating this bias:</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "reduplication",
+                    "repetition"
+                ]
+            }
+        ]
+    },
+    "S2.F2": {
+        "source_file": "Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis",
+        "image_url": "https://arxiv.org/html/2511.13159v1/x2.png",
+        "caption": "\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 2: The end-to-end pipeline for creating the Bangla Repetition Corpus. The workflow begins with scalable data acquisition from YouTube ASR transcripts, followed by automated filtering and context extraction. The core annotation phase employs a hybrid approach, using an LLM for initial labeling and expert linguists for final verification, resulting in a 20,000-row gold-standard corpus.",
+        "informative_terms_identified": [
+            "goldstandard",
+            "filtering",
+            "hybrid",
+            "repetition",
+            "endtoend",
+            "employs",
+            "initial",
+            "expert",
+            "data",
+            "labeling",
+            "20000row",
+            "resulting",
+            "verification",
+            "context",
+            "final",
+            "from",
+            "linguists",
+            "extraction",
+            "youtube",
+            "workflow",
+            "corpus",
+            "automated",
+            "begins",
+            "fontspeciflanguagentfengaddfontfeaturelanguageenglishfigure",
+            "creating",
+            "followed",
+            "transcripts",
+            "bangla",
+            "annotation",
+            "acquisition",
+            "asr",
+            "scalable",
+            "llm",
+            "approach",
+            "core",
+            "pipeline",
+            "phase"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Our methodological framework is structured around three key phases: <span class=\"ltx_text ltx_font_bold\">Corpus Creation</span>, <span class=\"ltx_text ltx_font_bold\">LLM Benchmarking (Prompting)</span>, and <span class=\"ltx_text ltx_font_bold\">Task-Specific Fine-Tuning</span>. The comprehensive workflow for the corpus creation phase is illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#S2.F2\" title=\"\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 2 &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English2.2 Methodological Context and Modeling Paradigms &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English2 Related Works &#8227; Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis\"><span class=\"ltx_text ltx_ref_tag\"><span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span>ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=English2</span></a>. This overall design establishes a strong performance baseline by rigorously comparing the capabilities of in-context learning against transfer learning for this fine-grained linguistic classification task.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) transcripts, especially in low-resource languages like Bangla, contain a critical ambiguity: word-word repetitions can be either Repetition Disfluency (unintentional ASR error/hesitation) or Morphological Reduplication (a deliberate grammatical construct). Standard disfluency correction fails by erroneously deleting valid linguistic information. To solve this, we introduce the first publicly available, 20,000-row Bangla corpus, manually annotated to explicitly distinguish between these two phenomena in noisy ASR transcripts. We benchmark this novel resource using two paradigms: state-of-the-art multilingual Large Language Models (LLMs) and task-specific fine-tuning of encoder models. LLMs achieve competitive performance (up to 82.68% accuracy) with few-shot prompting. However, fine-tuning proves superior, with the language-specific BanglaBERT model achieving the highest accuracy of 84.78% and an F1 score of 0.677. This establishes a strong, linguistically-informed baseline and provides essential data for developing sophisticated, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "repetition",
+                    "corpus",
+                    "asr",
+                    "data",
+                    "transcripts",
+                    "20000row",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) is now integral to digital interaction, driving applications from virtual assistants to automated subtitles on platforms like YouTube&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib9\" title=\"\">9</a>]</cite>. Despite its wide adoption and significant advancements, ASR performance remains imperfect, particularly in Large Vocabulary Continuous Speech Recognition (LVCSR) and under real-world conditions like background noise or diverse accents&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib10\" title=\"\">10</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib18\" title=\"\">18</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "youtube",
+                    "automated",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This often results in a significant Word Error Rate (WER). A major, persistent source of error stems from speech disfluencies, which are interruptions in the smooth flow of speech, including filled pauses, hesitations, self-corrections, and most relevantly, repetitions&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib18\" title=\"\">18</a>]</cite>. Disfluencies are natural and frequent; one study found a <math alttext=\"\\mathbf{50\\%}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>&#120787;&#120782;</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">\\mathbf{50\\%}</annotation></semantics></math> probability of a disfluency in a 10-13 word sentence&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib12\" title=\"\">12</a>]</cite>. Their presence creates noisy transcripts that are difficult to read and detrimental to downstream Natural Language Processing (NLP) tasks such as machine translation or information extraction&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib18\" title=\"\">18</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib11\" title=\"\">11</a>]</cite>. Consequently, automatic Disfluency Correction (DC) is a critical research area, aiming to &#8220;clean&#8221; ASR outputs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib10\" title=\"\">10</a>]</cite>. High-quality DC corpora, such as DISCO, have enabled benchmark F1 scores up to <math alttext=\"94.29\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS1.p2.m2\" intent=\":literal\"><semantics><mrow><mn>94.29</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">94.29\\%</annotation></semantics></math> in languages like Hindi, confirming DC&#8217;s vital post-processing role&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib4\" title=\"\">4</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "extraction",
+                    "transcripts",
+                    "asr",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The conventional DC approach treats repetitions as universal &#8220;noise&#8221; to be removed. This fails in languages with specific morphological properties that structurally align with disfluent phenomena. This paper addresses a critical ambiguity in Bangla, an Indo-Aryan language with over 270 million speakers&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib17\" title=\"\">17</a>]</cite>. In Bangla ASR transcripts, the identical surface form <math alttext=\"word\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">word</annotation></semantics></math>-<math alttext=\"word\" class=\"ltx_Math\" display=\"inline\" id=\"S1.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>d</mi></mrow><annotation encoding=\"application/x-tex\">word</annotation></semantics></math> can represent two phenomena with opposing grammatical implications:</p>\n\n",
+                "matched_terms": [
+                    "transcripts",
+                    "asr",
+                    "bangla",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Repetition Disfluency:</span> An unintentional, non-grammatical repetition (speaker hesitation or ASR error), often described by the Reparandum-Interregnum-Repair (RiR) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. <em class=\"ltx_emph ltx_font_italic\">Example:</em> <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2447;&#2439; &#2479;&#2503; &#2474;&#2494;&#2433;&#2458; &#2468;&#2494;&#2480;&#2495;&#2454; &#2469;&#2503;&#2453;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2503; <span class=\"ltx_text ltx_font_bold\">&#2453;&#2480;&#2503;</span> &#2468;&#2507;&#2478;&#2494;&#2480; 12 &#2468;&#2494;&#2480;&#2495;&#2454; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404;&#8221; (<em class=\"ltx_emph ltx_font_italic\">&#8230;shuru kore kore&#8230;</em>). Here, the repeated <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2453;&#2480;&#2503;&#8221; (<em class=\"ltx_emph ltx_font_italic\">kore</em>) is an error and should be deleted.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Developing models to resolve such language-specific ambiguities requires large-scale, high-quality annotated data. Despite its massive speaker base, Bangla is a low-resource language in NLP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib17\" title=\"\">17</a>]</cite> due to a scarcity of standardized, publicly available datasets. For the specific task of distinguishing repetition disfluency from morphological reduplication in Bangla, no publicly available annotated corpus existed prior to this work. This resource gap has been the primary impediment to developing and rigorously evaluating computational systems for this task, hindering the shift from generic, one-size-fits-all NLP solutions toward models sensitive to the unique grammatical structures of low-resource languages.</p>\n\n",
+                "matched_terms": [
+                    "repetition",
+                    "corpus",
+                    "from",
+                    "data",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Corpus Creation:</span> We introduce the first publicly available, <math alttext=\"\\mathbf{20,000}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I2.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>&#120784;&#120782;</mn><mo>,</mo><mn>&#120782;&#120782;&#120782;</mn></mrow><annotation encoding=\"application/x-tex\">\\mathbf{20,000}</annotation></semantics></math>-row Bangla corpus, manually annotated to explicitly distinguish between Repetition Disfluency and Morphological Reduplication in noisy ASR transcripts. Furthermore, we provide a fine-grained linguistic analysis by subcategorizing all Morphological Reduplication instances into nine distinct semantic and functional classes.</p>\n\n",
+                "matched_terms": [
+                    "repetition",
+                    "corpus",
+                    "asr",
+                    "transcripts",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Computational Disfluency Correction (DC) is a critical post-processing step for ASR, designed to improve transcript readability by identifying and removing phenomena like filled pauses, self-corrections, and repetitions&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib18\" title=\"\">18</a>]</cite>. The field has evolved from classic sequence tagging to sophisticated Transformer-based architectures, with large-scale corpora like DISCO enabling high F1 scores in high-resource languages&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib12\" title=\"\">12</a>]</cite>. For low-resource languages, including Bengali, the lack of labeled data has spurred techniques like zero-shot learning with multilingual encoders and synthetic data augmentation via adversarial training to improve performance&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib14\" title=\"\">14</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib19\" title=\"\">19</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "asr",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, a fundamental limitation of the dominant DC paradigm is its inherently subtractive nature that treats all repetitions as &#8220;noise&#8221; to be deleted&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib12\" title=\"\">12</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib11\" title=\"\">11</a>]</cite>. This approach is incompatible with languages like Bangla, where repetition is also a productive grammatical device. In linguistics, morphological reduplication is a rule-governed process where a word is repeated to encode specific semantic nuances, such as continuity, iterativity, or intensity&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib16\" title=\"\">16</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib1\" title=\"\">1</a>]</cite>. This creates a critical structural ambiguity where the surface form &#8216;word-word&#8216; can be either an error or a meaningful linguistic construct.</p>\n\n",
+                "matched_terms": [
+                    "approach",
+                    "bangla",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This specific challenge is recognized across the Indo-Aryan language family. Recent parallel work has successfully benchmarked this classification task in Hindi, Marathi, and Telugu, achieving Macro F1 scores up to 85.62% and demonstrating the necessity of context-aware models that can distinguish grammatical reduplication from disfluent structures like the Reparandum-Interregnum-Repair (RiR) pattern&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. While early computational work on reduplication in Indic languages relied on rule-based systems or finite-state transducers&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib8\" title=\"\">8</a>]</cite>, our work addresses this problem using modern neural architectures. We bridge the gap between the subtractive ASR-processing paradigm and principled linguistic analysis by creating a resource to train models for this nuanced classification task.</p>\n\n",
+                "matched_terms": [
+                    "creating",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Developing robust NLP solutions for Bangla is hindered by a scarcity of standardized datasets, a common challenge for low-resource languages despite their large speaker populations&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib17\" title=\"\">17</a>]</cite>. This has motivated broad efforts to create foundational resources and models for the Indic language family&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib13\" title=\"\">13</a>]</cite>. Our approach to corpus creation aligns with pragmatic solutions to this data gap: we leverage noisy, auto-generated ASR transcripts from YouTube&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib9\" title=\"\">9</a>]</cite>. This strategy is effective because the inherent flaws of ASR systems provide a naturalistic distribution of the very phenomena knowingly spurious repetitions, speaker hesitations, and correctly transcribed reduplications, required to train a robust real-world classifier.</p>\n\n",
+                "matched_terms": [
+                    "corpus",
+                    "from",
+                    "youtube",
+                    "asr",
+                    "approach",
+                    "data",
+                    "transcripts",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The Bangla Repetition Corpus was synthesized from real-world, noisy Automatic Speech Recognition (ASR) transcripts, ensuring a naturalistic distribution of both errors and grammatical forms. This process involved four steps: Scalable Data Acquisition, Automated Filtering, Expert Annotation, and Fine-Grained Sub-categorization.</p>\n\n",
+                "matched_terms": [
+                    "filtering",
+                    "repetition",
+                    "annotation",
+                    "corpus",
+                    "automated",
+                    "from",
+                    "expert",
+                    "acquisition",
+                    "asr",
+                    "scalable",
+                    "data",
+                    "transcripts",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We selected the top 10 popular Bangla educational YouTube channels as the data source to ensure a high volume of continuous, spontaneous spoken Bengali.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "youtube",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ASR Transcript Filtering:</span> Only videos confirmed to contain Bangla ASR transcripts were retained. This was programmatically verified by checking for the presence of the <span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span><span class=\"ltx_text ltx_font_typewriter\">ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=Englishbn-orig</span> tag in the subtitle manifest, confirming the noisy nature of the source data.</p>\n\n",
+                "matched_terms": [
+                    "filtering",
+                    "asr",
+                    "data",
+                    "transcripts",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Subtitle Extraction and Cleaning:</span> Subtitles were downloaded and extracted from the raw JSON format using a parallel process. The text segments were joined, and noise reduction included replacing newlines and standardizing whitespace.</p>\n\n",
+                "matched_terms": [
+                    "extraction",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From the cleaned, large-scale corpus of ASR text, we automatically extracted the ambiguous cases of contiguous word repetition:</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "corpus",
+                    "from",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Repetition Isolation:</span> The corpus was processed in memory-efficient chunks. Consecutive, identical word pairs (<math alttext=\"\\text{word}_{i}=\\text{word}_{i-1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mtext>word</mtext><mi>i</mi></msub><mo>=</mo><msub><mtext>word</mtext><mrow><mi>i</mi><mo>&#8722;</mo><mn>1</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\text{word}_{i}=\\text{word}_{i-1}</annotation></semantics></math>) were identified after tokenization using a regular expression that explicitly handles Bengali, English, and numerical tokens (<span class=\"ltx_text ltx_markedasmath ltx_font_typewriter\">[0&#774;980-0&#774;9FF]+|[a-zA-Z0-9]+</span>), while excluding purely numerical repetitions.</p>\n\n",
+                "matched_terms": [
+                    "corpus",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Context Window Formulation:</span> Each repetition instance was extracted alongside a fixed, symmetric context window of <math alttext=\"\\mathbf{10\\text{ preceding words and }10\\text{ following words}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>&#120783;&#120782;</mn><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mtext>&#160;preceding words and&#160;</mtext><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mn>&#120783;&#120782;</mn><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mtext>&#160;following words</mtext></mrow><annotation encoding=\"application/x-tex\">\\mathbf{10\\text{ preceding words and }10\\text{ following words}}</annotation></semantics></math>. This step resulted in a set of approximately <math alttext=\"\\mathbf{29,000}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>&#120784;&#120791;</mn><mo>,</mo><mn>&#120782;&#120782;&#120782;</mn></mrow><annotation encoding=\"application/x-tex\">\\mathbf{29,000}</annotation></semantics></math> sentences containing candidate repetition instances.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Initial BIO Tagging:</span> To facilitate manual annotation and set up the task for supervised models, the repeated words within the context window were pre-tagged using a BIO scheme: the first occurrence was marked <math alttext=\"\\mathbf{B}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i3.p1.m1\" intent=\":literal\"><semantics><mi>&#119809;</mi><annotation encoding=\"application/x-tex\">\\mathbf{B}</annotation></semantics></math> (Beginning) and the second was marked <math alttext=\"\\mathbf{I}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i3.p1.m2\" intent=\":literal\"><semantics><mi>&#119816;</mi><annotation encoding=\"application/x-tex\">\\mathbf{I}</annotation></semantics></math> (Inside/Continuation).</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "annotation",
+                    "initial"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The large set of approximately <math alttext=\"\\mathbf{29,000}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>&#120784;&#120791;</mn><mo>,</mo><mn>&#120782;&#120782;&#120782;</mn></mrow><annotation encoding=\"application/x-tex\">\\mathbf{29,000}</annotation></semantics></math> filtered sentences underwent a two-stage labeling process, combining the scalability of generative models with the precision of expert human review.</p>\n\n",
+                "matched_terms": [
+                    "expert",
+                    "labeling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">LLM-Aided Initial Labeling:</span> To accelerate the annotation of the vast corpus, the sentences were first processed using the leading commercial model, GPT-4o, as an initial categorization engine. The model utilized the structured, few-shot prompt strategy, providing preliminary labels (Reduplication, Repetition, or Neither) for the entire set.</p>\n\n",
+                "matched_terms": [
+                    "annotation",
+                    "repetition",
+                    "corpus",
+                    "initial",
+                    "labeling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Expert Manual Review and Verification:</span> The corpus with the preliminary LLM labels was then subjected to a rigorous manual review by expert Bengali speakers. This critical step served to correct any inaccuracies introduced by the LLM and to ensure linguistic fidelity, particularly for nuanced cases where the distinction between a complex reduplication form and a speaker hesitation was ambiguous.</p>\n\n",
+                "matched_terms": [
+                    "llm",
+                    "expert",
+                    "corpus",
+                    "verification"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Final Corpus Selection:</span> Following the comprehensive manual verification and cleaning, all sentences that could not be unambiguously classified (often due to extreme ASR noise or context fragmentation) were discarded. This process finalized the core corpus, resulting in a set of <math alttext=\"\\mathbf{20,000}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>&#120784;&#120782;</mn><mo>,</mo><mn>&#120782;&#120782;&#120782;</mn></mrow><annotation encoding=\"application/x-tex\">\\mathbf{20,000}</annotation></semantics></math> gold-standard rows, which were subsequently used for training and evaluation.</p>\n\n",
+                "matched_terms": [
+                    "goldstandard",
+                    "verification",
+                    "context",
+                    "corpus",
+                    "final",
+                    "asr",
+                    "core",
+                    "resulting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Repetition (Disfluency):</span> The repetition is an unintentional error, either a speaker-induced hesitation or an ASR transcription error. <em class=\"ltx_emph ltx_font_italic\">Example:</em> <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2447;&#2439; &#2479;&#2503; &#2474;&#2494;&#2433;&#2458; &#2468;&#2494;&#2480;&#2495;&#2454; &#2469;&#2503;&#2453;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2503; <span class=\"ltx_text ltx_font_bold\">&#2453;&#2480;&#2503;</span> &#2468;&#2507;&#2478;&#2494;&#2480; 12 &#2468;&#2494;&#2480;&#2495;&#2454; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404;&#8221; (<em class=\"ltx_emph ltx_font_italic\">&#8230;shuru kore <math alttext=\"\\mathbf{kore}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I4.i2.p1.m1\" intent=\":literal\"><semantics><mi>&#119844;&#119848;&#119851;&#119838;</mi><annotation encoding=\"application/x-tex\">\\mathbf{kore}</annotation></semantics></math> tomar&#8230;</em>)</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The final distribution of the annotated corpus, which shows a significant imbalance, is presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#S3.T1\" title=\"\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishTable 1 &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English3.1.3 LLM-Aided Initial Labeling and Expert Annotation &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English3.1 Corpus Creation: The Bangla Repetition Corpus &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English3 Methodology &#8227; Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis\"><span class=\"ltx_text ltx_ref_tag\"><span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span>ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=English1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "corpus",
+                    "final"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following the primary classification, all instances identified as Morphological Reduplication underwent a second stage of fine-grained annotation to determine their specific semantic function. This was accomplished using a Large Language Model guided by a carefully constructed few-shot prompt that defined nine distinct subcategories:\n<span class=\"ltx_text ltx_font_bold\">Intensity/Emphasis</span>, <span class=\"ltx_text ltx_font_bold\">Frequency/Iteration</span>, <span class=\"ltx_text ltx_font_bold\">Continuity/Ongoing Action</span>, <span class=\"ltx_text ltx_font_bold\">Plurality/Multiplicity</span>, <span class=\"ltx_text ltx_font_bold\">Distributive/Separateness</span>, <span class=\"ltx_text ltx_font_bold\">Vagueness/Approximation</span>, <span class=\"ltx_text ltx_font_bold\">Echo Word/Rhyming</span>, <span class=\"ltx_text ltx_font_bold\">Reciprocal/Correlative</span>, and <span class=\"ltx_text ltx_font_bold\">Onomatopoeia</span>.\nFor instance, in the sentence <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#8230;&#2447;&#2453;&#2509;&#2488; &#2447;&#2480; &#2477;&#2509;&#2479;&#2494;&#2482;&#2497; &#2474;&#2503;&#2479;&#2492;&#2503; &#2455;&#2503;&#2459;&#2495; &#2453;&#2468; &#2453;&#2468; &#2476;&#2482;&#2507;&#8230;&#8221; (&#8230;we got the values of x, tell me what what&#8230;), the repeated word <span class=\"ltx_ERROR undefined\">\\banglafont</span>&#8220;&#2453;&#2468; &#2453;&#2468;&#8221; (<span class=\"ltx_text ltx_font_italic\">koto koto</span>) implies an iterative query for multiple values, leading to its classification as <span class=\"ltx_text ltx_font_bold\">Frequency / Iteration</span>. This two-tiered annotation process enriches the corpus, providing a detailed linguistic layer for future research.</p>\n\n",
+                "matched_terms": [
+                    "corpus",
+                    "annotation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Explicit Context:</span> For few-shot tests, the prompt included explicit linguistic definitions and examples for the three target categories (Reduplication, Repetition, and Neither) to guide the LLMs&#8217; in-context learning capability.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This approach directly compares the efficacy of using general multilingual pre-trained knowledge (mBERT/XLM-R) against specialized language pre-training (BanglaBERT) when adapting to a novel, linguistically-sensitive classification task on limited, noisy data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "approach"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The zero-shot performance of the leading LLMs (e.g., Gemini 2.5 Flash at 78.51%) demonstrates that massive multilingual pre-training imparts a strong baseline capability to resolve word repetition ambiguity, likely leveraging latent knowledge across the Indo-European family. For the top models, few-shot prompting was the most effective method, consistently boosting accuracy to over 81%. This confirms that explicit in-context examples are necessary to guide the LLMs toward the subtle grammatical cues that distinguish morphological reduplication from disfluency. Claude 4, for instance, achieved the highest LLM performance at 82.68%. However, providing examples was inconsistent for the lower-tier models, sometimes degrading performance, which suggests that their internal representations are less robustly aligned with the task, and their ability to generalize from few-shot examples is limited.</p>\n\n",
+                "matched_terms": [
+                    "llm",
+                    "from",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper addresses the critical ambiguity between grammatical Morphological Reduplication and erroneous Repetition Disfluency in Bangla ASR transcripts. To solve this, we introduce the first publicly available, annotated corpus for this classification task. Our experiments demonstrate that task-specific fine-tuning is superior to few-shot prompting of large language models. The language-specific BanglaBERT model established the strongest performance baseline, achieving an accuracy of <span class=\"ltx_text ltx_font_bold\">84.78%</span>. This work provides the essential data and a validated benchmark, paving the way for developing robust, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "repetition",
+                    "corpus",
+                    "asr",
+                    "data",
+                    "transcripts",
+                    "bangla"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The primary limitation of this work stems from the high degree of dataset imbalance, with Reduplication instances significantly outnumbering Repetition instances (66.3% vs. 32.9%). While fine-tuning improved the F1 score, a substantial gap remains between precision and recall (e.g., BanglaBERT Fine Tuned: Precision 0.901, Recall 0.646), especially for the minority classes, suggesting that models may still be prone to bias towards the dominant Reduplication category. Future work must focus on mitigating this bias:</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "repetition"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Adversarial Training:</span> To improve the robustness of the fine-tuned model against noisy, real-world ASR outputs and enhance performance across all classes, we intend to implement Adversarial Training during the fine-tuning phase. This technique has previously yielded significant F1 improvements for Disfluency Correction tasks in Bengali and other Indian languages&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib3\" title=\"\">3</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "phase"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Furthermore, the corpus is derived exclusively from educational content on YouTube. While this domain is rich in ASR errors and clear speech, it may not fully capture the linguistic variability, disfluency patterns, and reduplication nuances found in other spontaneous speech domains (e.g., political talk shows, casual vlogs, etc.), which could limit the generalizability of our model beyond this specific context. Future corpus expansion should target a more diverse range of conversational speech domains.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "corpus",
+                    "from",
+                    "youtube",
+                    "asr"
+                ]
+            }
+        ]
+    },
+    "S4.F3": {
+        "source_file": "Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis",
+        "image_url": "https://arxiv.org/html/2511.13159v1/accuracy_comparison_fine_tuning.png",
+        "caption": "\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 3: Accuracy Comparison Before and After Fine-Tuning",
+        "informative_terms_identified": [
+            "after",
+            "accuracy",
+            "comparison",
+            "finetuning",
+            "fontspeciflanguagentfengaddfontfeaturelanguageenglishfigure",
+            "before"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Fine-tuning the encoder models on our custom Bangla dataset led to substantial improvements in all metrics, significantly surpassing the highest performance achieved by the LLMs through prompting. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#S4.F3\" title=\"\\fontspec_if_language:nTFENG\\addfontfeatureLanguage=EnglishFigure 3 &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English4.2 Impact of Task-Specific Fine-Tuning &#8227; \\fontspec_if_language:nTFENG\\addfontfeatureLanguage=English4 Results &#8227; Distinguishing Repetition Disfluency from Morphological Reduplication in Bangla ASR Transcripts: A Novel Corpus and Benchmarking Analysis\"><span class=\"ltx_text ltx_ref_tag\"><span class=\"ltx_ERROR undefined\">\\fontspec_if_language:nTF</span>ENG<span class=\"ltx_ERROR undefined\">\\addfontfeature</span>Language=English3</span></a> illustrates the sharp gain in accuracy for all three models after fine-tuning.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) transcripts, especially in low-resource languages like Bangla, contain a critical ambiguity: word-word repetitions can be either Repetition Disfluency (unintentional ASR error/hesitation) or Morphological Reduplication (a deliberate grammatical construct). Standard disfluency correction fails by erroneously deleting valid linguistic information. To solve this, we introduce the first publicly available, 20,000-row Bangla corpus, manually annotated to explicitly distinguish between these two phenomena in noisy ASR transcripts. We benchmark this novel resource using two paradigms: state-of-the-art multilingual Large Language Models (LLMs) and task-specific fine-tuning of encoder models. LLMs achieve competitive performance (up to 82.68% accuracy) with few-shot prompting. However, fine-tuning proves superior, with the language-specific BanglaBERT model achieving the highest accuracy of 84.78% and an F1 score of 0.677. This establishes a strong, linguistically-informed baseline and provides essential data for developing sophisticated, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "accuracy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-Tuning Analysis:</span> We empirically demonstrate the superiority of task-specific fine-tuning. The language-specific BanglaBERT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib5\" title=\"\">5</a>]</cite> model achieves the highest performance with an accuracy of <math alttext=\"\\mathbf{84.78\\%}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I2.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">84.78</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">\\mathbf{84.78\\%}</annotation></semantics></math> and an F1 score of <math alttext=\"\\mathbf{0.677}\" class=\"ltx_Math\" display=\"inline\" id=\"S1.I2.i3.p1.m2\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.677</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.677}</annotation></semantics></math>, establishing a strong, linguistically-informed baseline for developing semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "accuracy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the classification task itself, we evaluate the two dominant paradigms for applying pre-trained models: in-context learning &#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib20\" title=\"\">20</a>]</cite> via prompting and task-specific fine-tuning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib15\" title=\"\">15</a>]</cite>. The former tests the ability of massive LLMs to perform the task with zero or few examples, while the latter adapts the weights of smaller, pre-trained encoder models to the specific dataset. Our experiments provide a direct comparison of these approaches, utilizing both general multilingual models (mBERT, XLM-RoBERTa) and the language-specific BanglaBERT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib5\" title=\"\">5</a>]</cite> to establish a strong, linguistically-informed baseline.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "comparison"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">BanglaBERT <cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib5\" title=\"\">5</a>]</cite> Superiority and Cross-Linguistic Context:</span> BanglaBERT achieved the highest performance across the board after fine-tuning, with an accuracy of <span class=\"ltx_text ltx_font_bold\">84.78%</span> and the highest precision (<math alttext=\"\\mathbf{0.901}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i1.p1.m1\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.901</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.901}</annotation></semantics></math>) and F1 score (<math alttext=\"\\mathbf{0.677}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i1.p1.m2\" intent=\":literal\"><semantics><mn class=\"ltx_mathvariant_bold\" mathvariant=\"bold\">0.677</mn><annotation encoding=\"application/x-tex\">\\mathbf{0.677}</annotation></semantics></math>). This result is competitive and consistent with state-of-the-art Macro F1 scores achieved in parallel research on this specific reduplication/repetition classification task in related Indo-Aryan languages, such as Hindi (up to 85.62%) and Marathi (up to 84.82%)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.13159v1#bib.bib2\" title=\"\">2</a>]</cite>. This highlights the value of using a language-specific model for a nuanced task in a low-resource language.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "after",
+                    "accuracy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-Tuning vs. Prompting:</span> The best fine-tuned model (BanglaBERT, <math alttext=\"84.78\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>84.78</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">84.78\\%</annotation></semantics></math> accuracy) significantly outperformed the best-prompted LLM (Claude 4, <math alttext=\"82.68\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I2.i2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>82.68</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">82.68\\%</annotation></semantics></math> accuracy), demonstrating that for this specific, linguistically-motivated classification task, the comprehensive parameter updates of fine-tuning are more effective than in-context learning.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "accuracy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper addresses the critical ambiguity between grammatical Morphological Reduplication and erroneous Repetition Disfluency in Bangla ASR transcripts. To solve this, we introduce the first publicly available, annotated corpus for this classification task. Our experiments demonstrate that task-specific fine-tuning is superior to few-shot prompting of large language models. The language-specific BanglaBERT model established the strongest performance baseline, achieving an accuracy of <span class=\"ltx_text ltx_font_bold\">84.78%</span>. This work provides the essential data and a validated benchmark, paving the way for developing robust, semantic-preserving text normalization systems for Bangla.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "accuracy"
+                ]
+            }
+        ]
+    }
+}

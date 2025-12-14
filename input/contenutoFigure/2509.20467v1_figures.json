@@ -1,0 +1,372 @@
+{
+    "S1.F1": {
+        "source_file": "ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos",
+        "image_url": "https://arxiv.org/html/2509.20467v1/figures/example.png",
+        "caption": "Figure 1: TikTok video with overlay text claiming “Someone captured the missile in the Beirut blast,” and noisy Arabic audio and explosion visuals. Features below show why ShortCheck marked it Checkworthy.",
+        "informative_terms_identified": [
+            "video",
+            "marked",
+            "audio",
+            "captured",
+            "visuals",
+            "text",
+            "claiming",
+            "missile",
+            "why",
+            "“someone",
+            "blast”",
+            "checkworthy",
+            "tiktok",
+            "shortcheck",
+            "features",
+            "beirut",
+            "arabic",
+            "explosion",
+            "noisy",
+            "overlay"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The popularity of short-form video platforms such as <em class=\"ltx_emph ltx_font_italic\">TikTok</em>, <em class=\"ltx_emph ltx_font_italic\">YouTube Shorts</em> and <em class=\"ltx_emph ltx_font_italic\">Instagram Reels</em> has transformed how information is produced, consumed, and spread.\nWith billions of monthly active users, these platforms create fertile ground for the spread of misinformation on sensitive topics including politics, health, and social issues.\nUnlike traditional text or image-based content, these videos may include multiple modalities such as speech, text overlays, music, and visuals, often edited in ways that obscure meaning or context, though not all of these elements are always present; for example, some videos contain only on-screen text without audio, while others show just a speaker without any additional graphics or overlays.\nFor example, Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows a TikTok screenshot where the overlay text makes the claim, while the audio transcript (translated to &#8220;it&#8217;s a shame&#8221;) does not provide any useful information. The video summary notes an urban explosion, indicating potentially contentious content for fact-checkers.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Short-form video platforms like TikTok present unique challenges for misinformation detection due to their multimodal, dynamic, and noisy content.\nWe present <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, a modular, inference-only pipeline with a user-friendly interface that automatically identifies checkworthy short-form videos to help human fact-checkers.\nThe system integrates speech transcription, OCR, object and deepfake detection, video-to-text summarization, and claim verification.\n<span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>&#160;is validated by evaluating it on two manually annotated datasets with TikTok videos in a multilingual setting.\nThe pipeline achieves promising results with F1-weighted score over 70%.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "checkworthy",
+                    "tiktok",
+                    "shortcheck",
+                    "noisy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Most existing misinformation detection systems are designed for structured, single-modality content such as news articles, social media posts, or deepfake detection, with a primary focus on either text, audio, transcriptions or visual modalities. We summarize the existing fact-checking systems and their modalities in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. However, these approaches are not suited for short-form video content found on platforms like TikTok or YouTube Shorts due to the casual unstructured nature of the content.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "video",
+                    "audio",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Short-form videos pose unique challenges due to their <span class=\"ltx_text ltx_font_italic\">limited multimodal generalization</span>. They often blend speech, text, music, and visuals in non-linear, asynchronous ways that traditional unimodal models struggle to interpret <cite class=\"ltx_cite ltx_citemacro_cite\">Alam et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib4\" title=\"\">2022</a>); Yao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib38\" title=\"\">2023</a>); Guo et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib18\" title=\"\">2022</a>); Singhal et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib33\" title=\"\">2019</a>)</cite>. These videos also exhibit <span class=\"ltx_text ltx_font_italic\">noisy or incomplete modality signals</span>: some lack audio, others feature distorted overlays or rapid cuts, making existing detectors brittle in real-world conditions <cite class=\"ltx_cite ltx_citemacro_cite\">Jindal et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib22\" title=\"\">2020</a>); Venktesh et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib36\" title=\"\">2024</a>)</cite>. Furthermore, most models offer <span class=\"ltx_text ltx_font_italic\">low interpretability</span>, returning binary predictions without justifications. This hinders adoption in professional workflows that require transparent, evidence-backed reasoning <cite class=\"ltx_cite ltx_citemacro_cite\">Schlichtkrull et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib29\" title=\"\">2023</a>); Guo et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib18\" title=\"\">2022</a>); Alam et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib4\" title=\"\">2022</a>); Venktesh and Setty (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib37\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "visuals",
+                    "text",
+                    "audio",
+                    "noisy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper introduces a demonstration system for detecting checkworthy TikTok videos.\nOur key contributions are:</p>\n\n",
+                "matched_terms": [
+                    "checkworthy",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Multimodal misinformation has led to techniques that fuse text, audio, and visual cues <cite class=\"ltx_cite ltx_citemacro_citep\">(Alam et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib4\" title=\"\">2022</a>)</cite>. <span class=\"ltx_text ltx_font_smallcaps\">FakingRecipe</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Bu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib13\" title=\"\">2024</a>)</cite> investigates manipulation strategies in TikTok videos, complementing earlier datasets like <span class=\"ltx_text ltx_font_smallcaps\">SpotFake</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Singhal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib33\" title=\"\">2019</a>)</cite> and <span class=\"ltx_text ltx_font_smallcaps\">NewsBag</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Jindal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib22\" title=\"\">2020</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Yao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib38\" title=\"\">2023</a>)</cite> proposed an end-to-end video fact-checking system with explanation generation. Our work builds on these by offering a modular, interpretable pipeline designed for integration into professional fact-checkers&#8217; workflows.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "video",
+                    "audio",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent systems have bridged research and application by supporting live or end-to-end fact-checking across modalities. <span class=\"ltx_text ltx_font_smallcaps\">BRENDA</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Botnevik et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib12\" title=\"\">2020</a>)</cite> provides real-time claim detection for long-form text. <span class=\"ltx_text ltx_font_smallcaps\">FactCheckEditor</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Setty, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib31\" title=\"\">2024b</a>)</cite> and <span class=\"ltx_text ltx_font_smallcaps\">PodFC</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Setty, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib32\" title=\"\">2025</a>)</cite> support multilingual verification, with the latter tailored for long-form audio. <span class=\"ltx_text ltx_font_smallcaps\">LiveFC</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Venktesh and Setty, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib37\" title=\"\">2025</a>)</cite> handles real-time fact-checking of audio streams, combining transcription, claim detection, evidence retrieval, and verdict generation. However, as summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, most systems focus on single-modality inputs (usually text) and single-claim granularity, with limited support for video or multimodal content.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "video",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our system, <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, differs in its emphasis on short-form video platforms like TikTok. It uniquely supports all four modalities: text, audio, image, and video, along with multilingual processing and capable of processing long text with more than single claims. While it does not support full automated fact-checking, it offers interpretable, modular verdict signals suitable for assisting professional fact-checkers in verification.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "text",
+                    "tiktok",
+                    "shortcheck",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given that the checkworthiness of a TikTok video can be inherently subjective, we base our approach on established best practices followed by professional fact-checkers. In particular, we consulted the guidelines of Faktisk.no<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>A Norwegian non-profit organization accredited by the International Fact-Checking Network (IFCN).</span></span></span> This also aligns with the definition of fact-checkworthiness in the literature<cite class=\"ltx_cite ltx_citemacro_cite\">Jaradat et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib21\" title=\"\">2018</a>); Barr&#243;n-Cede&#241;o et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib8\" title=\"\">2024</a>)</cite></p>\n\n",
+                "matched_terms": [
+                    "tiktok",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a modular, inference-only pipeline for detecting potentially misleading or checkworthy content in short-form videos, particularly those published on platforms like TikTok. The system assigns each video one of two categorical labels: <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span>, or <span class=\"ltx_text ltx_font_typewriter\">Not_Checkworthy</span>. Unlike prior work that builds monolithic or end-to-end models, our design emphasizes modularity, interpretability, and adaptability. Each component in the pipeline can be independently replaced, which makes the system robust to failures in specific modalities and easier to maintain in production settings.</p>\n\n",
+                "matched_terms": [
+                    "checkworthy",
+                    "video",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The pipeline comprises feature extraction modules tailored to speech, text, visuals, and metadata, whose outputs are aggregated by a rule-based engine for final video classification. Additional modules, such as object detection for weapons, were tested but excluded due to limited contribution.</p>\n\n",
+                "matched_terms": [
+                    "visuals",
+                    "text",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The first stage involves extracting visible on-screen text through Optical Character Recognition (OCR), using the EasyOCR library<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/JaidedAI/EasyOCR\" title=\"\">https://github.com/JaidedAI/EasyOCR</a></span></span></span>. This module captures embedded captions or textual overlays, which are common in TikTok videos. However, OCR performance is often challenged by stylized fonts, rapid transitions, and visually noisy frames.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "tiktok",
+                    "noisy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech transcription is handled by OpenAI Whisper <cite class=\"ltx_cite ltx_citemacro_cite\">Radford et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib28\" title=\"\">2022</a>)</cite>, which offers robust multilingual transcription and performs well in noisy audio environments. However, overlapping music or sound effects, which are prevalent in entertainment-oriented videos, can still degrade transcription quality.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "noisy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, the system aggregates the outputs from all modules using a rule-based logic engine. A scoring system considers multiple module outputs, including the presence of claims, ideological language, or political classification. If the cumulative score exceeds a threshold, the video is marked as <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span>. Advertisements are detected and filtered early in the pipeline and override all other scores. Videos that do not meet either criterion are labeled as <span class=\"ltx_text ltx_font_typewriter\">Not_Checkworthy</span>. This decision process is entirely transparent and configurable, enabling future refinement without retraining models.</p>\n\n",
+                "matched_terms": [
+                    "marked",
+                    "checkworthy",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This dataset includes 249 TikTok videos curated by Faktisk for an emotional analysis study on political trolling via buzzwords like &#8220;Stem FRP&#8221;.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://www.faktisk.no/artikkel/faktisk-analyse-av-tiktok-menn-mest-negative/109375\" title=\"\">https://www.faktisk.no/artikkel/faktisk-analyse-av-tiktok-menn-mest-negative/109375</a></span></span></span> We manually annotated each video for checkworthiness using the guidelines in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S3\" title=\"3 System Overview &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "tiktok",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The model performs well on both Norwegian and English TikTok videos, with notable differences in class-wise behavior. For Norwegian content, the system achieves strong recall for <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span> instances (0.85) and high overall accuracy (0.88), indicating robust performance in identifying relevant claims. In contrast, the English dataset shows higher precision for <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span> (0.82) but lower recall (0.58), suggesting the model is more conservative in flagging English videos as checkworthy. Combined macro-averaged scores are comparable across languages (F1: 0.72 for Norwegian, 0.74 for English), highlighting the pipeline&#8217;s cross-lingual generalizability with slightly better balance in the Norwegian case.</p>\n\n",
+                "matched_terms": [
+                    "checkworthy",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented\n<span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, a modular, multilingual pipeline for detecting checkworthy content in short-form videos. The system integrates multiple modalities: text, audio, video, and image, and achieves strong performance on manually annotated TikTok datasets in both Norwegian and English. Through ablation studies, we showed that transcript and ideological language signals contribute most to checkworthiness, while visual features like deepfake detection and object recognition offer limited standalone utility.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "checkworthy",
+                    "text",
+                    "tiktok",
+                    "shortcheck",
+                    "audio",
+                    "features"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In future work, we plan to extend <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>&#160;with full fact-checking while testing on more datasets, including multilingual video content from X and YouTube. We will evaluate individual modules in greater depth, improve robustness in noisy or low-resource settings, and integrate feedback from fact-checkers to refine outputs and interpretability. Finally, we aim to explore advanced multimodal fusion techniques beyond rule-based aggregation to boost accuracy and generalization.</p>\n\n",
+                "matched_terms": [
+                    "shortcheck",
+                    "video",
+                    "noisy"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos",
+        "image_url": "https://arxiv.org/html/2509.20467v1/x1.png",
+        "caption": "Figure 2: Modular pipeline for fact-checking TikTok videos.",
+        "informative_terms_identified": [
+            "modular",
+            "factchecking",
+            "videos",
+            "tiktok",
+            "pipeline"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Short-form video platforms like TikTok present unique challenges for misinformation detection due to their multimodal, dynamic, and noisy content.\nWe present <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, a modular, inference-only pipeline with a user-friendly interface that automatically identifies checkworthy short-form videos to help human fact-checkers.\nThe system integrates speech transcription, OCR, object and deepfake detection, video-to-text summarization, and claim verification.\n<span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>&#160;is validated by evaluating it on two manually annotated datasets with TikTok videos in a multilingual setting.\nThe pipeline achieves promising results with F1-weighted score over 70%.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "modular",
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The popularity of short-form video platforms such as <em class=\"ltx_emph ltx_font_italic\">TikTok</em>, <em class=\"ltx_emph ltx_font_italic\">YouTube Shorts</em> and <em class=\"ltx_emph ltx_font_italic\">Instagram Reels</em> has transformed how information is produced, consumed, and spread.\nWith billions of monthly active users, these platforms create fertile ground for the spread of misinformation on sensitive topics including politics, health, and social issues.\nUnlike traditional text or image-based content, these videos may include multiple modalities such as speech, text overlays, music, and visuals, often edited in ways that obscure meaning or context, though not all of these elements are always present; for example, some videos contain only on-screen text without audio, while others show just a speaker without any additional graphics or overlays.\nFor example, Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows a TikTok screenshot where the overlay text makes the claim, while the audio transcript (translated to &#8220;it&#8217;s a shame&#8221;) does not provide any useful information. The video summary notes an urban explosion, indicating potentially contentious content for fact-checkers.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The multimodal complexity of short videos makes automated fact-checking technically challenging and manual efforts are increasingly unsustainable, especially for under-resourced fact-checkers facing unprecedented content scale and funding cuts.\nIn this demo, we present a prototype designed to automate the identification of potentially checkworthy videos, significantly reducing the time required by human fact-checkers.\nOur prototype is easy to use and can predict checkworthiness in over 30 major languages.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Intersection of languages supported by Meta Llama3 <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://ai.meta.com/blog/meta-llama-3/\" title=\"\">https://ai.meta.com/blog/meta-llama-3/</a> and OpenAI Whisper <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/openai/whisper\" title=\"\">https://github.com/openai/whisper</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "factchecking",
+                    "videos"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Most existing misinformation detection systems are designed for structured, single-modality content such as news articles, social media posts, or deepfake detection, with a primary focus on either text, audio, transcriptions or visual modalities. We summarize the existing fact-checking systems and their modalities in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S1.T1\" title=\"Table 1 &#8227; 1 Introduction &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. However, these approaches are not suited for short-form video content found on platforms like TikTok or YouTube Shorts due to the casual unstructured nature of the content.</p>\n\n",
+                "matched_terms": [
+                    "factchecking",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper introduces a demonstration system for detecting checkworthy TikTok videos.\nOur key contributions are:</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A <span class=\"ltx_text ltx_font_bold\">modular multimodal pipeline</span> that integrates OCR, transcription, video-to-text captioning, semantic classification, retrieval and fact-checking modules.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "modular",
+                    "factchecking"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Two <span class=\"ltx_text ltx_font_bold\">new multilingual annotated datasets</span> of TikTok videos labeled for checkworthiness.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Multimodal misinformation has led to techniques that fuse text, audio, and visual cues <cite class=\"ltx_cite ltx_citemacro_citep\">(Alam et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib4\" title=\"\">2022</a>)</cite>. <span class=\"ltx_text ltx_font_smallcaps\">FakingRecipe</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Bu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib13\" title=\"\">2024</a>)</cite> investigates manipulation strategies in TikTok videos, complementing earlier datasets like <span class=\"ltx_text ltx_font_smallcaps\">SpotFake</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Singhal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib33\" title=\"\">2019</a>)</cite> and <span class=\"ltx_text ltx_font_smallcaps\">NewsBag</span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Jindal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib22\" title=\"\">2020</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Yao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib38\" title=\"\">2023</a>)</cite> proposed an end-to-end video fact-checking system with explanation generation. Our work builds on these by offering a modular, interpretable pipeline designed for integration into professional fact-checkers&#8217; workflows.</p>\n\n",
+                "matched_terms": [
+                    "modular",
+                    "factchecking",
+                    "videos",
+                    "tiktok",
+                    "pipeline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our system, <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, differs in its emphasis on short-form video platforms like TikTok. It uniquely supports all four modalities: text, audio, image, and video, along with multilingual processing and capable of processing long text with more than single claims. While it does not support full automated fact-checking, it offers interpretable, modular verdict signals suitable for assisting professional fact-checkers in verification.</p>\n\n",
+                "matched_terms": [
+                    "modular",
+                    "factchecking",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Given that the checkworthiness of a TikTok video can be inherently subjective, we base our approach on established best practices followed by professional fact-checkers. In particular, we consulted the guidelines of Faktisk.no<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>A Norwegian non-profit organization accredited by the International Fact-Checking Network (IFCN).</span></span></span> This also aligns with the definition of fact-checkworthiness in the literature<cite class=\"ltx_cite ltx_citemacro_cite\">Jaradat et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib21\" title=\"\">2018</a>); Barr&#243;n-Cede&#241;o et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib8\" title=\"\">2024</a>)</cite></p>\n\n",
+                "matched_terms": [
+                    "factchecking",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose a modular, inference-only pipeline for detecting potentially misleading or checkworthy content in short-form videos, particularly those published on platforms like TikTok. The system assigns each video one of two categorical labels: <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span>, or <span class=\"ltx_text ltx_font_typewriter\">Not_Checkworthy</span>. Unlike prior work that builds monolithic or end-to-end models, our design emphasizes modularity, interpretability, and adaptability. Each component in the pipeline can be independently replaced, which makes the system robust to failures in specific modalities and easier to maintain in production settings.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "modular",
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The first stage involves extracting visible on-screen text through Optical Character Recognition (OCR), using the EasyOCR library<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/JaidedAI/EasyOCR\" title=\"\">https://github.com/JaidedAI/EasyOCR</a></span></span></span>. This module captures embedded captions or textual overlays, which are common in TikTok videos. However, OCR performance is often challenged by stylized fonts, rapid transitions, and visually noisy frames.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, the system aggregates the outputs from all modules using a rule-based logic engine. A scoring system considers multiple module outputs, including the presence of claims, ideological language, or political classification. If the cumulative score exceeds a threshold, the video is marked as <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span>. Advertisements are detected and filtered early in the pipeline and override all other scores. Videos that do not meet either criterion are labeled as <span class=\"ltx_text ltx_font_typewriter\">Not_Checkworthy</span>. This decision process is entirely transparent and configurable, enabling future refinement without retraining models.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "videos"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A key design goal of our approach is interpretability. Each module exposes intermediate outputs that are human-readable and can be inspected by fact-checkers. This transparency builds trust and enables feedback-driven improvement of the system. The modular design also ensures that any individual component, such as the OCR engine or the semantic classifier, can be replaced or updated without disrupting the entire pipeline. This is especially important for deployment in evolving information ecosystems where content formats and threat types change rapidly.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "modular"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This dataset includes 249 TikTok videos curated by Faktisk for an emotional analysis study on political trolling via buzzwords like &#8220;Stem FRP&#8221;.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\">6</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://www.faktisk.no/artikkel/faktisk-analyse-av-tiktok-menn-mest-negative/109375\" title=\"\">https://www.faktisk.no/artikkel/faktisk-analyse-av-tiktok-menn-mest-negative/109375</a></span></span></span> We manually annotated each video for checkworthiness using the guidelines in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S3\" title=\"3 System Overview &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This dataset, curated by <cite class=\"ltx_cite ltx_citemacro_cite\">Bu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#bib.bib13\" title=\"\">2024</a>)</cite>, was compiled from fact-checking platforms including Snopes, PolitiFact, FactCheck.org, and Health Feedback. While the majority of content is in English, some posts and modalities appear in other languages. We annotated a sample of 254 videos from this collection, following the same guidelines described before.</p>\n\n",
+                "matched_terms": [
+                    "factchecking",
+                    "videos"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The model performs well on both Norwegian and English TikTok videos, with notable differences in class-wise behavior. For Norwegian content, the system achieves strong recall for <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span> instances (0.85) and high overall accuracy (0.88), indicating robust performance in identifying relevant claims. In contrast, the English dataset shows higher precision for <span class=\"ltx_text ltx_font_typewriter\">Checkworthy</span> (0.82) but lower recall (0.58), suggesting the model is more conservative in flagging English videos as checkworthy. Combined macro-averaged scores are comparable across languages (F1: 0.72 for Norwegian, 0.74 for English), highlighting the pipeline&#8217;s cross-lingual generalizability with slightly better balance in the Norwegian case.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Upload TikTok videos or paste URLs.</p>\n\n",
+                "matched_terms": [
+                    "videos",
+                    "tiktok"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We presented\n<span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, a modular, multilingual pipeline for detecting checkworthy content in short-form videos. The system integrates multiple modalities: text, audio, video, and image, and achieves strong performance on manually annotated TikTok datasets in both Norwegian and English. Through ablation studies, we showed that transcript and ideological language signals contribute most to checkworthiness, while visual features like deepfake detection and object recognition offer limited standalone utility.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "modular",
+                    "videos",
+                    "tiktok"
+                ]
+            }
+        ]
+    },
+    "S5.F3": {
+        "source_file": "ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos",
+        "image_url": "https://arxiv.org/html/2509.20467v1/figures/demo-ui.png",
+        "caption": "Figure 3: Demo interface for fact-checkers.",
+        "informative_terms_identified": [
+            "factcheckers",
+            "demo",
+            "interface"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Our demo system integrates the pipeline into a fact-checker-oriented web interface (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.20467v1#S5.F3\" title=\"Figure 3 &#8227; 5 Demonstration &#8227; ShortCheck: Checkworthiness Detection of Multilingual Short-Form Videos\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Short-form video platforms like TikTok present unique challenges for misinformation detection due to their multimodal, dynamic, and noisy content.\nWe present <span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>, a modular, inference-only pipeline with a user-friendly interface that automatically identifies checkworthy short-form videos to help human fact-checkers.\nThe system integrates speech transcription, OCR, object and deepfake detection, video-to-text summarization, and claim verification.\n<span class=\"ltx_text ltx_font_smallcaps\">ShortCheck</span>&#160;is validated by evaluating it on two manually annotated datasets with TikTok videos in a multilingual setting.\nThe pipeline achieves promising results with F1-weighted score over 70%.</p>\n\n",
+                "matched_terms": [
+                    "factcheckers",
+                    "interface"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The multimodal complexity of short videos makes automated fact-checking technically challenging and manual efforts are increasingly unsustainable, especially for under-resourced fact-checkers facing unprecedented content scale and funding cuts.\nIn this demo, we present a prototype designed to automate the identification of potentially checkworthy videos, significantly reducing the time required by human fact-checkers.\nOur prototype is easy to use and can predict checkworthiness in over 30 major languages.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Intersection of languages supported by Meta Llama3 <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://ai.meta.com/blog/meta-llama-3/\" title=\"\">https://ai.meta.com/blog/meta-llama-3/</a> and OpenAI Whisper <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/openai/whisper\" title=\"\">https://github.com/openai/whisper</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "factcheckers",
+                    "demo"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A <span class=\"ltx_text ltx_font_bold\">demo interface</span> that allows fact-checkers to upload videos, inspect intermediate results, and link claims to existing fact-checks.</p>\n\n",
+                "matched_terms": [
+                    "factcheckers",
+                    "interface",
+                    "demo"
+                ]
+            }
+        ]
+    }
+}

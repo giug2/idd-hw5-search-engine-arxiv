@@ -1,0 +1,110 @@
+{
+    "S2.F1": {
+        "source_file": "A text-to-text Alignment Algorithm for better evaluation of modern speech recognition systems",
+        "image_url": "https://arxiv.org/html/2509.24478v1/x1.png",
+        "caption": "Fig. 1: Our algorithm searches the full graph (gray), penalizing deviations from the backtrace GbG_{b} (red), to find the best path (blue). Solid nodes mark segment ends, eq. (9).",
+        "informative_terms_identified": [
+            "penalizing",
+            "graph",
+            "gray",
+            "path",
+            "ends",
+            "nodes",
+            "mark",
+            "full",
+            "best",
+            "solid",
+            "segment",
+            "blue",
+            "gbgb",
+            "deviations",
+            "from",
+            "red",
+            "backtrace",
+            "searches",
+            "algorithm",
+            "find"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The table commonly used for alignment via dynamic programming can also be viewed as a directed acyclic graph, where cells correspond to nodes and insertions, deletions, and substitutions or matches are represented by vertical, horizontal, and diagonal edges, respectively. The backtrace defines a subgraph that captures all optimal alignments. See Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.24478v1#S2.F1\" title=\"Figure 1 &#8227; 2.3 Failure cases of character-level Levenshtein &#8227; 2 Background and Challenges &#8227; A text-to-text Alignment Algorithm for better evaluation of modern speech recognition systems\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The Levenshtein distance <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.24478v1#bib.bib4\" title=\"\">4</a>]</cite>is computed using a dynamic programming table, where the optimal value is determined recursively by comparing all positions in the two input sequences <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.24478v1#bib.bib5\" title=\"\">5</a>]</cite>. The corresponding alignment can be extracted through a <span class=\"ltx_text ltx_font_italic\">backtrace</span> constructed by recording the path taken to reach each cell in the table. However, the minimum distance might be attained by multiple distinct paths, which introduces ambiguity into the resulting alignment.</p>\n\n",
+                "matched_terms": [
+                    "backtrace",
+                    "path"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From the examples above, the lack of character-level information is clearly a key limitation of word-level alignment.\nA better approach is to work fully at the character level, though plain character-level alignment also has drawbacks.\nFirst, our goal is to map each reference word to a corresponding segment of the hypothesis transcript &#8212; something that character-level alignment does not provide.\nSecond, this approach offers no measure of proximity between matched characters within a single word. For example, if a model fails to capture the last letter of a word and proceeds to hallucinate a sequence of words containing the missing letter, it will be erroneously matched to the hallucinated part, resulting in a highly implausible alignment that may span multiple words.</p>\n\n",
+                "matched_terms": [
+                    "segment",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our objective is to identify the minimal-cost path through this graph and establish a ruleset for mapping character-level operations to word-level alignments. The proposed algorithm leverages the backtrace subgraph as an anchor for a beam search over the full graph.</p>\n\n",
+                "matched_terms": [
+                    "full",
+                    "graph",
+                    "backtrace",
+                    "path",
+                    "algorithm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We find that an unrestricted search over the entire graph is computationally infeasible. To prioritize the most promising paths, we introduce a penalty term when a path deviates from the backtrace graph <math alttext=\"G_{b}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><msub><mi>G</mi><mi>b</mi></msub><annotation encoding=\"application/x-tex\">G_{b}</annotation></semantics></math>, which substantially improves both the robustness and efficiency of the beam search.</p>\n\n",
+                "matched_terms": [
+                    "gbgb",
+                    "from",
+                    "graph",
+                    "backtrace",
+                    "path",
+                    "find"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For graph construction, we adopt a slightly modified version of the standard unit-cost Levenshtein distance by doubling the cost of substitutions. In this formulation, every substitution can equivalently be represented as a deletion&#8211;insertion pair, which has the effect of expanding the backtrace graph. Relaxing the unit-cost constraint on the search space in this way leads to more accurate alignments.</p>\n\n",
+                "matched_terms": [
+                    "backtrace",
+                    "graph"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We initialize the beam with a single candidate path <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m1\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math> starting at the root node <math alttext=\"(0,0)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(0,0)</annotation></semantics></math>. At each iteration, candidates expand by transitioning to their child nodes. Word-level alignments are traced out as the candidate paths traverse the graph.</p>\n\n",
+                "matched_terms": [
+                    "nodes",
+                    "path",
+                    "graph"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"t_{w\\rightarrow v}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mrow><mi>w</mi><mo stretchy=\"false\">&#8594;</mo><mi>v</mi></mrow></msub><annotation encoding=\"application/x-tex\">t_{w\\rightarrow v}</annotation></semantics></math> is the cost of transitioning from node <math alttext=\"w=(m,n)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m2\" intent=\":literal\"><semantics><mrow><mi>w</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">w=(m,n)</annotation></semantics></math> to <math alttext=\"v=(i,j)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m3\" intent=\":literal\"><semantics><mrow><mi>v</mi><mo>=</mo><mrow><mo stretchy=\"false\">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v=(i,j)</annotation></semantics></math> and <math alttext=\"[w\\notin V(G_{b})]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p4.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mrow><mi>w</mi><mo>&#8713;</mo><mrow><mi>V</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>G</mi><mi>b</mi></msub><mo stretchy=\"false\">)</mo></mrow></mrow></mrow><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[w\\notin V(G_{b})]</annotation></semantics></math> is an indicator function penalizing deviations from the backtrace graph node set.</p>\n\n",
+                "matched_terms": [
+                    "deviations",
+                    "penalizing",
+                    "from",
+                    "graph",
+                    "backtrace"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To determine if a segment should be closed, we define a function that is evaluated at each transition and updates <math alttext=\"u\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p7.m1\" intent=\":literal\"><semantics><mi>u</mi><annotation encoding=\"application/x-tex\">u</annotation></semantics></math>, if the alignment is to be concluded. Again, consider a path transitioning from <math alttext=\"w\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p7.m2\" intent=\":literal\"><semantics><mi>w</mi><annotation encoding=\"application/x-tex\">w</annotation></semantics></math> to <math alttext=\"v\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p7.m3\" intent=\":literal\"><semantics><mi>v</mi><annotation encoding=\"application/x-tex\">v</annotation></semantics></math> with <math alttext=\"u\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p7.m4\" intent=\":literal\"><semantics><mi>u</mi><annotation encoding=\"application/x-tex\">u</annotation></semantics></math> as the end node of the previously recorded alignment. We then have</p>\n\n",
+                "matched_terms": [
+                    "segment",
+                    "path",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">&#8226;&#8196;<span class=\"ltx_text ltx_font_italic\">Levenshtein-based word-level alignment</span> (<span class=\"ltx_text ltx_font_smallcaps\">lwa</span>): The RapidFuzz toolkit <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.24478v1#bib.bib6\" title=\"\">6</a>]</cite> provides one of the fastest implementations of Levenshtein distance computation, including extraction of alignments. The computed alignments represent an arbitrary optimal path through the Levenshtein backtrace graph.</p>\n\n",
+                "matched_terms": [
+                    "backtrace",
+                    "path",
+                    "graph"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,952 @@
+{
+    "S0.F1": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x1.png",
+        "caption": "Figure 1: Overview of the UltraVoice Dataset Construction and Stylistic Coverage. The upper left section details the four-step process: text corpus curation, style injection & response generation, stylized speech synthesis, and quality control & filtering. The ring chart on the right visualizes the dataset’s control dimensions (inner ring) and their finer control sub-dimensions (outer ring). The lower panel provides examples of six speech style dimensions, including emotion, speed, volume, language, accent, and composite styles (e.g., combinations of speed, volume, and emotion).",
+        "informative_terms_identified": [
+            "filtering",
+            "stylistic",
+            "inner",
+            "dataset’s",
+            "six",
+            "combinations",
+            "examples",
+            "ring",
+            "language",
+            "upper",
+            "visualizes",
+            "text",
+            "style",
+            "lower",
+            "details",
+            "ultravoice",
+            "composite",
+            "curation",
+            "speed",
+            "fourstep",
+            "stylized",
+            "styles",
+            "response",
+            "process",
+            "finer",
+            "accent",
+            "provides",
+            "panel",
+            "synthesis",
+            "quality",
+            "including",
+            "coverage",
+            "corpus",
+            "subdimensions",
+            "generation",
+            "control",
+            "dimensions",
+            "chart",
+            "volume",
+            "speech",
+            "construction",
+            "overview",
+            "injection",
+            "outer",
+            "dataset",
+            "emotion"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To facilitate a deeper understanding of our dataset construction pipeline, this section offers a comprehensive overview of the four key steps involved in building UltraVoice, as illustrated in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S0.F1\" title=\"In UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>. We have designed a bottom-up, fine-grained data generation pipeline that spans text preparation, style instruction injection, speech synthesis, and data filtering. This pipeline integrates everyday conversational texts with a wide range of speech style control types, ensuring high consistency and diversity in content, vocal style, and audio quality. The following subsections will elaborate on the core tasks and implementation details of each step.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Spoken dialogue models currently lack the ability for fine-grained speech style control, a critical capability for human-like interaction that is often overlooked in favor of purely functional capabilities like reasoning and question answering. To address this limitation, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control. Encompassing over 830 hours of speech dialogues, UltraVoice provides instructions across six key speech stylistic dimensions: emotion, speed, volume, accent, language, and composite styles. Fine-tuning leading models such as SLAM-Omni and VocalNet on UltraVoice significantly enhances their fine-grained speech stylistic controllability without degrading core conversational abilities. Specifically, our fine-tuned models achieve improvements of 29.12-42.33% in Mean Opinion Score (MOS) and 14.61-40.09 percentage points in Instruction Following Rate (IFR) on multi-dimensional control tasks designed in the UltraVoice.\nMoreover, on the URO-Bench benchmark, our fine-tuned models demonstrate substantial gains in core understanding, reasoning, and conversational abilities, with average improvements of +10.84% on the Basic setting and +7.87% on the Pro setting. Furthermore, the dataset&#8217;s utility extends to training controllable Text-to-Speech (TTS) models, underscoring its high quality and broad applicability for expressive speech synthesis. The complete dataset and model checkpoints are available at: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/bigai-nlco/UltraVoice\" title=\"\">https://github.com/bigai-nlco/UltraVoice</a>.</p>\n\n",
+                "matched_terms": [
+                    "stylistic",
+                    "six",
+                    "dataset’s",
+                    "language",
+                    "style",
+                    "ultravoice",
+                    "composite",
+                    "speed",
+                    "styles",
+                    "accent",
+                    "provides",
+                    "synthesis",
+                    "quality",
+                    "control",
+                    "dimensions",
+                    "volume",
+                    "speech",
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The future of human-computer interaction is moving toward more natural, efficient, and expressive communication. With the rise of large language models (LLMs) and their integration with speech technologies, end-to-end spoken dialogue models such as GPT-4o <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite>, LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite>, and Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite> have emerged. These models enable real-time, low-latency speech interaction, greatly enhancing user experience. However, most current research has prioritized the functional aspects of conversation (what to say), while the expressive dimension (how to say it) remains largely underdeveloped. Current models can generate fluent responses, but often do so with a neutral or monotonous prosody, lacking the ability to convey nuanced intent, emotion, or personality <cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib23\" title=\"\">2025</a>; Cui et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib6\" title=\"\">2024</a>; Geng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib14\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "language",
+                    "speech",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This lack of expressive control is a significant barrier to human-like interaction. For example, imagine a spoken dialogue model generating the response, &#8220;<span class=\"ltx_text ltx_font_typewriter\">That&#8217;s a fantastic idea.</span>&#8221; Without the ability to precisely control its delivery, the model cannot convey genuine excitement to celebrate a user&#8217;s suggestion or adopt a playfully sarcastic tone in a creative storytelling scenario. The speech it produces is functionally correct, but expressively sterile. This expressive gap stems from a fundamental flaw in existing training data. The common practice of simply applying Text-to-Speech (TTS) to text-based dialogue datasets fails to inject authentic paralinguistic information. This process results in speech that is linguistically correct but expressively impoverished, lacking the genuine variations in emotion, tone, and prosody that characterize human interaction. Consequently, models are trained on acoustically sterile data, learning what to say, but never learning how to say it with meaningful, human-like expression.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "response",
+                    "process",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our primary goal is to significantly enhance the expressiveness of spoken dialogue models by enabling them to modulate their speech style on command. This objective motivates our core research question: <span class=\"ltx_text ltx_font_italic\">How can we construct a dataset that is sufficiently <span class=\"ltx_text ltx_font_bold\">large-scale</span>, <span class=\"ltx_text ltx_font_bold\">diverse</span>, and <span class=\"ltx_text ltx_font_bold\">instruction-rich</span> to effectively train spoken dialogue models for multi-dimensional, fine-grained speech style control?</span> We contend that this is achievable, but it requires overcoming the following key challenges.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "speech",
+                    "style",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">First</span>, existing spoken dialogue datasets are fundamentally inadequate. Many spoken dialogue datasets, such as InstructS2S <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite> and VoiceAssistant <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite>, are created by simply converting text conversations to speech via TTS. This process yields a mere &#8220;spoken version&#8221; of text, stripped of the authentic, context-driven paralinguistic cues essential for human interaction. This necessitates a new approach beyond simple adaptation. <span class=\"ltx_text ltx_font_bold\">Second</span>, both collecting real data and repurposing existing resources present major obstacles. Acquiring large-scale, real-world spoken dialogues is prohibitively expensive and labor-intensive, while adapting controllable TTS datasets, such as EmoVoice-DB <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, SpeechCraft <cite class=\"ltx_cite ltx_citemacro_citep\">(Jin et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib21\" title=\"\">2024</a>)</cite>, and InstructTTSEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib17\" title=\"\">2025b</a>)</cite>, for dialogue is also flawed; forcing them into a conversational format with prompts like, &#8220;Please read this in an excited tone,&#8221; fundamentally degenerates the interactive dialogue task into a non-interactive TTS task. <span class=\"ltx_text ltx_font_bold\">Third</span>, while data synthesis emerges as the most viable path, it presents its own complex hurdles. Its success hinges not only on selecting a sufficiently expressive TTS model <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>; Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib26\" title=\"\">2025a</a>; Zhou et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib36\" title=\"\">2025</a>)</cite> to avoid monotonous outputs but, more critically, on a sophisticated generation strategy. This strategy must ensure the authenticity of the generated speech while achieving broad diversity across instructions and control dimensions, ultimately creating data that enables models to learn the nuanced relationship between content (<span class=\"ltx_text ltx_font_italic\">what</span> to say) and delivery (<span class=\"ltx_text ltx_font_italic\">how</span> to say).</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "generation",
+                    "control",
+                    "process",
+                    "dimensions",
+                    "synthesis",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the above challenges, this work makes three core contributions. <span class=\"ltx_text ltx_font_bold\">Firstly</span>, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control, filling a key gap in the field. It supports fine-grained control across six stylistic dimensions, including emotion, volume, speed, accent, language, and composite styles, providing a solid basis for training and evaluating expressive speech dialogue models. <span class=\"ltx_text ltx_font_bold\">Secondly</span>, we conduct comprehensive supervised fine-tuning (SFT) on mainstream spoken dialogue models on it, and we observe consistent gains in expressive style rendering and general conversational competence. <span class=\"ltx_text ltx_font_bold\">Thirdly</span>, we demonstrate the dataset&#8217;s generalizability beyond dialogue modeling by fine-tuning a pre-trained TTS model, which enables multidimensional controllable speech synthesis across diverse styles and highlights the dataset&#8217;s versatility and reliability for downstream speech generation.</p>\n\n",
+                "matched_terms": [
+                    "stylistic",
+                    "six",
+                    "dataset’s",
+                    "language",
+                    "style",
+                    "ultravoice",
+                    "composite",
+                    "speed",
+                    "styles",
+                    "accent",
+                    "including",
+                    "synthesis",
+                    "generation",
+                    "control",
+                    "dimensions",
+                    "volume",
+                    "speech",
+                    "dataset",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Early end-to-end spoken dialogue models sought to integrate automatic speech recognition (ASR), text-based dialogue modeling, and text-to-speech synthesis (TTS) within a unified architecture to reduce inference latency <cite class=\"ltx_cite ltx_citemacro_citep\">(Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib18\" title=\"\">2024</a>; An et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib1\" title=\"\">2024</a>)</cite>. Pioneering models such as Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite> and Moshi <cite class=\"ltx_cite ltx_citemacro_citep\">(D&#233;fossez et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib7\" title=\"\">2024</a>)</cite> adopted shared decoders that jointly generate text and audio tokens, while later models, including LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite> and Freeze-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib27\" title=\"\">2024</a>)</cite> employed modular multimodal pipelines with dedicated speech encoders and decoders built around a pre-trained LLM. Despite these architectural advances, style controllability remains a significant weakness. Since expressiveness is learned implicitly from training data, these models tend to produce homogeneous speaking styles and lack explicit control over paralinguistic features such as emotion and speed. This deficiency severely limits their use in personalized or emotionally expressive dialogue settings <cite class=\"ltx_cite ltx_citemacro_citep\">(Ji et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib20\" title=\"\">2024</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "including",
+                    "speech",
+                    "speed",
+                    "styles",
+                    "control",
+                    "emotion",
+                    "synthesis",
+                    "text",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent models <cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib32\" title=\"\">2025</a>; Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib16\" title=\"\">2025a</a>)</cite> have begun to address these limitations. For instance, SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite> introduces zero-shot timbre control, enabling real-time dialogue with dynamic speaker voices specified via audio prompts. On the efficiency front, VocalNet <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib28\" title=\"\">2025b</a>)</cite> enhances both generation speed and quality through multi-token prediction (MTP), producing multiple audio tokens per decoding step rather than one at a time. Nonetheless, none of the existing end-to-end spoken dialogue models provides explicit fine-grained speech style controls such as direct modulation of emotion, accent, or speed. In summary, while end-to-end dialogue models have made substantial progress in generating natural and low-latency speech, the ability to explicitly manipulate stylistic attributes remains entirely unaddressed in current approaches.</p>\n\n",
+                "matched_terms": [
+                    "stylistic",
+                    "speech",
+                    "speed",
+                    "generation",
+                    "control",
+                    "accent",
+                    "provides",
+                    "emotion",
+                    "quality",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For general-purpose spoken dialogue tasks, existing datasets mainly prioritize functionality over expressiveness. Well-known corpora such as InstructS2S <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>)</cite> and VoiceAssistant <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>)</cite> have been widely adopted to train models, including LLaMA-Omni and Mini-Omni, supporting task-oriented interactions, voice assistants, and related applications. These datasets typically contain hundreds of thousands of speech dialogue pairs and enable direct speech interaction. Despite their scale and dialogue focus, they lack explicit fine-grained speech style annotations, such as speed, volume, or emotion. As a result, the generated speech is often homogeneous and lacks the fine-grained control required for emotionally rich or personalized interactions.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "speech",
+                    "speed",
+                    "control",
+                    "emotion",
+                    "including",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Controllable TTS datasets, such as SpeechCraft <cite class=\"ltx_cite ltx_citemacro_citep\">(Jin et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib21\" title=\"\">2024</a>)</cite> for description-based synthesis and EmoVoice-DB <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> for emotional control, are designed to produce speech with specific styles. The recent success of state-of-the-art models <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib29\" title=\"\">2024</a>)</cite> trained on such data, including CosyVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib11\" title=\"\">2025</a>)</cite> and the audio model of GPT-4o-audio-preview <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite>, highlights the significant progress in fine-grained stylistic generation. However, a fundamental limitation of these datasets persists: they are overwhelmingly designed for non-interactive synthesis. Because these corpora lack the bidirectional dialogue structure and turn-taking context inherent to conversation, they are ultimately unsuitable for training end-to-end spoken dialogue models.</p>\n\n",
+                "matched_terms": [
+                    "including",
+                    "stylistic",
+                    "speech",
+                    "generation",
+                    "styles",
+                    "control",
+                    "synthesis"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the lack of explicit speech style control instructions in spoken dialogue datasets and the non-interactive limitation of TTS corpora, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>. As summarized in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S2.T1\" title=\"In 2.2 Spoken Dialogue and Controllable TTS Dataset &#8227; 2 Related Work &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>, UltraVoice covers six key stylistic dimensions: emotion, speed, volume, language, accent, and composite styles (e.g., combinations of speed, volume, and emotion). It also maintains full dialogue context along with instruction and response structure. This dataset fills a critical gap by supporting both general speech interaction and fine-grained speech style control, providing a unified and high-quality dataset for training and evaluating style-controllable end-to-end spoken dialogue models.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "stylistic",
+                    "ultravoice",
+                    "composite",
+                    "six",
+                    "speech",
+                    "combinations",
+                    "speed",
+                    "language",
+                    "styles",
+                    "control",
+                    "response",
+                    "accent",
+                    "dimensions",
+                    "emotion",
+                    "dataset",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 1: Text Corpus Curation.</span>\nTo construct the UltraVoice dataset, we curated the foundational text corpus using UltraChat <cite class=\"ltx_cite ltx_citemacro_citep\">(Ding et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib8\" title=\"\">2023</a>)</cite>, a widely adopted English dialogue dataset frequently used for speech dialogue synthesis in models such as LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite>, Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite>, and SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite>. We extracted dialogues primarily from the <span class=\"ltx_text ltx_font_italic\">Question About the World</span> and <span class=\"ltx_text ltx_font_italic\">Creation and Generation</span> categories due to their conciseness and independence from external references. To ensure high-quality input for downstream synthesis, we applied strict filtering rules to remove dialogues containing URLs, academic citations, or lengthy quoted texts. After filtering, we obtained approximately 200,000 clean and natural question-answer pairs, which served as the base for style-controlled speech generation.</p>\n\n",
+                "matched_terms": [
+                    "filtering",
+                    "ultravoice",
+                    "speech",
+                    "curation",
+                    "corpus",
+                    "generation",
+                    "dataset",
+                    "synthesis",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 2: Style Injection &amp; Response Generation.</span>\nTo enable fine-grained control over speaking styles, we predefined six stylistic dimensions: speed, volume, emotion, accent, language, and composite styles. For each dimension, we used GPT-4o <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite> to generate diverse and natural style prompts (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5\" title=\"Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">E</span></a> for all prompt templates), leveraging semantically similar expressions (e.g., &#8220;respond in a joyful tone&#8221; vs. &#8220;reply with a cheerful voice&#8221;). Based on these prompts, GPT-4o was further invoked to generate stylized textual responses, ensuring alignment in semantics and tone. Additionally, we applied several practical adjustments to improve downstream TTS following <cite class=\"ltx_cite ltx_citemacro_citet\">Fang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>)</cite>. For example, we expanded numbers into spoken forms (e.g., &#8220;123&#8221; &#8594; &#8220;one two three&#8221;) and rephrased code-related queries to encourage natural spoken language responses. These refinements ensured better speech synthesis fluency and user interaction quality.</p>\n\n",
+                "matched_terms": [
+                    "stylistic",
+                    "six",
+                    "language",
+                    "style",
+                    "composite",
+                    "speed",
+                    "stylized",
+                    "styles",
+                    "response",
+                    "accent",
+                    "synthesis",
+                    "quality",
+                    "generation",
+                    "control",
+                    "dimensions",
+                    "volume",
+                    "speech",
+                    "injection",
+                    "emotion"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 3: Stylized Speech Synthesizing.</span>\nIn this step, we performed speech synthesis for each instruction-response speech pair to simulate realistic conversations with fine-grained style control. For instruction speech, we randomly sampled speaker timbres from the seedtts_testset_en<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/BytedanceSpeech/seed-tts-eval</span></span></span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Anastassiou et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib2\" title=\"\">2024</a>)</cite> corpus. This corpus features diverse speakers and real-world background noise, allowing the instruction audio to better reflect realistic user conditions. In contrast, response speech was synthesized using a single fixed timbre to ensure consistency across all stylized outputs. We selected the TTS model for each style control dimension as detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T2\" title=\"In Figure 2 &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Most responses were synthesized using the GPT-4o-audio-preview <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite> model due to its expressiveness and high fidelity. For accent-specific responses, we used Edge TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/rany2/edge-tts</span></span></span>, which lacks support for custom speaker timbres. To address this, we applied voice conversion (VC) via CosyVoice-300M <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>)</cite> to align the output with the designated fixed voice.\nTo ensure data balance, we further sampled 40,000 generic QA pairs without style instructions from the VoiceAssistant400k<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>https://huggingface.co/datasets/gpt-omni/VoiceAssistant-400K</span></span></span> corpus. After removing templated phrases (e.g., &#8220;I&#8217;m mini omni&#8221;), we resynthesized them using CosyVoice-300M.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "corpus",
+                    "stylized",
+                    "control",
+                    "response",
+                    "synthesis",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 4: Quality Control &amp; Filtering.</span>\nTo ensure the overall quality and balanced stylistic coverage of the dataset, we applied an automated filtering process to all synthesized speech dialogue samples. Specifically, we utilized the Whisper-large-v3 <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib24\" title=\"\">2023</a>)</cite> to perform automatic speech recognition (ASR) on each instruction and response audio sample, and computed the character error rate (CER) based on the transcriptions. We applied a unified data filtering criterion to both instruction and response audio: only retaining samples with a CER below 20% and duration under 30 seconds. This filtering pipeline effectively removed samples with high ASR error or abnormal length, significantly improving the dataset&#8217;s consistency and usability.</p>\n\n",
+                "matched_terms": [
+                    "filtering",
+                    "stylistic",
+                    "speech",
+                    "dataset’s",
+                    "coverage",
+                    "control",
+                    "response",
+                    "process",
+                    "dataset",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As summarized in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Characteristics and Statistics &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the UltraVoice dataset comprises 100,770 speech dialogue samples, among which 84,832 are explicitly conditioned on six major control dimensions: emotion, volume, speed, accent, language, and composite styles description. The remaining 15,938 pairs are general English QA samples without style prompts, added to improve balance and generalization. The dataset includes 21,209 emotion-controlled samples across seven categories (<span class=\"ltx_text ltx_font_italic\">neutral, happy, sad, angry, surprised, fearful, disgusted</span>), 11,154 for volume (<span class=\"ltx_text ltx_font_italic\">low, normal, high</span>), and 10,334 for speed (<span class=\"ltx_text ltx_font_italic\">slow, normal, fast</span>). Accent control covers six English variants (<span class=\"ltx_text ltx_font_italic\">AU, CA, GB, IN, SG, ZA</span>) totaling 26,839 samples. Language-switching samples span Chinese, Japanese, and Korean, with 11,153 entries. The composite styles dimension includes 4,143 samples representing multidimensional control (<span class=\"ltx_text ltx_font_italic\">e.g., respond with a slow and loud air of thoughtful sadness</span>).</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "ultravoice",
+                    "composite",
+                    "six",
+                    "speech",
+                    "speed",
+                    "language",
+                    "styles",
+                    "control",
+                    "accent",
+                    "dimensions",
+                    "emotion",
+                    "dataset",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In total, the dataset covers over 830 hours of speech, with duration distribution shown in  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F2\" title=\"In 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Alongside duration, we also report word count distributions to assess utterance complexity and length variation. The structured control space and balanced temporal characteristics make UltraVoice a valuable resource for training and evaluating stylistically controllable spoken dialogue systems. More detailed statistics are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A2\" title=\"Appendix B Detailed Dataset Statistics &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">B</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "ultravoice",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure the quality and consistency of the spoken dialogue data, we applied strict filtering criteria, retaining only samples with a duration under 30 seconds and a CER below 20%. This approach effectively eliminated samples with poor ASR quality or abnormal content, significantly improving dataset stability and usability. As reported in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Characteristics and Statistics &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the final dataset achieves an average dialogue length of 29.35 seconds, a mean CER of 5.93%, and an overall UTMOS <cite class=\"ltx_cite ltx_citemacro_citep\">(Saeki et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib25\" title=\"\">2022</a>)</cite> score of 4.00, indicating high naturalness and stylistic fidelity of the generated speech. This automated quality control process lays a solid and reliable foundation for subsequent model training and evaluation.</p>\n\n",
+                "matched_terms": [
+                    "filtering",
+                    "stylistic",
+                    "speech",
+                    "control",
+                    "process",
+                    "dataset",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Beyond quantitative metrics (average duration 29.35s, mean CER 5.93%, UTMOS 4.00), we provide visual analyses to further validate data quality. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F3\" title=\"In 3.2 Quality Assessment &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, six visualization types assess the effectiveness and clarity of our style control design. Emotion and accent are visualized using t-SNE plots from classification model features, showing clear category separability. Speed and volume are illustrated via word-per-minute (WPM) and root-mean-square (RMS) distributions, confirming consistent prosodic control. Language and composite styles are represented with word clouds, showcasing lexical diversity and expressive richness. These visualizations collectively demonstrate the robustness and interpretability of UltraVoice&#8217;s stylistic control.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "stylistic",
+                    "composite",
+                    "six",
+                    "speed",
+                    "language",
+                    "styles",
+                    "control",
+                    "accent",
+                    "emotion",
+                    "quality",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we systematically evaluate the performance of the end-to-end speech dialogue model trained via SFT on the UltraVoice. Firstly, we verify the model&#8217;s ability to control multi-dimensional speech styles on the UltraVoice internal test set after SFT. Next, we further examine the model&#8217;s generalization capability on the URO-Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yan et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>)</cite>. Finally, we further validate the quality of our fine-grained controlled response speech by successfully training a controllable TTS model following the pipeline of EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> on a dataset constructed from the UltraVoice.</p>\n\n",
+                "matched_terms": [
+                    "ultravoice",
+                    "speech",
+                    "styles",
+                    "control",
+                    "response",
+                    "dataset",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Settings. </span>Our experiments are based on four spoken dialogue models from the SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite> and VocalNet <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib28\" title=\"\">2025b</a>)</cite> series. These models span various sizes and utilize LLM backbones from the LLaMA and Qwen families. We applied SFT to these models to analyze their performance on speech style control. The detailed configurations of the spoken dialogue models ( <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T14\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">14</span></a>)and the training configurations for SFT ( <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T11\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T12\" title=\"Table 12 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">12</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T13\" title=\"Table 13 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">13</span></a>) are provided in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4\" title=\"Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">D</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "speech",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation and metrics. </span>To construct our evaluation benchmark, we randomly sampled 100 examples from each fine-grained dimension within the six major control dimensions defined in UltraVoice, resulting in a test set of 2,300 samples. The test set has no overlap with the training data. To further evaluate whether SFT on UltraVoice impacts general spoken dialogue capabilities such as natural conversation, comprehension, and reasoning, we utilized the URO-Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yan et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>)</cite>, which assesses models across three dimensions: Oral Conversation, Understanding, and Reasoning. It allows us to analyze whether core dialogue competencies are preserved and whether expressive performance improves after fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "ultravoice",
+                    "six",
+                    "examples",
+                    "control",
+                    "dimensions"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic ltx_framed ltx_framed_underline\">Audio-Language Model (ALM) based Metric.</span> Following the evaluation paradigm similar to methodologies proposed by <cite class=\"ltx_cite ltx_citemacro_citet\">Yan et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>); Yang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, we employed Gemini-2.5-Flash <cite class=\"ltx_cite ltx_citemacro_citep\">(Comanici et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib5\" title=\"\">2025</a>)</cite> as our automatic evaluator to automatically generate <span class=\"ltx_text ltx_font_bold\">Mean Opinion Scores (MOS)</span> and compute the <span class=\"ltx_text ltx_font_bold\">instruction-following rate (IFR)</span> for each control dimension. This choice is motivated by findings that advanced ALMs show high consistency with human judgments by  <cite class=\"ltx_cite ltx_citemacro_citet\">Chiang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib4\" title=\"\">2025</a>)</cite>. Details of prompts are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5.SS11\" title=\"E.11 IFR Evaluation Prompt &#8227; Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Sections</span>&#160;<span class=\"ltx_text ltx_ref_tag\">E.11</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5.SS10\" title=\"E.10 MOS Evaluation Prompt &#8227; Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">E.10</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "details",
+                    "control"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic ltx_framed ltx_framed_underline\">Objective Numerical Metric.</span> Content consistency was measured by the <span class=\"ltx_text ltx_font_bold\">Word Error Rate (WER)</span>, using transcriptions from the Whisper-large-v3 model <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib24\" title=\"\">2023</a>)</cite>. For emotional expressiveness, we adopted metrics from <cite class=\"ltx_cite ltx_citemacro_citet\">Yang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, leveraging emotion2vec <cite class=\"ltx_cite ltx_citemacro_citep\">(Ma et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib22\" title=\"\">2023</a>)</cite> to compute both <span class=\"ltx_text ltx_font_bold\">Emotion Similarity</span> (cosine similarity between embeddings) and <span class=\"ltx_text ltx_font_bold\">Recall Rate</span> (from emotion classification). Finally, the overall naturalness and perceptual audio quality were evaluated using the <span class=\"ltx_text ltx_font_bold\">UTMOS</span> score <cite class=\"ltx_cite ltx_citemacro_citep\">(Saeki et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib25\" title=\"\">2022</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "emotion",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Enhancements of Multi-Dimensional Instruction-Following Capabilities.</span> As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.F4\" title=\"In 4.2 Performance on Fine-grained Speech Style Control &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a> and detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A3.T10\" title=\"In Appendix C The Detailed Performance Comparison &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">10</span></a> in the <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A3\" title=\"Appendix C The Detailed Performance Comparison &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">C</span></a>, fine-tuning with UltraVoice significantly boosts the spoken dialogue models&#8217; instruction-following capability for fine-grained speech style control, with IFR gains ranging from 14.61 to 40.09 points. This improvement is particularly pronounced for smaller models with weaker baseline performance. For instance, the IFR of SLAM-Omni-0.5B surged from 28.30% to 68.39%, while VocalNet-1B&#8217;s score increased from 36.28% to 55.91%. These results demonstrate that even resource-constrained models can achieve substantial gains in responsiveness to control instructions through UltraVoice. Concurrently, larger models such as VocalNet-7B and 8B also exhibited consistent improvements, indicating an enhanced ability to precisely control various dimensions of fine-grained speech styles.</p>\n\n",
+                "matched_terms": [
+                    "ultravoice",
+                    "speech",
+                    "styles",
+                    "control",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Enhancements in the Subjective Naturalness of Fine-Grained Speech Styles Control. </span>As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T4\" title=\"In 4.2 Performance on Fine-grained Speech Style Control &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>, all models exhibit significant improvements in MOS after being fine-tuned with UltraVoice. The relative gains range from 29.12% to 42.33%, with the Emotion and Volume dimensions showing particularly remarkable improvements. For instance, the overall MOS for VocalNet-7B increased from 2.73 to 3.59, while VocalNet-8B&#8217;s score rose from 2.85 to 3.68. These results indicate that our fine-tuning process enhances the models&#8217; ability to render the specified styles with high naturalness, demonstrating that improved instruction control does not come at the cost of audio quality.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "ultravoice",
+                    "speech",
+                    "styles",
+                    "control",
+                    "process",
+                    "dimensions",
+                    "emotion",
+                    "quality"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-Metric Consistency and Limitations. </span>Overall, MOS and IFR trends are strongly aligned, suggesting that stronger instruction adherence typically yields more natural speech. However, the Language control dimension presents a notable exception. Models based on the LLaMA backbone (e.g., VocalNet-1B and 8B) exhibit a slight MOS decline and stagnant IFR, while Qwen-based models (e.g., SLAM-Omni-0.5B and VocalNet-7B) achieve clear gains. This discrepancy likely stems from differences in multilingual pretraining exposure. Language control requires full responses in a different language, introducing unique generalization challenges. The current fine-tuning data lacks sufficient multilingual diversity and volume, limiting the models&#8217; ability to generalize. Future work should explore targeted augmentation of multilingual instruction data to address this limitation.</p>\n\n",
+                "matched_terms": [
+                    "language",
+                    "control",
+                    "speech",
+                    "volume"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our results on the URO-Bench (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T5\" title=\"In 4.3 General Conversational Ability &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>) confirm that fine-tuning spoken dialogue models on UltraVoice enhances, rather than compromises, general conversational skills. All models showed substantial gains across <span class=\"ltx_text ltx_font_italic\">Understanding</span>, <span class=\"ltx_text ltx_font_italic\">Reasoning</span>, and <span class=\"ltx_text ltx_font_italic\">Oral Conversation</span>, with average improvements of <span class=\"ltx_text ltx_font_bold\">+10.84%</span> on the Basic setting and <span class=\"ltx_text ltx_font_bold\">+7.87%</span> on the Pro setting. Notably, the VocalNet-7B SFT model establishes a new state-of-the-art, outperforming strong baselines like Qwen2.5-Omni-7B <cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib32\" title=\"\">2025</a>)</cite> and GLM4-Voice-9B <cite class=\"ltx_cite ltx_citemacro_citep\">(Zeng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib35\" title=\"\">2024</a>)</cite>, highlighting practical value beyond style control. The only exception to this positive trend is a performance drop in Pro Reasoning (from 24.72 to 20.07) for the smallest model, SLAM-Omni-0.5B. We attribute this to the current dataset&#8217;s focus on single-turn interactions, which may not sufficiently support complex, multi-turn reasoning. Future work could address this by incorporating multi-turn dialogue examples during SFT.</p>\n\n",
+                "matched_terms": [
+                    "ultravoice",
+                    "dataset’s",
+                    "examples",
+                    "control",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further validate the quality and utility of our data synthesised using fine-grained speech style control, we repurposed it into a controllable TTS dataset. This new dataset, derived from five stylistic dimensions in UltraVoice (speed, volume, emotion, accent, and composite styles), consists of explicit instruction-speech pairs. Following the pipeline of EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, we performed supervised fine-tuning (SFT) on a pre-trained EmoVoice-0.5B model, using its checkpoint before it was trained on the EmoVoice-DB to ensure a clean baseline.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "stylistic",
+                    "ultravoice",
+                    "composite",
+                    "speech",
+                    "speed",
+                    "styles",
+                    "control",
+                    "accent",
+                    "dimensions",
+                    "emotion",
+                    "dataset",
+                    "quality",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our fine-tuned TTS model, <span class=\"ltx_text ltx_font_bold\">UltraVoice-0.5B-SFT</span>, demonstrates strong multi-dimensional style control. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T6\" title=\"In 4.4 Validating Data Quality via Controllable Text-To-Speech &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">6</span></a>, on emotional control tasks, our model achieves competitive performance against strong baselines such as PromptTTS <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib15\" title=\"\">2023</a>)</cite>, CosyVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>)</cite>, and EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> on the out-of-domain EmoVoice-DB test set. Crucially, on our in-domain UltraVoice data, it substantially reduces the Word Error Rate (WER) to <span class=\"ltx_text ltx_font_bold\">3.97</span> from 19.82 achieved by EmoVoice-0.5B, while maintaining high emotional similarity and naturalness. Furthermore, as detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T7\" title=\"In 4.4 Validating Data Quality via Controllable Text-To-Speech &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">7</span></a>, the model consistently improves both MOS and IFR scores across all other tested dimensions (accent, speed, volume, and composite styles) compared to the pre-trained baseline. We omit the fully fine-tuned EmoVoice-0.5B from this broader comparison due to its poor robustness, already indicated by its high WER on our dataset. These results confirm that our instruction-style data effectively enhances controllable synthesis across a diverse range of styles.</p>\n\n",
+                "matched_terms": [
+                    "volume",
+                    "ultravoice",
+                    "composite",
+                    "speed",
+                    "styles",
+                    "control",
+                    "accent",
+                    "dimensions",
+                    "dataset",
+                    "synthesis",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control. By fine-tuning mainstream spoken dialogue models on UltraVoice, we significantly enhanced their controllability over diverse fine-grained speech styles, while also improving their overall speech naturalness and general conversational competence. The dataset&#8217;s high quality and generalization were further validated through strong performance on the URO-Bench benchmark and in controllable TTS tasks, establishing a solid foundation for expressive spoken dialogue modeling. While this work represents a significant step forward, the full scope of human-like expressive speech presents formidable long-term challenges. The framework and data we provide can be extended to explore these frontiers, such as modeling the dynamic evolution of styles within multi-turn conversations or capturing the nuanced paralinguistic features in massively multilingual contexts. Addressing these complex scenarios, though beyond the scope of this paper, will be critical for developing the next generation of truly context-aware and intelligent speech interaction systems.</p>\n\n",
+                "matched_terms": [
+                    "ultravoice",
+                    "speech",
+                    "dataset’s",
+                    "generation",
+                    "styles",
+                    "control",
+                    "dataset",
+                    "quality",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The UltraVoice dataset is generated via a fully synthetic pipeline, employing GPT-4o for text creation and multiple Text-to-Speech (TTS) engines for audio synthesis. This approach ensures that the dataset contains no personally identifiable information or the voices of real individuals, thereby circumventing the privacy concerns and copyright issues often associated with human-derived data. The content is created and intended strictly for academic research on controllable spoken dialogue systems.</p>\n\n",
+                "matched_terms": [
+                    "synthesis",
+                    "ultravoice",
+                    "text",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We acknowledge the potential societal risks of advanced controllable speech generation technologies. These include, but are not limited to, the creation of deceptive audio content (i.e., deepfakes) to spread misinformation, emotional manipulation, the impersonation of individuals, and the reinforcement of social biases or stereotypes through stylized speech. We urge all users of this dataset and any models trained on it to be acutely aware of these risks and to proceed with a high degree of caution and ethical responsibility.</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "stylized",
+                    "speech",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To mitigate potential misuse, we will release the UltraVoice dataset and our models under a research-only license. This license explicitly prohibits malicious applications, including but not limited to creating misinformation, engaging in fraudulent activities, or impersonating individuals without their explicit consent. The authors bear no responsibility for any misuse or harmful interpretations of the dataset or its derivatives.</p>\n\n",
+                "matched_terms": [
+                    "including",
+                    "ultravoice",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure the full reproducibility of our work, we provide comprehensive details on our data, models, and experimental procedures. Our data generation pipeline for the UltraVoice dataset is thoroughly described in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3\" title=\"3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>. The selection criteria and configurations of the spoken dialogue models used for fine-tuning are presented in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T14\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">14</span></a>. We provide the detailed Supervised Fine-Tuning (SFT) settings, including all hyperparameters, in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T11\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T12\" title=\"Table 12 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">12</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T13\" title=\"Table 13 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">13</span></a>. Finally, the evaluation metrics and protocols used to assess performance are detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4\" title=\"4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>. All code, the dataset, and model checkpoints will be made publicly available to facilitate further research.</p>\n\n",
+                "matched_terms": [
+                    "details",
+                    "ultravoice",
+                    "generation",
+                    "dataset",
+                    "including"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Grammar and Language Refinement:</span> LLMs were employed to proofread the manuscript for grammatical errors, spelling mistakes, and awkward phrasing. This use was intended to improve the clarity, readability, and overall quality of the written text.</p>\n\n",
+                "matched_terms": [
+                    "language",
+                    "quality",
+                    "text"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x2.png",
+        "caption": "(a) Duration Distribution",
+        "informative_terms_identified": [
+            "duration",
+            "distribution"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In total, the dataset covers over 830 hours of speech, with duration distribution shown in  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F2\" title=\"In 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Alongside duration, we also report word count distributions to assess utterance complexity and length variation. The structured control space and balanced temporal characteristics make UltraVoice a valuable resource for training and evaluating stylistically controllable spoken dialogue systems. More detailed statistics are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A2\" title=\"Appendix B Detailed Dataset Statistics &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">B</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S3.F2.sf2": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x3.png",
+        "caption": "(b) Word Count Distribution",
+        "informative_terms_identified": [
+            "word",
+            "distribution",
+            "count"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">In total, the dataset covers over 830 hours of speech, with duration distribution shown in  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F2\" title=\"In 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Alongside duration, we also report word count distributions to assess utterance complexity and length variation. The structured control space and balanced temporal characteristics make UltraVoice a valuable resource for training and evaluating stylistically controllable spoken dialogue systems. More detailed statistics are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A2\" title=\"Appendix B Detailed Dataset Statistics &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">B</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "word",
+                    "distribution",
+                    "count"
+                ]
+            }
+        ]
+    },
+    "S3.F3": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x4.png",
+        "caption": "(a) Emotion",
+        "informative_terms_identified": [
+            "emotion"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Beyond quantitative metrics (average duration 29.35s, mean CER 5.93%, UTMOS 4.00), we provide visual analyses to further validate data quality. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F3\" title=\"In 3.2 Quality Assessment &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, six visualization types assess the effectiveness and clarity of our style control design. Emotion and accent are visualized using t-SNE plots from classification model features, showing clear category separability. Speed and volume are illustrated via word-per-minute (WPM) and root-mean-square (RMS) distributions, confirming consistent prosodic control. Language and composite styles are represented with word clouds, showcasing lexical diversity and expressive richness. These visualizations collectively demonstrate the robustness and interpretability of UltraVoice&#8217;s stylistic control.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S3.F3.sf2": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x5.png",
+        "caption": "(b) Speed",
+        "informative_terms_identified": [
+            "speed"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S3.F3.sf3": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x6.png",
+        "caption": "(c) Language",
+        "informative_terms_identified": [
+            "language"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S3.F3.sf4": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x7.png",
+        "caption": "(d) Accent",
+        "informative_terms_identified": [
+            "accent"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S3.F3.sf5": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x8.png",
+        "caption": "(e) Volume",
+        "informative_terms_identified": [
+            "volume"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S3.F3.sf6": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x9.png",
+        "caption": "(f) Composite",
+        "informative_terms_identified": [
+            "composite"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S4.F4": {
+        "source_file": "UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models",
+        "image_url": "https://arxiv.org/html/2510.22588v1/x10.png",
+        "caption": "Figure 4: IFR (%) results across six fine-grained speech style control dimensions for each model. Each radar chart contrasts the base model (Blue) and its SFT variant (Red), with GPT-4o (Gray) used as an upper-bound reference.",
+        "informative_terms_identified": [
+            "six",
+            "base",
+            "red",
+            "style",
+            "sft",
+            "gpt4o",
+            "results",
+            "model",
+            "gray",
+            "radar",
+            "finegrained",
+            "blue",
+            "contrasts",
+            "ifr",
+            "control",
+            "across",
+            "dimensions",
+            "chart",
+            "upperbound",
+            "variant",
+            "speech"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Enhancements of Multi-Dimensional Instruction-Following Capabilities.</span> As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.F4\" title=\"In 4.2 Performance on Fine-grained Speech Style Control &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a> and detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A3.T10\" title=\"In Appendix C The Detailed Performance Comparison &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">10</span></a> in the <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A3\" title=\"Appendix C The Detailed Performance Comparison &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">C</span></a>, fine-tuning with UltraVoice significantly boosts the spoken dialogue models&#8217; instruction-following capability for fine-grained speech style control, with IFR gains ranging from 14.61 to 40.09 points. This improvement is particularly pronounced for smaller models with weaker baseline performance. For instance, the IFR of SLAM-Omni-0.5B surged from 28.30% to 68.39%, while VocalNet-1B&#8217;s score increased from 36.28% to 55.91%. These results demonstrate that even resource-constrained models can achieve substantial gains in responsiveness to control instructions through UltraVoice. Concurrently, larger models such as VocalNet-7B and 8B also exhibited consistent improvements, indicating an enhanced ability to precisely control various dimensions of fine-grained speech styles.</p>\n\n",
+            "<p class=\"ltx_p\">The detailed performance corresponding to <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.F4\" title=\"In 4.2 Performance on Fine-grained Speech Style Control &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a> is presented in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A3.T10\" title=\"In Appendix C The Detailed Performance Comparison &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">10</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Spoken dialogue models currently lack the ability for fine-grained speech style control, a critical capability for human-like interaction that is often overlooked in favor of purely functional capabilities like reasoning and question answering. To address this limitation, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control. Encompassing over 830 hours of speech dialogues, UltraVoice provides instructions across six key speech stylistic dimensions: emotion, speed, volume, accent, language, and composite styles. Fine-tuning leading models such as SLAM-Omni and VocalNet on UltraVoice significantly enhances their fine-grained speech stylistic controllability without degrading core conversational abilities. Specifically, our fine-tuned models achieve improvements of 29.12-42.33% in Mean Opinion Score (MOS) and 14.61-40.09 percentage points in Instruction Following Rate (IFR) on multi-dimensional control tasks designed in the UltraVoice.\nMoreover, on the URO-Bench benchmark, our fine-tuned models demonstrate substantial gains in core understanding, reasoning, and conversational abilities, with average improvements of +10.84% on the Basic setting and +7.87% on the Pro setting. Furthermore, the dataset&#8217;s utility extends to training controllable Text-to-Speech (TTS) models, underscoring its high quality and broad applicability for expressive speech synthesis. The complete dataset and model checkpoints are available at: <a class=\"ltx_ref ltx_href\" href=\"https://github.com/bigai-nlco/UltraVoice\" title=\"\">https://github.com/bigai-nlco/UltraVoice</a>.</p>\n\n",
+                "matched_terms": [
+                    "ifr",
+                    "speech",
+                    "six",
+                    "model",
+                    "control",
+                    "finegrained",
+                    "across",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The future of human-computer interaction is moving toward more natural, efficient, and expressive communication. With the rise of large language models (LLMs) and their integration with speech technologies, end-to-end spoken dialogue models such as GPT-4o <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite>, LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite>, and Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite> have emerged. These models enable real-time, low-latency speech interaction, greatly enhancing user experience. However, most current research has prioritized the functional aspects of conversation (what to say), while the expressive dimension (how to say it) remains largely underdeveloped. Current models can generate fluent responses, but often do so with a neutral or monotonous prosody, lacking the ability to convey nuanced intent, emotion, or personality <cite class=\"ltx_cite ltx_citemacro_citep\">(Peng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib23\" title=\"\">2025</a>; Cui et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib6\" title=\"\">2024</a>; Geng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib14\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "gpt4o",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This lack of expressive control is a significant barrier to human-like interaction. For example, imagine a spoken dialogue model generating the response, &#8220;<span class=\"ltx_text ltx_font_typewriter\">That&#8217;s a fantastic idea.</span>&#8221; Without the ability to precisely control its delivery, the model cannot convey genuine excitement to celebrate a user&#8217;s suggestion or adopt a playfully sarcastic tone in a creative storytelling scenario. The speech it produces is functionally correct, but expressively sterile. This expressive gap stems from a fundamental flaw in existing training data. The common practice of simply applying Text-to-Speech (TTS) to text-based dialogue datasets fails to inject authentic paralinguistic information. This process results in speech that is linguistically correct but expressively impoverished, lacking the genuine variations in emotion, tone, and prosody that characterize human interaction. Consequently, models are trained on acoustically sterile data, learning what to say, but never learning how to say it with meaningful, human-like expression.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "results",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our primary goal is to significantly enhance the expressiveness of spoken dialogue models by enabling them to modulate their speech style on command. This objective motivates our core research question: <span class=\"ltx_text ltx_font_italic\">How can we construct a dataset that is sufficiently <span class=\"ltx_text ltx_font_bold\">large-scale</span>, <span class=\"ltx_text ltx_font_bold\">diverse</span>, and <span class=\"ltx_text ltx_font_bold\">instruction-rich</span> to effectively train spoken dialogue models for multi-dimensional, fine-grained speech style control?</span> We contend that this is achievable, but it requires overcoming the following key challenges.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "finegrained",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">First</span>, existing spoken dialogue datasets are fundamentally inadequate. Many spoken dialogue datasets, such as InstructS2S <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite> and VoiceAssistant <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite>, are created by simply converting text conversations to speech via TTS. This process yields a mere &#8220;spoken version&#8221; of text, stripped of the authentic, context-driven paralinguistic cues essential for human interaction. This necessitates a new approach beyond simple adaptation. <span class=\"ltx_text ltx_font_bold\">Second</span>, both collecting real data and repurposing existing resources present major obstacles. Acquiring large-scale, real-world spoken dialogues is prohibitively expensive and labor-intensive, while adapting controllable TTS datasets, such as EmoVoice-DB <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, SpeechCraft <cite class=\"ltx_cite ltx_citemacro_citep\">(Jin et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib21\" title=\"\">2024</a>)</cite>, and InstructTTSEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib17\" title=\"\">2025b</a>)</cite>, for dialogue is also flawed; forcing them into a conversational format with prompts like, &#8220;Please read this in an excited tone,&#8221; fundamentally degenerates the interactive dialogue task into a non-interactive TTS task. <span class=\"ltx_text ltx_font_bold\">Third</span>, while data synthesis emerges as the most viable path, it presents its own complex hurdles. Its success hinges not only on selecting a sufficiently expressive TTS model <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>; Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib26\" title=\"\">2025a</a>; Zhou et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib36\" title=\"\">2025</a>)</cite> to avoid monotonous outputs but, more critically, on a sophisticated generation strategy. This strategy must ensure the authenticity of the generated speech while achieving broad diversity across instructions and control dimensions, ultimately creating data that enables models to learn the nuanced relationship between content (<span class=\"ltx_text ltx_font_italic\">what</span> to say) and delivery (<span class=\"ltx_text ltx_font_italic\">how</span> to say).</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model",
+                    "control",
+                    "across",
+                    "dimensions"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the above challenges, this work makes three core contributions. <span class=\"ltx_text ltx_font_bold\">Firstly</span>, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control, filling a key gap in the field. It supports fine-grained control across six stylistic dimensions, including emotion, volume, speed, accent, language, and composite styles, providing a solid basis for training and evaluating expressive speech dialogue models. <span class=\"ltx_text ltx_font_bold\">Secondly</span>, we conduct comprehensive supervised fine-tuning (SFT) on mainstream spoken dialogue models on it, and we observe consistent gains in expressive style rendering and general conversational competence. <span class=\"ltx_text ltx_font_bold\">Thirdly</span>, we demonstrate the dataset&#8217;s generalizability beyond dialogue modeling by fine-tuning a pre-trained TTS model, which enables multidimensional controllable speech synthesis across diverse styles and highlights the dataset&#8217;s versatility and reliability for downstream speech generation.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "speech",
+                    "six",
+                    "model",
+                    "control",
+                    "finegrained",
+                    "across",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Early end-to-end spoken dialogue models sought to integrate automatic speech recognition (ASR), text-based dialogue modeling, and text-to-speech synthesis (TTS) within a unified architecture to reduce inference latency <cite class=\"ltx_cite ltx_citemacro_citep\">(Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib18\" title=\"\">2024</a>; An et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib1\" title=\"\">2024</a>)</cite>. Pioneering models such as Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite> and Moshi <cite class=\"ltx_cite ltx_citemacro_citep\">(D&#233;fossez et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib7\" title=\"\">2024</a>)</cite> adopted shared decoders that jointly generate text and audio tokens, while later models, including LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite> and Freeze-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib27\" title=\"\">2024</a>)</cite> employed modular multimodal pipelines with dedicated speech encoders and decoders built around a pre-trained LLM. Despite these architectural advances, style controllability remains a significant weakness. Since expressiveness is learned implicitly from training data, these models tend to produce homogeneous speaking styles and lack explicit control over paralinguistic features such as emotion and speed. This deficiency severely limits their use in personalized or emotionally expressive dialogue settings <cite class=\"ltx_cite ltx_citemacro_citep\">(Ji et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib20\" title=\"\">2024</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "speech",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent models <cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib32\" title=\"\">2025</a>; Huang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib16\" title=\"\">2025a</a>)</cite> have begun to address these limitations. For instance, SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite> introduces zero-shot timbre control, enabling real-time dialogue with dynamic speaker voices specified via audio prompts. On the efficiency front, VocalNet <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib28\" title=\"\">2025b</a>)</cite> enhances both generation speed and quality through multi-token prediction (MTP), producing multiple audio tokens per decoding step rather than one at a time. Nonetheless, none of the existing end-to-end spoken dialogue models provides explicit fine-grained speech style controls such as direct modulation of emotion, accent, or speed. In summary, while end-to-end dialogue models have made substantial progress in generating natural and low-latency speech, the ability to explicitly manipulate stylistic attributes remains entirely unaddressed in current approaches.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "finegrained",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For general-purpose spoken dialogue tasks, existing datasets mainly prioritize functionality over expressiveness. Well-known corpora such as InstructS2S <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>)</cite> and VoiceAssistant <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>)</cite> have been widely adopted to train models, including LLaMA-Omni and Mini-Omni, supporting task-oriented interactions, voice assistants, and related applications. These datasets typically contain hundreds of thousands of speech dialogue pairs and enable direct speech interaction. Despite their scale and dialogue focus, they lack explicit fine-grained speech style annotations, such as speed, volume, or emotion. As a result, the generated speech is often homogeneous and lacks the fine-grained control required for emotionally rich or personalized interactions.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "finegrained",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Controllable TTS datasets, such as SpeechCraft <cite class=\"ltx_cite ltx_citemacro_citep\">(Jin et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib21\" title=\"\">2024</a>)</cite> for description-based synthesis and EmoVoice-DB <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> for emotional control, are designed to produce speech with specific styles. The recent success of state-of-the-art models <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib29\" title=\"\">2024</a>)</cite> trained on such data, including CosyVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib11\" title=\"\">2025</a>)</cite> and the audio model of GPT-4o-audio-preview <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite>, highlights the significant progress in fine-grained stylistic generation. However, a fundamental limitation of these datasets persists: they are overwhelmingly designed for non-interactive synthesis. Because these corpora lack the bidirectional dialogue structure and turn-taking context inherent to conversation, they are ultimately unsuitable for training end-to-end spoken dialogue models.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "model",
+                    "finegrained"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the lack of explicit speech style control instructions in spoken dialogue datasets and the non-interactive limitation of TTS corpora, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>. As summarized in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S2.T1\" title=\"In 2.2 Spoken Dialogue and Controllable TTS Dataset &#8227; 2 Related Work &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>, UltraVoice covers six key stylistic dimensions: emotion, speed, volume, language, accent, and composite styles (e.g., combinations of speed, volume, and emotion). It also maintains full dialogue context along with instruction and response structure. This dataset fills a critical gap by supporting both general speech interaction and fine-grained speech style control, providing a unified and high-quality dataset for training and evaluating style-controllable end-to-end spoken dialogue models.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "six",
+                    "control",
+                    "finegrained",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To facilitate a deeper understanding of our dataset construction pipeline, this section offers a comprehensive overview of the four key steps involved in building UltraVoice, as illustrated in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S0.F1\" title=\"In UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">1</span></a>. We have designed a bottom-up, fine-grained data generation pipeline that spans text preparation, style instruction injection, speech synthesis, and data filtering. This pipeline integrates everyday conversational texts with a wide range of speech style control types, ensuring high consistency and diversity in content, vocal style, and audio quality. The following subsections will elaborate on the core tasks and implementation details of each step.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "finegrained",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 1: Text Corpus Curation.</span>\nTo construct the UltraVoice dataset, we curated the foundational text corpus using UltraChat <cite class=\"ltx_cite ltx_citemacro_citep\">(Ding et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib8\" title=\"\">2023</a>)</cite>, a widely adopted English dialogue dataset frequently used for speech dialogue synthesis in models such as LLaMA-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Fang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib13\" title=\"\">2025</a>)</cite>, Mini-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xie &amp; Wu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib30\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib31\" title=\"\">b</a>)</cite>, and SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite>. We extracted dialogues primarily from the <span class=\"ltx_text ltx_font_italic\">Question About the World</span> and <span class=\"ltx_text ltx_font_italic\">Creation and Generation</span> categories due to their conciseness and independence from external references. To ensure high-quality input for downstream synthesis, we applied strict filtering rules to remove dialogues containing URLs, academic citations, or lengthy quoted texts. After filtering, we obtained approximately 200,000 clean and natural question-answer pairs, which served as the base for style-controlled speech generation.</p>\n\n",
+                "matched_terms": [
+                    "base",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 2: Style Injection &amp; Response Generation.</span>\nTo enable fine-grained control over speaking styles, we predefined six stylistic dimensions: speed, volume, emotion, accent, language, and composite styles. For each dimension, we used GPT-4o <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite> to generate diverse and natural style prompts (see <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5\" title=\"Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">E</span></a> for all prompt templates), leveraging semantically similar expressions (e.g., &#8220;respond in a joyful tone&#8221; vs. &#8220;reply with a cheerful voice&#8221;). Based on these prompts, GPT-4o was further invoked to generate stylized textual responses, ensuring alignment in semantics and tone. Additionally, we applied several practical adjustments to improve downstream TTS following <cite class=\"ltx_cite ltx_citemacro_citet\">Fang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib12\" title=\"\">2024</a>)</cite>. For example, we expanded numbers into spoken forms (e.g., &#8220;123&#8221; &#8594; &#8220;one two three&#8221;) and rephrased code-related queries to encourage natural spoken language responses. These refinements ensured better speech synthesis fluency and user interaction quality.</p>\n\n",
+                "matched_terms": [
+                    "gpt4o",
+                    "speech",
+                    "six",
+                    "control",
+                    "finegrained",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 3: Stylized Speech Synthesizing.</span>\nIn this step, we performed speech synthesis for each instruction-response speech pair to simulate realistic conversations with fine-grained style control. For instruction speech, we randomly sampled speaker timbres from the seedtts_testset_en<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/BytedanceSpeech/seed-tts-eval</span></span></span> <cite class=\"ltx_cite ltx_citemacro_citep\">(Anastassiou et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib2\" title=\"\">2024</a>)</cite> corpus. This corpus features diverse speakers and real-world background noise, allowing the instruction audio to better reflect realistic user conditions. In contrast, response speech was synthesized using a single fixed timbre to ensure consistency across all stylized outputs. We selected the TTS model for each style control dimension as detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T2\" title=\"In Figure 2 &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Most responses were synthesized using the GPT-4o-audio-preview <cite class=\"ltx_cite ltx_citemacro_citep\">(Hurst et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib19\" title=\"\">2024</a>)</cite> model due to its expressiveness and high fidelity. For accent-specific responses, we used Edge TTS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/rany2/edge-tts</span></span></span>, which lacks support for custom speaker timbres. To address this, we applied voice conversion (VC) via CosyVoice-300M <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>)</cite> to align the output with the designated fixed voice.\nTo ensure data balance, we further sampled 40,000 generic QA pairs without style instructions from the VoiceAssistant400k<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>https://huggingface.co/datasets/gpt-omni/VoiceAssistant-400K</span></span></span> corpus. After removing templated phrases (e.g., &#8220;I&#8217;m mini omni&#8221;), we resynthesized them using CosyVoice-300M.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model",
+                    "control",
+                    "finegrained",
+                    "across",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Step 4: Quality Control &amp; Filtering.</span>\nTo ensure the overall quality and balanced stylistic coverage of the dataset, we applied an automated filtering process to all synthesized speech dialogue samples. Specifically, we utilized the Whisper-large-v3 <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib24\" title=\"\">2023</a>)</cite> to perform automatic speech recognition (ASR) on each instruction and response audio sample, and computed the character error rate (CER) based on the transcriptions. We applied a unified data filtering criterion to both instruction and response audio: only retaining samples with a CER below 20% and duration under 30 seconds. This filtering pipeline effectively removed samples with high ASR error or abnormal length, significantly improving the dataset&#8217;s consistency and usability.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As summarized in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Characteristics and Statistics &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the UltraVoice dataset comprises 100,770 speech dialogue samples, among which 84,832 are explicitly conditioned on six major control dimensions: emotion, volume, speed, accent, language, and composite styles description. The remaining 15,938 pairs are general English QA samples without style prompts, added to improve balance and generalization. The dataset includes 21,209 emotion-controlled samples across seven categories (<span class=\"ltx_text ltx_font_italic\">neutral, happy, sad, angry, surprised, fearful, disgusted</span>), 11,154 for volume (<span class=\"ltx_text ltx_font_italic\">low, normal, high</span>), and 10,334 for speed (<span class=\"ltx_text ltx_font_italic\">slow, normal, fast</span>). Accent control covers six English variants (<span class=\"ltx_text ltx_font_italic\">AU, CA, GB, IN, SG, ZA</span>) totaling 26,839 samples. Language-switching samples span Chinese, Japanese, and Korean, with 11,153 entries. The composite styles dimension includes 4,143 samples representing multidimensional control (<span class=\"ltx_text ltx_font_italic\">e.g., respond with a slow and loud air of thoughtful sadness</span>).</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "six",
+                    "control",
+                    "across",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In total, the dataset covers over 830 hours of speech, with duration distribution shown in  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F2\" title=\"In 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">2</span></a>. Alongside duration, we also report word count distributions to assess utterance complexity and length variation. The structured control space and balanced temporal characteristics make UltraVoice a valuable resource for training and evaluating stylistically controllable spoken dialogue systems. More detailed statistics are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A2\" title=\"Appendix B Detailed Dataset Statistics &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">B</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure the quality and consistency of the spoken dialogue data, we applied strict filtering criteria, retaining only samples with a duration under 30 seconds and a CER below 20%. This approach effectively eliminated samples with poor ASR quality or abnormal content, significantly improving dataset stability and usability. As reported in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.T3\" title=\"Table 3 &#8227; 3.1 Characteristics and Statistics &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, the final dataset achieves an average dialogue length of 29.35 seconds, a mean CER of 5.93%, and an overall UTMOS <cite class=\"ltx_cite ltx_citemacro_citep\">(Saeki et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib25\" title=\"\">2022</a>)</cite> score of 4.00, indicating high naturalness and stylistic fidelity of the generated speech. This automated quality control process lays a solid and reliable foundation for subsequent model training and evaluation.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Beyond quantitative metrics (average duration 29.35s, mean CER 5.93%, UTMOS 4.00), we provide visual analyses to further validate data quality. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3.F3\" title=\"In 3.2 Quality Assessment &#8227; 3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Figure</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>, six visualization types assess the effectiveness and clarity of our style control design. Emotion and accent are visualized using t-SNE plots from classification model features, showing clear category separability. Speed and volume are illustrated via word-per-minute (WPM) and root-mean-square (RMS) distributions, confirming consistent prosodic control. Language and composite styles are represented with word clouds, showcasing lexical diversity and expressive richness. These visualizations collectively demonstrate the robustness and interpretability of UltraVoice&#8217;s stylistic control.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "model",
+                    "style",
+                    "six"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this section, we systematically evaluate the performance of the end-to-end speech dialogue model trained via SFT on the UltraVoice. Firstly, we verify the model&#8217;s ability to control multi-dimensional speech styles on the UltraVoice internal test set after SFT. Next, we further examine the model&#8217;s generalization capability on the URO-Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yan et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>)</cite>. Finally, we further validate the quality of our fine-grained controlled response speech by successfully training a controllable TTS model following the pipeline of EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> on a dataset constructed from the UltraVoice.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "speech",
+                    "model",
+                    "control",
+                    "finegrained"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Settings. </span>Our experiments are based on four spoken dialogue models from the SLAM-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib3\" title=\"\">2024</a>)</cite> and VocalNet <cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib28\" title=\"\">2025b</a>)</cite> series. These models span various sizes and utilize LLM backbones from the LLaMA and Qwen families. We applied SFT to these models to analyze their performance on speech style control. The detailed configurations of the spoken dialogue models ( <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T14\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">14</span></a>)and the training configurations for SFT ( <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T11\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T12\" title=\"Table 12 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">12</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T13\" title=\"Table 13 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">13</span></a>) are provided in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4\" title=\"Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Appendix</span>&#160;<span class=\"ltx_text ltx_ref_tag\">D</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "control",
+                    "speech",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Evaluation and metrics. </span>To construct our evaluation benchmark, we randomly sampled 100 examples from each fine-grained dimension within the six major control dimensions defined in UltraVoice, resulting in a test set of 2,300 samples. The test set has no overlap with the training data. To further evaluate whether SFT on UltraVoice impacts general spoken dialogue capabilities such as natural conversation, comprehension, and reasoning, we utilized the URO-Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yan et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>)</cite>, which assesses models across three dimensions: Oral Conversation, Understanding, and Reasoning. It allows us to analyze whether core dialogue competencies are preserved and whether expressive performance improves after fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "six",
+                    "control",
+                    "finegrained",
+                    "across",
+                    "dimensions"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic ltx_framed ltx_framed_underline\">Audio-Language Model (ALM) based Metric.</span> Following the evaluation paradigm similar to methodologies proposed by <cite class=\"ltx_cite ltx_citemacro_citet\">Yan et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib33\" title=\"\">2025</a>); Yang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, we employed Gemini-2.5-Flash <cite class=\"ltx_cite ltx_citemacro_citep\">(Comanici et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib5\" title=\"\">2025</a>)</cite> as our automatic evaluator to automatically generate <span class=\"ltx_text ltx_font_bold\">Mean Opinion Scores (MOS)</span> and compute the <span class=\"ltx_text ltx_font_bold\">instruction-following rate (IFR)</span> for each control dimension. This choice is motivated by findings that advanced ALMs show high consistency with human judgments by  <cite class=\"ltx_cite ltx_citemacro_citet\">Chiang et al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib4\" title=\"\">2025</a>)</cite>. Details of prompts are available in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5.SS11\" title=\"E.11 IFR Evaluation Prompt &#8227; Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Sections</span>&#160;<span class=\"ltx_text ltx_ref_tag\">E.11</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A5.SS10\" title=\"E.10 MOS Evaluation Prompt &#8227; Appendix E Prompts &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">E.10</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "ifr",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Enhancements in the Subjective Naturalness of Fine-Grained Speech Styles Control. </span>As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T4\" title=\"In 4.2 Performance on Fine-grained Speech Style Control &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>, all models exhibit significant improvements in MOS after being fine-tuned with UltraVoice. The relative gains range from 29.12% to 42.33%, with the Emotion and Volume dimensions showing particularly remarkable improvements. For instance, the overall MOS for VocalNet-7B increased from 2.73 to 3.59, while VocalNet-8B&#8217;s score rose from 2.85 to 3.68. These results indicate that our fine-tuning process enhances the models&#8217; ability to render the specified styles with high naturalness, demonstrating that improved instruction control does not come at the cost of audio quality.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "results",
+                    "control",
+                    "finegrained",
+                    "dimensions"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-Metric Consistency and Limitations. </span>Overall, MOS and IFR trends are strongly aligned, suggesting that stronger instruction adherence typically yields more natural speech. However, the Language control dimension presents a notable exception. Models based on the LLaMA backbone (e.g., VocalNet-1B and 8B) exhibit a slight MOS decline and stagnant IFR, while Qwen-based models (e.g., SLAM-Omni-0.5B and VocalNet-7B) achieve clear gains. This discrepancy likely stems from differences in multilingual pretraining exposure. Language control requires full responses in a different language, introducing unique generalization challenges. The current fine-tuning data lacks sufficient multilingual diversity and volume, limiting the models&#8217; ability to generalize. Future work should explore targeted augmentation of multilingual instruction data to address this limitation.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "ifr",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our results on the URO-Bench (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T5\" title=\"In 4.3 General Conversational Ability &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">5</span></a>) confirm that fine-tuning spoken dialogue models on UltraVoice enhances, rather than compromises, general conversational skills. All models showed substantial gains across <span class=\"ltx_text ltx_font_italic\">Understanding</span>, <span class=\"ltx_text ltx_font_italic\">Reasoning</span>, and <span class=\"ltx_text ltx_font_italic\">Oral Conversation</span>, with average improvements of <span class=\"ltx_text ltx_font_bold\">+10.84%</span> on the Basic setting and <span class=\"ltx_text ltx_font_bold\">+7.87%</span> on the Pro setting. Notably, the VocalNet-7B SFT model establishes a new state-of-the-art, outperforming strong baselines like Qwen2.5-Omni-7B <cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib32\" title=\"\">2025</a>)</cite> and GLM4-Voice-9B <cite class=\"ltx_cite ltx_citemacro_citep\">(Zeng et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib35\" title=\"\">2024</a>)</cite>, highlighting practical value beyond style control. The only exception to this positive trend is a performance drop in Pro Reasoning (from 24.72 to 20.07) for the smallest model, SLAM-Omni-0.5B. We attribute this to the current dataset&#8217;s focus on single-turn interactions, which may not sufficiently support complex, multi-turn reasoning. Future work could address this by incorporating multi-turn dialogue examples during SFT.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "results",
+                    "model",
+                    "control",
+                    "across",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further validate the quality and utility of our data synthesised using fine-grained speech style control, we repurposed it into a controllable TTS dataset. This new dataset, derived from five stylistic dimensions in UltraVoice (speed, volume, emotion, accent, and composite styles), consists of explicit instruction-speech pairs. Following the pipeline of EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite>, we performed supervised fine-tuning (SFT) on a pre-trained EmoVoice-0.5B model, using its checkpoint before it was trained on the EmoVoice-DB to ensure a clean baseline.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "speech",
+                    "model",
+                    "control",
+                    "finegrained",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our fine-tuned TTS model, <span class=\"ltx_text ltx_font_bold\">UltraVoice-0.5B-SFT</span>, demonstrates strong multi-dimensional style control. As shown in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T6\" title=\"In 4.4 Validating Data Quality via Controllable Text-To-Speech &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">6</span></a>, on emotional control tasks, our model achieves competitive performance against strong baselines such as PromptTTS <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib15\" title=\"\">2023</a>)</cite>, CosyVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Du et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib9\" title=\"\">2024a</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib10\" title=\"\">b</a>)</cite>, and EmoVoice <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#bib.bib34\" title=\"\">2025</a>)</cite> on the out-of-domain EmoVoice-DB test set. Crucially, on our in-domain UltraVoice data, it substantially reduces the Word Error Rate (WER) to <span class=\"ltx_text ltx_font_bold\">3.97</span> from 19.82 achieved by EmoVoice-0.5B, while maintaining high emotional similarity and naturalness. Furthermore, as detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4.T7\" title=\"In 4.4 Validating Data Quality via Controllable Text-To-Speech &#8227; 4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">7</span></a>, the model consistently improves both MOS and IFR scores across all other tested dimensions (accent, speed, volume, and composite styles) compared to the pre-trained baseline. We omit the fully fine-tuned EmoVoice-0.5B from this broader comparison due to its poor robustness, already indicated by its high WER on our dataset. These results confirm that our instruction-style data effectively enhances controllable synthesis across a diverse range of styles.</p>\n\n",
+                "matched_terms": [
+                    "ifr",
+                    "results",
+                    "model",
+                    "control",
+                    "across",
+                    "dimensions",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce <span class=\"ltx_text ltx_font_bold\">UltraVoice</span>, the first large-scale speech dialogue dataset engineered for multiple fine-grained speech style control. By fine-tuning mainstream spoken dialogue models on UltraVoice, we significantly enhanced their controllability over diverse fine-grained speech styles, while also improving their overall speech naturalness and general conversational competence. The dataset&#8217;s high quality and generalization were further validated through strong performance on the URO-Bench benchmark and in controllable TTS tasks, establishing a solid foundation for expressive spoken dialogue modeling. While this work represents a significant step forward, the full scope of human-like expressive speech presents formidable long-term challenges. The framework and data we provide can be extended to explore these frontiers, such as modeling the dynamic evolution of styles within multi-turn conversations or capturing the nuanced paralinguistic features in massively multilingual contexts. Addressing these complex scenarios, though beyond the scope of this paper, will be critical for developing the next generation of truly context-aware and intelligent speech interaction systems.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "control",
+                    "finegrained",
+                    "style"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure the full reproducibility of our work, we provide comprehensive details on our data, models, and experimental procedures. Our data generation pipeline for the UltraVoice dataset is thoroughly described in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S3\" title=\"3 The UltraVoice Dataset &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">3</span></a>. The selection criteria and configurations of the spoken dialogue models used for fine-tuning are presented in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T14\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Table</span>&#160;<span class=\"ltx_text ltx_ref_tag\">14</span></a>. We provide the detailed Supervised Fine-Tuning (SFT) settings, including all hyperparameters, in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T11\" title=\"In Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Tables</span>&#160;<span class=\"ltx_text ltx_ref_tag\">11</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T12\" title=\"Table 12 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">12</span></a> and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#A4.T13\" title=\"Table 13 &#8227; Appendix D Supervised Fine-tuning Details &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">13</span></a>. Finally, the evaluation metrics and protocols used to assess performance are detailed in <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.22588v1#S4\" title=\"4 Experiment &#8227; UltraVoice: Scaling Fine-GrainedStyle-Controlled Speech Conversationsfor Spoken Dialogue Models\"><span class=\"ltx_text ltx_ref_tag\">Section</span>&#160;<span class=\"ltx_text ltx_ref_tag\">4</span></a>. All code, the dataset, and model checkpoints will be made publicly available to facilitate further research.</p>\n\n",
+                "matched_terms": [
+                    "sft",
+                    "model"
+                ]
+            }
+        ]
+    }
+}

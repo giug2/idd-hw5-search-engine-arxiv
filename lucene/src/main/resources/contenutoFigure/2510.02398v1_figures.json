@@ -1,0 +1,589 @@
+{
+    "S2.F1": {
+        "source_file": "When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs",
+        "image_url": "https://arxiv.org/html/2510.02398v1/x1.png",
+        "caption": "Figure 1: Model behaviour on B1 at temperature 1.0, zero-shot prompt, randomised behaviour assignment.",
+        "informative_terms_identified": [
+            "assignment",
+            "temperature",
+            "prompt",
+            "model",
+            "behaviour",
+            "randomised",
+            "zeroshot"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Qwen2-Audio-7B-Instruct exhibits substantial positional bias in slot selection, varying across prompt conditions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S2.F1\" title=\"Figure 1 &#8227; 2 Problem Statement &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows that in a zero-shot setting, when selecting between options A, B, C for B1 samples, the model consistently avoids the first option regardless of content, thus overriding behavioural preferences with positional bias. This effect persists with numerical labels (1, 2, 3), confirming position-based rather than notation-based bias.\nThe first slot also receives consistently lower probability scores even with uniformly distributed behaviours across all temperatures. The model rarely selects irrelevant options, suggesting some instruction-following capability, yet its strong avoidance of the first slot, coupled with randomised options, obscures any genuine preference between stereotypical and anti-stereotypical completions.\nTo isolate content preference from positional bias, we fix the positions of either stereotypical or anti-stereotypical options while randomising the remaining two options across other slots. The zero-shot prompting results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> (top row) reveal:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The rapid development of SpeechLLM-based conversational AI systems has created a need for robustly benchmarking these efforts, including aspects of fairness and bias. At present, such benchmarks typically rely on multiple choice question answering (MCQA). In this paper, we present the first token-level probabilistic evaluation and response-based study of several issues affecting the use of MCQA in SpeechLLM benchmarking: 1) we examine how model temperature and prompt design affect gender and positional bias on an MCQA gender-bias benchmark; 2) we examine how these biases are affected by the gender of the input voice; and 3) we study to what extent observed trends carry over to a second gender-bias benchmark. Our results show that concerns about positional bias from the text domain are equally valid in the speech domain. We also find the effect to be stronger for female voices than for male voices. To our knowledge, this is the first study to isolate positional bias effects in SpeechLLM-based gender-bias benchmarks. We conclude that current MCQA benchmarks do not account for speech-based bias and alternative strategies are needed to ensure fairness towards all users.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">With more models comes a need for benchmarking, and several datasets have been developed for evaluating bias (among other aspects) in SpeechLLMs. Virtually all these evaluations rely on multiple choice question answering (MCQA): The Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> dataset uses Microsoft Azure Text-To-Speech (TTS)\nto extend the StereoSet LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib19\" title=\"\">19</a>]</cite> to speech conversational AI.\nVoxEval <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib6\" title=\"\">6</a>]</cite> is an extension of the MMLU LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib12\" title=\"\">12</a>]</cite> to speech conversational AI. It is not clear if these two MCQA tests controlled for the known position bias of LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib30\" title=\"\">30</a>]</cite>. Finally, MMAU <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite> and MMAR <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib17\" title=\"\">17</a>]</cite> were developed as multi-task audio understanding and reasoning MCQA benchmarks where the order of response options was randomised five times in an effort to address position bias. However, it remains unclear whether this few-fold randomisation effectively addresses positional bias when analysing model preferences in cases where no objectively correct answer exists, and where choices are influenced by the gender of the input speech, as discussed in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4\" title=\"4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "randomised",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We examine how prompt design and temperature settings influence the benchmark scores of a single SpeechLLM.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">If benchmark performance is strongly influenced by prompt phrasing, inference temperature, and option ordering between male and female voices, then claims suggesting minimal bias <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> in SpeechLLMs may be unfounded and even misleading. Our findings confirm these concerns, demonstrating not only substantial positional bias in SpeechLLM responses but also revealing that the extent of this bias differs depending on voice gender.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Benchmarks that rely heavily on MCQA formats may present an overly simplified view of model capabilities and limitations <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite>, especially with SpeechLLMs, where speaker voice also needs to be taken into account.\nThis narrow framing compromises the credibility of evaluations that claim to assess understanding, generalisation, and fairness <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib18\" title=\"\">18</a>]</cite>. While previous studies have explored the impact of prompting and temperature settings on LLM performance in MCQA tasks <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib26\" title=\"\">26</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib22\" title=\"\">22</a>]</cite>, these strategies have yet to be examined in the context of SpeechLLMs &#8211; particularly with respect to positional bias in response options.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ1:</span> To what extent does temperature and prompt design influence an existing MCQA benchmark (denoted <span class=\"ltx_text ltx_font_bold\">B1</span>) performance for a recent SpeechLLM while accounting for positional bias?</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform experiments on the Qwen2-Audio-7B-Instruct <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib5\" title=\"\">5</a>]</cite> model.\nBy focusing on a single model, we spend computational effort on studying the effect of prompting and inference temperature in depth. We select Qwen2-Audio-7B-Instruct over models like SpeechT5 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib1\" title=\"\">1</a>]</cite>, SpeechLLaMA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib29\" title=\"\">29</a>]</cite>, SALMONN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib27\" title=\"\">27</a>]</cite>, Pengi <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib9\" title=\"\">9</a>]</cite>, and SpeechVerse <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib8\" title=\"\">8</a>]</cite> because it is fine-tuned for instruction following, unlike models which are focused on general generation or broader multimodal tasks. Also, it is relatively lightweight compared to many high-performing models, making it easy to wield for multiple inference runs, and achieves notably high performance on the MMAU test subset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite>.\nTo explore model behaviour, our benchmark B1 employs a multiple-choice continuation task, where the model is prompted to <em class=\"ltx_emph ltx_font_italic\">&#8220;&#8230;pick an appropriate continuation from one of three options, given an audio clip&#8221;</em>, similar to that of the one described in Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite>. The audio clip provides the spoken context, while the text prompt presents the completion choices.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "temperature",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We experiment with two zero-shot and two one-shot prompting formats to examine the effects. Both one-shot prompts include an explicit example and also encourage the model to select responses which challenge common stereotypes. While the overall task framing remains the same, our one-shot prompts are not conventional extensions of the zero-shot variants, they also enforce stereotype-resistant behaviour. Full prompt examples are provided in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S3.SS1.SSS1\" title=\"3.1.1 Example prompts from B1 &#8227; 3.1 Benchmarking Datasets &#8227; 3 Methodology &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3.1.1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "zeroshot",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For our experiments, we use a hybrid evaluation approach that combines the token-level probabilities <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite> assigned to discrete answer options/choices <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> to assess the preferences of the model across behaviourally meaningful options. For B1, we set <math alttext=\"top\\_K=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=4</annotation></semantics></math> and frame the task as a choice between four options: A, B, and C &#8211; each randomly assigned to irrelevant, anti-stereotypical, or stereotypical\nbehaviours &#8211; and a potential non-instruction-following response. Similarly, we set <math alttext=\"top\\_K=3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=3</annotation></semantics></math> for B2. We analyse model responses statistically and examine token probabilities across five temperature values, alongside two zero-shot and one-shot prompts each.</p>\n\n",
+                "matched_terms": [
+                    "zeroshot",
+                    "temperature",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Instead of relying solely on sampled SpeechLLM responses or focusing only on probabilities assigned to a selected set of gendered lexical terms (e.g., <em class=\"ltx_emph ltx_font_italic\">she, her, herself</em>), we extract the conditional token probabilities assigned to each of the earlier-mentioned options given the prompt, interpreting them as a proxy for the internal preference distribution of the model. We also examine the model with <math alttext=\"top\\_K=100\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>100</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=100</annotation></semantics></math>. This evaluation reduces the influence of biases associated with gendered lexical terms. It provides a clearer signal of inherent model preferences, subject to positional bias effects. This is particularly important for SpeechLLMs, which process speech directly &#8211; an authored modality where speaker identity, including gender, is implicitly conveyed regardless of lexical content. To simulate a more realistic usage scenario with this benchmark, we also generate responses using the model and subsequently conduct a statistical analysis.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We find similar positional biases with the second zero-shot prompt but new patterns to the positional bias associated with the second one-shot prompt as seen in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F3\" title=\"Figure 3 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. There is also less instruction following on the whole with these two prompts.</p>\n\n",
+                "matched_terms": [
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also observe a noticeable rise in irrelevant option scores when option C is not fixed. This suggests that our one-shot prompting does not reinforce anti-stereotypical behaviour &#8211; and may even introduce new positional-bias instability &#8211; or that the benchmark itself (B1) contains ambiguities that become more salient with additional contextual framing. <span class=\"ltx_text ltx_font_bold\">RQ1 Answer:</span> Positional bias affects answer selection in distinct ways depending on the prompt format. Positional bias persists even at higher temperatures. This result also shows that few-fold randomisation of response options might be insufficient to overcome positional bias.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At all tested temperatures <math alttext=\"(0.01,0.1,0.5,0.75,1.0)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>0.01</mn><mo>,</mo><mn>0.1</mn><mo>,</mo><mn>0.5</mn><mo>,</mo><mn>0.75</mn><mo>,</mo><mn>1.0</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(0.01,0.1,0.5,0.75,1.0)</annotation></semantics></math>, and after averaging across all prompts (with randomised behaviour slots and discarding samples where the model did not return A, B, or C), there is a significant difference between the male and female voice-input response distributions, with <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m2\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math>-values</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "randomised",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present the confusion matrices when different slots are fixed with either stereotypical or anti-stereotypical behaviours at the highest temperature (1.0) with a zero-shot prompt. Similar trends were observed at other tested temperatures and prompt settings. Rows may not sum exactly to <math alttext=\"100\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p6.m1\" intent=\":literal\"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">100\\%</annotation></semantics></math> due to occasional model failures in selecting A, B, or C in the zero-shot setting. The positional bias is most pronounced for female voices, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F4\" title=\"Figure 4 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F5\" title=\"Figure 5 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, with the effect becoming even more salient at lower temperatures. Notably, while male voices exhibit greater variability across conditions in response to anti-stereotypical slot fixes, female voices show more stable choice patterns. This suggests that female voices are more susceptible to positional biases, especially under stereotypical conditions.</p>\n\n",
+                "matched_terms": [
+                    "zeroshot",
+                    "temperature",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">reflects the strength of association between voice position and selection outcomes. They indicate modest practical effects despite the statistical significance. The findings are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T1\" title=\"Table 1 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. We expand on these findings in the conclusion. This significance remains with slightly larger, but still modest, effect sizes for zero-shot prompts. Similar results occur when setting <math alttext=\"top\\_K=100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p7.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>100</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=100</annotation></semantics></math>. <span class=\"ltx_text ltx_font_bold\">RQ2 Answer:</span> Positional bias not only persists but exhibits asymmetric behaviour when interacting with gendered voice inputs.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "zeroshot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ3 Answer:</span> When evaluating the model on B2, we do not observe similarly strong positional or temperature effects, likely due to the binary choice format and limited sample size. However, we do observe emerging trends in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T2\" title=\"Table 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> that may hint at underlying biases that are more pronounced than those in B1, although further validation is needed with larger datasets. This highlights that benchmark design, including the number of response options critically influences the sensitivity to bias effects.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited prompt testing</span>:\nOur formulation of prompts is limited to a few zero-shot and one-shot versions, which may not fully capture the behaviour of the model under more complex prompting strategies such as: few-shot, chain-of-thought, or other prompt-tuning techniques. Exploring a wider range of prompting strategies is necessary to better understand the robustness and variability of the model&#8217;s responses with different prompts.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "zeroshot",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this study, we investigated the influence of prompt design, temperature, and voice gender on MCQA benchmark performance for a single SpeechLLM. Despite a narrow experimental scope, we found consistently strong positional bias: the model disproportionately avoids selecting the first answer slot, even when it contains the most appropriate or unbiased content. This effect overrode the intended behavioural labels in many cases and persisted across temperatures and prompt types.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also found statistically significant differences in model behaviour based on voice gender, with female-voiced inputs exhibiting stronger and more stable positional bias patterns. While these gender effects were modest in size, their consistency across conditions raises concerns about the interaction between speaker identity and model heuristics. Further research using larger benchmarks, additional models, or more natural interaction settings is needed to determine if these effects amplify in multi-turn dialogues or other scenarios.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our findings suggest that current MCQA benchmarks do not account for speech-related confounds when evaluating bias in SpeechLLMs. Future benchmarks must address confounding factors &#8211; particularly positional biases &#8211; to enable trustworthy assessments. When attempting to investigate whether models perpetuate societal biases, such artefacts can interfere with or obscure signals of interest, making it unclear whether observed patterns stem from the model or from the benchmark itself. This issue is amplified in speech, where perceived speaker characteristics &#8211; such as gender, age, or accent &#8211; are part of the signal and may themselves shape model behaviour. Effective bias detection must therefore address the dual challenge of disentangling artefact effects while acknowledging that identity is inherently encoded in the input.</p>\n\n",
+                "matched_terms": [
+                    "behaviour",
+                    "model"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs",
+        "image_url": "https://arxiv.org/html/2510.02398v1/x2.png",
+        "caption": "Figure 2: Average response probability scores vs. temperature when fixing behaviours to different slots on B1 with zero-shot prompt 1 and one-shot prompt 1.",
+        "informative_terms_identified": [
+            "probability",
+            "temperature",
+            "prompt",
+            "average",
+            "behaviours",
+            "when",
+            "scores",
+            "response",
+            "fixing",
+            "oneshot",
+            "zeroshot",
+            "slots"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Qwen2-Audio-7B-Instruct exhibits substantial positional bias in slot selection, varying across prompt conditions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S2.F1\" title=\"Figure 1 &#8227; 2 Problem Statement &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows that in a zero-shot setting, when selecting between options A, B, C for B1 samples, the model consistently avoids the first option regardless of content, thus overriding behavioural preferences with positional bias. This effect persists with numerical labels (1, 2, 3), confirming position-based rather than notation-based bias.\nThe first slot also receives consistently lower probability scores even with uniformly distributed behaviours across all temperatures. The model rarely selects irrelevant options, suggesting some instruction-following capability, yet its strong avoidance of the first slot, coupled with randomised options, obscures any genuine preference between stereotypical and anti-stereotypical completions.\nTo isolate content preference from positional bias, we fix the positions of either stereotypical or anti-stereotypical options while randomising the remaining two options across other slots. The zero-shot prompting results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> (top row) reveal:</p>\n\n",
+            "<p class=\"ltx_p\">Interestingly, these positional patterns change under our one-shot prompting, as shown in the bottom row of Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and require further examination. The results with other prompts examples are present in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F3\" title=\"Figure 3 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The rapid development of SpeechLLM-based conversational AI systems has created a need for robustly benchmarking these efforts, including aspects of fairness and bias. At present, such benchmarks typically rely on multiple choice question answering (MCQA). In this paper, we present the first token-level probabilistic evaluation and response-based study of several issues affecting the use of MCQA in SpeechLLM benchmarking: 1) we examine how model temperature and prompt design affect gender and positional bias on an MCQA gender-bias benchmark; 2) we examine how these biases are affected by the gender of the input voice; and 3) we study to what extent observed trends carry over to a second gender-bias benchmark. Our results show that concerns about positional bias from the text domain are equally valid in the speech domain. We also find the effect to be stronger for female voices than for male voices. To our knowledge, this is the first study to isolate positional bias effects in SpeechLLM-based gender-bias benchmarks. We conclude that current MCQA benchmarks do not account for speech-based bias and alternative strategies are needed to ensure fairness towards all users.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">With more models comes a need for benchmarking, and several datasets have been developed for evaluating bias (among other aspects) in SpeechLLMs. Virtually all these evaluations rely on multiple choice question answering (MCQA): The Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> dataset uses Microsoft Azure Text-To-Speech (TTS)\nto extend the StereoSet LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib19\" title=\"\">19</a>]</cite> to speech conversational AI.\nVoxEval <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib6\" title=\"\">6</a>]</cite> is an extension of the MMLU LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib12\" title=\"\">12</a>]</cite> to speech conversational AI. It is not clear if these two MCQA tests controlled for the known position bias of LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib30\" title=\"\">30</a>]</cite>. Finally, MMAU <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite> and MMAR <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib17\" title=\"\">17</a>]</cite> were developed as multi-task audio understanding and reasoning MCQA benchmarks where the order of response options was randomised five times in an effort to address position bias. However, it remains unclear whether this few-fold randomisation effectively addresses positional bias when analysing model preferences in cases where no objectively correct answer exists, and where choices are influenced by the gender of the input speech, as discussed in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4\" title=\"4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We examine how prompt design and temperature settings influence the benchmark scores of a single SpeechLLM.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">If benchmark performance is strongly influenced by prompt phrasing, inference temperature, and option ordering between male and female voices, then claims suggesting minimal bias <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> in SpeechLLMs may be unfounded and even misleading. Our findings confirm these concerns, demonstrating not only substantial positional bias in SpeechLLM responses but also revealing that the extent of this bias differs depending on voice gender.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Benchmarks that rely heavily on MCQA formats may present an overly simplified view of model capabilities and limitations <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite>, especially with SpeechLLMs, where speaker voice also needs to be taken into account.\nThis narrow framing compromises the credibility of evaluations that claim to assess understanding, generalisation, and fairness <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib18\" title=\"\">18</a>]</cite>. While previous studies have explored the impact of prompting and temperature settings on LLM performance in MCQA tasks <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib26\" title=\"\">26</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib22\" title=\"\">22</a>]</cite>, these strategies have yet to be examined in the context of SpeechLLMs &#8211; particularly with respect to positional bias in response options.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ1:</span> To what extent does temperature and prompt design influence an existing MCQA benchmark (denoted <span class=\"ltx_text ltx_font_bold\">B1</span>) performance for a recent SpeechLLM while accounting for positional bias?</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform experiments on the Qwen2-Audio-7B-Instruct <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib5\" title=\"\">5</a>]</cite> model.\nBy focusing on a single model, we spend computational effort on studying the effect of prompting and inference temperature in depth. We select Qwen2-Audio-7B-Instruct over models like SpeechT5 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib1\" title=\"\">1</a>]</cite>, SpeechLLaMA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib29\" title=\"\">29</a>]</cite>, SALMONN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib27\" title=\"\">27</a>]</cite>, Pengi <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib9\" title=\"\">9</a>]</cite>, and SpeechVerse <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib8\" title=\"\">8</a>]</cite> because it is fine-tuned for instruction following, unlike models which are focused on general generation or broader multimodal tasks. Also, it is relatively lightweight compared to many high-performing models, making it easy to wield for multiple inference runs, and achieves notably high performance on the MMAU test subset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite>.\nTo explore model behaviour, our benchmark B1 employs a multiple-choice continuation task, where the model is prompted to <em class=\"ltx_emph ltx_font_italic\">&#8220;&#8230;pick an appropriate continuation from one of three options, given an audio clip&#8221;</em>, similar to that of the one described in Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite>. The audio clip provides the spoken context, while the text prompt presents the completion choices.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We experiment with two zero-shot and two one-shot prompting formats to examine the effects. Both one-shot prompts include an explicit example and also encourage the model to select responses which challenge common stereotypes. While the overall task framing remains the same, our one-shot prompts are not conventional extensions of the zero-shot variants, they also enforce stereotype-resistant behaviour. Full prompt examples are provided in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S3.SS1.SSS1\" title=\"3.1.1 Example prompts from B1 &#8227; 3.1 Benchmarking Datasets &#8227; 3 Methodology &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3.1.1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "oneshot",
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For our experiments, we use a hybrid evaluation approach that combines the token-level probabilities <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite> assigned to discrete answer options/choices <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> to assess the preferences of the model across behaviourally meaningful options. For B1, we set <math alttext=\"top\\_K=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=4</annotation></semantics></math> and frame the task as a choice between four options: A, B, and C &#8211; each randomly assigned to irrelevant, anti-stereotypical, or stereotypical\nbehaviours &#8211; and a potential non-instruction-following response. Similarly, we set <math alttext=\"top\\_K=3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=3</annotation></semantics></math> for B2. We analyse model responses statistically and examine token probabilities across five temperature values, alongside two zero-shot and one-shot prompts each.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "response",
+                    "behaviours",
+                    "oneshot",
+                    "zeroshot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Slot B gets higher scores than A when it contains the fixed behaviour but underperforms compared to when the behaviour opposite to the fixed behaviour is present.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We find similar positional biases with the second zero-shot prompt but new patterns to the positional bias associated with the second one-shot prompt as seen in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F3\" title=\"Figure 3 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. There is also less instruction following on the whole with these two prompts.</p>\n\n",
+                "matched_terms": [
+                    "oneshot",
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also observe a noticeable rise in irrelevant option scores when option C is not fixed. This suggests that our one-shot prompting does not reinforce anti-stereotypical behaviour &#8211; and may even introduce new positional-bias instability &#8211; or that the benchmark itself (B1) contains ambiguities that become more salient with additional contextual framing. <span class=\"ltx_text ltx_font_bold\">RQ1 Answer:</span> Positional bias affects answer selection in distinct ways depending on the prompt format. Positional bias persists even at higher temperatures. This result also shows that few-fold randomisation of response options might be insufficient to overcome positional bias.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "when",
+                    "scores",
+                    "response",
+                    "oneshot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At all tested temperatures <math alttext=\"(0.01,0.1,0.5,0.75,1.0)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>0.01</mn><mo>,</mo><mn>0.1</mn><mo>,</mo><mn>0.5</mn><mo>,</mo><mn>0.75</mn><mo>,</mo><mn>1.0</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(0.01,0.1,0.5,0.75,1.0)</annotation></semantics></math>, and after averaging across all prompts (with randomised behaviour slots and discarding samples where the model did not return A, B, or C), there is a significant difference between the male and female voice-input response distributions, with <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m2\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math>-values</p>\n\n",
+                "matched_terms": [
+                    "response",
+                    "slots"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present the confusion matrices when different slots are fixed with either stereotypical or anti-stereotypical behaviours at the highest temperature (1.0) with a zero-shot prompt. Similar trends were observed at other tested temperatures and prompt settings. Rows may not sum exactly to <math alttext=\"100\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p6.m1\" intent=\":literal\"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">100\\%</annotation></semantics></math> due to occasional model failures in selecting A, B, or C in the zero-shot setting. The positional bias is most pronounced for female voices, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F4\" title=\"Figure 4 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F5\" title=\"Figure 5 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, with the effect becoming even more salient at lower temperatures. Notably, while male voices exhibit greater variability across conditions in response to anti-stereotypical slot fixes, female voices show more stable choice patterns. This suggests that female voices are more susceptible to positional biases, especially under stereotypical conditions.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "when",
+                    "response",
+                    "behaviours",
+                    "zeroshot",
+                    "slots"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">reflects the strength of association between voice position and selection outcomes. They indicate modest practical effects despite the statistical significance. The findings are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T1\" title=\"Table 1 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. We expand on these findings in the conclusion. This significance remains with slightly larger, but still modest, effect sizes for zero-shot prompts. Similar results occur when setting <math alttext=\"top\\_K=100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p7.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>100</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=100</annotation></semantics></math>. <span class=\"ltx_text ltx_font_bold\">RQ2 Answer:</span> Positional bias not only persists but exhibits asymmetric behaviour when interacting with gendered voice inputs.</p>\n\n",
+                "matched_terms": [
+                    "zeroshot",
+                    "when"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ3 Answer:</span> When evaluating the model on B2, we do not observe similarly strong positional or temperature effects, likely due to the binary choice format and limited sample size. However, we do observe emerging trends in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T2\" title=\"Table 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> that may hint at underlying biases that are more pronounced than those in B1, although further validation is needed with larger datasets. This highlights that benchmark design, including the number of response options critically influences the sensitivity to bias effects.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "when",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited prompt testing</span>:\nOur formulation of prompts is limited to a few zero-shot and one-shot versions, which may not fully capture the behaviour of the model under more complex prompting strategies such as: few-shot, chain-of-thought, or other prompt-tuning techniques. Exploring a wider range of prompting strategies is necessary to better understand the robustness and variability of the model&#8217;s responses with different prompts.</p>\n\n",
+                "matched_terms": [
+                    "oneshot",
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this study, we investigated the influence of prompt design, temperature, and voice gender on MCQA benchmark performance for a single SpeechLLM. Despite a narrow experimental scope, we found consistently strong positional bias: the model disproportionately avoids selecting the first answer slot, even when it contains the most appropriate or unbiased content. This effect overrode the intended behavioural labels in many cases and persisted across temperatures and prompt types.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "temperature",
+                    "prompt"
+                ]
+            }
+        ]
+    },
+    "S4.F3": {
+        "source_file": "When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs",
+        "image_url": "https://arxiv.org/html/2510.02398v1/x3.png",
+        "caption": "Figure 3: Average response probability scores vs. temperature when fixing behaviours to different slots on B1 with zero-shot prompt 2 and one-shot prompt 2.",
+        "informative_terms_identified": [
+            "probability",
+            "temperature",
+            "prompt",
+            "average",
+            "behaviours",
+            "when",
+            "scores",
+            "response",
+            "fixing",
+            "oneshot",
+            "zeroshot",
+            "slots"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Interestingly, these positional patterns change under our one-shot prompting, as shown in the bottom row of Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> and require further examination. The results with other prompts examples are present in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F3\" title=\"Figure 3 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+            "<p class=\"ltx_p\">We find similar positional biases with the second zero-shot prompt but new patterns to the positional bias associated with the second one-shot prompt as seen in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F3\" title=\"Figure 3 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. There is also less instruction following on the whole with these two prompts.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The rapid development of SpeechLLM-based conversational AI systems has created a need for robustly benchmarking these efforts, including aspects of fairness and bias. At present, such benchmarks typically rely on multiple choice question answering (MCQA). In this paper, we present the first token-level probabilistic evaluation and response-based study of several issues affecting the use of MCQA in SpeechLLM benchmarking: 1) we examine how model temperature and prompt design affect gender and positional bias on an MCQA gender-bias benchmark; 2) we examine how these biases are affected by the gender of the input voice; and 3) we study to what extent observed trends carry over to a second gender-bias benchmark. Our results show that concerns about positional bias from the text domain are equally valid in the speech domain. We also find the effect to be stronger for female voices than for male voices. To our knowledge, this is the first study to isolate positional bias effects in SpeechLLM-based gender-bias benchmarks. We conclude that current MCQA benchmarks do not account for speech-based bias and alternative strategies are needed to ensure fairness towards all users.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">With more models comes a need for benchmarking, and several datasets have been developed for evaluating bias (among other aspects) in SpeechLLMs. Virtually all these evaluations rely on multiple choice question answering (MCQA): The Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> dataset uses Microsoft Azure Text-To-Speech (TTS)\nto extend the StereoSet LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib19\" title=\"\">19</a>]</cite> to speech conversational AI.\nVoxEval <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib6\" title=\"\">6</a>]</cite> is an extension of the MMLU LLM benchmark <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib12\" title=\"\">12</a>]</cite> to speech conversational AI. It is not clear if these two MCQA tests controlled for the known position bias of LLMs <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib30\" title=\"\">30</a>]</cite>. Finally, MMAU <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite> and MMAR <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib17\" title=\"\">17</a>]</cite> were developed as multi-task audio understanding and reasoning MCQA benchmarks where the order of response options was randomised five times in an effort to address position bias. However, it remains unclear whether this few-fold randomisation effectively addresses positional bias when analysing model preferences in cases where no objectively correct answer exists, and where choices are influenced by the gender of the input speech, as discussed in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4\" title=\"4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We examine how prompt design and temperature settings influence the benchmark scores of a single SpeechLLM.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">If benchmark performance is strongly influenced by prompt phrasing, inference temperature, and option ordering between male and female voices, then claims suggesting minimal bias <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> in SpeechLLMs may be unfounded and even misleading. Our findings confirm these concerns, demonstrating not only substantial positional bias in SpeechLLM responses but also revealing that the extent of this bias differs depending on voice gender.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Benchmarks that rely heavily on MCQA formats may present an overly simplified view of model capabilities and limitations <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite>, especially with SpeechLLMs, where speaker voice also needs to be taken into account.\nThis narrow framing compromises the credibility of evaluations that claim to assess understanding, generalisation, and fairness <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib18\" title=\"\">18</a>]</cite>. While previous studies have explored the impact of prompting and temperature settings on LLM performance in MCQA tasks <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib26\" title=\"\">26</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib22\" title=\"\">22</a>]</cite>, these strategies have yet to be examined in the context of SpeechLLMs &#8211; particularly with respect to positional bias in response options.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ1:</span> To what extent does temperature and prompt design influence an existing MCQA benchmark (denoted <span class=\"ltx_text ltx_font_bold\">B1</span>) performance for a recent SpeechLLM while accounting for positional bias?</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform experiments on the Qwen2-Audio-7B-Instruct <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib5\" title=\"\">5</a>]</cite> model.\nBy focusing on a single model, we spend computational effort on studying the effect of prompting and inference temperature in depth. We select Qwen2-Audio-7B-Instruct over models like SpeechT5 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib1\" title=\"\">1</a>]</cite>, SpeechLLaMA <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib29\" title=\"\">29</a>]</cite>, SALMONN <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib27\" title=\"\">27</a>]</cite>, Pengi <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib9\" title=\"\">9</a>]</cite>, and SpeechVerse <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib8\" title=\"\">8</a>]</cite> because it is fine-tuned for instruction following, unlike models which are focused on general generation or broader multimodal tasks. Also, it is relatively lightweight compared to many high-performing models, making it easy to wield for multiple inference runs, and achieves notably high performance on the MMAU test subset <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib23\" title=\"\">23</a>]</cite>.\nTo explore model behaviour, our benchmark B1 employs a multiple-choice continuation task, where the model is prompted to <em class=\"ltx_emph ltx_font_italic\">&#8220;&#8230;pick an appropriate continuation from one of three options, given an audio clip&#8221;</em>, similar to that of the one described in Spoken StereoSet <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite>. The audio clip provides the spoken context, while the text prompt presents the completion choices.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We experiment with two zero-shot and two one-shot prompting formats to examine the effects. Both one-shot prompts include an explicit example and also encourage the model to select responses which challenge common stereotypes. While the overall task framing remains the same, our one-shot prompts are not conventional extensions of the zero-shot variants, they also enforce stereotype-resistant behaviour. Full prompt examples are provided in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S3.SS1.SSS1\" title=\"3.1.1 Example prompts from B1 &#8227; 3.1 Benchmarking Datasets &#8227; 3 Methodology &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">3.1.1</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "oneshot",
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For our experiments, we use a hybrid evaluation approach that combines the token-level probabilities <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite> assigned to discrete answer options/choices <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> to assess the preferences of the model across behaviourally meaningful options. For B1, we set <math alttext=\"top\\_K=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=4</annotation></semantics></math> and frame the task as a choice between four options: A, B, and C &#8211; each randomly assigned to irrelevant, anti-stereotypical, or stereotypical\nbehaviours &#8211; and a potential non-instruction-following response. Similarly, we set <math alttext=\"top\\_K=3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=3</annotation></semantics></math> for B2. We analyse model responses statistically and examine token probabilities across five temperature values, alongside two zero-shot and one-shot prompts each.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "response",
+                    "behaviours",
+                    "oneshot",
+                    "zeroshot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Qwen2-Audio-7B-Instruct exhibits substantial positional bias in slot selection, varying across prompt conditions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S2.F1\" title=\"Figure 1 &#8227; 2 Problem Statement &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows that in a zero-shot setting, when selecting between options A, B, C for B1 samples, the model consistently avoids the first option regardless of content, thus overriding behavioural preferences with positional bias. This effect persists with numerical labels (1, 2, 3), confirming position-based rather than notation-based bias.\nThe first slot also receives consistently lower probability scores even with uniformly distributed behaviours across all temperatures. The model rarely selects irrelevant options, suggesting some instruction-following capability, yet its strong avoidance of the first slot, coupled with randomised options, obscures any genuine preference between stereotypical and anti-stereotypical completions.\nTo isolate content preference from positional bias, we fix the positions of either stereotypical or anti-stereotypical options while randomising the remaining two options across other slots. The zero-shot prompting results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> (top row) reveal:</p>\n\n",
+                "matched_terms": [
+                    "probability",
+                    "prompt",
+                    "when",
+                    "scores",
+                    "behaviours",
+                    "zeroshot",
+                    "slots"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Slot B gets higher scores than A when it contains the fixed behaviour but underperforms compared to when the behaviour opposite to the fixed behaviour is present.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also observe a noticeable rise in irrelevant option scores when option C is not fixed. This suggests that our one-shot prompting does not reinforce anti-stereotypical behaviour &#8211; and may even introduce new positional-bias instability &#8211; or that the benchmark itself (B1) contains ambiguities that become more salient with additional contextual framing. <span class=\"ltx_text ltx_font_bold\">RQ1 Answer:</span> Positional bias affects answer selection in distinct ways depending on the prompt format. Positional bias persists even at higher temperatures. This result also shows that few-fold randomisation of response options might be insufficient to overcome positional bias.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "when",
+                    "scores",
+                    "response",
+                    "oneshot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At all tested temperatures <math alttext=\"(0.01,0.1,0.5,0.75,1.0)\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>0.01</mn><mo>,</mo><mn>0.1</mn><mo>,</mo><mn>0.5</mn><mo>,</mo><mn>0.75</mn><mo>,</mo><mn>1.0</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(0.01,0.1,0.5,0.75,1.0)</annotation></semantics></math>, and after averaging across all prompts (with randomised behaviour slots and discarding samples where the model did not return A, B, or C), there is a significant difference between the male and female voice-input response distributions, with <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p5.m2\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math>-values</p>\n\n",
+                "matched_terms": [
+                    "response",
+                    "slots"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present the confusion matrices when different slots are fixed with either stereotypical or anti-stereotypical behaviours at the highest temperature (1.0) with a zero-shot prompt. Similar trends were observed at other tested temperatures and prompt settings. Rows may not sum exactly to <math alttext=\"100\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p6.m1\" intent=\":literal\"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">100\\%</annotation></semantics></math> due to occasional model failures in selecting A, B, or C in the zero-shot setting. The positional bias is most pronounced for female voices, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F4\" title=\"Figure 4 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F5\" title=\"Figure 5 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, with the effect becoming even more salient at lower temperatures. Notably, while male voices exhibit greater variability across conditions in response to anti-stereotypical slot fixes, female voices show more stable choice patterns. This suggests that female voices are more susceptible to positional biases, especially under stereotypical conditions.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "prompt",
+                    "when",
+                    "response",
+                    "behaviours",
+                    "zeroshot",
+                    "slots"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">reflects the strength of association between voice position and selection outcomes. They indicate modest practical effects despite the statistical significance. The findings are summarized in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T1\" title=\"Table 1 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. We expand on these findings in the conclusion. This significance remains with slightly larger, but still modest, effect sizes for zero-shot prompts. Similar results occur when setting <math alttext=\"top\\_K=100\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p7.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>100</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=100</annotation></semantics></math>. <span class=\"ltx_text ltx_font_bold\">RQ2 Answer:</span> Positional bias not only persists but exhibits asymmetric behaviour when interacting with gendered voice inputs.</p>\n\n",
+                "matched_terms": [
+                    "zeroshot",
+                    "when"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RQ3 Answer:</span> When evaluating the model on B2, we do not observe similarly strong positional or temperature effects, likely due to the binary choice format and limited sample size. However, we do observe emerging trends in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.T2\" title=\"Table 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> that may hint at underlying biases that are more pronounced than those in B1, although further validation is needed with larger datasets. This highlights that benchmark design, including the number of response options critically influences the sensitivity to bias effects.</p>\n\n",
+                "matched_terms": [
+                    "temperature",
+                    "when",
+                    "response"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited prompt testing</span>:\nOur formulation of prompts is limited to a few zero-shot and one-shot versions, which may not fully capture the behaviour of the model under more complex prompting strategies such as: few-shot, chain-of-thought, or other prompt-tuning techniques. Exploring a wider range of prompting strategies is necessary to better understand the robustness and variability of the model&#8217;s responses with different prompts.</p>\n\n",
+                "matched_terms": [
+                    "oneshot",
+                    "zeroshot",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this study, we investigated the influence of prompt design, temperature, and voice gender on MCQA benchmark performance for a single SpeechLLM. Despite a narrow experimental scope, we found consistently strong positional bias: the model disproportionately avoids selecting the first answer slot, even when it contains the most appropriate or unbiased content. This effect overrode the intended behavioural labels in many cases and persisted across temperatures and prompt types.</p>\n\n",
+                "matched_terms": [
+                    "when",
+                    "temperature",
+                    "prompt"
+                ]
+            }
+        ]
+    },
+    "S4.F4": {
+        "source_file": "When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs",
+        "image_url": "https://arxiv.org/html/2510.02398v1/x4.png",
+        "caption": "Figure 4: Anti-Stereotypical slot assignments vs. Selected slot, temperature 1.0.",
+        "informative_terms_identified": [
+            "selected",
+            "temperature",
+            "antistereotypical",
+            "slot",
+            "assignments"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We present the confusion matrices when different slots are fixed with either stereotypical or anti-stereotypical behaviours at the highest temperature (1.0) with a zero-shot prompt. Similar trends were observed at other tested temperatures and prompt settings. Rows may not sum exactly to <math alttext=\"100\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p6.m1\" intent=\":literal\"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">100\\%</annotation></semantics></math> due to occasional model failures in selecting A, B, or C in the zero-shot setting. The positional bias is most pronounced for female voices, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F4\" title=\"Figure 4 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F5\" title=\"Figure 5 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, with the effect becoming even more salient at lower temperatures. Notably, while male voices exhibit greater variability across conditions in response to anti-stereotypical slot fixes, female voices show more stable choice patterns. This suggests that female voices are more susceptible to positional biases, especially under stereotypical conditions.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">For our experiments, we use a hybrid evaluation approach that combines the token-level probabilities <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite> assigned to discrete answer options/choices <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> to assess the preferences of the model across behaviourally meaningful options. For B1, we set <math alttext=\"top\\_K=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=4</annotation></semantics></math> and frame the task as a choice between four options: A, B, and C &#8211; each randomly assigned to irrelevant, anti-stereotypical, or stereotypical\nbehaviours &#8211; and a potential non-instruction-following response. Similarly, we set <math alttext=\"top\\_K=3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=3</annotation></semantics></math> for B2. We analyse model responses statistically and examine token probabilities across five temperature values, alongside two zero-shot and one-shot prompts each.</p>\n\n",
+                "matched_terms": [
+                    "antistereotypical",
+                    "temperature"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Qwen2-Audio-7B-Instruct exhibits substantial positional bias in slot selection, varying across prompt conditions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S2.F1\" title=\"Figure 1 &#8227; 2 Problem Statement &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows that in a zero-shot setting, when selecting between options A, B, C for B1 samples, the model consistently avoids the first option regardless of content, thus overriding behavioural preferences with positional bias. This effect persists with numerical labels (1, 2, 3), confirming position-based rather than notation-based bias.\nThe first slot also receives consistently lower probability scores even with uniformly distributed behaviours across all temperatures. The model rarely selects irrelevant options, suggesting some instruction-following capability, yet its strong avoidance of the first slot, coupled with randomised options, obscures any genuine preference between stereotypical and anti-stereotypical completions.\nTo isolate content preference from positional bias, we fix the positions of either stereotypical or anti-stereotypical options while randomising the remaining two options across other slots. The zero-shot prompting results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> (top row) reveal:</p>\n\n",
+                "matched_terms": [
+                    "antistereotypical",
+                    "slot"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this study, we investigated the influence of prompt design, temperature, and voice gender on MCQA benchmark performance for a single SpeechLLM. Despite a narrow experimental scope, we found consistently strong positional bias: the model disproportionately avoids selecting the first answer slot, even when it contains the most appropriate or unbiased content. This effect overrode the intended behavioural labels in many cases and persisted across temperatures and prompt types.</p>\n\n",
+                "matched_terms": [
+                    "slot",
+                    "temperature"
+                ]
+            }
+        ]
+    },
+    "S4.F5": {
+        "source_file": "When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs",
+        "image_url": "https://arxiv.org/html/2510.02398v1/x5.png",
+        "caption": "Figure 5: Stereotypical slot assignments vs. Selected slot, temperature 1.0.",
+        "informative_terms_identified": [
+            "selected",
+            "temperature",
+            "stereotypical",
+            "slot",
+            "assignments"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We present the confusion matrices when different slots are fixed with either stereotypical or anti-stereotypical behaviours at the highest temperature (1.0) with a zero-shot prompt. Similar trends were observed at other tested temperatures and prompt settings. Rows may not sum exactly to <math alttext=\"100\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S4.p6.m1\" intent=\":literal\"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">100\\%</annotation></semantics></math> due to occasional model failures in selecting A, B, or C in the zero-shot setting. The positional bias is most pronounced for female voices, as shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F4\" title=\"Figure 4 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> and Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F5\" title=\"Figure 5 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, with the effect becoming even more salient at lower temperatures. Notably, while male voices exhibit greater variability across conditions in response to anti-stereotypical slot fixes, female voices show more stable choice patterns. This suggests that female voices are more susceptible to positional biases, especially under stereotypical conditions.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">For our experiments, we use a hybrid evaluation approach that combines the token-level probabilities <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib16\" title=\"\">16</a>]</cite> assigned to discrete answer options/choices <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#bib.bib15\" title=\"\">15</a>]</cite> to assess the preferences of the model across behaviourally meaningful options. For B1, we set <math alttext=\"top\\_K=4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=4</annotation></semantics></math> and frame the task as a choice between four options: A, B, and C &#8211; each randomly assigned to irrelevant, anti-stereotypical, or stereotypical\nbehaviours &#8211; and a potential non-instruction-following response. Similarly, we set <math alttext=\"top\\_K=3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>p</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi mathvariant=\"normal\">_</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>K</mi></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">top\\_K=3</annotation></semantics></math> for B2. We analyse model responses statistically and examine token probabilities across five temperature values, alongside two zero-shot and one-shot prompts each.</p>\n\n",
+                "matched_terms": [
+                    "stereotypical",
+                    "temperature"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Qwen2-Audio-7B-Instruct exhibits substantial positional bias in slot selection, varying across prompt conditions. Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S2.F1\" title=\"Figure 1 &#8227; 2 Problem Statement &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows that in a zero-shot setting, when selecting between options A, B, C for B1 samples, the model consistently avoids the first option regardless of content, thus overriding behavioural preferences with positional bias. This effect persists with numerical labels (1, 2, 3), confirming position-based rather than notation-based bias.\nThe first slot also receives consistently lower probability scores even with uniformly distributed behaviours across all temperatures. The model rarely selects irrelevant options, suggesting some instruction-following capability, yet its strong avoidance of the first slot, coupled with randomised options, obscures any genuine preference between stereotypical and anti-stereotypical completions.\nTo isolate content preference from positional bias, we fix the positions of either stereotypical or anti-stereotypical options while randomising the remaining two options across other slots. The zero-shot prompting results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.02398v1#S4.F2\" title=\"Figure 2 &#8227; 4 Results and Discussion &#8227; When Voice Matters: Evidence of Gender Disparity in Positional Bias of SpeechLLMs\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> (top row) reveal:</p>\n\n",
+                "matched_terms": [
+                    "slot",
+                    "stereotypical"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this study, we investigated the influence of prompt design, temperature, and voice gender on MCQA benchmark performance for a single SpeechLLM. Despite a narrow experimental scope, we found consistently strong positional bias: the model disproportionately avoids selecting the first answer slot, even when it contains the most appropriate or unbiased content. This effect overrode the intended behavioural labels in many cases and persisted across temperatures and prompt types.</p>\n\n",
+                "matched_terms": [
+                    "slot",
+                    "temperature"
+                ]
+            }
+        ]
+    }
+}

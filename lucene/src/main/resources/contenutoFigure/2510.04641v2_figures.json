@@ -1,0 +1,1049 @@
+{
+    "A1.F1": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x1.png",
+        "caption": "(a) Token count distribution",
+        "informative_terms_identified": [
+            "token",
+            "distribution",
+            "count"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Text statistics.</span>\nIn Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F1.sf1\" title=\"In Figure 1 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1(a)</span></a>, we show the token count distribution for all the bias categories, including the <em class=\"ltx_emph ltx_font_italic\">unbiased</em> texts. To obtain tokens, we use the RoBERTa tokenizer. We see that the token counts for each text instance are generally low, indicating our dataset mainly contains short text instances. However, there are some outliers, e.g., in <span class=\"ltx_text ltx_font_typewriter\">GEN</span> and <span class=\"ltx_text ltx_font_typewriter\">SO</span>, where we see around 400 token length texts. Upon inspection, we observed that such instances primarily come from the BBQ dataset, that have very long context texts.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Label statistics.</span>\nIn Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F2\" title=\"Figure 2 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we visualize the label statistics in the final curated dataset. The visualizations show label imbalances in the data, highlighting the need for weighted loss for optimization and motivating future work to explore further fairness interventions to ensure equitable bias detection performance. The statistics show that our data contains more biased instances than unbiased ones. Furthermore, we see that most instances target a single demographic axis. However, many instances target two axes. Instances targeting more than two demographic axes are significantly fewer in our dataset. We provide more detailed label co-occurrence statistics in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F1.sf2\" title=\"In Figure 1 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1(b)</span></a>. The figure shows that text instances target specific demographics more often. For instance, texts target <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">GEN</span> more often. Similarly, texts target <span class=\"ltx_text ltx_font_typewriter\">DIS</span>,<span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">PHY</span> relatively less often. Furthermore, we see that <span class=\"ltx_text ltx_font_typewriter\">GEN</span> co-occurs with many other demographic axes, e.g., <span class=\"ltx_text ltx_font_typewriter\">SO</span>, <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, and <span class=\"ltx_text ltx_font_typewriter\">DIS</span>. Note that while <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">REL</span> appear together frequently, many of these instances simply target &#8220;Jewish identities.&#8221;</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A1.F1.sf2": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x2.png",
+        "caption": "(b) Social bias label co-occurrence",
+        "informative_terms_identified": [
+            "social",
+            "label",
+            "cooccurrence",
+            "bias"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Label statistics.</span>\nIn Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F2\" title=\"Figure 2 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we visualize the label statistics in the final curated dataset. The visualizations show label imbalances in the data, highlighting the need for weighted loss for optimization and motivating future work to explore further fairness interventions to ensure equitable bias detection performance. The statistics show that our data contains more biased instances than unbiased ones. Furthermore, we see that most instances target a single demographic axis. However, many instances target two axes. Instances targeting more than two demographic axes are significantly fewer in our dataset. We provide more detailed label co-occurrence statistics in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F1.sf2\" title=\"In Figure 1 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1(b)</span></a>. The figure shows that text instances target specific demographics more often. For instance, texts target <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">GEN</span> more often. Similarly, texts target <span class=\"ltx_text ltx_font_typewriter\">DIS</span>,<span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">PHY</span> relatively less often. Furthermore, we see that <span class=\"ltx_text ltx_font_typewriter\">GEN</span> co-occurs with many other demographic axes, e.g., <span class=\"ltx_text ltx_font_typewriter\">SO</span>, <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, and <span class=\"ltx_text ltx_font_typewriter\">DIS</span>. Note that while <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">REL</span> appear together frequently, many of these instances simply target &#8220;Jewish identities.&#8221;</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_bold ltx_font_italic\">K</em><span class=\"ltx_text ltx_font_bold\">eywords</span>&#8194;Social bias  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m1\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nBias detection  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m2\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nPrompting  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m3\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nFine-tuning</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Detecting demographic-targeted social biases in data has become both a regulatory and technical requirement&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tabassi, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib51\" title=\"\">2023</a>; European Union, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib14\" title=\"\">2024</a>)</cite>. For example, the EU&#8217;s GPAI Code of Practice highlights the importance of documenting demographic-centric harms in training corpora. Effective data-level mitigation strategies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite> also depend on reliably identifying biased instances. While prior studies have examined biases in text corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kreutzer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>; Luccioni and Viviano, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>; Dodge et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite>, they typically rely either on small-scale human annotations or on simplistic automated techniques. Manual inspection, however, poses psychological risks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Steiger et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib49\" title=\"\">2021</a>)</cite>, and despite advances in LLMs, few works offer a comprehensive analysis of the state of the art in social bias detection.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We develop a <em class=\"ltx_emph ltx_font_italic\">demographic-focused</em> taxonomy for social bias detection for better alignment with anti-discrimination principles and multi-axis targeted bias detection.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias analysis of corpora.</span>\nOther work has directly analyzed large text corpora. <cite class=\"ltx_cite ltx_citemacro_citet\">Kreutzer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>)</cite> employed human surveys on a small web-crawled subset to assess multilingual quality and offensive content. Lexicon-based approaches have been used to detect opinion biases in Wikipedia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hube and Fetahu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib23\" title=\"\">2018</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Luccioni and Viviano (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>)</cite> subsampled Common Crawl to study sexual and hateful content using n-grams, BERT, and logistic regression, while <cite class=\"ltx_cite ltx_citemacro_citet\">Dodge et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite> analyzed C4, linking sentiment toward racial groups to biased QA outcomes. Although these studies provide valuable insights, they rely on relatively simplistic detection methods. In contrast, our work offers a systematic evaluation of state-of-the-art LLMs for social bias detection, providing deeper insights that can complement and extend prior analyses of large-scale corpora.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section outlines the practical setup of our evaluation framework for analyzing the ability of LLMs to detect social biases in texts targeting different demographic groups. We first present the demographic-targeted taxonomy that underpins our framework, then describe how we adapt and integrate existing datasets for a holistic evaluation of bias detection. Finally, we detail the testbed we constructed to ensure comprehensive coverage of LLMs and detection methods.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enable comprehensive empirical evaluation in realistic settings, we adapt existing English datasets to align with our demographic-targeted social bias taxonomy. We surveyed widely used NLP datasets&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite>, prioritizing diversity across demographic axes and harm types. Unlike prior benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, which often rely on fully GPT-generated categories (e.g., toxic text), we minimize synthetic data to reduce evaluation artifacts&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Koo et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib28\" title=\"\">2024</a>; Maheshwari et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib35\" title=\"\">2024</a>)</cite>.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>The only exception is ToxiGen, although it has human-annotated GPT text, unlike&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>.</span></span></span> Based on this review, we curated samples from <span class=\"ltx_text ltx_font_bold\">twelve</span> distinct datasets (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T1\" title=\"Table 1 &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since some datasets were originally designed for evaluating generative biases, we applied minor adaptations similar to&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>. For StereoSet, we concatenate the context with the stereotype options. For BBQ, we construct text instances by pairing disambiguated contexts with answers. For CrowS-Pairs, we retain only the &#8220;more biased&#8221; sentences. For SBIC, we derive a single label using the majority vote across annotators. For ToxiGen, we label texts as biased only when human annotator scores indicate bias.</p>\n\n",
+                "matched_terms": [
+                    "label",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><cite class=\"ltx_cite ltx_citemacro_citet\">Brown et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib4\" title=\"\">2020</a>)</cite> demonstrated that <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> LLMs can effectively perform a variety of tasks through textual prompting in <em class=\"ltx_emph ltx_font_italic\">zero-shot</em> scenarios. Following&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>; Palla et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib42\" title=\"\">2025</a>)</cite>, our evaluation framework employs <em class=\"ltx_emph ltx_font_italic\">policy-based</em> prompting for bias detection. Specifically, the prompt includes a policy detailing the bias detection task and our demographic-based social bias taxonomy. To enhance the bias detection capabilities within this prompting framework, we also assess the benefits of incorporating <em class=\"ltx_emph ltx_font_italic\">few-shot</em> examples for <em class=\"ltx_emph ltx_font_italic\">in-context learning</em>. Specifically, we utilize the retrieval-augmented (RAG) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib5\" title=\"\">2024a</a>)</cite>, where an embedding model identifies the most <em class=\"ltx_emph ltx_font_italic\">relevant</em> in-context examples for each input instance from the training/development set.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section illustrates how our comprehensive evaluation study enables the practical assessment of LLM-based methods for detecting demographic-targeted social biases in text. Our analysis reveals both the strengths and current limitations of these approaches. For rigorous assessment of the overall results, we perform 1,000 bootstrap samples with replacement on the combined test set to compute 95% confidence intervals. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T3\" title=\"Table 3 &#8227; 3.4 Evaluation metrics &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents a detailed comparison of prompting and fine-tuning, reporting both binary performance (biased vs. unbiased) and multi-label categorization. We also report median inference time (in milliseconds) for each text instance. Moreover, for more fine-grained analysis, Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S4.T4\" title=\"Table 4 &#8227; 4.1 Prompting methods &#8227; 4 Evaluating social bias detection &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> reports bias detection performance of select prompted and fine-tuned LLMs for the twelve constituent datasets.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nInstruction-tuned LLMs with in-context learning and sufficient capacity provide the most effective prompting-based bias detection, although at the cost of increased inference time. We further show that guardrail-focused models alone are insufficient for holistic social bias identification.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use our evaluation framework to examine <em class=\"ltx_emph ltx_font_italic\">potential disparities</em> in social bias detection across models and setups with respect to targeted demographic axes. While the previous analysis provided a global view of model performance, this section focuses on <em class=\"ltx_emph ltx_font_italic\">systematic differences</em> in how effectively models detect biases. We first analyze disparities for individual demographic axes. Next, owing to our multi-label setup, we evaluate model performances on instances targeting <em class=\"ltx_emph ltx_font_italic\">multiple axes simultaneously</em>, highlighting current capabilities in detecting multi-targeted biases. We provide the comprehensive disparity analysis in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S5.T5\" title=\"Table 5 &#8227; 5 Evaluating detection disparities &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We assess systemic performance disparities using <math alttext=\"\\Delta_{\\text{FNR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p1.m1\" intent=\":literal\"><semantics><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FNR</mtext></msub><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FNR}}</annotation></semantics></math> and <math alttext=\"\\Delta_{\\text{FPR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p1.m2\" intent=\":literal\"><semantics><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FPR</mtext></msub><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FPR}}</annotation></semantics></math>, which measure the maximum performance gaps across the nine social bias demographic target axes in our taxonomy.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Inclusive stakeholder input.</span>\nAutomation enables large-scale auditing while minimizing human exposure to harmful content&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Steiger et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib49\" title=\"\">2021</a>)</cite>. However, bias detection remains a <em class=\"ltx_emph ltx_font_italic\">socio-technical challenge</em>: social biases are culturally situated, and the detection pipeline must be guided by participatory processes&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Markov et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib36\" title=\"\">2023</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All LLMs are accessed via API through an MLOps platform. We fix <span class=\"ltx_text ltx_font_typewriter\">temperature</span> to 0 and <span class=\"ltx_text ltx_font_typewriter\">top_p</span> to 1, ensuring deterministic outputs by selecting the model&#8217;s most likely generation while still allowing consideration of the full token space. For in-context learning, we embed the training and development sets using BGE-M3 or BCEmbedding models. At inference time, we compute cosine similarity between the query and development set vectors to retrieve the top-<math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SS1.p1.m1\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> few-shot examples. As a baseline, we also apply a random few-shot selection from the training set, with balanced sampling between biased and unbiased texts. Model predictions are extracted via pattern matching. Responses that cannot be parsed through pattern matching to assign to one of the multiple demographic axes are marked as &#8220;invalid.&#8221; The <span class=\"ltx_text ltx_font_italic\">social bias policy</span> used in the text prompt is shown here.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            }
+        ]
+    },
+    "A1.F2": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x3.png",
+        "caption": "(a) Binary biased-unbiased counts (train subset)",
+        "informative_terms_identified": [
+            "subset",
+            "counts",
+            "train",
+            "biasedunbiased",
+            "binary"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Label statistics.</span>\nIn Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F2\" title=\"Figure 2 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we visualize the label statistics in the final curated dataset. The visualizations show label imbalances in the data, highlighting the need for weighted loss for optimization and motivating future work to explore further fairness interventions to ensure equitable bias detection performance. The statistics show that our data contains more biased instances than unbiased ones. Furthermore, we see that most instances target a single demographic axis. However, many instances target two axes. Instances targeting more than two demographic axes are significantly fewer in our dataset. We provide more detailed label co-occurrence statistics in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F1.sf2\" title=\"In Figure 1 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1(b)</span></a>. The figure shows that text instances target specific demographics more often. For instance, texts target <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">GEN</span> more often. Similarly, texts target <span class=\"ltx_text ltx_font_typewriter\">DIS</span>,<span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">PHY</span> relatively less often. Furthermore, we see that <span class=\"ltx_text ltx_font_typewriter\">GEN</span> co-occurs with many other demographic axes, e.g., <span class=\"ltx_text ltx_font_typewriter\">SO</span>, <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, and <span class=\"ltx_text ltx_font_typewriter\">DIS</span>. Note that while <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">REL</span> appear together frequently, many of these instances simply target &#8220;Jewish identities.&#8221;</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "A1.F2.sf2": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x4.png",
+        "caption": "(b) Number of labels per text (train subset)",
+        "informative_terms_identified": [
+            "number",
+            "subset",
+            "train",
+            "labels",
+            "text"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "train",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias analysis of corpora.</span>\nOther work has directly analyzed large text corpora. <cite class=\"ltx_cite ltx_citemacro_citet\">Kreutzer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>)</cite> employed human surveys on a small web-crawled subset to assess multilingual quality and offensive content. Lexicon-based approaches have been used to detect opinion biases in Wikipedia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hube and Fetahu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib23\" title=\"\">2018</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Luccioni and Viviano (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>)</cite> subsampled Common Crawl to study sexual and hateful content using n-grams, BERT, and logistic regression, while <cite class=\"ltx_cite ltx_citemacro_citet\">Dodge et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite> analyzed C4, linking sentiment toward racial groups to biased QA outcomes. Although these studies provide valuable insights, they rely on relatively simplistic detection methods. In contrast, our work offers a systematic evaluation of state-of-the-art LLMs for social bias detection, providing deeper insights that can complement and extend prior analyses of large-scale corpora.</p>\n\n",
+                "matched_terms": [
+                    "subset",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Because detection must perform reliably <em class=\"ltx_emph ltx_font_italic\">across all demographic axes</em>, our evaluation framework also explores the effectiveness of <em class=\"ltx_emph ltx_font_italic\">data reweighting</em>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kamiran and Calders, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib25\" title=\"\">2012</a>)</cite> to address imbalances. Let <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> denote the number of samples and <math alttext=\"\\mathcal{M}_{\\phi}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m2\" intent=\":literal\"><semantics><msub><mi class=\"ltx_font_mathcaligraphic\">&#8499;</mi><mi>&#981;</mi></msub><annotation encoding=\"application/x-tex\">\\mathcal{M}_{\\phi}</annotation></semantics></math> the model. For a given instance <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m3\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>, its labels <math alttext=\"Y_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m4\" intent=\":literal\"><semantics><msub><mi>Y</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">Y_{i}</annotation></semantics></math> form a binary vector of length nine, where <math alttext=\"Y_{i}^{m}=1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m5\" intent=\":literal\"><semantics><mrow><msubsup><mi>Y</mi><mi>i</mi><mi>m</mi></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">Y_{i}^{m}=1</annotation></semantics></math> if the demographic axis <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m6\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> is targeted and <math alttext=\"0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p2.m7\" intent=\":literal\"><mn>0</mn></math> otherwise. The weighted loss is defined as:</p>\n\n",
+                "matched_terms": [
+                    "number",
+                    "labels"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Let <math alttext=\"N\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m1\" intent=\":literal\"><semantics><mi>N</mi><annotation encoding=\"application/x-tex\">N</annotation></semantics></math> be the number of evaluation instances. For each instance <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m2\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>, annotated labels are represented as <math alttext=\"Y_{i}=\\begin{pmatrix}Y_{i}^{m}\\end{pmatrix}_{m=1}^{9}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m3\" intent=\":literal\"><semantics><mrow><msub><mi>Y</mi><mi>i</mi></msub><mo>=</mo><msubsup><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>Y</mi><mi>i</mi><mi>m</mi></msubsup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mn>9</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">Y_{i}=\\begin{pmatrix}Y_{i}^{m}\\end{pmatrix}_{m=1}^{9}</annotation></semantics></math> and model predictions as <math alttext=\"\\hat{Y}_{i}=\\begin{pmatrix}\\hat{Y}_{i}^{m}\\end{pmatrix}_{m=1}^{9}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m4\" intent=\":literal\"><semantics><mrow><msub><mover accent=\"true\"><mi>Y</mi><mo>^</mo></mover><mi>i</mi></msub><mo>=</mo><msubsup><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mover accent=\"true\"><mi>Y</mi><mo>^</mo></mover><mi>i</mi><mi>m</mi></msubsup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mn>9</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">\\hat{Y}_{i}=\\begin{pmatrix}\\hat{Y}_{i}^{m}\\end{pmatrix}_{m=1}^{9}</annotation></semantics></math>, where <math alttext=\"Y_{i}^{m},\\hat{Y}_{i}^{m}\\in\\{0,1\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m5\" intent=\":literal\"><semantics><mrow><mrow><msubsup><mi>Y</mi><mi>i</mi><mi>m</mi></msubsup><mo>,</mo><msubsup><mover accent=\"true\"><mi>Y</mi><mo>^</mo></mover><mi>i</mi><mi>m</mi></msubsup></mrow><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Y_{i}^{m},\\hat{Y}_{i}^{m}\\in\\{0,1\\}</annotation></semantics></math> denote whether axis <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p2.m6\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> is targeted (1) or not (0).</p>\n\n",
+                "matched_terms": [
+                    "number",
+                    "labels"
+                ]
+            }
+        ]
+    },
+    "A1.F3": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x5.png",
+        "caption": "Figure 3: Prompt used for LLMs to detect demographic-targeted biases",
+        "informative_terms_identified": [
+            "prompt",
+            "llms",
+            "biases",
+            "detect",
+            "demographictargeted"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Detecting demographic-targeted social biases in data has become both a regulatory and technical requirement&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tabassi, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib51\" title=\"\">2023</a>; European Union, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib14\" title=\"\">2024</a>)</cite>. For example, the EU&#8217;s GPAI Code of Practice highlights the importance of documenting demographic-centric harms in training corpora. Effective data-level mitigation strategies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite> also depend on reliably identifying biased instances. While prior studies have examined biases in text corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kreutzer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>; Luccioni and Viviano, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>; Dodge et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite>, they typically rely either on small-scale human annotations or on simplistic automated techniques. Manual inspection, however, poses psychological risks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Steiger et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib49\" title=\"\">2021</a>)</cite>, and despite advances in LLMs, few works offer a comprehensive analysis of the state of the art in social bias detection.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Compared to systematic benchmarks that examine LLMs for biased generation&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Parrish et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib43\" title=\"\">2022</a>; Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>)</cite>, detailed studies of their potential as tools for detecting social biases in text remain underexplored. Existing work is often limited across one or more dimensions: focusing on narrow demographics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, restricting attention to a single type of content such as hate&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mathew et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib37\" title=\"\">2021</a>)</cite>, analyzing only specific contexts like certain subreddits&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kumar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib30\" title=\"\">2024</a>)</cite>, or analyzing only few methods such as zero-shot prompting&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>)</cite>. Moreover, most studies overlook biases that target <em class=\"ltx_emph ltx_font_italic\">multiple demographic axes simultaneously</em>, e.g., intersectionality. These gaps motivate a structured and comprehensive study of the current capabilities of recent LLMs in detecting demographic-targeted social biases.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address these gaps, we propose an evaluation framework for systematically assessing recent LLMs in detecting demographic-targeted social biases in English text. Our findings reveal both the potential of fine-tuned smaller LLMs and existing performance disparities across demographics and multi-targeted cases. By establishing a structured foundation, this work provides practical guidance for regulatory compliance and safer AI deployment. Our main contributions are as follows.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias in LLMs.</span>\nSeveral works have evaluated biases in LLMs, independently analyzing content types like stereotypes&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Nadeem et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib38\" title=\"\">2021</a>; Parrish et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib43\" title=\"\">2022</a>)</cite> and hate/toxic content&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gehman et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib17\" title=\"\">2020</a>)</cite>. Recently, <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib31\" title=\"\">2023</a>)</cite> also studied the fairness of ChatGPT in binary decision-making. Several benchmarks also analyzed stereotype and toxic characteristics in generations of recently developed LLMs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib54\" title=\"\">2023</a>; Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>; Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias analysis of corpora.</span>\nOther work has directly analyzed large text corpora. <cite class=\"ltx_cite ltx_citemacro_citet\">Kreutzer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>)</cite> employed human surveys on a small web-crawled subset to assess multilingual quality and offensive content. Lexicon-based approaches have been used to detect opinion biases in Wikipedia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hube and Fetahu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib23\" title=\"\">2018</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Luccioni and Viviano (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>)</cite> subsampled Common Crawl to study sexual and hateful content using n-grams, BERT, and logistic regression, while <cite class=\"ltx_cite ltx_citemacro_citet\">Dodge et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite> analyzed C4, linking sentiment toward racial groups to biased QA outcomes. Although these studies provide valuable insights, they rely on relatively simplistic detection methods. In contrast, our work offers a systematic evaluation of state-of-the-art LLMs for social bias detection, providing deeper insights that can complement and extend prior analyses of large-scale corpora.</p>\n\n",
+                "matched_terms": [
+                    "biases",
+                    "detect",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">LLM guardrails.</span>\nLLMs have also been explored as guardrails for GPAI systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Markov et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib36\" title=\"\">2023</a>; Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib5\" title=\"\">2024a</a>; Zeng et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib61\" title=\"\">2024</a>)</cite>, primarily to mitigate harmful user prompts and model-generated outputs. While effective for moderating AI systems, these models are not designed for systematically identifying biases in raw text. As we later show, they fail to capture subtle social biases in texts, highlighting the need for dedicated evaluations and methods.</p>\n\n",
+                "matched_terms": [
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section outlines the practical setup of our evaluation framework for analyzing the ability of LLMs to detect social biases in texts targeting different demographic groups. We first present the demographic-targeted taxonomy that underpins our framework, then describe how we adapt and integrate existing datasets for a holistic evaluation of bias detection. Finally, we detail the testbed we constructed to ensure comprehensive coverage of LLMs and detection methods.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "detect",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Any text not targeting one or more of these axes is considered &#8220;unbiased&#8221; (<span class=\"ltx_text ltx_font_typewriter\">UNB</span>) <em class=\"ltx_emph ltx_font_italic\">within our taxonomy</em>. Each demographic axis serves as a prediction category, making the detection task twofold: (i) identify whether a text expresses demographic-targeted bias, and (ii) determine which demographics are targeted. Unlike prior benchmarks that treat bias detection as single-label or multi-class classification&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mathew et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib37\" title=\"\">2021</a>; Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, our formulation supports <em class=\"ltx_emph ltx_font_italic\">multi-label prediction</em>, capturing both <span class=\"ltx_text ltx_font_italic\">single-axis</span> (e.g., race only) and <span class=\"ltx_text ltx_font_italic\">multi-axis</span> (e.g., gender+race) biases (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T2\" title=\"Table 2 &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><cite class=\"ltx_cite ltx_citemacro_citet\">Brown et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib4\" title=\"\">2020</a>)</cite> demonstrated that <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> LLMs can effectively perform a variety of tasks through textual prompting in <em class=\"ltx_emph ltx_font_italic\">zero-shot</em> scenarios. Following&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>; Palla et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib42\" title=\"\">2025</a>)</cite>, our evaluation framework employs <em class=\"ltx_emph ltx_font_italic\">policy-based</em> prompting for bias detection. Specifically, the prompt includes a policy detailing the bias detection task and our demographic-based social bias taxonomy. To enhance the bias detection capabilities within this prompting framework, we also assess the benefits of incorporating <em class=\"ltx_emph ltx_font_italic\">few-shot</em> examples for <em class=\"ltx_emph ltx_font_italic\">in-context learning</em>. Specifically, we utilize the retrieval-augmented (RAG) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib5\" title=\"\">2024a</a>)</cite>, where an embedding model identifies the most <em class=\"ltx_emph ltx_font_italic\">relevant</em> in-context examples for each input instance from the training/development set.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Detection disparities.</span>\nOur evaluation also examines whether LLMs not only detect social biases accurately but also exhibit systematic performance gaps across different demographic targets. Given <math alttext=\"\\mathcal{P}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p5.m1\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119979;</mi><annotation encoding=\"application/x-tex\">\\mathcal{P}</annotation></semantics></math> denotes FPR or FNR, we analyze disparities in the following scenarios:</p>\n\n",
+                "matched_terms": [
+                    "biases",
+                    "detect",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section illustrates how our comprehensive evaluation study enables the practical assessment of LLM-based methods for detecting demographic-targeted social biases in text. Our analysis reveals both the strengths and current limitations of these approaches. For rigorous assessment of the overall results, we perform 1,000 bootstrap samples with replacement on the combined test set to compute 95% confidence intervals. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T3\" title=\"Table 3 &#8227; 3.4 Evaluation metrics &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents a detailed comparison of prompting and fine-tuning, reporting both binary performance (biased vs. unbiased) and multi-label categorization. We also report median inference time (in milliseconds) for each text instance. Moreover, for more fine-grained analysis, Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S4.T4\" title=\"Table 4 &#8227; 4.1 Prompting methods &#8227; 4 Evaluating social bias detection &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> reports bias detection performance of select prompted and fine-tuned LLMs for the twelve constituent datasets.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use our evaluation framework to examine <em class=\"ltx_emph ltx_font_italic\">potential disparities</em> in social bias detection across models and setups with respect to targeted demographic axes. While the previous analysis provided a global view of model performance, this section focuses on <em class=\"ltx_emph ltx_font_italic\">systematic differences</em> in how effectively models detect biases. We first analyze disparities for individual demographic axes. Next, owing to our multi-label setup, we evaluate model performances on instances targeting <em class=\"ltx_emph ltx_font_italic\">multiple axes simultaneously</em>, highlighting current capabilities in detecting multi-targeted biases. We provide the comprehensive disparity analysis in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S5.T5\" title=\"Table 5 &#8227; 5 Evaluating detection disparities &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "biases",
+                    "detect"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our study provides a practical assessment of how LLMs can scale the detection of demographic-targeted social biases in text, supporting compliance with governance and regulatory standards. In this section, we discuss broader implications, key limitations, and directions for future work.</p>\n\n",
+                "matched_terms": [
+                    "demographictargeted",
+                    "biases",
+                    "llms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All LLMs are accessed via API through an MLOps platform. We fix <span class=\"ltx_text ltx_font_typewriter\">temperature</span> to 0 and <span class=\"ltx_text ltx_font_typewriter\">top_p</span> to 1, ensuring deterministic outputs by selecting the model&#8217;s most likely generation while still allowing consideration of the full token space. For in-context learning, we embed the training and development sets using BGE-M3 or BCEmbedding models. At inference time, we compute cosine similarity between the query and development set vectors to retrieve the top-<math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SS1.p1.m1\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> few-shot examples. As a baseline, we also apply a random few-shot selection from the training set, with balanced sampling between biased and unbiased texts. Model predictions are extracted via pattern matching. Responses that cannot be parsed through pattern matching to assign to one of the multiple demographic axes are marked as &#8220;invalid.&#8221; The <span class=\"ltx_text ltx_font_italic\">social bias policy</span> used in the text prompt is shown here.</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "llms"
+                ]
+            }
+        ]
+    },
+    "A1.F4": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x6.png",
+        "caption": "Figure 4: Prompting pipeline adapted for social bias detection",
+        "informative_terms_identified": [
+            "social",
+            "detection",
+            "bias",
+            "prompting",
+            "adapted",
+            "pipeline"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_bold ltx_font_italic\">K</em><span class=\"ltx_text ltx_font_bold\">eywords</span>&#8194;Social bias  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m1\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nBias detection  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m2\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nPrompting  <math alttext=\"\\cdot\" class=\"ltx_Math\" display=\"inline\" id=\"p1.m3\" intent=\":literal\"><semantics><mo>&#8901;</mo><annotation encoding=\"application/x-tex\">\\cdot</annotation></semantics></math>\nFine-tuning</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Detecting demographic-targeted social biases in data has become both a regulatory and technical requirement&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tabassi, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib51\" title=\"\">2023</a>; European Union, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib14\" title=\"\">2024</a>)</cite>. For example, the EU&#8217;s GPAI Code of Practice highlights the importance of documenting demographic-centric harms in training corpora. Effective data-level mitigation strategies&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite> also depend on reliably identifying biased instances. While prior studies have examined biases in text corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kreutzer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>; Luccioni and Viviano, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>; Dodge et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite>, they typically rely either on small-scale human annotations or on simplistic automated techniques. Manual inspection, however, poses psychological risks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Steiger et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib49\" title=\"\">2021</a>)</cite>, and despite advances in LLMs, few works offer a comprehensive analysis of the state of the art in social bias detection.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Compared to systematic benchmarks that examine LLMs for biased generation&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Parrish et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib43\" title=\"\">2022</a>; Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>)</cite>, detailed studies of their potential as tools for detecting social biases in text remain underexplored. Existing work is often limited across one or more dimensions: focusing on narrow demographics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, restricting attention to a single type of content such as hate&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mathew et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib37\" title=\"\">2021</a>)</cite>, analyzing only specific contexts like certain subreddits&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kumar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib30\" title=\"\">2024</a>)</cite>, or analyzing only few methods such as zero-shot prompting&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>)</cite>. Moreover, most studies overlook biases that target <em class=\"ltx_emph ltx_font_italic\">multiple demographic axes simultaneously</em>, e.g., intersectionality. These gaps motivate a structured and comprehensive study of the current capabilities of recent LLMs in detecting demographic-targeted social biases.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We develop a <em class=\"ltx_emph ltx_font_italic\">demographic-focused</em> taxonomy for social bias detection for better alignment with anti-discrimination principles and multi-axis targeted bias detection.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We frame bias detection as a multi-label task and build a detection testbed that supports prompting, in-context learning, and fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias detection with LLMs.</span>\nPrior work explored using LLMs in hate-speech moderation&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Barikeri et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib1\" title=\"\">2021</a>; Mathew et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib37\" title=\"\">2021</a>; Kumar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib30\" title=\"\">2024</a>; Zhan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib62\" title=\"\">2025</a>)</cite> or domain-specific bias detection&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Raza et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib45\" title=\"\">2024</a>)</cite>. Recent work&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sun et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib50\" title=\"\">2024</a>; Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite> also benchmarked prompt-based bias detection. However, they are restricted to zero-shot settings, cover limited demographics and data. In contrast, we systematically evaluate across multiple LLM-based methods, a broader range of demographics, and holistically analyze across different content types.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Bias analysis of corpora.</span>\nOther work has directly analyzed large text corpora. <cite class=\"ltx_cite ltx_citemacro_citet\">Kreutzer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib29\" title=\"\">2022</a>)</cite> employed human surveys on a small web-crawled subset to assess multilingual quality and offensive content. Lexicon-based approaches have been used to detect opinion biases in Wikipedia&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hube and Fetahu, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib23\" title=\"\">2018</a>)</cite>. <cite class=\"ltx_cite ltx_citemacro_citet\">Luccioni and Viviano (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib34\" title=\"\">2021</a>)</cite> subsampled Common Crawl to study sexual and hateful content using n-grams, BERT, and logistic regression, while <cite class=\"ltx_cite ltx_citemacro_citet\">Dodge et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib9\" title=\"\">2021</a>)</cite> analyzed C4, linking sentiment toward racial groups to biased QA outcomes. Although these studies provide valuable insights, they rely on relatively simplistic detection methods. In contrast, our work offers a systematic evaluation of state-of-the-art LLMs for social bias detection, providing deeper insights that can complement and extend prior analyses of large-scale corpora.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section outlines the practical setup of our evaluation framework for analyzing the ability of LLMs to detect social biases in texts targeting different demographic groups. We first present the demographic-targeted taxonomy that underpins our framework, then describe how we adapt and integrate existing datasets for a holistic evaluation of bias detection. Finally, we detail the testbed we constructed to ensure comprehensive coverage of LLMs and detection methods.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Any text not targeting one or more of these axes is considered &#8220;unbiased&#8221; (<span class=\"ltx_text ltx_font_typewriter\">UNB</span>) <em class=\"ltx_emph ltx_font_italic\">within our taxonomy</em>. Each demographic axis serves as a prediction category, making the detection task twofold: (i) identify whether a text expresses demographic-targeted bias, and (ii) determine which demographics are targeted. Unlike prior benchmarks that treat bias detection as single-label or multi-class classification&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mathew et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib37\" title=\"\">2021</a>; Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, our formulation supports <em class=\"ltx_emph ltx_font_italic\">multi-label prediction</em>, capturing both <span class=\"ltx_text ltx_font_italic\">single-axis</span> (e.g., race only) and <span class=\"ltx_text ltx_font_italic\">multi-axis</span> (e.g., gender+race) biases (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T2\" title=\"Table 2 &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enable comprehensive empirical evaluation in realistic settings, we adapt existing English datasets to align with our demographic-targeted social bias taxonomy. We surveyed widely used NLP datasets&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite>, prioritizing diversity across demographic axes and harm types. Unlike prior benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>, which often rely on fully GPT-generated categories (e.g., toxic text), we minimize synthetic data to reduce evaluation artifacts&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Koo et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib28\" title=\"\">2024</a>; Maheshwari et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib35\" title=\"\">2024</a>)</cite>.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>The only exception is ToxiGen, although it has human-annotated GPT text, unlike&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib55\" title=\"\">2024</a>)</cite>.</span></span></span> Based on this review, we curated samples from <span class=\"ltx_text ltx_font_bold\">twelve</span> distinct datasets (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T1\" title=\"Table 1 &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure a comprehensive evaluation, we consider a testbed incorporating LLM-based detection methods that span both prompting and fine-tuning. Furthermore, we operationalize our testbed with a diverse suite of state-of-the-art, open-source, or open-weight LLMs spanning multiple paradigms and configurations.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><cite class=\"ltx_cite ltx_citemacro_citet\">Brown et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib4\" title=\"\">2020</a>)</cite> demonstrated that <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> LLMs can effectively perform a variety of tasks through textual prompting in <em class=\"ltx_emph ltx_font_italic\">zero-shot</em> scenarios. Following&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>; Palla et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib42\" title=\"\">2025</a>)</cite>, our evaluation framework employs <em class=\"ltx_emph ltx_font_italic\">policy-based</em> prompting for bias detection. Specifically, the prompt includes a policy detailing the bias detection task and our demographic-based social bias taxonomy. To enhance the bias detection capabilities within this prompting framework, we also assess the benefits of incorporating <em class=\"ltx_emph ltx_font_italic\">few-shot</em> examples for <em class=\"ltx_emph ltx_font_italic\">in-context learning</em>. Specifically, we utilize the retrieval-augmented (RAG) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib5\" title=\"\">2024a</a>)</cite>, where an embedding model identifies the most <em class=\"ltx_emph ltx_font_italic\">relevant</em> in-context examples for each input instance from the training/development set.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Models.</span> We consider several <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> models ranging from 8B to 72B parameters, e.g., GLM-4&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(GLM et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib18\" title=\"\">2024</a>)</cite>, Llama-3.1&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Dubey et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib10\" title=\"\">2024</a>)</cite>, and Qwen-2.5&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib58\" title=\"\">2024</a>)</cite>. We also analyze the guardrail model Llama Guard-3&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>)</cite> to explore if such models could directly be applied for general text bias detection. To perform RAG-based in-context sample selection, we use the BGE-M3&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib6\" title=\"\">2024b</a>)</cite> model.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also evaluate the effectiveness of aligning LLMs to the bias detection task through <em class=\"ltx_emph ltx_font_italic\">fine-tuning</em>. The task is framed as <em class=\"ltx_emph ltx_font_italic\">multi-label prediction</em> over the nine demographic axes. We solve it through sequence classification by attaching nine classifier nodes to a pre-trained LLM: to the [CLS] token for encoder-only models and to the final output token for decoder-only models.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our comprehensive framework uses metrics capturing three dimensions: (i) distinguishing <em class=\"ltx_emph ltx_font_italic\">biased vs. unbiased</em> text, (ii) accurate <em class=\"ltx_emph ltx_font_italic\">multi-label classification</em> of bias types, and (iii) ensuring <em class=\"ltx_emph ltx_font_italic\">parity</em> in detection performance across demographic axes and for multi-targeted texts compared to single-targeted texts.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Binary bias detection.</span>\nWe reduce the multi-label task to a binary one by defining\nground-truth labels <math alttext=\"Y_{B_{i}}=1-\\mathbb{I}[Y_{i}^{m}=0,,\\forall m\\in{1,\\dots,9}]\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"S3.SS4.p3.m1\" intent=\":literal\"><semantics><mrow><msub><mi>Y</mi><msub><mi>B</mi><mi>i</mi></msub></msub><mo>=</mo><mn>1</mn><mo>&#8722;</mo><mi>&#120128;</mi><mrow><mo stretchy=\"false\">[</mo><msubsup><mi>Y</mi><mi>i</mi><mi>m</mi></msubsup><mo>=</mo><mn>0</mn><mo>,</mo><mo>,</mo><mo rspace=\"0.167em\">&#8704;</mo><mi>m</mi><mo>&#8712;</mo><mn>1</mn><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><mn>9</mn><mo stretchy=\"false\">]</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Y_{B_{i}}=1-\\mathbb{I}[Y_{i}^{m}=0,,\\forall m\\in{1,\\dots,9}]</annotation></semantics></math>, with predictions <math alttext=\"\\hat{Y}_{B_{i}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m2\" intent=\":literal\"><semantics><msub><mover accent=\"true\"><mi>Y</mi><mo>^</mo></mover><msub><mi>B</mi><mi>i</mi></msub></msub><annotation encoding=\"application/x-tex\">\\hat{Y}_{B_{i}}</annotation></semantics></math> defined analogously. A value of <math alttext=\"1\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m3\" intent=\":literal\"><semantics><mn>1</mn><annotation encoding=\"application/x-tex\">1</annotation></semantics></math> indicates the presence of any bias, and <math alttext=\"0\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m4\" intent=\":literal\"><mn>0</mn></math> indicates none. On these binary labels, we report <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p3.m5\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, false positive rate (FPR), and false negative rate (FNR).</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Multi-label bias detection.</span>\nAlongside macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p4.m1\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math> and micro <math alttext=\"F_{1}^{\\mu}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p4.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mi>&#956;</mi></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\mu}</annotation></semantics></math> scores, we report two multi-label measures&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sorower, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib48\" title=\"\">2010</a>)</cite>:</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Detection disparities.</span>\nOur evaluation also examines whether LLMs not only detect social biases accurately but also exhibit systematic performance gaps across different demographic targets. Given <math alttext=\"\\mathcal{P}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p5.m1\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119979;</mi><annotation encoding=\"application/x-tex\">\\mathcal{P}</annotation></semantics></math> denotes FPR or FNR, we analyze disparities in the following scenarios:</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Multi-demographic.</span> Inspired by&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kearns et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib26\" title=\"\">2018</a>)</cite>, we measure if the models make systematically more errors in detecting biases that <em class=\"ltx_emph ltx_font_italic\">specifically</em> target <em class=\"ltx_emph ltx_font_italic\">multiple axes simultaneously</em> (e.g., {<span class=\"ltx_text ltx_font_typewriter\">GEN</span>,<span class=\"ltx_text ltx_font_typewriter\">RAC</span>}) relative to biases that target <span class=\"ltx_text ltx_font_italic\">each constituent axis</span> (e.g., only <span class=\"ltx_text ltx_font_typewriter\">GEN</span> or <span class=\"ltx_text ltx_font_typewriter\">RAC</span>).\n<math alttext=\"\\mathcal{G}^{\\{m,m^{\\prime}\\}}_{\\mathcal{P}}=\\underset{x\\in\\{m,m^{\\prime}\\}}{\\operatorname{max}}\\big|\\mathcal{P}_{\\{m,m^{\\prime}\\}}-\\mathcal{P}_{x}\\big|\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i2.p1.m1\" intent=\":literal\"><semantics><mrow><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#119970;</mi><mi class=\"ltx_font_mathcaligraphic\">&#119979;</mi><mrow><mo stretchy=\"false\">{</mo><mi>m</mi><mo>,</mo><msup><mi>m</mi><mo>&#8242;</mo></msup><mo stretchy=\"false\">}</mo></mrow></msubsup><mo>=</mo><mrow><munder accentunder=\"true\"><mi>max</mi><mrow><mi>x</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mi>m</mi><mo>,</mo><msup><mi>m</mi><mo>&#8242;</mo></msup><mo stretchy=\"false\">}</mo></mrow></mrow></munder><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\" stretchy=\"true\">|</mo><mrow><msub><mi class=\"ltx_font_mathcaligraphic\">&#119979;</mi><mrow><mo stretchy=\"false\">{</mo><mi>m</mi><mo>,</mo><msup><mi>m</mi><mo>&#8242;</mo></msup><mo stretchy=\"false\">}</mo></mrow></msub><mo>&#8722;</mo><msub><mi class=\"ltx_font_mathcaligraphic\">&#119979;</mi><mi>x</mi></msub></mrow><mo maxsize=\"1.200em\" minsize=\"1.200em\" stretchy=\"true\">|</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{G}^{\\{m,m^{\\prime}\\}}_{\\mathcal{P}}=\\underset{x\\in\\{m,m^{\\prime}\\}}{\\operatorname{max}}\\big|\\mathcal{P}_{\\{m,m^{\\prime}\\}}-\\mathcal{P}_{x}\\big|</annotation></semantics></math>. This measure helps us understand if the FPR or FNR of multi-axis targeted biased instances is markedly higher, indicating potential blind spots for automated bias detection methods.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section illustrates how our comprehensive evaluation study enables the practical assessment of LLM-based methods for detecting demographic-targeted social biases in text. Our analysis reveals both the strengths and current limitations of these approaches. For rigorous assessment of the overall results, we perform 1,000 bootstrap samples with replacement on the combined test set to compute 95% confidence intervals. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T3\" title=\"Table 3 &#8227; 3.4 Evaluation metrics &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents a detailed comparison of prompting and fine-tuning, reporting both binary performance (biased vs. unbiased) and multi-label categorization. We also report median inference time (in milliseconds) for each text instance. Moreover, for more fine-grained analysis, Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S4.T4\" title=\"Table 4 &#8227; 4.1 Prompting methods &#8227; 4 Evaluating social bias detection &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> reports bias detection performance of select prompted and fine-tuned LLMs for the twelve constituent datasets.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our detailed results in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T3\" title=\"Table 3 &#8227; 3.4 Evaluation metrics &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> show how bias detection with prompting is <em class=\"ltx_emph ltx_font_italic\">highly sensitive to both in-context learning and model capacity</em>.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">In-context learning substantially improves detection.</span> Across all models, providing few-shot examples consistently boosts binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, lowers FNR, and increases multi-label metrics (MR, HL, <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Gains are significant with as few as five examples, while moving from five to ten shots yields only marginal improvements. However, inference time grows with the number of examples, highlighting the accuracy&#8211;efficiency tradeoff in prompting. Beyond the reported results, we also analyzed alternative in-context setups (in the appendix). We found that (i) RAG-based example selection outperforms random sampling, and (ii) alternative embeddings&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Youdao, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib59\" title=\"\">2023</a>)</cite> yield comparable results.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nInstruction-tuned LLMs with in-context learning and sufficient capacity provide the most effective prompting-based bias detection, although at the cost of increased inference time. We further show that guardrail-focused models alone are insufficient for holistic social bias identification.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-tuning substantially improves detection.</span> Even small models, such as RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">base</span>, surpass much larger prompting-only models (Llama-3.1-70B, Qwen-2.5-72B) on binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> (above 90 vs. below 89) and multi-label metrics (MR, HL, micro <math alttext=\"F_{1}^{\\mu}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mi>&#956;</mi></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\mu}</annotation></semantics></math> and macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Fine-tuned models also achieve lower FNR and higher reliability in detecting biased content. Inference is far faster: RoBERTa completes batches in seconds, whereas prompting with 70B+ LLMs requires hundreds of seconds.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nFine-tuned encoder models provide the most effective bias detection, outperforming prompting much larger models in both binary detection and identification of the correct bias types. Decoder-based models can perform well but show weaknesses on subtle stereotype datasets. Fine-tuning with reweighted loss improves recall, but may increase false positives, highlighting important tradeoffs that require consideration.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use our evaluation framework to examine <em class=\"ltx_emph ltx_font_italic\">potential disparities</em> in social bias detection across models and setups with respect to targeted demographic axes. While the previous analysis provided a global view of model performance, this section focuses on <em class=\"ltx_emph ltx_font_italic\">systematic differences</em> in how effectively models detect biases. We first analyze disparities for individual demographic axes. Next, owing to our multi-label setup, we evaluate model performances on instances targeting <em class=\"ltx_emph ltx_font_italic\">multiple axes simultaneously</em>, highlighting current capabilities in detecting multi-targeted biases. We provide the comprehensive disparity analysis in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S5.T5\" title=\"Table 5 &#8227; 5 Evaluating detection disparities &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We assess systemic performance disparities using <math alttext=\"\\Delta_{\\text{FNR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p1.m1\" intent=\":literal\"><semantics><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FNR</mtext></msub><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FNR}}</annotation></semantics></math> and <math alttext=\"\\Delta_{\\text{FPR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p1.m2\" intent=\":literal\"><semantics><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FPR</mtext></msub><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FPR}}</annotation></semantics></math>, which measure the maximum performance gaps across the nine social bias demographic target axes in our taxonomy.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nPrompting, even with larger models and few-shot examples, shows substantial per-axis disparities. Fine-tuned models, particularly with reweighted loss, achieve more balanced performance, although notable gaps remain. In additional analyses (in the appendix), we examined <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across the nine demographic axes. We found that certain targets, such as <span class=\"ltx_text ltx_font_typewriter\">NAT</span> and <span class=\"ltx_text ltx_font_typewriter\">PHY</span>, consistently have lower detection accuracy, which contributes to the observed disparities.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our study provides a practical assessment of how LLMs can scale the detection of demographic-targeted social biases in text, supporting compliance with governance and regulatory standards. In this section, we discuss broader implications, key limitations, and directions for future work.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Inclusive stakeholder input.</span>\nAutomation enables large-scale auditing while minimizing human exposure to harmful content&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Steiger et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib49\" title=\"\">2021</a>)</cite>. However, bias detection remains a <em class=\"ltx_emph ltx_font_italic\">socio-technical challenge</em>: social biases are culturally situated, and the detection pipeline must be guided by participatory processes&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Markov et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib36\" title=\"\">2023</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "detection",
+                    "bias",
+                    "pipeline"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Data coverage.</span>\nOur evaluation relies mainly on English datasets reflecting global North contexts, which limits generalizability to other languages and regions. Progress will require multilingual and cross-lingual benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Corazza et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib8\" title=\"\">2020</a>; Huang and Xiong, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib22\" title=\"\">2023</a>; Neplenbroek et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib41\" title=\"\">2024</a>)</cite>, methods adapted for low-resource settings, and attention to language-specific biases that may not align with English-centric taxonomies. Dataset diversity should also ensure sufficient coverage of social biases that may exist in different cultural contexts. Coverage should also extend to more categories, e.g., political beliefs and biases encoded across multiple data modalities.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "adapted"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Methodological opportunities.</span>\nOur findings highlight both promises and existing limitations of scalable automated bias detection. Future work should further explore advanced prompting (e.g., <span class=\"ltx_text ltx_font_italic\">chain-of-thought</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib56\" title=\"\">2022</a>)</cite>) and efficient fine-tuning (e.g., using adapters). To handle multimodal data, exploring effective and scalable solutions remains an interesting open challenge. Moreover, while our results offer initial guidance, balancing the potential gains from training and deploying larger models and the scalability required for auditing massive corpora warrants deeper exploration. Finally, our study shows that detecting infrequent, subtle, and multi-axis biases remains a crucial underexplored direction for future research.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Mitigation through data bias detection.</span>\nBias detection enables more than regulatory reporting; it allows for leveraging the flagged data instances for more responsible model development through targeted data augmentation, filtering, or fine-tuning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gallegos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib16\" title=\"\">2024</a>)</cite>. However, any remedial action <span class=\"ltx_text ltx_font_italic\">must be</span> guided by rigorous ethical considerations and incorporate human oversight.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Label statistics.</span>\nIn Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F2\" title=\"Figure 2 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, we visualize the label statistics in the final curated dataset. The visualizations show label imbalances in the data, highlighting the need for weighted loss for optimization and motivating future work to explore further fairness interventions to ensure equitable bias detection performance. The statistics show that our data contains more biased instances than unbiased ones. Furthermore, we see that most instances target a single demographic axis. However, many instances target two axes. Instances targeting more than two demographic axes are significantly fewer in our dataset. We provide more detailed label co-occurrence statistics in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A1.F1.sf2\" title=\"In Figure 1 &#8227; Appendix A Data characteristics &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">1(b)</span></a>. The figure shows that text instances target specific demographics more often. For instance, texts target <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">GEN</span> more often. Similarly, texts target <span class=\"ltx_text ltx_font_typewriter\">DIS</span>,<span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">PHY</span> relatively less often. Furthermore, we see that <span class=\"ltx_text ltx_font_typewriter\">GEN</span> co-occurs with many other demographic axes, e.g., <span class=\"ltx_text ltx_font_typewriter\">SO</span>, <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, and <span class=\"ltx_text ltx_font_typewriter\">DIS</span>. Note that while <span class=\"ltx_text ltx_font_typewriter\">RAC</span> and <span class=\"ltx_text ltx_font_typewriter\">REL</span> appear together frequently, many of these instances simply target &#8220;Jewish identities.&#8221;</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All LLMs are accessed via API through an MLOps platform. We fix <span class=\"ltx_text ltx_font_typewriter\">temperature</span> to 0 and <span class=\"ltx_text ltx_font_typewriter\">top_p</span> to 1, ensuring deterministic outputs by selecting the model&#8217;s most likely generation while still allowing consideration of the full token space. For in-context learning, we embed the training and development sets using BGE-M3 or BCEmbedding models. At inference time, we compute cosine similarity between the query and development set vectors to retrieve the top-<math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SS1.p1.m1\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> few-shot examples. As a baseline, we also apply a random few-shot selection from the training set, with balanced sampling between biased and unbiased texts. Model predictions are extracted via pattern matching. Responses that cannot be parsed through pattern matching to assign to one of the multiple demographic axes are marked as &#8220;invalid.&#8221; The <span class=\"ltx_text ltx_font_italic\">social bias policy</span> used in the text prompt is shown here.</p>\n\n",
+                "matched_terms": [
+                    "social",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the impact of retrieval-augmented generation (RAG) on few-shot example selection compared to random sampling. Results are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.T6\" title=\"Table 6 &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>. Overall, RAG consistently enhances bias detection performance.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">BGE-M3 exhibits a slight but consistent advantage in binary bias detection, producing marginally higher <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across multiple LLMs. However, the overall differences are minimal. In contrast, for multi-label prediction, BCEmbedding performs slightly better on metrics such as MR for many models. This finding suggests that while both embedding models select examples that yield similar overall outcomes, subtle differences exist. Specifically, BGE-M3-selected examples tend to improve binary bias detection by helping models better distinguish biased from unbiased samples, whereas BCEmbedding-selected examples slightly enhance the detection of specific bias types within biased instances.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, both embedding models deliver strong and comparable performance for in-context learning, with only minor trade-offs. Their results indicate that either embedding model is well-suited for bias detection tasks.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "bias"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our analysis shows that fine-tuned models consistently outperform prompting and transfer learning across all bias classes. The most notable <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> score gains appear in the AGE and SES categories, which are less frequent in the dataset.</p>\n\n",
+                "matched_terms": [
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Among the prompted LLMs, Llama-3.1-70B achieves the highest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across nearly all bias categories, except for <span class=\"ltx_text ltx_font_typewriter\">GEN</span>, where GLM-9B&#8212;despite being much smaller&#8212;slightly outperforms it. Interestingly, Qwen-2.5-72B, though the largest LLM, performs worse in many low-frequency categories such as <span class=\"ltx_text ltx_font_typewriter\">DIS</span>, <span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">SES</span>. It performs comparably to the best prompting models only for <span class=\"ltx_text ltx_font_typewriter\">GEN</span> and <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, which are the most common categories in the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "bias",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For fine-tuned models, encoder-only architectures (e.g., RoBERTa and DeBERTa) generally outperform decoder-only language models, i.e., GPT-2, across most demographic axes. The trends mirror those observed in the prompting setup: models achieve their best performance for <span class=\"ltx_text ltx_font_typewriter\">SES</span>, while <span class=\"ltx_text ltx_font_typewriter\">NAT</span> consistently shows the lowest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores. Reweighted loss often improves detection performance or yields similar results to the default loss. For example, in <span class=\"ltx_text ltx_font_typewriter\">NAT</span>, the axis that suffered from the weakest detection performance, reweighted loss improves performance across all models. However, improvements are not universal. For instance, GPT-2-<span class=\"ltx_text ltx_font_typewriter\">large</span> experiences slight declines in <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> for some demographics such as <span class=\"ltx_text ltx_font_typewriter\">AGE</span> and <span class=\"ltx_text ltx_font_typewriter\">SES</span> when reweighted loss is applied.</p>\n\n",
+                "matched_terms": [
+                    "detection",
+                    "prompting"
+                ]
+            }
+        ]
+    },
+    "A3.F5": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x7.png",
+        "caption": "Figure 5: Per-label F1F_{1} scores for prompting. Models used 10-shot RAG-based in-context using BGE-M3.",
+        "informative_terms_identified": [
+            "models",
+            "ragbased",
+            "incontext",
+            "f1f1",
+            "scores",
+            "perlabel",
+            "prompting",
+            "bgem3",
+            "10shot"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We now analyze model performance across different demographic targets. Specifically, we examine the <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores for all demographic axes in our taxonomy that may be subject to bias. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.F5\" title=\"Figure 5 &#8227; C.2 Ablation study: Embedding model &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> presents results for various prompted models using <em class=\"ltx_emph ltx_font_italic\">10-shot RAG-based in-context learning</em> with BGE-M3, while Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.F6\" title=\"Figure 6 &#8227; C.2 Ablation study: Embedding model &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> compares fine-tuned models and explores the impact of reweighted loss (&#8220;bal&#8221; in the figure) across demographics.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We frame bias detection as a multi-label task and build a detection testbed that supports prompting, in-context learning, and fine-tuning.</p>\n\n",
+                "matched_terms": [
+                    "incontext",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><cite class=\"ltx_cite ltx_citemacro_citet\">Brown et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib4\" title=\"\">2020</a>)</cite> demonstrated that <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> LLMs can effectively perform a variety of tasks through textual prompting in <em class=\"ltx_emph ltx_font_italic\">zero-shot</em> scenarios. Following&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>; Palla et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib42\" title=\"\">2025</a>)</cite>, our evaluation framework employs <em class=\"ltx_emph ltx_font_italic\">policy-based</em> prompting for bias detection. Specifically, the prompt includes a policy detailing the bias detection task and our demographic-based social bias taxonomy. To enhance the bias detection capabilities within this prompting framework, we also assess the benefits of incorporating <em class=\"ltx_emph ltx_font_italic\">few-shot</em> examples for <em class=\"ltx_emph ltx_font_italic\">in-context learning</em>. Specifically, we utilize the retrieval-augmented (RAG) framework&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib5\" title=\"\">2024a</a>)</cite>, where an embedding model identifies the most <em class=\"ltx_emph ltx_font_italic\">relevant</em> in-context examples for each input instance from the training/development set.</p>\n\n",
+                "matched_terms": [
+                    "incontext",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Models.</span> We consider several <span class=\"ltx_text ltx_font_italic\">instruction-tuned</span> models ranging from 8B to 72B parameters, e.g., GLM-4&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(GLM et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib18\" title=\"\">2024</a>)</cite>, Llama-3.1&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Dubey et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib10\" title=\"\">2024</a>)</cite>, and Qwen-2.5&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib58\" title=\"\">2024</a>)</cite>. We also analyze the guardrail model Llama Guard-3&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Inan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib24\" title=\"\">2023</a>)</cite> to explore if such models could directly be applied for general text bias detection. To perform RAG-based in-context sample selection, we use the BGE-M3&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib6\" title=\"\">2024b</a>)</cite> model.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext",
+                    "ragbased",
+                    "bgem3"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our detailed results in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S3.T3\" title=\"Table 3 &#8227; 3.4 Evaluation metrics &#8227; 3 Framework setup &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> show how bias detection with prompting is <em class=\"ltx_emph ltx_font_italic\">highly sensitive to both in-context learning and model capacity</em>.</p>\n\n",
+                "matched_terms": [
+                    "incontext",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">In-context learning substantially improves detection.</span> Across all models, providing few-shot examples consistently boosts binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, lowers FNR, and increases multi-label metrics (MR, HL, <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Gains are significant with as few as five examples, while moving from five to ten shots yields only marginal improvements. However, inference time grows with the number of examples, highlighting the accuracy&#8211;efficiency tradeoff in prompting. Beyond the reported results, we also analyzed alternative in-context setups (in the appendix). We found that (i) RAG-based example selection outperforms random sampling, and (ii) alternative embeddings&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Youdao, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib59\" title=\"\">2023</a>)</cite> yield comparable results.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "ragbased",
+                    "incontext",
+                    "f1f1",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Guardrail models transfer poorly.</span> Llama Guard, fine-tuned for moderation, consistently underperforms instruction-tuned models of similar size (e.g., Llama-3.1-8B), achieving the lowest binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> and highest FNR. While effective at detecting overt hate speech, it fails to capture subtler biases like stereotypes.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Per-dataset analysis.</span>\nFrom Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S4.T4\" title=\"Table 4 &#8227; 4.1 Prompting methods &#8227; 4 Evaluating social bias detection &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, we see the role of scale from the binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p5.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores. The 70B Llama model outperforms smaller variants across most datasets. Llama-Guard shows lower overall binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p5.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, but performs relatively well on hate/toxic content. It specifically achieves the highest score across all models on Toxigen, which is GPT-generated. This finding is consistent with its design as a GPAI guardrail. Multi-label metrics show that even larger models struggle to correctly identify bias types, especially for stereotyped contents, e.g., StereoSet and RedditBias.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nInstruction-tuned LLMs with in-context learning and sufficient capacity provide the most effective prompting-based bias detection, although at the cost of increased inference time. We further show that guardrail-focused models alone are insufficient for holistic social bias identification.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-tuning substantially improves detection.</span> Even small models, such as RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">base</span>, surpass much larger prompting-only models (Llama-3.1-70B, Qwen-2.5-72B) on binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> (above 90 vs. below 89) and multi-label metrics (MR, HL, micro <math alttext=\"F_{1}^{\\mu}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mi>&#956;</mi></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\mu}</annotation></semantics></math> and macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Fine-tuned models also achieve lower FNR and higher reliability in detecting biased content. Inference is far faster: RoBERTa completes batches in seconds, whereas prompting with 70B+ LLMs requires hundreds of seconds.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Architecture influences performance.</span> Encoder models (RoBERTa, DeBERTa) consistently outperform decoder models (GPT-2), irrespective of scale. GPT-2-<span class=\"ltx_text ltx_font_typewriter\">XL</span> underperforms on binary and multi-label detection. In contrast, DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span> and RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">large</span> achieve higher detection scores. Inference times also reflect architectural complexity: decoder models remain faster, whereas DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span> is particularly slow due to disentangled attention&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(He et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib21\" title=\"\">2020</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nFine-tuned encoder models provide the most effective bias detection, outperforming prompting much larger models in both binary detection and identification of the correct bias types. Decoder-based models can perform well but show weaknesses on subtle stereotype datasets. Fine-tuning with reweighted loss improves recall, but may increase false positives, highlighting important tradeoffs that require consideration.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Prompting shows large disparities.</span> In zero-shot settings, models exhibit significant disparities. For instance, Llama-3.1-8B and GLM-4-9B exhibit <math alttext=\"\\Delta_{\\text{FNR}}\\approx 0.6\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m1\" intent=\":literal\"><semantics><mrow><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FNR</mtext></msub><mo>&#8776;</mo><mn>0.6</mn></mrow><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FNR}}\\approx 0.6</annotation></semantics></math>, <math alttext=\"\\Delta_{\\text{FPR}}\\approx 0.42\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m2\" intent=\":literal\"><semantics><mrow><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FPR</mtext></msub><mo>&#8776;</mo><mn>0.42</mn></mrow><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FPR}}\\approx 0.42</annotation></semantics></math>. Few-shot prompting reduces disparities (e.g., for Llama-3.1-8B, <math alttext=\"\\Delta_{\\text{FNR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m3\" intent=\":literal\"><semantics><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FNR</mtext></msub><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FNR}}</annotation></semantics></math> drops to <math alttext=\"\\approx 0.26\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p2.m4\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8776;</mo><mn>0.26</mn></mrow><annotation encoding=\"application/x-tex\">\\approx 0.26</annotation></semantics></math>), but performance remains uneven compared to fine-tuned models. Scaling improves parity: Llama-3.1-70B shows lower disparities than its 8B counterpart, and Qwen-2.5-72B achieves the strongest parity among prompting models, especially with few-shot examples.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nPrompting, even with larger models and few-shot examples, shows substantial per-axis disparities. Fine-tuned models, particularly with reweighted loss, achieve more balanced performance, although notable gaps remain. In additional analyses (in the appendix), we examined <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across the nine demographic axes. We found that certain targets, such as <span class=\"ltx_text ltx_font_typewriter\">NAT</span> and <span class=\"ltx_text ltx_font_typewriter\">PHY</span>, consistently have lower detection accuracy, which contributes to the observed disparities.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "prompting",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Prompting improves with scale and few-shot examples.</span> Few-shot prompting substantially narrows multi-axis gaps. For Llama-3.1-70B, <math alttext=\"\\mathcal{G}^{\\{\\text{GEN,SO}\\}}_{\\text{FNR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p2.m1\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#119970;</mi><mtext>FNR</mtext><mrow><mo stretchy=\"false\">{</mo><mtext>GEN,SO</mtext><mo stretchy=\"false\">}</mo></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{G}^{\\{\\text{GEN,SO}\\}}_{\\text{FNR}}</annotation></semantics></math> drops from 0.736 (zero-shot) to 0.164 (10-shot), and <math alttext=\"\\mathcal{G}^{\\{\\text{GEN,RAC}\\}}_{\\text{FNR}}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi class=\"ltx_font_mathcaligraphic\">&#119970;</mi><mtext>FNR</mtext><mrow><mo stretchy=\"false\">{</mo><mtext>GEN,RAC</mtext><mo stretchy=\"false\">}</mo></mrow></msubsup><annotation encoding=\"application/x-tex\">\\mathcal{G}^{\\{\\text{GEN,RAC}\\}}_{\\text{FNR}}</annotation></semantics></math> from 0.262 to 0.088. Larger models benefit more from in-context learning: Llama-3.1-70B outperforms Llama-3.1-8B, and disparities are generally higher for {<span class=\"ltx_text ltx_font_typewriter\">GEN</span>,<span class=\"ltx_text ltx_font_typewriter\">SO</span>} than {<span class=\"ltx_text ltx_font_typewriter\">GEN</span>,<span class=\"ltx_text ltx_font_typewriter\">RAC</span>}.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext",
+                    "10shot",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Methodological opportunities.</span>\nOur findings highlight both promises and existing limitations of scalable automated bias detection. Future work should further explore advanced prompting (e.g., <span class=\"ltx_text ltx_font_italic\">chain-of-thought</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib56\" title=\"\">2022</a>)</cite>) and efficient fine-tuning (e.g., using adapters). To handle multimodal data, exploring effective and scalable solutions remains an interesting open challenge. Moreover, while our results offer initial guidance, balancing the potential gains from training and deploying larger models and the scalability required for auditing massive corpora warrants deeper exploration. Finally, our study shows that detecting infrequent, subtle, and multi-axis biases remains a crucial underexplored direction for future research.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All LLMs are accessed via API through an MLOps platform. We fix <span class=\"ltx_text ltx_font_typewriter\">temperature</span> to 0 and <span class=\"ltx_text ltx_font_typewriter\">top_p</span> to 1, ensuring deterministic outputs by selecting the model&#8217;s most likely generation while still allowing consideration of the full token space. For in-context learning, we embed the training and development sets using BGE-M3 or BCEmbedding models. At inference time, we compute cosine similarity between the query and development set vectors to retrieve the top-<math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"A2.SS1.p1.m1\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> few-shot examples. As a baseline, we also apply a random few-shot selection from the training set, with balanced sampling between biased and unbiased texts. Model predictions are extracted via pattern matching. Responses that cannot be parsed through pattern matching to assign to one of the multiple demographic axes are marked as &#8220;invalid.&#8221; The <span class=\"ltx_text ltx_font_italic\">social bias policy</span> used in the text prompt is shown here.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext",
+                    "bgem3"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In binary classification, RAG achieves higher <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across all models. Improvements in detection metrics are consistent across model sizes, demonstrating the benefit of providing LLMs with <em class=\"ltx_emph ltx_font_italic\">semantically similar examples</em> during in-context learning. RAG generally reduces False Negative Rates (FNR), though it occasionally causes slight increases in False Positive Rates (FPR), as observed with Llama Guard-3-8B and GLM-4-9B. This tradeoff is typically favorable, since reducing FNR is crucial for minimizing missed detections. Notably, while adding more examples under RAG yields only modest additional gains, increasing the number of randomly selected examples often leads to degraded performance.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We next examine how the choice of embedding model affects in-context learning performance for prompting, comparing BGE-M3&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib6\" title=\"\">2024b</a>)</cite> and BCEmbedding&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Youdao, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib59\" title=\"\">2023</a>)</cite> for selecting in-context examples. The results are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.T7\" title=\"Table 7 &#8227; C.1 Ablation study: in-context learning &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "incontext",
+                    "prompting",
+                    "bgem3"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">BGE-M3 exhibits a slight but consistent advantage in binary bias detection, producing marginally higher <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across multiple LLMs. However, the overall differences are minimal. In contrast, for multi-label prediction, BCEmbedding performs slightly better on metrics such as MR for many models. This finding suggests that while both embedding models select examples that yield similar overall outcomes, subtle differences exist. Specifically, BGE-M3-selected examples tend to improve binary bias detection by helping models better distinguish biased from unbiased samples, whereas BCEmbedding-selected examples slightly enhance the detection of specific bias types within biased instances.</p>\n\n",
+                "matched_terms": [
+                    "bgem3",
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, both embedding models deliver strong and comparable performance for in-context learning, with only minor trade-offs. Their results indicate that either embedding model is well-suited for bias detection tasks.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "incontext"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our analysis shows that fine-tuned models consistently outperform prompting and transfer learning across all bias classes. The most notable <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> score gains appear in the AGE and SES categories, which are less frequent in the dataset.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "prompting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Among the prompted LLMs, Llama-3.1-70B achieves the highest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across nearly all bias categories, except for <span class=\"ltx_text ltx_font_typewriter\">GEN</span>, where GLM-9B&#8212;despite being much smaller&#8212;slightly outperforms it. Interestingly, Qwen-2.5-72B, though the largest LLM, performs worse in many low-frequency categories such as <span class=\"ltx_text ltx_font_typewriter\">DIS</span>, <span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">SES</span>. It performs comparably to the best prompting models only for <span class=\"ltx_text ltx_font_typewriter\">GEN</span> and <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, which are the most common categories in the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "prompting",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For fine-tuned models, encoder-only architectures (e.g., RoBERTa and DeBERTa) generally outperform decoder-only language models, i.e., GPT-2, across most demographic axes. The trends mirror those observed in the prompting setup: models achieve their best performance for <span class=\"ltx_text ltx_font_typewriter\">SES</span>, while <span class=\"ltx_text ltx_font_typewriter\">NAT</span> consistently shows the lowest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores. Reweighted loss often improves detection performance or yields similar results to the default loss. For example, in <span class=\"ltx_text ltx_font_typewriter\">NAT</span>, the axis that suffered from the weakest detection performance, reweighted loss improves performance across all models. However, improvements are not universal. For instance, GPT-2-<span class=\"ltx_text ltx_font_typewriter\">large</span> experiences slight declines in <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> for some demographics such as <span class=\"ltx_text ltx_font_typewriter\">AGE</span> and <span class=\"ltx_text ltx_font_typewriter\">SES</span> when reweighted loss is applied.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "prompting",
+                    "scores"
+                ]
+            }
+        ]
+    },
+    "A3.F6": {
+        "source_file": "Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study",
+        "image_url": "https://arxiv.org/html/2510.04641v2/x8.png",
+        "caption": "Figure 6: Per-label F1F_{1} scores for fine-tuning different models using default loss or reweighted (bal) loss.",
+        "informative_terms_identified": [
+            "models",
+            "reweighted",
+            "bal",
+            "f1f1",
+            "scores",
+            "finetuning",
+            "perlabel",
+            "default",
+            "loss"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We now analyze model performance across different demographic targets. Specifically, we examine the <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p1.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores for all demographic axes in our taxonomy that may be subject to bias. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.F5\" title=\"Figure 5 &#8227; C.2 Ablation study: Embedding model &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> presents results for various prompted models using <em class=\"ltx_emph ltx_font_italic\">10-shot RAG-based in-context learning</em> with BGE-M3, while Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#A3.F6\" title=\"Figure 6 &#8227; C.2 Ablation study: Embedding model &#8227; Appendix C Additional evaluations &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> compares fine-tuned models and explores the impact of reweighted loss (&#8220;bal&#8221; in the figure) across demographics.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Large-scale web-scraped text corpora used to train general-purpose AI (GPAI) models often contain harmful demographic-targeted social biases, creating a regulatory need for data auditing and developing scalable bias-detection methods. Although prior work has investigated biases in text datasets and related detection methods, these studies remain narrow in scope. They typically focus on a single content type (e.g., hate speech), cover limited demographic axes, overlook biases affecting multiple demographics simultaneously, and analyze limited techniques. Consequently, practitioners lack a holistic understanding of the strengths and limitations of recent large language models (LLMs) for automated and scalable bias detection in datasets. In this study, we present a comprehensive evaluation framework aimed at English texts to assess the ability of LLMs in detecting demographic-targeted social biases. To align with regulatory requirements, we frame bias detection as a multi-label task using a demographic-focused taxonomy. We then conduct a systematic evaluation with models across scales and techniques, including prompting, in-context learning, and fine-tuning. Using twelve datasets spanning diverse content types and demographics, our study demonstrates the promise of fine-tuned smaller models for scalable detection. However, our analyses also expose persistent gaps across demographic axes and multi-demographic targeted biases, underscoring the need for more effective and scalable auditing frameworks.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "models"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also evaluate the effectiveness of aligning LLMs to the bias detection task through <em class=\"ltx_emph ltx_font_italic\">fine-tuning</em>. The task is framed as <em class=\"ltx_emph ltx_font_italic\">multi-label prediction</em> over the nine demographic axes. We solve it through sequence classification by attaching nine classifier nodes to a pre-trained LLM: to the [CLS] token for encoder-only models and to the final output token for decoder-only models.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "models"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Hamming Loss</span>: analyzing the prediction&#8217;s partial coverage of label sets, <math alttext=\"\\operatorname{HL}=\\tfrac{1}{9N}\\sum_{i=1}^{N}\\sum_{m=1}^{9}\\mathbb{I}[Y_{i}^{m}\\neq\\hat{Y}_{i}^{m}]\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I2.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mi>HL</mi><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>9</mn><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>N</mi></mrow></mfrac><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><msubsup><mo rspace=\"0em\">&#8721;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><mrow><msubsup><mo>&#8721;</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mn>9</mn></msubsup><mrow><mi>&#120128;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">[</mo><mrow><msubsup><mi>Y</mi><mi>i</mi><mi>m</mi></msubsup><mo>&#8800;</mo><msubsup><mover accent=\"true\"><mi>Y</mi><mo>^</mo></mover><mi>i</mi><mi>m</mi></msubsup></mrow><mo stretchy=\"false\">]</mo></mrow></mrow></mrow></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\operatorname{HL}=\\tfrac{1}{9N}\\sum_{i=1}^{N}\\sum_{m=1}^{9}\\mathbb{I}[Y_{i}^{m}\\neq\\hat{Y}_{i}^{m}]</annotation></semantics></math>, where lower scores are better.</p>\n\n",
+                "matched_terms": [
+                    "loss",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">In-context learning substantially improves detection.</span> Across all models, providing few-shot examples consistently boosts binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, lowers FNR, and increases multi-label metrics (MR, HL, <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Gains are significant with as few as five examples, while moving from five to ten shots yields only marginal improvements. However, inference time grows with the number of examples, highlighting the accuracy&#8211;efficiency tradeoff in prompting. Beyond the reported results, we also analyzed alternative in-context setups (in the appendix). We found that (i) RAG-based example selection outperforms random sampling, and (ii) alternative embeddings&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Youdao, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib59\" title=\"\">2023</a>)</cite> yield comparable results.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Guardrail models transfer poorly.</span> Llama Guard, fine-tuned for moderation, consistently underperforms instruction-tuned models of similar size (e.g., Llama-3.1-8B), achieving the lowest binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> and highest FNR. While effective at detecting overt hate speech, it fails to capture subtler biases like stereotypes.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Per-dataset analysis.</span>\nFrom Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#S4.T4\" title=\"Table 4 &#8227; 4.1 Prompting methods &#8227; 4 Evaluating social bias detection &#8227; Evaluating LLMs for Demographic-Targeted Social Bias Detection: A Comprehensive Benchmark Study\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, we see the role of scale from the binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p5.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores. The 70B Llama model outperforms smaller variants across most datasets. Llama-Guard shows lower overall binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p5.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math>, but performs relatively well on hate/toxic content. It specifically achieves the highest score across all models on Toxigen, which is GPT-generated. This finding is consistent with its design as a GPAI guardrail. Multi-label metrics show that even larger models struggle to correctly identify bias types, especially for stereotyped contents, e.g., StereoSet and RedditBias.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-tuning substantially improves detection.</span> Even small models, such as RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">base</span>, surpass much larger prompting-only models (Llama-3.1-70B, Qwen-2.5-72B) on binary <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> (above 90 vs. below 89) and multi-label metrics (MR, HL, micro <math alttext=\"F_{1}^{\\mu}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mi>&#956;</mi></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\mu}</annotation></semantics></math> and macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p2.m3\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>). Fine-tuned models also achieve lower FNR and higher reliability in detecting biased content. Inference is far faster: RoBERTa completes batches in seconds, whereas prompting with 70B+ LLMs requires hundreds of seconds.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "models",
+                    "f1f1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Architecture influences performance.</span> Encoder models (RoBERTa, DeBERTa) consistently outperform decoder models (GPT-2), irrespective of scale. GPT-2-<span class=\"ltx_text ltx_font_typewriter\">XL</span> underperforms on binary and multi-label detection. In contrast, DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span> and RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">large</span> achieve higher detection scores. Inference times also reflect architectural complexity: decoder models remain faster, whereas DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span> is particularly slow due to disentangled attention&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(He et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib21\" title=\"\">2020</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Loss reweighting has tradeoffs.</span> Reweighted loss consistently improves binary FNR and macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p5.m1\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math> (e.g., DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span>, RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">large</span>, GPT-2-<span class=\"ltx_text ltx_font_typewriter\">XL</span>) by capturing subtle biases, but can raise FPR, particularly in decoder models. Effects are uneven: DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v3-large</span> shows reduced MR and macro <math alttext=\"F_{1}^{\\text{M}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p5.m2\" intent=\":literal\"><semantics><msubsup><mi>F</mi><mn>1</mn><mtext>M</mtext></msubsup><annotation encoding=\"application/x-tex\">F_{1}^{\\text{M}}</annotation></semantics></math>, suggesting reweighting may destabilize multi-label detection for some scenarios.</p>\n\n",
+                "matched_terms": [
+                    "reweighted",
+                    "models",
+                    "loss"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nFine-tuned encoder models provide the most effective bias detection, outperforming prompting much larger models in both binary detection and identification of the correct bias types. Decoder-based models can perform well but show weaknesses on subtle stereotype datasets. Fine-tuning with reweighted loss improves recall, but may increase false positives, highlighting important tradeoffs that require consideration.</p>\n\n",
+                "matched_terms": [
+                    "reweighted",
+                    "models",
+                    "loss",
+                    "finetuning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Fine-tuning yields markedly lower disparities.</span> Encoder models such as RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">large</span> and DeBERTa-<span class=\"ltx_text ltx_font_typewriter\">v2-XL</span> reach <math alttext=\"\\Delta_{\\text{FNR}}\\approx 0.2\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p3.m1\" intent=\":literal\"><semantics><mrow><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FNR</mtext></msub><mo>&#8776;</mo><mn>0.2</mn></mrow><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FNR}}\\approx 0.2</annotation></semantics></math> and <math alttext=\"\\Delta_{\\text{FPR}}\\approx 0.03\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p3.m2\" intent=\":literal\"><semantics><mrow><msub><mi mathvariant=\"normal\">&#916;</mi><mtext>FPR</mtext></msub><mo>&#8776;</mo><mn>0.03</mn></mrow><annotation encoding=\"application/x-tex\">\\Delta_{\\text{FPR}}\\approx 0.03</annotation></semantics></math>, particularly with reweighted loss. Reweighting reduces FNR gaps but can slightly increase FPR gaps, indicating a tradeoff. Model architecture also matters: encoder models achieve far lower disparities than decoder-only GPT-2, and scaling further improves parity (e.g., RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">large</span> outperforms RoBERTa-<span class=\"ltx_text ltx_font_typewriter\">base</span>).</p>\n\n",
+                "matched_terms": [
+                    "reweighted",
+                    "models",
+                    "loss",
+                    "finetuning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Takeaway.</span>\nPrompting, even with larger models and few-shot examples, shows substantial per-axis disparities. Fine-tuned models, particularly with reweighted loss, achieve more balanced performance, although notable gaps remain. In additional analyses (in the appendix), we examined <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across the nine demographic axes. We found that certain targets, such as <span class=\"ltx_text ltx_font_typewriter\">NAT</span> and <span class=\"ltx_text ltx_font_typewriter\">PHY</span>, consistently have lower detection accuracy, which contributes to the observed disparities.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "reweighted",
+                    "f1f1",
+                    "scores",
+                    "loss"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Methodological opportunities.</span>\nOur findings highlight both promises and existing limitations of scalable automated bias detection. Future work should further explore advanced prompting (e.g., <span class=\"ltx_text ltx_font_italic\">chain-of-thought</span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.04641v2#bib.bib56\" title=\"\">2022</a>)</cite>) and efficient fine-tuning (e.g., using adapters). To handle multimodal data, exploring effective and scalable solutions remains an interesting open challenge. Moreover, while our results offer initial guidance, balancing the potential gains from training and deploying larger models and the scalability required for auditing massive corpora warrants deeper exploration. Finally, our study shows that detecting infrequent, subtle, and multi-axis biases remains a crucial underexplored direction for future research.</p>\n\n",
+                "matched_terms": [
+                    "finetuning",
+                    "models"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Optimization uses AdamW with linear learning rate decay, weight decay of 0.01, and gradient clipping at 1.0. To address class imbalance, we experiment with reweighted binary cross-entropy loss, where weights are derived from label frequencies in the training set. Models are trained for four epochs without reweighting and six epochs with reweighting. The effective batch size is fixed at 32, with gradient accumulation applied for larger models. Learning rates are <span class=\"ltx_text ltx_font_italic\">tuned by monitoring validation loss</span>. For each model, we use the following learning rates for optimization:</p>\n\n",
+                "matched_terms": [
+                    "reweighted",
+                    "models",
+                    "loss"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Learning rates are not changed across loss functions (default or reweighted). Training is performed in <span class=\"ltx_text ltx_font_typewriter\">float32</span> precision, except GPT-2-<span class=\"ltx_text ltx_font_typewriter\">XL</span>, which uses <span class=\"ltx_text ltx_font_typewriter\">bfloat16</span>. All experiments run on a single GPU with 32GB VRAM and 128GB host memory.</p>\n\n",
+                "matched_terms": [
+                    "reweighted",
+                    "default",
+                    "loss"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In binary classification, RAG achieves higher <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS1.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across all models. Improvements in detection metrics are consistent across model sizes, demonstrating the benefit of providing LLMs with <em class=\"ltx_emph ltx_font_italic\">semantically similar examples</em> during in-context learning. RAG generally reduces False Negative Rates (FNR), though it occasionally causes slight increases in False Positive Rates (FPR), as observed with Llama Guard-3-8B and GLM-4-9B. This tradeoff is typically favorable, since reducing FNR is crucial for minimizing missed detections. Notably, while adding more examples under RAG yields only modest additional gains, increasing the number of randomly selected examples often leads to degraded performance.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">BGE-M3 exhibits a slight but consistent advantage in binary bias detection, producing marginally higher <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS2.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across multiple LLMs. However, the overall differences are minimal. In contrast, for multi-label prediction, BCEmbedding performs slightly better on metrics such as MR for many models. This finding suggests that while both embedding models select examples that yield similar overall outcomes, subtle differences exist. Specifically, BGE-M3-selected examples tend to improve binary bias detection by helping models better distinguish biased from unbiased samples, whereas BCEmbedding-selected examples slightly enhance the detection of specific bias types within biased instances.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our analysis shows that fine-tuned models consistently outperform prompting and transfer learning across all bias classes. The most notable <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p2.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> score gains appear in the AGE and SES categories, which are less frequent in the dataset.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Among the prompted LLMs, Llama-3.1-70B achieves the highest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p3.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores across nearly all bias categories, except for <span class=\"ltx_text ltx_font_typewriter\">GEN</span>, where GLM-9B&#8212;despite being much smaller&#8212;slightly outperforms it. Interestingly, Qwen-2.5-72B, though the largest LLM, performs worse in many low-frequency categories such as <span class=\"ltx_text ltx_font_typewriter\">DIS</span>, <span class=\"ltx_text ltx_font_typewriter\">AGE</span>, and <span class=\"ltx_text ltx_font_typewriter\">SES</span>. It performs comparably to the best prompting models only for <span class=\"ltx_text ltx_font_typewriter\">GEN</span> and <span class=\"ltx_text ltx_font_typewriter\">RAC</span>, which are the most common categories in the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "f1f1",
+                    "scores"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For fine-tuned models, encoder-only architectures (e.g., RoBERTa and DeBERTa) generally outperform decoder-only language models, i.e., GPT-2, across most demographic axes. The trends mirror those observed in the prompting setup: models achieve their best performance for <span class=\"ltx_text ltx_font_typewriter\">SES</span>, while <span class=\"ltx_text ltx_font_typewriter\">NAT</span> consistently shows the lowest <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m1\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> scores. Reweighted loss often improves detection performance or yields similar results to the default loss. For example, in <span class=\"ltx_text ltx_font_typewriter\">NAT</span>, the axis that suffered from the weakest detection performance, reweighted loss improves performance across all models. However, improvements are not universal. For instance, GPT-2-<span class=\"ltx_text ltx_font_typewriter\">large</span> experiences slight declines in <math alttext=\"F_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"A3.SS3.p4.m2\" intent=\":literal\"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">F_{1}</annotation></semantics></math> for some demographics such as <span class=\"ltx_text ltx_font_typewriter\">AGE</span> and <span class=\"ltx_text ltx_font_typewriter\">SES</span> when reweighted loss is applied.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "reweighted",
+                    "f1f1",
+                    "scores",
+                    "default",
+                    "loss"
+                ]
+            }
+        ]
+    }
+}

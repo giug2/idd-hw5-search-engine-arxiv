@@ -1,0 +1,284 @@
+{
+    "S4.F1": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x1.png",
+        "caption": "(a) MLM-based stages",
+        "informative_terms_identified": [
+            "mlmbased",
+            "stages"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S4.F1\" title=\"Figure 1 &#8227; 4 SylCipher: Syllable-level UASR via information-constrained masked language modeling &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, SylCipher is an encoder-only language model with a <em class=\"ltx_emph ltx_font_italic\">shared encoder</em> for speech and text modalities. To project both modalities into a joint embedding space, we use two uni-modal <em class=\"ltx_emph ltx_font_italic\">pre-nets</em>: <math alttext=\"e_{\\tilde{X}}:{\\mathcal{X}}^{T}\\mapsto{\\mathbb{R}}^{L\\times d}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>e</mi><mover accent=\"true\"><mi>X</mi><mo>~</mo></mover></msub><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>T</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi>&#8477;</mi><mrow><mi>L</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>d</mi></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">e_{\\tilde{X}}:{\\mathcal{X}}^{T}\\mapsto{\\mathbb{R}}^{L\\times d}</annotation></semantics></math> for speech and <math alttext=\"e_{Y}:{\\mathcal{Y}}^{L}\\mapsto{\\mathbb{R}}^{L\\times d}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>e</mi><mi>Y</mi></msub><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mi>L</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi>&#8477;</mi><mrow><mi>L</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>d</mi></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">e_{Y}:{\\mathcal{Y}}^{L}\\mapsto{\\mathbb{R}}^{L\\times d}</annotation></semantics></math> for text, each implemented as a linear embedding layer. Before the speech pre-net, a <em class=\"ltx_emph ltx_font_italic\">speech syllabifier</em> converts the frame-level feature vectors into a syllable-level sequence. It consists of: (i) a <em class=\"ltx_emph ltx_font_italic\">differentiable soft-pooler</em> <math alttext=\"m:{\\mathcal{X}}^{T}\\mapsto{\\mathcal{X}}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>m</mi><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>T</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>L</mi></msup></mrow></mrow><annotation encoding=\"application/x-tex\">m:{\\mathcal{X}}^{T}\\mapsto{\\mathcal{X}}^{L}</annotation></semantics></math> that aligns speech with text on the syllable level (ii) a tokenizer <math alttext=\"c:{\\mathcal{X}}^{L}\\mapsto\\tilde{{\\mathcal{X}}}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>c</mi><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>L</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mover accent=\"true\"><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mo>~</mo></mover><mi>L</mi></msup></mrow></mrow><annotation encoding=\"application/x-tex\">c:{\\mathcal{X}}^{L}\\mapsto\\tilde{{\\mathcal{X}}}^{L}</annotation></semantics></math> to discretizes speech into syllable-like units. Thus the speech pre-net is</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Iterative training helps.</span> Stage-wise training shows progressive improvements: JE2E reduces CER modestly, while PUSM yields the largest gains (44% and 23% relative reductions over JE2E in matched/unmatched settings). Combining MLM-based stages with PUSM outperforms PUSM-only training by 33-34% relative, as MLM provides necessary initialization for PUSM to converge. Indeed, PUSM alone fails when SylCipher is randomly initialized, likely due to transformer training instability. Lastly, using unsupervised Sylber boundaries performs nearly as well as forced alignment, suggesting robustness to segmentation noise.\nSelf-training consistently improves performance, especially for stronger models. For SylCipher, CER is further reduced by 20% relative.</p>\n\n",
+                "matched_terms": [
+                    "mlmbased",
+                    "stages"
+                ]
+            }
+        ]
+    },
+    "S4.F1.sf2": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x2.png",
+        "caption": "(b) PUSM stage",
+        "informative_terms_identified": [
+            "stage",
+            "pusm"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Because the PUSM stage requires different batch sizes, we adopt an <em class=\"ltx_emph ltx_font_italic\">iterative training schedule</em> rather than fully end-to-end optimization. Specifically:</p>\n\n",
+                "matched_terms": [
+                    "pusm",
+                    "stage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">PUSM stage</span>: disable <math alttext=\"\\lambda_{\\mathrm{wMLM}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I1.i3.p1.m1\" intent=\":literal\"><semantics><msub><mi>&#955;</mi><mi>wMLM</mi></msub><annotation encoding=\"application/x-tex\">\\lambda_{\\mathrm{wMLM}}</annotation></semantics></math>, enable <math alttext=\"\\lambda_{\\mathrm{PUSM}}&gt;0\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I1.i3.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>&#955;</mi><mi>PUSM</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\lambda_{\\mathrm{PUSM}}&gt;0</annotation></semantics></math> for explicit distribution matching.</p>\n\n",
+                "matched_terms": [
+                    "pusm",
+                    "stage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, the ASR system cascades the speech syllabifier, speech pre-net and the text post-net as done in the PUSM stage:</p>\n\n",
+                "matched_terms": [
+                    "pusm",
+                    "stage"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x3.png",
+        "caption": "Figure 2: Speech syllabifier",
+        "informative_terms_identified": [
+            "syllabifier",
+            "speech"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">where <math alttext=\"f\\circ g(x):=f(g(x))\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><mrow><mi>f</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#8728;</mo><mi>g</mi></mrow><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>f</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mrow><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo stretchy=\"false\">)</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">f\\circ g(x):=f(g(x))</annotation></semantics></math> for any functions <math alttext=\"f,g\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m6\" intent=\":literal\"><semantics><mrow><mi>f</mi><mo>,</mo><mi>g</mi></mrow><annotation encoding=\"application/x-tex\">f,g</annotation></semantics></math>, and <math alttext=\"\\tilde{X}:=c\\circ m(X)\\in\\tilde{{\\mathcal{X}}}^{L}.\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m7\" intent=\":literal\"><semantics><mrow><mrow><mover accent=\"true\"><mi>X</mi><mo>~</mo></mover><mo>:=</mo><mrow><mrow><mi>c</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#8728;</mo><mi>m</mi></mrow><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>X</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>&#8712;</mo><msup><mover accent=\"true\"><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mo>~</mo></mover><mi>L</mi></msup></mrow><mo lspace=\"0em\">.</mo></mrow><annotation encoding=\"application/x-tex\">\\tilde{X}:=c\\circ m(X)\\in\\tilde{{\\mathcal{X}}}^{L}.</annotation></semantics></math>\nThe soft-pooler first estimates the boundary probabilities <math alttext=\"b(X)\\in[0,1]^{T}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m8\" intent=\":literal\"><semantics><mrow><mrow><mi>b</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>X</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>&#8712;</mo><msup><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><mi>T</mi></msup></mrow><annotation encoding=\"application/x-tex\">b(X)\\in[0,1]^{T}</annotation></semantics></math> by learning from an unsupervised syllable detector Sylber&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Cho et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib14\" title=\"\">2025</a>)</cite>, then constructs a pooling mask <math alttext=\"a(X)\\in[0,1]^{L\\times T}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m9\" intent=\":literal\"><semantics><mrow><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>X</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>&#8712;</mo><msup><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><mrow><mi>L</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>T</mi></mrow></msup></mrow><annotation encoding=\"application/x-tex\">a(X)\\in[0,1]^{L\\times T}</annotation></semantics></math>, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S4.F2\" title=\"Figure 2 &#8227; 4.1 Training: UASR via information compression &#8227; 4 SylCipher: Syllable-level UASR via information-constrained masked language modeling &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S4.F1\" title=\"Figure 1 &#8227; 4 SylCipher: Syllable-level UASR via information-constrained masked language modeling &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, SylCipher is an encoder-only language model with a <em class=\"ltx_emph ltx_font_italic\">shared encoder</em> for speech and text modalities. To project both modalities into a joint embedding space, we use two uni-modal <em class=\"ltx_emph ltx_font_italic\">pre-nets</em>: <math alttext=\"e_{\\tilde{X}}:{\\mathcal{X}}^{T}\\mapsto{\\mathbb{R}}^{L\\times d}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>e</mi><mover accent=\"true\"><mi>X</mi><mo>~</mo></mover></msub><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>T</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi>&#8477;</mi><mrow><mi>L</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>d</mi></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">e_{\\tilde{X}}:{\\mathcal{X}}^{T}\\mapsto{\\mathbb{R}}^{L\\times d}</annotation></semantics></math> for speech and <math alttext=\"e_{Y}:{\\mathcal{Y}}^{L}\\mapsto{\\mathbb{R}}^{L\\times d}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>e</mi><mi>Y</mi></msub><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119988;</mi><mi>L</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi>&#8477;</mi><mrow><mi>L</mi><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mi>d</mi></mrow></msup></mrow></mrow><annotation encoding=\"application/x-tex\">e_{Y}:{\\mathcal{Y}}^{L}\\mapsto{\\mathbb{R}}^{L\\times d}</annotation></semantics></math> for text, each implemented as a linear embedding layer. Before the speech pre-net, a <em class=\"ltx_emph ltx_font_italic\">speech syllabifier</em> converts the frame-level feature vectors into a syllable-level sequence. It consists of: (i) a <em class=\"ltx_emph ltx_font_italic\">differentiable soft-pooler</em> <math alttext=\"m:{\\mathcal{X}}^{T}\\mapsto{\\mathcal{X}}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>m</mi><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>T</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>L</mi></msup></mrow></mrow><annotation encoding=\"application/x-tex\">m:{\\mathcal{X}}^{T}\\mapsto{\\mathcal{X}}^{L}</annotation></semantics></math> that aligns speech with text on the syllable level (ii) a tokenizer <math alttext=\"c:{\\mathcal{X}}^{L}\\mapsto\\tilde{{\\mathcal{X}}}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m4\" intent=\":literal\"><semantics><mrow><mi>c</mi><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mrow><msup><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mi>L</mi></msup><mo stretchy=\"false\">&#8614;</mo><msup><mover accent=\"true\"><mi class=\"ltx_font_mathcaligraphic\">&#119987;</mi><mo>~</mo></mover><mi>L</mi></msup></mrow></mrow><annotation encoding=\"application/x-tex\">c:{\\mathcal{X}}^{L}\\mapsto\\tilde{{\\mathcal{X}}}^{L}</annotation></semantics></math> to discretizes speech into syllable-like units. Thus the speech pre-net is</p>\n\n",
+                "matched_terms": [
+                    "syllabifier",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, the ASR system cascades the speech syllabifier, speech pre-net and the text post-net as done in the PUSM stage:</p>\n\n",
+                "matched_terms": [
+                    "syllabifier",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For English experiments, SylCipher uses a HuBERT-large<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>https://dl.fbaipublicfiles.com/hubert/hubert_large_ll60k.pt</span></span></span> model pretrained on LibriLight&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kahn et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib24\" title=\"\">2020</a>)</cite> as the SSL encoder in the speech syllabifier, and initialize the soft-pooler with unsupervised boundary labels from Sylber&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Cho et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib14\" title=\"\">2025</a>)</cite>. For Mandarin, we instead use XEUS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span>https://huggingface.co/espnet/xeus/blob/main/model/xeus_checkpoint_new.pth</span></span></span>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib12\" title=\"\">2024</a>)</cite>, which is pretrained on Mandarin (among other languages) and significantly outperforms HuBERT. We also finetune Sylber on AISHELL-3 to ensure stable convergence. For the pre-nets, shared encoder, post-nets, MLM parameters, and most of the optimizer hyperparameters, we follow JSTTI&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ni et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib34\" title=\"\">2025</a>)</cite>, as modifying them did not yield consistent improvements.</p>\n\n",
+                "matched_terms": [
+                    "syllabifier",
+                    "speech"
+                ]
+            }
+        ]
+    },
+    "S5.F3": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x4.png",
+        "caption": "(a) Effect of syllabifier type",
+        "informative_terms_identified": [
+            "effect",
+            "syllabifier",
+            "type"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We conduct ablation studies on various components and design choices in SylCipher in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3\" title=\"Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SylCipher is robust to syllabifiers.</span> We first test alternative syllabifiers beyond Pyphen, including the phoneme-based Syllabify<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/kylebgorman/syllabify</span></span></span> and a character-based approach using byte-pair encoding (BPE) tokenization&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Sennrich et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib39\" title=\"\">2016</a>)</cite>. The latter is attractive because it is language-agnostic and integrated easily with spoken language models. For the BPE-based syllabifier, we train the first stage of SuperBPE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib29\" title=\"\">2025</a>)</cite> on LibriSpeech with a 17k vocabulary, roughly matching the number of syllable types. We then split BPE tokens containing multiple non-consecutive vowels and merge consecutive tokens to ensure each unit contains at least one vowel (details in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#A6\" title=\"Appendix F Pseudo-code of BPE+ syllabifier &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">F</span></a>). We refer to this method as BPE+. All syllabifier variants are trained only under the <em class=\"ltx_emph ltx_font_italic\">fixed-boundary stage</em>, since later stages show correlated trends. Instead of CER, we report syllable error rate (SER) to more directly reflects syllable-level performance. Among the methods, Pyphen+ achieves the lowest SER, outperforming even the phoneme-based Syllabify. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf1\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>, BPE+ yields weaker but still competitive results, demonstrating that SylCipher can generalize to linguistically simpler, resource-free syllabifiers.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Clamp-based soft-pooler trains more stably.</span> In Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf2\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(b)</span></a>, we test our modified soft-pooler in equation&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S4.E3\" title=\"In 4.1 Training: UASR via information compression &#8227; 4 SylCipher: Syllable-level UASR via information-constrained masked language modeling &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, which uses a clamp-based <math alttext=\"\\sigma_{\\epsilon}\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS5.p3.m1\" intent=\":literal\"><semantics><msub><mi>&#963;</mi><mi>&#1013;</mi></msub><annotation encoding=\"application/x-tex\">\\sigma_{\\epsilon}</annotation></semantics></math> function (&#8220;Clamp&#8221;), against alternatives based on <math alttext=\"\\tanh\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS5.p3.m2\" intent=\":literal\"><semantics><mi>tanh</mi><annotation encoding=\"application/x-tex\">\\tanh</annotation></semantics></math>&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bhati et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib9\" title=\"\">2022</a>)</cite> (&#8220;Tanh&#8221;) and softmax&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib48\" title=\"\">2024</a>)</cite>) (&#8220;Softmax&#8221;). Following prior work, we set the tapering parameter <math alttext=\"\\epsilon=0.5\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS5.p3.m3\" intent=\":literal\"><semantics><mrow><mi>&#1013;</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding=\"application/x-tex\">\\epsilon=0.5</annotation></semantics></math> for &#8220;Clamp&#8221; and <math alttext=\"0.1\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS5.p3.m4\" intent=\":literal\"><semantics><mn>0.1</mn><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math> for the other two approaches. On both SpokenCOCO and AISHELL-3, Clamp consistently outperforms the sigmoid-based poolers by 6-36%. This suggests that our design provides more stable and efficient training dynamics.\n</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SylCipher works with different vocabulary sizes.</span> We also experiment with varying the non-<span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> vocabulary size in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf3\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a>. SylCipher displays consistent SERs across a wide range of vocabulary sizes, reaching the lowest overall SER with 2048 tokens and the lowest non-<span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> SER with 1024 tokens.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    },
+    "S5.F3.sf3": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x5.png",
+        "caption": "(c) SER vs. token vocabulary size",
+        "informative_terms_identified": [
+            "ser",
+            "vocabulary",
+            "token",
+            "size"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SylCipher works with different vocabulary sizes.</span> We also experiment with varying the non-<span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> vocabulary size in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf3\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(c)</span></a>. SylCipher displays consistent SERs across a wide range of vocabulary sizes, reaching the lowest overall SER with 2048 tokens and the lowest non-<span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> SER with 1024 tokens.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">An alternative approach to phone-based models is to build a word-level UASR system, which can be achieved without a G2P. Yet a major concern is the coverage of the system on <em class=\"ltx_emph ltx_font_italic\">rare words</em>, which can effectively be infinite in vocabulary size, making it significantly harder to acquire than phones. Furthermore, detecting word boundaries requires capturing long-range contextual dependencies in speech, which risk destabilizing segmentation mechanisms effective for phone-level UASR&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib47\" title=\"\">2023c</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "vocabulary",
+                    "size"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We perform careful ablation and error analysis, examining the effects of token vocabulary size, syllabifier choice, and segmentation mechanisms.</p>\n\n",
+                "matched_terms": [
+                    "vocabulary",
+                    "token",
+                    "size"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For English text, we use Pyphen<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/Kozea/Pyphen</span></span></span>, a rule-based hyphenation tool re-purposed for syllabification without a G2P. If Pyphen produces only a single chunk for a long word, we apply a simple rule-based fallback (Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#A5\" title=\"Appendix E Pseudo-code for the Pyphen+ syllabifier &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">E</span></a>). We denote this combined approach as Pyphen+. We also experiment with other G2P-free approaches such as byte-pair encoding (BPE)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib29\" title=\"\">2025</a>); Sennrich et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib39\" title=\"\">2016</a>)</cite>, and find SylCipher robust to syllabification errors. To avoid long-tail distributions, we keep only the top-2048 most frequent English syllables and replace the rest with a special <span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> token (replacing <math alttext=\"7\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>7</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">7\\%</annotation></semantics></math> of tokens in LibriSpeech and <math alttext=\"2\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">2\\%</annotation></semantics></math> in SpokenCOCO. For Mandarin, we use the Pinyin of each Chinese character as a syllable, with or without tone labels. We keep the top-1024 most frequent syllables, covering 99.5% of occurrences. For speech syllabification, we use K-means clustering on syllable-level speech features created by mean pooling within the Sylber boundaries, with codebook size equal to the number of non-<span class=\"ltx_text ltx_font_typewriter\">&lt;OOV&gt;</span> text tokens.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "size"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SylCipher is robust to syllabifiers.</span> We first test alternative syllabifiers beyond Pyphen, including the phoneme-based Syllabify<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/kylebgorman/syllabify</span></span></span> and a character-based approach using byte-pair encoding (BPE) tokenization&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Sennrich et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib39\" title=\"\">2016</a>)</cite>. The latter is attractive because it is language-agnostic and integrated easily with spoken language models. For the BPE-based syllabifier, we train the first stage of SuperBPE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib29\" title=\"\">2025</a>)</cite> on LibriSpeech with a 17k vocabulary, roughly matching the number of syllable types. We then split BPE tokens containing multiple non-consecutive vowels and merge consecutive tokens to ensure each unit contains at least one vowel (details in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#A6\" title=\"Appendix F Pseudo-code of BPE+ syllabifier &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">F</span></a>). We refer to this method as BPE+. All syllabifier variants are trained only under the <em class=\"ltx_emph ltx_font_italic\">fixed-boundary stage</em>, since later stages show correlated trends. Instead of CER, we report syllable error rate (SER) to more directly reflects syllable-level performance. Among the methods, Pyphen+ achieves the lowest SER, outperforming even the phoneme-based Syllabify. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf1\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>, BPE+ yields weaker but still competitive results, demonstrating that SylCipher can generalize to linguistically simpler, resource-free syllabifiers.</p>\n\n",
+                "matched_terms": [
+                    "ser",
+                    "vocabulary"
+                ]
+            }
+        ]
+    },
+    "A7.F4": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x6.png",
+        "caption": "(a) Reference transcript: “Wealth and rent chap-ter sev-en wealth”.",
+        "informative_terms_identified": [
+            "rent",
+            "“wealth",
+            "transcript",
+            "wealth”",
+            "seven",
+            "chapter"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F4.sf2": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x7.png",
+        "caption": "(b) Reference transcript: “One goods may be ranked ac-cord-ing to their tech-ni-cal”.",
+        "informative_terms_identified": [
+            "ranked",
+            "transcript",
+            "according",
+            "technical”",
+            "“one",
+            "goods"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F4.sf3": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x8.png",
+        "caption": "(c) Reference transcript: “That in-ter-vene be-tween the a-gent used and the de-sired”",
+        "informative_terms_identified": [
+            "between",
+            "transcript",
+            "agent",
+            "intervene",
+            "“that",
+            "desired”"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F4.sf4": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x9.png",
+        "caption": "(d) Reference transcript: “But e-ven a-mong sav-ages the pro-cess-es are much”",
+        "informative_terms_identified": [
+            "“but",
+            "among",
+            "even",
+            "transcript",
+            "much”",
+            "processes",
+            "savages"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">SylCipher is robust to syllabifiers.</span> We first test alternative syllabifiers beyond Pyphen, including the phoneme-based Syllabify<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/kylebgorman/syllabify</span></span></span> and a character-based approach using byte-pair encoding (BPE) tokenization&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Sennrich et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib39\" title=\"\">2016</a>)</cite>. The latter is attractive because it is language-agnostic and integrated easily with spoken language models. For the BPE-based syllabifier, we train the first stage of SuperBPE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">Liu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#bib.bib29\" title=\"\">2025</a>)</cite> on LibriSpeech with a 17k vocabulary, roughly matching the number of syllable types. We then split BPE tokens containing multiple non-consecutive vowels and merge consecutive tokens to ensure each unit contains at least one vowel (details in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#A6\" title=\"Appendix F Pseudo-code of BPE+ syllabifier &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">F</span></a>). We refer to this method as BPE+. All syllabifier variants are trained only under the <em class=\"ltx_emph ltx_font_italic\">fixed-boundary stage</em>, since later stages show correlated trends. Instead of CER, we report syllable error rate (SER) to more directly reflects syllable-level performance. Among the methods, Pyphen+ achieves the lowest SER, outperforming even the phoneme-based Syllabify. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.03639v1#S5.F3.sf1\" title=\"In Figure 3 &#8227; 5.4 Results: Unsupervised syllable boundary detection &#8227; 5 Experiments &#8227; Towards Unsupervised Speech Recognition at the Syllable-Level\"><span class=\"ltx_text ltx_ref_tag\">3(a)</span></a>, BPE+ yields weaker but still competitive results, demonstrating that SylCipher can generalize to linguistically simpler, resource-free syllabifiers.</p>\n\n",
+                "matched_terms": [
+                    "among",
+                    "even"
+                ]
+            }
+        ]
+    },
+    "A7.F5": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x10.png",
+        "caption": "(a) Reference transcript: “And shoots the bird which sat-is-flies his hun-ger”.",
+        "informative_terms_identified": [
+            "“and",
+            "bird",
+            "transcript",
+            "hunger”",
+            "satisflies",
+            "his",
+            "shoots",
+            "which"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F5.sf2": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x11.png",
+        "caption": "(b) Reference transcript: “two goods may be ranked by their re-la-tion to wants”.",
+        "informative_terms_identified": [
+            "ranked",
+            "transcript",
+            "goods",
+            "wants”",
+            "“two",
+            "relation"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F5.sf3": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x12.png",
+        "caption": "(c) Reference transcript: “Grat-i-fi-ca-tion no a-gent or in-flu-ence in-ter-ven-ing”.",
+        "informative_terms_identified": [
+            "“gratification",
+            "transcript",
+            "agent",
+            "influence",
+            "intervening”"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "A7.F5.sf4": {
+        "source_file": "Towards Unsupervised Speech Recognition at the Syllable-Level",
+        "image_url": "https://arxiv.org/html/2510.03639v1/x13.png",
+        "caption": "(d) Reference transcript: “The num-ber of steps has no nec-es-sary re-la-tion to the”.",
+        "informative_terms_identified": [
+            "number",
+            "transcript",
+            "necessary",
+            "“the",
+            "steps",
+            "relation",
+            "the”"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    }
+}

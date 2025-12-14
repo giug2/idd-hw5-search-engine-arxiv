@@ -1,0 +1,429 @@
+{
+    "S1.F1": {
+        "source_file": "CodeVaani: A Multilingual, Voice-Based Code Learning Assistant",
+        "image_url": "https://arxiv.org/html/2511.20654v1/survey_new_ss.png",
+        "caption": "Figure 1: Survey results from 53 engineering students across multiple Indian states, highlighting the multilingual context of programming education.",
+        "informative_terms_identified": [
+            "results",
+            "multiple",
+            "engineering",
+            "highlighting",
+            "students",
+            "from",
+            "across",
+            "states",
+            "context",
+            "programming",
+            "survey",
+            "multilingual",
+            "indian",
+            "education"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Voice-based interfaces offer a promising alternative for accessible computing&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib7\" title=\"\">7</a>]</cite>. To better understand the needs of students, we conducted a survey with 53 undergraduate and graduate programmers across multiple Indian states.\nAs shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F1\" title=\"Figure 1 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, a majority reported speaking a native language other than English, with only <math alttext=\"58.5\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>58.5</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">58.5\\%</annotation></semantics></math> considering themselves proficient in English. More than half (<math alttext=\"54.7\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p2.m2\" intent=\":literal\"><semantics><mrow><mn>54.7</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">54.7\\%</annotation></semantics></math>) expressed a preference for voice-based interaction over text, particularly for code-related question answering. These findings highlight an opportunity to reimagine programming support systems that lower the entry barrier through multilingual and multimodal interaction.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Programming education often assumes English proficiency and text-based interaction, creating barriers for students from multilingual regions such as India. We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It is a voice-enabled assistant that helps learners explore programming concepts in their native languages. The system integrates Indic ASR, a code-aware transcription refinement module, and a code model for generating relevant answers. Responses are provided in both text and audio for natural interaction. In a study with 28 beginner programmers, CodeVaani achieved <span class=\"ltx_text ltx_font_bold\">75% response accuracy</span>, with over 80% of participants rating the experience positively. Compared to classroom assistance, our framework offers on-demand availability, scalability to support many learners, and multilingual support that lowers the entry barrier for students with limited English proficiency. The demo will illustrate these capabilities and highlight how voice-based AI systems can make programming education more inclusive.\nSupplementary artifacts and demo video are also made available <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://tinyurl.com/icse2026-artifacts</span></span></span></span><span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://youtu.be/65IpNBB1MDo</span></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "from",
+                    "programming",
+                    "multilingual",
+                    "education"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The ability to understand the structure, semantics, and behavior of computer programs is a fundamental skill in programming education and practice. With the advent of artificial intelligence (AI), various chat-based assistants have emerged that help a learner interactively understand the code <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib3\" title=\"\">3</a>]</cite>. However, most of these tools assume English proficiency and rely on text-based, keyboard-driven interaction. This design excludes a large population of learners in multilingual regions such as India, where many students transition directly from regional language schooling to English-medium computer science curricula. For such learners, limited English fluency and typing skills create an additional barrier to mastering programming concepts. Previous work has highlighted the need for inclusive systems that support multilingual learners&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib4\" title=\"\">4</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib5\" title=\"\">5</a>]</cite>, but few tools address this gap in the context of understanding code.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "from",
+                    "multilingual",
+                    "programming",
+                    "context",
+                    "education"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) systems convert speech audio into text, recovering both natural language and code-specific tokens from the audio waveform. Initial experiments with Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> revealed limitations in handling mixed-language inputs. In particular, Whisper often struggled with queries that interleave native language utterances with English code terms, a common occurrence in student queries. This led to confusions between phonetically similar tokens, especially when identifiers resembled real words (e.g., <span class=\"ltx_text ltx_font_typewriter\">map</span>, <span class=\"ltx_text ltx_font_typewriter\">sum</span>). To mitigate this, we employ <span class=\"ltx_text ltx_font_typewriter\">Whisper</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> for English and <span class=\"ltx_text ltx_font_typewriter\">Indic-Conformer</span> ASR models from AI4Bharat&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib12\" title=\"\">12</a>]</cite> for Indic languages, which are trained on Indian speech data and better preserve mixed-language semantics while improving recognition of technical terms. Fig&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F3\" title=\"Figure 3 &#8227; II-A Speech Recognition &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates an example of a spoken Hindi query and its transcription output.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "indian"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite improvements in ASR, recognition errors persist, particularly for variable names, symbolic operators, and programming keywords embedded within multilingual queries. These errors often stem from phonetic ambiguity or misinterpretation of code tokens as natural language. To address this, we introduce a <em class=\"ltx_emph ltx_font_italic\">code-aware transcription refinement</em> stage that post-processes ASR outputs to improve fidelity and semantic alignment. We use the instruction-tuned <span class=\"ltx_text ltx_font_bold\">gemma-27B</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib13\" title=\"\">13</a>]</cite> model, further optimized with DPO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib14\" title=\"\">14</a>]</cite>, to correct transcription errors by leveraging the structure and semantics of programming-related language.\nThe prompt is designed to: (i) identify and restore misrecognized code terms\n(e.g., variable names, function calls), (ii) correct phonetically distorted\ntechnical words (e.g., &#8220;ask key&#8221; <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> &#8220;ASCII&#8221;),\n(iii) recover symbolic constructs (e.g., <span class=\"ltx_text ltx_font_typewriter\">underscore</span> <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> <span class=\"ltx_text ltx_font_typewriter\">_</span>),\nand (iv) disambiguate between natural and programming language usage.</p>\n\n",
+                "matched_terms": [
+                    "multilingual",
+                    "programming",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We tested the model with queries in multiple Indian native languages and observed that it could accurately understand code-related questions and provide contextually relevant responses in the same language. The system also supports a variety of programming tasks, including code explanation, question answering, and basic debugging assistance. By integrating the transcription refinement and code generation stages, our framework ensures that even queries with phonetic errors or code-mixed language are correctly interpreted, resulting in more reliable responses.</p>\n\n",
+                "matched_terms": [
+                    "programming",
+                    "multiple",
+                    "indian"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The application components that support CodeVaani (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F2\" title=\"Figure 2 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) are a ReactJS front end, a Django Python backend, a PostgreSQL database server, Redis for the task queue, and Celery workers for asynchronous processing. The AI models used are Indic-Conformer and Whisper as the ASR models, gemma-27B for error correction, and the code-specialized LLM, Codestral-22B, for the final response generation. The AI models run on a separate server which has 2 H100 GPUs. We use one GPU for ASR models and an error correction model while another for query response generation. The workflow of CodeVaani is as follows: students record their queries in their preferred language through the browser interface, and submit them. The application additionally sends the problem statement and code and receives a TaskID in response which is used subsequently to poll for the response. The backend, BodhiTree, logs requests in a database, creates asynchronous Celery tasks, and queues them in Redis, which are then processed by the Celery workers and sent to the GPU server. On the GPU server, the ASR model transcribes audio, the gemma-27B model corrects and refines the text, and the Codestral-22B model produces the code responses. The Bodhitree backend collects the corrected query and generated response, delivering them back to the student through the frontend. Overall, the system ensures seamless end-to-end processing from audio query to corrected, AI-generated output.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To study the effectiveness of our system, we conducted a structured evaluation session in a computer lab. A total of 28 participants, primarily beginners in coding, were invited to interact with the deployed system. Participants were asked to use our system in their mother tongue and record their observations systematically. The study included participants whose native languages were Hindi, Marathi, Gujarati, Tamil, Telugu, Bengali, Malayalam, Kannada, and Odia, representing all major Indian languages. For this purpose, we provided each participant with a journal to document their queries, system responses, and feedback on correctness and appropriateness. Additionally, a follow-up survey was conducted using Google Forms to capture overall usability and satisfaction.</p>\n\n",
+                "matched_terms": [
+                    "survey",
+                    "indian"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants were asked to rate their overall experience with our system.\nThe responses were: Excellent (10.7%), Good (32.1%), Satisfactory (28.6%),\nFair (10.7%), and Needs Improvement (17.9%). These results indicate that more than 80% of participants rated their experience as satisfactory or above, highlighting the potential of our system as a supportive tool for beginners.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "highlighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In addition to rating their experience, participants were asked (26 participants were involved): <span class=\"ltx_text ltx_font_italic\">&#8220;If your concerns are resolved, would you like to use our system in your programming course?&#8221;</span> and options: <span class=\"ltx_text ltx_font_italic\">A. Yes, definitely, B. Yes, probably, C. Maybe, D. Probably not, E. Definitely not</span>. Responses were as follows: 14 selected A, 11 selected B, 1 selected C, 0 selected D, 0 selected E.\nThese results shows participants&#8217; strong interest in adopting the system in courses, highlighting its potential as a useful voice-based, multilingual programming aid.</p>\n\n",
+                "matched_terms": [
+                    "programming",
+                    "results",
+                    "multilingual",
+                    "highlighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A single teacher cannot effectively handle queries from a large number of students simultaneously.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Multilingual support, which bridges the gap for students who find it easier to learn in their mother tongue.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "multilingual"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we presented a speech-driven multilingual code assistant that enables beginner programmers to reason code concepts in their native languages. Our system integrates ASR models for Indic languages, a code-aware transcription refinement stage, and a code model to generate relevant responses. Evaluation results show 75% accuracy and positive user feedback, highlighting its potential as an educational support tool. This work demonstrates that voice-based interfaces can significantly lower entry barriers for students who struggle with English proficiency and keyboard-driven interaction.</p>\n\n",
+                "matched_terms": [
+                    "students",
+                    "results",
+                    "multilingual",
+                    "highlighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will extend CodeVaani in the following directions: (i) enabling multi-turn conversational support for interactive dialogue, (ii) fine-tuning ASR and transcription models on larger code-mixed speech datasets to improve real-world accuracy, and (iii) merging ASR error correction and response generation into a unified pipeline to reduce latency. Furthermore, we aim to support some desired features mentioned in the survey, such as typed input in multiple languages.</p>\n\n",
+                "matched_terms": [
+                    "multiple",
+                    "survey"
+                ]
+            }
+        ]
+    },
+    "S1.F2": {
+        "source_file": "CodeVaani: A Multilingual, Voice-Based Code Learning Assistant",
+        "image_url": "https://arxiv.org/html/2511.20654v1/codevaani_flow_new_2.jpeg",
+        "caption": "Figure 2: Architecture of CodeVaani: Processing student queries through ASR, error correction, and AI code generation.",
+        "informative_terms_identified": [
+            "asr",
+            "correction",
+            "generation",
+            "through",
+            "queries",
+            "codevaani",
+            "student",
+            "error",
+            "architecture",
+            "code",
+            "processing"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The application components that support CodeVaani (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F2\" title=\"Figure 2 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) are a ReactJS front end, a Django Python backend, a PostgreSQL database server, Redis for the task queue, and Celery workers for asynchronous processing. The AI models used are Indic-Conformer and Whisper as the ASR models, gemma-27B for error correction, and the code-specialized LLM, Codestral-22B, for the final response generation. The AI models run on a separate server which has 2 H100 GPUs. We use one GPU for ASR models and an error correction model while another for query response generation. The workflow of CodeVaani is as follows: students record their queries in their preferred language through the browser interface, and submit them. The application additionally sends the problem statement and code and receives a TaskID in response which is used subsequently to poll for the response. The backend, BodhiTree, logs requests in a database, creates asynchronous Celery tasks, and queues them in Redis, which are then processed by the Celery workers and sent to the GPU server. On the GPU server, the ASR model transcribes audio, the gemma-27B model corrects and refines the text, and the Codestral-22B model produces the code responses. The Bodhitree backend collects the corrected query and generated response, delivering them back to the student through the frontend. Overall, the system ensures seamless end-to-end processing from audio query to corrected, AI-generated output.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Programming education often assumes English proficiency and text-based interaction, creating barriers for students from multilingual regions such as India. We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It is a voice-enabled assistant that helps learners explore programming concepts in their native languages. The system integrates Indic ASR, a code-aware transcription refinement module, and a code model for generating relevant answers. Responses are provided in both text and audio for natural interaction. In a study with 28 beginner programmers, CodeVaani achieved <span class=\"ltx_text ltx_font_bold\">75% response accuracy</span>, with over 80% of participants rating the experience positively. Compared to classroom assistance, our framework offers on-demand availability, scalability to support many learners, and multilingual support that lowers the entry barrier for students with limited English proficiency. The demo will illustrate these capabilities and highlight how voice-based AI systems can make programming education more inclusive.\nSupplementary artifacts and demo video are also made available <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://tinyurl.com/icse2026-artifacts</span></span></span></span><span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://youtu.be/65IpNBB1MDo</span></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "code",
+                    "codevaani"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, building such systems is non-trivial. Spoken programming queries are often code-mixed, syntactically irregular, and rich in out-of-vocabulary terms such as identifiers, symbols etc. Standard Automatic Speech Recognition (ASR) systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib10\" title=\"\">10</a>]</cite> frequently misinterpret such inputs, and these errors propagate downstream, significantly degrading the performance of Large Language Models (LLMs) in code understanding tasks&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib11\" title=\"\">11</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "queries",
+                    "code"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It accepts spoken queries in a learner&#8217;s native language, transcribes them using ASR, refines the transcription through code-aware LLM-guided processing, and generates relevant answers via a code model. Responses are delivered in both text and audio, enabling accessible, on-demand learning.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "through",
+                    "queries",
+                    "codevaani",
+                    "code",
+                    "processing"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">CodeVaani</span> enables learners to interact with code using spoken queries in their native language. It is designed to handle multilingual speech, recognize technical terms, and refine transcriptions to ensure reliable code conversations. CodeVaani comprises three main stages: speech recognition, code-aware transcription refinement, and query response generation. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F4\" title=\"Figure 4 &#8227; II-B Code-Aware Transcription Refinement &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> depicts the demo application interface.</p>\n\n",
+                "matched_terms": [
+                    "queries",
+                    "code",
+                    "codevaani",
+                    "generation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) systems convert speech audio into text, recovering both natural language and code-specific tokens from the audio waveform. Initial experiments with Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> revealed limitations in handling mixed-language inputs. In particular, Whisper often struggled with queries that interleave native language utterances with English code terms, a common occurrence in student queries. This led to confusions between phonetically similar tokens, especially when identifiers resembled real words (e.g., <span class=\"ltx_text ltx_font_typewriter\">map</span>, <span class=\"ltx_text ltx_font_typewriter\">sum</span>). To mitigate this, we employ <span class=\"ltx_text ltx_font_typewriter\">Whisper</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> for English and <span class=\"ltx_text ltx_font_typewriter\">Indic-Conformer</span> ASR models from AI4Bharat&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib12\" title=\"\">12</a>]</cite> for Indic languages, which are trained on Indian speech data and better preserve mixed-language semantics while improving recognition of technical terms. Fig&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F3\" title=\"Figure 3 &#8227; II-A Speech Recognition &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates an example of a spoken Hindi query and its transcription output.</p>\n\n",
+                "matched_terms": [
+                    "student",
+                    "asr",
+                    "queries",
+                    "code"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Nevertheless, these models do not fully resolve the problem. We accept the residual ASR errors and address them later through a refinement stage in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.SS2\" title=\"II-B Code-Aware Transcription Refinement &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">II-B</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite improvements in ASR, recognition errors persist, particularly for variable names, symbolic operators, and programming keywords embedded within multilingual queries. These errors often stem from phonetic ambiguity or misinterpretation of code tokens as natural language. To address this, we introduce a <em class=\"ltx_emph ltx_font_italic\">code-aware transcription refinement</em> stage that post-processes ASR outputs to improve fidelity and semantic alignment. We use the instruction-tuned <span class=\"ltx_text ltx_font_bold\">gemma-27B</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib13\" title=\"\">13</a>]</cite> model, further optimized with DPO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib14\" title=\"\">14</a>]</cite>, to correct transcription errors by leveraging the structure and semantics of programming-related language.\nThe prompt is designed to: (i) identify and restore misrecognized code terms\n(e.g., variable names, function calls), (ii) correct phonetically distorted\ntechnical words (e.g., &#8220;ask key&#8221; <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> &#8220;ASCII&#8221;),\n(iii) recover symbolic constructs (e.g., <span class=\"ltx_text ltx_font_typewriter\">underscore</span> <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> <span class=\"ltx_text ltx_font_typewriter\">_</span>),\nand (iv) disambiguate between natural and programming language usage.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "queries",
+                    "code"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, the refined transcription is passed as input to the code model, which generates an appropriate response to the user&#8217;s query. We use Codestral-22B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib15\" title=\"\">15</a>]</cite> due to its strong performance on a wide range of coding tasks. In addition, its relatively lightweight architecture makes it well-suited for deployment in classroom or lab environments with limited computational resources.</p>\n\n",
+                "matched_terms": [
+                    "code",
+                    "architecture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We tested the model with queries in multiple Indian native languages and observed that it could accurately understand code-related questions and provide contextually relevant responses in the same language. The system also supports a variety of programming tasks, including code explanation, question answering, and basic debugging assistance. By integrating the transcription refinement and code generation stages, our framework ensures that even queries with phonetic errors or code-mixed language are correctly interpreted, resulting in more reliable responses.</p>\n\n",
+                "matched_terms": [
+                    "queries",
+                    "code",
+                    "generation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we presented a speech-driven multilingual code assistant that enables beginner programmers to reason code concepts in their native languages. Our system integrates ASR models for Indic languages, a code-aware transcription refinement stage, and a code model to generate relevant responses. Evaluation results show 75% accuracy and positive user feedback, highlighting its potential as an educational support tool. This work demonstrates that voice-based interfaces can significantly lower entry barriers for students who struggle with English proficiency and keyboard-driven interaction.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "code"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will extend CodeVaani in the following directions: (i) enabling multi-turn conversational support for interactive dialogue, (ii) fine-tuning ASR and transcription models on larger code-mixed speech datasets to improve real-world accuracy, and (iii) merging ASR error correction and response generation into a unified pipeline to reduce latency. Furthermore, we aim to support some desired features mentioned in the survey, such as typed input in multiple languages.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "generation",
+                    "codevaani",
+                    "error",
+                    "correction"
+                ]
+            }
+        ]
+    },
+    "S2.F3": {
+        "source_file": "CodeVaani: A Multilingual, Voice-Based Code Learning Assistant",
+        "image_url": "https://arxiv.org/html/2511.20654v1/Transcription_example.drawio.png",
+        "caption": "Figure 3: Example of Hindi code-related spoken query and ASR transcriptions. Errors highlight the challenges of code-mixed speech.",
+        "informative_terms_identified": [
+            "hindi",
+            "asr",
+            "coderelated",
+            "speech",
+            "transcriptions",
+            "codemixed",
+            "query",
+            "example",
+            "errors",
+            "challenges",
+            "highlight",
+            "spoken"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) systems convert speech audio into text, recovering both natural language and code-specific tokens from the audio waveform. Initial experiments with Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> revealed limitations in handling mixed-language inputs. In particular, Whisper often struggled with queries that interleave native language utterances with English code terms, a common occurrence in student queries. This led to confusions between phonetically similar tokens, especially when identifiers resembled real words (e.g., <span class=\"ltx_text ltx_font_typewriter\">map</span>, <span class=\"ltx_text ltx_font_typewriter\">sum</span>). To mitigate this, we employ <span class=\"ltx_text ltx_font_typewriter\">Whisper</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> for English and <span class=\"ltx_text ltx_font_typewriter\">Indic-Conformer</span> ASR models from AI4Bharat&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib12\" title=\"\">12</a>]</cite> for Indic languages, which are trained on Indian speech data and better preserve mixed-language semantics while improving recognition of technical terms. Fig&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F3\" title=\"Figure 3 &#8227; II-A Speech Recognition &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates an example of a spoken Hindi query and its transcription output.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Programming education often assumes English proficiency and text-based interaction, creating barriers for students from multilingual regions such as India. We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It is a voice-enabled assistant that helps learners explore programming concepts in their native languages. The system integrates Indic ASR, a code-aware transcription refinement module, and a code model for generating relevant answers. Responses are provided in both text and audio for natural interaction. In a study with 28 beginner programmers, CodeVaani achieved <span class=\"ltx_text ltx_font_bold\">75% response accuracy</span>, with over 80% of participants rating the experience positively. Compared to classroom assistance, our framework offers on-demand availability, scalability to support many learners, and multilingual support that lowers the entry barrier for students with limited English proficiency. The demo will illustrate these capabilities and highlight how voice-based AI systems can make programming education more inclusive.\nSupplementary artifacts and demo video are also made available <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://tinyurl.com/icse2026-artifacts</span></span></span></span><span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://youtu.be/65IpNBB1MDo</span></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "highlight"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Voice-based interfaces offer a promising alternative for accessible computing&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib7\" title=\"\">7</a>]</cite>. To better understand the needs of students, we conducted a survey with 53 undergraduate and graduate programmers across multiple Indian states.\nAs shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F1\" title=\"Figure 1 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, a majority reported speaking a native language other than English, with only <math alttext=\"58.5\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p2.m1\" intent=\":literal\"><semantics><mrow><mn>58.5</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">58.5\\%</annotation></semantics></math> considering themselves proficient in English. More than half (<math alttext=\"54.7\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S1.p2.m2\" intent=\":literal\"><semantics><mrow><mn>54.7</mn><mo>%</mo></mrow><annotation encoding=\"application/x-tex\">54.7\\%</annotation></semantics></math>) expressed a preference for voice-based interaction over text, particularly for code-related question answering. These findings highlight an opportunity to reimagine programming support systems that lower the entry barrier through multilingual and multimodal interaction.</p>\n\n",
+                "matched_terms": [
+                    "coderelated",
+                    "highlight"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, building such systems is non-trivial. Spoken programming queries are often code-mixed, syntactically irregular, and rich in out-of-vocabulary terms such as identifiers, symbols etc. Standard Automatic Speech Recognition (ASR) systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib8\" title=\"\">8</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib10\" title=\"\">10</a>]</cite> frequently misinterpret such inputs, and these errors propagate downstream, significantly degrading the performance of Large Language Models (LLMs) in code understanding tasks&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib11\" title=\"\">11</a>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "speech",
+                    "codemixed",
+                    "errors",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It accepts spoken queries in a learner&#8217;s native language, transcribes them using ASR, refines the transcription through code-aware LLM-guided processing, and generates relevant answers via a code model. Responses are delivered in both text and audio, enabling accessible, on-demand learning.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">CodeVaani</span> enables learners to interact with code using spoken queries in their native language. It is designed to handle multilingual speech, recognize technical terms, and refine transcriptions to ensure reliable code conversations. CodeVaani comprises three main stages: speech recognition, code-aware transcription refinement, and query response generation. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F4\" title=\"Figure 4 &#8227; II-B Code-Aware Transcription Refinement &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> depicts the demo application interface.</p>\n\n",
+                "matched_terms": [
+                    "query",
+                    "speech",
+                    "transcriptions",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Nevertheless, these models do not fully resolve the problem. We accept the residual ASR errors and address them later through a refinement stage in Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.SS2\" title=\"II-B Code-Aware Transcription Refinement &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">II-B</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "errors"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite improvements in ASR, recognition errors persist, particularly for variable names, symbolic operators, and programming keywords embedded within multilingual queries. These errors often stem from phonetic ambiguity or misinterpretation of code tokens as natural language. To address this, we introduce a <em class=\"ltx_emph ltx_font_italic\">code-aware transcription refinement</em> stage that post-processes ASR outputs to improve fidelity and semantic alignment. We use the instruction-tuned <span class=\"ltx_text ltx_font_bold\">gemma-27B</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib13\" title=\"\">13</a>]</cite> model, further optimized with DPO&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib14\" title=\"\">14</a>]</cite>, to correct transcription errors by leveraging the structure and semantics of programming-related language.\nThe prompt is designed to: (i) identify and restore misrecognized code terms\n(e.g., variable names, function calls), (ii) correct phonetically distorted\ntechnical words (e.g., &#8220;ask key&#8221; <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> &#8220;ASCII&#8221;),\n(iii) recover symbolic constructs (e.g., <span class=\"ltx_text ltx_font_typewriter\">underscore</span> <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> <span class=\"ltx_text ltx_font_typewriter\">_</span>),\nand (iv) disambiguate between natural and programming language usage.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "errors"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We tested the model with queries in multiple Indian native languages and observed that it could accurately understand code-related questions and provide contextually relevant responses in the same language. The system also supports a variety of programming tasks, including code explanation, question answering, and basic debugging assistance. By integrating the transcription refinement and code generation stages, our framework ensures that even queries with phonetic errors or code-mixed language are correctly interpreted, resulting in more reliable responses.</p>\n\n",
+                "matched_terms": [
+                    "coderelated",
+                    "codemixed",
+                    "errors"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The application components that support CodeVaani (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F2\" title=\"Figure 2 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) are a ReactJS front end, a Django Python backend, a PostgreSQL database server, Redis for the task queue, and Celery workers for asynchronous processing. The AI models used are Indic-Conformer and Whisper as the ASR models, gemma-27B for error correction, and the code-specialized LLM, Codestral-22B, for the final response generation. The AI models run on a separate server which has 2 H100 GPUs. We use one GPU for ASR models and an error correction model while another for query response generation. The workflow of CodeVaani is as follows: students record their queries in their preferred language through the browser interface, and submit them. The application additionally sends the problem statement and code and receives a TaskID in response which is used subsequently to poll for the response. The backend, BodhiTree, logs requests in a database, creates asynchronous Celery tasks, and queues them in Redis, which are then processed by the Celery workers and sent to the GPU server. On the GPU server, the ASR model transcribes audio, the gemma-27B model corrects and refines the text, and the Codestral-22B model produces the code responses. The Bodhitree backend collects the corrected query and generated response, delivering them back to the student through the frontend. Overall, the system ensures seamless end-to-end processing from audio query to corrected, AI-generated output.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "query"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will extend CodeVaani in the following directions: (i) enabling multi-turn conversational support for interactive dialogue, (ii) fine-tuning ASR and transcription models on larger code-mixed speech datasets to improve real-world accuracy, and (iii) merging ASR error correction and response generation into a unified pipeline to reduce latency. Furthermore, we aim to support some desired features mentioned in the survey, such as typed input in multiple languages.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "codemixed",
+                    "speech"
+                ]
+            }
+        ]
+    },
+    "S2.F4": {
+        "source_file": "CodeVaani: A Multilingual, Voice-Based Code Learning Assistant",
+        "image_url": "https://arxiv.org/html/2511.20654v1/codevaani_ss_2.png",
+        "caption": "Figure 4: Demo interface where participant’s query was transcribed by ASR, refined by error correction (shown in What we heard field), and answered in the CodeVaani Response field",
+        "informative_terms_identified": [
+            "transcribed",
+            "asr",
+            "heard",
+            "demo",
+            "field",
+            "response",
+            "participant’s",
+            "what",
+            "refined",
+            "answered",
+            "codevaani",
+            "where",
+            "error",
+            "query",
+            "interface",
+            "correction"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">CodeVaani</span> enables learners to interact with code using spoken queries in their native language. It is designed to handle multilingual speech, recognize technical terms, and refine transcriptions to ensure reliable code conversations. CodeVaani comprises three main stages: speech recognition, code-aware transcription refinement, and query response generation. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F4\" title=\"Figure 4 &#8227; II-B Code-Aware Transcription Refinement &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> depicts the demo application interface.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Programming education often assumes English proficiency and text-based interaction, creating barriers for students from multilingual regions such as India. We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It is a voice-enabled assistant that helps learners explore programming concepts in their native languages. The system integrates Indic ASR, a code-aware transcription refinement module, and a code model for generating relevant answers. Responses are provided in both text and audio for natural interaction. In a study with 28 beginner programmers, CodeVaani achieved <span class=\"ltx_text ltx_font_bold\">75% response accuracy</span>, with over 80% of participants rating the experience positively. Compared to classroom assistance, our framework offers on-demand availability, scalability to support many learners, and multilingual support that lowers the entry barrier for students with limited English proficiency. The demo will illustrate these capabilities and highlight how voice-based AI systems can make programming education more inclusive.\nSupplementary artifacts and demo video are also made available <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://tinyurl.com/icse2026-artifacts</span></span></span></span><span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span><span class=\"ltx_ref ltx_nolink ltx_url ltx_font_typewriter ltx_ref_self\">https://youtu.be/65IpNBB1MDo</span></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "response",
+                    "demo",
+                    "codevaani"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present <span class=\"ltx_text ltx_font_italic\">CodeVaani</span>, a multilingual speech-driven assistant for understanding code, built into <span class=\"ltx_text ltx_font_italic\">Bodhitree</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib1\" title=\"\">1</a>]</cite>, a Learning Management System developed at IIT Bombay. It accepts spoken queries in a learner&#8217;s native language, transcribes them using ASR, refines the transcription through code-aware LLM-guided processing, and generates relevant answers via a code model. Responses are delivered in both text and audio, enabling accessible, on-demand learning.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "codevaani"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Automatic Speech Recognition (ASR) systems convert speech audio into text, recovering both natural language and code-specific tokens from the audio waveform. Initial experiments with Whisper&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> revealed limitations in handling mixed-language inputs. In particular, Whisper often struggled with queries that interleave native language utterances with English code terms, a common occurrence in student queries. This led to confusions between phonetically similar tokens, especially when identifiers resembled real words (e.g., <span class=\"ltx_text ltx_font_typewriter\">map</span>, <span class=\"ltx_text ltx_font_typewriter\">sum</span>). To mitigate this, we employ <span class=\"ltx_text ltx_font_typewriter\">Whisper</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib9\" title=\"\">9</a>]</cite> for English and <span class=\"ltx_text ltx_font_typewriter\">Indic-Conformer</span> ASR models from AI4Bharat&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib12\" title=\"\">12</a>]</cite> for Indic languages, which are trained on Indian speech data and better preserve mixed-language semantics while improving recognition of technical terms. Fig&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S2.F3\" title=\"Figure 3 &#8227; II-A Speech Recognition &#8227; II CodeVaani: A Speech-Driven Code Assistant &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> illustrates an example of a spoken Hindi query and its transcription output.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "query"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Finally, the refined transcription is passed as input to the code model, which generates an appropriate response to the user&#8217;s query. We use Codestral-22B&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#bib.bib15\" title=\"\">15</a>]</cite> due to its strong performance on a wide range of coding tasks. In addition, its relatively lightweight architecture makes it well-suited for deployment in classroom or lab environments with limited computational resources.</p>\n\n",
+                "matched_terms": [
+                    "response",
+                    "query",
+                    "refined"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The application components that support CodeVaani (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20654v1#S1.F2\" title=\"Figure 2 &#8227; I Introduction &#8227; CodeVaani: A Multilingual, Voice-Based Code Learning Assistant\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) are a ReactJS front end, a Django Python backend, a PostgreSQL database server, Redis for the task queue, and Celery workers for asynchronous processing. The AI models used are Indic-Conformer and Whisper as the ASR models, gemma-27B for error correction, and the code-specialized LLM, Codestral-22B, for the final response generation. The AI models run on a separate server which has 2 H100 GPUs. We use one GPU for ASR models and an error correction model while another for query response generation. The workflow of CodeVaani is as follows: students record their queries in their preferred language through the browser interface, and submit them. The application additionally sends the problem statement and code and receives a TaskID in response which is used subsequently to poll for the response. The backend, BodhiTree, logs requests in a database, creates asynchronous Celery tasks, and queues them in Redis, which are then processed by the Celery workers and sent to the GPU server. On the GPU server, the ASR model transcribes audio, the gemma-27B model corrects and refines the text, and the Codestral-22B model produces the code responses. The Bodhitree backend collects the corrected query and generated response, delivering them back to the student through the frontend. Overall, the system ensures seamless end-to-end processing from audio query to corrected, AI-generated output.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "response",
+                    "codevaani",
+                    "error",
+                    "query",
+                    "interface",
+                    "correction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will extend CodeVaani in the following directions: (i) enabling multi-turn conversational support for interactive dialogue, (ii) fine-tuning ASR and transcription models on larger code-mixed speech datasets to improve real-world accuracy, and (iii) merging ASR error correction and response generation into a unified pipeline to reduce latency. Furthermore, we aim to support some desired features mentioned in the survey, such as typed input in multiple languages.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "response",
+                    "codevaani",
+                    "error",
+                    "correction"
+                ]
+            }
+        ]
+    }
+}

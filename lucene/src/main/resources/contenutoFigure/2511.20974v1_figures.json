@@ -1,0 +1,637 @@
+{
+    "S3.F1": {
+        "source_file": "RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data",
+        "image_url": "https://arxiv.org/html/2511.20974v1/x1.png",
+        "caption": "Figure 1: The training architecture of RosettaSpeech, where the components enclosed in dashed boxes are optional depending on the training sample.",
+        "informative_terms_identified": [
+            "optional",
+            "components",
+            "where",
+            "dashed",
+            "sample",
+            "enclosed",
+            "rosettaspeech",
+            "boxes",
+            "architecture",
+            "depending",
+            "training"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S3.F1\" title=\"Figure 1 &#8227; 3.1 Datasets &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, the architecture of RosettaSpeech is designed to process source speech to generate translated text and speech. This section details the model&#8217;s core components: speech modeling, the LLM backbone, and the multi-head projection layers.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The scarcity of parallel speech corpora critically hampers speech-to-speech translation (S2ST), often forcing reliance on complex, multi-stage pipelines. This paper introduces RosettaSpeech, a novel and simplified framework for zero-shot S2ST that is trained on monolingual speech-text data augmented by machine translation supervision. While our method leverages the linguistic knowledge inherent in text-based NMT models, it strictly eliminates the need for parallel speech-to-speech pairs. Our model uniquely uses text as an intermediate bridge during training but functions as a direct, end-to-end speech-to-speech model at inference. This streamlined approach achieves state-of-the-art results on standard benchmarks. For instance, on the CVSS-C test set, RosettaSpeech outperforms leading systems, achieving an ASR-BLEU score of 25.17 for German-to-English and 29.86 for Spanish-to-English&#8212;relative gains of over 27% and 14%, respectively. Furthermore, we demonstrate that a single model can deliver strong many-to-one translation performance (FR/ES/DE &#8211;&gt; EN). We also provide a foundational analysis of how training data scaling impacts model performance. By prioritizing reliance on abundant parallel text rather than difficult-to-acquire parallel speech, RosettaSpeech offers a scalable path to creating high-quality, speaker-preserving S2ST for a much broader array of languages.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce RosettaSpeech, a novel and simplified framework for zero-shot<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>We define &#8220;zero-shot&#8221; in this context as the complete absence of parallel <span class=\"ltx_text ltx_font_italic\">source-speech</span> to <span class=\"ltx_text ltx_font_italic\">target-speech</span> data.</span></span></span> speech-to-speech translation. Unlike prior works that rely on complex pipelines, our approach bridges the modality gap by leveraging off-the-shelf NMT models to transform abundant monolingual speech-text pairs into synthetic S2ST training targets. Although this implies a dependency on text-based translation resources, it successfully circumvents the critical bottleneck of acquiring expensive parallel speech corpora.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The primary advantage of this modular design is its simplicity and the ability to leverage powerful, pre-trained models for each sub-task. Each component can be developed and improved independently. However, this pipeline architecture introduces several critical limitations. A principal issue is <span class=\"ltx_text ltx_font_italic\">error propagation</span>, where inaccuracies from the ASR model are passed to and often amplified by the subsequent MT component, degrading the final translation quality. Furthermore, the sequential processing of the three stages inherently introduces significant latency, rendering the system unsuitable for real-time communication. Perhaps most critically, the reliance on an intermediate text representation severs the transfer of <span class=\"ltx_text ltx_font_italic\">paralinguistic information</span>&#8212;such as prosody, emotion, and speaker identity&#8212;from the source speech. This results in synthesized output that lacks the naturalness and expressiveness of the original speaker. While some studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">bahar2019comparative</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2020fairseq</span></cite> show that highly optimized cascaded systems can achieve competitive translation accuracy, they fundamentally struggle to overcome the challenges of high latency and the loss of prosodic fidelity.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "where"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite their conceptual advantages, the widespread adoption of supervised E2E models is severely constrained by a critical bottleneck: the scarcity of parallel S2ST data. Training these large, data-hungry networks requires extensive corpora where the same utterance is available in both the source and target languages, often spoken by the same individual to maintain vocal consistency. Creating such datasets is exceptionally expensive and time-consuming, meaning they exist for only a handful of high-resource language pairs. This fundamental data dependency remains the primary obstacle to scaling E2E solutions to the vast majority of the world&#8217;s languages.</p>\n\n",
+                "matched_terms": [
+                    "where",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Omni-Language Models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2024mini</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024llama</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024slam</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">defossez2024moshi</span></cite> are naturally suited for speech-to-speech related tasks. However, they are often trained on specialized and expensive data like speech-based question-answering (QA) corpora, which limits scalability. RosettaSpeech bypasses this bottleneck by training exclusively on abundant, monolingual speech-text pairs, requiring no parallel S2S or QA data. This data-efficient approach simplifies the training pipeline and makes it feasible to build S2ST systems for a much wider range of languages.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The core of our architecture is the Qwen3-0.6B Large Language Model (LLM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yang2025qwen3</span></cite>, which functions as the central engine for all translation tasks. The selection of this model was primarily motivated by its advanced capabilities in text understanding. Critically, its inherent multilingual proficiency is essential for the cross-lingual objectives of our work. By leveraging a pre-trained LLM as the backbone, RosettaSpeech inherits the extensive world knowledge and complex linguistic patterns acquired during the LLM&#8217;s foundational training, thereby providing a robust starting point for our specialized translation tasks.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the Spanish-to-English task, RosettaSpeech establishes a new benchmark with an ASR-BLEU of 29.86, marking a relative improvement of over 14% against the previous leading system. This is complemented by a top-tier text BLEU score of 32.64, demonstrating excellent accuracy. The performance gains are most pronounced for German-to-English, where our model achieves an ASR-BLEU of 25.17. This represents a substantial relative improvement of over 27% compared to the prior best. The corresponding text BLEU of 31.95 also significantly surpasses previous results, underscoring the model&#8217;s robust capabilities.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "where"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our RosettaSpeech model is trained from the outset using a joint training strategy, where data for speech-to-text translation (S2TT) and text-to-speech translation (T2ST) are mixed and learned simultaneously. To demonstrate the necessity of this approach, we conducted an ablation study comparing it against two sequential training methods, with results shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.T3\" title=\"Table 3 &#8227; Multi-stage training &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The sequential methods suffer from severe catastrophic forgetting. For instance, when the model is trained first on S2TT and then on T2ST, it forgets how to process speech inputs, causing its S2ST performance to plummet to a near-zero ASR-BLEU of 0.18. Conversely, training on T2ST first and then S2TT erases the model&#8217;s speech generation capabilities, resulting in an ASR-BLEU of just 0.49. In stark contrast, our joint training method avoids this issue, achieving strong and balanced performance across all four tasks.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "where",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Furthermore, we investigated the model&#8217;s capacity for multilingual, many-to-one translation by fine-tuning a single model to handle French, Spanish, and German to English translation simultaneously. Remarkably, as shown in the final row of Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S3.T1\" title=\"Table 1 &#8227; 3.4 Inference &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, this unified model maintains strong and competitive performance across all three language pairs. This result underscores the scalability and efficiency of the RosettaSpeech architecture, proving its ability to support multiple translation directions within a single, compact model without significant performance trade-offs.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "rosettaspeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F2\" title=\"Figure 2 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the model&#8217;s performance on the CVSS-C test set at various training checkpoints for French, Spanish, and German-to-English translation. It is worth noting that at the very beginning of training, we observe a slight, initial dip in text-to-text translation performance. This phenomenon is expected, as the pre-trained text-only backbone is being adapted to handle more complex, multi-modal objectives. However, as training progresses, this capability not only recovers but is further enhanced, leading to a clear and consistent trend: translation quality for all tasks&#8212;both text-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text) and speech-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech) &#8212; steadily improves with more training steps. Notably, our model surpasses the performance of the strong StreamSpeech baseline (indicated by the dashed orange line) relatively early in the training process, typically within the first 20,000 steps, highlighting its remarkable training efficiency.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "dashed"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Furthermore, we investigated the impact of data scale on final model performance for the FR&#8594;EN task. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F3\" title=\"Figure 3 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, there is a strong, positive correlation between the amount of monolingual training data (measured in thousands of hours) and the resulting translation quality. Both the text-based BLEU and speech-based ASR-BLEU scores increase consistently as the data volume grows. Together, these experiments confirm that RosettaSpeech not only trains efficiently but also scales effectively with data. While limitations in computational resources and data availability for the source languages prevented a more exhaustive exploration of this scaling potential, our results demonstrate that the model already achieves a powerful level of performance even under the current constraints.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">RosettaSpeech is a novel framework that achieves state-of-the-art, zero-shot speech-to-speech translation using only monolingual data. By leveraging text as an intermediate training bridge, our method bypasses the need for parallel speech corpora and demonstrates robust performance on standard benchmarks for French, Spanish, and German-to-English translation. Ultimately, by removing this critical data dependency, RosettaSpeech provides a scalable and practical blueprint for extending high-fidelity speech translation to the vast number of languages currently underserved by technology.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite RosettaSpeech demonstrates promising results, we acknowledge several limitations that present avenues for future research. Our current experiments are confined to translation from a few high-resource European languages into English, and extending the framework to a more diverse set of languages, especially low-resource ones, is a critical next step to assess its broader applicability. Furthermore, the models are currently designed for one-directional, many-to-one translation (into English); a more advanced implementation would support bidirectional or any-to-any translation for greater real-world utility. Our scaling analysis focused exclusively on the size of the training data. A valuable future direction, should sufficient computational resources become available, would be to explore the impact of scaling the model size itself. Finally, for true low-resource languages that lack even basic text translation systems (or where NMT quality is poor), the generated pseudo-labels may suffer from hallucinations or semantic errors, degrading the final S2ST performance. Therefore, our method is best suited for languages that are under-served in the speech domain but adequately supported in the text domain. Future work will investigate the minimum NMT performance threshold required for effective S2ST distillation and explore techniques to mitigate noise in NMT-generated targets.</p>\n\n",
+                "matched_terms": [
+                    "rosettaspeech",
+                    "where",
+                    "training"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data",
+        "image_url": "https://arxiv.org/html/2511.20974v1/x2.png",
+        "caption": "Figure 2: S2TT and S2ST results on the CVSS-C test set at different training steps, compared to the StreamSpeech baseline (the two dashed lines). From top to bottom are Fr→\\toEN, Es→\\toEN, and DE→\\toEN respectively.",
+        "informative_terms_identified": [
+            "test",
+            "lines",
+            "cvssc",
+            "s2st",
+            "s2tt",
+            "dashed",
+            "compared",
+            "fr→toen",
+            "results",
+            "from",
+            "de→toen",
+            "steps",
+            "streamspeech",
+            "baseline",
+            "es→toen",
+            "two",
+            "training",
+            "set"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F2\" title=\"Figure 2 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the model&#8217;s performance on the CVSS-C test set at various training checkpoints for French, Spanish, and German-to-English translation. It is worth noting that at the very beginning of training, we observe a slight, initial dip in text-to-text translation performance. This phenomenon is expected, as the pre-trained text-only backbone is being adapted to handle more complex, multi-modal objectives. However, as training progresses, this capability not only recovers but is further enhanced, leading to a clear and consistent trend: translation quality for all tasks&#8212;both text-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text) and speech-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech) &#8212; steadily improves with more training steps. Notably, our model surpasses the performance of the strong StreamSpeech baseline (indicated by the dashed orange line) relatively early in the training process, typically within the first 20,000 steps, highlighting its remarkable training efficiency.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The scarcity of parallel speech corpora critically hampers speech-to-speech translation (S2ST), often forcing reliance on complex, multi-stage pipelines. This paper introduces RosettaSpeech, a novel and simplified framework for zero-shot S2ST that is trained on monolingual speech-text data augmented by machine translation supervision. While our method leverages the linguistic knowledge inherent in text-based NMT models, it strictly eliminates the need for parallel speech-to-speech pairs. Our model uniquely uses text as an intermediate bridge during training but functions as a direct, end-to-end speech-to-speech model at inference. This streamlined approach achieves state-of-the-art results on standard benchmarks. For instance, on the CVSS-C test set, RosettaSpeech outperforms leading systems, achieving an ASR-BLEU score of 25.17 for German-to-English and 29.86 for Spanish-to-English&#8212;relative gains of over 27% and 14%, respectively. Furthermore, we demonstrate that a single model can deliver strong many-to-one translation performance (FR/ES/DE &#8211;&gt; EN). We also provide a foundational analysis of how training data scaling impacts model performance. By prioritizing reliance on abundant parallel text rather than difficult-to-acquire parallel speech, RosettaSpeech offers a scalable path to creating high-quality, speaker-preserving S2ST for a much broader array of languages.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "cvssc",
+                    "s2st",
+                    "results",
+                    "training",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address these issues, end-to-end (E2E) models have emerged, offering a direct mapping from source to target speech within a single neural network&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2019direct</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022translatotron</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite>. These E2E systems can mitigate latency but struggle to effectively preserve the source speaker&#8217;s voice, and their development is severely hampered by a data bottleneck: they require massive, parallel speech-to-speech translation (S2ST) corpora, which are prohibitively expensive and exist for only a handful of high-resource languages. Recent efforts in unsupervised S2ST have sought to overcome this data scarcity by using only monolingual data. However, these methods often rely on complex, multi-stage training pipelines, pseudo-labeling from cascaded models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2022simple</span></cite>, or specialized architectures that can be difficult to train and scale&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">barrault2023seamlessm4t</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">nachmani2024translatotron</span></cite>.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce RosettaSpeech, a novel and simplified framework for zero-shot<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>We define &#8220;zero-shot&#8221; in this context as the complete absence of parallel <span class=\"ltx_text ltx_font_italic\">source-speech</span> to <span class=\"ltx_text ltx_font_italic\">target-speech</span> data.</span></span></span> speech-to-speech translation. Unlike prior works that rely on complex pipelines, our approach bridges the modality gap by leveraging off-the-shelf NMT models to transform abundant monolingual speech-text pairs into synthetic S2ST training targets. Although this implies a dependency on text-based translation resources, it successfully circumvents the critical bottleneck of acquiring expensive parallel speech corpora.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Crucially, RosettaSpeech is designed to address the \"<span class=\"ltx_text ltx_font_italic\">asymmetric resource</span>\" scenario prevalent in many world languages. While thousands of languages have achieved a \"text digitization milestone\"&#8212;possessing decent text translation models or bitexts&#8212;they lack the massive parallel speech data required for conventional S2ST. By decoupling the need for speech parallelism from linguistic supervision, our framework offers a scalable path to unlock high-quality, speaker-preserving S2ST for this broad array of \"<span class=\"ltx_text ltx_font_italic\">text-rich, speech-poor</span>\" languages.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "s2st"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose RosettaSpeech, a novel and highly effective framework for end-to-end S2ST that simplifies complex, multi-stage pipelines into a robust, single-stage process, achieving state-of-the-art results on standard benchmarks without requiring any <span class=\"ltx_text ltx_font_italic\">parallel speech-to-speech corpora</span>.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "s2st"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We provide a foundational analysis of how training data and steps affect model performance, providing a crucial empirical foundation for future work on scaling S2ST systems to even larger models and more languages.</p>\n\n",
+                "matched_terms": [
+                    "steps",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By demonstrating that high-quality, speaker-preserving S2ST is achievable without parallel speech corpora, RosettaSpeech paves the way for developing powerful translation systems for a much wider and more diverse set of the world&#8217;s languages.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The primary advantage of this modular design is its simplicity and the ability to leverage powerful, pre-trained models for each sub-task. Each component can be developed and improved independently. However, this pipeline architecture introduces several critical limitations. A principal issue is <span class=\"ltx_text ltx_font_italic\">error propagation</span>, where inaccuracies from the ASR model are passed to and often amplified by the subsequent MT component, degrading the final translation quality. Furthermore, the sequential processing of the three stages inherently introduces significant latency, rendering the system unsuitable for real-time communication. Perhaps most critically, the reliance on an intermediate text representation severs the transfer of <span class=\"ltx_text ltx_font_italic\">paralinguistic information</span>&#8212;such as prosody, emotion, and speaker identity&#8212;from the source speech. This results in synthesized output that lacks the naturalness and expressiveness of the original speaker. While some studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">bahar2019comparative</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2020fairseq</span></cite> show that highly optimized cascaded systems can achieve competitive translation accuracy, they fundamentally struggle to overcome the challenges of high latency and the loss of prosodic fidelity.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite their conceptual advantages, the widespread adoption of supervised E2E models is severely constrained by a critical bottleneck: the scarcity of parallel S2ST data. Training these large, data-hungry networks requires extensive corpora where the same utterance is available in both the source and target languages, often spoken by the same individual to maintain vocal consistency. Creating such datasets is exceptionally expensive and time-consuming, meaning they exist for only a handful of high-resource language pairs. This fundamental data dependency remains the primary obstacle to scaling E2E solutions to the vast majority of the world&#8217;s languages.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To overcome the scarcity of parallel data, unsupervised speech-to-speech translation (S2ST) leverages monolingual resources through innovative methods. Strategies range from creating pseudo-labels by cascading unsupervised ASR, MT, and TTS systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2022simple</span></cite>, to training direct end-to-end models like Translatotron 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">nachmani2024translatotron</span></cite>, which uses back-translation and unsupervised embedding mapping. Further advancements focus on specific capabilities like expressivity and modularity. SONAR EXPRESSIVE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">duquenne2023sonar</span></cite> disentangles semantic content from a separately learned prosody embedding to enable zero-shot expressive translation, while ComSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span></cite> introduces a composite framework with a vocabulary adaptor and contrastive learning to combine arbitrary pretrained S2TT and TTS models, achieving high-quality S2ST without any parallel speech data. However, these methods often rely on complex, multi-stage pipelines or specialized model architectures, which can be difficult to train and scale effectively across many languages.</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "from",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Omni-Language Models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2024mini</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024llama</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024slam</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">defossez2024moshi</span></cite> are naturally suited for speech-to-speech related tasks. However, they are often trained on specialized and expensive data like speech-based question-answering (QA) corpora, which limits scalability. RosettaSpeech bypasses this bottleneck by training exclusively on abundant, monolingual speech-text pairs, requiring no parallel S2S or QA data. This data-efficient approach simplifies the training pipeline and makes it feasible to build S2ST systems for a much wider range of languages.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">From Target Language Data</span>: Conversely, for a monolingual corpus in the target language providing <math alttext=\"(S_{tgt},T_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{tgt},T_{tgt})</annotation></semantics></math> pairs, we apply the same NMT model in the reverse direction to translate <math alttext=\"T_{tgt}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{tgt}</annotation></semantics></math> into <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m3\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math>. This results in a corresponding triplet formatted as <math alttext=\"(T_{src}^{*},T_{tgt},S_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msubsup><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow><mo>&#8727;</mo></msubsup><mo>,</mo><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(T_{src}^{*},T_{tgt},S_{tgt})</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our strategy repurposes a diverse set of existing datasets to create a pseudo-parallel corpus. To ensure its quality and fidelity, we apply a rigorous filtering process. After generating translations, we use the COMET&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rei2020comet</span></cite> metric to score the quality of each source-target <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math>-<math alttext=\"T_{tgt}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{tgt}</annotation></semantics></math> pair. Only pairs that meet or exceed a predefined threshold (e.g., 0.80 for EN<math alttext=\"\\leftrightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8596;</mo><annotation encoding=\"application/x-tex\">\\leftrightarrow</annotation></semantics></math>DE) are retained for training. This quality control mechanism is critical, as it prevents the model from learning from inaccurate translations and thereby enhances the final system&#8217;s performance and reliability. The resulting curated corpus provides the structured data needed to train our model to map from a source modality (speech or text) to target text and speech tokens, all without requiring direct <math alttext=\"(S_{src},S_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo>,</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{src},S_{tgt})</annotation></semantics></math> parallel examples.</p>\n\n",
+                "matched_terms": [
+                    "set",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The model is trained following the procedure detailed in Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#alg1\" title=\"Algorithm 1 &#8227; 3.4 Inference &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The training process alternates between two distinct tasks based on the data sampled in each iteration:</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speech-to-Text Translation (S2TT):</span> This branch utilizes a monolingual source corpus <math alttext=\"(S_{src},T_{src})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo>,</mo><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{src},T_{src})</annotation></semantics></math>. The model is fed the speech input <math alttext=\"S_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m2\" intent=\":literal\"><semantics><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">S_{src}</annotation></semantics></math> and is trained to generate its text translation, while the original transcript <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m3\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math> is disregarded. To supervise the training, we compute the loss against a pseudo-target translation <math alttext=\"T_{tgt}^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m4\" intent=\":literal\"><semantics><msubsup><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow><mo>&#8727;</mo></msubsup><annotation encoding=\"application/x-tex\">T_{tgt}^{*}</annotation></semantics></math> generated by an NMT system. Consequently, only the model&#8217;s text output is used, and any generated speech is discarded.</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For both text and speech generation, the training objective is to minimize the standard cross-entropy loss between the model&#8217;s predictions and the target sequences. The total loss for a given training batch is the sum of the S2TT and T2ST losses:</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Here, <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p3.m1\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math> is the input sequence, <math alttext=\"y_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p3.m2\" intent=\":literal\"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">y_{i}</annotation></semantics></math> is the <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p3.m3\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math>-th token of the target sequence (either text or discrete speech tokens), and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p3.m4\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> represents the model parameters. This joint training approach enables the model to learn mappings from both speech and text modalities to a shared latent space that can produce aligned text and speech outputs.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We validate our method on speech-to-speech translation for three language pairs: French to English (FR<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN), German to English (DE<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN), and Spanish to English (ES<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN). The training data is constructed entirely from monolingual corpora, without relying on any parallel speech-to-speech data. For the target language, <span class=\"ltx_text ltx_font_italic\">English</span>, we utilize speech-text pairs from the Gigaspeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021gigaspeech</span></cite> and the English portion of the Multilingual LibriSpeech (MLS)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratap2020mls</span></cite> datasets. For the source languages&#8212;<span class=\"ltx_text ltx_font_italic\">French, German, and Spanish</span>&#8212;we use the corresponding language-specific subsets from the VoxPopuli&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2021voxpopuli</span></cite> and Multilingual LibriSpeech corpora. These monolingual datasets form the basis from which we generate the pseudo-parallel data required for training, as detailed in the preceding section.</p>\n\n",
+                "matched_terms": [
+                    "fr→toen",
+                    "from",
+                    "de→toen",
+                    "es→toen",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For our model, we use CosyVoice2&#8217;s speech tokenizer, which has a single-layer, 6561-entry codebook and operates at 25 Hz for 16kHz speech. The outputs from the final Transformer layer of the Qwen model are then projected into five distinct linear layers: one for text tokens and the remaining four for speech tokens. The same configuration was used for training the model for each language pair. We employed the AdamW optimizer with a learning rate of <math alttext=\"2\\times 10^{-3}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>3</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-3}</annotation></semantics></math>, <math alttext=\"\\beta_{1}=0.9\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{1}=0.9</annotation></semantics></math>, <math alttext=\"\\beta_{2}=0.999\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS1.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>&#946;</mi><mn>2</mn></msub><mo>=</mo><mn>0.999</mn></mrow><annotation encoding=\"application/x-tex\">\\beta_{2}=0.999</annotation></semantics></math>, an epsilon of <math alttext=\"1\\times 10^{-6}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS1.p1.m4\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>6</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-6}</annotation></semantics></math>, and a weight decay of 0.01. A learning rate scheduler is utilized, featuring a linear warm-up for the initial 10K steps, followed by a linear decay for the remainder of the 100K total training steps. Gradient accumulation is performed over micro-batches. The training of each model was done on 8 NVIDIA A100 40GB GPUs.</p>\n\n",
+                "matched_terms": [
+                    "steps",
+                    "from",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, we use distinct decoding strategies for the generation of text and speech tokens. For the text translation, we utilize greedy search, which we found empirically to yield higher-quality results than nucleus sampling for this task. Conversely, for the generation of discrete speech tokens, we use nucleus sampling with a TopK of 20, a TopP of 0.8, and a temperature of 0.95. Furthermore, we apply a length penalty during speech generation to prevent the model from producing repetitive or non-terminating audio outputs.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure a fair comparison, we adopt the evaluation setting of StreamSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite> and assess our model on the CVSS-C&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022cvss</span></cite> test set for French, German, and Spanish to English speech-to-speech translation (FR/DE/ES&#8594;EN). We measure performance using two key metrics: the BLEU score for the translated text and the ASR-BLEU score for the synthesized speech. The ASR-BLEU score is calculated by first transcribing the generated audio with a pre-trained ASR model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span></cite> and then computing the SacreBLEU&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">post2018call</span></cite> score against the reference text. We compare RosettaSpeech against several state-of-the-art S2ST models, including Translatotron&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2019direct</span></cite>, Translatotron 2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022translatotron</span></cite>, S2UT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2021direct</span></cite>, UnitY&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">inaguma2022unity</span></cite>, DASpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2023daspeech</span></cite>, ComSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span></cite>, StreamSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite>, and Hibiki&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">labiausse2025high</span></cite>.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "cvssc",
+                    "s2st",
+                    "streamspeech",
+                    "two",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the Spanish-to-English task, RosettaSpeech establishes a new benchmark with an ASR-BLEU of 29.86, marking a relative improvement of over 14% against the previous leading system. This is complemented by a top-tier text BLEU score of 32.64, demonstrating excellent accuracy. The performance gains are most pronounced for German-to-English, where our model achieves an ASR-BLEU of 25.17. This represents a substantial relative improvement of over 27% compared to the prior best. The corresponding text BLEU of 31.95 also significantly surpasses previous results, underscoring the model&#8217;s robust capabilities.</p>\n\n",
+                "matched_terms": [
+                    "compared",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Preserving speaker identity across languages remains challenging, which is why many prior S2ST systems restrict themselves to single-speaker synthesis. We assess cross-lingual speaker similarity for our zero-parallel model across FR/ES/DE<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN using a WavLM-based speaker verification model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022wavlm</span></cite> (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.T2\" title=\"Table 2 &#8227; Translation Fidelity &#8227; 4.4 Results &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). Because the verifier is trained on monolingual data, cross-lingual evaluation inevitably suffers from language-mismatch effects, yielding lower absolute scores than monolingual settings. Even under this conservative regime, our model attains consistent similarity across all three language pairs and substantially outperforms the CVSS-T&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022cvss</span></cite> setting, indicating that our zero-parallel training effectively preserves speaker characteristics and prosodic cues in the translated speech.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our RosettaSpeech model is trained from the outset using a joint training strategy, where data for speech-to-text translation (S2TT) and text-to-speech translation (T2ST) are mixed and learned simultaneously. To demonstrate the necessity of this approach, we conducted an ablation study comparing it against two sequential training methods, with results shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.T3\" title=\"Table 3 &#8227; Multi-stage training &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The sequential methods suffer from severe catastrophic forgetting. For instance, when the model is trained first on S2TT and then on T2ST, it forgets how to process speech inputs, causing its S2ST performance to plummet to a near-zero ASR-BLEU of 0.18. Conversely, training on T2ST first and then S2TT erases the model&#8217;s speech generation capabilities, resulting in an ASR-BLEU of just 0.49. In stark contrast, our joint training method avoids this issue, achieving strong and balanced performance across all four tasks.</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "s2st",
+                    "results",
+                    "from",
+                    "two",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To provide a foundational understanding of RosettaSpeech&#8217;s behavior, we analyze its performance as a function of training steps and data volume.</p>\n\n",
+                "matched_terms": [
+                    "steps",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Furthermore, we investigated the impact of data scale on final model performance for the FR&#8594;EN task. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F3\" title=\"Figure 3 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, there is a strong, positive correlation between the amount of monolingual training data (measured in thousands of hours) and the resulting translation quality. Both the text-based BLEU and speech-based ASR-BLEU scores increase consistently as the data volume grows. Together, these experiments confirm that RosettaSpeech not only trains efficiently but also scales effectively with data. While limitations in computational resources and data availability for the source languages prevented a more exhaustive exploration of this scaling potential, our results demonstrate that the model already achieves a powerful level of performance even under the current constraints.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite RosettaSpeech demonstrates promising results, we acknowledge several limitations that present avenues for future research. Our current experiments are confined to translation from a few high-resource European languages into English, and extending the framework to a more diverse set of languages, especially low-resource ones, is a critical next step to assess its broader applicability. Furthermore, the models are currently designed for one-directional, many-to-one translation (into English); a more advanced implementation would support bidirectional or any-to-any translation for greater real-world utility. Our scaling analysis focused exclusively on the size of the training data. A valuable future direction, should sufficient computational resources become available, would be to explore the impact of scaling the model size itself. Finally, for true low-resource languages that lack even basic text translation systems (or where NMT quality is poor), the generated pseudo-labels may suffer from hallucinations or semantic errors, degrading the final S2ST performance. Therefore, our method is best suited for languages that are under-served in the speech domain but adequately supported in the text domain. Future work will investigate the minimum NMT performance threshold required for effective S2ST distillation and explore techniques to mitigate noise in NMT-generated targets.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "results",
+                    "from",
+                    "training",
+                    "set"
+                ]
+            }
+        ]
+    },
+    "S4.F2.fig2": {
+        "source_file": "RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data",
+        "image_url": "https://arxiv.org/html/2511.20974v1/x3.png",
+        "caption": "",
+        "informative_terms_identified": [],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S4.F2.fig3": {
+        "source_file": "RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data",
+        "image_url": "https://arxiv.org/html/2511.20974v1/x4.png",
+        "caption": "",
+        "informative_terms_identified": [],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    },
+    "S4.F3": {
+        "source_file": "RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data",
+        "image_url": "https://arxiv.org/html/2511.20974v1/x5.png",
+        "caption": "Figure 3: S2TT (BLEU) and S2ST (ASR-BLEU) results on the CVSS-C test set at different training data volume.",
+        "informative_terms_identified": [
+            "bleu",
+            "test",
+            "volume",
+            "cvssc",
+            "s2st",
+            "s2tt",
+            "results",
+            "asrbleu",
+            "data",
+            "training",
+            "set"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Furthermore, we investigated the impact of data scale on final model performance for the FR&#8594;EN task. As shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F3\" title=\"Figure 3 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, there is a strong, positive correlation between the amount of monolingual training data (measured in thousands of hours) and the resulting translation quality. Both the text-based BLEU and speech-based ASR-BLEU scores increase consistently as the data volume grows. Together, these experiments confirm that RosettaSpeech not only trains efficiently but also scales effectively with data. While limitations in computational resources and data availability for the source languages prevented a more exhaustive exploration of this scaling potential, our results demonstrate that the model already achieves a powerful level of performance even under the current constraints.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">The scarcity of parallel speech corpora critically hampers speech-to-speech translation (S2ST), often forcing reliance on complex, multi-stage pipelines. This paper introduces RosettaSpeech, a novel and simplified framework for zero-shot S2ST that is trained on monolingual speech-text data augmented by machine translation supervision. While our method leverages the linguistic knowledge inherent in text-based NMT models, it strictly eliminates the need for parallel speech-to-speech pairs. Our model uniquely uses text as an intermediate bridge during training but functions as a direct, end-to-end speech-to-speech model at inference. This streamlined approach achieves state-of-the-art results on standard benchmarks. For instance, on the CVSS-C test set, RosettaSpeech outperforms leading systems, achieving an ASR-BLEU score of 25.17 for German-to-English and 29.86 for Spanish-to-English&#8212;relative gains of over 27% and 14%, respectively. Furthermore, we demonstrate that a single model can deliver strong many-to-one translation performance (FR/ES/DE &#8211;&gt; EN). We also provide a foundational analysis of how training data scaling impacts model performance. By prioritizing reliance on abundant parallel text rather than difficult-to-acquire parallel speech, RosettaSpeech offers a scalable path to creating high-quality, speaker-preserving S2ST for a much broader array of languages.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "cvssc",
+                    "s2st",
+                    "results",
+                    "asrbleu",
+                    "data",
+                    "training",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address these issues, end-to-end (E2E) models have emerged, offering a direct mapping from source to target speech within a single neural network&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2019direct</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022translatotron</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite>. These E2E systems can mitigate latency but struggle to effectively preserve the source speaker&#8217;s voice, and their development is severely hampered by a data bottleneck: they require massive, parallel speech-to-speech translation (S2ST) corpora, which are prohibitively expensive and exist for only a handful of high-resource languages. Recent efforts in unsupervised S2ST have sought to overcome this data scarcity by using only monolingual data. However, these methods often rely on complex, multi-stage training pipelines, pseudo-labeling from cascaded models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2022simple</span></cite>, or specialized architectures that can be difficult to train and scale&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">barrault2023seamlessm4t</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">nachmani2024translatotron</span></cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we introduce RosettaSpeech, a novel and simplified framework for zero-shot<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>We define &#8220;zero-shot&#8221; in this context as the complete absence of parallel <span class=\"ltx_text ltx_font_italic\">source-speech</span> to <span class=\"ltx_text ltx_font_italic\">target-speech</span> data.</span></span></span> speech-to-speech translation. Unlike prior works that rely on complex pipelines, our approach bridges the modality gap by leveraging off-the-shelf NMT models to transform abundant monolingual speech-text pairs into synthetic S2ST training targets. Although this implies a dependency on text-based translation resources, it successfully circumvents the critical bottleneck of acquiring expensive parallel speech corpora.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Crucially, RosettaSpeech is designed to address the \"<span class=\"ltx_text ltx_font_italic\">asymmetric resource</span>\" scenario prevalent in many world languages. While thousands of languages have achieved a \"text digitization milestone\"&#8212;possessing decent text translation models or bitexts&#8212;they lack the massive parallel speech data required for conventional S2ST. By decoupling the need for speech parallelism from linguistic supervision, our framework offers a scalable path to unlock high-quality, speaker-preserving S2ST for this broad array of \"<span class=\"ltx_text ltx_font_italic\">text-rich, speech-poor</span>\" languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We propose RosettaSpeech, a novel and highly effective framework for end-to-end S2ST that simplifies complex, multi-stage pipelines into a robust, single-stage process, achieving state-of-the-art results on standard benchmarks without requiring any <span class=\"ltx_text ltx_font_italic\">parallel speech-to-speech corpora</span>.</p>\n\n",
+                "matched_terms": [
+                    "results",
+                    "s2st"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We provide a foundational analysis of how training data and steps affect model performance, providing a crucial empirical foundation for future work on scaling S2ST systems to even larger models and more languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">By demonstrating that high-quality, speaker-preserving S2ST is achievable without parallel speech corpora, RosettaSpeech paves the way for developing powerful translation systems for a much wider and more diverse set of the world&#8217;s languages.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite their conceptual advantages, the widespread adoption of supervised E2E models is severely constrained by a critical bottleneck: the scarcity of parallel S2ST data. Training these large, data-hungry networks requires extensive corpora where the same utterance is available in both the source and target languages, often spoken by the same individual to maintain vocal consistency. Creating such datasets is exceptionally expensive and time-consuming, meaning they exist for only a handful of high-resource language pairs. This fundamental data dependency remains the primary obstacle to scaling E2E solutions to the vast majority of the world&#8217;s languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To overcome the scarcity of parallel data, unsupervised speech-to-speech translation (S2ST) leverages monolingual resources through innovative methods. Strategies range from creating pseudo-labels by cascading unsupervised ASR, MT, and TTS systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2022simple</span></cite>, to training direct end-to-end models like Translatotron 3&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">nachmani2024translatotron</span></cite>, which uses back-translation and unsupervised embedding mapping. Further advancements focus on specific capabilities like expressivity and modularity. SONAR EXPRESSIVE&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">duquenne2023sonar</span></cite> disentangles semantic content from a separately learned prosody embedding to enable zero-shot expressive translation, while ComSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span></cite> introduces a composite framework with a vocabulary adaptor and contrastive learning to combine arbitrary pretrained S2TT and TTS models, achieving high-quality S2ST without any parallel speech data. However, these methods often rely on complex, multi-stage pipelines or specialized model architectures, which can be difficult to train and scale effectively across many languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2tt",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Omni-Language Models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xie2024mini</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024llama</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2024slam</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">defossez2024moshi</span></cite> are naturally suited for speech-to-speech related tasks. However, they are often trained on specialized and expensive data like speech-based question-answering (QA) corpora, which limits scalability. RosettaSpeech bypasses this bottleneck by training exclusively on abundant, monolingual speech-text pairs, requiring no parallel S2S or QA data. This data-efficient approach simplifies the training pipeline and makes it feasible to build S2ST systems for a much wider range of languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A core challenge in developing robust speech-to-speech translation (S2ST) systems is the profound scarcity of true parallel corpora, which contain the same utterance spoken in both a source and target language. Acquiring such data is prohibitively expensive and labor-intensive.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">From Target Language Data</span>: Conversely, for a monolingual corpus in the target language providing <math alttext=\"(S_{tgt},T_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{tgt},T_{tgt})</annotation></semantics></math> pairs, we apply the same NMT model in the reverse direction to translate <math alttext=\"T_{tgt}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{tgt}</annotation></semantics></math> into <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m3\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math>. This results in a corresponding triplet formatted as <math alttext=\"(T_{src}^{*},T_{tgt},S_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I1.i2.p1.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msubsup><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow><mo>&#8727;</mo></msubsup><mo>,</mo><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(T_{src}^{*},T_{tgt},S_{tgt})</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "results"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our strategy repurposes a diverse set of existing datasets to create a pseudo-parallel corpus. To ensure its quality and fidelity, we apply a rigorous filtering process. After generating translations, we use the COMET&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rei2020comet</span></cite> metric to score the quality of each source-target <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m1\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math>-<math alttext=\"T_{tgt}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m2\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{tgt}</annotation></semantics></math> pair. Only pairs that meet or exceed a predefined threshold (e.g., 0.80 for EN<math alttext=\"\\leftrightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8596;</mo><annotation encoding=\"application/x-tex\">\\leftrightarrow</annotation></semantics></math>DE) are retained for training. This quality control mechanism is critical, as it prevents the model from learning from inaccurate translations and thereby enhances the final system&#8217;s performance and reliability. The resulting curated corpus provides the structured data needed to train our model to map from a source modality (speech or text) to target text and speech tokens, all without requiring direct <math alttext=\"(S_{src},S_{tgt})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p4.m4\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo>,</mo><msub><mi>S</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{src},S_{tgt})</annotation></semantics></math> parallel examples.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The model is trained following the procedure detailed in Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#alg1\" title=\"Algorithm 1 &#8227; 3.4 Inference &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The training process alternates between two distinct tasks based on the data sampled in each iteration:</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Speech-to-Text Translation (S2TT):</span> This branch utilizes a monolingual source corpus <math alttext=\"(S_{src},T_{src})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo>,</mo><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{src},T_{src})</annotation></semantics></math>. The model is fed the speech input <math alttext=\"S_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m2\" intent=\":literal\"><semantics><msub><mi>S</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">S_{src}</annotation></semantics></math> and is trained to generate its text translation, while the original transcript <math alttext=\"T_{src}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m3\" intent=\":literal\"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>c</mi></mrow></msub><annotation encoding=\"application/x-tex\">T_{src}</annotation></semantics></math> is disregarded. To supervise the training, we compute the loss against a pseudo-target translation <math alttext=\"T_{tgt}^{*}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.I3.i1.p1.m4\" intent=\":literal\"><semantics><msubsup><mi>T</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow><mo>&#8727;</mo></msubsup><annotation encoding=\"application/x-tex\">T_{tgt}^{*}</annotation></semantics></math> generated by an NMT system. Consequently, only the model&#8217;s text output is used, and any generated speech is discarded.</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For both text and speech generation, the training objective is to minimize the standard cross-entropy loss between the model&#8217;s predictions and the target sequences. The total loss for a given training batch is the sum of the S2TT and T2ST losses:</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although the model has never been exposed to any paired source and target speech data <math alttext=\"(S_{\\text{src}},S_{\\text{tgt}})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>S</mi><mtext>src</mtext></msub><mo>,</mo><msub><mi>S</mi><mtext>tgt</mtext></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(S_{\\text{src}},S_{\\text{tgt}})</annotation></semantics></math> during training, it can perform direct speech-to-speech translation at inference time. The model takes the source speech waveform, <math alttext=\"S_{\\text{src}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m2\" intent=\":literal\"><semantics><msub><mi>S</mi><mtext>src</mtext></msub><annotation encoding=\"application/x-tex\">S_{\\text{src}}</annotation></semantics></math>, as input and autoregressively generates both the translated text, <math alttext=\"T_{\\text{tgt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m3\" intent=\":literal\"><semantics><msub><mi>T</mi><mtext>tgt</mtext></msub><annotation encoding=\"application/x-tex\">T_{\\text{tgt}}</annotation></semantics></math>, and the translated semantic speech tokens, <math alttext=\"S_{\\text{tgt}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS4.p1.m4\" intent=\":literal\"><semantics><msub><mi>S</mi><mtext>tgt</mtext></msub><annotation encoding=\"application/x-tex\">S_{\\text{tgt}}</annotation></semantics></math>, in a single forward pass. We then employ an off-the-shelf conditional flow matching (CFM) model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">du2024cosyvoice</span></cite> to convert these semantic tokens into mel-spectrograms. Crucially, this stage allows for effective control over the speaker identity and paralinguistic information in the synthesized audio by conditioning the generation on a given speech prompt. Finally, the mel-spectrograms are synthesized into the output waveform using a HiFi-GAN vocoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kong2020hifi</span></cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We validate our method on speech-to-speech translation for three language pairs: French to English (FR<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN), German to English (DE<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN), and Spanish to English (ES<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN). The training data is constructed entirely from monolingual corpora, without relying on any parallel speech-to-speech data. For the target language, <span class=\"ltx_text ltx_font_italic\">English</span>, we utilize speech-text pairs from the Gigaspeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021gigaspeech</span></cite> and the English portion of the Multilingual LibriSpeech (MLS)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">pratap2020mls</span></cite> datasets. For the source languages&#8212;<span class=\"ltx_text ltx_font_italic\">French, German, and Spanish</span>&#8212;we use the corresponding language-specific subsets from the VoxPopuli&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2021voxpopuli</span></cite> and Multilingual LibriSpeech corpora. These monolingual datasets form the basis from which we generate the pseudo-parallel data required for training, as detailed in the preceding section.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure a fair comparison, we adopt the evaluation setting of StreamSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite> and assess our model on the CVSS-C&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022cvss</span></cite> test set for French, German, and Spanish to English speech-to-speech translation (FR/DE/ES&#8594;EN). We measure performance using two key metrics: the BLEU score for the translated text and the ASR-BLEU score for the synthesized speech. The ASR-BLEU score is calculated by first transcribing the generated audio with a pre-trained ASR model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">baevski2020wav2vec</span></cite> and then computing the SacreBLEU&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">post2018call</span></cite> score against the reference text. We compare RosettaSpeech against several state-of-the-art S2ST models, including Translatotron&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2019direct</span></cite>, Translatotron 2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022translatotron</span></cite>, S2UT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lee2021direct</span></cite>, UnitY&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">inaguma2022unity</span></cite>, DASpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2023daspeech</span></cite>, ComSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fang2024can</span></cite>, StreamSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite>, and Hibiki&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">labiausse2025high</span></cite>.</p>\n\n",
+                "matched_terms": [
+                    "bleu",
+                    "test",
+                    "cvssc",
+                    "s2st",
+                    "asrbleu",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S3.T1\" title=\"Table 1 &#8227; 3.4 Inference &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, our RosettaSpeech model, trained exclusively on monolingual data, establishes a new state-of-the-art for zero-shot speech-to-speech translation on the CVSS-C benchmark. It significantly outperforms prior systems, even those trained with parallel speech data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "cvssc"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For French-to-English translation, our model achieves a highly competitive ASR-BLEU score of 27.86 and a BLEU score of 31.78, surpassing strong baselines like StreamSpeech&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2024streamspeech</span></cite>. While Hibiki&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">labiausse2025high</span></cite> reports a higher ASR-BLEU, it&#8217;s crucial to note that it was trained on a massive paired dataset, larger in volume than our unparalleled data.</p>\n\n",
+                "matched_terms": [
+                    "bleu",
+                    "data",
+                    "volume",
+                    "asrbleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the Spanish-to-English task, RosettaSpeech establishes a new benchmark with an ASR-BLEU of 29.86, marking a relative improvement of over 14% against the previous leading system. This is complemented by a top-tier text BLEU score of 32.64, demonstrating excellent accuracy. The performance gains are most pronounced for German-to-English, where our model achieves an ASR-BLEU of 25.17. This represents a substantial relative improvement of over 27% compared to the prior best. The corresponding text BLEU of 31.95 also significantly surpasses previous results, underscoring the model&#8217;s robust capabilities.</p>\n\n",
+                "matched_terms": [
+                    "bleu",
+                    "results",
+                    "asrbleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Preserving speaker identity across languages remains challenging, which is why many prior S2ST systems restrict themselves to single-speaker synthesis. We assess cross-lingual speaker similarity for our zero-parallel model across FR/ES/DE<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>EN using a WavLM-based speaker verification model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2022wavlm</span></cite> (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.T2\" title=\"Table 2 &#8227; Translation Fidelity &#8227; 4.4 Results &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>). Because the verifier is trained on monolingual data, cross-lingual evaluation inevitably suffers from language-mismatch effects, yielding lower absolute scores than monolingual settings. Even under this conservative regime, our model attains consistent similarity across all three language pairs and substantially outperforms the CVSS-T&#160;<cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">jia2022cvss</span></cite> setting, indicating that our zero-parallel training effectively preserves speaker characteristics and prosodic cues in the translated speech.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "s2st",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our RosettaSpeech model is trained from the outset using a joint training strategy, where data for speech-to-text translation (S2TT) and text-to-speech translation (T2ST) are mixed and learned simultaneously. To demonstrate the necessity of this approach, we conducted an ablation study comparing it against two sequential training methods, with results shown in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.T3\" title=\"Table 3 &#8227; Multi-stage training &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The sequential methods suffer from severe catastrophic forgetting. For instance, when the model is trained first on S2TT and then on T2ST, it forgets how to process speech inputs, causing its S2ST performance to plummet to a near-zero ASR-BLEU of 0.18. Conversely, training on T2ST first and then S2TT erases the model&#8217;s speech generation capabilities, resulting in an ASR-BLEU of just 0.49. In stark contrast, our joint training method avoids this issue, achieving strong and balanced performance across all four tasks.</p>\n\n",
+                "matched_terms": [
+                    "s2tt",
+                    "s2st",
+                    "results",
+                    "asrbleu",
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To further probe the capabilities of our framework, we explored the impact of fine-tuning the pre-trained RosettaSpeech model on a limited amount of parallel speech-to-speech data. As detailed in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S3.T1\" title=\"Table 1 &#8227; 3.4 Inference &#8227; 3 Methodology &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, this fine-tuning stage yields a substantial performance boost across all language pairs. For example, the ASR-BLEU score for French-to-English translation improves from 27.86 to 31.56, while the German-to-English score rises from 25.17 to 29.90. This demonstrates that our monolingual pre-training strategy creates a powerful foundation that can be rapidly and effectively specialized with even a small quantity of supervised data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "asrbleu"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To provide a foundational understanding of RosettaSpeech&#8217;s behavior, we analyze its performance as a function of training steps and data volume.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "volume",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.20974v1#S4.F2\" title=\"Figure 2 &#8227; Training Steps and Data Scaling &#8227; 4.5 Ablation Studies &#8227; 4 Experiments &#8227; RosettaSpeech: Zero-Shot Speech-to-Speech Translation from Monolingual Data\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the model&#8217;s performance on the CVSS-C test set at various training checkpoints for French, Spanish, and German-to-English translation. It is worth noting that at the very beginning of training, we observe a slight, initial dip in text-to-text translation performance. This phenomenon is expected, as the pre-trained text-only backbone is being adapted to handle more complex, multi-modal objectives. However, as training progresses, this capability not only recovers but is further enhanced, leading to a clear and consistent trend: translation quality for all tasks&#8212;both text-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Text) and speech-output (Text<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech, Speech<math alttext=\"\\to\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS5.SSS0.Px3.p2.m4\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math>Speech) &#8212; steadily improves with more training steps. Notably, our model surpasses the performance of the strong StreamSpeech baseline (indicated by the dashed orange line) relatively early in the training process, typically within the first 20,000 steps, highlighting its remarkable training efficiency.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "cvssc",
+                    "training",
+                    "set"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">RosettaSpeech is a novel framework that achieves state-of-the-art, zero-shot speech-to-speech translation using only monolingual data. By leveraging text as an intermediate training bridge, our method bypasses the need for parallel speech corpora and demonstrates robust performance on standard benchmarks for French, Spanish, and German-to-English translation. Ultimately, by removing this critical data dependency, RosettaSpeech provides a scalable and practical blueprint for extending high-fidelity speech translation to the vast number of languages currently underserved by technology.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite RosettaSpeech demonstrates promising results, we acknowledge several limitations that present avenues for future research. Our current experiments are confined to translation from a few high-resource European languages into English, and extending the framework to a more diverse set of languages, especially low-resource ones, is a critical next step to assess its broader applicability. Furthermore, the models are currently designed for one-directional, many-to-one translation (into English); a more advanced implementation would support bidirectional or any-to-any translation for greater real-world utility. Our scaling analysis focused exclusively on the size of the training data. A valuable future direction, should sufficient computational resources become available, would be to explore the impact of scaling the model size itself. Finally, for true low-resource languages that lack even basic text translation systems (or where NMT quality is poor), the generated pseudo-labels may suffer from hallucinations or semantic errors, degrading the final S2ST performance. Therefore, our method is best suited for languages that are under-served in the speech domain but adequately supported in the text domain. Future work will investigate the minimum NMT performance threshold required for effective S2ST distillation and explore techniques to mitigate noise in NMT-generated targets.</p>\n\n",
+                "matched_terms": [
+                    "s2st",
+                    "results",
+                    "data",
+                    "training",
+                    "set"
+                ]
+            }
+        ]
+    }
+}

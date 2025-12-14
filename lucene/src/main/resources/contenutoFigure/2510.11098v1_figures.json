@@ -1,0 +1,797 @@
+{
+    "S2.F1": {
+        "source_file": "VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents",
+        "image_url": "https://arxiv.org/html/2510.11098v1/x1.png",
+        "caption": "Figure 1: Overview of VCB Bench.",
+        "informative_terms_identified": [
+            "overview",
+            "bench",
+            "vcb"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">As shown in the Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S2.F1\" title=\"Figure 1 &#8227; 2 Related Work &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, VCB Bench covers three core dimensions: Instruction Following, Knowledge, and Robustness. Instruction Following includes Text Instruction Follow (TIF) (e.g., continuation, creation), Speech Instruction Follow (SIF) (e.g., emotional, volume control), and Multi-turn Dialog (MTD) tasks. The Knowledge module assesses General Knowledge (GK) across 12 disciplines, Mathematical Logic (ML), Discourse Comprehension (DC), and Story Continuation (SC). Robustness introduces real-world perturbations from speaker variations, environmental noise, and content modifications to evaluate model stability.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in large audio language models (LALMs) have greatly enhanced multimodal conversational systems. However, existing benchmarks remain limited&#8212;they are mainly English-centric, rely on synthetic speech, and lack comprehensive, discriminative evaluation across multiple dimensions. To address these gaps, we present Voice Chat Bot Bench (VCB Bench)&#8212;a high-quality Chinese benchmark built entirely on real human speech. VCB Bench evaluates LALMs from three complementary perspectives: instruction following (including speech-level control beyond text commands), knowledge understanding (general knowledge, reasoning, and daily dialogue), and robustness (stability under perturbations in content, environment, and speaker traits). Experiments on representative LALMs reveal notable performance gaps and highlight future directions for improvement. VCB Bench provides a reproducible and fine-grained evaluation framework, offering standardized methodology and practical insights for advancing Chinese voice conversational models. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Code and data are available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/193746/VCB-Bench-Evalkit\" title=\"\">https://github.com/193746/VCB-Bench-Evalkit</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">\n  <span class=\"ltx_text ltx_font_bold\">VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents</span>\n</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge these gaps, we introduce Voice Chat Bot Bench (VCB Bench)&#8212;the first comprehensive evaluation framework for Chinese voice conversation, built entirely from authentic (non-synthetic) speech. VCB Bench evaluates LALMs along three complementary dimensions: (1) Instruction following, extending beyond text-based prompts to incorporate speech-level control tasks such as adjusting volume, speed, and emotion, with bilingual (Chinese-English) support; (2) Knowledge, including multi-disciplinary general knowledge (12 subjects), mathematical and logical reasoning, daily dialogue comprehension, and story continuation for pretraining performance assessment; (3) Robustness, measuring model stability under real-world perturbations across content (mispronunciations, grammatical errors), environment (street, TV noise), and speaker characteristics (age, accents).</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed VCB Bench is built entirely from authentic human recordings rather than synthetic speech. It provides a large-scale, high-fidelity dataset covering diverse conversational scenarios and introduces a multi-dimensional evaluation framework that jointly measures knowledge understanding, instruction following, and robustness through fine-grained, reproducible tasks. Based on this benchmark, we conduct a systematic empirical analysis of state-of-the-art LALMs under unified settings, revealing their strengths and limitations in Chinese voice interaction and offering actionable insights for future model development.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These models demonstrate rapid progress in unified audio-language modeling&#8212;covering tokenization, multimodal fusion, and real-time dialogue&#8212;but systematic benchmarks, especially for Chinese real-speech interaction, remain scarce. Current evaluations are mostly qualitative or based on synthetic data, underscoring the need for comprehensive real-speech benchmarks like VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, existing benchmarks have significantly advanced the evaluation coverage of LALMs, yet they share several limitations:\n(1) most rely heavily on TTS or synthetic speech, (2) they focus on English, and (3) their content often derives from text-centric QA corpora rather than spontaneous human dialogue. These gaps highlight the need for a real-speech, Chinese-oriented benchmark offering multi-dimensional evaluation&#8212;the central goal of our proposed VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The VCB Bench dataset integrates data from three distinct sources: third-party professional recordings, audio extracted from variety show Q&amp;A segments and an internally curated two-person conversational dialogue dataset. Each source supports different evaluation modules within the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work introduces VCB Bench, the first comprehensive benchmark for real Chinese voice conversation tasks of LALMs, covering Instruction Following, Knowledge, and Robustness. Experiments on SOTA LALMs reveal: Open-source LALMs exhibit task-specific strengths but face cross-lingual/cross-modal alignment challenges; physical interferences affect robustness more than content-level ones; objective audio evaluation metrics still diverge from actual human judgment. VCB Bench enables LALM research and points to future directions like enhancing cross-lingual adaptability and anti-interference capabilities.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T3\" title=\"Table 3 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T7\" title=\"Table 7 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">7</span></a> shows more examples of VCB Bench in different tasks.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents",
+        "image_url": "https://arxiv.org/html/2510.11098v1/x2.png",
+        "caption": "Figure 2: Examples from the VCB Bench.",
+        "informative_terms_identified": [
+            "bench",
+            "examples",
+            "from",
+            "vcb"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in large audio language models (LALMs) have greatly enhanced multimodal conversational systems. However, existing benchmarks remain limited&#8212;they are mainly English-centric, rely on synthetic speech, and lack comprehensive, discriminative evaluation across multiple dimensions. To address these gaps, we present Voice Chat Bot Bench (VCB Bench)&#8212;a high-quality Chinese benchmark built entirely on real human speech. VCB Bench evaluates LALMs from three complementary perspectives: instruction following (including speech-level control beyond text commands), knowledge understanding (general knowledge, reasoning, and daily dialogue), and robustness (stability under perturbations in content, environment, and speaker traits). Experiments on representative LALMs reveal notable performance gaps and highlight future directions for improvement. VCB Bench provides a reproducible and fine-grained evaluation framework, offering standardized methodology and practical insights for advancing Chinese voice conversational models. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Code and data are available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/193746/VCB-Bench-Evalkit\" title=\"\">https://github.com/193746/VCB-Bench-Evalkit</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">\n  <span class=\"ltx_text ltx_font_bold\">VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents</span>\n</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge these gaps, we introduce Voice Chat Bot Bench (VCB Bench)&#8212;the first comprehensive evaluation framework for Chinese voice conversation, built entirely from authentic (non-synthetic) speech. VCB Bench evaluates LALMs along three complementary dimensions: (1) Instruction following, extending beyond text-based prompts to incorporate speech-level control tasks such as adjusting volume, speed, and emotion, with bilingual (Chinese-English) support; (2) Knowledge, including multi-disciplinary general knowledge (12 subjects), mathematical and logical reasoning, daily dialogue comprehension, and story continuation for pretraining performance assessment; (3) Robustness, measuring model stability under real-world perturbations across content (mispronunciations, grammatical errors), environment (street, TV noise), and speaker characteristics (age, accents).</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed VCB Bench is built entirely from authentic human recordings rather than synthetic speech. It provides a large-scale, high-fidelity dataset covering diverse conversational scenarios and introduces a multi-dimensional evaluation framework that jointly measures knowledge understanding, instruction following, and robustness through fine-grained, reproducible tasks. Based on this benchmark, we conduct a systematic empirical analysis of state-of-the-art LALMs under unified settings, revealing their strengths and limitations in Chinese voice interaction and offering actionable insights for future model development.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These models demonstrate rapid progress in unified audio-language modeling&#8212;covering tokenization, multimodal fusion, and real-time dialogue&#8212;but systematic benchmarks, especially for Chinese real-speech interaction, remain scarce. Current evaluations are mostly qualitative or based on synthetic data, underscoring the need for comprehensive real-speech benchmarks like VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, existing benchmarks have significantly advanced the evaluation coverage of LALMs, yet they share several limitations:\n(1) most rely heavily on TTS or synthetic speech, (2) they focus on English, and (3) their content often derives from text-centric QA corpora rather than spontaneous human dialogue. These gaps highlight the need for a real-speech, Chinese-oriented benchmark offering multi-dimensional evaluation&#8212;the central goal of our proposed VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in the Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S2.F1\" title=\"Figure 1 &#8227; 2 Related Work &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, VCB Bench covers three core dimensions: Instruction Following, Knowledge, and Robustness. Instruction Following includes Text Instruction Follow (TIF) (e.g., continuation, creation), Speech Instruction Follow (SIF) (e.g., emotional, volume control), and Multi-turn Dialog (MTD) tasks. The Knowledge module assesses General Knowledge (GK) across 12 disciplines, Mathematical Logic (ML), Discourse Comprehension (DC), and Story Continuation (SC). Robustness introduces real-world perturbations from speaker variations, environmental noise, and content modifications to evaluate model stability.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The VCB Bench dataset integrates data from three distinct sources: third-party professional recordings, audio extracted from variety show Q&amp;A segments and an internally curated two-person conversational dialogue dataset. Each source supports different evaluation modules within the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work introduces VCB Bench, the first comprehensive benchmark for real Chinese voice conversation tasks of LALMs, covering Instruction Following, Knowledge, and Robustness. Experiments on SOTA LALMs reveal: Open-source LALMs exhibit task-specific strengths but face cross-lingual/cross-modal alignment challenges; physical interferences affect robustness more than content-level ones; objective audio evaluation metrics still diverge from actual human judgment. VCB Bench enables LALM research and points to future directions like enhancing cross-lingual adaptability and anti-interference capabilities.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "bench",
+                    "vcb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T3\" title=\"Table 3 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T7\" title=\"Table 7 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">7</span></a> shows more examples of VCB Bench in different tasks.</p>\n\n",
+                "matched_terms": [
+                    "examples",
+                    "bench",
+                    "vcb"
+                ]
+            }
+        ]
+    },
+    "S4.F3": {
+        "source_file": "VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents",
+        "image_url": "https://arxiv.org/html/2510.11098v1/x3.png",
+        "caption": "Figure 3: The robustness of LALMs under real-world perturbations. 9 subsets with the most significant performance gaps compared to the control group on the Robustness dataset are chosen.",
+        "informative_terms_identified": [
+            "gaps",
+            "lalms",
+            "under",
+            "chosen",
+            "perturbations",
+            "group",
+            "compared",
+            "robustness",
+            "performance",
+            "significant",
+            "control",
+            "dataset",
+            "most",
+            "realworld",
+            "subsets"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F3\" title=\"Figure 3 &#8227; 4.1 Configuration &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, EV.Echo, SV.Speed and SV.Elder cause the most severe performance degradation for most models. Scores of some models drop from over 80 in the control group to below 40 in these subsets, indicating that speech rate variation and acoustic echo are the most challenging perturbations for current LALMs. However, CV-related interferences (e.g., CV.Gram.Err, CV.Mispron) have relatively mild impacts. Some models (e.g., Mimo-Audio, StepAudio2Mini) show small score gaps between these subsets and the control group, suggesting models are more tolerant of &#8220;content-level flaws&#8221; than &#8220;speech/environment-level physical perturbations&#8221;.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in large audio language models (LALMs) have greatly enhanced multimodal conversational systems. However, existing benchmarks remain limited&#8212;they are mainly English-centric, rely on synthetic speech, and lack comprehensive, discriminative evaluation across multiple dimensions. To address these gaps, we present Voice Chat Bot Bench (VCB Bench)&#8212;a high-quality Chinese benchmark built entirely on real human speech. VCB Bench evaluates LALMs from three complementary perspectives: instruction following (including speech-level control beyond text commands), knowledge understanding (general knowledge, reasoning, and daily dialogue), and robustness (stability under perturbations in content, environment, and speaker traits). Experiments on representative LALMs reveal notable performance gaps and highlight future directions for improvement. VCB Bench provides a reproducible and fine-grained evaluation framework, offering standardized methodology and practical insights for advancing Chinese voice conversational models. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Code and data are available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/193746/VCB-Bench-Evalkit\" title=\"\">https://github.com/193746/VCB-Bench-Evalkit</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "lalms",
+                    "under",
+                    "perturbations",
+                    "robustness",
+                    "performance",
+                    "control"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite these advances, moving from basic LALM functionalities to practical voice agents requires reliable and comprehensive evaluation tools. Such benchmarks are essential for diagnosing model weaknesses, guiding optimization, and enabling fair comparisons across systems. While initial efforts <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib4\" title=\"\">2024</a>; Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib25\" title=\"\">2024</a>; Lin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib14\" title=\"\">2025</a>)</cite> have explored instruction following, audio understanding, reasoning, and dialogue scenarios, current evaluation practices remain limited in three major ways. First, most benchmarks are English-centric, leaving Chinese&#8212;the world&#8217;s most widely spoken language&#8212;largely unexplored. Second, the majority rely on synthetic speech data, which poorly reflects real-world acoustic variability. Third, many are text-derived benchmarks (e.g., AlpacaEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib12\" title=\"\">2023</a>)</cite>, IFEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhou et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib27\" title=\"\">2023</a>)</cite>), whose formal and lengthy content is unsuitable for evaluating conversationally grounded LALMs that should generate natural, colloquial speech. Addressing these limitations is critical given China&#8217;s large user base and the growing demand for practical, high-quality voice agents.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "most",
+                    "realworld"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge these gaps, we introduce Voice Chat Bot Bench (VCB Bench)&#8212;the first comprehensive evaluation framework for Chinese voice conversation, built entirely from authentic (non-synthetic) speech. VCB Bench evaluates LALMs along three complementary dimensions: (1) Instruction following, extending beyond text-based prompts to incorporate speech-level control tasks such as adjusting volume, speed, and emotion, with bilingual (Chinese-English) support; (2) Knowledge, including multi-disciplinary general knowledge (12 subjects), mathematical and logical reasoning, daily dialogue comprehension, and story continuation for pretraining performance assessment; (3) Robustness, measuring model stability under real-world perturbations across content (mispronunciations, grammatical errors), environment (street, TV noise), and speaker characteristics (age, accents).</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "lalms",
+                    "under",
+                    "perturbations",
+                    "robustness",
+                    "performance",
+                    "control",
+                    "realworld"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed VCB Bench is built entirely from authentic human recordings rather than synthetic speech. It provides a large-scale, high-fidelity dataset covering diverse conversational scenarios and introduces a multi-dimensional evaluation framework that jointly measures knowledge understanding, instruction following, and robustness through fine-grained, reproducible tasks. Based on this benchmark, we conduct a systematic empirical analysis of state-of-the-art LALMs under unified settings, revealing their strengths and limitations in Chinese voice interaction and offering actionable insights for future model development.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "under",
+                    "robustness",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio Benchmarks.</span> Recent efforts have introduced several benchmarks to evaluate LALMs from different perspectives. VoiceBench <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib4\" title=\"\">2024</a>)</cite> assesses general knowledge, instruction adherence, safety, and robustness, mainly based on existing text datasets such as AlpacaEval and SD-QA <cite class=\"ltx_cite ltx_citemacro_citep\">(Faisal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib8\" title=\"\">2021</a>)</cite>, with lengthy or highly complex samples removed. OpenAudioBench, released alongside Baichuan-Audio, integrates question-answering datasets including Spoken LLaMA Questions <cite class=\"ltx_cite ltx_citemacro_citep\">(Nachmani et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib17\" title=\"\">2023</a>)</cite> and Web Questions <cite class=\"ltx_cite ltx_citemacro_citep\">(Berant et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib3\" title=\"\">2013</a>)</cite>, and augments them with a TTS-generated reasoning subset.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "robustness"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, existing benchmarks have significantly advanced the evaluation coverage of LALMs, yet they share several limitations:\n(1) most rely heavily on TTS or synthetic speech, (2) they focus on English, and (3) their content often derives from text-centric QA corpora rather than spontaneous human dialogue. These gaps highlight the need for a real-speech, Chinese-oriented benchmark offering multi-dimensional evaluation&#8212;the central goal of our proposed VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "lalms",
+                    "most"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in the Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S2.F1\" title=\"Figure 1 &#8227; 2 Related Work &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, VCB Bench covers three core dimensions: Instruction Following, Knowledge, and Robustness. Instruction Following includes Text Instruction Follow (TIF) (e.g., continuation, creation), Speech Instruction Follow (SIF) (e.g., emotional, volume control), and Multi-turn Dialog (MTD) tasks. The Knowledge module assesses General Knowledge (GK) across 12 disciplines, Mathematical Logic (ML), Discourse Comprehension (DC), and Story Continuation (SC). Robustness introduces real-world perturbations from speaker variations, environmental noise, and content modifications to evaluate model stability.</p>\n\n",
+                "matched_terms": [
+                    "control",
+                    "robustness",
+                    "realworld",
+                    "perturbations"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Third-Party Recorded Data.</span> This category supports the Instruction Following, ML, and SC tasks under the Knowledge module, as well as the Robustness module. The production pipeline involves the following steps: First, task types and examples are defined through team discussion. Next, commissioned personnel manually compose texts that fulfill the task requirements. These texts then undergo manual inspection to ensure quality. Approved texts are forwarded to a third-party recording team for professional audio production. After recording, the data team performs quality checks on the audio. Subsequently, GPT-4o-Audio is used to evaluate audio quality, while GPT-4o assesses textual quality. Finally, manual screening is conducted to select high-quality samples, determining the final evaluation dataset.</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "robustness",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For Robustness data, it&#8217;s text materials are derived from Instruction Following module. The original audio from this module serves as the control group. To control for speaker variability, the same speaker re-recorded the text under specified interference conditions (e.g., accent, noisy environment) wherever possible, using the original audio as a baseline. For \"content variation\" types, the text was first modified (e.g., introducing grammatical or pronunciation errors) before being re-recorded by the same speaker. Additionally, to test performance in extreme scenarios, subsets like Volume, Speed, and Unstable Signal underwent post-processing.</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "group",
+                    "robustness",
+                    "performance",
+                    "control",
+                    "subsets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Internal Two-person Dialogue Dataset.</span> Designed to support the DC module, this category&#8217;s data is processed as follows: the original long-form audio undergoes a two-stage segmentation with GPT-4O&#8212;first by topic, then refined into semantically coherent segments under one minute. From the transcriptions, GPT-4O generates task-specific QA pairs (e.g., for analysis or induction), followed by a final manual screening to verify question quality and answer accuracy.</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Robustness.</span> The Robustness module evaluates the stability of LALMs&#8217; performance under real-world interference conditions, ensuring reliable responses in challenging scenarios. The module encompasses three dimensions: Speaker Variations (SV), Environmental Variations (EV), and Content Variations (CV).</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "realworld",
+                    "robustness",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the latest and most capable LALMs. The selected models comprise GLM4-Voice, Kimi-Audio, Qwen2.5-Omni, Baichuan-Audio-Chat, Qwen2-Audio-Instruct, StepAudio, StepAudio2Mini, Mimo-Audio, and GPT4o-Audio.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "most"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S3.T1\" title=\"Table 1 &#8227; 3.2 Dataset Details &#8227; 3 VCB Bench &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, GPT-4o-Audio, as a non-open-source state-of-the-art (SOTA) model, serves as a strong baseline and demonstrates all-round superiority across most tasks, which is reasonable given its non-open nature and advanced proprietary capabilities. Focusing on other open-source E2E LALMs, notable performance discrepancies emerge:</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "most",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Knowledge, Mimo-Audio stands out in ML (84.01) and DC (87.92), surpassing other open-source models and even GPT-4o-Audio&#8217;s performance&#8212;suggesting strengths in deep reasoning and text semantic analysis. However, models like Baichuan-Audio-Chat show limited performance in GK (44.48) and ML (60.33), revealing gaps in multi-disciplinary knowledge coverage and step-by-step reasoning.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Regarding model robustness, GPT-4o-Audio maintains excellent capability despite significant drops in specific subsets like SV.Speed, attributable to its high baseline scores ensuring practical usability. Among open-source models, Mimo-Audio and StepAudio2Mini exhibit relatively prominent robustness with both high absolute scores and limited performance gaps. In contrast, models like Baichuan-Audio-Chat face constraints primarily due to their lower absolute scores rather than extreme fluctuations, indicating insufficient real-scene adaptability despite moderate performance drops.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "robustness",
+                    "performance",
+                    "significant",
+                    "subsets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The SC task evaluates pre-trained LALMs&#8217; &#8220;intelligence&#8221; and cross-modal semantic coherence by judging the rationality of story endings. The results are shown in the Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.T2\" title=\"Table 2 &#8227; 4.4 Pretraining Evaluation &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, Kimi-Audio-Base outperforms others in both paradigms: It scores an average of 78.01 in S-&gt;T and 54.71 in S-&gt;S, with robust performance across sub-dimensions, demonstrating stable story understanding and ending judgment in cross-modal scenarios. In contrast, Baichuan-Audio-Base, Qwen2-Audio-Base, and StepAudio2Mini-Base score much lower. Moreover, all models perform worse in S-&gt;S than S-&gt;T, revealing that cross-modal (speech-to-speech) story coherence judgment remains challenging for pre-trained LALMs, with notable room for improvement in semantic consistency and rationality generation during speech output.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From the results, models like GLM4-Voice (Chinese) and Baichuan-Audio-Chat (English) demonstrate strong text-speech alignment&#8212;their A2T results are close to A2A W/ ASR results, indicating consistent semantic output between directly generated text and text transcribed from speech. In contrast, models such as Qwen2.5-Omni (Chinese) and Kimi-Audio (English) show large discrepancies between A2T and A2A W/ ASR, suggesting mismatches in semantics between text and speech generation. Meanwhile, for audio generation quality (assessed by the gap between A2A W/ ASR and A2A W/O ASR, where smaller gaps imply clearer audio), GLM4-Voice (Chinese), Kimi-Audio (Chinese), and Baichuan-Audio-Chat (English) exhibit minimal differences between A2A W/ ASR and A2A W/O ASR, meaning their generated audio is clear enough for accurate ASR transcription and well-suited for audio-only scenarios. Conversely, models like Kimi-Audio (English) have A2A W/ ASR scores far lower than A2A W/O ASR, revealing that their generated audio suffers from poor clarity&#8212;limiting usability in audio-focused scenarios even if A2T performance is strong. Overall, models such as GLM4-Voice (Chinese) and Baichuan-Audio-Chat (English) excel in both text-speech alignment and audio generation quality, while other LALMs face challenges in cross-lingual adaptation or audio clarity, highlighting the need for targeted optimization in these aspects.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "lalms",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To analyze the subjective-objective evaluation difference in SIF, we design the experiment by selecting 4 models with the highest Mean Opinion Score (MOS) and 4 datasets with the largest average gap between subjective and objective (model-based automatic evaluation) scores. As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F5\" title=\"Figure 5 &#8227; 4.5.2 Subjective-Objective Comparison &#8227; 4.5 Ablation Study &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, leading models like GPT4o-Audio and GLM4-Voice show smaller discrepancies between subjective scores and objective scores across most sub-dimensions&#8212;indicating their audio quality evaluation better aligns with human perception. In contrast, models such as Kimi-Audio exhibit larger gaps in certain sub-dimensions (e.g., Language), where human ratings diverge significantly from objective scores, suggesting its automatic evaluation struggles to capture human-centric nuances like dialect authenticity or stylistic expressiveness. Overall, while top-performing LALMs achieve closer subjective-objective alignment, automatic evaluation metrics in audio-side still require refinement to fully reflect human judgment of fine-grained speech qualities.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "lalms",
+                    "most"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work introduces VCB Bench, the first comprehensive benchmark for real Chinese voice conversation tasks of LALMs, covering Instruction Following, Knowledge, and Robustness. Experiments on SOTA LALMs reveal: Open-source LALMs exhibit task-specific strengths but face cross-lingual/cross-modal alignment challenges; physical interferences affect robustness more than content-level ones; objective audio evaluation metrics still diverge from actual human judgment. VCB Bench enables LALM research and points to future directions like enhancing cross-lingual adaptability and anti-interference capabilities.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "robustness"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work has several aspects that can be further advanced as future directions. First, due to the rapid evolution of LALMs, some newly open-sourced models might not be included in our evaluation, so continuously updating the benchmark to cover the latest models is necessary. Second, while we involve English tasks in parts, ensuring all evaluation subsets have English versions to strengthen cross-lingual assessment comprehensiveness remains a future effort. Third, the prompts used in our experiments may not fully unleash models&#8217; potential, and exploring more effective prompt strategies to better excavate model capabilities is worth pursuing.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "subsets"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T8\" title=\"Table 8 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T13\" title=\"Table 13 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">13</span></a> shows the complete results of instruction following. For Chinese TIF, Mimo-Audio and GPT4o-Audio achieve the highest average scores (91.21 and 91.24, respectively), excelling in tasks like Recommendation (Mimo-Audio: 99.00; GPT4o-Audio: 95.20) and Simulation (Mimo-Audio: 99.20; GPT4o-Audio: 98.20). Qwen2.5-Omni stands out in Safety (93.40), while GLM4-Voice performs strongly in Rewriting (90.00). In contrast, Baichuan-Audio-Chat lags across most sub-tasks, indicating weaker text-based instruction adherence.\nFor Chinese SIF (Table 9, objective), GPT4o-Audio attains the highest average (88.15), leading in Emotional Control (92.40) and Language Control (87.80). Kimi-Audio excels in Style Control (95.00), and GLM4-Voice tops Emotional Control (93.00). Subjective results (Table 10) show GPT4o-Audio and GLM4-Voice as frontrunners, yet all models score lower in subjective evaluations than objective ones&#8212;revealing gaps between automatic metrics and human perception of speech quality.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "most",
+                    "control"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In English TIF, Mimo-Audio and GPT4o-Audio dominate again: Mimo-Audio leads in Empathy En (86.80), while GPT4o-Audio excels in Recommendation En (95.40). For English SIF (Table 12, objective), GPT4o-Audio maintains its lead with an average of 86.07, outperforming others in Emotional Control En (89.40) and Style Control En (91.40). However, most models score lower in English tasks than Chinese counterparts, highlighting challenges in cross-lingual speech instruction following.</p>\n\n",
+                "matched_terms": [
+                    "most",
+                    "control"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, GPT4o-Audio and Mimo-Audio demonstrate robust performance across Chinese and English instruction-following tasks, while cross-lingual capability and alignment between objective metrics and human judgment remain key improvement areas for LALMs.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, Mimo-Audio demonstrates robust reasoning and comprehension capabilities, while GPT4o-Audio excels in knowledge breadth but shows only moderate performance in mathematical reasoning. Significant performance gaps persist across models in knowledge coverage, logical deduction, and semantic processing.</p>\n\n",
+                "matched_terms": [
+                    "gaps",
+                    "significant",
+                    "performance"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T17\" title=\"Table 17 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">17</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T19\" title=\"Table 19 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">19</span></a> shows the complete results of robustness. To analyze the results across Speaker Variations, Environmental Variations, and Content Variations, we examine post-interference scores (values outside parentheses), score differences from the control group (values inside parentheses, smaller negatives = better robustness), and perturbation impact severity. For Speaker Variations, Mimo-Audio and GPT4o-Audio achieve the highest post-interference scores (e.g., Mimo-Audio&#8217;s 92.80 in Child speech, GPT4o-Audio&#8217;s 91.80 in Tianjin accent) and smallest negative differences (e.g., GPT4o-Audio&#8217;s 0.00 in Child and Down); Speed interference causes the largest drops (many models score &lt;50), while Accent (e.g., Beijing, Tianjin) has minimal impact.</p>\n\n",
+                "matched_terms": [
+                    "group",
+                    "control",
+                    "robustness"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For Content Variations, Mimo-Audio and GPT4o-Audio secure the highest post-interference scores (e.g., Mimo-Audio&#8217;s 96.00 in Mispronunciation, GPT4o-Audio&#8217;s 92.60 in the same task) and smallest negative differences (e.g., Mimo-Audio&#8217;s -3.60 in Mispronunciation, GPT4o-Audio&#8217;s +1.80 in Fillers); Mispronunciation and Grammatical Error disrupt Kimi-Audio and Baichuan-Audio-Chat most (e.g., Kimi-Audio&#8217;s 61.80 in Mispronunciation with a -23.20 drop), whereas Fillers and Repetition barely affect top models. Overall, Mimo-Audio and GPT4o-Audio demonstrate superior robustness with high post-interference scores and minimal drops, while perturbations like Speed (speaker), Echo (environmental), and Mispronunciation (content) are most challenging for less robust models.</p>\n\n",
+                "matched_terms": [
+                    "most",
+                    "robustness",
+                    "perturbations"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T20\" title=\"Table 20 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">20</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T21\" title=\"Table 21 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">21</span></a> shows the complete results of \"A2A\" with ASR. To analyze the Audio-to-Audio (A2A) results in Chinese Text TIF and English TIF &#8212; where values outside parentheses denote scores after Automatic Speech Recognition (A2A W/ ASR) and values inside denote scores without ASR (A2A W/O ASR) &#8212; we focus on two aspects: models with the best performance after ASR, and models with minimal score changes across ASR (indicating high audio quality and clear pronunciation). In Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T20\" title=\"Table 20 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">20</span></a>, GPT4o-Audio maintains the highest scores in most sub-tasks after ASR (e.g., Continuation: 86.6, Creation: 85.4, Recommendation: 91.2) and also leads in scores without ASR (e.g., Continuation: 89.2, Creation: 93.4), demonstrating robust performance even after ASR. Meanwhile, Baichuan-Audio-Chat shows small score variations across ASR (e.g., Continuation: 83.2 &#8594; 81.8, Recommendation: 85.6 &#8594; 90.2), reflecting clear audio generation.</p>\n\n",
+                "matched_terms": [
+                    "most",
+                    "performance"
+                ]
+            }
+        ]
+    },
+    "S4.F4": {
+        "source_file": "VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents",
+        "image_url": "https://arxiv.org/html/2510.11098v1/x4.png",
+        "caption": "Figure 4: The investigation of the text-speech alignment capability of LALMs. A2T (Audio-to-Text, generating text directly from audio input), A2A W/ ASR (Audio-to-Audio, transcribing the generated audio via Automatic Speech Recognition to text), and A2A W/O ASR (evaluating the generated audio’s text without ASR). All test sets are from TIF/TIF-En (e.g., “Creat.” for Creation, “Recom.” for Recommendation).",
+        "informative_terms_identified": [
+            "lalms",
+            "audio",
+            "test",
+            "alignment",
+            "capability",
+            "investigation",
+            "transcribing",
+            "text",
+            "audiototext",
+            "from",
+            "evaluating",
+            "textspeech",
+            "“recom”",
+            "a2t",
+            "tiftifen",
+            "a2a",
+            "sets",
+            "directly",
+            "“creat”",
+            "generated",
+            "creation",
+            "recommendation",
+            "automatic",
+            "without",
+            "audio’s",
+            "speech",
+            "recognition",
+            "input",
+            "generating",
+            "audiotoaudio",
+            "asr",
+            "via"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To investigate the text-speech alignment capability of LALMs, we conduct an ablation study, which is shown on Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F4\" title=\"Figure 4 &#8227; 4.2 Main Result &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. The visualization is based on two selection criteria from TIF and TIF-En: the four models with the highest A2A W/ ASR scores, and the four datasets with the largest mean score differences between A2A W/ ASR and A2T. Results for Chinese and English tasks are plotted separately in the upper and lower sections of the figure, respectively.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in large audio language models (LALMs) have greatly enhanced multimodal conversational systems. However, existing benchmarks remain limited&#8212;they are mainly English-centric, rely on synthetic speech, and lack comprehensive, discriminative evaluation across multiple dimensions. To address these gaps, we present Voice Chat Bot Bench (VCB Bench)&#8212;a high-quality Chinese benchmark built entirely on real human speech. VCB Bench evaluates LALMs from three complementary perspectives: instruction following (including speech-level control beyond text commands), knowledge understanding (general knowledge, reasoning, and daily dialogue), and robustness (stability under perturbations in content, environment, and speaker traits). Experiments on representative LALMs reveal notable performance gaps and highlight future directions for improvement. VCB Bench provides a reproducible and fine-grained evaluation framework, offering standardized methodology and practical insights for advancing Chinese voice conversational models. <span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>Code and data are available at <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/193746/VCB-Bench-Evalkit\" title=\"\">https://github.com/193746/VCB-Bench-Evalkit</a></span></span></span></p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "speech",
+                    "from",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In recent years, large language models (LLMs) <cite class=\"ltx_cite ltx_citemacro_citep\">(Vaswani et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib20\" title=\"\">2017</a>; Anil et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib1\" title=\"\">2023</a>)</cite> have achieved remarkable progress in natural language understanding and generation. Integrating language modeling with modalities such as vision and audio <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib18\" title=\"\">2021</a>; Singh et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib19\" title=\"\">2022</a>)</cite> has further given rise to a new paradigm of multimodal learning. Within this trend, large audio language models (LALMs)&#8212;which combine speech signal processing with language modeling&#8212;have developed rapidly. Emerging systems such as StepAudio2 <cite class=\"ltx_cite ltx_citemacro_citep\">(Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib21\" title=\"\">2025</a>)</cite> and Qwen3-Omni <cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib23\" title=\"\">2025b</a>)</cite> demonstrate end-to-end (E2E) speech understanding and generation with capabilities in voice question answering, real-time conversation, and audio content analysis. Consequently, voice conversational agents powered by LALMs are drawing increasing academic and industrial attention, offering more natural and human-like interactions than text-only systems.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite these advances, moving from basic LALM functionalities to practical voice agents requires reliable and comprehensive evaluation tools. Such benchmarks are essential for diagnosing model weaknesses, guiding optimization, and enabling fair comparisons across systems. While initial efforts <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib4\" title=\"\">2024</a>; Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib25\" title=\"\">2024</a>; Lin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib14\" title=\"\">2025</a>)</cite> have explored instruction following, audio understanding, reasoning, and dialogue scenarios, current evaluation practices remain limited in three major ways. First, most benchmarks are English-centric, leaving Chinese&#8212;the world&#8217;s most widely spoken language&#8212;largely unexplored. Second, the majority rely on synthetic speech data, which poorly reflects real-world acoustic variability. Third, many are text-derived benchmarks (e.g., AlpacaEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib12\" title=\"\">2023</a>)</cite>, IFEval <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhou et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib27\" title=\"\">2023</a>)</cite>), whose formal and lengthy content is unsuitable for evaluating conversationally grounded LALMs that should generate natural, colloquial speech. Addressing these limitations is critical given China&#8217;s large user base and the growing demand for practical, high-quality voice agents.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "speech",
+                    "from",
+                    "evaluating"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge these gaps, we introduce Voice Chat Bot Bench (VCB Bench)&#8212;the first comprehensive evaluation framework for Chinese voice conversation, built entirely from authentic (non-synthetic) speech. VCB Bench evaluates LALMs along three complementary dimensions: (1) Instruction following, extending beyond text-based prompts to incorporate speech-level control tasks such as adjusting volume, speed, and emotion, with bilingual (Chinese-English) support; (2) Knowledge, including multi-disciplinary general knowledge (12 subjects), mathematical and logical reasoning, daily dialogue comprehension, and story continuation for pretraining performance assessment; (3) Robustness, measuring model stability under real-world perturbations across content (mispronunciations, grammatical errors), environment (street, TV noise), and speaker characteristics (age, accents).</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our proposed VCB Bench is built entirely from authentic human recordings rather than synthetic speech. It provides a large-scale, high-fidelity dataset covering diverse conversational scenarios and introduces a multi-dimensional evaluation framework that jointly measures knowledge understanding, instruction following, and robustness through fine-grained, reproducible tasks. Based on this benchmark, we conduct a systematic empirical analysis of state-of-the-art LALMs under unified settings, revealing their strengths and limitations in Chinese voice interaction and offering actionable insights for future model development.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Large Audio Language Models.</span> Recent LALMs primarily adopt an E2E audio-language modeling paradigm, integrating speech understanding and generation within a unified framework.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Qwen-Audio and Qwen-Omni series <cite class=\"ltx_cite ltx_citemacro_citep\">(Chu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib6\" title=\"\">2023</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib5\" title=\"\">2024</a>; Xu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib22\" title=\"\">2025a</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib23\" title=\"\">b</a>)</cite> progressively enhance cross-modal alignment and modeling efficiency. Qwen-Audio establishes robust audio-text alignment, Qwen-Audio2 improves encoding efficiency via multi-scale feature fusion, and the latest Qwen-Omni models introduce dual-core Thinker-Talker architectures and multi-codebook pretraining, achieving low-latency bilingual dialogue.</p>\n\n",
+                "matched_terms": [
+                    "alignment",
+                    "via"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">StepAudio models <cite class=\"ltx_cite ltx_citemacro_citep\">(Huang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib9\" title=\"\">2025</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib21\" title=\"\">2025</a>)</cite> focus on tightly coupling recognition and synthesis. StepAudio integrates a dual-codebook tokenizer and achieves a remarkably low WER, while StepAudio2 advances to a fully E2E design with fixed text-speech token alignment and Chain-of-Thought reasoning, improving fine-grained paralinguistic understanding.</p>\n\n",
+                "matched_terms": [
+                    "textspeech",
+                    "recognition",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio Benchmarks.</span> Recent efforts have introduced several benchmarks to evaluate LALMs from different perspectives. VoiceBench <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib4\" title=\"\">2024</a>)</cite> assesses general knowledge, instruction adherence, safety, and robustness, mainly based on existing text datasets such as AlpacaEval and SD-QA <cite class=\"ltx_cite ltx_citemacro_citep\">(Faisal et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib8\" title=\"\">2021</a>)</cite>, with lengthy or highly complex samples removed. OpenAudioBench, released alongside Baichuan-Audio, integrates question-answering datasets including Spoken LLaMA Questions <cite class=\"ltx_cite ltx_citemacro_citep\">(Nachmani et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib17\" title=\"\">2023</a>)</cite> and Web Questions <cite class=\"ltx_cite ltx_citemacro_citep\">(Berant et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib3\" title=\"\">2013</a>)</cite>, and augments them with a TTS-generated reasoning subset.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "text",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">AIR Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib25\" title=\"\">2024</a>)</cite> contains two components&#8212;a basic benchmark covering emotion recognition, ASR, and age estimation, and a dialogue benchmark evaluating auditory understanding and internal knowledge. MMAU <cite class=\"ltx_cite ltx_citemacro_citep\">(Kumar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib10\" title=\"\">2025</a>)</cite> and MMAR <cite class=\"ltx_cite ltx_citemacro_citep\">(Ma et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib15\" title=\"\">2025</a>)</cite> focus on deep audio reasoning, requiring multi-step inference grounded in internal audio knowledge. OmniBench <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib13\" title=\"\">2024</a>)</cite> targets omni-modal models handling audio, images, and text, where text queries are paired with multimodal contexts (speech, music, or sound) to test integrated reasoning. Finally, URO Bench <cite class=\"ltx_cite ltx_citemacro_citep\">(Yan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib24\" title=\"\">2025</a>)</cite> provides a bilingual (English-Chinese) comprehensive set that evaluates audio understanding, reasoning, and conversational ability&#8212;but the speech data are entirely synthetic (TTS-generated).</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "audio",
+                    "speech",
+                    "recognition",
+                    "evaluating",
+                    "asr",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, existing benchmarks have significantly advanced the evaluation coverage of LALMs, yet they share several limitations:\n(1) most rely heavily on TTS or synthetic speech, (2) they focus on English, and (3) their content often derives from text-centric QA corpora rather than spontaneous human dialogue. These gaps highlight the need for a real-speech, Chinese-oriented benchmark offering multi-dimensional evaluation&#8212;the central goal of our proposed VCB Bench.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in the Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S2.F1\" title=\"Figure 1 &#8227; 2 Related Work &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, VCB Bench covers three core dimensions: Instruction Following, Knowledge, and Robustness. Instruction Following includes Text Instruction Follow (TIF) (e.g., continuation, creation), Speech Instruction Follow (SIF) (e.g., emotional, volume control), and Multi-turn Dialog (MTD) tasks. The Knowledge module assesses General Knowledge (GK) across 12 disciplines, Mathematical Logic (ML), Discourse Comprehension (DC), and Story Continuation (SC). Robustness introduces real-world perturbations from speaker variations, environmental noise, and content modifications to evaluate model stability.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "creation",
+                    "text",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The VCB Bench dataset integrates data from three distinct sources: third-party professional recordings, audio extracted from variety show Q&amp;A segments and an internally curated two-person conversational dialogue dataset. Each source supports different evaluation modules within the benchmark.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For Robustness data, it&#8217;s text materials are derived from Instruction Following module. The original audio from this module serves as the control group. To control for speaker variability, the same speaker re-recorded the text under specified interference conditions (e.g., accent, noisy environment) wherever possible, using the original audio as a baseline. For \"content variation\" types, the text was first modified (e.g., introducing grammatical or pronunciation errors) before being re-recorded by the same speaker. Additionally, to test performance in extreme scenarios, subsets like Volume, Speed, and Unstable Signal underwent post-processing.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "audio",
+                    "text",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Variety Show Q&amp;A Data.</span> This category supports GK in the Knowledge module. The process includes: crawling about 20 hours of Q&amp;A audio; manual annotation and segmentation for timestamps; ASR transcription; quality scoring (assessing question clarity and answer accuracy) and subject classification, both via GPT-4O; selection of Q&amp;A pairs above a score threshold; and a final manual review for transcription accuracy, answer correctness, and audio clarity.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "asr",
+                    "via"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Internal Two-person Dialogue Dataset.</span> Designed to support the DC module, this category&#8217;s data is processed as follows: the original long-form audio undergoes a two-stage segmentation with GPT-4O&#8212;first by topic, then refined into semantically coherent segments under one minute. From the transcriptions, GPT-4O generates task-specific QA pairs (e.g., for analysis or induction), followed by a final manual screening to verify question quality and answer accuracy.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Instruction Following.</span> The Instruction Following section comprehensively evaluates LALMs&#8217; ability to understand and execute both text and speech instructions, covering three sub-tasks: TIF, SIF, and MTD. All tasks are open-ended, and both TIF and SIF support Chinese and English to meet cross-lingual evaluation needs.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">TIF assesses the model&#8217;s ability to respond to textual instructions through seven sub-tasks, each examining text generation and semantic comprehension: (1) Continuation: extending a given text fragment to evaluate coherence and creativity; (2) Creation: generating original content based on a given theme to assess inventiveness and organization; (3) Empathy: understanding and responding to emotional expressions to examine affective perception; (4) Recommendation: providing suggestions based on user needs to evaluate information integration; (5) Rewriting: adapting text in style or structure to test reorganization ability; (6) Safety: identifying and rejecting harmful instructions to assess compliant response; (7) Simulation: role-playing in dialogue to examine contextual adaptation.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "generating",
+                    "creation",
+                    "recommendation",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SIF focuses on understanding and executing speech instructions, particularly the ability to handle paralinguistic features such as emotion, speaking rate, and dialect. It includes six sub-tasks: (1) Emotional Control: adjusting the emotional tone of speech to assess expressive generation; (2) Language Control: switching languages or dialects to test multilingual synthesis; (3) Non-verbal Vocalization: incorporating non-linguistic elements like sighs or nasal sounds to evaluate paralinguistic expressiveness; (4) Pacing Control: modifying speaking rate to examine control precision; (5) Style Control: switching speech styles to assess style transfer; (6) Volume Control: adjusting loudness to test stability.</p>\n\n",
+                "matched_terms": [
+                    "test",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SC, inspired by StoryCloze <cite class=\"ltx_cite ltx_citemacro_citep\">(Mostafazadeh et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib16\" title=\"\">2016</a>)</cite>, assesses implicit reasoning by requiring the model to select the correct story ending from two candidates, where both the context and the candidate endings are provided in the same modality&#8212;either all in audio or all in text. This task spans three evaluative categories: Logic and Causality for causal consistency, Common Sense and Science for real-world and scientific knowledge alignment, and Morality and Emotion for moral and emotional coherence.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "from",
+                    "alignment",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SV examine model adaptation to speaker attributes: (1) Age: utilizes child and elderly speech to assess recognition of age-related vocal characteristics; (2) Accent: incorporates four regional accents (Tianjin, Beijing, Dongbei, Sichuan) to evaluate comprehension of non-standard Mandarin; (3) Volume: assesses perception stability with amplified/attenuated speech; (4) Speed: tests parsing capability with rapidly delivered input.</p>\n\n",
+                "matched_terms": [
+                    "capability",
+                    "recognition",
+                    "input",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the SC task, we assess a subset of pre-trained base models: Baichuan-Audio-Base, Kimi-Audio-Base, Qwen2-Audio-Base, and StepAudio2Mini-Base. Following the StoryCloze evaluation protocol, we compute the negative log-likelihood for both the correct and incorrect endings, with model selection determined by comparing these two values. For SIF tasks, the top six performing models undergo further Mean Opinion Score (MOS) evaluation. We sample the first 30 items from each relevant dataset, and eight expert evaluators rate the generated audio samples.</p>\n\n",
+                "matched_terms": [
+                    "generated",
+                    "audio",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the MTD evaluation, the model receives input context only in audio. We adopt <cite class=\"ltx_cite ltx_citemacro_citet\">Bai et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#bib.bib2\" title=\"\">2024</a>)</cite>&#8217;s protocol, requiring the model to answer each dialogue turn using the original ground-truth context, not its prior responses. A key scoring distinction is the heightened focus on the final turn: it carries 50% of the total score per sample, and the first several turns account for the remaining 50%. All Experiments are conducted on H20.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "input"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Instruction Following, Mimo-Audio excels in TIF/TIF-En with scores close to GPT-4o-Audio, indicating strong cross-lingual text instruction adaptation. For SIF, StepAudio series and Kimi-Audio perform robustly in Chinese SIF, yet their SIF-En scores lag significantly behind, reflecting challenges in handling English speech&#8217;s paralinguistic features. In MTD, StepAudio2Mini leads among open-source models with 87.80, outperforming counterparts like Baichuan-Audio-Chat, which highlights divergence in long-context dialogue logic control.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "tiftifen"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, open-source E2E LALMs exhibit task-specific strengths (e.g., Mimo-Audio in reasoning, StepAudio2Mini in Chinese dialogue and general knowledge) but face challenges in cross-lingual speech adaptation and comprehensive knowledge reasoning.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F3\" title=\"Figure 3 &#8227; 4.1 Configuration &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>, EV.Echo, SV.Speed and SV.Elder cause the most severe performance degradation for most models. Scores of some models drop from over 80 in the control group to below 40 in these subsets, indicating that speech rate variation and acoustic echo are the most challenging perturbations for current LALMs. However, CV-related interferences (e.g., CV.Gram.Err, CV.Mispron) have relatively mild impacts. Some models (e.g., Mimo-Audio, StepAudio2Mini) show small score gaps between these subsets and the control group, suggesting models are more tolerant of &#8220;content-level flaws&#8221; than &#8220;speech/environment-level physical perturbations&#8221;.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The SC task evaluates pre-trained LALMs&#8217; &#8220;intelligence&#8221; and cross-modal semantic coherence by judging the rationality of story endings. The results are shown in the Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.T2\" title=\"Table 2 &#8227; 4.4 Pretraining Evaluation &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, Kimi-Audio-Base outperforms others in both paradigms: It scores an average of 78.01 in S-&gt;T and 54.71 in S-&gt;S, with robust performance across sub-dimensions, demonstrating stable story understanding and ending judgment in cross-modal scenarios. In contrast, Baichuan-Audio-Base, Qwen2-Audio-Base, and StepAudio2Mini-Base score much lower. Moreover, all models perform worse in S-&gt;S than S-&gt;T, revealing that cross-modal (speech-to-speech) story coherence judgment remains challenging for pre-trained LALMs, with notable room for improvement in semantic consistency and rationality generation during speech output.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From the results, models like GLM4-Voice (Chinese) and Baichuan-Audio-Chat (English) demonstrate strong text-speech alignment&#8212;their A2T results are close to A2A W/ ASR results, indicating consistent semantic output between directly generated text and text transcribed from speech. In contrast, models such as Qwen2.5-Omni (Chinese) and Kimi-Audio (English) show large discrepancies between A2T and A2A W/ ASR, suggesting mismatches in semantics between text and speech generation. Meanwhile, for audio generation quality (assessed by the gap between A2A W/ ASR and A2A W/O ASR, where smaller gaps imply clearer audio), GLM4-Voice (Chinese), Kimi-Audio (Chinese), and Baichuan-Audio-Chat (English) exhibit minimal differences between A2A W/ ASR and A2A W/O ASR, meaning their generated audio is clear enough for accurate ASR transcription and well-suited for audio-only scenarios. Conversely, models like Kimi-Audio (English) have A2A W/ ASR scores far lower than A2A W/O ASR, revealing that their generated audio suffers from poor clarity&#8212;limiting usability in audio-focused scenarios even if A2T performance is strong. Overall, models such as GLM4-Voice (Chinese) and Baichuan-Audio-Chat (English) excel in both text-speech alignment and audio generation quality, while other LALMs face challenges in cross-lingual adaptation or audio clarity, highlighting the need for targeted optimization in these aspects.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "alignment",
+                    "speech",
+                    "directly",
+                    "from",
+                    "generated",
+                    "asr",
+                    "a2t",
+                    "textspeech",
+                    "text",
+                    "a2a"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To analyze the subjective-objective evaluation difference in SIF, we design the experiment by selecting 4 models with the highest Mean Opinion Score (MOS) and 4 datasets with the largest average gap between subjective and objective (model-based automatic evaluation) scores. As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F5\" title=\"Figure 5 &#8227; 4.5.2 Subjective-Objective Comparison &#8227; 4.5 Ablation Study &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, leading models like GPT4o-Audio and GLM4-Voice show smaller discrepancies between subjective scores and objective scores across most sub-dimensions&#8212;indicating their audio quality evaluation better aligns with human perception. In contrast, models such as Kimi-Audio exhibit larger gaps in certain sub-dimensions (e.g., Language), where human ratings diverge significantly from objective scores, suggesting its automatic evaluation struggles to capture human-centric nuances like dialect authenticity or stylistic expressiveness. Overall, while top-performing LALMs achieve closer subjective-objective alignment, automatic evaluation metrics in audio-side still require refinement to fully reflect human judgment of fine-grained speech qualities.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "alignment",
+                    "speech",
+                    "from",
+                    "automatic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work introduces VCB Bench, the first comprehensive benchmark for real Chinese voice conversation tasks of LALMs, covering Instruction Following, Knowledge, and Robustness. Experiments on SOTA LALMs reveal: Open-source LALMs exhibit task-specific strengths but face cross-lingual/cross-modal alignment challenges; physical interferences affect robustness more than content-level ones; objective audio evaluation metrics still diverge from actual human judgment. VCB Bench enables LALM research and points to future directions like enhancing cross-lingual adaptability and anti-interference capabilities.</p>\n\n",
+                "matched_terms": [
+                    "lalms",
+                    "audio",
+                    "alignment",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T8\" title=\"Table 8 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T13\" title=\"Table 13 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">13</span></a> shows the complete results of instruction following. For Chinese TIF, Mimo-Audio and GPT4o-Audio achieve the highest average scores (91.21 and 91.24, respectively), excelling in tasks like Recommendation (Mimo-Audio: 99.00; GPT4o-Audio: 95.20) and Simulation (Mimo-Audio: 99.20; GPT4o-Audio: 98.20). Qwen2.5-Omni stands out in Safety (93.40), while GLM4-Voice performs strongly in Rewriting (90.00). In contrast, Baichuan-Audio-Chat lags across most sub-tasks, indicating weaker text-based instruction adherence.\nFor Chinese SIF (Table 9, objective), GPT4o-Audio attains the highest average (88.15), leading in Emotional Control (92.40) and Language Control (87.80). Kimi-Audio excels in Style Control (95.00), and GLM4-Voice tops Emotional Control (93.00). Subjective results (Table 10) show GPT4o-Audio and GLM4-Voice as frontrunners, yet all models score lower in subjective evaluations than objective ones&#8212;revealing gaps between automatic metrics and human perception of speech quality.</p>\n\n",
+                "matched_terms": [
+                    "recommendation",
+                    "automatic",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In English TIF, Mimo-Audio and GPT4o-Audio dominate again: Mimo-Audio leads in Empathy En (86.80), while GPT4o-Audio excels in Recommendation En (95.40). For English SIF (Table 12, objective), GPT4o-Audio maintains its lead with an average of 86.07, outperforming others in Emotional Control En (89.40) and Style Control En (91.40). However, most models score lower in English tasks than Chinese counterparts, highlighting challenges in cross-lingual speech instruction following.</p>\n\n",
+                "matched_terms": [
+                    "recommendation",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, GPT4o-Audio and Mimo-Audio demonstrate robust performance across Chinese and English instruction-following tasks, while cross-lingual capability and alignment between objective metrics and human judgment remain key improvement areas for LALMs.</p>\n\n",
+                "matched_terms": [
+                    "capability",
+                    "lalms",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T17\" title=\"Table 17 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">17</span></a>-<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T19\" title=\"Table 19 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">19</span></a> shows the complete results of robustness. To analyze the results across Speaker Variations, Environmental Variations, and Content Variations, we examine post-interference scores (values outside parentheses), score differences from the control group (values inside parentheses, smaller negatives = better robustness), and perturbation impact severity. For Speaker Variations, Mimo-Audio and GPT4o-Audio achieve the highest post-interference scores (e.g., Mimo-Audio&#8217;s 92.80 in Child speech, GPT4o-Audio&#8217;s 91.80 in Tianjin accent) and smallest negative differences (e.g., GPT4o-Audio&#8217;s 0.00 in Child and Down); Speed interference causes the largest drops (many models score &lt;50), while Accent (e.g., Beijing, Tianjin) has minimal impact.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T20\" title=\"Table 20 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">20</span></a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T21\" title=\"Table 21 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">21</span></a> shows the complete results of \"A2A\" with ASR. To analyze the Audio-to-Audio (A2A) results in Chinese Text TIF and English TIF &#8212; where values outside parentheses denote scores after Automatic Speech Recognition (A2A W/ ASR) and values inside denote scores without ASR (A2A W/O ASR) &#8212; we focus on two aspects: models with the best performance after ASR, and models with minimal score changes across ASR (indicating high audio quality and clear pronunciation). In Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T20\" title=\"Table 20 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">20</span></a>, GPT4o-Audio maintains the highest scores in most sub-tasks after ASR (e.g., Continuation: 86.6, Creation: 85.4, Recommendation: 91.2) and also leads in scores without ASR (e.g., Continuation: 89.2, Creation: 93.4), demonstrating robust performance even after ASR. Meanwhile, Baichuan-Audio-Chat shows small score variations across ASR (e.g., Continuation: 83.2 &#8594; 81.8, Recommendation: 85.6 &#8594; 90.2), reflecting clear audio generation.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "speech",
+                    "recognition",
+                    "audiotoaudio",
+                    "creation",
+                    "asr",
+                    "without",
+                    "recommendation",
+                    "automatic",
+                    "text",
+                    "a2a"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#A1.T21\" title=\"Table 21 &#8227; A.5 Complete Results Of Text-Speech Alignment &#8227; Appendix A Appendix &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">21</span></a>, GPT4o-Audio again dominates post-ASR scores (e.g., Continuation En: 90.2, Creation En: 90.0, Recommendation En: 93.4) and remains top-tier without ASR (e.g., Continuation En: 91.4, Creation En: 94.8). Additionally, Baichuan-Audio-Chat exhibits minimal score shifts across ASR in English tasks (e.g., Continuation En: 79.8 &#8594; 77.0, Creation En: 80.0 &#8594; 81.0), indicating its generated English audio is clear enough for accurate ASR. Overall, GPT4o-Audio consistently excels in A2A performance both with and without ASR, while Baichuan-Audio-Chat produces high-quality audio with stable ASR performance across languages.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "generated",
+                    "creation",
+                    "asr",
+                    "recommendation",
+                    "without",
+                    "a2a"
+                ]
+            }
+        ]
+    },
+    "S4.F5": {
+        "source_file": "VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents",
+        "image_url": "https://arxiv.org/html/2510.11098v1/x5.png",
+        "caption": "Figure 5: The subjective-objective comparison in SIF.",
+        "informative_terms_identified": [
+            "subjectiveobjective",
+            "comparison",
+            "sif"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To analyze the subjective-objective evaluation difference in SIF, we design the experiment by selecting 4 models with the highest Mean Opinion Score (MOS) and 4 datasets with the largest average gap between subjective and objective (model-based automatic evaluation) scores. As shown in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.11098v1#S4.F5\" title=\"Figure 5 &#8227; 4.5.2 Subjective-Objective Comparison &#8227; 4.5 Ablation Study &#8227; 4 Experiment &#8227; VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, leading models like GPT4o-Audio and GLM4-Voice show smaller discrepancies between subjective scores and objective scores across most sub-dimensions&#8212;indicating their audio quality evaluation better aligns with human perception. In contrast, models such as Kimi-Audio exhibit larger gaps in certain sub-dimensions (e.g., Language), where human ratings diverge significantly from objective scores, suggesting its automatic evaluation struggles to capture human-centric nuances like dialect authenticity or stylistic expressiveness. Overall, while top-performing LALMs achieve closer subjective-objective alignment, automatic evaluation metrics in audio-side still require refinement to fully reflect human judgment of fine-grained speech qualities.</p>\n\n"
+        ],
+        "contextual_paragraphs": []
+    }
+}

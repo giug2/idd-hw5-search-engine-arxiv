@@ -1,0 +1,796 @@
+{
+    "S1.F1": {
+        "source_file": "AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation",
+        "image_url": "https://arxiv.org/html/2511.18718v1/Figures/figure_1.png",
+        "caption": "Figure 1: AIRHILT at a glance. Cockpit view from the simulation showing the setting used for pilot‑in‑the‑loop evaluations. AIRHILT synchronizes radio traffic, vision feeds, and ADS‑B to test end‑to‑end assistive warning pipelines.",
+        "informative_terms_identified": [
+            "synchronizes",
+            "pipelines",
+            "evaluations",
+            "showing",
+            "pilot‑in‑the‑loop",
+            "end‑to‑end",
+            "glance",
+            "simulation",
+            "view",
+            "test",
+            "airhilt",
+            "assistive",
+            "warning",
+            "setting",
+            "radio",
+            "ads‑b",
+            "cockpit",
+            "vision",
+            "feeds",
+            "from",
+            "traffic"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We introduce AIRHILT (Aviation Integrated Reasoning, Human-in-the-Loop Testbed), a modular and lightweight simulation environment designed to evaluate multimodal pilot and ATC assistance systems for aviation conflict detection. Built on the Godot engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">godot_engine_godot_nodate</span>]</cite>, AIRHILT synchronizes pilot and air traffic controller (ATC) communications, visual scene understanding from camera streams, and ADS-B surveillance data within a unified, scalable platform. The environment supports pilot- and controller-in-the-loop interactions, providing a comprehensive scenario suite covering both terminal area and en route operational conflicts, including communication errors and procedural mistakes. AIRHILT offers standardized JSON-based interfaces enabling researchers to easily integrate, swap, and evaluate various automatic speech recognition (ASR), visual detection, decision-making, and text-to-speech (TTS) models. We demonstrate AIRHILT through a reference pipeline incorporating fine-tuned Whisper ASR, YOLO-based visual detection, ADS-B-based conflict logic, and GPT-OSS-20B structured reasoning, presenting preliminary results from representative runway-overlap scenarios where the assistant achieves an average time-to-first-warning of <math alttext=\"{\\sim}7.7\" class=\"ltx_Math\" display=\"inline\" id=\"m6\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>7.7</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}7.7</annotation></semantics></math>&#8201;s with average ASR and vision latencies of <math alttext=\"{\\sim}5.9\" class=\"ltx_Math\" display=\"inline\" id=\"m7\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>5.9</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}5.9</annotation></semantics></math>&#8201;s and <math alttext=\"{\\sim}0.4\" class=\"ltx_Math\" display=\"inline\" id=\"m8\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>0.4</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}0.4</annotation></semantics></math>&#8201;s, respectively. The AIRHILT environment and scenario suite are openly available, supporting reproducible research on multimodal situational awareness and conflict detection in aviation. The complete repository is available at <a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/ogarib3/airhilt\" title=\"\">github.com/ogarib3/airhilt</a>.</p>\n\n",
+                "matched_terms": [
+                    "vision",
+                    "synchronizes",
+                    "from",
+                    "simulation",
+                    "airhilt",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Aircraft situational awareness and conflict detection currently rely on accurate multi-aircraft surveillance and radio communications, with command and control of airspace operations managed centrally by human air traffic controllers (ATCs). However, human ATCs and pilots are vulnerable to overwork, fatigue, and loss of attention, increasing the risk of operational errors and conflict events <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">della_rocco_role_1999</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rosekind_assessing_2024</span>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To alleviate workload pressures and reduce operational errors, there is a growing need for assistive aviation systems that incorporate recent advancements in <em class=\"ltx_emph ltx_font_italic\">automatic speech recognition</em> (ASR) and <em class=\"ltx_emph ltx_font_italic\">vision-based detection</em>, alongside existing aircraft and radar surveillance data (e.g., ADS-B, radar). Such systems could proactively identify hazards such as traffic conflicts and runway incursions, while enhancing situational awareness and minimizing additional workload for pilots and controllers.</p>\n\n",
+                "matched_terms": [
+                    "assistive",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, the current testing landscape for such aviation assistive systems presents notable challenges. Physically collocated test environments are costly, time-consuming, and require careful scheduling of limited ATC and pilot availability. These sophisticated facilities typically include several pilot and controller workstations along with integrated displays and are commonly utilized for operational scenario studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">schier_designing_2013</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">manske_visual_2015</span>]</cite>. Yet, their availability is increasingly constrained by growing global aviation traffic and rising research demands associated with emerging aviation concepts such as unmanned aerial systems (UAS) and advanced air mobility (AAM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chaisit_enhancing_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kaliardos_identifying_2024</span>]</cite>. Although rigorous testing at physical facilities remains essential for advanced development and certification phases, it is impractical for early-stage concept evaluations. Additionally, the rapidly expanding design space, driven by new machine learning models and varied computational, sensing, and communication architectures, further underscores the necessity of flexible, efficient, simulation-based environments suitable for rapid, systematic evaluations.</p>\n\n",
+                "matched_terms": [
+                    "evaluations",
+                    "test",
+                    "assistive",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Such a simulation-based environment would significantly broaden access to aviation situational awareness research, allowing researchers worldwide to efficiently explore and identify promising candidate systems while conserving limited pilot and ATC resources. To address these needs, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a simulation environment explicitly designed to facilitate research into multimodal AI assistance systems through pilot and controller-in-the-loop experimentation.</p>\n\n",
+                "matched_terms": [
+                    "airhilt",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">An open simulation environment</span> that synchronizes pilot-to-ATC communications, ATC control tower camera views, aircraft-mounted camera streams, and ADS-B/radar data, enabling systematic evaluation of multimodal assistive systems with pilot- and controller-in-the-loop interactions.</p>\n\n",
+                "matched_terms": [
+                    "assistive",
+                    "synchronizes",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The remainder of this paper is structured as follows: Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2\" title=\"II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">II</span></a> provides background on air traffic management operations and the key components relevant to aviation situational awareness. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S3\" title=\"III Challenges &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">III</span></a> outlines related challenges to building such systems. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4\" title=\"IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">IV</span></a> details the environment and interfaces. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S5\" title=\"V Evaluation Scenarios &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">V</span></a> presents the designed scenarios. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S6\" title=\"VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a> describes the reference pipeline and presents preliminary results from representative runway-overlap scenarios. Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S7\" title=\"VII Concluding Remarks &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VII</span></a> provides concluding remarks, discusses current limitations, and introduces avenues for future work.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Aviation operations encompass both air traffic management and conflict detection, including the determination, sequencing, and issuance of clearances from departure through en route and approach phases <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_civil_aviation_organization_procedures_2016</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_air_2024</span>]</cite>, as well as the identification and mitigation of hazards such as wildlife encounters, mechanical issues, and other unexpected conflicts <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_hazardous_nodate</span>]</cite>. Effective traffic management maintains prescribed separation between aircraft while preserving operational efficiency under current operational conditions. Controllers integrate surveillance data (e.g., ADS-B and radar) provided via tower infrastructure, direct visual observations from the control tower, and standardized voice communications with pilots to formulate and issue clearances and instructions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>. In parallel, pilots routinely manage additional hazards, including wildlife (e.g., birds) activity, uncooperative or untracked intruder aircraft, and onboard mechanical anomalies, by synthesizing external visual cues with onboard sensor data and established procedures.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Many unsafe conditions arise from (i) <em class=\"ltx_emph ltx_font_italic\">traffic-management breakdowns</em> (e.g., violations of separation minima or runway occupancy conflicts) and (ii) <em class=\"ltx_emph ltx_font_italic\">aircraft or airspace hazards</em> (e.g., bird strikes, uncooperative intruder aircraft, or mechanical anomalies). It is important to note that existing radar-based surveillance systems such as Automatic Dependent Surveillance-Broadcast (ADS-B), and collision-avoidance systems such as the Traffic Collision Avoidance System (TCAS/ACAS), already provide critical support. However, incidents have occurred and continue to occur even with these systems in place. For example, the &#220;berlingen mid-air collision highlighted critical vulnerabilities when ATC instructions conflict with TCAS resolution advisories (RAs), reinforcing that TCAS RAs must always take precedence over controller clearances <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_air_transport_association_acas_nodate</span>]</cite>. Moreover, it is important to note that TCAS RAs are intentionally inhibited at low altitudes <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>, impacting its operation to resolve situations such as runway incursions. These realities motivate the development of an assistive layer that fuses visual streams, voice communications, and surveillance data to identify and flag potential conflicts <em class=\"ltx_emph ltx_font_italic\">before</em> situations escalate to require intervention from safety systems such as TCAS.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "assistive",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent progress in multimodal AI provides essential building blocks for assistance: (i) <span class=\"ltx_text ltx_font_bold\">ASR</span> for transcribing and parsing ATC/pilot communications; (ii) <span class=\"ltx_text ltx_font_bold\">vision detection models</span> operating on tower or onboard cameras for surface/aircraft/vehicle detection and tracking; and (iii) <span class=\"ltx_text ltx_font_bold\">surveillance and trajectory analytics</span> from ADS-B/radar data. However, performance thresholds and latency budgets required for operational usefulness remain under-specified, and real systems must handle missing or degraded modalities.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Assistive systems offer various design choices: placement of ASR/Speech enhancement (SE) relative to pilot audio (ASR/SE-first or parallel), fusion approach for vision and ADS-B (early or late), and recipient of advisories (pilot, controller, or both). Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates three representative configurations, highlighting the need for flexible simulation environments to systematically evaluate diverse architectures across various operational scenarios.</p>\n\n",
+                "matched_terms": [
+                    "vision",
+                    "assistive",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Evaluating air traffic situational awareness systems presents four key challenges: (1) moving from subtask accuracy to operational safety gains, (2) modeling rare failure scenarios with limited real-world data, (3) integrating multimodal context in evaluation frameworks, and (4) enabling simulation environments that support human-in-the-loop input and intelligent system responses.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "simulation",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Subtask performance metrics, such as ASR&#8217;s WER, are insufficient alone to characterize safety system performance, since they do not capture how recognition errors interact with airspace geometry, traffic, and operator state. In AIRHILT we therefore emphasize scenario-based evaluation, using metrics such as time-to-first-warning and avoided conflicts to quantify the contribution of assistive systems to preventing unsafe outcomes.</p>\n\n",
+                "matched_terms": [
+                    "airhilt",
+                    "assistive",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A related challenge for the design of the simulation environment is to incorporate humans in the scenarios via simulated ATC and pilot workstations. To actually execute operational evaluations as described above, the environment must support pilot- and controller-in-the-loop operation, so that human behaviors can be incorporated into the chain of events.</p>\n\n",
+                "matched_terms": [
+                    "evaluations",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current evaluations often rely on narrow, single-channel data inputs. Richer simulation frameworks should be able to synchronize visual, audio, and state data (e.g., from TartanAviation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">dellarocco_tartanaviation_2025</span>]</cite>) to reflect the true complexity of operational environments.</p>\n\n",
+                "matched_terms": [
+                    "evaluations",
+                    "from",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enable efficient and scalable evaluation of different multimodal pilot-assist architectures with representative human-in-the-loop interactions, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a lightweight, modular simulation environment built upon the Godot engine. <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> offers a unified simulation platform that synchronizes pilot-to-ATC communications, camera-based visual perception, and ADS-B traffic data, enabling systematic evaluation of assistive systems designed for aviation conflict detection and resolution.</p>\n\n",
+                "matched_terms": [
+                    "synchronizes",
+                    "simulation",
+                    "airhilt",
+                    "traffic",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Frequency-specific, addressed radio traffic and confidence-gated actor behaviors approximate operational interactions.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The scenario execution in <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> is orchestrated through a clearly structured, declarative <span class=\"ltx_text ltx_font_typewriter\">Scenario JSON</span>, providing researchers with full control over simulation initialization and runtime conditions. Each scenario specification encapsulates:</p>\n\n",
+                "matched_terms": [
+                    "airhilt",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Upon ingestion of the Scenario JSON, the <span class=\"ltx_text ltx_font_typewriter\">Director (Runner)</span> automatically loads and initializes all scene assets and actors as defined in the scenario specification. It subsequently mounts synchronized communication and vision buses to maintain consistent alignment of audio (radio), visual (camera), and corresponding ground-truth data streams.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Control Inputs</span>: For all non&#8209;wildlife actors, addressed\nradio transmissions are parsed with a slot-based method that approximates how real operators extract intent from speech (callsign, runway/altitude assignments, temporal instructions such as &#8220;hold short&#8221; or &#8220;cleared for takeoff&#8221;). For example, &#8220;N123AB, cleared for takeoff runway one nine&#8221; is parsed into slots <span class=\"ltx_text ltx_font_typewriter\">callsign = N123AB</span>, <span class=\"ltx_text ltx_font_typewriter\">action = cleared_for_takeoff</span>,\n<span class=\"ltx_text ltx_font_typewriter\">runway = 19</span>. Low&#8209;confidence or ambiguous inputs trigger structured clarification behavior at the actor layer.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The communications subsystem of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> is structured to approximate operational aviation radio interactions while supporting controlled experimentation with pilot and ATC communications. This communication loop incorporates clearly defined interfaces for radio transmissions, TTS synthesis, and ASR, all implemented as interchangeable modules accessible through standardized REST/JSON endpoints:</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "airhilt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The visual perception subsystem of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> provides configurable, synchronized camera feeds designed to replicate representative visual data streams. This pipeline maintains clearly defined and stable REST/JSON interfaces for seamless module interchangeability, supporting systematic experimentation and reproducibility:</p>\n\n",
+                "matched_terms": [
+                    "airhilt",
+                    "feeds"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Multiplexer</span>: A configurable multiplexer mirrors camera feeds to off-screen viewports, enabling simultaneous data capture without disrupting primary simulation rendering performance.</p>\n\n",
+                "matched_terms": [
+                    "simulation",
+                    "feeds"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">Radio Transcripts</em>: Structured sequences of communications with timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), speaker IDs, transcript text, frequency, unique turn IDs, optional <em class=\"ltx_emph ltx_font_italic\">overhearing/subscription</em> flags (to receive nearby actors&#8217; traffic), addressed callsigns, and confidences when available.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "traffic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">Vision Detections</em>: Lists of detection results from visual perception, each containing frame timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), associated camera identifiers, detected object classifications, confidence scores, and bounding box coordinates.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We instrument all subsystems with a shared monotonic timebase and log start/end events for each module. For radio/ASR we record the transmission time <math alttext=\"t_{\\text{tx}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tx</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tx}}</annotation></semantics></math> and ASR finalization <math alttext=\"t_{\\text{asr}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m2\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr}}</annotation></semantics></math>. For vision we record frame exposure end <math alttext=\"t_{\\text{frame}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m3\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>frame</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{frame}}</annotation></semantics></math> and detector completion <math alttext=\"t_{\\text{vision}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m4\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>vision</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{vision}}</annotation></semantics></math>. For ADS-B we record ingest <math alttext=\"t_{\\text{adsb,in}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,in</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,in}}</annotation></semantics></math> and post&#8209;processor output <math alttext=\"t_{\\text{adsb,out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m6\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,out}}</annotation></semantics></math>. The decision engine records when all required inputs are available <math alttext=\"t_{\\text{ready}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m7\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>ready</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{ready}}</annotation></semantics></math> and when an advisory is produced <math alttext=\"t_{\\text{dec}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m8\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>dec</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{dec}}</annotation></semantics></math> (this includes LLM inference when used). The audio path records the first audible sample delivered to the radio bus <math alttext=\"t_{\\text{tts}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m9\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tts</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tts}}</annotation></semantics></math>. Each scenario annotates the conflict&#8209;window opening time <math alttext=\"t_{\\text{conflict}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m10\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>conflict</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{conflict}}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From these timestamps we compute per&#8209;module and end&#8209;to&#8209;end timings during post&#8209;processing:</p>\n\n",
+                "matched_terms": [
+                    "end‑to‑end",
+                    "from"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All timestamps share a common monotonic timebase within the simulation process, which allows these per-module and end-to-end latencies to be compared across runs and across alternative assistant implementations. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4.F3\" title=\"Figure 3 &#8227; IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>C illustrates the latencies and warning intervals.</p>\n\n",
+                "matched_terms": [
+                    "simulation",
+                    "warning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the evidence-fallback branch we compute a scalar score\n<math alttext=\"S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mrow><mn>0.50</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>V</mi></msub></mrow><mo>+</mo><mrow><mn>0.35</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>A</mi></msub></mrow><mo>+</mo><mrow><mn>0.15</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>C</mi></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}</annotation></semantics></math>, where <math alttext=\"W_{V}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m2\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>V</mi></msub><annotation encoding=\"application/x-tex\">W_{V}</annotation></semantics></math>, <math alttext=\"W_{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m3\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>A</mi></msub><annotation encoding=\"application/x-tex\">W_{A}</annotation></semantics></math>, and <math alttext=\"W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m4\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>C</mi></msub><annotation encoding=\"application/x-tex\">W_{C}</annotation></semantics></math> are normalized evidence terms derived from vision occupancy, ASR consistency, and overall conflict context (all in <math alttext=\"[0,1]\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1]</annotation></semantics></math>). In our S01A experiments we set <math alttext=\"\\tau_{\\mathrm{ASR}}=0.8\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m6\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>ASR</mi></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{ASR}}=0.8</annotation></semantics></math> and <math alttext=\"\\tau_{\\mathrm{vis}}=0.7\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m7\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>vis</mi></msub><mo>=</mo><mn>0.7</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{vis}}=0.7</annotation></semantics></math>, which were chosen empirically to balance missed detections and nuisance alerts.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluated <span class=\"ltx_text ltx_font_bold\">S01A</span> across 10 runs per conflict type with randomized visibility and SimuGAN SNR settings to stress both the vision and radio paths. Averages across these runs were: time-to-first-warning <math alttext=\"t_{\\mathrm{tts}}-t_{\\mathrm{conflict}}\\approx\\textbf{7.66\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>tts</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>conflict</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">7.66&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{tts}}-t_{\\mathrm{conflict}}\\approx\\textbf{7.66\\,s}</annotation></semantics></math>; ASR latency <math alttext=\"t_{\\mathrm{asr}}-t_{\\mathrm{tx}}\\approx\\textbf{5.88\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>asr</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>tx</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">5.88&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{asr}}-t_{\\mathrm{tx}}\\approx\\textbf{5.88\\,s}</annotation></semantics></math>; vision latency <math alttext=\"t_{\\mathrm{vision}}-t_{\\mathrm{frame}}\\approx\\textbf{0.415\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m3\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>vision</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>frame</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">0.415&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{vision}}-t_{\\mathrm{frame}}\\approx\\textbf{0.415\\,s}</annotation></semantics></math>; and <span class=\"ltx_text ltx_font_bold\">TTS synthesis/delivery</span> <math alttext=\"t_{\\mathrm{tts}}-t_{\\mathrm{dec}}\\approx\\textbf{0.9\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m4\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>tts</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>dec</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">0.9&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{tts}}-t_{\\mathrm{dec}}\\approx\\textbf{0.9\\,s}</annotation></semantics></math>. The first vision detection typically occurred at <math alttext=\"\\sim 125\\,\\text{m}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m5\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mrow><mn>125</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>m</mtext></mrow></mrow><annotation encoding=\"application/x-tex\">\\sim 125\\,\\text{m}</annotation></semantics></math> range. These results show that, even with realistic radio noise and degraded visibility, the assistant can deliver runway-overlap warnings several seconds after the conflict window opens.</p>\n\n",
+                "matched_terms": [
+                    "radio",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> provides an open-source and flexible environment that facilitates experimentation with different multimodal assistive systems in aviation. The present evaluation focuses on the S01A runway-overlap scenarios. Extending quantitative assessment to the remaining scenario families is an important direction for future work, and updated results will be reported in the public repository.</p>\n\n",
+                "matched_terms": [
+                    "airhilt",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current limitations of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> include a sim-to-real gap, particularly within the vision detection pipeline, where simulation artifacts can lead to discrepancies from real-world performance. Human-factors validation is also limited, as we have not yet conducted controlled pilot and ATC studies to quantify workload, situational awareness, and operator acceptance of the multimodal assistant. In addition, the reference assistant implementation is not yet latency-optimized; our goal in this work is to establish a clear baseline and measurement framework rather than to minimize processing time.</p>\n\n",
+                "matched_terms": [
+                    "vision",
+                    "airhilt",
+                    "simulation",
+                    "from"
+                ]
+            }
+        ]
+    },
+    "S2.F2": {
+        "source_file": "AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation",
+        "image_url": "https://arxiv.org/html/2511.18718v1/Figures/figure_2.png",
+        "caption": "Figure 2: Canonical topology alternatives for assistive processing in the ATC–pilot loop.\n(a) ASR/SE first: audio is enhanced (SE) and/or transcribed (ASR) first; the resulting output directly informs the advisory presented to the pilot;\n(b) Parallel paths: raw audio reaches the pilot while a copy is processed by ASR/SE in parallel;\n(c) Assistant-gated fusion: ASR/SE, vision, and ADS-B are fused before any advisory is issued.\nAll variants incorporate vision detections and ADS-B tracks within a common decision layer that outputs graded advisories to the pilot and/or controller.",
+        "informative_terms_identified": [
+            "graded",
+            "within",
+            "resulting",
+            "tracks",
+            "outputs",
+            "fusion",
+            "audio",
+            "issued",
+            "output",
+            "variants",
+            "directly",
+            "transcribed",
+            "assistantgated",
+            "atc–pilot",
+            "paths",
+            "any",
+            "layer",
+            "raw",
+            "copy",
+            "incorporate",
+            "decision",
+            "enhanced",
+            "controller",
+            "assistive",
+            "canonical",
+            "processed",
+            "adsb",
+            "common",
+            "topology",
+            "loop",
+            "while",
+            "advisory",
+            "detections",
+            "asr",
+            "alternatives",
+            "vision",
+            "before",
+            "andor",
+            "parallel",
+            "pilot",
+            "informs",
+            "advisories",
+            "fused",
+            "reaches",
+            "processing",
+            "asrse"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Assistive systems offer various design choices: placement of ASR/Speech enhancement (SE) relative to pilot audio (ASR/SE-first or parallel), fusion approach for vision and ADS-B (early or late), and recipient of advisories (pilot, controller, or both). Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates three representative configurations, highlighting the need for flexible simulation environments to systematically evaluate diverse architectures across various operational scenarios.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ASR Service (Interchangeable)</span>: Pluggable ASR models transcribe received audio and emit finalization timestamps (<math alttext=\"t_{\\text{asr\\_out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i2.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr_out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr\\_out}}</annotation></semantics></math>) and optional confidences. By default, the ASR runs in parallel to the pilot audio path (matching the topology in Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>b), so pilots hear raw audio while a copy is forwarded to the recognizer; users may alternatively configure the ASR output as an intermediate step prior to pilot reception, depending on the assistive architecture and experimental setup being evaluated.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We introduce AIRHILT (Aviation Integrated Reasoning, Human-in-the-Loop Testbed), a modular and lightweight simulation environment designed to evaluate multimodal pilot and ATC assistance systems for aviation conflict detection. Built on the Godot engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">godot_engine_godot_nodate</span>]</cite>, AIRHILT synchronizes pilot and air traffic controller (ATC) communications, visual scene understanding from camera streams, and ADS-B surveillance data within a unified, scalable platform. The environment supports pilot- and controller-in-the-loop interactions, providing a comprehensive scenario suite covering both terminal area and en route operational conflicts, including communication errors and procedural mistakes. AIRHILT offers standardized JSON-based interfaces enabling researchers to easily integrate, swap, and evaluate various automatic speech recognition (ASR), visual detection, decision-making, and text-to-speech (TTS) models. We demonstrate AIRHILT through a reference pipeline incorporating fine-tuned Whisper ASR, YOLO-based visual detection, ADS-B-based conflict logic, and GPT-OSS-20B structured reasoning, presenting preliminary results from representative runway-overlap scenarios where the assistant achieves an average time-to-first-warning of <math alttext=\"{\\sim}7.7\" class=\"ltx_Math\" display=\"inline\" id=\"m6\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>7.7</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}7.7</annotation></semantics></math>&#8201;s with average ASR and vision latencies of <math alttext=\"{\\sim}5.9\" class=\"ltx_Math\" display=\"inline\" id=\"m7\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>5.9</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}5.9</annotation></semantics></math>&#8201;s and <math alttext=\"{\\sim}0.4\" class=\"ltx_Math\" display=\"inline\" id=\"m8\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>0.4</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}0.4</annotation></semantics></math>&#8201;s, respectively. The AIRHILT environment and scenario suite are openly available, supporting reproducible research on multimodal situational awareness and conflict detection in aviation. The complete repository is available at <a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/ogarib3/airhilt\" title=\"\">github.com/ogarib3/airhilt</a>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "adsb",
+                    "within",
+                    "vision",
+                    "pilot",
+                    "controller"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To alleviate workload pressures and reduce operational errors, there is a growing need for assistive aviation systems that incorporate recent advancements in <em class=\"ltx_emph ltx_font_italic\">automatic speech recognition</em> (ASR) and <em class=\"ltx_emph ltx_font_italic\">vision-based detection</em>, alongside existing aircraft and radar surveillance data (e.g., ADS-B, radar). Such systems could proactively identify hazards such as traffic conflicts and runway incursions, while enhancing situational awareness and minimizing additional workload for pilots and controllers.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "adsb",
+                    "incorporate",
+                    "while",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, the current testing landscape for such aviation assistive systems presents notable challenges. Physically collocated test environments are costly, time-consuming, and require careful scheduling of limited ATC and pilot availability. These sophisticated facilities typically include several pilot and controller workstations along with integrated displays and are commonly utilized for operational scenario studies&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">schier_designing_2013</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">manske_visual_2015</span>]</cite>. Yet, their availability is increasingly constrained by growing global aviation traffic and rising research demands associated with emerging aviation concepts such as unmanned aerial systems (UAS) and advanced air mobility (AAM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chaisit_enhancing_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kaliardos_identifying_2024</span>]</cite>. Although rigorous testing at physical facilities remains essential for advanced development and certification phases, it is impractical for early-stage concept evaluations. Additionally, the rapidly expanding design space, driven by new machine learning models and varied computational, sensing, and communication architectures, further underscores the necessity of flexible, efficient, simulation-based environments suitable for rapid, systematic evaluations.</p>\n\n",
+                "matched_terms": [
+                    "controller",
+                    "pilot",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Such a simulation-based environment would significantly broaden access to aviation situational awareness research, allowing researchers worldwide to efficiently explore and identify promising candidate systems while conserving limited pilot and ATC resources. To address these needs, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a simulation environment explicitly designed to facilitate research into multimodal AI assistance systems through pilot and controller-in-the-loop experimentation.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">An open simulation environment</span> that synchronizes pilot-to-ATC communications, ATC control tower camera views, aircraft-mounted camera streams, and ADS-B/radar data, enabling systematic evaluation of multimodal assistive systems with pilot- and controller-in-the-loop interactions.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">A reference multimodal pipeline</span> that demonstrates environment capabilities through interchangeable components such as Whisper-based ASR, YOLO-based visual detection, ADS-B-based conflict logic, and a structured large language model (LLM) decision layer, with preliminary latency and time-to-first-warning metrics reported.</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "decision",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Aviation operations encompass both air traffic management and conflict detection, including the determination, sequencing, and issuance of clearances from departure through en route and approach phases <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_civil_aviation_organization_procedures_2016</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_air_2024</span>]</cite>, as well as the identification and mitigation of hazards such as wildlife encounters, mechanical issues, and other unexpected conflicts <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_hazardous_nodate</span>]</cite>. Effective traffic management maintains prescribed separation between aircraft while preserving operational efficiency under current operational conditions. Controllers integrate surveillance data (e.g., ADS-B and radar) provided via tower infrastructure, direct visual observations from the control tower, and standardized voice communications with pilots to formulate and issue clearances and instructions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>. In parallel, pilots routinely manage additional hazards, including wildlife (e.g., birds) activity, uncooperative or untracked intruder aircraft, and onboard mechanical anomalies, by synthesizing external visual cues with onboard sensor data and established procedures.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "parallel",
+                    "adsb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Many unsafe conditions arise from (i) <em class=\"ltx_emph ltx_font_italic\">traffic-management breakdowns</em> (e.g., violations of separation minima or runway occupancy conflicts) and (ii) <em class=\"ltx_emph ltx_font_italic\">aircraft or airspace hazards</em> (e.g., bird strikes, uncooperative intruder aircraft, or mechanical anomalies). It is important to note that existing radar-based surveillance systems such as Automatic Dependent Surveillance-Broadcast (ADS-B), and collision-avoidance systems such as the Traffic Collision Avoidance System (TCAS/ACAS), already provide critical support. However, incidents have occurred and continue to occur even with these systems in place. For example, the &#220;berlingen mid-air collision highlighted critical vulnerabilities when ATC instructions conflict with TCAS resolution advisories (RAs), reinforcing that TCAS RAs must always take precedence over controller clearances <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">international_air_transport_association_acas_nodate</span>]</cite>. Moreover, it is important to note that TCAS RAs are intentionally inhibited at low altitudes <cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">federal_aviation_administration_acas_nodate</span>]</cite>, impacting its operation to resolve situations such as runway incursions. These realities motivate the development of an assistive layer that fuses visual streams, voice communications, and surveillance data to identify and flag potential conflicts <em class=\"ltx_emph ltx_font_italic\">before</em> situations escalate to require intervention from safety systems such as TCAS.</p>\n\n",
+                "matched_terms": [
+                    "adsb",
+                    "before",
+                    "layer",
+                    "advisories",
+                    "controller",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Controller <em class=\"ltx_emph ltx_font_italic\">monitors</em> the readback, correcting if necessary, after which the pilot executes.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "controller"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent progress in multimodal AI provides essential building blocks for assistance: (i) <span class=\"ltx_text ltx_font_bold\">ASR</span> for transcribing and parsing ATC/pilot communications; (ii) <span class=\"ltx_text ltx_font_bold\">vision detection models</span> operating on tower or onboard cameras for surface/aircraft/vehicle detection and tracking; and (iii) <span class=\"ltx_text ltx_font_bold\">surveillance and trajectory analytics</span> from ADS-B/radar data. However, performance thresholds and latency budgets required for operational usefulness remain under-specified, and real systems must handle missing or degraded modalities.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Several automatic speech recognition (ASR) models have been proposed to reduce the Word Error Rate (WER) of ATC and pilot radio transmissions, with the aim of integration into ATC and pilot communication workflows. A comprehensive review of recent approaches can be found in the special collection by Helmke et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">helmke_automatic_2024</span>]</cite>. Notably, substantial improvements in WER have recently been achieved by fine-tuning OpenAI&#8217;s Whisper ASR model&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">Whisper</span>]</cite> on simulated and synthetic ATC speech datasets&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">van_doorn_whisper-atc_2024</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garib_simugan-whisper-atc_nodate</span>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A related challenge for the design of the simulation environment is to incorporate humans in the scenarios via simulated ATC and pilot workstations. To actually execute operational evaluations as described above, the environment must support pilot- and controller-in-the-loop operation, so that human behaviors can be incorporated into the chain of events.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "incorporate"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enable efficient and scalable evaluation of different multimodal pilot-assist architectures with representative human-in-the-loop interactions, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a lightweight, modular simulation environment built upon the Godot engine. <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> offers a unified simulation platform that synchronizes pilot-to-ATC communications, camera-based visual perception, and ADS-B traffic data, enabling systematic evaluation of assistive systems designed for aviation conflict detection and resolution.</p>\n\n",
+                "matched_terms": [
+                    "adsb",
+                    "assistive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All components communicate via stable REST/JSON interfaces, allowing ASR, vision, decision, and text-to-speech (TTS) modules to be swapped with minimal code changes.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "decision",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4.F3\" title=\"Figure 3 &#8227; IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents a high-level overview of the <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> architecture, while the following subsections provide a deeper exploration into the design, functionality, and implementation details of each layer and component.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "layer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Upon ingestion of the Scenario JSON, the <span class=\"ltx_text ltx_font_typewriter\">Director (Runner)</span> automatically loads and initializes all scene assets and actors as defined in the scenario specification. It subsequently mounts synchronized communication and vision buses to maintain consistent alignment of audio (radio), visual (camera), and corresponding ground-truth data streams.</p>\n\n",
+                "matched_terms": [
+                    "vision",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The communications subsystem of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> is structured to approximate operational aviation radio interactions while supporting controlled experimentation with pilot and ATC communications. This communication loop incorporates clearly defined interfaces for radio transmissions, TTS synthesis, and ASR, all implemented as interchangeable modules accessible through standardized REST/JSON endpoints:</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "while",
+                    "loop",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">TTS Bridge (Interchangeable)</span>: The environment integrates pluggable TTS services (e.g., XTTS-v2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">noauthor_coqui_nodate</span>]</cite>) that convert scripted text instructions into realistic audio. An optional augmentation layer adds configurable radio-channel effects, including noise and distortion, with precise control over signal-to-noise ratio (SNR) and mixing parameters. In our experiments, all radio-path audio is encoded as single-channel PCM at a <math alttext=\"16\\,\\text{kHz}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>16</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>kHz</mtext></mrow><annotation encoding=\"application/x-tex\">16\\,\\text{kHz}</annotation></semantics></math> sample rate to match the reference ASR and SimuGAN configurations.</p>\n\n",
+                "matched_terms": [
+                    "layer",
+                    "audio",
+                    "asr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The multimodal assistant exposes a well&#8209;specified interface that defines inputs, outputs, and the pluggable decision module. This decouples environment integration from any particular algorithm and allows alternative implementations to be swapped with minimal code changes elsewhere.</p>\n\n",
+                "matched_terms": [
+                    "any",
+                    "decision",
+                    "outputs"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">Vision Detections</em>: Lists of detection results from visual perception, each containing frame timestamps (<span class=\"ltx_text ltx_font_typewriter\">ts_ms</span>), associated camera identifiers, detected object classifications, confidence scores, and bounding box coordinates.</p>\n\n",
+                "matched_terms": [
+                    "vision",
+                    "detections"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">ADS-B and Flight Context</em>: Data slices summarizing ownship operational states, expected and cleared runway information, and positional and velocity tracks.</p>\n\n",
+                "matched_terms": [
+                    "tracks",
+                    "adsb"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Decision Engine (Interchangeable)</span>: Decision-making modules are integrated via standardized HTTP/JSON interfaces, allowing simple substitution between the different options of rule-based logic, LLM-based reasoning, or other hybrid methods. Inputs are posted as structured requests, and modules return standardized advisory objects (message, severity, optional recommendations, metadata).</p>\n\n",
+                "matched_terms": [
+                    "advisory",
+                    "decision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Outputs</span>: The output schema is user&#8209;configurable. Advisories could include concise text, a severity level (INFO/ADVISORY/CAUTION/WARNING), optional recommendations, and supporting metadata for traceability and debugging.</p>\n\n",
+                "matched_terms": [
+                    "output",
+                    "advisories",
+                    "outputs"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Severity scale and speech threshold</span>: In the reference pipeline we use a four-level severity scale {INFO, ADVISORY, CAUTION, WARNING} and map these to integer levels; only advisories at or above a configurable threshold <span class=\"ltx_text ltx_font_typewriter\">SPEAK_MIN_LEVEL</span> are synthesized via TTS (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S6\" title=\"VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">VI</span></a>), so that lower-severity findings can be logged without contributing to pilot workload.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "advisory",
+                    "advisories"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We instrument all subsystems with a shared monotonic timebase and log start/end events for each module. For radio/ASR we record the transmission time <math alttext=\"t_{\\text{tx}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tx</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tx}}</annotation></semantics></math> and ASR finalization <math alttext=\"t_{\\text{asr}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m2\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr}}</annotation></semantics></math>. For vision we record frame exposure end <math alttext=\"t_{\\text{frame}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m3\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>frame</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{frame}}</annotation></semantics></math> and detector completion <math alttext=\"t_{\\text{vision}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m4\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>vision</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{vision}}</annotation></semantics></math>. For ADS-B we record ingest <math alttext=\"t_{\\text{adsb,in}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,in</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,in}}</annotation></semantics></math> and post&#8209;processor output <math alttext=\"t_{\\text{adsb,out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m6\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,out}}</annotation></semantics></math>. The decision engine records when all required inputs are available <math alttext=\"t_{\\text{ready}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m7\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>ready</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{ready}}</annotation></semantics></math> and when an advisory is produced <math alttext=\"t_{\\text{dec}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m8\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>dec</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{dec}}</annotation></semantics></math> (this includes LLM inference when used). The audio path records the first audible sample delivered to the radio bus <math alttext=\"t_{\\text{tts}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m9\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tts</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tts}}</annotation></semantics></math>. Each scenario annotates the conflict&#8209;window opening time <math alttext=\"t_{\\text{conflict}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m10\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>conflict</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{conflict}}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "adsb",
+                    "vision",
+                    "decision",
+                    "audio",
+                    "advisory",
+                    "output"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All timestamps share a common monotonic timebase within the simulation process, which allows these per-module and end-to-end latencies to be compared across runs and across alternative assistant implementations. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4.F3\" title=\"Figure 3 &#8227; IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>C illustrates the latencies and warning intervals.</p>\n\n",
+                "matched_terms": [
+                    "common",
+                    "within"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate <span class=\"ltx_text ltx_font_italic\">AIRHILT</span>, we implemented a reference pipeline and tested it on <span class=\"ltx_text ltx_font_bold\">S01A&#8212;Runway Overlap</span>. For instance, in the <em class=\"ltx_emph ltx_font_italic\">bad readback accepted</em> variant, an arrival is cleared to land runway&#160;01, the pilot incorrectly reads back runway&#160;19, the tower replies &#8220;roger,&#8221; and later a departure is cleared for takeoff on runway&#160;01, creating an occupancy conflict. These variants allow us to study end-to-end assistant behavior at the scenario level, in terms of whether and when warnings are raised relative to the opening of the conflict window. Other S01A conflict types exercised in the suite include: <em class=\"ltx_emph ltx_font_italic\">cancel takeoff not received</em> (tower cancels the departure but the intended aircraft never hears it), <em class=\"ltx_emph ltx_font_italic\">misaddressed takeoff clearance</em> (clearance spoken with the wrong callsign, departure accepts), and <em class=\"ltx_emph ltx_font_italic\">tight timing overlap</em> (both clearances valid, but spacing is insufficient).</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "variants"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the evidence-fallback branch we compute a scalar score\n<math alttext=\"S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mrow><mn>0.50</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>V</mi></msub></mrow><mo>+</mo><mrow><mn>0.35</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>A</mi></msub></mrow><mo>+</mo><mrow><mn>0.15</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><msub><mi>W</mi><mi>C</mi></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">S=0.50\\,W_{V}+0.35\\,W_{A}+0.15\\,W_{C}</annotation></semantics></math>, where <math alttext=\"W_{V}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m2\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>V</mi></msub><annotation encoding=\"application/x-tex\">W_{V}</annotation></semantics></math>, <math alttext=\"W_{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m3\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>A</mi></msub><annotation encoding=\"application/x-tex\">W_{A}</annotation></semantics></math>, and <math alttext=\"W_{C}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m4\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>C</mi></msub><annotation encoding=\"application/x-tex\">W_{C}</annotation></semantics></math> are normalized evidence terms derived from vision occupancy, ASR consistency, and overall conflict context (all in <math alttext=\"[0,1]\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1]</annotation></semantics></math>). In our S01A experiments we set <math alttext=\"\\tau_{\\mathrm{ASR}}=0.8\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m6\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>ASR</mi></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{ASR}}=0.8</annotation></semantics></math> and <math alttext=\"\\tau_{\\mathrm{vis}}=0.7\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS2.p2.m7\" intent=\":literal\"><semantics><mrow><msub><mi>&#964;</mi><mi>vis</mi></msub><mo>=</mo><mn>0.7</mn></mrow><annotation encoding=\"application/x-tex\">\\tau_{\\mathrm{vis}}=0.7</annotation></semantics></math>, which were chosen empirically to balance missed detections and nuisance alerts.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "vision",
+                    "detections"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluated <span class=\"ltx_text ltx_font_bold\">S01A</span> across 10 runs per conflict type with randomized visibility and SimuGAN SNR settings to stress both the vision and radio paths. Averages across these runs were: time-to-first-warning <math alttext=\"t_{\\mathrm{tts}}-t_{\\mathrm{conflict}}\\approx\\textbf{7.66\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>tts</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>conflict</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">7.66&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{tts}}-t_{\\mathrm{conflict}}\\approx\\textbf{7.66\\,s}</annotation></semantics></math>; ASR latency <math alttext=\"t_{\\mathrm{asr}}-t_{\\mathrm{tx}}\\approx\\textbf{5.88\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>asr</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>tx</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">5.88&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{asr}}-t_{\\mathrm{tx}}\\approx\\textbf{5.88\\,s}</annotation></semantics></math>; vision latency <math alttext=\"t_{\\mathrm{vision}}-t_{\\mathrm{frame}}\\approx\\textbf{0.415\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m3\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>vision</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>frame</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">0.415&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{vision}}-t_{\\mathrm{frame}}\\approx\\textbf{0.415\\,s}</annotation></semantics></math>; and <span class=\"ltx_text ltx_font_bold\">TTS synthesis/delivery</span> <math alttext=\"t_{\\mathrm{tts}}-t_{\\mathrm{dec}}\\approx\\textbf{0.9\\,s}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m4\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>t</mi><mi>tts</mi></msub><mo>&#8722;</mo><msub><mi>t</mi><mi>dec</mi></msub></mrow><mo>&#8776;</mo><mtext class=\"ltx_mathvariant_bold\">0.9&#8201;s</mtext></mrow><annotation encoding=\"application/x-tex\">t_{\\mathrm{tts}}-t_{\\mathrm{dec}}\\approx\\textbf{0.9\\,s}</annotation></semantics></math>. The first vision detection typically occurred at <math alttext=\"\\sim 125\\,\\text{m}\" class=\"ltx_Math\" display=\"inline\" id=\"S6.SS3.p1.m5\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mrow><mn>125</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>m</mtext></mrow></mrow><annotation encoding=\"application/x-tex\">\\sim 125\\,\\text{m}</annotation></semantics></math> range. These results show that, even with realistic radio noise and degraded visibility, the assistant can deliver runway-overlap warnings several seconds after the conflict window opens.</p>\n\n",
+                "matched_terms": [
+                    "paths",
+                    "asr",
+                    "vision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current limitations of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> include a sim-to-real gap, particularly within the vision detection pipeline, where simulation artifacts can lead to discrepancies from real-world performance. Human-factors validation is also limited, as we have not yet conducted controlled pilot and ATC studies to quantify workload, situational awareness, and operator acceptance of the multimodal assistant. In addition, the reference assistant implementation is not yet latency-optimized; our goal in this work is to establish a clear baseline and measurement framework rather than to minimize processing time.</p>\n\n",
+                "matched_terms": [
+                    "pilot",
+                    "vision",
+                    "processing",
+                    "within"
+                ]
+            }
+        ]
+    },
+    "S4.F3": {
+        "source_file": "AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation",
+        "image_url": "https://arxiv.org/html/2511.18718v1/Figures/figure_3.png",
+        "caption": "Figure 3: Modular simulation environment and onboard assistant architecture.\nA) Godot-based environment with scenario orchestration (L0), actors (L1), and I/O subsystems (L2A/L2B).\nB) Multimodal assistant with pluggable decision engine and advisory output.\nC) Built-in logging for per-modality and end-to-end latencies.",
+        "informative_terms_identified": [
+            "subsystems",
+            "onboard",
+            "latencies",
+            "builtin",
+            "output",
+            "assistant",
+            "endtoend",
+            "simulation",
+            "engine",
+            "decision",
+            "logging",
+            "orchestration",
+            "modular",
+            "actors",
+            "scenario",
+            "godotbased",
+            "environment",
+            "l2al2b",
+            "pluggable",
+            "advisory",
+            "permodality",
+            "multimodal",
+            "architecture"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4.F3\" title=\"Figure 3 &#8227; IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> presents a high-level overview of the <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> architecture, while the following subsections provide a deeper exploration into the design, functionality, and implementation details of each layer and component.</p>\n\n",
+            "<p class=\"ltx_p\">All timestamps share a common monotonic timebase within the simulation process, which allows these per-module and end-to-end latencies to be compared across runs and across alternative assistant implementations. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S4.F3\" title=\"Figure 3 &#8227; IV Simulation Environment and Interfaces &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>C illustrates the latencies and warning intervals.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We introduce AIRHILT (Aviation Integrated Reasoning, Human-in-the-Loop Testbed), a modular and lightweight simulation environment designed to evaluate multimodal pilot and ATC assistance systems for aviation conflict detection. Built on the Godot engine&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">godot_engine_godot_nodate</span>]</cite>, AIRHILT synchronizes pilot and air traffic controller (ATC) communications, visual scene understanding from camera streams, and ADS-B surveillance data within a unified, scalable platform. The environment supports pilot- and controller-in-the-loop interactions, providing a comprehensive scenario suite covering both terminal area and en route operational conflicts, including communication errors and procedural mistakes. AIRHILT offers standardized JSON-based interfaces enabling researchers to easily integrate, swap, and evaluate various automatic speech recognition (ASR), visual detection, decision-making, and text-to-speech (TTS) models. We demonstrate AIRHILT through a reference pipeline incorporating fine-tuned Whisper ASR, YOLO-based visual detection, ADS-B-based conflict logic, and GPT-OSS-20B structured reasoning, presenting preliminary results from representative runway-overlap scenarios where the assistant achieves an average time-to-first-warning of <math alttext=\"{\\sim}7.7\" class=\"ltx_Math\" display=\"inline\" id=\"m6\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>7.7</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}7.7</annotation></semantics></math>&#8201;s with average ASR and vision latencies of <math alttext=\"{\\sim}5.9\" class=\"ltx_Math\" display=\"inline\" id=\"m7\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>5.9</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}5.9</annotation></semantics></math>&#8201;s and <math alttext=\"{\\sim}0.4\" class=\"ltx_Math\" display=\"inline\" id=\"m8\" intent=\":literal\"><semantics><mrow><mi/><mo>&#8764;</mo><mn>0.4</mn></mrow><annotation encoding=\"application/x-tex\">{\\sim}0.4</annotation></semantics></math>&#8201;s, respectively. The AIRHILT environment and scenario suite are openly available, supporting reproducible research on multimodal situational awareness and conflict detection in aviation. The complete repository is available at <a class=\"ltx_ref ltx_href ltx_font_typewriter\" href=\"https://github.com/ogarib3/airhilt\" title=\"\">github.com/ogarib3/airhilt</a>.</p>\n\n",
+                "matched_terms": [
+                    "modular",
+                    "multimodal",
+                    "scenario",
+                    "simulation",
+                    "engine",
+                    "latencies",
+                    "environment",
+                    "assistant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Such a simulation-based environment would significantly broaden access to aviation situational awareness research, allowing researchers worldwide to efficiently explore and identify promising candidate systems while conserving limited pilot and ATC resources. To address these needs, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a simulation environment explicitly designed to facilitate research into multimodal AI assistance systems through pilot and controller-in-the-loop experimentation.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "environment",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">An open simulation environment</span> that synchronizes pilot-to-ATC communications, ATC control tower camera views, aircraft-mounted camera streams, and ADS-B/radar data, enabling systematic evaluation of multimodal assistive systems with pilot- and controller-in-the-loop interactions.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "environment",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">A reference multimodal pipeline</span> that demonstrates environment capabilities through interchangeable components such as Whisper-based ASR, YOLO-based visual detection, ADS-B-based conflict logic, and a structured large language model (LLM) decision layer, with preliminary latency and time-to-first-warning metrics reported.</p>\n\n",
+                "matched_terms": [
+                    "environment",
+                    "decision",
+                    "multimodal"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Reproducible artifacts</span> including the simulation environment, scenario definitions, evaluation scripts, and documentation to support community use and extension.</p>\n\n",
+                "matched_terms": [
+                    "environment",
+                    "simulation",
+                    "scenario"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent progress in multimodal AI provides essential building blocks for assistance: (i) <span class=\"ltx_text ltx_font_bold\">ASR</span> for transcribing and parsing ATC/pilot communications; (ii) <span class=\"ltx_text ltx_font_bold\">vision detection models</span> operating on tower or onboard cameras for surface/aircraft/vehicle detection and tracking; and (iii) <span class=\"ltx_text ltx_font_bold\">surveillance and trajectory analytics</span> from ADS-B/radar data. However, performance thresholds and latency budgets required for operational usefulness remain under-specified, and real systems must handle missing or degraded modalities.</p>\n\n",
+                "matched_terms": [
+                    "onboard",
+                    "multimodal"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Evaluating air traffic situational awareness systems presents four key challenges: (1) moving from subtask accuracy to operational safety gains, (2) modeling rare failure scenarios with limited real-world data, (3) integrating multimodal context in evaluation frameworks, and (4) enabling simulation environments that support human-in-the-loop input and intelligent system responses.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A related challenge for the design of the simulation environment is to incorporate humans in the scenarios via simulated ATC and pilot workstations. To actually execute operational evaluations as described above, the environment must support pilot- and controller-in-the-loop operation, so that human behaviors can be incorporated into the chain of events.</p>\n\n",
+                "matched_terms": [
+                    "environment",
+                    "simulation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enable efficient and scalable evaluation of different multimodal pilot-assist architectures with representative human-in-the-loop interactions, we introduce <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em>, a lightweight, modular simulation environment built upon the Godot engine. <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> offers a unified simulation platform that synchronizes pilot-to-ATC communications, camera-based visual perception, and ADS-B traffic data, enabling systematic evaluation of assistive systems designed for aviation conflict detection and resolution.</p>\n\n",
+                "matched_terms": [
+                    "modular",
+                    "multimodal",
+                    "simulation",
+                    "engine",
+                    "environment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Built&#8209;in logging records per&#8209;modality and end&#8209;to&#8209;end latencies for each advisory event.</p>\n\n",
+                "matched_terms": [
+                    "latencies",
+                    "advisory",
+                    "logging"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The scenario execution in <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> is orchestrated through a clearly structured, declarative <span class=\"ltx_text ltx_font_typewriter\">Scenario JSON</span>, providing researchers with full control over simulation initialization and runtime conditions. Each scenario specification encapsulates:</p>\n\n",
+                "matched_terms": [
+                    "simulation",
+                    "scenario"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Upon ingestion of the Scenario JSON, the <span class=\"ltx_text ltx_font_typewriter\">Director (Runner)</span> automatically loads and initializes all scene assets and actors as defined in the scenario specification. It subsequently mounts synchronized communication and vision buses to maintain consistent alignment of audio (radio), visual (camera), and corresponding ground-truth data streams.</p>\n\n",
+                "matched_terms": [
+                    "actors",
+                    "scenario"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">ASR Service (Interchangeable)</span>: Pluggable ASR models transcribe received audio and emit finalization timestamps (<math alttext=\"t_{\\text{asr\\_out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i2.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr_out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr\\_out}}</annotation></semantics></math>) and optional confidences. By default, the ASR runs in parallel to the pilot audio path (matching the topology in Fig.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#S2.F2\" title=\"Figure 2 &#8227; II-B Multimodal Components and Perception Tasks &#8227; II Background &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>b), so pilots hear raw audio while a copy is forwarded to the recognizer; users may alternatively configure the ASR output as an intermediate step prior to pilot reception, depending on the assistive architecture and experimental setup being evaluated.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "pluggable",
+                    "output"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">TTS Bridge (Interchangeable)</span>: The environment integrates pluggable TTS services (e.g., XTTS-v2&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">noauthor_coqui_nodate</span>]</cite>) that convert scripted text instructions into realistic audio. An optional augmentation layer adds configurable radio-channel effects, including noise and distortion, with precise control over signal-to-noise ratio (SNR) and mixing parameters. In our experiments, all radio-path audio is encoded as single-channel PCM at a <math alttext=\"16\\,\\text{kHz}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.I4.i3.p1.m1\" intent=\":literal\"><semantics><mrow><mn>16</mn><mo lspace=\"0.170em\" rspace=\"0em\">&#8203;</mo><mtext>kHz</mtext></mrow><annotation encoding=\"application/x-tex\">16\\,\\text{kHz}</annotation></semantics></math> sample rate to match the reference ASR and SimuGAN configurations.</p>\n\n",
+                "matched_terms": [
+                    "pluggable",
+                    "environment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The multimodal assistant exposes a well&#8209;specified interface that defines inputs, outputs, and the pluggable decision module. This decouples environment integration from any particular algorithm and allows alternative implementations to be swapped with minimal code changes elsewhere.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "environment",
+                    "decision",
+                    "pluggable",
+                    "assistant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Inputs</span>: The assistant receives synchronized multimodal data in three categories:</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "assistant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Decision Engine (Interchangeable)</span>: Decision-making modules are integrated via standardized HTTP/JSON interfaces, allowing simple substitution between the different options of rule-based logic, LLM-based reasoning, or other hybrid methods. Inputs are posted as structured requests, and modules return standardized advisory objects (message, severity, optional recommendations, metadata).</p>\n\n",
+                "matched_terms": [
+                    "engine",
+                    "advisory",
+                    "decision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We instrument all subsystems with a shared monotonic timebase and log start/end events for each module. For radio/ASR we record the transmission time <math alttext=\"t_{\\text{tx}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m1\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tx</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tx}}</annotation></semantics></math> and ASR finalization <math alttext=\"t_{\\text{asr}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m2\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>asr</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{asr}}</annotation></semantics></math>. For vision we record frame exposure end <math alttext=\"t_{\\text{frame}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m3\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>frame</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{frame}}</annotation></semantics></math> and detector completion <math alttext=\"t_{\\text{vision}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m4\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>vision</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{vision}}</annotation></semantics></math>. For ADS-B we record ingest <math alttext=\"t_{\\text{adsb,in}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m5\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,in</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,in}}</annotation></semantics></math> and post&#8209;processor output <math alttext=\"t_{\\text{adsb,out}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m6\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>adsb,out</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{adsb,out}}</annotation></semantics></math>. The decision engine records when all required inputs are available <math alttext=\"t_{\\text{ready}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m7\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>ready</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{ready}}</annotation></semantics></math> and when an advisory is produced <math alttext=\"t_{\\text{dec}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m8\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>dec</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{dec}}</annotation></semantics></math> (this includes LLM inference when used). The audio path records the first audible sample delivered to the radio bus <math alttext=\"t_{\\text{tts}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m9\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>tts</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{tts}}</annotation></semantics></math>. Each scenario annotates the conflict&#8209;window opening time <math alttext=\"t_{\\text{conflict}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS7.p1.m10\" intent=\":literal\"><semantics><msub><mi>t</mi><mtext>conflict</mtext></msub><annotation encoding=\"application/x-tex\">t_{\\text{conflict}}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "scenario",
+                    "subsystems",
+                    "engine",
+                    "decision",
+                    "advisory",
+                    "output"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The environment was deliberately designed to simplify the creation of these scenarios, providing a structured and intuitive JSON-based configuration. A comprehensive guide to scenario creation, detailing workflows, parameters, and extensions, is included in our public repository.</p>\n\n",
+                "matched_terms": [
+                    "environment",
+                    "scenario"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate <span class=\"ltx_text ltx_font_italic\">AIRHILT</span>, we implemented a reference pipeline and tested it on <span class=\"ltx_text ltx_font_bold\">S01A&#8212;Runway Overlap</span>. For instance, in the <em class=\"ltx_emph ltx_font_italic\">bad readback accepted</em> variant, an arrival is cleared to land runway&#160;01, the pilot incorrectly reads back runway&#160;19, the tower replies &#8220;roger,&#8221; and later a departure is cleared for takeoff on runway&#160;01, creating an occupancy conflict. These variants allow us to study end-to-end assistant behavior at the scenario level, in terms of whether and when warnings are raised relative to the opening of the conflict window. Other S01A conflict types exercised in the suite include: <em class=\"ltx_emph ltx_font_italic\">cancel takeoff not received</em> (tower cancels the departure but the intended aircraft never hears it), <em class=\"ltx_emph ltx_font_italic\">misaddressed takeoff clearance</em> (clearance spoken with the wrong callsign, departure accepts), and <em class=\"ltx_emph ltx_font_italic\">tight timing overlap</em> (both clearances valid, but spacing is insufficient).</p>\n\n",
+                "matched_terms": [
+                    "endtoend",
+                    "scenario",
+                    "assistant"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Algorithm&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.18718v1#algorithm1\" title=\"In VI-B Decision Logic &#8227; VI Reference Pipeline &#8227; AIRHILT: A Human-in-the-Loop Testbed for Multimodal Conflict Detection in Aviation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> outlines how the decision engine integrates information from the different modalities to determine when and what warnings to raise.</p>\n\n",
+                "matched_terms": [
+                    "engine",
+                    "decision"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> provides an open-source and flexible environment that facilitates experimentation with different multimodal assistive systems in aviation. The present evaluation focuses on the S01A runway-overlap scenarios. Extending quantitative assessment to the remaining scenario families is an important direction for future work, and updated results will be reported in the public repository.</p>\n\n",
+                "matched_terms": [
+                    "environment",
+                    "multimodal",
+                    "scenario"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Current limitations of <em class=\"ltx_emph ltx_font_italic\">AIRHILT</em> include a sim-to-real gap, particularly within the vision detection pipeline, where simulation artifacts can lead to discrepancies from real-world performance. Human-factors validation is also limited, as we have not yet conducted controlled pilot and ATC studies to quantify workload, situational awareness, and operator acceptance of the multimodal assistant. In addition, the reference assistant implementation is not yet latency-optimized; our goal in this work is to establish a clear baseline and measurement framework rather than to minimize processing time.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "simulation",
+                    "assistant"
+                ]
+            }
+        ]
+    }
+}

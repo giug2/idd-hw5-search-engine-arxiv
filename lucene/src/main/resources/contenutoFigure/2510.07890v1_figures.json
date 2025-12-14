@@ -1,0 +1,404 @@
+{
+    "S1.F1": {
+        "source_file": "Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects",
+        "image_url": "https://arxiv.org/html/2510.07890v1/x1.png",
+        "caption": "Figure 1: We compare three evaluation setups for German and dialectal text and speech data.",
+        "informative_terms_identified": [
+            "setups",
+            "evaluation",
+            "speech",
+            "dialectal",
+            "german",
+            "three",
+            "data",
+            "compare",
+            "text"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">In this study, we extend an intent classification dataset with audio recordings in German and a related non-standard dialect, Bavarian.\nWe compare three setups across a variety of text and speech encoders and ASR models (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>): models trained and evaluated on the written version of the dataset (&#8220;text-only&#8221;), on the spoken version (&#8220;speech-only&#8221;) or trained on text and evaluated on ASR transcripts of the spoken input (&#8220;cascaded&#8221;).\nWe replicate our findings in a supporting experiment on a conceptually similar task (topic classification) with German and Swiss German (dialect).</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Research on cross-dialectal transfer from a standard to a non-standard dialect variety has typically focused on text data.\nHowever, dialects are primarily spoken, and non-standard spellings are known to cause issues in text processing.\nWe compare standard-to-dialect transfer in three settings: text models, speech models, and cascaded systems where speech first gets automatically transcribed and then further processed by a text model.\nIn our experiments, we focus on German and multiple German dialects in the context of written and spoken intent and topic classification.\nTo that end, we release the first dialectal audio intent classification dataset.\nWe find that the speech-only setup provides the best results on the dialect data while the text-only setup works best on the standard data.\nWhile the cascaded systems lag behind the text-only models for German, they perform relatively well on the dialectal data if the transcription system generates normalized, standard-like output.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "dialectal",
+                    "german",
+                    "three",
+                    "data",
+                    "compare",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p ltx_align_center\">\n  <span class=\"ltx_text ltx_font_bold\">Standard-to-Dialect Transfer Trends Differ across Text and Speech:\n<br class=\"ltx_break\"/>A Case Study on Intent and Topic Classification in German Dialects</span>\n</p>\n\n",
+                "matched_terms": [
+                    "german",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While most natural language processing (NLP) research focuses on highly standardized languages with large amounts of training and evaluation data available, a subfield focusing on dialect NLP has recently been emerging, studying the (lack of) robustness NLP tools exhibit towards dialectal variation <cite class=\"ltx_cite ltx_citemacro_cite\">Zampieri et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib63\" title=\"\">2020</a>); Joshi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib30\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Part of what makes standard-to-dialect transfer challenging is the large degree of spelling variation exhibited in dialectal writing, as it frequently leads to infelicitous subword tokenizations <cite class=\"ltx_cite ltx_citemacro_cite\">Aepli et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib1\" title=\"\">2023</a>); Blaschke et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib13\" title=\"\">2023</a>); Srivastava and Chiang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib53\" title=\"\">2025</a>); Kanjirangat et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib31\" title=\"\">2025</a>)</cite>.\nSuch challenges have led to research on processing dialectal data with token-free models, such as pixel models <cite class=\"ltx_cite ltx_citemacro_cite\">Mu&#241;oz-Ortiz et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib41\" title=\"\">2025</a>)</cite>.\nThese input representation challenges also bring about the question of how robust speech models are towards dialectal variation, given the continuous nature of their inputs.\nThis has to some extent been investigated for ASR&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S2\" title=\"2 Related Work &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), but not yet for classification tasks.\nFocusing on speech is especially relevant for processing non-standard dialects, as these varieties are predominantly spoken.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work primarily focuses on intent classification in the context of queries for virtual personal assistants for two reasons:\nFirstly, dialect-robust applications of this task are seen as especially desirable in a survey on potential NLP technologies for German dialects <cite class=\"ltx_cite ltx_citemacro_cite\">Blaschke et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib12\" title=\"\">2024</a>)</cite>.\nSecondly, this is a task that naturally lends itself to the spoken domain, but most available datasets datasets only include written data.\nThis can partially be explained by the conventional cascaded paradigm of first automatically transcribing audio data, and then classifying the transcribed text as a second step.\nHowever, this approach ignores the shortcomings of current automatic speech recognition (ASR) systems with respect to low-resource and non-standardized languages.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While the cascaded models lag behind the text-only models for the German data, systems whose ASR step in practice normalizes the data outperform the text-only models for dialectal input&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.SS1\" title=\"5.1 Cascaded vs. text-only: How do the text models generalize to transcribed data? &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">5.1</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although the speech-only systems perform on par with the cascaded systems on the German data, they greatly outperform the cascaded systems on the dialectal data&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.SS2\" title=\"5.2 Speech-only vs. cascaded: How to best deal with spoken inputs? &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">5.2</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although the text-only models perform much better than the speech-only models on the German data, the situation is largely reversed for the dialectal data&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.SS3\" title=\"5.3 Speech-only vs. text-only: Which modality is preferable? &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">5.3</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Several works have focused on standard-to-dialect transfer for written dialects, starting with the xSID dataset <cite class=\"ltx_cite ltx_citemacro_cite\">van&#160;der Goot et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib58\" title=\"\">2021</a>)</cite>,\nand including multiple shared tasks <cite class=\"ltx_cite ltx_citemacro_cite\">Aepli et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib1\" title=\"\">2023</a>); Malaysha et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib38\" title=\"\">2024</a>); Scherrer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib47\" title=\"\">2025</a>)</cite>.\nA common theme in these works is the gap between the performance on the standard variety and the non-standard dialects.\nIntent classification systems have been shown to be somewhat affected by syntactic variation <cite class=\"ltx_cite ltx_citemacro_cite\">Artemova et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib6\" title=\"\">2024</a>)</cite>.\nOther works have focused on improving intent classification by mitigating the effect of infelicitous subword tokenizations for dialectal text by manipulating the subword tokenization of the standard language as well <cite class=\"ltx_cite ltx_citemacro_cite\">Srivastava and Chiang (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib52\" title=\"\">2023</a>); Blaschke et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib11\" title=\"\">2025a</a>)</cite> or by using token-free models <cite class=\"ltx_cite ltx_citemacro_cite\">Mu&#241;oz-Ortiz et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib41\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Most work on spoken dialect processing has focused on ASR, covering a variety of languages like\nArabic <cite class=\"ltx_cite ltx_citemacro_cite\">Djanibekov et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib19\" title=\"\">2025</a>)</cite>,\nDutch <cite class=\"ltx_cite ltx_citemacro_cite\">ten Bosch (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib55\" title=\"\">2000</a>)</cite>,\nEnglish <cite class=\"ltx_cite ltx_citemacro_cite\">Torgbi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib56\" title=\"\">2025</a>)</cite>,\nGerman <cite class=\"ltx_cite ltx_citemacro_cite\">Beringer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib10\" title=\"\">1998</a>)</cite>,\nGreek <cite class=\"ltx_cite ltx_citemacro_cite\">Vakirtzian et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib57\" title=\"\">2024</a>)</cite>,\nFrisian <cite class=\"ltx_cite ltx_citemacro_cite\">Amooie et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib4\" title=\"\">2025</a>)</cite>,\nIrish <cite class=\"ltx_cite ltx_citemacro_cite\">Lonergan et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib37\" title=\"\">2023</a>)</cite>,\nMandarin <cite class=\"ltx_cite ltx_citemacro_cite\">Tang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib54\" title=\"\">2021</a>)</cite>,\nTelugu <cite class=\"ltx_cite ltx_citemacro_cite\">Yadavalli et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib62\" title=\"\">2022</a>)</cite>,\nWenzhounese <cite class=\"ltx_cite ltx_citemacro_cite\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib24\" title=\"\">2025</a>)</cite>,\nand\nYor&#249;b&#225; <cite class=\"ltx_cite ltx_citemacro_cite\">Ahia et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib3\" title=\"\">2024</a>)</cite>.\nCommon themes in these works are performance gaps between standard and non-standard varieties, the effect of dialectal pronunciation differences, as well as lexical and syntactic differences between the dialect and the standard.</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A range of recent works has focused on spoken intent and topic classification.\n<cite class=\"ltx_cite ltx_citemacro_citet\">Bastianelli et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib9\" title=\"\">2020</a>)</cite> present an English-language intent classification dataset that was later extended into the multilingual Speech-MASSIVE by <cite class=\"ltx_cite ltx_citemacro_citet\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>)</cite>.\nSimilarly, <cite class=\"ltx_cite ltx_citemacro_citet\">Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite> and <cite class=\"ltx_cite ltx_citemacro_citet\">Keller and Glava&#353; (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib32\" title=\"\">2025</a>)</cite> present large-scale multilingual speech classification datasets.\n<cite class=\"ltx_cite ltx_citemacro_citet\">Rajaa et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib45\" title=\"\">2022</a>)</cite> present an Indian English intent classification dataset.\nTwo datasets include multiple varieties of the same language: MInDS-14 <cite class=\"ltx_cite ltx_citemacro_cite\">Gerz et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib25\" title=\"\">2021</a>)</cite> includes standard English accents from three countries, with no consistent performance differences between them.\nITALIC contains recordings from different Italian regions <cite class=\"ltx_cite ltx_citemacro_cite\">Koudounas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib33\" title=\"\">2023</a>)</cite>, but no analysis of performance differences across regions.\nOn the engineering side, <cite class=\"ltx_cite ltx_citemacro_citet\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib59\" title=\"\">2023</a>)</cite> and <cite class=\"ltx_cite ltx_citemacro_citet\">He and Garner (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib27\" title=\"\">2023</a>)</cite> explore the benefits of multi-task learning for spoken intent detection.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We compare three setups.\nIn the <span class=\"ltx_text ltx_font_bold\">text-only</span> setup, the models are trained on the German text data and evaluated on the German and dialectal text data.\nIn the <span class=\"ltx_text ltx_font_bold\">cascaded</span> setup, the same models are evaluated on ASR transcriptions of the German and dialectal speech data.\nLastly, in the <span class=\"ltx_text ltx_font_bold\">speech-only</span> setup, the models are trained on the German audio data and evaluated on the German and dialectal audio data.</p>\n\n",
+                "matched_terms": [
+                    "setups",
+                    "speech",
+                    "dialectal",
+                    "german",
+                    "three",
+                    "data",
+                    "compare",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our main set of experiments concerns intent classification.\nWe use (and introduce) data in German (deu) and a closely related dialect, Bavarian (bar).\nThe data consist of queries and commands for virtual assistants annotated with\nuser intents.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the German splits of the text-based MASSIVE dataset <cite class=\"ltx_cite ltx_citemacro_cite\">FitzGerald et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib23\" title=\"\">2023</a>)</cite> and its audio counterpart Speech-MASSIVE <cite class=\"ltx_cite ltx_citemacro_cite\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>)</cite> for training models.\nFor evaluation, we use the subset of the MASSIVE test set that has been translated into Bavarian <cite class=\"ltx_cite ltx_citemacro_cite\">Winkler et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib60\" title=\"\">2024</a>)</cite> as well as the corresponding German (Speech-)MASSIVE instances.\nWe furthermore use the German and Bavarian test splits of xSID <cite class=\"ltx_cite ltx_citemacro_cite\">van&#160;der Goot et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib58\" title=\"\">2021</a>); Winkler et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib60\" title=\"\">2024</a>)</cite>.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>xSID is evaluation data only, and does not provide (high-quality) training splits for German or Bavarian.\nFor the Bavarian data, we use the split from Upper Bavaria (&#8220;de-ba&#8221;).</span></span></span>\nBecause xSID is only released as a text-based dataset, we additionally create audio recordings (see Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A1\" title=\"Appendix A Data Statement &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">A</span></a> for the data statement).\nThe audios are recorded in-house by the same person who translated the written Bavarian split.\nThey are a native speaker of both German and Bavarian.\nThe German and Bavarian recordings are identical in content, speaker, and recording conditions, and only differ in their language variety.\nWe will share the recordings upon publication.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "evaluation",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We map the instances in (Speech-)MASSIVE to the label set used by xSID (&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A3.SS1\" title=\"C.1 Mapping the intent labels &#8227; Appendix C Data Preprocessing &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">C.1</span></a>), and exclude all instances that do not match this mapping.\nThis leaves 2.5k/459/361 train/dev/test instances for (Speech-)MASSIVE and 412 test instances for xSID, and 10 labels.<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>We will additionally share recordings for the full Bavarian and German development and test sets (300+500 sentences, 16 intents).</span></span></span>\nBecause all text is lowercased in MASSIVE, we lowercase the xSID data and the ASR transcriptions as well.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To replicate our findings to the extent possible with open-source data, we further include experiments on\ntopic classification, a task\nconceptually similar to intent classification.\nTo the best of our knowledge, except for our spoken extension of xSID, the dataset below is the only available classification dataset that contains parallel (or otherwise comparable) dialectal and standard-variety data where at least the dialectal split is available as spoken data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use SwissDial <cite class=\"ltx_cite ltx_citemacro_cite\">Dogan-Sch&#246;nberger et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib20\" title=\"\">2021</a>)</cite>, which contains German sentences that are also parallel in up to eight Swiss German (gsw) dialects.\nThe German sentences are only available as text data, but the dialectal sentences are both written and spoken, allowing us to use the dataset for the text-only and cascaded setups.\nWe exclude rare or incoherent labels (&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A3.SS2\" title=\"C.2 Excluded topic labels &#8227; Appendix C Data Preprocessing &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">C.2</span></a>), resulting in a label set of 10&#160;topics.\nWe split the dataset into 1.5k/194/396 train/dev/test sentences.\nThe test set only contains sentences that are parallel across all eight dialects.\nFor training and development, we only use the Standard German versions.</p>\n\n",
+                "matched_terms": [
+                    "setups",
+                    "dialectal",
+                    "german",
+                    "data",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As text models,\nwe select mBERT <cite class=\"ltx_cite ltx_citemacro_cite\">Devlin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib18\" title=\"\">2019</a>)</cite>, XLM-R base and large <cite class=\"ltx_cite ltx_citemacro_cite\">Conneau et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib16\" title=\"\">2020</a>)</cite>, and mDeBERTa-v3 <cite class=\"ltx_cite ltx_citemacro_cite\">He et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib28\" title=\"\">2021a</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib29\" title=\"\">b</a>)</cite>.\nThe latter has shown strong performance in previous work on intent classification for dialectal German data <cite class=\"ltx_cite ltx_citemacro_cite\">Artemova et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib6\" title=\"\">2024</a>); Kr&#252;ckl et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib34\" title=\"\">2025</a>)</cite>.\nAs speech models,\nwe use the encoders of Whisper small and medium <cite class=\"ltx_cite ltx_citemacro_cite\">Radford et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib44\" title=\"\">2023</a>)</cite>.\nWe also use mHubERT-147 <cite class=\"ltx_cite ltx_citemacro_cite\">Zanon Boito et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib64\" title=\"\">2024</a>)</cite> and MMS 300M <cite class=\"ltx_cite ltx_citemacro_cite\">Radford et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib44\" title=\"\">2023</a>)</cite>.\nWe additionally use both the original version of XLS-R 300M <cite class=\"ltx_cite ltx_citemacro_cite\">Babu et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib7\" title=\"\">2022</a>)</cite> and a version fine-tuned for German ASR <cite class=\"ltx_cite ltx_citemacro_cite\">McDowell (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib40\" title=\"\">2022b</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "dialectal",
+                    "german",
+                    "data",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All of the models we use include German in their pre-training data.\nOnly mBERT includes Bavarian; none of the models were trained on Swiss German.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To transcribe the evaluation data in the cascaded setup, we use all speech models mentioned above in this section that are trained/fine-tuned for ASR.\nWe additionally use a version of XLS-R 1B fine-tuned for German ASR <cite class=\"ltx_cite ltx_citemacro_cite\">McDowell (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib39\" title=\"\">2022a</a>)</cite>, MMS 1B fine-tuned for multilingual ASR, and Whisper large-v3-turbo, a version of Whisper large-v3 with a reduced number of decoder layers.\nAll Whisper models are trained for multilingual ASR.\nWe use all ASR models without further fine-tuning and set German as the output language, as none of the ASR models support German dialects.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german",
+                    "evaluation",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We choose hyperparameter values based on prior work on written and spoken intent classification\n<cite class=\"ltx_cite ltx_citemacro_cite\">Rajaa et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib45\" title=\"\">2022</a>); Koudounas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib33\" title=\"\">2023</a>); Arora et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib5\" title=\"\">2024</a>); Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite>.\nWe use the training and development splits of the German (Speech-)MASSIVE and Swissdial versions for selecting the learning rate<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>We observe that the text models are much more robust to the choice of learning rate than the speech models, with the speech models without ASR tuning being especially sensitive (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A4.T8\" title=\"Table 8 &#8227; Appendix D Hyperparameters and Training &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">8</span></a> in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A4\" title=\"Appendix D Hyperparameters and Training &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>).</span></span></span>\nand maximum number of training epochs.\nDetails on the hyperparameter search and model training are in&#160;&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A4\" title=\"Appendix D Hyperparameters and Training &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">D</span></a>.\nWe report the mean accuracy values over three random seeds.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "german",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">As in prior work on zero-shot standard-to-dialect transfer&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S2\" title=\"2 Related Work &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>), the results on the German test data are consistently better than on the dialectal data, with performance gaps between 6.1 and 36.7 percentage points&#160;(pp.) in accuracy for intent classification and gaps between 7.9 and 12.0&#8201;pp. for topic classification.\nFor the intent classification data, the performance also drops in the cross-dataset transfer &#8211; the (German) test set accuracies for xSID are lower than for MASSIVE, although the dialect gap is much narrower for xSID (6.1&#8211;29.9 for xSID compared to 30.6&#8211;36.7 for MASSIVE).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the speech-only models, the models trained/fine-tuned for German or multilingual ASR outperform their non-fine-tuned counterparts (at least when matched by model size), both on the German and dialectal data.\nThis is consistent with prior works finding ASR to be a useful pre-training task for downstream tasks related to understanding the content of an utterance <cite class=\"ltx_cite ltx_citemacro_cite\">He and Garner (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib27\" title=\"\">2023</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Systems of the same setup and model type tend to perform similarly to each other on the German data, but their performance on the dialectal data is less predictable.\nFor instance, the standard deviations of the model performances on the xSID data on the German vs. Bavarian data are 4.6 and 5.2 for all text-only models, 6.0 vs. 9.8 for all cascaded models, and 8.1 vs. 8.3 for all ASR-tuned speech-only models.\nOnly the speech models without ASR tuning go against this trend (2.9 vs. 2.2).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Different setups work best for the German and dialectal data.</span>\nThe text-only models achieve the best performances on the German data, followed by the cascaded models and the ASR-tuned speech models.\nThe non-ASR speech models perform worst.\nFor the Bavarian data however, the ASR-tuned speech models (and the one text model pretrained on Bavarian data, mBERT), perform best. The accuracy of the cascaded models varies a lot, depending on both the ASR model and the text model.\nSimilarly, for the Swiss German data, the cascaded systems contain both the best and the worst results &#8211; depending on the ASR model included &#8211; even though on average their performance is similar to that of the text-only models.\nThis trend is consistent across the eight different dialects in Swissdial (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A5.T10\" title=\"Table 10 &#8227; Results &#8227; Appendix E Manual Evaluation of ASR Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> in Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A6\" title=\"Appendix F De-aggregated Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">F</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "setups",
+                    "speech",
+                    "dialectal",
+                    "german",
+                    "data",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In most setups, bigger models outperform smaller models.\nThe exception to this is XLM-R large in the text-only and cascaded setups for the MASSIVE test data, even though it outperforms its smaller counterpart in the cross-dataset evaluation on xSID.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "setups",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the dialectal test sets, we compare the ASR hypotheses to both the dialectal and the German references.\nWe compare them to the dialectal references as they directly correspond to the audio recordings.\nHowever, the ASR models &#8211; especially the Whisper ones &#8211; tend to produce more normalized, German-like output <cite class=\"ltx_cite ltx_citemacro_cite\">Dolev et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib21\" title=\"\">2024</a>); Gorisch and Schmidt (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib26\" title=\"\">2024</a>); Blaschke et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib14\" title=\"\">2025b</a>)</cite>.\nWe therefore also compare their outputs to the German text data, although there can be lexical and syntactic differences between the German and dialectal versions.\nIn the case of xSID, the German and Bavarian splits were independently translated from English <cite class=\"ltx_cite ltx_citemacro_cite\">Winkler et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib60\" title=\"\">2024</a>)</cite>,\nleading to sentence pairs that are parallel on a sentence level but not necessarily on a word level <cite class=\"ltx_cite ltx_citemacro_cite\">Winkler et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib60\" title=\"\">2024</a>); Kr&#252;ckl et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib34\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "german",
+                    "data",
+                    "compare",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the German test sets, the closer the ASR hypotheses are to the gold text, the smaller the performance gap between the text-only and cascaded setups (Pearson&#8217;s&#160;<math alttext=\"r\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p3.m1\" intent=\":literal\"><semantics><mi>r</mi><annotation encoding=\"application/x-tex\">r</annotation></semantics></math> for error rate and cascaded/text-only gap between <math alttext=\"-0.72\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p3.m2\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>0.72</mn></mrow><annotation encoding=\"application/x-tex\">-0.72</annotation></semantics></math> and <math alttext=\"-0.98\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p3.m3\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>0.98</mn></mrow><annotation encoding=\"application/x-tex\">-0.98</annotation></semantics></math>).\nHowever, even the cascaded systems with the lowest error rates do not reach the accuracies of the corresponding text-only versions (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.T4\" title=\"Table 4 &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, right).\nFor the dialectal test sets, ASR performance is also strongly correlated with the results of the cascaded systems.\nHowever, the cascaded systems with the best ASR models outperform their text-only counterparts.</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "setups",
+                    "german",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the Swiss German data, the correlations between the error rate and the performance gap are very strong when comparing the ASR hypotheses to the German references (<math alttext=\"-0.94&lt;r&lt;-0.99\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m1\" intent=\":literal\"><semantics><mrow><mrow><mo>&#8722;</mo><mn>0.94</mn></mrow><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mrow><mo>&#8722;</mo><mn>0.99</mn></mrow></mrow><annotation encoding=\"application/x-tex\">-0.94&lt;r&lt;-0.99</annotation></semantics></math>): if the ASR output is normalized German (i.e., the WER/CER is low with respect to the German reference), the text models can process it well.\nFor the Bavarian data where there might be more syntactic variation between the German and Bavarian text versions, the correlations are not quite as strong as for the Swiss German data, but they are high both when considering the German <span class=\"ltx_text ltx_font_italic\">and</span> the Bavarian references (<math alttext=\"-0.85&lt;r&lt;-0.92\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m2\" intent=\":literal\"><semantics><mrow><mrow><mo>&#8722;</mo><mn>0.85</mn></mrow><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mrow><mo>&#8722;</mo><mn>0.92</mn></mrow></mrow><annotation encoding=\"application/x-tex\">-0.85&lt;r&lt;-0.92</annotation></semantics></math> and <math alttext=\"-0.66&lt;r&lt;-0.93\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS1.p4.m3\" intent=\":literal\"><semantics><mrow><mrow><mo>&#8722;</mo><mn>0.66</mn></mrow><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mrow><mo>&#8722;</mo><mn>0.93</mn></mrow></mrow><annotation encoding=\"application/x-tex\">-0.66&lt;r&lt;-0.93</annotation></semantics></math>).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the dialectal test sets, using ASR presents on the one hand the chance of acting as dialect-to-standard normalization, and on the other hand the risk of the ASR model producing nonsensical outputs.\nHowever, the automatic ASR quality measures might give a somewhat pessimistic impression with respect to sentence classification tasks.\nIn our manual evaluation of ASR hypotheses for 125 German and Bavarian sentences from the xSID test set by four of the ASR models, we find that keywords related to the intent are often still retained in the transcriptions even when the sentence has a (somewhat) different meaning and/or is not in fluent and orthographically correct German&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A5\" title=\"Appendix E Manual Evaluation of ASR Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">E</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "evaluation",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the case of Swissdial, the best cascaded models perform on the Swiss German data on par with the German text-only evaluations, suggesting successful normalization.\nFor the cascaded intent classification systems, gaps of up to 19.1&#8201;pp. between the German and Bavarian data remain even for systems with the best-performing ASR models (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S3.T2\" title=\"Table 2 &#8227; ASR models &#8227; 3.3 Models &#8227; 3 Experiments &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).\nFor the cascaded systems with the worst ASR models, the performance is worse than processing the written dialect data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">There are two approaches for handling spoken input data: training a speech-based system (speech-only) or training a text-based system and transcribing the spoken input data.\n<span class=\"ltx_text ltx_font_bold\">For the German test data, this choice barely makes a difference.</span>\nWhen comparing the speech-only and cascaded systems involving the same speech/ASR models, the performance gaps are close to zero (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.T4\" title=\"Table 4 &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, left), with the exception of the smallest model (Whisper tiny).\n<span class=\"ltx_text ltx_font_bold\">For Bavarian however, the speech-only setup outperforms the cascaded setup</span> across the board (performance gains of\n<math alttext=\"5.6-17.9\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>5.6</mn><mo>&#8722;</mo><mn>17.9</mn></mrow><annotation encoding=\"application/x-tex\">5.6-17.9</annotation></semantics></math>&#8201;pp.).</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The text-only models nearly always outperform the speech-only models for German (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.T4\" title=\"Table 4 &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, middle).\nFor the text and speech models of comparable sizes, the performance gaps are between <math alttext=\"-23.8\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>23.8</mn></mrow><annotation encoding=\"application/x-tex\">-23.8</annotation></semantics></math> and <math alttext=\"+1.6\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>1.6</mn></mrow><annotation encoding=\"application/x-tex\">+1.6</annotation></semantics></math>&#8201;pp. (<math alttext=\"\\sim\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m3\" intent=\":literal\"><semantics><mo>&#8764;</mo><annotation encoding=\"application/x-tex\">\\sim</annotation></semantics></math>90&#8201;M parameters) and between <math alttext=\"-23.8\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>23.8</mn></mrow><annotation encoding=\"application/x-tex\">-23.8</annotation></semantics></math> and <math alttext=\"-7.0\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m5\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>7.0</mn></mrow><annotation encoding=\"application/x-tex\">-7.0</annotation></semantics></math>&#8201;pp. (<math alttext=\"\\sim\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p1.m6\" intent=\":literal\"><semantics><mo>&#8764;</mo><annotation encoding=\"application/x-tex\">\\sim</annotation></semantics></math>300&#8201;M parameters).<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>mHuB.&#8211;mBERT: <math alttext=\"-23.8\" class=\"ltx_Math\" display=\"inline\" id=\"footnote4.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>23.8</mn></mrow><annotation encoding=\"application/x-tex\">-23.8</annotation></semantics></math>,\nWhisper<sub class=\"ltx_sub\">sm</sub>&#8211;XLM-R<sub class=\"ltx_sub\">base</sub>: <math alttext=\"+1.6\" class=\"ltx_Math\" display=\"inline\" id=\"footnote4.m2\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>1.6</mn></mrow><annotation encoding=\"application/x-tex\">+1.6</annotation></semantics></math>,\nXLS-R<sub class=\"ltx_sub\">300M</sub>&#8211;XLM-R<sub class=\"ltx_sub\">lg</sub>: <math alttext=\"-23.8\" class=\"ltx_Math\" display=\"inline\" id=\"footnote4.m3\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>23.8</mn></mrow><annotation encoding=\"application/x-tex\">-23.8</annotation></semantics></math>,\nWhisper<sub class=\"ltx_sub\">med</sub>&#8211;XLM-R<sub class=\"ltx_sub\">lg</sub>: <math alttext=\"-7.0\" class=\"ltx_Math\" display=\"inline\" id=\"footnote4.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>7.0</mn></mrow><annotation encoding=\"application/x-tex\">-7.0</annotation></semantics></math>.\n</span></span></span>\nThe gaps are smaller for ASR speech models (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S3.T2\" title=\"Table 2 &#8227; ASR models &#8227; 3.3 Models &#8227; 3 Experiments &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "german",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The results for the Bavarian data are different:\n<span class=\"ltx_text ltx_font_bold\">the speech models are generally more robust in standard-to-dialect transfer than the text models.</span>\nMost speech models outperform the text models that were not also pretrained on Bavarian data (i.e., all text models except mBERT).\nThe performance gaps are between <math alttext=\"-3.3\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>3.3</mn></mrow><annotation encoding=\"application/x-tex\">-3.3</annotation></semantics></math> and <math alttext=\"+14.8\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m2\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>14.8</mn></mrow><annotation encoding=\"application/x-tex\">+14.8</annotation></semantics></math>&#8201;pp. (<math alttext=\"\\sim\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m3\" intent=\":literal\"><semantics><mo>&#8764;</mo><annotation encoding=\"application/x-tex\">\\sim</annotation></semantics></math>90M parameters, ignoring mBERT) and between <math alttext=\"-4.7\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>4.7</mn></mrow><annotation encoding=\"application/x-tex\">-4.7</annotation></semantics></math> and <math alttext=\"+7.0\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m5\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>7.0</mn></mrow><annotation encoding=\"application/x-tex\">+7.0</annotation></semantics></math>&#8201;pp. (<math alttext=\"\\sim\" class=\"ltx_Math\" display=\"inline\" id=\"S5.SS3.p2.m6\" intent=\":literal\"><semantics><mo>&#8764;</mo><annotation encoding=\"application/x-tex\">\\sim</annotation></semantics></math>300M parameters).<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span>mHuB.&#8211;XLM-R<sub class=\"ltx_sub\">base</sub>: <math alttext=\"-3.3\" class=\"ltx_Math\" display=\"inline\" id=\"footnote5.m1\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>3.3</mn></mrow><annotation encoding=\"application/x-tex\">-3.3</annotation></semantics></math> (if including mBERT: mHuB.&#8211;mBERT: <math alttext=\"-11.3\" class=\"ltx_Math\" display=\"inline\" id=\"footnote5.m2\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>11.3</mn></mrow><annotation encoding=\"application/x-tex\">-11.3</annotation></semantics></math>),\nWhisper<sub class=\"ltx_sub\">small</sub>&#8211;mDeB.: <math alttext=\"+14.8\" class=\"ltx_Math\" display=\"inline\" id=\"footnote5.m3\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>14.8</mn></mrow><annotation encoding=\"application/x-tex\">+14.8</annotation></semantics></math>,\nXLS-R<sub class=\"ltx_sub\">300M</sub>&#8211;XLM-R<sub class=\"ltx_sub\">lg</sub>: <math alttext=\"-4.7\" class=\"ltx_Math\" display=\"inline\" id=\"footnote5.m4\" intent=\":literal\"><semantics><mrow><mo>&#8722;</mo><mn>4.7</mn></mrow><annotation encoding=\"application/x-tex\">-4.7</annotation></semantics></math>,\nXLS-R<sub class=\"ltx_sub\">300M</sub>&#8211;XLM-R<sub class=\"ltx_sub\">lg</sub>: <math alttext=\"+7.0\" class=\"ltx_Math\" display=\"inline\" id=\"footnote5.m5\" intent=\":literal\"><semantics><mrow><mo>+</mo><mn>7.0</mn></mrow><annotation encoding=\"application/x-tex\">+7.0</annotation></semantics></math>.\n</span></span></span>\nExcept for the speech models whose performance gap is particularly large on the German data (accuracy differences of more than 15&#8201;pp.), the speech models outperform the text models on the Bavarian data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german",
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The text-only approach is generally best for the German data, followed by the cascaded setup and lastly the spoken setup.\nThis is consistent with prior work finding that text-only models typically outperform speech-only models <cite class=\"ltx_cite ltx_citemacro_cite\">Koudounas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib33\" title=\"\">2023</a>); Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite> and cascaded models <cite class=\"ltx_cite ltx_citemacro_cite\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib36\" title=\"\">2018</a>); Bastianelli et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib9\" title=\"\">2020</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite>, and that &#8211; especially in cross-lingual transfer settings &#8211; cascaded models often outperform speech-only setups <cite class=\"ltx_cite ltx_citemacro_cite\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>); Keller and Glava&#353; (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib32\" title=\"\">2025</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "setups",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The speech models tend to be more robust towards dialectal variation than the text models in our experiments&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.SS3\" title=\"5.3 Speech-only vs. text-only: Which modality is preferable? &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">5.3</span></a>).\nThis might be due to the speech models processing continuous signals from the audio data as their input without relying on pre-defined tokens.\nWhile the dialects in our study also differ from German in lexical and morphosyntactic regards, the foremost differences are on the phonological and phonetic level, and prior research has shown that multilingual speech models encode phonetically similar inputs similarly <cite class=\"ltx_cite ltx_citemacro_cite\">Choi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib15\" title=\"\">2024</a>); Shim et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib50\" title=\"\">2025</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "dialectal",
+                    "german",
+                    "data",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Creating written datasets for tasks like intent detection makes sense for high-resource languages where ASR systems work well, given that it is easier to collect written data and cascaded models perform on par with speech-only models&#160;(&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S5.SS2\" title=\"5.2 Speech-only vs. cascaded: How to best deal with spoken inputs? &#8227; 5 Analysis &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">5.2</span></a>).\nHowever, for language varieties that are primarily spoken and not supported well by text models, collecting spoken data might be an especially promising avenue for creating realistic datasets.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Insights about processing standard languages do not necessarily generalize to even closely related dialects, as speech-only and cascaded systems can be more promising on dialect data than their results on standard-language data might indicate.\nWe hope that our work on intent and topic classification inspires more research on expanding the burgeoning field of dialect NLP to focus on processing speech data beyond ASR.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the cascaded setup, we only evaluate models trained on gold-standard text data rather than on ASR transcriptions.\nThis implementation matches that of prior work <cite class=\"ltx_cite ltx_citemacro_cite\">(e.g., Wang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib59\" title=\"\">2023</a>; Lee et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>)</cite>.\nWe do this in order to keep computation feasible while being able to compare a large amount of ASR models, as we only need to train 12&#160;models this way (four text models on three random seeds each),\ninstead of training 108 models (nine ASR models <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"Sx1.p2.m1\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math> four text models <math alttext=\"\\times\" class=\"ltx_Math\" display=\"inline\" id=\"Sx1.p2.m2\" intent=\":literal\"><semantics><mo>&#215;</mo><annotation encoding=\"application/x-tex\">\\times</annotation></semantics></math> three seeds).\nHowever, already training on the transcribed data might make the cascaded setups stronger <cite class=\"ltx_cite ltx_citemacro_cite\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib36\" title=\"\">2018</a>); Phung et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib43\" title=\"\">2024</a>)</cite>, at least in the in-language (German) evaluations.</p>\n\n",
+                "matched_terms": [
+                    "setups",
+                    "german",
+                    "three",
+                    "data",
+                    "compare",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This dataset extends the slot and intent classification dataset xSID by providing audio recordings for 412 test sentences in German and Bavarian.\nIts purpose is to allow research on intent classification for spoken dialectal data.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We record audios in Standard German spoken in Germany and in the dialectal variant of Bavarian as spoken in rural Upper Bavaria. The audios were recorded by a native speaker of both German and Bavarian in her 20s.</p>\n\n",
+                "matched_terms": [
+                    "dialectal",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We directly worked with xSID&#8217;s German and Bavarian sentences.\nThe German sentences contain a few intentional grammatical errors to reflect errors in the original English data <cite class=\"ltx_cite ltx_citemacro_cite\">van&#160;der Goot et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib58\" title=\"\">2021</a>)</cite>.\nThe Bavarian dataset does not contain such errors <cite class=\"ltx_cite ltx_citemacro_cite\">Winkler et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib60\" title=\"\">2024</a>)</cite>.\nThe recordings directly reflect the written versions.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We plan to release the dataset on Zenodo under a license allowing academic use for research on processing speech data, but prohibiting use for voice cloning.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the training and development datasets of the German splits of (Speech-)MASSIVE and Swissdial for selecting the learning rate and maximum number of training epochs.\nWe train each model configuration on three random seeds, both for hyperparameter tuning and for the main experiments.\nWe always choose the model epoch with the highest development accuracy.\nThe hyperparameter values are based on prior work on written and spoken intent classification\n<cite class=\"ltx_cite ltx_citemacro_cite\">Rajaa et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib45\" title=\"\">2022</a>); Koudounas et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib33\" title=\"\">2023</a>); Arora et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib5\" title=\"\">2024</a>); Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib35\" title=\"\">2024</a>); Schmidt et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#bib.bib48\" title=\"\">2025</a>)</cite>.\nWe otherwise use the default values of the <span class=\"ltx_text ltx_font_italic\">TrainingArguments</span> class.</p>\n\n",
+                "matched_terms": [
+                    "three",
+                    "german"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the intent classification task, we observe that the text models are much more robust to the learning rate choice than the speech models (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A4.T8\" title=\"Table 8 &#8227; Appendix D Hyperparameters and Training &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">8</span></a>).</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A5.T10\" title=\"Table 10 &#8227; Results &#8227; Appendix E Manual Evaluation of ASR Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> shows the topic classification per Swiss German dialect in Swissdial.\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#A5.T11\" title=\"Table 11 &#8227; Results &#8227; Appendix E Manual Evaluation of ASR Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">11</span></a> shows the detailed results for the cascaded systems (by text and ASR model).\nBoth tables complement Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S3.T2\" title=\"Table 2 &#8227; ASR models &#8227; 3.3 Models &#8227; 3 Experiments &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> in&#160;&#167;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.07890v1#S4\" title=\"4 Results &#8227; Standard-to-Dialect Transfer Trends Differ across Text and Speech: A Case Study on Intent and Topic Classification in German Dialects\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "german",
+                    "text"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,1048 @@
+{
+    "S4.F1": {
+        "source_file": "TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech",
+        "image_url": "https://arxiv.org/html/2511.05817v2/figures/system/interface.png",
+        "caption": "Figure 1: \nOverview of the TalkSketch system interface.\n(a) Sketching module: Users draw product concepts (e.g., a toaster) using stylus input on the canvas. The interface includes a sketch gallery, drawing toolbar, and a button to launch the Multimodal AI Chatbot.\n(b) Talking module: Voice recording captures the user’s thinking aloud during sketching.\n(c) AI Insight panel shows automatic feedback based on the sketch and spoken transcript.\n(d) Text and image generation interface for multimodal interaction with the AI.\nTogether, (c) and (d) constitute the Multimodal AI Chatbot module.",
+        "informative_terms_identified": [
+            "based",
+            "input",
+            "insight",
+            "draw",
+            "gallery",
+            "voice",
+            "thinking",
+            "panel",
+            "interface",
+            "button",
+            "constitute",
+            "text",
+            "toolbar",
+            "module",
+            "recording",
+            "canvas",
+            "transcript",
+            "system",
+            "launch",
+            "user’s",
+            "drawing",
+            "talking",
+            "generation",
+            "users",
+            "product",
+            "concepts",
+            "toaster",
+            "includes",
+            "during",
+            "automatic",
+            "talksketch",
+            "interaction",
+            "spoken",
+            "chatbot",
+            "aloud",
+            "feedback",
+            "multimodal",
+            "stylus",
+            "overview",
+            "captures",
+            "sketching",
+            "sketch",
+            "together"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We first describe the technical implementation of <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>), which integrates three core components: a digital sketching canvas for creating and managing drawings, to address the goal of integrating GenAI into sketching tools (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS1\" title=\"3.2.1 Goal 1: Integrate AI with sketching tools. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.1</span></a> Goal 1); a speech capture module that transcribes the user&#8217;s speech during sketching, aiming to support the goal of reducing fatigue from long prompts (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS2\" title=\"3.2.2 Goal 2: Reduce designers&#8217; fatigue with long prompts. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.2</span></a> Goal 2); and a multimodal AI chatbot that combines automatic insights with interactive text and image generation, aiming to make AI more proactive and context-aware (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS3\" title=\"3.2.3 Goal 3: A more proactive and context-aware AI. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.3</span></a> Goal 3). We then illustrate how these components work together through a system walkthrough using a concept toaster design example (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F2\" title=\"Figure 2 &#8227; 4.2 System Walkthrough &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).</p>\n\n",
+            "<p class=\"ltx_p\">The sketching canvas (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>a) serves as the central workspace where participants draw early-stage design ideas using a stylus or touch input. Built using <span class=\"ltx_text ltx_font_italic\">Fabric.js<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_upright\">6</span></span><a class=\"ltx_ref ltx_url ltx_font_typewriter ltx_font_upright\" href=\"http://fabricjs.com/\" title=\"\">http://fabricjs.com/</a></span></span></span></span>, the canvas supports drawing, erasing, selection, undo/redo, and canvas reset as illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The top toolbar consolidates essential drawing controls along with the <span class=\"ltx_text ltx_font_italic\">Generate with AI</span> button. To facilitate interaction between users and AI, users can select any region of the sketching canvas and export it into the chatbot as part of a multimodal prompt. The <span class=\"ltx_text ltx_font_italic\">Save to Gallery</span> button allows users to save their canvas to the gallery once they are content with it; saved canvases can also be retrieved through the <span class=\"ltx_text ltx_font_italic\">Gallery</span>.</p>\n\n",
+            "<p class=\"ltx_p\">The multimodal AI chatbot (see Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d) has two main components: (1) <span class=\"ltx_text ltx_font_italic\">AI Insights</span>, which automatically generate reflective feedback based on user sketches and verbal ideation, and (2) a <span class=\"ltx_text ltx_font_italic\">Multimodal Chatbot Interface</span>, where users can engage the AI through both text and sketch input.\nBoth components share a common back-end powered by the <span class=\"ltx_text ltx_font_italic\">Gemini</span> series of multimodal models<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://ai.google.dev/gemini-api/docs/models\" title=\"\">https://ai.google.dev/gemini-api/docs/models</a></span></span></span>\n, known for their strong cross-modal reasoning capabilities and broad adoption across creative and analytical tasks&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">team2024gemini</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yue2024mmmu</span>]</cite>.\nSpecifically, the text-based conversational features are supported by Gemini 2.0 Flash, while image generation is handled by Gemini 2.5 Flash Image. Both models accept multimodal inputs such as text and images, but they serve different purposes. Gemini 2.0 Flash is a fast multimodal-reasoning variant that produces text-only output, whereas Gemini 2.5 Flash Image is an image-generation variant of the Gemini 2.5 family, specialised for producing high-quality images from multimodal prompts. The <span class=\"ltx_text ltx_font_italic\">Multimodal AI Chatbot Module</span> maintains a unified conversation history that persists throughout the entire session and is consistently shared across both models, ensuring coherent context when switching between text and image generation.</p>\n\n",
+            "<p class=\"ltx_p\">The first feature of the Multimodal AI Chatbot, <span class=\"ltx_text ltx_font_bold\">AI Insights</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c), provides proactive, structured, and reflective feedback based on the user&#8217;s current sketch and verbal input. It is automatically triggered when the user clicks on <span class=\"ltx_text ltx_font_italic\">Generate with AI</span>, requiring no explicit prompting. Each time it is activated, the module generates a new response based on the latest voice transcript and the current sketch on the canvas. The transcript is also displayed and can be edited by the user, which immediately refreshes the AI Insights response to reflect the updated input.</p>\n\n",
+            "<p class=\"ltx_p\">The second feature, <span class=\"ltx_text ltx_font_bold\">Multimodal AI Chat Interface</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d), facilitates open-ended conversations with a chatbot. Users may provide input either by typing text prompts or by utilising the iPad&#8217;s integrated Voice Dictation functionality. In addition, the interface allows users to export selected regions of their sketch canvas into the chatbot as image-based inputs.</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Sky</span> begins the design session by drawing a rough concept of a cube-shaped toaster with symbolic radial dials and a handle (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>a). As she sketches, she verbalises her thoughts, <span class=\"ltx_text ltx_font_italic\">&#8220;I&#8217;m thinking of something bold and square, with a dial for heat control.&#8221;</span> Her speech is recorded and transcribed in real time (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>b), forming a synchronised verbal-visual trace of her ideation process.</p>\n\n",
+            "<p class=\"ltx_p\">When <span class=\"ltx_text ltx_font_italic\">Sky</span> clicks <span class=\"ltx_text ltx_font_italic\">Generate with AI</span>, the system enters the chatbot interface (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d) and immediately displays an <span class=\"ltx_text ltx_font_italic\">AI Insight</span> (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c). This insight is automatically generated from her sketch and think-aloud transcript, offering concise design reflections based on the Double Diamond design thinking framework.\nThe system suggests <em class=\"ltx_emph ltx_font_italic\">emphasising geometric form</em> or <em class=\"ltx_emph ltx_font_italic\">exploring tactile dials</em> as directions worth pursuing. Sky reads the insight and finds it helpful in framing her design direction. She realises she had forgotten to mention a few details aloud&#8211;such as her intention for the toaster to have a retractable cord&#8211;and decides to edit the transcript directly. After adding the missing information, she regenerates the <span class=\"ltx_text ltx_font_italic\">AI Insight</span> to see how the suggestions change in response to the fuller context.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Sketching is a widely used medium for generating and exploring early-stage design concepts. While generative AI (GenAI) chatbots are increasingly used for idea generation, designers often struggle to craft effective prompts and find it difficult to express evolving visual concepts through text alone. In the formative study (N=6), we examined how designers use GenAI during ideation, revealing that text-based prompting disrupts creative flow. To address these issues, we developed <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>, an embedded multimodal AI sketching system that integrates freehand drawing with real-time speech input. <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> aims to support a more fluid ideation process through capturing verbal descriptions during sketching and generating context-aware AI responses. Our work highlights the potential of GenAI tools to engage the design process itself rather than focusing on output.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "drawing",
+                    "multimodal",
+                    "generation",
+                    "text",
+                    "concepts",
+                    "sketching",
+                    "talksketch",
+                    "during",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During early-stage design, sketching plays a central role as an improvisational, open-ended, and dynamic practice&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">landay1995interactive</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">suwa2022roles</span>]</cite>. Designers frequently switch between design phases and iterate their sketches to explore alternatives and refine ideas toward promising directions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">buxton2010sketching</span>]</cite>. To enhance efficiency in this formative stage, researchers have explored integrating generative AI (GenAI)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fui2023generative</span>]</cite> into sketch-based design workflows&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023generative</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhou2025partstickers</span>]</cite>. With advances in multimodal large language models (LLMs), GenAI now offers stronger creative capabilities&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vinker2025sketchagent</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024llm</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ccelen2024design</span>]</cite>, making it increasingly suitable for supporting designers in early-stage ideation.</p>\n\n",
+                "matched_terms": [
+                    "sketching",
+                    "during",
+                    "multimodal"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, despite the growing use of GenAI chatbots in idea generation, designers often struggle to craft effective prompts and to express evolving visual concepts through text alone. This command-based interaction paradigm&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">subramonyam2024bridging</span>]</cite> places the burden on designers to direct the system, overlooking other forms of input that may be more natural and intuitive during creative work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2009study</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">purcell1998drawings</span>]</cite>. In practice, designers often verbalise ideas spontaneously while sketching, yet such contextual cues are rarely captured by current systems.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "generation",
+                    "text",
+                    "concepts",
+                    "sketching",
+                    "during",
+                    "system",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To better understand these challenges, we conducted a formative study (N=6) examining how designers use existing GenAI tools for early-stage sketch ideation. Our findings revealed that text-based prompting often interrupts creative flow and creates a disconnect between ideation and sketching activities.</p>\n\n",
+                "matched_terms": [
+                    "sketch",
+                    "sketching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Based on these insights, we developed TalkSketch, a sketching interface with a multimodal AI chatbot that enables users to draw and verbalise ideas simultaneously. TalkSketch captures designers&#8217; spoken descriptions during sketching and generates contextually relevant AI responses, aiming to support a more fluid and natural ideation process.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "multimodal",
+                    "draw",
+                    "users",
+                    "captures",
+                    "interface",
+                    "sketching",
+                    "during",
+                    "talksketch",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>: a sketching interface with a multimodal AI chatbot that enables users to draw and verbalize ideas simultaneously.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "draw",
+                    "users",
+                    "sketching",
+                    "interface",
+                    "talksketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Conversational User Interfaces (CUIs) enable dialogue-based interaction that mimics human conversation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mctear2002spoken</span>]</cite> and are widely deployed in chatbots&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">folstad2017chatbots</span>]</cite> and voice-activated assistants such as Amazon Alexa and Apple&#8217;s Siri&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">de2020intelligent</span>]</cite>. Recent advances in Generative AI (GenAI)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">feu2024generative</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tank2024metacognitive</span>]</cite>, including large language models (LLMs) such as ChatGPT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">achiam2023gpt</span>]</cite> and multimodal assistants such as Gemini&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">team2024gemini</span>]</cite>, have made conversational human&#8211;AI interaction broadly accessible and flexible. These tools are increasingly applied in domains such as education&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shaer2024ai</span>]</cite>, healthcare&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hedderich2024piece</span>]</cite>, and creative work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">angert2023spellburst</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2025breaking</span>]</cite>, supporting users through natural language dialogue.</p>\n\n",
+                "matched_terms": [
+                    "interaction",
+                    "multimodal",
+                    "users"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A central concern in these systems is whether users can express intent clearly and efficiently. Prior work has explored multimodal input and interface strategies to improve intent communication. Hu et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2025gesprompt</span>]</cite> introduced <span class=\"ltx_text ltx_font_italic\">GesPrompt</span>, which combines co-speech gestures with voice input to enable more natural intent expression in extended reality environments. Cho et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cho2025persistent</span>]</cite> proposed <span class=\"ltx_text ltx_font_italic\">Persistent Assistant</span>, integrating embodied input and multimodal feedback for seamless everyday interactions. Other work embeds LLMs into direct manipulation environments, mapping graphical user interface actions or visual edits into structured prompts&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">angert2023spellburst</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">masson2024directgpt</span>]</cite>, showing that embedding language models within interactive contexts can reduce the burden of verbose prompting. Yet, most of these systems are designed for short, directive, or domain-specific tasks such as code editing or data visualisation, rather than open-ended creative ideation.</p>\n\n",
+                "matched_terms": [
+                    "feedback",
+                    "input",
+                    "multimodal",
+                    "users",
+                    "voice",
+                    "interface"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In design, creativity-support tools increasingly integrate GenAI into mainstream workflows. Commercial platforms such as Adobe Firefly&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">adobefirefly2025tools</span>]</cite>, Canva Magic Studio&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">canva2025overview</span>]</cite>, and Figma AI&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">figmaai2025update</span>]</cite> demonstrate how generative models assist in rapid visual exploration, while research prototypes extend this trend toward more expressive input. For example, <span class=\"ltx_text ltx_font_italic\">DesignPrompt</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024designprompt</span>]</cite> allows designers to compose prompts using text, colour, and imagery, and <span class=\"ltx_text ltx_font_italic\">DesignWeaver</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tao2025designweaver</span>]</cite> introduces palette-based refinement to support iterative design. Similarly, sketch-based interfaces such as <span class=\"ltx_text ltx_font_italic\">Inkspire</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>]</cite> and <span class=\"ltx_text ltx_font_italic\">SketchAI</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>]</cite> demonstrate how freehand input can guide image generation and support analogical inspiration.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "input",
+                    "generation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Despite these developments, two key gaps remain.\nFirst, existing multimodal CUIs focus primarily on explicit prompts and discrete commands, overlooking more spontaneous forms of intent expression such as speech or thinking aloud during creative work.\nSecond, current creativity-support tools rely mainly on visual and textual input, rarely considering how spoken language&#8212;produced naturally during sketching&#8212;might complement visual ideation.</p>\n\n",
+                "matched_terms": [
+                    "aloud",
+                    "input",
+                    "multimodal",
+                    "thinking",
+                    "during",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work addresses these gaps by investigating how combining speech and sketch input can support fluid, multimodal interaction with GenAI during early-stage design ideation.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "multimodal",
+                    "sketch",
+                    "during",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech is also a natural modality for externalising thought, long recognised in systems such as <span class=\"ltx_text ltx_font_italic\">SHRDLU</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winograd1972understanding</span>]</cite> and <span class=\"ltx_text ltx_font_italic\">Put-That-There</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">bolt1980put</span>]</cite> from the 1970-80s. It enables real-time, low-friction expression of ideas, making it especially valuable in early-stage design when thoughts are fluid and evolving&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fry1979physics</span>]</cite>.\nSketching and speech together can serve as two intuitive, complementary interaction methods in design and creative domains, allowing users to express nuances that one modality alone might omit &#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">adler2007speech</span>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "interaction",
+                    "together",
+                    "sketching",
+                    "users"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent works demonstrate how combining sketch and speech supports more natural and expressive communication: Rosenberg et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rosenberg2024drawtalking</span>]</cite> introduced <span class=\"ltx_text ltx_font_italic\">DrawTalking</span>, which combines sketching with storytelling through speech to construct interactive animated worlds, while Giunchi et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">giunchi2021mixing</span>]</cite> showed that integrating sketch and speech for 3D model retrieval in virtual environments helped overcome the limitations of sketch-only input. Cheng et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cheng2025aiawareness</span>]</cite> also explored speech and sketch as inputs for enhancing communication with AI through context awareness in an exploratory Wizard-of-Oz study.</p>\n\n",
+                "matched_terms": [
+                    "sketch",
+                    "input",
+                    "sketching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While prior research highlights how speech can enhance collaboration with AI, the impact of naturally produced speech during sketching on subsequent GenAI interactions remains unexplored. Our work therefore systematically investigates sketching-while-talking as a combined input modality for early-stage design ideation. Rather than treating sketching and speech as separate channels, we integrate both within a multimodal LLM chatbot to examine whether verbal descriptions and visual strokes together can improve AI alignment with user intent.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "input",
+                    "multimodal",
+                    "sketching",
+                    "during",
+                    "together"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We first conducted a formative study, combining a design task with interviews, to understand how designers integrate GenAI into early-stage design and to identify opportunities for multimodal AI support to inform our subsequent system design in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4\" title=\"4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. Our institution&#8217;s ethics review board approved this study, and we obtained informed consent from all participants.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We recruited six participants (2 female, 4 male) with a basic background in design; at the very least, they had completed one design-related course (e.g., <span class=\"ltx_text ltx_font_italic\">Urban Sketching</span> or <span class=\"ltx_text ltx_font_italic\">Design Thinking and Innovation</span>).\nThe participants included three students, two entry-level designers, and one experienced design practitioner, with design backgrounds spanning architecture, furniture, interior, robotics, and electronic product design.\nAll participants had 2-5 years of part/full-time experience in design.\nThey received approximately USD 7.8 as compensation for completing the 1-hour study.</p>\n\n",
+                "matched_terms": [
+                    "thinking",
+                    "sketching",
+                    "product"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The study consists of three parts: pre-task interview (10 minutes), design task (30 minutes), and post-task interview (20 minutes).\nThe pre-task interview captures participants&#8217; design backgrounds, sketching habits, and prior experiences with GenAI tools.\nFor the design task, we asked participants to design a household bread toaster and to express as many design ideas as possible under 30 minutes using a sketching application such as Goodnotes<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://www.goodnotes.com/</span></span></span> or Procreate<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://procreate.com/</span></span></span>.\nThey were permitted to utilize their personal devices&#8211;to ensure a familiar arrangement&#8211;or our Apple iPad Pro 13\" and Apple Pencil set up with popular sketching apps (e.g., Goodnotes, Procreate) and GenAI tools (e.g., ChatGPT (GPT-4o)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://chatgpt.com/</span></span></span>, Gemini<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>https://gemini.google.com/app</span></span></span>, Midjourney<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span>https://midjourney.com</span></span></span>).\nThe post-task interview then examined participants&#8217; views on the AI&#8217;s role in supporting or limiting ideation, and captured their aspirations and expectations for an \"ideal\" AI assistant.</p>\n\n",
+                "matched_terms": [
+                    "toaster",
+                    "captures",
+                    "sketching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We analysed the qualitative data by examining both participants&#8217; interactions with sketching and AI tools during the design tasks and their reflections in post-study interviews. This allowed us to capture overall usage patterns, such as how participants sketched, engaged with GenAI tools, and iterated on ideas, while also identifying the challenges and gaps they experienced with current tools. These insights inform the design goals of our system.</p>\n\n",
+                "matched_terms": [
+                    "sketching",
+                    "during",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants often used ChatGPT to explore design problems, define target users, or to inspire new directions. For instance, P1 asked about commonly found toaster issues and focused on cleaning functions, while P3 explored different user groups to inspire persona-driven designs. These uses supported functional exploration, but initial AI responses were often <span class=\"ltx_text ltx_font_italic\">&#8220;too generic&#8221;</span> (P3) and only became actionable after repeated prompt refinement.</p>\n\n",
+                "matched_terms": [
+                    "toaster",
+                    "users"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Several participants uploaded their sketches to ChatGPT Image or Gemini, or relied on text prompts, to visualise concepts. For instance, P2 uploaded a sideways-eject sketch, while P5 asked Gemini for a toaster with butter and egg compartments. However, the outputs often failed to match intent. P1 described the results as <span class=\"ltx_text ltx_font_italic\">&#8220;kind of crazy,&#8221;</span> P2 concluded, <span class=\"ltx_text ltx_font_italic\">&#8220;I might have to redraw the whole thing so AI can understand,&#8221;</span> and P5 added, <span class=\"ltx_text ltx_font_italic\">&#8220;It takes too much time, I&#8217;d rather just draw.&#8221;</span> Many participants ultimately returned to manual sketching for better clarity and control.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "concepts",
+                    "toaster",
+                    "sketching",
+                    "sketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants often moved back and forth between tools. P3 only used text in ChatGPT to imagine playful forms (e.g., cat- or book-shaped toasters), while P1 first researched in ChatGPT, then sketched, went back to sketching after clarifications, and finally tried rendering images. P1 noted that <span class=\"ltx_text ltx_font_italic\">&#8220;uploading sketches to ChatGPT was not so easy to operate on iPad.&#8221;</span> This reflected how tool-switching slowed the process and introduced friction, especially for those who wanted to use image generation (P1, P2, P5, P6).</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "sketching",
+                    "generation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During the post-interview, participants proposed several workflow improvements to enhance the usefulness and usability of AI tools in early-stage design, particularly in terms of integration, input flexibility, and contextual responsiveness.</p>\n\n",
+                "matched_terms": [
+                    "during",
+                    "input"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Many participants (P2, P5, P6) expressed fatigue from repeatedly typing long prompts to clarify their intent. P2 admitted he was <span class=\"ltx_text ltx_font_italic\">&#8220;too lazy to retype the whole thing,&#8221;</span> while P5 preferred to <span class=\"ltx_text ltx_font_italic\">&#8220;just draw&#8221;</span> instead of describing every detail. Participants advocated for expanded input modalities such as annotated sketches, voice commands, or real-time drawing, as alternatives to laborious text input. P6, for instance, envisioned being able to sketch a toaster form and have the AI <span class=\"ltx_text ltx_font_italic\">&#8220;fill in the mechanism&#8221;</span> without extra explanation. Such input flexibility would better match their natural workflows and reduce prompt clarification during ideation.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "drawing",
+                    "text",
+                    "voice",
+                    "toaster",
+                    "sketch",
+                    "during"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants wanted AI to behave less like a passive tool and more like a design partner capable of understanding the user&#8217;s intent. P3 proposed that the assistant <span class=\"ltx_text ltx_font_italic\">&#8220;should know what I&#8217;m trying to do&#8221;</span> P4 suggested that AI should <span class=\"ltx_text ltx_font_italic\">&#8220;see what I&#8217;m drawing and just give suggestions,&#8221;</span> and suggested a friendly avatar that feels more responsive and approachable. P2 imagined a system that could <span class=\"ltx_text ltx_font_italic\">&#8220;first discuss the sketch with me&#8221;</span> before trying to render anything, to avoid miscommunication. This desire for AI&#8217;s proactivity includes the ability to respond to ambiguous sketches, partial ideas, or evolving concepts in real time, without relying solely on explicit step-by-step instructions.</p>\n\n",
+                "matched_terms": [
+                    "drawing",
+                    "concepts",
+                    "includes",
+                    "sketch",
+                    "system",
+                    "user’s"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> integrates a unified multimodal AI chatbot that aims to support both proactive and user-initiated interaction. It comprises three complementary modules: Sketching, Talking, and Multimodal AI Chatbot.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "talking",
+                    "sketching",
+                    "talksketch",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> augments the sketching experience with real-time voice capture to support think-aloud workflows. Audio recording initiates automatically when users are sketching (without the chatbot open), and the recording symbol will be turned on simultaneously to indicate this. Once the user opens the AI Chatbot, the recording stops and the captured audio is streamed for low-latency transcription via Google Cloud Speech-to-Text<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://cloud.google.com/speech-to-text\" title=\"\">https://cloud.google.com/speech-to-text</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "users",
+                    "voice",
+                    "recording",
+                    "sketching",
+                    "talksketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">On the back-end, the AI Insights module is powered by <span class=\"ltx_text ltx_font_italic\">Gemini&#160;2.5&#160;Flash</span> and customised to simulate the role of a design thinking expert. Following the Double Diamond framework&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tschimmel2012design</span>]</cite>, it guides users through the <span class=\"ltx_text ltx_font_italic\">Discover</span> and <span class=\"ltx_text ltx_font_italic\">Define</span> stages by identifying potential user needs, pain points, and framing design questions, before suggesting several exploratory directions to pursue. Two complementary prompt templates were developed to support different phases of the ideation process. When a user begins drawing on a new canvas, the system automatically triggers the <span class=\"ltx_text ltx_font_italic\">Kickoff Prompt</span> to initiate ideation; in subsequent interactions, as the user continues sketching or revising their transcript, the <span class=\"ltx_text ltx_font_italic\">Refine Prompt</span> is triggered to provide iterative feedback aligned with the evolving design concept. These prompts were iteratively tested to balance interpretability, creativity support, and brevity of response.</p>\n\n",
+                "matched_terms": [
+                    "feedback",
+                    "drawing",
+                    "users",
+                    "thinking",
+                    "sketching",
+                    "module",
+                    "canvas",
+                    "transcript",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Kickoff Prompt:</span>\n<span class=\"ltx_text ltx_font_italic\">&#8220;Act as a design thinking expert: based on the transcript and sketch canvas, identify what the user is trying to design, then&#8212;using the Double Diamond framework&#8212;guide them through Discover and Define by highlighting potential user needs, pain points, and framing questions, and finally offer 3&#8211;4 concise design directions in an encouraging and curious tone (around 100 words).&#8221;</span></p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "thinking",
+                    "sketch",
+                    "canvas",
+                    "transcript"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Refine Prompt:</span>\n<span class=\"ltx_text ltx_font_italic\">&#8220;Act as a design thinking collaborator: based on the updated transcript and sketch canvas, briefly summarise what the user is currently designing or refining, reflect their key idea in one or two sentences, suggest 1&#8211;2 small ways to expand or clarify it, and end with 1&#8211;2 open-ended questions to help further develop the concept in a supportive, conversational tone (around 80&#8211;100 words).&#8221;</span></p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "thinking",
+                    "sketch",
+                    "canvas",
+                    "transcript"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The chatbot supports two output modes: <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span> for verbal suggestions and <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span> for visual inspiration.\nIn the <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span>, users can either submit only text input or combine their text prompt with a sketch, allowing the system to interpret both modalities but produce a text-only response.\nIn the <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span>, users may similarly provide a text-only prompt or combine a text prompt with a freehand sketch, both of which will generate an image accompanied by a matching text description.\nThe generated images can then be imported back into the canvas to serve as visual references or be integrated into the sketch, enabling users to freely incorporate AI-generated content as they iteratively refine their designs.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "input",
+                    "generation",
+                    "text",
+                    "users",
+                    "sketch",
+                    "canvas",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> aims to support designers in early-stage ideation by combining freehand sketching, verbal thinking, and multimodal AI assistance. We illustrate its use through a walkthrough exemplar (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F2\" title=\"Figure 2 &#8227; 4.2 System Walkthrough &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) where a fictional user <span class=\"ltx_text ltx_font_italic\">Sky</span> is tasked with designing a household toaster.\nHer interaction follows a natural flow: sketching while speaking aloud, triggering the chatbot interface, reviewing automatically generated AI insights, and exploring further via multimodal interaction.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "aloud",
+                    "multimodal",
+                    "toaster",
+                    "thinking",
+                    "interface",
+                    "sketching",
+                    "talksketch",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Sky then decides to follow up on the AI&#8217;s suggestions. She first types into the chatbot input box: &#8220;Could you give me some ideas for drawing a novel toaster?\" In <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span>, the chatbot responds with directions such as transparent exteriors and interactive touchscreens. Sky incorporates several of these into her sketch. To visualise the design, she switches to <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span>, prompting: <span class=\"ltx_text ltx_font_italic\">&#8220;Could you generate a realistic product based on my sketch?&#8221;</span> The system returns a refined visual that preserves key features from her drawing.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "input",
+                    "drawing",
+                    "generation",
+                    "text",
+                    "product",
+                    "toaster",
+                    "sketch",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After a few rounds, Sky finds typing increasingly tedious and instead uses the built-in voice input feature. Her verbal prompt, <span class=\"ltx_text ltx_font_italic\">&#8220;What would a friendlier version look like?&#8221;</span>, is then transcribed and submitted automatically. The system responds with a new image featuring rounded corners, soft colours, and a smiling interface. Sky finds the result inspiring and chooses to export the AI-generated image back into the canvas, using it as a visual reference while continuing to sketch and refine her final design.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "voice",
+                    "interface",
+                    "sketch",
+                    "canvas",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Building on prior research in multimodal CUIs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cho2025persistent</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2025gesprompt</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">masson2024directgpt</span>]</cite>, we expect that <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> will help designers communicate intent more fluidly by combining verbal and visual cues. While existing conversational AI systems require users to articulate ideas through discrete text prompts, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> allows designers to &#8220;think aloud&#8221; while drawing, preserving the spontaneity of natural dialogue&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2025enhancingintentunderstandingambiguous</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lan2025contextual</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">a18040214</span>]</cite>. This interaction form may reduce the cognitive effort involved in translating abstract ideas into prompts, a problem repeatedly identified in prompt-based creative tools&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">subramonyam2024bridging</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025enhancingcodellmsreinforcement</span>]</cite>. By aligning the AI&#8217;s interpretation with both speech and sketch input, users may experience the system as a more intuitive and responsive collaborator, one that feels closer to a design partner than a command-driven assistant. We therefore anticipate higher ratings of naturalness, communication clarity, and user control, reflecting an improved sense of mutual understanding between human and AI.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "drawing",
+                    "multimodal",
+                    "text",
+                    "users",
+                    "talksketch",
+                    "sketch",
+                    "system",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Consistent with prior work on creativity-support systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2020towards</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lan2025mappo</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024designprompt</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tao2025designweaver</span>]</cite>, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> is designed to support early-stage ideation rather than polished production. We expect that integrating speech and sketch will enable designers to sustain creative flow by externalising thoughts continuously instead of interrupting the process to type or reformulate text. The AI Insight mechanism may further stimulate reflection by generating contextually relevant feedback from verbal and visual cues. Designers might pause to elaborate on their thinking, reinterpret sketches, or refine concepts based on AI suggestions, which echoes the dialogic creativity patterns observed in prior sketch-based systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">buxton2010sketching</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">suwa2022roles</span>]</cite>. This dynamic may lead to richer ideation traces and a stronger sense of co-evolution between human and AI ideas. Potential outcomes include higher perceived creativity support, increased exploratory behaviour, and a shift from command&#8211;response interaction to reflective conversation.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "feedback",
+                    "insight",
+                    "text",
+                    "concepts",
+                    "thinking",
+                    "sketch",
+                    "talksketch",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This system has several limitations. First, because it depends on speech input, any transcription errors caused by background noise, unclear pronunciation, or the system mishearing words may lead to incorrect speech input. These mistakes may cause errors for the model to combine speech with sketches and to understand the user&#8217;s design intent. Second, in some cases, users may prefer not to speak when they are sketching alone. In such cases, the system may need to rely only on sketches and user prompting in the chatbot to support their needs, reducing a layer of speech information. However, as early-stage sketches are often incomplete or ambiguous, combining them with short or minimal prompts may make it difficult for the system to understand user needs compared to with speech information. Third, the system currently interprets speech and sketch inputs as a single combined chunk within a period of time, which inevitably leads to some information loss. Different parts of a spoken description may refer to different regions in the sketch, yet the system cannot yet distinguish these finer-grained correspondences. As a result, important links between what is said and what is drawn may be missed, limiting the precision with which user intent is understood.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "input",
+                    "users",
+                    "user’s",
+                    "sketching",
+                    "sketch",
+                    "system",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper presented <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>, a multimodal generative-AI sketching system that enables designers to ideate by sketching while speaking. Through a formative study with six designers, we identified key challenges in using existing GenAI chatbots for early-stage ideation, particularly the difficulty of translating evolving visual ideas into effective text prompts. To address these issues, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> integrates freehand drawing with real-time speech input, allowing users to externalise ideas more fluidly and engage in continuous dialogue with an embedded multimodal AI chatbot. By linking verbal and visual expression, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> demonstrates how conversational multimodal interfaces can support more natural and reflective design workflows.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "input",
+                    "drawing",
+                    "multimodal",
+                    "text",
+                    "users",
+                    "sketching",
+                    "talksketch",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will involve a controlled user study to systematically evaluate how <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> affects the naturalness of human&#8211;AI interaction and the perceived creativity of the design process. This next step aims to provide empirical evidence for the benefits of sketch-and-speech interaction in multimodal generative design tools. Beyond creativity support, it will also be valuable to explore how this interaction style can generalise to other settings, such as live demonstrations where rapid idea communication is essential, online classrooms where instructors sketch while explaining concepts, and collaborative design reviews where teams annotate evolving visuals. Examining these broader use cases may reveal additional opportunities for applying sketch-and-speech interaction as a more versatile interface paradigm.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "concepts",
+                    "interface",
+                    "sketch",
+                    "talksketch",
+                    "interaction"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech",
+        "image_url": "https://arxiv.org/html/2511.05817v2/figures/system/workflow.png",
+        "caption": "Figure 2: \nThe workflow of the TalkSketch system. The process starts with Sketching with Talking, where users draw freely on a tablet while voicing their ideas. These inputs are channelled into the Multimodal AI Chatbot, which generates AI Insights based on the user’s sketch and transcript. Users then engage in exploration via Multimodal Interaction, with text or image generation to improve their design ideas. Finally, users can export AI-generated images back to the canvas for further sketching and refinement.",
+        "informative_terms_identified": [
+            "based",
+            "refinement",
+            "ideas",
+            "finally",
+            "draw",
+            "engage",
+            "process",
+            "then",
+            "further",
+            "insights",
+            "design",
+            "improve",
+            "text",
+            "tablet",
+            "channelled",
+            "into",
+            "freely",
+            "canvas",
+            "transcript",
+            "system",
+            "generates",
+            "user’s",
+            "voicing",
+            "talking",
+            "generation",
+            "aigenerated",
+            "users",
+            "inputs",
+            "which",
+            "images",
+            "while",
+            "talksketch",
+            "interaction",
+            "chatbot",
+            "multimodal",
+            "exploration",
+            "where",
+            "export",
+            "back",
+            "workflow",
+            "sketching",
+            "sketch",
+            "starts",
+            "via"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We first describe the technical implementation of <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>), which integrates three core components: a digital sketching canvas for creating and managing drawings, to address the goal of integrating GenAI into sketching tools (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS1\" title=\"3.2.1 Goal 1: Integrate AI with sketching tools. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.1</span></a> Goal 1); a speech capture module that transcribes the user&#8217;s speech during sketching, aiming to support the goal of reducing fatigue from long prompts (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS2\" title=\"3.2.2 Goal 2: Reduce designers&#8217; fatigue with long prompts. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.2</span></a> Goal 2); and a multimodal AI chatbot that combines automatic insights with interactive text and image generation, aiming to make AI more proactive and context-aware (Sec&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S3.SS2.SSS3\" title=\"3.2.3 Goal 3: A more proactive and context-aware AI. &#8227; 3.2 Design Goals for TalkSketch &#8227; 3 Formative Study: Understanding Early-Stage Design Workflow with GenAI &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">3.2.3</span></a> Goal 3). We then illustrate how these components work together through a system walkthrough using a concept toaster design example (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F2\" title=\"Figure 2 &#8227; 4.2 System Walkthrough &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>).</p>\n\n",
+            "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> aims to support designers in early-stage ideation by combining freehand sketching, verbal thinking, and multimodal AI assistance. We illustrate its use through a walkthrough exemplar (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F2\" title=\"Figure 2 &#8227; 4.2 System Walkthrough &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) where a fictional user <span class=\"ltx_text ltx_font_italic\">Sky</span> is tasked with designing a household toaster.\nHer interaction follows a natural flow: sketching while speaking aloud, triggering the chatbot interface, reviewing automatically generated AI insights, and exploring further via multimodal interaction.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Sketching is a widely used medium for generating and exploring early-stage design concepts. While generative AI (GenAI) chatbots are increasingly used for idea generation, designers often struggle to craft effective prompts and find it difficult to express evolving visual concepts through text alone. In the formative study (N=6), we examined how designers use GenAI during ideation, revealing that text-based prompting disrupts creative flow. To address these issues, we developed <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>, an embedded multimodal AI sketching system that integrates freehand drawing with real-time speech input. <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> aims to support a more fluid ideation process through capturing verbal descriptions during sketching and generating context-aware AI responses. Our work highlights the potential of GenAI tools to engage the design process itself rather than focusing on output.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "generation",
+                    "text",
+                    "engage",
+                    "process",
+                    "sketching",
+                    "design",
+                    "talksketch",
+                    "while",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During early-stage design, sketching plays a central role as an improvisational, open-ended, and dynamic practice&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">landay1995interactive</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">suwa2022roles</span>]</cite>. Designers frequently switch between design phases and iterate their sketches to explore alternatives and refine ideas toward promising directions&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">buxton2010sketching</span>]</cite>. To enhance efficiency in this formative stage, researchers have explored integrating generative AI (GenAI)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fui2023generative</span>]</cite> into sketch-based design workflows&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2023generative</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhou2025partstickers</span>]</cite>. With advances in multimodal large language models (LLMs), GenAI now offers stronger creative capabilities&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">vinker2025sketchagent</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2024llm</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ccelen2024design</span>]</cite>, making it increasingly suitable for supporting designers in early-stage ideation.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "ideas",
+                    "sketching",
+                    "into",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">However, despite the growing use of GenAI chatbots in idea generation, designers often struggle to craft effective prompts and to express evolving visual concepts through text alone. This command-based interaction paradigm&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">subramonyam2024bridging</span>]</cite> places the burden on designers to direct the system, overlooking other forms of input that may be more natural and intuitive during creative work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2009study</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">purcell1998drawings</span>]</cite>. In practice, designers often verbalise ideas spontaneously while sketching, yet such contextual cues are rarely captured by current systems.</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "ideas",
+                    "text",
+                    "sketching",
+                    "while",
+                    "system",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To better understand these challenges, we conducted a formative study (N=6) examining how designers use existing GenAI tools for early-stage sketch ideation. Our findings revealed that text-based prompting often interrupts creative flow and creates a disconnect between ideation and sketching activities.</p>\n\n",
+                "matched_terms": [
+                    "sketch",
+                    "sketching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Based on these insights, we developed TalkSketch, a sketching interface with a multimodal AI chatbot that enables users to draw and verbalise ideas simultaneously. TalkSketch captures designers&#8217; spoken descriptions during sketching and generates contextually relevant AI responses, aiming to support a more fluid and natural ideation process.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "multimodal",
+                    "ideas",
+                    "draw",
+                    "users",
+                    "process",
+                    "insights",
+                    "sketching",
+                    "talksketch",
+                    "generates"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>: a sketching interface with a multimodal AI chatbot that enables users to draw and verbalize ideas simultaneously.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "ideas",
+                    "draw",
+                    "users",
+                    "sketching",
+                    "talksketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Conversational User Interfaces (CUIs) enable dialogue-based interaction that mimics human conversation&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">mctear2002spoken</span>]</cite> and are widely deployed in chatbots&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">folstad2017chatbots</span>]</cite> and voice-activated assistants such as Amazon Alexa and Apple&#8217;s Siri&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">de2020intelligent</span>]</cite>. Recent advances in Generative AI (GenAI)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">feu2024generative</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tank2024metacognitive</span>]</cite>, including large language models (LLMs) such as ChatGPT&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">achiam2023gpt</span>]</cite> and multimodal assistants such as Gemini&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">team2024gemini</span>]</cite>, have made conversational human&#8211;AI interaction broadly accessible and flexible. These tools are increasingly applied in domains such as education&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shaer2024ai</span>]</cite>, healthcare&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hedderich2024piece</span>]</cite>, and creative work&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">angert2023spellburst</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2025breaking</span>]</cite>, supporting users through natural language dialogue.</p>\n\n",
+                "matched_terms": [
+                    "interaction",
+                    "multimodal",
+                    "users"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">A central concern in these systems is whether users can express intent clearly and efficiently. Prior work has explored multimodal input and interface strategies to improve intent communication. Hu et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2025gesprompt</span>]</cite> introduced <span class=\"ltx_text ltx_font_italic\">GesPrompt</span>, which combines co-speech gestures with voice input to enable more natural intent expression in extended reality environments. Cho et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cho2025persistent</span>]</cite> proposed <span class=\"ltx_text ltx_font_italic\">Persistent Assistant</span>, integrating embodied input and multimodal feedback for seamless everyday interactions. Other work embeds LLMs into direct manipulation environments, mapping graphical user interface actions or visual edits into structured prompts&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">angert2023spellburst</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">masson2024directgpt</span>]</cite>, showing that embedding language models within interactive contexts can reduce the burden of verbose prompting. Yet, most of these systems are designed for short, directive, or domain-specific tasks such as code editing or data visualisation, rather than open-ended creative ideation.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "users",
+                    "which",
+                    "into",
+                    "improve"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In design, creativity-support tools increasingly integrate GenAI into mainstream workflows. Commercial platforms such as Adobe Firefly&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">adobefirefly2025tools</span>]</cite>, Canva Magic Studio&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">canva2025overview</span>]</cite>, and Figma AI&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">figmaai2025update</span>]</cite> demonstrate how generative models assist in rapid visual exploration, while research prototypes extend this trend toward more expressive input. For example, <span class=\"ltx_text ltx_font_italic\">DesignPrompt</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024designprompt</span>]</cite> allows designers to compose prompts using text, colour, and imagery, and <span class=\"ltx_text ltx_font_italic\">DesignWeaver</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tao2025designweaver</span>]</cite> introduces palette-based refinement to support iterative design. Similarly, sketch-based interfaces such as <span class=\"ltx_text ltx_font_italic\">Inkspire</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>]</cite> and <span class=\"ltx_text ltx_font_italic\">SketchAI</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>]</cite> demonstrate how freehand input can guide image generation and support analogical inspiration.</p>\n\n",
+                "matched_terms": [
+                    "refinement",
+                    "generation",
+                    "text",
+                    "exploration",
+                    "into",
+                    "design",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our work addresses these gaps by investigating how combining speech and sketch input can support fluid, multimodal interaction with GenAI during early-stage design ideation.</p>\n\n",
+                "matched_terms": [
+                    "sketch",
+                    "interaction",
+                    "multimodal",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Speech is also a natural modality for externalising thought, long recognised in systems such as <span class=\"ltx_text ltx_font_italic\">SHRDLU</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">winograd1972understanding</span>]</cite> and <span class=\"ltx_text ltx_font_italic\">Put-That-There</span>&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">bolt1980put</span>]</cite> from the 1970-80s. It enables real-time, low-friction expression of ideas, making it especially valuable in early-stage design when thoughts are fluid and evolving&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">fry1979physics</span>]</cite>.\nSketching and speech together can serve as two intuitive, complementary interaction methods in design and creative domains, allowing users to express nuances that one modality alone might omit &#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">adler2007speech</span>]</cite>.</p>\n\n",
+                "matched_terms": [
+                    "ideas",
+                    "users",
+                    "sketching",
+                    "design",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recent works demonstrate how combining sketch and speech supports more natural and expressive communication: Rosenberg et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">rosenberg2024drawtalking</span>]</cite> introduced <span class=\"ltx_text ltx_font_italic\">DrawTalking</span>, which combines sketching with storytelling through speech to construct interactive animated worlds, while Giunchi et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">giunchi2021mixing</span>]</cite> showed that integrating sketch and speech for 3D model retrieval in virtual environments helped overcome the limitations of sketch-only input. Cheng et al.&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cheng2025aiawareness</span>]</cite> also explored speech and sketch as inputs for enhancing communication with AI through context awareness in an exploratory Wizard-of-Oz study.</p>\n\n",
+                "matched_terms": [
+                    "sketch",
+                    "inputs",
+                    "which",
+                    "sketching",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While prior research highlights how speech can enhance collaboration with AI, the impact of naturally produced speech during sketching on subsequent GenAI interactions remains unexplored. Our work therefore systematically investigates sketching-while-talking as a combined input modality for early-stage design ideation. Rather than treating sketching and speech as separate channels, we integrate both within a multimodal LLM chatbot to examine whether verbal descriptions and visual strokes together can improve AI alignment with user intent.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "sketching",
+                    "design",
+                    "while",
+                    "improve"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We first conducted a formative study, combining a design task with interviews, to understand how designers integrate GenAI into early-stage design and to identify opportunities for multimodal AI support to inform our subsequent system design in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4\" title=\"4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. Our institution&#8217;s ethics review board approved this study, and we obtained informed consent from all participants.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "into",
+                    "system",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We recruited six participants (2 female, 4 male) with a basic background in design; at the very least, they had completed one design-related course (e.g., <span class=\"ltx_text ltx_font_italic\">Urban Sketching</span> or <span class=\"ltx_text ltx_font_italic\">Design Thinking and Innovation</span>).\nThe participants included three students, two entry-level designers, and one experienced design practitioner, with design backgrounds spanning architecture, furniture, interior, robotics, and electronic product design.\nAll participants had 2-5 years of part/full-time experience in design.\nThey received approximately USD 7.8 as compensation for completing the 1-hour study.</p>\n\n",
+                "matched_terms": [
+                    "sketching",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The study consists of three parts: pre-task interview (10 minutes), design task (30 minutes), and post-task interview (20 minutes).\nThe pre-task interview captures participants&#8217; design backgrounds, sketching habits, and prior experiences with GenAI tools.\nFor the design task, we asked participants to design a household bread toaster and to express as many design ideas as possible under 30 minutes using a sketching application such as Goodnotes<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>https://www.goodnotes.com/</span></span></span> or Procreate<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://procreate.com/</span></span></span>.\nThey were permitted to utilize their personal devices&#8211;to ensure a familiar arrangement&#8211;or our Apple iPad Pro 13\" and Apple Pencil set up with popular sketching apps (e.g., Goodnotes, Procreate) and GenAI tools (e.g., ChatGPT (GPT-4o)<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://chatgpt.com/</span></span></span>, Gemini<span class=\"ltx_note ltx_role_footnote\" id=\"footnote4\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">4</sup><span class=\"ltx_tag ltx_tag_note\">4</span>https://gemini.google.com/app</span></span></span>, Midjourney<span class=\"ltx_note ltx_role_footnote\" id=\"footnote5\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">5</sup><span class=\"ltx_tag ltx_tag_note\">5</span>https://midjourney.com</span></span></span>).\nThe post-task interview then examined participants&#8217; views on the AI&#8217;s role in supporting or limiting ideation, and captured their aspirations and expectations for an \"ideal\" AI assistant.</p>\n\n",
+                "matched_terms": [
+                    "then",
+                    "sketching",
+                    "design",
+                    "ideas"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We analysed the qualitative data by examining both participants&#8217; interactions with sketching and AI tools during the design tasks and their reflections in post-study interviews. This allowed us to capture overall usage patterns, such as how participants sketched, engaged with GenAI tools, and iterated on ideas, while also identifying the challenges and gaps they experienced with current tools. These insights inform the design goals of our system.</p>\n\n",
+                "matched_terms": [
+                    "ideas",
+                    "insights",
+                    "sketching",
+                    "design",
+                    "while",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We observed three recurring usage patterns in how participants incorporated GenAI into early-stage ideation during the design task. These patterns, along with the reported challenges, surfaced during the post-interview.</p>\n\n",
+                "matched_terms": [
+                    "into",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants often used ChatGPT to explore design problems, define target users, or to inspire new directions. For instance, P1 asked about commonly found toaster issues and focused on cleaning functions, while P3 explored different user groups to inspire persona-driven designs. These uses supported functional exploration, but initial AI responses were often <span class=\"ltx_text ltx_font_italic\">&#8220;too generic&#8221;</span> (P3) and only became actionable after repeated prompt refinement.</p>\n\n",
+                "matched_terms": [
+                    "refinement",
+                    "users",
+                    "exploration",
+                    "design",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Several participants uploaded their sketches to ChatGPT Image or Gemini, or relied on text prompts, to visualise concepts. For instance, P2 uploaded a sideways-eject sketch, while P5 asked Gemini for a toaster with butter and egg compartments. However, the outputs often failed to match intent. P1 described the results as <span class=\"ltx_text ltx_font_italic\">&#8220;kind of crazy,&#8221;</span> P2 concluded, <span class=\"ltx_text ltx_font_italic\">&#8220;I might have to redraw the whole thing so AI can understand,&#8221;</span> and P5 added, <span class=\"ltx_text ltx_font_italic\">&#8220;It takes too much time, I&#8217;d rather just draw.&#8221;</span> Many participants ultimately returned to manual sketching for better clarity and control.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "text",
+                    "sketching",
+                    "sketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants often moved back and forth between tools. P3 only used text in ChatGPT to imagine playful forms (e.g., cat- or book-shaped toasters), while P1 first researched in ChatGPT, then sketched, went back to sketching after clarifications, and finally tried rendering images. P1 noted that <span class=\"ltx_text ltx_font_italic\">&#8220;uploading sketches to ChatGPT was not so easy to operate on iPad.&#8221;</span> This reflected how tool-switching slowed the process and introduced friction, especially for those who wanted to use image generation (P1, P2, P5, P6).</p>\n\n",
+                "matched_terms": [
+                    "generation",
+                    "finally",
+                    "text",
+                    "then",
+                    "process",
+                    "back",
+                    "sketching",
+                    "images",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Across these usage patterns, participants encountered three main challenges: (1) AI responses that were too generic or required extensive refinement, (2) mismatched or low-quality image outputs that failed to convey intent, and (3) fragmented workflows due to frequent switching between different tools. These issues often interrupted the ideation flow and made participants rely more heavily on manual sketching for clarity and control.</p>\n\n",
+                "matched_terms": [
+                    "refinement",
+                    "sketching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During the post-interview, participants proposed several workflow improvements to enhance the usefulness and usability of AI tools in early-stage design, particularly in terms of integration, input flexibility, and contextual responsiveness.</p>\n\n",
+                "matched_terms": [
+                    "workflow",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Rather than operating AI separately, participants hoped for tighter integration of AI within their sketching environment. P5 imagined an AI assistant <span class=\"ltx_text ltx_font_italic\">&#8220;embedded directly into sketching app&#8221;</span> that could notice overlooked design opportunities or recommend new features. P6 likewise wanted the AI to interpret her rough visuals directly and <span class=\"ltx_text ltx_font_italic\">&#8220;add internal or functional details&#8221;</span> on top of her own sketches. They expressed that embedded support would reduce switching between tools and allow AI to respond more fluidly to real-time ideation.</p>\n\n",
+                "matched_terms": [
+                    "into",
+                    "sketching",
+                    "design"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Many participants (P2, P5, P6) expressed fatigue from repeatedly typing long prompts to clarify their intent. P2 admitted he was <span class=\"ltx_text ltx_font_italic\">&#8220;too lazy to retype the whole thing,&#8221;</span> while P5 preferred to <span class=\"ltx_text ltx_font_italic\">&#8220;just draw&#8221;</span> instead of describing every detail. Participants advocated for expanded input modalities such as annotated sketches, voice commands, or real-time drawing, as alternatives to laborious text input. P6, for instance, envisioned being able to sketch a toaster form and have the AI <span class=\"ltx_text ltx_font_italic\">&#8220;fill in the mechanism&#8221;</span> without extra explanation. Such input flexibility would better match their natural workflows and reduce prompt clarification during ideation.</p>\n\n",
+                "matched_terms": [
+                    "while",
+                    "text",
+                    "sketch"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Participants wanted AI to behave less like a passive tool and more like a design partner capable of understanding the user&#8217;s intent. P3 proposed that the assistant <span class=\"ltx_text ltx_font_italic\">&#8220;should know what I&#8217;m trying to do&#8221;</span> P4 suggested that AI should <span class=\"ltx_text ltx_font_italic\">&#8220;see what I&#8217;m drawing and just give suggestions,&#8221;</span> and suggested a friendly avatar that feels more responsive and approachable. P2 imagined a system that could <span class=\"ltx_text ltx_font_italic\">&#8220;first discuss the sketch with me&#8221;</span> before trying to render anything, to avoid miscommunication. This desire for AI&#8217;s proactivity includes the ability to respond to ambiguous sketches, partial ideas, or evolving concepts in real time, without relying solely on explicit step-by-step instructions.</p>\n\n",
+                "matched_terms": [
+                    "ideas",
+                    "design",
+                    "sketch",
+                    "system",
+                    "user’s"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> integrates a unified multimodal AI chatbot that aims to support both proactive and user-initiated interaction. It comprises three complementary modules: Sketching, Talking, and Multimodal AI Chatbot.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "talking",
+                    "sketching",
+                    "talksketch",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The sketching canvas (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>a) serves as the central workspace where participants draw early-stage design ideas using a stylus or touch input. Built using <span class=\"ltx_text ltx_font_italic\">Fabric.js<span class=\"ltx_note ltx_role_footnote\" id=\"footnote6\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">6</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_upright\">6</span></span><a class=\"ltx_ref ltx_url ltx_font_typewriter ltx_font_upright\" href=\"http://fabricjs.com/\" title=\"\">http://fabricjs.com/</a></span></span></span></span>, the canvas supports drawing, erasing, selection, undo/redo, and canvas reset as illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. The top toolbar consolidates essential drawing controls along with the <span class=\"ltx_text ltx_font_italic\">Generate with AI</span> button. To facilitate interaction between users and AI, users can select any region of the sketching canvas and export it into the chatbot as part of a multimodal prompt. The <span class=\"ltx_text ltx_font_italic\">Save to Gallery</span> button allows users to save their canvas to the gallery once they are content with it; saved canvases can also be retrieved through the <span class=\"ltx_text ltx_font_italic\">Gallery</span>.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "ideas",
+                    "draw",
+                    "users",
+                    "where",
+                    "export",
+                    "sketching",
+                    "into",
+                    "design",
+                    "canvas",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> augments the sketching experience with real-time voice capture to support think-aloud workflows. Audio recording initiates automatically when users are sketching (without the chatbot open), and the recording symbol will be turned on simultaneously to indicate this. Once the user opens the AI Chatbot, the recording stops and the captured audio is streamed for low-latency transcription via Google Cloud Speech-to-Text<span class=\"ltx_note ltx_role_footnote\" id=\"footnote7\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">7</sup><span class=\"ltx_tag ltx_tag_note\">7</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://cloud.google.com/speech-to-text\" title=\"\">https://cloud.google.com/speech-to-text</a></span></span></span>.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "users",
+                    "sketching",
+                    "talksketch",
+                    "via"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The multimodal AI chatbot (see Figures&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c and&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d) has two main components: (1) <span class=\"ltx_text ltx_font_italic\">AI Insights</span>, which automatically generate reflective feedback based on user sketches and verbal ideation, and (2) a <span class=\"ltx_text ltx_font_italic\">Multimodal Chatbot Interface</span>, where users can engage the AI through both text and sketch input.\nBoth components share a common back-end powered by the <span class=\"ltx_text ltx_font_italic\">Gemini</span> series of multimodal models<span class=\"ltx_note ltx_role_footnote\" id=\"footnote8\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">8</sup><span class=\"ltx_tag ltx_tag_note\">8</span><a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://ai.google.dev/gemini-api/docs/models\" title=\"\">https://ai.google.dev/gemini-api/docs/models</a></span></span></span>\n, known for their strong cross-modal reasoning capabilities and broad adoption across creative and analytical tasks&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">team2024gemini</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yue2024mmmu</span>]</cite>.\nSpecifically, the text-based conversational features are supported by Gemini 2.0 Flash, while image generation is handled by Gemini 2.5 Flash Image. Both models accept multimodal inputs such as text and images, but they serve different purposes. Gemini 2.0 Flash is a fast multimodal-reasoning variant that produces text-only output, whereas Gemini 2.5 Flash Image is an image-generation variant of the Gemini 2.5 family, specialised for producing high-quality images from multimodal prompts. The <span class=\"ltx_text ltx_font_italic\">Multimodal AI Chatbot Module</span> maintains a unified conversation history that persists throughout the entire session and is consistently shared across both models, ensuring coherent context when switching between text and image generation.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "multimodal",
+                    "generation",
+                    "text",
+                    "sketch",
+                    "engage",
+                    "users",
+                    "inputs",
+                    "insights",
+                    "which",
+                    "where",
+                    "images",
+                    "while"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The first feature of the Multimodal AI Chatbot, <span class=\"ltx_text ltx_font_bold\">AI Insights</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c), provides proactive, structured, and reflective feedback based on the user&#8217;s current sketch and verbal input. It is automatically triggered when the user clicks on <span class=\"ltx_text ltx_font_italic\">Generate with AI</span>, requiring no explicit prompting. Each time it is activated, the module generates a new response based on the latest voice transcript and the current sketch on the canvas. The transcript is also displayed and can be edited by the user, which immediately refreshes the AI Insights response to reflect the updated input.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "multimodal",
+                    "insights",
+                    "which",
+                    "sketch",
+                    "canvas",
+                    "transcript",
+                    "generates",
+                    "user’s"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">On the back-end, the AI Insights module is powered by <span class=\"ltx_text ltx_font_italic\">Gemini&#160;2.5&#160;Flash</span> and customised to simulate the role of a design thinking expert. Following the Double Diamond framework&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tschimmel2012design</span>]</cite>, it guides users through the <span class=\"ltx_text ltx_font_italic\">Discover</span> and <span class=\"ltx_text ltx_font_italic\">Define</span> stages by identifying potential user needs, pain points, and framing design questions, before suggesting several exploratory directions to pursue. Two complementary prompt templates were developed to support different phases of the ideation process. When a user begins drawing on a new canvas, the system automatically triggers the <span class=\"ltx_text ltx_font_italic\">Kickoff Prompt</span> to initiate ideation; in subsequent interactions, as the user continues sketching or revising their transcript, the <span class=\"ltx_text ltx_font_italic\">Refine Prompt</span> is triggered to provide iterative feedback aligned with the evolving design concept. These prompts were iteratively tested to balance interpretability, creativity support, and brevity of response.</p>\n\n",
+                "matched_terms": [
+                    "users",
+                    "process",
+                    "insights",
+                    "sketching",
+                    "design",
+                    "canvas",
+                    "transcript",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Kickoff Prompt:</span>\n<span class=\"ltx_text ltx_font_italic\">&#8220;Act as a design thinking expert: based on the transcript and sketch canvas, identify what the user is trying to design, then&#8212;using the Double Diamond framework&#8212;guide them through Discover and Define by highlighting potential user needs, pain points, and framing questions, and finally offer 3&#8211;4 concise design directions in an encouraging and curious tone (around 100 words).&#8221;</span></p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "finally",
+                    "design",
+                    "sketch",
+                    "canvas",
+                    "transcript"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold ltx_font_italic\">Refine Prompt:</span>\n<span class=\"ltx_text ltx_font_italic\">&#8220;Act as a design thinking collaborator: based on the updated transcript and sketch canvas, briefly summarise what the user is currently designing or refining, reflect their key idea in one or two sentences, suggest 1&#8211;2 small ways to expand or clarify it, and end with 1&#8211;2 open-ended questions to help further develop the concept in a supportive, conversational tone (around 80&#8211;100 words).&#8221;</span></p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "further",
+                    "design",
+                    "sketch",
+                    "canvas",
+                    "transcript"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The second feature, <span class=\"ltx_text ltx_font_bold\">Multimodal AI Chat Interface</span> (Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d), facilitates open-ended conversations with a chatbot. Users may provide input either by typing text prompts or by utilising the iPad&#8217;s integrated Voice Dictation functionality. In addition, the interface allows users to export selected regions of their sketch canvas into the chatbot as image-based inputs.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "text",
+                    "users",
+                    "inputs",
+                    "export",
+                    "into",
+                    "sketch",
+                    "canvas"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The chatbot supports two output modes: <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span> for verbal suggestions and <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span> for visual inspiration.\nIn the <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span>, users can either submit only text input or combine their text prompt with a sketch, allowing the system to interpret both modalities but produce a text-only response.\nIn the <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span>, users may similarly provide a text-only prompt or combine a text prompt with a freehand sketch, both of which will generate an image accompanied by a matching text description.\nThe generated images can then be imported back into the canvas to serve as visual references or be integrated into the sketch, enabling users to freely incorporate AI-generated content as they iteratively refine their designs.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "generation",
+                    "aigenerated",
+                    "text",
+                    "sketch",
+                    "users",
+                    "then",
+                    "which",
+                    "back",
+                    "into",
+                    "images",
+                    "freely",
+                    "canvas",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Sky</span> begins the design session by drawing a rough concept of a cube-shaped toaster with symbolic radial dials and a handle (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>a). As she sketches, she verbalises her thoughts, <span class=\"ltx_text ltx_font_italic\">&#8220;I&#8217;m thinking of something bold and square, with a dial for heat control.&#8221;</span> Her speech is recorded and transcribed in real time (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>b), forming a synchronised verbal-visual trace of her ideation process.</p>\n\n",
+                "matched_terms": [
+                    "design",
+                    "process"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When <span class=\"ltx_text ltx_font_italic\">Sky</span> clicks <span class=\"ltx_text ltx_font_italic\">Generate with AI</span>, the system enters the chatbot interface (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>d) and immediately displays an <span class=\"ltx_text ltx_font_italic\">AI Insight</span> (see Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.05817v2#S4.F1\" title=\"Figure 1 &#8227; 4 TalkSketch: System Design and Development &#8227; TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>c). This insight is automatically generated from her sketch and think-aloud transcript, offering concise design reflections based on the Double Diamond design thinking framework.\nThe system suggests <em class=\"ltx_emph ltx_font_italic\">emphasising geometric form</em> or <em class=\"ltx_emph ltx_font_italic\">exploring tactile dials</em> as directions worth pursuing. Sky reads the insight and finds it helpful in framing her design direction. She realises she had forgotten to mention a few details aloud&#8211;such as her intention for the toaster to have a retractable cord&#8211;and decides to edit the transcript directly. After adding the missing information, she regenerates the <span class=\"ltx_text ltx_font_italic\">AI Insight</span> to see how the suggestions change in response to the fuller context.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "design",
+                    "sketch",
+                    "transcript",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Sky then decides to follow up on the AI&#8217;s suggestions. She first types into the chatbot input box: &#8220;Could you give me some ideas for drawing a novel toaster?\" In <span class=\"ltx_text ltx_font_italic\">Text Generation Mode</span>, the chatbot responds with directions such as transparent exteriors and interactive touchscreens. Sky incorporates several of these into her sketch. To visualise the design, she switches to <span class=\"ltx_text ltx_font_italic\">Image Generation Mode</span>, prompting: <span class=\"ltx_text ltx_font_italic\">&#8220;Could you generate a realistic product based on my sketch?&#8221;</span> The system returns a refined visual that preserves key features from her drawing.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "chatbot",
+                    "ideas",
+                    "generation",
+                    "text",
+                    "then",
+                    "design",
+                    "into",
+                    "sketch",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After a few rounds, Sky finds typing increasingly tedious and instead uses the built-in voice input feature. Her verbal prompt, <span class=\"ltx_text ltx_font_italic\">&#8220;What would a friendlier version look like?&#8221;</span>, is then transcribed and submitted automatically. The system responds with a new image featuring rounded corners, soft colours, and a smiling interface. Sky finds the result inspiring and chooses to export the AI-generated image back into the canvas, using it as a visual reference while continuing to sketch and refine her final design.</p>\n\n",
+                "matched_terms": [
+                    "aigenerated",
+                    "sketch",
+                    "then",
+                    "export",
+                    "back",
+                    "into",
+                    "design",
+                    "while",
+                    "canvas",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Building on prior research in multimodal CUIs&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cho2025persistent</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">hu2025gesprompt</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">masson2024directgpt</span>]</cite>, we expect that <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> will help designers communicate intent more fluidly by combining verbal and visual cues. While existing conversational AI systems require users to articulate ideas through discrete text prompts, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> allows designers to &#8220;think aloud&#8221; while drawing, preserving the spontaneity of natural dialogue&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">he2025enhancingintentunderstandingambiguous</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lan2025contextual</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">a18040214</span>]</cite>. This interaction form may reduce the cognitive effort involved in translating abstract ideas into prompts, a problem repeatedly identified in prompt-based creative tools&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">subramonyam2024bridging</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025enhancingcodellmsreinforcement</span>]</cite>. By aligning the AI&#8217;s interpretation with both speech and sketch input, users may experience the system as a more intuitive and responsive collaborator, one that feels closer to a design partner than a command-driven assistant. We therefore anticipate higher ratings of naturalness, communication clarity, and user control, reflecting an improved sense of mutual understanding between human and AI.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "ideas",
+                    "text",
+                    "sketch",
+                    "users",
+                    "into",
+                    "design",
+                    "talksketch",
+                    "while",
+                    "system",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Consistent with prior work on creativity-support systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">davis2025sketchai</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kang2020towards</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lan2025mappo</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lin2025inkspire</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">peng2024designprompt</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tao2025designweaver</span>]</cite>, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> is designed to support early-stage ideation rather than polished production. We expect that integrating speech and sketch will enable designers to sustain creative flow by externalising thoughts continuously instead of interrupting the process to type or reformulate text. The AI Insight mechanism may further stimulate reflection by generating contextually relevant feedback from verbal and visual cues. Designers might pause to elaborate on their thinking, reinterpret sketches, or refine concepts based on AI suggestions, which echoes the dialogic creativity patterns observed in prior sketch-based systems&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">buxton2010sketching</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">suwa2022roles</span>]</cite>. This dynamic may lead to richer ideation traces and a stronger sense of co-evolution between human and AI ideas. Potential outcomes include higher perceived creativity support, increased exploratory behaviour, and a shift from command&#8211;response interaction to reflective conversation.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "ideas",
+                    "text",
+                    "process",
+                    "further",
+                    "which",
+                    "sketch",
+                    "talksketch",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This system has several limitations. First, because it depends on speech input, any transcription errors caused by background noise, unclear pronunciation, or the system mishearing words may lead to incorrect speech input. These mistakes may cause errors for the model to combine speech with sketches and to understand the user&#8217;s design intent. Second, in some cases, users may prefer not to speak when they are sketching alone. In such cases, the system may need to rely only on sketches and user prompting in the chatbot to support their needs, reducing a layer of speech information. However, as early-stage sketches are often incomplete or ambiguous, combining them with short or minimal prompts may make it difficult for the system to understand user needs compared to with speech information. Third, the system currently interprets speech and sketch inputs as a single combined chunk within a period of time, which inevitably leads to some information loss. Different parts of a spoken description may refer to different regions in the sketch, yet the system cannot yet distinguish these finer-grained correspondences. As a result, important links between what is said and what is drawn may be missed, limiting the precision with which user intent is understood.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "inputs",
+                    "users",
+                    "which",
+                    "sketching",
+                    "design",
+                    "sketch",
+                    "system",
+                    "user’s"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper presented <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span>, a multimodal generative-AI sketching system that enables designers to ideate by sketching while speaking. Through a formative study with six designers, we identified key challenges in using existing GenAI chatbots for early-stage ideation, particularly the difficulty of translating evolving visual ideas into effective text prompts. To address these issues, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> integrates freehand drawing with real-time speech input, allowing users to externalise ideas more fluidly and engage in continuous dialogue with an embedded multimodal AI chatbot. By linking verbal and visual expression, <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> demonstrates how conversational multimodal interfaces can support more natural and reflective design workflows.</p>\n\n",
+                "matched_terms": [
+                    "chatbot",
+                    "multimodal",
+                    "ideas",
+                    "text",
+                    "engage",
+                    "users",
+                    "sketching",
+                    "design",
+                    "into",
+                    "talksketch",
+                    "while",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Future work will involve a controlled user study to systematically evaluate how <span class=\"ltx_text ltx_font_smallcaps\">TalkSketch</span> affects the naturalness of human&#8211;AI interaction and the perceived creativity of the design process. This next step aims to provide empirical evidence for the benefits of sketch-and-speech interaction in multimodal generative design tools. Beyond creativity support, it will also be valuable to explore how this interaction style can generalise to other settings, such as live demonstrations where rapid idea communication is essential, online classrooms where instructors sketch while explaining concepts, and collaborative design reviews where teams annotate evolving visuals. Examining these broader use cases may reveal additional opportunities for applying sketch-and-speech interaction as a more versatile interface paradigm.</p>\n\n",
+                "matched_terms": [
+                    "multimodal",
+                    "sketch",
+                    "process",
+                    "where",
+                    "design",
+                    "while",
+                    "talksketch",
+                    "interaction"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,232 @@
+{
+    "S3.F1": {
+        "source_file": "Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video",
+        "image_url": "https://arxiv.org/html/2510.21581v1/Figures/arch_diagram.png",
+        "caption": "Figure 1: Forward flow: frames →\\rightarrow V–JEPA2 →\\rightarrow adapter (video vCA), prompt →\\rightarrow text encoder (Tx–CA), and noise (latent init) entering the DiT at the same level",
+        "informative_terms_identified": [
+            "video",
+            "encoder",
+            "tx–ca",
+            "text",
+            "adapter",
+            "prompt",
+            "vca",
+            "noise",
+            "v–jepa2",
+            "same",
+            "latent",
+            "→rightarrow",
+            "init",
+            "frames",
+            "flow",
+            "forward",
+            "dit",
+            "level",
+            "entering"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Foley Control is a lightweight approach to video-guided Foley that keeps pretrained single-modality models frozen and learns only a small cross-attention bridge between them. We connect V-JEPA2 video embeddings to a frozen Stable Audio Open DiT text-to-audio (T2A) model by inserting compact video cross-attention after the model&#8217;s existing text cross-attention, so prompts set global semantics while video refines timing and local dynamics. The frozen backbones retain strong marginals (video; audio given text) and the bridge learns the audio&#8211;video dependency needed for synchronization &#8212; without retraining the audio prior. To cut memory and stabilize training, we pool video tokens before conditioning.\nOn curated video&#8211;audio benchmarks, Foley Control delivers competitive temporal and semantic alignment with far fewer trainable parameters than recent multi-modal systems, while preserving prompt-driven controllability and production-friendly modularity (swap/upgrade encoders or the T2A backbone without end-to-end retraining). Although we focus on Video-to-Foley, the same bridge design can potentially extend to other audio modalities (e.g., speech).</p>\n\n",
+                "matched_terms": [
+                    "same",
+                    "video",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At the other extreme, multimodal diffusion transformers (e.g., MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite>, HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> and others  <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib4\" title=\"\">4</a>]</cite> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib28\" title=\"\">28</a>]</cite> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib13\" title=\"\">13</a>]</cite>) jointly train audio, video, and sometimes text streams end-to-end.\nSuch approaches achieve impressive synchronization and coverage, but at the cost of massive curated datasets, high compute budgets, and reduced modularity.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper proposes <span class=\"ltx_text ltx_font_bold\">Foley Control</span>, a lightweight framework that targets the same alignment benefits while preserving the practicality of frozen generative backbones. Our key idea is to connect V-JEPA2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib1\" title=\"\">1</a>]</cite> video embeddings to a frozen Stable Audio Open DiT <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite> by inserting <em class=\"ltx_emph ltx_font_italic\">collaboration layers</em>&#8212;compact, video-conditioned cross-attention modules placed <em class=\"ltx_emph ltx_font_italic\">inside</em> existing transformer blocks. This placement is deliberate: video cross-attention is applied <em class=\"ltx_emph ltx_font_italic\">after</em> the model&#8217;s original text cross-attention, so text prompts first establish high-level semantics and structure, and video then refines temporal grounding and localized dynamics. By freezing the remaining parameters of the DiT blocks, we retain the strong generative prior learned from large-scale audio&#8211;text corpora and focus the trainable capacity on cross-modal synchronization rather than relearning audio generation.</p>\n\n",
+                "matched_terms": [
+                    "same",
+                    "video",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">From an architectural perspective, we employ a streamlined integration strategy in which V-JEPA2 embeddings are pooled into a compact grid representation and injected through lightweight cross-attention modules placed inside the frozen DiT blocks. This design ensures that video information refines the audio latent trajectory without altering the established text-conditioning pathway. Rotary position embeddings (RoPE) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib27\" title=\"\">27</a>]</cite> further enhance temporal grounding by providing ordering signals across modalities, eliminating the need for heavier synchronization mechanisms. The resulting architecture remains compact yet expressive, scaling effectively to longer contexts and diverse scenes while preserving prompt-driven controllability.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "video",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Taken together, these elements provide a practical route to high-quality Foley generation: reuse a strong, frozen T2A backbone for audio fidelity and prompt control, and add just enough trainable capacity to align timing and dynamics to the video.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite> introduces a unified, <em class=\"ltx_emph ltx_font_italic\">from-scratch</em> multimodal training paradigm that jointly leverages audio&#8211;text and audio&#8211;video pairs under a conditional flow-matching objective.\nA hybrid architecture&#8212;multimodal DiT blocks followed by audio-only blocks&#8212;supports scalable data mixing and strong semantic alignment, while a synchronization module operating via high frame-rate visual features further improves temporal precision.\nA related approach, HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite>, scales this paradigm with a massive curated text&#8211;video&#8211;audio dataset and a dual-stream multimodal diffusion transformer that fuses audio&#8211;video attention with text cross-attention.\nAdditionally, it introduces a representation-alignment loss (REPA<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib36\" title=\"\">36</a>]</cite>) that steers the audio DiT&#8217;s hidden states toward self-supervised audio embeddings, enhancing fidelity and stability, and employs a DAC-style autoencoder for higher-quality waveform reconstruction.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Stable Audio Open <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite> is a foundation text-to-audio model based on latent diffusion, combining a fully convolutional VAE, T5-based text conditioning, and timing embeddings to enable efficient generation of variable-length 44.1kHz stereo signals up to 95 seconds.\nDespite operating in a compressed latent space, it achieves state-of-the-art fidelity on both music and sound effects, offering a strong frozen backbone for adaptation in multimodal alignment tasks.\nEarly text-to-audio (T2A) diffusion models such as DiffSound <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib35\" title=\"\">35</a>]</cite>, AudioGen <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib17\" title=\"\">17</a>]</cite>, AudioLDM <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib19\" title=\"\">19</a>]</cite>, and Make-An-Audio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib9\" title=\"\">9</a>]</cite> established the latent diffusion paradigm for sound synthesis.\nStable Audio Open <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite> extends this approach with high-fidelity 44.1&#8201;kHz generation and strong semantic conditioning, while TangoFlux <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib10\" title=\"\">10</a>]</cite> explores fast flow-matching variants for text-conditioned audio generation.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For instance, <span class=\"ltx_text ltx_font_bold\">FRIEREN</span> proposes rectified flow matching in spectrogram latent space to regress a conditional transport vector field, enabling few-step or even one-step audio sampling with strong video-audio alignment <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib33\" title=\"\">33</a>]</cite>.\n<span class=\"ltx_text ltx_font_bold\">UniVerse-1</span> fuses pretrained video and music experts via a stitching-of-experts approach to jointly generate synchronized audio and video <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib31\" title=\"\">31</a>]</cite>.\n<span class=\"ltx_text ltx_font_bold\">ThinkSound</span> frames audio generation as a reasoning process via chain-of-thought, decomposing generation into stages of Foley synthesis, object-centric refinement, and editing, guided by a multimodal LLM <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib20\" title=\"\">20</a>]</cite>.\nMore recently, <span class=\"ltx_text ltx_font_bold\">DeepSound-V1</span> also introduces stepwise CoT reasoning in video&#8594;audio synthesis <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib18\" title=\"\">18</a>]</cite>, and <span class=\"ltx_text ltx_font_bold\">YingSound</span> uses a multimodal CoT controller plus conditional flow matching for sound effect generation in few-shot settings <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib3\" title=\"\">3</a>]</cite>.\nThese works complement ours: while they may retrain large joint models or adopt reasoning-based pipelines, our approach uniquely freezes a strong text&#8211;audio backbone and learns only a light cross-modal bridge for alignment.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "flow",
+                    "video",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In contrast, <span class=\"ltx_text ltx_font_bold\">Foley Control</span> adopts a more unified transformer-based design that integrates video conditioning directly within the frozen diffusion transformer&#8217;s existing attention layers.\nThis avoids separate control heads and allows cross-modal signals to propagate through the same representational channels as text, better aligning with modern large-scale pretrained architectures such as Stable Audio Open <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite>.\nResults from large-scale modeling <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib12\" title=\"\">12</a>]</cite> indicate that architectures which enable pretrained components to co-adapt through shared attention tend to harness scale and generalize more effectively than systems with manually partitioned control modules.</p>\n\n",
+                "matched_terms": [
+                    "same",
+                    "video",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At the other end of the spectrum, fully multi-modal diffusion transformers such as MMAudio <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite> and HunyuanVideo-Foley <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib26\" title=\"\">26</a>]</cite> extend this idea further by training end-to-end across text, video, and audio streams.\nThese models demonstrate even higher efficiency and expressivity when massive, curated datasets are available, but they require orders of magnitude more paired data and compute to converge.\n<span class=\"ltx_text ltx_font_bold\">Foley Control</span> therefore strikes a middle ground: it retains the scalability and representational advantages of transformer conditioning while remaining data-efficient by freezing the text&#8211;audio prior and learning only lightweight video&#8211;audio bridges.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We adopt the <span class=\"ltx_text ltx_font_bold\">Stable Audio DiT</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite> as the generative backbone.\nStable Audio is a diffusion-based model operating in the latent space of an audio autoencoder, enabling high-fidelity waveform synthesis at a sampling rate of 44.1&#8201;kHz.\nGiven conditioning embeddings (e.g., text or duration), the model learns to denoise latent audio representations over a fixed number of timesteps.\nIn our framework, the backbone remains <em class=\"ltx_emph ltx_font_italic\">fully frozen</em>, ensuring training efficiency and stability.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For visual grounding, we leverage <span class=\"ltx_text ltx_font_bold\">V-JEPA2</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib1\" title=\"\">1</a>]</cite>, a transformer-based video encoder pretrained with predictive objectives.\nGiven a sequence of frames, V-JEPA2 produces spatiotemporal patch-level embeddings, which can be pooled into <em class=\"ltx_emph ltx_font_italic\">tubelets</em> or spatial grids (e.g., <math alttext=\"4{\\times}4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>4</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">4{\\times}4</annotation></semantics></math>, <math alttext=\"8{\\times}8\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>8</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">8{\\times}8</annotation></semantics></math>) to capture both global dynamics and localized motion cues.\nThese embeddings serve as <em class=\"ltx_emph ltx_font_italic\">key</em> tokens for cross-modal alignment with the audio latent sequence.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "video",
+                    "encoder",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Formally, given a video segment <math alttext=\"\\mathcal{V}=\\{f_{1},\\ldots,f_{T}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mrow><mi class=\"ltx_font_mathcaligraphic\">&#119985;</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>f</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>f</mi><mi>T</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathcal{V}=\\{f_{1},\\ldots,f_{T}\\}</annotation></semantics></math>, our goal is to synthesize an aligned audio waveform <math alttext=\"x\\in\\mathbb{R}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>x</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mi>L</mi></msup></mrow><annotation encoding=\"application/x-tex\">x\\in\\mathbb{R}^{L}</annotation></semantics></math>, where <math alttext=\"L\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mi>L</mi><annotation encoding=\"application/x-tex\">L</annotation></semantics></math> corresponds to the clip duration at 44.1&#8201;kHz.\nThe video encoder maps <math alttext=\"\\mathcal{V}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m4\" intent=\":literal\"><semantics><mi class=\"ltx_font_mathcaligraphic\">&#119985;</mi><annotation encoding=\"application/x-tex\">\\mathcal{V}</annotation></semantics></math> to a sequence of tokens <math alttext=\"\\mathbf{v}\\in\\mathbb{R}^{S_{v}\\times D_{v}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m5\" intent=\":literal\"><semantics><mrow><mi>&#119855;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>S</mi><mi>v</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mi>v</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{v}\\in\\mathbb{R}^{S_{v}\\times D_{v}}</annotation></semantics></math>, while the audio diffusion model operates on latent sequences <math alttext=\"\\mathbf{a}\\in\\mathbb{R}^{S_{a}\\times D_{a}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.SSS0.Px3.p1.m6\" intent=\":literal\"><semantics><mrow><mi>&#119834;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>S</mi><mi>a</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mi>a</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}\\in\\mathbb{R}^{S_{a}\\times D_{a}}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "video",
+                    "encoder"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our framework is based on <span class=\"ltx_text ltx_font_bold\">Stable Audio Open<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib7\" title=\"\">7</a>]</cite></span>, a diffusion transformer (DiT) model for high-fidelity text-to-audio generation.\nRaw waveforms <math alttext=\"x\\in\\mathbb{R}^{L}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m1\" intent=\":literal\"><semantics><mrow><mi>x</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mi>L</mi></msup></mrow><annotation encoding=\"application/x-tex\">x\\in\\mathbb{R}^{L}</annotation></semantics></math> are encoded by an audio VAE into latent sequences <math alttext=\"\\mathbf{a}\\in\\mathbb{R}^{S_{a}\\times D_{a}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>&#119834;</mi><mo>&#8712;</mo><msup><mi>&#8477;</mi><mrow><msub><mi>S</mi><mi>a</mi></msub><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mi>a</mi></msub></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbf{a}\\in\\mathbb{R}^{S_{a}\\times D_{a}}</annotation></semantics></math>, where <math alttext=\"S_{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m3\" intent=\":literal\"><semantics><msub><mi>S</mi><mi>a</mi></msub><annotation encoding=\"application/x-tex\">S_{a}</annotation></semantics></math> is the sequence length and <math alttext=\"D_{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m4\" intent=\":literal\"><semantics><msub><mi>D</mi><mi>a</mi></msub><annotation encoding=\"application/x-tex\">D_{a}</annotation></semantics></math> the latent dimensionality.\nThe DiT backbone performs <em class=\"ltx_emph ltx_font_italic\">latent diffusion</em> using the <em class=\"ltx_emph ltx_font_italic\">v-prediction</em> parameterization: at a random step <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m5\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math>, we corrupt the clean latent <math alttext=\"\\mathbf{a}_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m6\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{0}</annotation></semantics></math> to <math alttext=\"\\mathbf{a}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m7\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{t}</annotation></semantics></math> and train the model <math alttext=\"v_{\\theta}(\\mathbf{a}_{t},t,\\text{cond})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m8\" intent=\":literal\"><semantics><mrow><msub><mi>v</mi><mi>&#952;</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>&#119834;</mi><mi>t</mi></msub><mo>,</mo><mi>t</mi><mo>,</mo><mtext>cond</mtext><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v_{\\theta}(\\mathbf{a}_{t},t,\\text{cond})</annotation></semantics></math> to predict the velocity that guides <math alttext=\"\\mathbf{a}_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m9\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{t}</annotation></semantics></math> back toward <math alttext=\"\\mathbf{a}_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m10\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{0}</annotation></semantics></math>.\nAt inference, we integrate the sampler using the predicted velocities to recover <math alttext=\"\\mathbf{a}_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.p1.m11\" intent=\":literal\"><semantics><msub><mi>&#119834;</mi><mn>0</mn></msub><annotation encoding=\"application/x-tex\">\\mathbf{a}_{0}</annotation></semantics></math>, then decode to waveform via the VAE.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">At its core, Stable Audio Open employs a stack of transformer blocks designed for sequence modeling in the latent space.\nEach block incorporates multi-head self-attention, feed-forward networks, and cross-attention.\nText embeddings, obtained from a pretrained T5 encoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib24\" title=\"\">24</a>]</cite>, are injected through cross-attention, enabling semantic control over the generated audio.\nThis design allows fast parallel sampling and supports long-context audio generation at 44.1&#8201;kHz.</p>\n\n",
+                "matched_terms": [
+                    "latent",
+                    "encoder",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To integrate video semantics without disrupting the pretrained frozen stable audio model, we insert video cross-attention <em class=\"ltx_emph ltx_font_italic\">in every DiT block</em>, immediately after the backbone&#8217;s text cross-attention and before the feed-forward network (SA <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p1.m1\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> Tx-CA <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p1.m2\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> <span class=\"ltx_text ltx_font_bold\">Vid-CA</span> <math alttext=\"\\rightarrow\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p1.m3\" intent=\":literal\"><semantics><mo stretchy=\"false\">&#8594;</mo><annotation encoding=\"application/x-tex\">\\rightarrow</annotation></semantics></math> FFN).\nAudio latents act as queries and video tokens as keys/values; the rest of the block (including the text pathway) remains frozen.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "→rightarrow",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Tiny MLP adapter on the video path.</span>\nBefore forming <math alttext=\"K,V\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p2.m1\" intent=\":literal\"><semantics><mrow><mi>K</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">K,V</annotation></semantics></math>, we pass the (detached) video features through a lightweight two-layer MLP with GELU and residual addition.</p>\n\n",
+                "matched_terms": [
+                    "adapter",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">RoPE scheme</span>\nWe use standard rotary position embeddings (RoPE) <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib27\" title=\"\">27</a>]</cite>.\nRoPE is applied independently to audio queries and video keys: each modality computes its own phase from its sequence positions, and the rotations are not shared across modalities.\nConcretely, after linear projection we rotate <math alttext=\"Q\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p3.m1\" intent=\":literal\"><semantics><mi>Q</mi><annotation encoding=\"application/x-tex\">Q</annotation></semantics></math> and <math alttext=\"K\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p3.m2\" intent=\":literal\"><semantics><mi>K</mi><annotation encoding=\"application/x-tex\">K</annotation></semantics></math> in-place along their last dimension (per head) prior to attention.\nThis preserves relative temporal phase information, helping the model align video motion and audio onsets more precisely.\nWhile prior work <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib11\" title=\"\">11</a>]</cite> employs specialized synchronization modules (e.g., SyncFormer) for cross-modal alignment, we found RoPE sufficient for stable temporal correspondence without additional alignment networks in our adapter setting.</p>\n\n",
+                "matched_terms": [
+                    "adapter",
+                    "video"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Cross-attention placement.</span>\nOur placement choice is inspired by Kong et al. <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib15\" title=\"\">15</a>]</cite>, which augments each DiT block with an audio cross-attention layer inserted after the text cross-attention.\nFollowing this design, we adopt the same ordering for our video cross-attention so that prompts establish global semantics before modality-specific timing and dynamics are injected.\nUnlike their setup, which employs label-aware RoPE (L-RoPE) to distinguish multiple audio streams, we found standard RoPE sufficient for stable and precise cross-modal alignment in our single-stream video-to-audio configuration.</p>\n\n",
+                "matched_terms": [
+                    "same",
+                    "video",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Scope of training.</span>\nOnly the parameters introduced by this sublayer are trainable (video MLP adapter, <math alttext=\"W_{q}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p5.m1\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>q</mi></msub><annotation encoding=\"application/x-tex\">W_{q}</annotation></semantics></math>, <math alttext=\"W_{kv}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p5.m2\" intent=\":literal\"><semantics><msub><mi>W</mi><mrow><mi>k</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>v</mi></mrow></msub><annotation encoding=\"application/x-tex\">W_{kv}</annotation></semantics></math>, <math alttext=\"W_{o}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px3.p5.m3\" intent=\":literal\"><semantics><msub><mi>W</mi><mi>o</mi></msub><annotation encoding=\"application/x-tex\">W_{o}</annotation></semantics></math>, attention weights, and local norms); all backbone weights, the audio VAE, and the text pathway remain frozen.\nUnless otherwise stated, each DiT block has its own (non-shared) set of sublayer parameters.</p>\n\n",
+                "matched_terms": [
+                    "adapter",
+                    "video",
+                    "text",
+                    "dit"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We condition collaboration cross-attention on V&#8211;JEPA2 tokens derived from <math alttext=\"16\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m1\" intent=\":literal\"><semantics><mn>16</mn><annotation encoding=\"application/x-tex\">16</annotation></semantics></math>&#8201;FPS video streams. For each <math alttext=\"4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m2\" intent=\":literal\"><semantics><mn>4</mn><annotation encoding=\"application/x-tex\">4</annotation></semantics></math>&#8201;s segment, we sample <math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m3\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> frames and encode them with V&#8211;JEPA2. To obtain a compact sequence, we <em class=\"ltx_emph ltx_font_italic\">pool each effective frame</em> into a <em class=\"ltx_emph ltx_font_italic\">single</em> token (the encoder operates with stride 2, so one effective frame corresponds to two input frames). This results in <math alttext=\"32\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m4\" intent=\":literal\"><semantics><mn>32</mn><annotation encoding=\"application/x-tex\">32</annotation></semantics></math> effective frames per <math alttext=\"4\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m5\" intent=\":literal\"><semantics><mn>4</mn><annotation encoding=\"application/x-tex\">4</annotation></semantics></math>&#8201;s segment and thus <math alttext=\"32\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m6\" intent=\":literal\"><semantics><mn>32</mn><annotation encoding=\"application/x-tex\">32</annotation></semantics></math> tokens per segment. To bound computational cost, we restrict inputs to a maximum of <math alttext=\"12\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m7\" intent=\":literal\"><semantics><mn>12</mn><annotation encoding=\"application/x-tex\">12</annotation></semantics></math>&#8201;s and concatenate the segment-level embeddings in temporal order. Originally, we experimented with spatial grids such as <math alttext=\"8{\\times}8\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m8\" intent=\":literal\"><semantics><mrow><mn>8</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">8{\\times}8</annotation></semantics></math> (<math alttext=\"64\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m9\" intent=\":literal\"><semantics><mn>64</mn><annotation encoding=\"application/x-tex\">64</annotation></semantics></math> tokens per frame) and <math alttext=\"16{\\times}16\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m10\" intent=\":literal\"><semantics><mrow><mn>16</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>16</mn></mrow><annotation encoding=\"application/x-tex\">16{\\times}16</annotation></semantics></math> (<math alttext=\"256\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS0.Px4.p1.m11\" intent=\":literal\"><semantics><mn>256</mn><annotation encoding=\"application/x-tex\">256</annotation></semantics></math> tokens per frame), but found that reducing to a single pooled token per frame preserved salient spatial context while substantially improving efficiency and stabilizing optimization.</p>\n\n",
+                "matched_terms": [
+                    "v–jepa2",
+                    "video",
+                    "encoder",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We compare two ways of aggregating V-JEPA2 patch tokens into video tokens:\n(i) <em class=\"ltx_emph ltx_font_italic\">frame pooling</em> (1 token per two frames),\n(ii) <em class=\"ltx_emph ltx_font_italic\">grid8</em> pooling (<math alttext=\"8{\\times}8\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS0.Px1.p1.m1\" intent=\":literal\"><semantics><mrow><mn>8</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><mn>8</mn></mrow><annotation encoding=\"application/x-tex\">8{\\times}8</annotation></semantics></math> tokens per frame, 64 per frame).\nFrame pooling offers maximum computational efficiency, while grid-based schemes capture richer spatial and motion cues at higher cost.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Each method generates audio at 44.1&#8201;kHz, conditioned on video frames and corresponding text prompts when supported.\nFor our model, the Stable Audio DiT backbone, VAE, and CLAP text encoder remain entirely <em class=\"ltx_emph ltx_font_italic\">frozen</em>; only the lightweight collaboration layers and alignment heads introduced in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#S3\" title=\"3 Method &#8227; Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> are trained.\nThis setup isolates the effect of our proposed video bridge while maintaining a fixed generative prior across all experiments.\nAll systems are evaluated on the same MovieGenBench test split, using synchronized video clips with corresponding ground-truth soundtracks.\n<span class=\"ltx_text ltx_font_bold\">For metric computation, preprocessing, and dataset loaders, we used the MMAudio evaluation/testing repository<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><a class=\"ltx_ref ltx_url ltx_font_typewriter ltx_font_medium\" href=\"https://github.com/facebookresearch/mmaudio/tree/main/eval\" title=\"\">https://github.com/facebookresearch/mmaudio/tree/main/eval</a></span></span></span></span> <span class=\"ltx_text ltx_font_bold\">to ensure consistent scoring across methods</span>.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "dit",
+                    "encoder",
+                    "same",
+                    "text",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">MMAudio</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21581v1#bib.bib5\" title=\"\">5</a>]</cite>: a fully multimodal diffusion transformer jointly trained on text, audio, and video under a conditional flow-matching objective.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduced <span class=\"ltx_text ltx_font_bold\">Foley Control</span>, a lightweight bridge that brings video guidance to a frozen text-to-audio generator by inserting compact, trainable collaboration layers after the model&#8217;s existing text cross-attention. With V-JEPA2 embeddings, token pooling, and RoPE-based ordering cues, our design preserves the strengths of the audio prior and prompt controllability while adding the temporal control needed for Foley.</p>\n\n",
+                "matched_terms": [
+                    "video",
+                    "prompt",
+                    "text"
+                ]
+            }
+        ]
+    }
+}

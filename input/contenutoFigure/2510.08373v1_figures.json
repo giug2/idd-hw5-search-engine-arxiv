@@ -1,0 +1,1160 @@
+{
+    "S1.F1": {
+        "source_file": "DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching",
+        "image_url": "https://arxiv.org/html/2510.08373v1/x1.png",
+        "caption": "Figure 1: Overview of the dual-track dialogue data processing pipeline. The key stages include initial segmentation, parallel ASR and speaker diarization, word-to-speaker alignment, punctuation annotation, overlapped speech detection, and speaker separation.",
+        "informative_terms_identified": [
+            "pipeline",
+            "wordtospeaker",
+            "separation",
+            "stages",
+            "dualtrack",
+            "detection",
+            "overlapped",
+            "initial",
+            "diarization",
+            "alignment",
+            "asr",
+            "data",
+            "key",
+            "overview",
+            "segmentation",
+            "parallel",
+            "speech",
+            "include",
+            "speaker",
+            "dialogue",
+            "annotation",
+            "punctuation",
+            "processing"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To address the lack of high-quality, dual-channel conversational speech data&#8212;particularly those containing natural overlapping speech&#8212;we propose a comprehensive and modular pipeline, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. This pipeline converts raw, long-form audio into well-structured, speaker-aware, and overlap-aware dialogue segments suitable for multi-speaker speech synthesis.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in text-to-speech (TTS) synthesis, particularly those leveraging large language models (LLMs), have significantly improved expressiveness and naturalness. However, generating human-like, interactive dialogue speech remains challenging. Current systems face limitations due to the scarcity of dual-track data and difficulties in achieving naturalness, contextual coherence, and interactional dynamics, such as turn-taking, overlapping speech, and speaker consistency, in multi-turn conversations. To address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">DialoSpeech<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><span class=\"ltx_text ltx_font_medium\">Codes and checkpoints will be publicly released.</span></span></span></span></span>, a dual-track architecture combining a large language model with Chunked Flow Matching for expressive, human-like dialogue speech synthesis. DialoSpeech generates natural multi-turn conversations with coherent speaker turns and natural overlaps, supporting both Chinese and English and cross-lingual speech synthesis. We introduce a data processing pipeline to construct dual-track dialogue datasets, facilitating scalable training and experimental validation. Experiments show that our model outperforms baselines, offering a solution for generating human-like spoken dialogues. Audio samples are available at\n<a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://tiamojames.github.io/DialoSpeech/\" title=\"\">https://tiamojames.github.io/DialoSpeech/</a></p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speech",
+                    "pipeline",
+                    "speaker",
+                    "dialogue",
+                    "processing",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"--ltx-fg-color:#000000;\">Recent advances in large language models (LLMs) and generative techniques, such as diffusion and flow matching, have driven substantial progress in speech synthesis. Leveraging large-scale training data and increased model capacity, these modern approaches significantly improve the naturalness and expressiveness of synthesized speech. The resulting quality is often indistinguishable from that of human recordings, greatly expanding the applicability of Text-to-Speech (TTS) systems across diverse domains, including voice assistants, audiobook narration, and podcast production.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx1\" title=\"\">1</a>]</cite> pioneered framing Text-to-Speech (TTS) as a next-token prediction task. Using discrete acoustic tokens, it demonstrated remarkable in-context learning capabilities. Developing such tokens involves a fundamental trade-off between capturing fine-grained acoustic detail and preserving semantic richness.\nEarly acoustic representations&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx2\" title=\"\">2</a>]</cite> provided high-fidelity waveform reconstruction but lacked the semantic depth required for complex utterances, often leading to instability.\nTo address this, subsequent works integrated semantic units from self-supervised learning (SSL) models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx4\" title=\"\">4</a>]</cite> to enhance coherence and prosody&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx6\" title=\"\">6</a>]</cite>.\nMore recent methods further leverage pre-trained ASR encoders for superior text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx7\" title=\"\">7</a>]</cite>.\nHowever, these semantic tokens are abstract and lack the fine-grained acoustic details required for synthesis.\nTo address this, conditional flow matching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite>&#8212;is employed to convert the abstract tokens into high-fidelity acoustic features.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "alignment"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Most TTS systems focus on synthesizing speech for a single speaker given a text input. However, this single-speaker paradigm fails to capture the natural dynamics of multi-party conversations, particularly in rendering fluid turn-taking, interruptions, and overlapping speech. Recent research has shifted toward addressing the challenges of multi-speaker dialogue generation.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CoVoMix&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx9\" title=\"\">9</a>]</cite> introduced a dual-channel architecture to model multi-speaker interactions, marking one of the earliest attempts at zero-shot, human-like, mixed-speech generation. However, CoVoMix is trained on the Fisher dataset, which is limited in scale and audio quality. MoonCast&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx10\" title=\"\">10</a>]</cite> focuses on long-form, spontaneous dialogue generation by leveraging large language models (LLMs) to script podcast-style conversations. Still, its single-stream token representation prevents it from effectively modelling crucial interactional dynamics such as overlapping speech.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We design a data processing pipeline for constructing dual-track conversational datasets. Scaling up the dataset in both scale and diversity enhances training efficiency and model robustness.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "data",
+                    "processing",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present DialoSpeech, a Dialogue TTS architecture that combines a Language Model (LM), a dual-track token generation mechanism, and a chunked Flow Matching acoustic model, enabling zero-shot, high-quality, and expressive dialogue synthesis.</p>\n\n",
+                "matched_terms": [
+                    "dualtrack",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We prepare our data by gathering open-domain conversational audio from publicly available long-form sources, including podcast and vlog recordings acquired through automated web crawling. Each recording is segmented into 20-minute chunks to facilitate parallel processing. These chunks are processed by a voice activity detection<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx11\" title=\"\">11</a>]</cite> (VAD) module and a Paraformer-based ASR system&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx12\" title=\"\">12</a>]</cite>, which yields word-level, time-aligned transcriptions. In parallel, speaker diarization<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx13\" title=\"\">13</a>]</cite> is performed using the Pyannote toolkit to assign speaker identities to time-stamped segments.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "data",
+                    "parallel",
+                    "speaker",
+                    "processing"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The outputs of ASR and diarization are integrated to construct utterance-level annotations that include word timestamps and corresponding speaker labels. A punctuation restoration module is applied to refine sentence segmentation and enhance linguistic coherence further. An overlapped speech detection (OSD) module, built on a Conformer architecture with XLSR features, is employed to identify and localize overlapping speech segments through binary classification.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "detection",
+                    "segmentation",
+                    "speech",
+                    "overlapped",
+                    "diarization",
+                    "include",
+                    "speaker",
+                    "punctuation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After filtering, the retained segments are processed through an overlap-aware segmentation and speaker separation stage using SpatialNet<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx15\" title=\"\">15</a>]</cite>, which disentangles overlapping speech into dual-channel utterances aligned with each speaker. A subsequent post-processing step converts the cleaned and annotated segments into a standardized format compatible with downstream training pipelines. Our implementation is built upon the Kaldi toolkit and incorporates internally developed models. We have curated approximately 5,000 hours of natural conversational data suitable for training.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "segmentation",
+                    "speech",
+                    "separation",
+                    "speaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce DialoSpeech, a framework for generating high-quality, expressive, and interactive multi-speaker conversational speech, illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overall Architecture &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our approach decomposes the generation process into two modular stages: text-to-token (T2T) and token-to-waveform (T2W). This design allows us to leverage specialized models for each sub-task.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "stages"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the T2T stage, we use the S3tokenizer from CosyVoice2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx16\" title=\"\">16</a>]</cite> to convert speech into a dual-track semantic token representation. These tokens then serve as the training target for our T2T model.\nThe T2T model, guided by an LLM, processes the input dialogue scripts to predict these dual-track semantic tokens. This allows for modeling inter-speaker dynamics, including turn-taking and overlaps, crucial for natural dialogue. This LLM interprets conversational context and speaker roles.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "speech",
+                    "dualtrack",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Unlike single-speaker zero-shot speech synthesis,\nThe zero-shot Dual-speaker Dialogue generation task aims to synthesize each conversation turn using the corresponding speaker&#8217;s voice, based on the provided reference speech from two speakers. The core component of DialoSpeech is the DiaLM model, which enables zero-shot dual-speaker conversational speech generation. Given dialogue text with alternating speaker turns and reference audio samples from two target speakers, DiaLM learns to synthesize each utterance in the corresponding speaker&#8217;s voice while capturing natural conversational turn transitions.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We adopt a language model-based approach to generate discrete speech codes from dialogue script text to handle this. The textual input is tokenized using a Byte-Pair Encoding (BPE) tokenizer, preserving semantic structure and aligning with the representation space used by the LLM backbone. The acoustic inputs are first discretized using a pretrained semantic speech tokenizer, providing per-speaker token sequences representing speech content. In parallel, we extract speaker embeddings (<math alttext=\"S_{p}^{1},S_{p}^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><msubsup><mi>S</mi><mi>p</mi><mn>1</mn></msubsup><mo>,</mo><msubsup><mi>S</mi><mi>p</mi><mn>2</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">S_{p}^{1},S_{p}^{2}</annotation></semantics></math>) using ecapa-tdnn<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx18\" title=\"\">18</a>]</cite> for zero-shot voice conditioning.</p>\n\n",
+                "matched_terms": [
+                    "parallel",
+                    "speaker",
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All inputs are projected into a shared unified embedding space. We denote the dialogue text as <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math>, and the per-speaker semantic token sequences as <math alttext=\"S^{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m2\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>1</mn></msup><annotation encoding=\"application/x-tex\">S^{1}</annotation></semantics></math>, <math alttext=\"S^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m3\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>2</mn></msup><annotation encoding=\"application/x-tex\">S^{2}</annotation></semantics></math>. Each sequence is augmented with its corresponding speaker prompt embedding <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math>, and special tags such as <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> are inserted at turn boundaries to indicate speaker transitions explicitly.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We apply a causal cross-attention mechanism between the dual speech token streams to model inter-speaker interaction. This allows each speaker&#8217;s embedding to attend to the other&#8217;s content and prosodic intent contextually. inspired by prior work such as dGSLM&#8217;s dual-tower Transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx19\" title=\"\">19</a>]</cite> and CoVoMix&#8217;s semantic stream modeling, but is enhanced with contextual alignment through LLM. This design enables the model to capture the timing of speaker transitions and cooperative behaviors like backchanneling and overlaps.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "alignment",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, DiaLM is optimized to predict the semantic token sequences for both speakers, given the dialogue text and speaker prompts. The training objective is a dual-channel cross-entropy loss, defined as:</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"S^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m1\" intent=\":literal\"><semantics><msup><mi>S</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">S^{c}</annotation></semantics></math> denotes the semantic token sequence for speaker <math alttext=\"c\\in\\{1,2\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m2\" intent=\":literal\"><semantics><mrow><mi>c</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">c\\in\\{1,2\\}</annotation></semantics></math>, <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m3\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> is the dialogue text, <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math> is the reference embedding of speaker <math alttext=\"c\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m5\" intent=\":literal\"><semantics><mi>c</mi><annotation encoding=\"application/x-tex\">c</annotation></semantics></math>, and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m6\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> represents model parameters. This objective encourages the model to generate speaker-aware, semantically aligned token sequences in a dual-stream manner.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, DiaLM decodes both speaker streams in parallel. The model generates one token per speaker at each decoding timestep, resulting in two parallel semantic token streams. To represent conversational dynamics such as turn-taking, pauses, and overlaps, the model learns to insert a special <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> token for the inactive speaker, while producing meaningful semantic tokens for the active one. This design allows the model to autonomously determine when each speaker should speak, remain silent, or overlap with the other, without explicit timing or speaker control signals.</p>\n\n",
+                "matched_terms": [
+                    "parallel",
+                    "speaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The input dialogue text is first processed by inserting control tokens <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> to delineate speaker turns. These help the model align the semantic structure with dialogue flow and role changes. Once decoding is complete, the predicted semantic tokens for each speaker&#8212;excluding <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> tokens pass through separate acoustic models for speech reconstruction, conditioned on the respective speaker prompts. This parallel decoding strategy enables natural and coherent dialogue synthesis, with fine-grained control over inter-speaker timing and overlap.</p>\n\n",
+                "matched_terms": [
+                    "parallel",
+                    "speaker",
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We constructed a 10,000-hour speech corpus from three sources to train our dialogue generation system. All data were processed using the dual-track pipeline (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S2\" title=\"2 Dual-Track Dialogue Data Pipeline &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) to obtain synchronized, speaker-labeled streams and per-speaker semantic tokens via S3Tokenizer.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speech",
+                    "pipeline",
+                    "dialogue",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">DiaLM Model:</span>\nWe adopt a 0.5B&#8208;parameter LLaMA&#8208;based Transformer with 16 layers, a hidden size 1,024, and 16 attention heads. Training is conducted on 8 NVIDIA A6000 48 GB GPUs with a total batch size 64. We use an initial learning rate of <math alttext=\"1\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-4}</annotation></semantics></math> and a cosine&#8208;annealing scheduler for 150k steps. For supervised fine&#8208;tuning on high-quality data, we reduce the learning rate to <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math> and train for 50k steps.</p>\n\n",
+                "matched_terms": [
+                    "initial",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics.</span>\nWe assess the generated speech using several quantitative indicators. First, we compute Word Error Rate (WER) and Character Error Rate (CER) based on transcriptions produced by the FunASR toolkit<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/modelscope/FunASR</span></span></span>, which offers state-of-the-art Mandarin speech recognition performance. These metrics reflect the intelligibility and phonetic accuracy of synthesized outputs.\nSecond, we calculate the cosine similarity (SIM) between generated and reference audio speaker embeddings to evaluate speaker identity preservation.\nFinally, we report UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/tarepan/SpeechMOS</span></span></span> scores to estimate perceptual quality regarding naturalness and clarity.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Subjective Metrics.</span>\nTo evaluate the holistic conversational quality, we conduct human listening tests with 30 native speakers. Participants are asked to rate complete dialogue segments&#8212;rather than isolated sentences&#8212;along three key dimensions:</p>\n\n",
+                "matched_terms": [
+                    "key",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the performance of our proposed DialoSpeech system in both objective and subjective metrics, and compare it with two strong baselines: CoVoMix and CosyVoice2. Additionally, we include MoonCast as a topline reference. The evaluation results for Chinese and English dialogue generation are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.T1\" title=\"Table 1 &#8227; 3.3.2 Block-Wise Guided Attention &#8227; 3.3 Streaming Waveform Reconstruction via Chunked Flow Matching &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.T2\" title=\"Table 2 &#8227; 3.3.2 Block-Wise Guided Attention &#8227; 3.3 Streaming Waveform Reconstruction via Chunked Flow Matching &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, respectively.</p>\n\n",
+                "matched_terms": [
+                    "include",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">DialoSpeech achieves the lowest CER in Chinese, outperforming CosyVoice2 and MoonCast. It also attains a speaker similarity score of 0.69, comparable to both baselines. Notably, our system is trained on only &#160;10K hours of data with a lightweight 0.5B-parameter model, and MoonCast and CosyVoice2 rely on over 1M hours, demonstrating the efficiency of our dual-track framework.\nRegarding UTMOS, DialoSpeech matches CosyVoice2 and surpasses MoonCast in short-dialogue scenarios, likely due to the latter&#8217;s focus on long-form conversations. Subjective evaluations show that DialoSpeech performs on par overall and leads in Spontaneity, highlighting its ability to produce natural, lifelike dialogues.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "speaker",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate cross-lingual generalization by using Chinese prompts to generate English dialogue. DialoSpeech is trained on English speech from the Fisher corpus only, yet achieves significantly better speaker similarity and UTMOS than CoVoMix. While CosyVoice2 performs better on WER and UTMOS due to access to larger English datasets, DialoSpeech outperforms it in subjective Spontaneity and Coherence, demonstrating robust cross-lingual generalization under a limited English dataset.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "speech",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduced <em class=\"ltx_emph ltx_font_italic\">DialoSpeech</em>, a dual-speaker dialogue TTS that integrates a language model with dual-track token generation and chunked Flow Matching. To overcome dialogue data scarcity, we designed a pipeline to scale up. Experiments in Chinese and English show that DialoSpeech outperforms strong baselines and achieves competitive objective scores in less training data. In the future, we first need to scale up the dialogue datasets. Due to training the language model with Flow Matching, it becomes difficult on minute-scale data because of memory limitations. Therefore, exploring continuous latent representations for dialogue modeling is a promising future direction and trend.</p>\n\n",
+                "matched_terms": [
+                    "pipeline",
+                    "data",
+                    "dualtrack",
+                    "dialogue"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching",
+        "image_url": "https://arxiv.org/html/2510.08373v1/pic/diaspeech_over.png",
+        "caption": "Figure 2: Overview of the DialoSpeech model architecture. It illustrates the flow from input dialogue text, through LLM-based contextual and interactional guidance, to the dual-track prediction of speech tokens, which are independently synthesized into speech for each speaker via Flow Matching and combined with a neural vocoder.",
+        "informative_terms_identified": [
+            "input",
+            "prediction",
+            "interactional",
+            "dualtrack",
+            "combined",
+            "flow",
+            "dialospeech",
+            "text",
+            "guidance",
+            "into",
+            "independently",
+            "matching",
+            "llmbased",
+            "model",
+            "vocoder",
+            "which",
+            "contextual",
+            "through",
+            "overview",
+            "from",
+            "speech",
+            "tokens",
+            "architecture",
+            "speaker",
+            "synthesized",
+            "dialogue",
+            "neural",
+            "via"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We introduce DialoSpeech, a framework for generating high-quality, expressive, and interactive multi-speaker conversational speech, illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overall Architecture &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our approach decomposes the generation process into two modular stages: text-to-token (T2T) and token-to-waveform (T2W). This design allows us to leverage specialized models for each sub-task.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in text-to-speech (TTS) synthesis, particularly those leveraging large language models (LLMs), have significantly improved expressiveness and naturalness. However, generating human-like, interactive dialogue speech remains challenging. Current systems face limitations due to the scarcity of dual-track data and difficulties in achieving naturalness, contextual coherence, and interactional dynamics, such as turn-taking, overlapping speech, and speaker consistency, in multi-turn conversations. To address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">DialoSpeech<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><span class=\"ltx_text ltx_font_medium\">Codes and checkpoints will be publicly released.</span></span></span></span></span>, a dual-track architecture combining a large language model with Chunked Flow Matching for expressive, human-like dialogue speech synthesis. DialoSpeech generates natural multi-turn conversations with coherent speaker turns and natural overlaps, supporting both Chinese and English and cross-lingual speech synthesis. We introduce a data processing pipeline to construct dual-track dialogue datasets, facilitating scalable training and experimental validation. Experiments show that our model outperforms baselines, offering a solution for generating human-like spoken dialogues. Audio samples are available at\n<a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://tiamojames.github.io/DialoSpeech/\" title=\"\">https://tiamojames.github.io/DialoSpeech/</a></p>\n\n",
+                "matched_terms": [
+                    "contextual",
+                    "flow",
+                    "dialospeech",
+                    "speech",
+                    "model",
+                    "architecture",
+                    "speaker",
+                    "dialogue",
+                    "matching",
+                    "interactional",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Dialogue Generation, Language Models, Flow Matching</p>\n\n",
+                "matched_terms": [
+                    "matching",
+                    "flow",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"--ltx-fg-color:#000000;\">Recent advances in large language models (LLMs) and generative techniques, such as diffusion and flow matching, have driven substantial progress in speech synthesis. Leveraging large-scale training data and increased model capacity, these modern approaches significantly improve the naturalness and expressiveness of synthesized speech. The resulting quality is often indistinguishable from that of human recordings, greatly expanding the applicability of Text-to-Speech (TTS) systems across diverse domains, including voice assistants, audiobook narration, and podcast production.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "from",
+                    "speech",
+                    "model",
+                    "synthesized",
+                    "matching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx1\" title=\"\">1</a>]</cite> pioneered framing Text-to-Speech (TTS) as a next-token prediction task. Using discrete acoustic tokens, it demonstrated remarkable in-context learning capabilities. Developing such tokens involves a fundamental trade-off between capturing fine-grained acoustic detail and preserving semantic richness.\nEarly acoustic representations&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx2\" title=\"\">2</a>]</cite> provided high-fidelity waveform reconstruction but lacked the semantic depth required for complex utterances, often leading to instability.\nTo address this, subsequent works integrated semantic units from self-supervised learning (SSL) models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx4\" title=\"\">4</a>]</cite> to enhance coherence and prosody&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx6\" title=\"\">6</a>]</cite>.\nMore recent methods further leverage pre-trained ASR encoders for superior text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx7\" title=\"\">7</a>]</cite>.\nHowever, these semantic tokens are abstract and lack the fine-grained acoustic details required for synthesis.\nTo address this, conditional flow matching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite>&#8212;is employed to convert the abstract tokens into high-fidelity acoustic features.</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "prediction",
+                    "text",
+                    "from",
+                    "tokens",
+                    "into",
+                    "matching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Most TTS systems focus on synthesizing speech for a single speaker given a text input. However, this single-speaker paradigm fails to capture the natural dynamics of multi-party conversations, particularly in rendering fluid turn-taking, interruptions, and overlapping speech. Recent research has shifted toward addressing the challenges of multi-speaker dialogue generation.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "text",
+                    "speech",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CoVoMix&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx9\" title=\"\">9</a>]</cite> introduced a dual-channel architecture to model multi-speaker interactions, marking one of the earliest attempts at zero-shot, human-like, mixed-speech generation. However, CoVoMix is trained on the Fisher dataset, which is limited in scale and audio quality. MoonCast&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx10\" title=\"\">10</a>]</cite> focuses on long-form, spontaneous dialogue generation by leveraging large language models (LLMs) to script podcast-style conversations. Still, its single-stream token representation prevents it from effectively modelling crucial interactional dynamics such as overlapping speech.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "speech",
+                    "model",
+                    "which",
+                    "architecture",
+                    "dialogue",
+                    "interactional"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we propose <span class=\"ltx_text ltx_font_bold\">DialoSpeech</span>, a dialogue TTS framework to generate natural, expressive, multi-turn conversations. Our contributions are summarized as follows:</p>\n\n",
+                "matched_terms": [
+                    "dialogue",
+                    "dialospeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We design a data processing pipeline for constructing dual-track conversational datasets. Scaling up the dataset in both scale and diversity enhances training efficiency and model robustness.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present DialoSpeech, a Dialogue TTS architecture that combines a Language Model (LM), a dual-track token generation mechanism, and a chunked Flow Matching acoustic model, enabling zero-shot, high-quality, and expressive dialogue synthesis.</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "dialospeech",
+                    "model",
+                    "architecture",
+                    "dialogue",
+                    "matching",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the lack of high-quality, dual-channel conversational speech data&#8212;particularly those containing natural overlapping speech&#8212;we propose a comprehensive and modular pipeline, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. This pipeline converts raw, long-form audio into well-structured, speaker-aware, and overlap-aware dialogue segments suitable for multi-speaker speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "into",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We prepare our data by gathering open-domain conversational audio from publicly available long-form sources, including podcast and vlog recordings acquired through automated web crawling. Each recording is segmented into 20-minute chunks to facilitate parallel processing. These chunks are processed by a voice activity detection<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx11\" title=\"\">11</a>]</cite> (VAD) module and a Paraformer-based ASR system&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx12\" title=\"\">12</a>]</cite>, which yields word-level, time-aligned transcriptions. In parallel, speaker diarization<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx13\" title=\"\">13</a>]</cite> is performed using the Pyannote toolkit to assign speaker identities to time-stamped segments.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "from",
+                    "which",
+                    "speaker",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The outputs of ASR and diarization are integrated to construct utterance-level annotations that include word timestamps and corresponding speaker labels. A punctuation restoration module is applied to refine sentence segmentation and enhance linguistic coherence further. An overlapped speech detection (OSD) module, built on a Conformer architecture with XLSR features, is employed to identify and localize overlapping speech segments through binary classification.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "speaker",
+                    "architecture",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After filtering, the retained segments are processed through an overlap-aware segmentation and speaker separation stage using SpatialNet<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx15\" title=\"\">15</a>]</cite>, which disentangles overlapping speech into dual-channel utterances aligned with each speaker. A subsequent post-processing step converts the cleaned and annotated segments into a standardized format compatible with downstream training pipelines. Our implementation is built upon the Kaldi toolkit and incorporates internally developed models. We have curated approximately 5,000 hours of natural conversational data suitable for training.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "speech",
+                    "which",
+                    "speaker",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the T2T stage, we use the S3tokenizer from CosyVoice2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx16\" title=\"\">16</a>]</cite> to convert speech into a dual-track semantic token representation. These tokens then serve as the training target for our T2T model.\nThe T2T model, guided by an LLM, processes the input dialogue scripts to predict these dual-track semantic tokens. This allows for modeling inter-speaker dynamics, including turn-taking and overlaps, crucial for natural dialogue. This LLM interprets conversational context and speaker roles.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "from",
+                    "speech",
+                    "model",
+                    "tokens",
+                    "speaker",
+                    "into",
+                    "dialogue",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the T2W stage, a chunked conditional flow matching model reconstructs mel-spectrograms from the predicted semantic tokens for each speaker. Speaker identity information from voice prompts for zero-shot synthesis conditions this Flow Matching model to enable voice cloning capabilities. Finally, the generated mel-spectrograms are converted into high-quality waveforms using a pre-trained BigVGAN vocoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx17\" title=\"\">17</a>]</cite>, upsampled to a target 24kHz sampling rate.</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "from",
+                    "model",
+                    "tokens",
+                    "vocoder",
+                    "speaker",
+                    "into",
+                    "matching"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Unlike single-speaker zero-shot speech synthesis,\nThe zero-shot Dual-speaker Dialogue generation task aims to synthesize each conversation turn using the corresponding speaker&#8217;s voice, based on the provided reference speech from two speakers. The core component of DialoSpeech is the DiaLM model, which enables zero-shot dual-speaker conversational speech generation. Given dialogue text with alternating speaker turns and reference audio samples from two target speakers, DiaLM learns to synthesize each utterance in the corresponding speaker&#8217;s voice while capturing natural conversational turn transitions.</p>\n\n",
+                "matched_terms": [
+                    "dialospeech",
+                    "text",
+                    "from",
+                    "speech",
+                    "model",
+                    "which",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We adopt a language model-based approach to generate discrete speech codes from dialogue script text to handle this. The textual input is tokenized using a Byte-Pair Encoding (BPE) tokenizer, preserving semantic structure and aligning with the representation space used by the LLM backbone. The acoustic inputs are first discretized using a pretrained semantic speech tokenizer, providing per-speaker token sequences representing speech content. In parallel, we extract speaker embeddings (<math alttext=\"S_{p}^{1},S_{p}^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><msubsup><mi>S</mi><mi>p</mi><mn>1</mn></msubsup><mo>,</mo><msubsup><mi>S</mi><mi>p</mi><mn>2</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">S_{p}^{1},S_{p}^{2}</annotation></semantics></math>) using ecapa-tdnn<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx18\" title=\"\">18</a>]</cite> for zero-shot voice conditioning.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "text",
+                    "from",
+                    "speech",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All inputs are projected into a shared unified embedding space. We denote the dialogue text as <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math>, and the per-speaker semantic token sequences as <math alttext=\"S^{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m2\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>1</mn></msup><annotation encoding=\"application/x-tex\">S^{1}</annotation></semantics></math>, <math alttext=\"S^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m3\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>2</mn></msup><annotation encoding=\"application/x-tex\">S^{2}</annotation></semantics></math>. Each sequence is augmented with its corresponding speaker prompt embedding <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math>, and special tags such as <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> are inserted at turn boundaries to indicate speaker transitions explicitly.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "speaker",
+                    "into",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We apply a causal cross-attention mechanism between the dual speech token streams to model inter-speaker interaction. This allows each speaker&#8217;s embedding to attend to the other&#8217;s content and prosodic intent contextually. inspired by prior work such as dGSLM&#8217;s dual-tower Transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx19\" title=\"\">19</a>]</cite> and CoVoMix&#8217;s semantic stream modeling, but is enhanced with contextual alignment through LLM. This design enables the model to capture the timing of speaker transitions and cooperative behaviors like backchanneling and overlaps.</p>\n\n",
+                "matched_terms": [
+                    "contextual",
+                    "through",
+                    "speech",
+                    "model",
+                    "speaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, DiaLM is optimized to predict the semantic token sequences for both speakers, given the dialogue text and speaker prompts. The training objective is a dual-channel cross-entropy loss, defined as:</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"S^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m1\" intent=\":literal\"><semantics><msup><mi>S</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">S^{c}</annotation></semantics></math> denotes the semantic token sequence for speaker <math alttext=\"c\\in\\{1,2\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m2\" intent=\":literal\"><semantics><mrow><mi>c</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">c\\in\\{1,2\\}</annotation></semantics></math>, <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m3\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> is the dialogue text, <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math> is the reference embedding of speaker <math alttext=\"c\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m5\" intent=\":literal\"><semantics><mi>c</mi><annotation encoding=\"application/x-tex\">c</annotation></semantics></math>, and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m6\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> represents model parameters. This objective encourages the model to generate speaker-aware, semantically aligned token sequences in a dual-stream manner.</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "speaker",
+                    "model",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, DiaLM decodes both speaker streams in parallel. The model generates one token per speaker at each decoding timestep, resulting in two parallel semantic token streams. To represent conversational dynamics such as turn-taking, pauses, and overlaps, the model learns to insert a special <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> token for the inactive speaker, while producing meaningful semantic tokens for the active one. This design allows the model to autonomously determine when each speaker should speak, remain silent, or overlap with the other, without explicit timing or speaker control signals.</p>\n\n",
+                "matched_terms": [
+                    "tokens",
+                    "speaker",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The input dialogue text is first processed by inserting control tokens <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> to delineate speaker turns. These help the model align the semantic structure with dialogue flow and role changes. Once decoding is complete, the predicted semantic tokens for each speaker&#8212;excluding <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> tokens pass through separate acoustic models for speech reconstruction, conditioned on the respective speaker prompts. This parallel decoding strategy enables natural and coherent dialogue synthesis, with fine-grained control over inter-speaker timing and overlap.</p>\n\n",
+                "matched_terms": [
+                    "input",
+                    "flow",
+                    "through",
+                    "text",
+                    "speech",
+                    "model",
+                    "tokens",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge this gap, we employ a conditional flow natching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite> model to reconstruct mel-spectrograms conditioned on acoustic prompts. And to handle long-form audio streams efficiently, we introduce a block-wise guided attention mechanism that enables chunked decoding with a fixed memory cost.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "flow"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our reconstruction module uses a CFM framework built upon an F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx20\" title=\"\">20</a>]</cite> architecture. The model is trained to predict the vector field <math alttext=\"u_{t}=x_{1}-x_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>u</mi><mi>t</mi></msub><mo>=</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&#8722;</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mrow><annotation encoding=\"application/x-tex\">u_{t}=x_{1}-x_{0}</annotation></semantics></math> that connects a noise sample <math alttext=\"x_{0}\\sim\\mathcal{N}(0,I)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>&#8764;</mo><mrow><mi class=\"ltx_font_mathcaligraphic\">&#119977;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mi>I</mi><mo stretchy=\"false\">)</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">x_{0}\\sim\\mathcal{N}(0,I)</annotation></semantics></math> to a target mel-spectrogram <math alttext=\"x_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m3\" intent=\":literal\"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">x_{1}</annotation></semantics></math> along a linear path <math alttext=\"\\phi_{t}(x_{0})=(1-t)x_{0}+tx_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m4\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>&#981;</mi><mi>t</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy=\"false\">(</mo><mrow><mn>1</mn><mo>&#8722;</mo><mi>t</mi></mrow><mo stretchy=\"false\">)</mo></mrow><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\phi_{t}(x_{0})=(1-t)x_{0}+tx_{1}</annotation></semantics></math>. Conditioned on a vector <math alttext=\"c\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m5\" intent=\":literal\"><semantics><mi>c</mi><annotation encoding=\"application/x-tex\">c</annotation></semantics></math> (concatenated semantic tokens and speaker embedding), the model <math alttext=\"v_{t}(\\cdot;\\theta)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m6\" intent=\":literal\"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo>;</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v_{t}(\\cdot;\\theta)</annotation></semantics></math> is optimized via the loss:</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "tokens",
+                    "architecture",
+                    "speaker",
+                    "via"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We partition input tokens into fixed-size blocks of length <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math> to enable chunked CFM over long sequences. Let the total token sequence length be <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>, and define the number of blocks as <math alttext=\"N_{b}=\\lfloor n/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>N</mi><mi>b</mi></msub><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>n</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">N_{b}=\\lfloor n/b\\rfloor</annotation></semantics></math>. We assign each token index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> to block <math alttext=\"\\mathrm{block}(i)=\\lfloor i/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><mi>block</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>i</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>i</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathrm{block}(i)=\\lfloor i/b\\rfloor</annotation></semantics></math>. We introduce a unified attention mask to control the receptive field in the Diffusion Transformer (DiT) backbone.</p>\n\n",
+                "matched_terms": [
+                    "tokens",
+                    "input",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This chunk-wise decoding strategy ensures a fixed memory footprint and low latency. During inference, the model processes the audio in chunks of length <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math>, conditioning on the <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m2\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math> preceding and <math alttext=\"q\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m3\" intent=\":literal\"><semantics><mi>q</mi><annotation encoding=\"application/x-tex\">q</annotation></semantics></math> succeeding context blocks to generate the mel-spectrogram for the current chunk. The generated mel-spectrograms are then converted to waveforms using a vocoder.</p>\n\n",
+                "matched_terms": [
+                    "vocoder",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We constructed a 10,000-hour speech corpus from three sources to train our dialogue generation system. All data were processed using the dual-track pipeline (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S2\" title=\"2 Dual-Track Dialogue Data Pipeline &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) to obtain synchronized, speaker-labeled streams and per-speaker semantic tokens via S3Tokenizer.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "speech",
+                    "tokens",
+                    "dialogue",
+                    "via",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The dataset includes: (1) 3,000 hours of professionally recorded Chinese dialogues from Biaobei Corp., providing clean, structured conversations; (2) 5,000 hours of spontaneous multi-speaker Chinese podcast data, offering acoustic and stylistic diversity; and (3) 2,000 hours of English telephone dialogues from the Fisher corpus, used to enhance cross-lingual generalization. Fisher captures real-world bilingual interactions despite their noise and was similarly processed into dual-speaker semantic streams.</p>\n\n",
+                "matched_terms": [
+                    "from",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Chunked Flow Matching:</span>\nOur Flow Matching, a DiT-based backbone, has 22 Transformer layers with a hidden dimension of 768 and about 150 M parameters. We reconstruct 24 kHz waveforms from 16 kHz mel&#8208;spectrograms using BigVGAN&#8208;v2 as the neural vocoder.</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "from",
+                    "vocoder",
+                    "matching",
+                    "neural"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">CosyVoice2</span> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx16\" title=\"\">16</a>]</cite>: A multilingual, zero-shot, single-speaker TTS model. We generate each turn independently for dialogue evaluation and concatenate the audio to form complete conversations.</p>\n\n",
+                "matched_terms": [
+                    "independently",
+                    "model",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics.</span>\nWe assess the generated speech using several quantitative indicators. First, we compute Word Error Rate (WER) and Character Error Rate (CER) based on transcriptions produced by the FunASR toolkit<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/modelscope/FunASR</span></span></span>, which offers state-of-the-art Mandarin speech recognition performance. These metrics reflect the intelligibility and phonetic accuracy of synthesized outputs.\nSecond, we calculate the cosine similarity (SIM) between generated and reference audio speaker embeddings to evaluate speaker identity preservation.\nFinally, we report UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/tarepan/SpeechMOS</span></span></span> scores to estimate perceptual quality regarding naturalness and clarity.</p>\n\n",
+                "matched_terms": [
+                    "which",
+                    "speaker",
+                    "speech",
+                    "synthesized"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Spontaneity: how natural, lifelike, and engaging the dialogue sounds, reflecting aspects such as rhythm, disfluency, and interactional tone;</p>\n\n",
+                "matched_terms": [
+                    "interactional",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate the performance of our proposed DialoSpeech system in both objective and subjective metrics, and compare it with two strong baselines: CoVoMix and CosyVoice2. Additionally, we include MoonCast as a topline reference. The evaluation results for Chinese and English dialogue generation are presented in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.T1\" title=\"Table 1 &#8227; 3.3.2 Block-Wise Guided Attention &#8227; 3.3 Streaming Waveform Reconstruction via Chunked Flow Matching &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.T2\" title=\"Table 2 &#8227; 3.3.2 Block-Wise Guided Attention &#8227; 3.3 Streaming Waveform Reconstruction via Chunked Flow Matching &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, respectively.</p>\n\n",
+                "matched_terms": [
+                    "dialogue",
+                    "dialospeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">DialoSpeech achieves the lowest CER in Chinese, outperforming CosyVoice2 and MoonCast. It also attains a speaker similarity score of 0.69, comparable to both baselines. Notably, our system is trained on only &#160;10K hours of data with a lightweight 0.5B-parameter model, and MoonCast and CosyVoice2 rely on over 1M hours, demonstrating the efficiency of our dual-track framework.\nRegarding UTMOS, DialoSpeech matches CosyVoice2 and surpasses MoonCast in short-dialogue scenarios, likely due to the latter&#8217;s focus on long-form conversations. Subjective evaluations show that DialoSpeech performs on par overall and leads in Spontaneity, highlighting its ability to produce natural, lifelike dialogues.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "model",
+                    "dualtrack",
+                    "dialospeech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We evaluate cross-lingual generalization by using Chinese prompts to generate English dialogue. DialoSpeech is trained on English speech from the Fisher corpus only, yet achieves significantly better speaker similarity and UTMOS than CoVoMix. While CosyVoice2 performs better on WER and UTMOS due to access to larger English datasets, DialoSpeech outperforms it in subjective Spontaneity and Coherence, demonstrating robust cross-lingual generalization under a limited English dataset.</p>\n\n",
+                "matched_terms": [
+                    "dialospeech",
+                    "from",
+                    "speech",
+                    "speaker",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduced <em class=\"ltx_emph ltx_font_italic\">DialoSpeech</em>, a dual-speaker dialogue TTS that integrates a language model with dual-track token generation and chunked Flow Matching. To overcome dialogue data scarcity, we designed a pipeline to scale up. Experiments in Chinese and English show that DialoSpeech outperforms strong baselines and achieves competitive objective scores in less training data. In the future, we first need to scale up the dialogue datasets. Due to training the language model with Flow Matching, it becomes difficult on minute-scale data because of memory limitations. Therefore, exploring continuous latent representations for dialogue modeling is a promising future direction and trend.</p>\n\n",
+                "matched_terms": [
+                    "flow",
+                    "dialospeech",
+                    "model",
+                    "dialogue",
+                    "matching",
+                    "dualtrack"
+                ]
+            }
+        ]
+    },
+    "S3.F3": {
+        "source_file": "DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching",
+        "image_url": "https://arxiv.org/html/2510.08373v1/x2.png",
+        "caption": "Figure 3: \nOverview of the DiaLM training framework. Raw dual-speaker waveforms are first processed via the Dual-Track Data Pipeline to obtain semantic token sequences and speaker embeddings for each channel. Left-channel and right-channel tokens are embedded via a shared embedding layer and then passed through a causal cross-attention module to enable inter-speaker interaction. The resulting fused representation is concatenated with the textual embedding and fed into an LLaMA-based language model. The model outputs hidden states for both channels, which are projected to token logits via separate channel-specific heads. A dual-channel cross-entropy loss is applied to supervise both output streams.",
+        "informative_terms_identified": [
+            "loss",
+            "enable",
+            "resulting",
+            "channelspecific",
+            "obtain",
+            "then",
+            "outputs",
+            "pipeline",
+            "states",
+            "semantic",
+            "textual",
+            "language",
+            "dialm",
+            "channels",
+            "rightchannel",
+            "applied",
+            "shared",
+            "separate",
+            "dualtrack",
+            "output",
+            "training",
+            "dualchannel",
+            "layer",
+            "passed",
+            "projected",
+            "embedding",
+            "logits",
+            "raw",
+            "streams",
+            "leftchannel",
+            "causal",
+            "module",
+            "into",
+            "crossentropy",
+            "supervise",
+            "framework",
+            "fed",
+            "processed",
+            "hidden",
+            "heads",
+            "interspeaker",
+            "model",
+            "embeddings",
+            "which",
+            "llamabased",
+            "token",
+            "sequences",
+            "waveforms",
+            "interaction",
+            "data",
+            "through",
+            "overview",
+            "representation",
+            "tokens",
+            "crossattention",
+            "concatenated",
+            "speaker",
+            "channel",
+            "dualspeaker",
+            "fused",
+            "via",
+            "embedded"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Recent advances in text-to-speech (TTS) synthesis, particularly those leveraging large language models (LLMs), have significantly improved expressiveness and naturalness. However, generating human-like, interactive dialogue speech remains challenging. Current systems face limitations due to the scarcity of dual-track data and difficulties in achieving naturalness, contextual coherence, and interactional dynamics, such as turn-taking, overlapping speech, and speaker consistency, in multi-turn conversations. To address these challenges, we propose <span class=\"ltx_text ltx_font_bold\">DialoSpeech<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\"><span class=\"ltx_text ltx_font_medium\">1</span></span><span class=\"ltx_text ltx_font_medium\">Codes and checkpoints will be publicly released.</span></span></span></span></span>, a dual-track architecture combining a large language model with Chunked Flow Matching for expressive, human-like dialogue speech synthesis. DialoSpeech generates natural multi-turn conversations with coherent speaker turns and natural overlaps, supporting both Chinese and English and cross-lingual speech synthesis. We introduce a data processing pipeline to construct dual-track dialogue datasets, facilitating scalable training and experimental validation. Experiments show that our model outperforms baselines, offering a solution for generating human-like spoken dialogues. Audio samples are available at\n<a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://tiamojames.github.io/DialoSpeech/\" title=\"\">https://tiamojames.github.io/DialoSpeech/</a></p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "data",
+                    "model",
+                    "pipeline",
+                    "language",
+                    "speaker",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"--ltx-fg-color:#000000;\">Recent advances in large language models (LLMs) and generative techniques, such as diffusion and flow matching, have driven substantial progress in speech synthesis. Leveraging large-scale training data and increased model capacity, these modern approaches significantly improve the naturalness and expressiveness of synthesized speech. The resulting quality is often indistinguishable from that of human recordings, greatly expanding the applicability of Text-to-Speech (TTS) systems across diverse domains, including voice assistants, audiobook narration, and podcast production.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "data",
+                    "resulting",
+                    "model",
+                    "language"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx1\" title=\"\">1</a>]</cite> pioneered framing Text-to-Speech (TTS) as a next-token prediction task. Using discrete acoustic tokens, it demonstrated remarkable in-context learning capabilities. Developing such tokens involves a fundamental trade-off between capturing fine-grained acoustic detail and preserving semantic richness.\nEarly acoustic representations&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx2\" title=\"\">2</a>]</cite> provided high-fidelity waveform reconstruction but lacked the semantic depth required for complex utterances, often leading to instability.\nTo address this, subsequent works integrated semantic units from self-supervised learning (SSL) models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx4\" title=\"\">4</a>]</cite> to enhance coherence and prosody&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx6\" title=\"\">6</a>]</cite>.\nMore recent methods further leverage pre-trained ASR encoders for superior text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx7\" title=\"\">7</a>]</cite>.\nHowever, these semantic tokens are abstract and lack the fine-grained acoustic details required for synthesis.\nTo address this, conditional flow matching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite>&#8212;is employed to convert the abstract tokens into high-fidelity acoustic features.</p>\n\n",
+                "matched_terms": [
+                    "tokens",
+                    "semantic",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CoVoMix&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx9\" title=\"\">9</a>]</cite> introduced a dual-channel architecture to model multi-speaker interactions, marking one of the earliest attempts at zero-shot, human-like, mixed-speech generation. However, CoVoMix is trained on the Fisher dataset, which is limited in scale and audio quality. MoonCast&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx10\" title=\"\">10</a>]</cite> focuses on long-form, spontaneous dialogue generation by leveraging large language models (LLMs) to script podcast-style conversations. Still, its single-stream token representation prevents it from effectively modelling crucial interactional dynamics such as overlapping speech.</p>\n\n",
+                "matched_terms": [
+                    "dualchannel",
+                    "representation",
+                    "model",
+                    "which",
+                    "language",
+                    "token"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We design a data processing pipeline for constructing dual-track conversational datasets. Scaling up the dataset in both scale and diversity enhances training efficiency and model robustness.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "training",
+                    "model",
+                    "pipeline",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We present DialoSpeech, a Dialogue TTS architecture that combines a Language Model (LM), a dual-track token generation mechanism, and a chunked Flow Matching acoustic model, enabling zero-shot, high-quality, and expressive dialogue synthesis.</p>\n\n",
+                "matched_terms": [
+                    "token",
+                    "language",
+                    "model",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address the lack of high-quality, dual-channel conversational speech data&#8212;particularly those containing natural overlapping speech&#8212;we propose a comprehensive and modular pipeline, as illustrated in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S1.F1\" title=\"Figure 1 &#8227; 1 Introduction &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>. This pipeline converts raw, long-form audio into well-structured, speaker-aware, and overlap-aware dialogue segments suitable for multi-speaker speech synthesis.</p>\n\n",
+                "matched_terms": [
+                    "raw",
+                    "pipeline",
+                    "dualchannel",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We prepare our data by gathering open-domain conversational audio from publicly available long-form sources, including podcast and vlog recordings acquired through automated web crawling. Each recording is segmented into 20-minute chunks to facilitate parallel processing. These chunks are processed by a voice activity detection<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx11\" title=\"\">11</a>]</cite> (VAD) module and a Paraformer-based ASR system&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx12\" title=\"\">12</a>]</cite>, which yields word-level, time-aligned transcriptions. In parallel, speaker diarization<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx13\" title=\"\">13</a>]</cite> is performed using the Pyannote toolkit to assign speaker identities to time-stamped segments.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "processed",
+                    "through",
+                    "which",
+                    "speaker",
+                    "module",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The outputs of ASR and diarization are integrated to construct utterance-level annotations that include word timestamps and corresponding speaker labels. A punctuation restoration module is applied to refine sentence segmentation and enhance linguistic coherence further. An overlapped speech detection (OSD) module, built on a Conformer architecture with XLSR features, is employed to identify and localize overlapping speech segments through binary classification.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "outputs",
+                    "applied",
+                    "speaker",
+                    "module"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To ensure the reliability and quality of the training data, we employ a multi-stage filtering strategy:</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "data"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Clustering</span>: Eliminates utterances with inconsistent speaker embeddings by assessing the coherence of speaker clusters.</p>\n\n",
+                "matched_terms": [
+                    "embeddings",
+                    "speaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Similarity</span>: Verifies intra-speaker embedding consistency across segments to maintain speaker identity integrity.</p>\n\n",
+                "matched_terms": [
+                    "speaker",
+                    "embedding"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After filtering, the retained segments are processed through an overlap-aware segmentation and speaker separation stage using SpatialNet<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx15\" title=\"\">15</a>]</cite>, which disentangles overlapping speech into dual-channel utterances aligned with each speaker. A subsequent post-processing step converts the cleaned and annotated segments into a standardized format compatible with downstream training pipelines. Our implementation is built upon the Kaldi toolkit and incorporates internally developed models. We have curated approximately 5,000 hours of natural conversational data suitable for training.</p>\n\n",
+                "matched_terms": [
+                    "dualchannel",
+                    "processed",
+                    "training",
+                    "data",
+                    "through",
+                    "which",
+                    "speaker",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce DialoSpeech, a framework for generating high-quality, expressive, and interactive multi-speaker conversational speech, illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.F2\" title=\"Figure 2 &#8227; 3.1 Overall Architecture &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>. Our approach decomposes the generation process into two modular stages: text-to-token (T2T) and token-to-waveform (T2W). This design allows us to leverage specialized models for each sub-task.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the T2T stage, we use the S3tokenizer from CosyVoice2 <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx16\" title=\"\">16</a>]</cite> to convert speech into a dual-track semantic token representation. These tokens then serve as the training target for our T2T model.\nThe T2T model, guided by an LLM, processes the input dialogue scripts to predict these dual-track semantic tokens. This allows for modeling inter-speaker dynamics, including turn-taking and overlaps, crucial for natural dialogue. This LLM interprets conversational context and speaker roles.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "interspeaker",
+                    "representation",
+                    "model",
+                    "then",
+                    "tokens",
+                    "semantic",
+                    "speaker",
+                    "into",
+                    "token",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In the T2W stage, a chunked conditional flow matching model reconstructs mel-spectrograms from the predicted semantic tokens for each speaker. Speaker identity information from voice prompts for zero-shot synthesis conditions this Flow Matching model to enable voice cloning capabilities. Finally, the generated mel-spectrograms are converted into high-quality waveforms using a pre-trained BigVGAN vocoder <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx17\" title=\"\">17</a>]</cite>, upsampled to a target 24kHz sampling rate.</p>\n\n",
+                "matched_terms": [
+                    "enable",
+                    "model",
+                    "tokens",
+                    "semantic",
+                    "speaker",
+                    "into",
+                    "waveforms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Unlike single-speaker zero-shot speech synthesis,\nThe zero-shot Dual-speaker Dialogue generation task aims to synthesize each conversation turn using the corresponding speaker&#8217;s voice, based on the provided reference speech from two speakers. The core component of DialoSpeech is the DiaLM model, which enables zero-shot dual-speaker conversational speech generation. Given dialogue text with alternating speaker turns and reference audio samples from two target speakers, DiaLM learns to synthesize each utterance in the corresponding speaker&#8217;s voice while capturing natural conversational turn transitions.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "which",
+                    "speaker",
+                    "dialm",
+                    "dualspeaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We adopt a language model-based approach to generate discrete speech codes from dialogue script text to handle this. The textual input is tokenized using a Byte-Pair Encoding (BPE) tokenizer, preserving semantic structure and aligning with the representation space used by the LLM backbone. The acoustic inputs are first discretized using a pretrained semantic speech tokenizer, providing per-speaker token sequences representing speech content. In parallel, we extract speaker embeddings (<math alttext=\"S_{p}^{1},S_{p}^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p2.m1\" intent=\":literal\"><semantics><mrow><msubsup><mi>S</mi><mi>p</mi><mn>1</mn></msubsup><mo>,</mo><msubsup><mi>S</mi><mi>p</mi><mn>2</mn></msubsup></mrow><annotation encoding=\"application/x-tex\">S_{p}^{1},S_{p}^{2}</annotation></semantics></math>) using ecapa-tdnn<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx18\" title=\"\">18</a>]</cite> for zero-shot voice conditioning.</p>\n\n",
+                "matched_terms": [
+                    "representation",
+                    "embeddings",
+                    "textual",
+                    "semantic",
+                    "language",
+                    "speaker",
+                    "token",
+                    "sequences"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">All inputs are projected into a shared unified embedding space. We denote the dialogue text as <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math>, and the per-speaker semantic token sequences as <math alttext=\"S^{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m2\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>1</mn></msup><annotation encoding=\"application/x-tex\">S^{1}</annotation></semantics></math>, <math alttext=\"S^{2}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m3\" intent=\":literal\"><semantics><msup><mi>S</mi><mn>2</mn></msup><annotation encoding=\"application/x-tex\">S^{2}</annotation></semantics></math>. Each sequence is augmented with its corresponding speaker prompt embedding <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p3.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math>, and special tags such as <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> are inserted at turn boundaries to indicate speaker transitions explicitly.</p>\n\n",
+                "matched_terms": [
+                    "projected",
+                    "embedding",
+                    "semantic",
+                    "speaker",
+                    "into",
+                    "token",
+                    "shared",
+                    "sequences"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We apply a causal cross-attention mechanism between the dual speech token streams to model inter-speaker interaction. This allows each speaker&#8217;s embedding to attend to the other&#8217;s content and prosodic intent contextually. inspired by prior work such as dGSLM&#8217;s dual-tower Transformer <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx19\" title=\"\">19</a>]</cite> and CoVoMix&#8217;s semantic stream modeling, but is enhanced with contextual alignment through LLM. This design enables the model to capture the timing of speaker transitions and cooperative behaviors like backchanneling and overlaps.</p>\n\n",
+                "matched_terms": [
+                    "interspeaker",
+                    "through",
+                    "embedding",
+                    "streams",
+                    "model",
+                    "crossattention",
+                    "semantic",
+                    "speaker",
+                    "causal",
+                    "token",
+                    "interaction"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, DiaLM is optimized to predict the semantic token sequences for both speakers, given the dialogue text and speaker prompts. The training objective is a dual-channel cross-entropy loss, defined as:</p>\n\n",
+                "matched_terms": [
+                    "dualchannel",
+                    "loss",
+                    "training",
+                    "semantic",
+                    "speaker",
+                    "dialm",
+                    "crossentropy",
+                    "token",
+                    "sequences"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">where <math alttext=\"S^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m1\" intent=\":literal\"><semantics><msup><mi>S</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">S^{c}</annotation></semantics></math> denotes the semantic token sequence for speaker <math alttext=\"c\\in\\{1,2\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m2\" intent=\":literal\"><semantics><mrow><mi>c</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">c\\in\\{1,2\\}</annotation></semantics></math>, <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m3\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> is the dialogue text, <math alttext=\"S_{p}^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m4\" intent=\":literal\"><semantics><msubsup><mi>S</mi><mi>p</mi><mi>c</mi></msubsup><annotation encoding=\"application/x-tex\">S_{p}^{c}</annotation></semantics></math> is the reference embedding of speaker <math alttext=\"c\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m5\" intent=\":literal\"><semantics><mi>c</mi><annotation encoding=\"application/x-tex\">c</annotation></semantics></math>, and <math alttext=\"\\theta\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p6.m6\" intent=\":literal\"><semantics><mi>&#952;</mi><annotation encoding=\"application/x-tex\">\\theta</annotation></semantics></math> represents model parameters. This objective encourages the model to generate speaker-aware, semantically aligned token sequences in a dual-stream manner.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "embedding",
+                    "semantic",
+                    "speaker",
+                    "token",
+                    "sequences"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During inference, DiaLM decodes both speaker streams in parallel. The model generates one token per speaker at each decoding timestep, resulting in two parallel semantic token streams. To represent conversational dynamics such as turn-taking, pauses, and overlaps, the model learns to insert a special <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> token for the inactive speaker, while producing meaningful semantic tokens for the active one. This design allows the model to autonomously determine when each speaker should speak, remain silent, or overlap with the other, without explicit timing or speaker control signals.</p>\n\n",
+                "matched_terms": [
+                    "resulting",
+                    "model",
+                    "streams",
+                    "tokens",
+                    "semantic",
+                    "speaker",
+                    "dialm",
+                    "token"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The input dialogue text is first processed by inserting control tokens <span class=\"ltx_text ltx_font_bold\">[spkchange]</span> to delineate speaker turns. These help the model align the semantic structure with dialogue flow and role changes. Once decoding is complete, the predicted semantic tokens for each speaker&#8212;excluding <span class=\"ltx_text ltx_font_typewriter\">&lt;SIL&gt;</span> tokens pass through separate acoustic models for speech reconstruction, conditioned on the respective speaker prompts. This parallel decoding strategy enables natural and coherent dialogue synthesis, with fine-grained control over inter-speaker timing and overlap.</p>\n\n",
+                "matched_terms": [
+                    "processed",
+                    "interspeaker",
+                    "through",
+                    "model",
+                    "tokens",
+                    "semantic",
+                    "speaker",
+                    "separate"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To bridge this gap, we employ a conditional flow natching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite> model to reconstruct mel-spectrograms conditioned on acoustic prompts. And to handle long-form audio streams efficiently, we introduce a block-wise guided attention mechanism that enables chunked decoding with a fixed memory cost.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "streams"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Our reconstruction module uses a CFM framework built upon an F5-TTS&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx20\" title=\"\">20</a>]</cite> architecture. The model is trained to predict the vector field <math alttext=\"u_{t}=x_{1}-x_{0}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m1\" intent=\":literal\"><semantics><mrow><msub><mi>u</mi><mi>t</mi></msub><mo>=</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&#8722;</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mrow><annotation encoding=\"application/x-tex\">u_{t}=x_{1}-x_{0}</annotation></semantics></math> that connects a noise sample <math alttext=\"x_{0}\\sim\\mathcal{N}(0,I)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m2\" intent=\":literal\"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>&#8764;</mo><mrow><mi class=\"ltx_font_mathcaligraphic\">&#119977;</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mi>I</mi><mo stretchy=\"false\">)</mo></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">x_{0}\\sim\\mathcal{N}(0,I)</annotation></semantics></math> to a target mel-spectrogram <math alttext=\"x_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m3\" intent=\":literal\"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding=\"application/x-tex\">x_{1}</annotation></semantics></math> along a linear path <math alttext=\"\\phi_{t}(x_{0})=(1-t)x_{0}+tx_{1}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m4\" intent=\":literal\"><semantics><mrow><mrow><msub><mi>&#981;</mi><mi>t</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy=\"false\">(</mo><mrow><mn>1</mn><mo>&#8722;</mo><mi>t</mi></mrow><mo stretchy=\"false\">)</mo></mrow><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">\\phi_{t}(x_{0})=(1-t)x_{0}+tx_{1}</annotation></semantics></math>. Conditioned on a vector <math alttext=\"c\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m5\" intent=\":literal\"><semantics><mi>c</mi><annotation encoding=\"application/x-tex\">c</annotation></semantics></math> (concatenated semantic tokens and speaker embedding), the model <math alttext=\"v_{t}(\\cdot;\\theta)\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS1.p1.m6\" intent=\":literal\"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo>;</mo><mi>&#952;</mi><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">v_{t}(\\cdot;\\theta)</annotation></semantics></math> is optimized via the loss:</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "loss",
+                    "embedding",
+                    "model",
+                    "concatenated",
+                    "tokens",
+                    "semantic",
+                    "speaker",
+                    "module",
+                    "via"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We partition input tokens into fixed-size blocks of length <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math> to enable chunked CFM over long sequences. Let the total token sequence length be <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>, and define the number of blocks as <math alttext=\"N_{b}=\\lfloor n/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>N</mi><mi>b</mi></msub><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>n</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">N_{b}=\\lfloor n/b\\rfloor</annotation></semantics></math>. We assign each token index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> to block <math alttext=\"\\mathrm{block}(i)=\\lfloor i/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><mi>block</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>i</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>i</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathrm{block}(i)=\\lfloor i/b\\rfloor</annotation></semantics></math>. We introduce a unified attention mask to control the receptive field in the Diffusion Transformer (DiT) backbone.</p>\n\n",
+                "matched_terms": [
+                    "enable",
+                    "tokens",
+                    "into",
+                    "token",
+                    "sequences"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_italic\">Causal Mask </span>: Ensures that each block remains isolated, preventing interaction between them and preserving the original receptive field of the DiT model.</p>\n\n",
+                "matched_terms": [
+                    "causal",
+                    "interaction",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This chunk-wise decoding strategy ensures a fixed memory footprint and low latency. During inference, the model processes the audio in chunks of length <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math>, conditioning on the <math alttext=\"p\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m2\" intent=\":literal\"><semantics><mi>p</mi><annotation encoding=\"application/x-tex\">p</annotation></semantics></math> preceding and <math alttext=\"q\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p3.m3\" intent=\":literal\"><semantics><mi>q</mi><annotation encoding=\"application/x-tex\">q</annotation></semantics></math> succeeding context blocks to generate the mel-spectrogram for the current chunk. The generated mel-spectrograms are then converted to waveforms using a vocoder.</p>\n\n",
+                "matched_terms": [
+                    "waveforms",
+                    "model",
+                    "then"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We constructed a 10,000-hour speech corpus from three sources to train our dialogue generation system. All data were processed using the dual-track pipeline (Section&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S2\" title=\"2 Dual-Track Dialogue Data Pipeline &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>) to obtain synchronized, speaker-labeled streams and per-speaker semantic tokens via S3Tokenizer.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "processed",
+                    "obtain",
+                    "streams",
+                    "tokens",
+                    "pipeline",
+                    "semantic",
+                    "via",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The dataset includes: (1) 3,000 hours of professionally recorded Chinese dialogues from Biaobei Corp., providing clean, structured conversations; (2) 5,000 hours of spontaneous multi-speaker Chinese podcast data, offering acoustic and stylistic diversity; and (3) 2,000 hours of English telephone dialogues from the Fisher corpus, used to enhance cross-lingual generalization. Fisher captures real-world bilingual interactions despite their noise and was similarly processed into dual-speaker semantic streams.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "processed",
+                    "streams",
+                    "semantic",
+                    "into",
+                    "dualspeaker"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">DiaLM Model:</span>\nWe adopt a 0.5B&#8208;parameter LLaMA&#8208;based Transformer with 16 layers, a hidden size 1,024, and 16 attention heads. Training is conducted on 8 NVIDIA A6000 48 GB GPUs with a total batch size 64. We use an initial learning rate of <math alttext=\"1\\times 10^{-4}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p1.m1\" intent=\":literal\"><semantics><mrow><mn>1</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1\\times 10^{-4}</annotation></semantics></math> and a cosine&#8208;annealing scheduler for 150k steps. For supervised fine&#8208;tuning on high-quality data, we reduce the learning rate to <math alttext=\"2\\times 10^{-5}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.p1.m2\" intent=\":literal\"><semantics><mrow><mn>2</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>5</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2\\times 10^{-5}</annotation></semantics></math> and train for 50k steps.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "hidden",
+                    "data",
+                    "heads",
+                    "model",
+                    "dialm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Chunked Flow Matching:</span>\nOur Flow Matching, a DiT-based backbone, has 22 Transformer layers with a hidden dimension of 768 and about 150 M parameters. We reconstruct 24 kHz waveforms from 16 kHz mel&#8208;spectrograms using BigVGAN&#8208;v2 as the neural vocoder.</p>\n\n",
+                "matched_terms": [
+                    "hidden",
+                    "waveforms"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Objective Metrics.</span>\nWe assess the generated speech using several quantitative indicators. First, we compute Word Error Rate (WER) and Character Error Rate (CER) based on transcriptions produced by the FunASR toolkit<span class=\"ltx_note ltx_role_footnote\" id=\"footnote2\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">2</sup><span class=\"ltx_tag ltx_tag_note\">2</span>https://github.com/modelscope/FunASR</span></span></span>, which offers state-of-the-art Mandarin speech recognition performance. These metrics reflect the intelligibility and phonetic accuracy of synthesized outputs.\nSecond, we calculate the cosine similarity (SIM) between generated and reference audio speaker embeddings to evaluate speaker identity preservation.\nFinally, we report UTMOS<span class=\"ltx_note ltx_role_footnote\" id=\"footnote3\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">3</sup><span class=\"ltx_tag ltx_tag_note\">3</span>https://github.com/tarepan/SpeechMOS</span></span></span> scores to estimate perceptual quality regarding naturalness and clarity.</p>\n\n",
+                "matched_terms": [
+                    "embeddings",
+                    "which",
+                    "speaker",
+                    "outputs"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">DialoSpeech achieves the lowest CER in Chinese, outperforming CosyVoice2 and MoonCast. It also attains a speaker similarity score of 0.69, comparable to both baselines. Notably, our system is trained on only &#160;10K hours of data with a lightweight 0.5B-parameter model, and MoonCast and CosyVoice2 rely on over 1M hours, demonstrating the efficiency of our dual-track framework.\nRegarding UTMOS, DialoSpeech matches CosyVoice2 and surpasses MoonCast in short-dialogue scenarios, likely due to the latter&#8217;s focus on long-form conversations. Subjective evaluations show that DialoSpeech performs on par overall and leads in Spontaneity, highlighting its ability to produce natural, lifelike dialogues.</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "data",
+                    "model",
+                    "speaker",
+                    "dualtrack"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduced <em class=\"ltx_emph ltx_font_italic\">DialoSpeech</em>, a dual-speaker dialogue TTS that integrates a language model with dual-track token generation and chunked Flow Matching. To overcome dialogue data scarcity, we designed a pipeline to scale up. Experiments in Chinese and English show that DialoSpeech outperforms strong baselines and achieves competitive objective scores in less training data. In the future, we first need to scale up the dialogue datasets. Due to training the language model with Flow Matching, it becomes difficult on minute-scale data because of memory limitations. Therefore, exploring continuous latent representations for dialogue modeling is a promising future direction and trend.</p>\n\n",
+                "matched_terms": [
+                    "training",
+                    "data",
+                    "model",
+                    "pipeline",
+                    "language",
+                    "dualspeaker",
+                    "token",
+                    "dualtrack"
+                ]
+            }
+        ]
+    },
+    "S3.F4": {
+        "source_file": "DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching",
+        "image_url": "https://arxiv.org/html/2510.08373v1/x3.png",
+        "caption": "Figure 4: The details of the fundamental chunk-wise attention mask.",
+        "informative_terms_identified": [
+            "details",
+            "fundamental",
+            "attention",
+            "mask",
+            "chunkwise"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Where <math alttext=\"\\tau\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m6\" intent=\":literal\"><semantics><mi>&#964;</mi><annotation encoding=\"application/x-tex\">\\tau</annotation></semantics></math> is a configurable block offset. As show in fig<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#S3.F4\" title=\"Figure 4 &#8227; 3.3.2 Block-Wise Guided Attention &#8227; 3.3 Streaming Waveform Reconstruction via Chunked Flow Matching &#8227; 3 Methodology &#8227; DialoSpeech: Dual-Speaker Dialogue Generation with LLM and Flow Matching\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>, we obtain three fundamental mask patterns:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">VALL-E&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx1\" title=\"\">1</a>]</cite> pioneered framing Text-to-Speech (TTS) as a next-token prediction task. Using discrete acoustic tokens, it demonstrated remarkable in-context learning capabilities. Developing such tokens involves a fundamental trade-off between capturing fine-grained acoustic detail and preserving semantic richness.\nEarly acoustic representations&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx2\" title=\"\">2</a>]</cite> provided high-fidelity waveform reconstruction but lacked the semantic depth required for complex utterances, often leading to instability.\nTo address this, subsequent works integrated semantic units from self-supervised learning (SSL) models&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx3\" title=\"\">3</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx4\" title=\"\">4</a>]</cite> to enhance coherence and prosody&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx5\" title=\"\">5</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx6\" title=\"\">6</a>]</cite>.\nMore recent methods further leverage pre-trained ASR encoders for superior text alignment&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx7\" title=\"\">7</a>]</cite>.\nHowever, these semantic tokens are abstract and lack the fine-grained acoustic details required for synthesis.\nTo address this, conditional flow matching (CFM)&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.08373v1#bib.bibx8\" title=\"\">8</a>]</cite>&#8212;is employed to convert the abstract tokens into high-fidelity acoustic features.</p>\n\n",
+                "matched_terms": [
+                    "details",
+                    "fundamental"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We partition input tokens into fixed-size blocks of length <math alttext=\"b\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m1\" intent=\":literal\"><semantics><mi>b</mi><annotation encoding=\"application/x-tex\">b</annotation></semantics></math> to enable chunked CFM over long sequences. Let the total token sequence length be <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m2\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>, and define the number of blocks as <math alttext=\"N_{b}=\\lfloor n/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m3\" intent=\":literal\"><semantics><mrow><msub><mi>N</mi><mi>b</mi></msub><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>n</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">N_{b}=\\lfloor n/b\\rfloor</annotation></semantics></math>. We assign each token index <math alttext=\"i\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m4\" intent=\":literal\"><semantics><mi>i</mi><annotation encoding=\"application/x-tex\">i</annotation></semantics></math> to block <math alttext=\"\\mathrm{block}(i)=\\lfloor i/b\\rfloor\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS3.SSS2.p1.m5\" intent=\":literal\"><semantics><mrow><mrow><mi>block</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mi>i</mi><mo stretchy=\"false\">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy=\"false\">&#8970;</mo><mrow><mi>i</mi><mo>/</mo><mi>b</mi></mrow><mo stretchy=\"false\">&#8971;</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathrm{block}(i)=\\lfloor i/b\\rfloor</annotation></semantics></math>. We introduce a unified attention mask to control the receptive field in the Diffusion Transformer (DiT) backbone.</p>\n\n",
+                "matched_terms": [
+                    "attention",
+                    "mask"
+                ]
+            }
+        ]
+    }
+}

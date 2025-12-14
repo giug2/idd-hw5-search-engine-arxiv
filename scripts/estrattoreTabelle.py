@@ -231,13 +231,11 @@ if __name__ == '__main__':
 
     # 3. Definisci i percorsi relativi alla radice del progetto
     
-    #    INPUT: Cartella 'papers' nella root del progetto (livello superiore rispetto allo script)
-    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'papers')                                                                           #percorso della cartella di input (file HTML)
+    #    INPUT: Cartella 'input/papers' nella root del progetto (livello superiore rispetto allo script)
+    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'papers')                                                                           #percorso della cartella di input (file HTML)
     
-    #    OUTPUT: Manteniamo l'output dentro le risorse del modulo Java per il funzionamento dell'app
-    #    Path: .../lucene/src/main/resources/contenutoTabelle
-    RESOURCES_DIR = os.path.join(PROJECT_ROOT, 'lucene', 'src', 'main', 'resources')
-    OUTPUT_DIRECTORY = os.path.join(RESOURCES_DIR, 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
+    #    OUTPUT: Cartella 'input/contenutoTabelle' nella root del progetto
+    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
 
     # NUOVA FEATURE: Numero massimo di file da processare.
     # Imposta un numero intero (es. 1, 5, 20) per limitare l'esecuzione.

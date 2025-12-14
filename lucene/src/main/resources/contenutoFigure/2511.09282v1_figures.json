@@ -1,0 +1,927 @@
+{
+    "Sx1.F1": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x1.png",
+        "caption": "Figure 1: Using a speech retrieval model to simplify long audio context into several key audio segments can help improve the quality of subsequent LALM response.",
+        "informative_terms_identified": [
+            "retrieval",
+            "audio",
+            "speech",
+            "help",
+            "improve",
+            "context",
+            "key",
+            "subsequent",
+            "model",
+            "segments",
+            "into",
+            "response",
+            "long",
+            "simplify",
+            "quality",
+            "lalm"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Significant progress has been made in spoken question answering (SQA) in recent years. However, many existing methods, including large audio language models, struggle with processing long audio. Follow the success of retrieval augmented generation, a speech-related retriever shows promising in help preprocessing long-form speech. But the performance of existing speech-related retrievers is lacking. To address this challenge, we propose CLSR, an end-to-end contrastive language-speech retriever that efficiently extracts question-relevant segments from long audio recordings for downstream SQA task. Unlike conventional speech-text contrastive models, CLSR incorporates an intermediate step that converts acoustic features into text-like representations prior to alignment, thereby more effectively bridging the gap between modalities. Experimental results across four cross-modal retrieval datasets demonstrate that CLSR surpasses both end-to-end speech related retrievers and pipeline approaches combining speech recognition with text retrieval, providing a robust foundation for advancing practical long-form SQA applications.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "audio",
+                    "speech",
+                    "help",
+                    "segments",
+                    "into",
+                    "long"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The question answering (QA) task requires the model to find the answer to a question from a given context. When the answer is a specific segment within the context, the task is classified as extractive QA; conversely, if the answer cannot be directly derived from the context and necessitates additional reasoning by the model, it is termed abstractive QA <cite class=\"ltx_cite ltx_citemacro_citep\">(Shih et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite>. In the realm of spoken question answering, the context is presented in audio format <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite>, and certain complex SQA tasks also require the questions to be delivered in audio format <cite class=\"ltx_cite ltx_citemacro_citep\">(Shon et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib33\" title=\"\">2022</a>)</cite>. Despite advancements in SQA methodologies <cite class=\"ltx_cite ltx_citemacro_citep\">(Lee, Chen, and Lee <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib18\" title=\"\">2019</a>; You et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib40\" title=\"\">2022</a>)</cite>, the majority of existing SQA models are limited to processing short audio segments (under one minute). However, many real-world dialogue scenarios, such as meetings, lectures, and online discussions, often involve voice recordings that exceed ten minutes, posing challenges for current SQA techniques.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "audio",
+                    "model",
+                    "segments"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The development of large language models (LLMs) is advancing rapidly. Notable examples, such as GPT <cite class=\"ltx_cite ltx_citemacro_citep\">(Brown <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib2\" title=\"\">2020</a>)</cite> and LLaMA <cite class=\"ltx_cite ltx_citemacro_citep\">(Touvron et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib34\" title=\"\">2023</a>)</cite>, among others <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib24\" title=\"\">2023</a>; Yao, Li, and Zhao <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib39\" title=\"\">2024</a>)</cite>, have demonstrated significant success across various traditional natural language processing (NLP) tasks, including question answering. In the speech domain, numerous large audio language models (LALMs) have emerged, showcasing remarkable capabilities in speech comprehension <cite class=\"ltx_cite ltx_citemacro_citep\">(Chu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib5\" title=\"\">2023</a>; Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite>. The retrieval-augmented generation (RAG) paradigm <cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib20\" title=\"\">2020</a>)</cite> enhances LLMs&#8217; natural language understanding by integrating external knowledge <cite class=\"ltx_cite ltx_citemacro_citep\">(Gupta, Ranjan, and Singh <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib14\" title=\"\">2024</a>)</cite>. Specifically, RAG employs a retriever to assess the similarity between user queries and segments within a knowledge database, selecting the top-k most relevant segments as supplementary context for the LLM. This approach enables the LLM to better comprehend queries and generate more accurate responses. Currently, RAG is commonly used for long-context reasoning tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib23\" title=\"\">2025</a>; Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib12\" title=\"\">2025</a>)</cite>. For example, in question-answering tasks that involve lengthy input contexts like full articles, RAG works by identifying and retrieving the most pertinent context segments. This process minimizes the inclusion of irrelevant information, which can otherwise introduce errors into the answer and reduce inference speed. Given the effectiveness of RAG in text-based long-context QA, a pertinent question arises for long-form SQA: Can RAG be similarly employed to extract problem-relevant segments from audio inputs to serve as context for subsequent LALM processing?</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "speech",
+                    "context",
+                    "subsequent",
+                    "segments",
+                    "into",
+                    "lalm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we propose CLSR, an end-to-end (E2E) contrastive language-speech retriever designed to distill lengthy speech recordings into a selection of audio clips that are most pertinent to a given query. These audio clips are used for subsequent LALM inference. Unlike conventional E2E speech-text contrastive learning models, CLSR does not endeavor to align acoustic representations and text representations directly. Instead, it first converts acoustic representations into text-like representations, which are then aligned with actual text representations. The extraction of text-like representations primarily employs continuous integrate-and-fire (CIF) to map acoustic representations from temporal steps to token numbers, followed by the application of a vector quantizer (VQ) based adaptor to refine these acoustic representations into text-like forms. We conduct a comparative analysis of CLSR against standard E2E speech-text retrievers and pipeline retrievers, which integrate speech-to-text models with text contrastive learning models, across four datasets: Spoken-SQuAD, LibriSQA, SLUE-SQA-5, and DRCD. The experimental findings demonstrate that CLSR exhibits superior retrieval performance, suggesting that the use of text-like representations as an intermediary between acoustic and text representations enables CLSR to more effectively discern the similarities and distinctions between these two modalities, thereby enhancing the accuracy of pairing speech with text or speech with speech. The contributions of this paper are as follows:</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "audio",
+                    "speech",
+                    "subsequent",
+                    "into",
+                    "lalm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The proposed model initially transforms acoustic representations into text-like representations, subsequently aligning these text-like representations with text representations, which effectively mitigates modal discrepancies and facilitates cross-modal alignment.</p>\n\n",
+                "matched_terms": [
+                    "into",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The CLSR demonstrates superior performance compared to both E2E and cascade speech retrieval systems on four datasets: Spoken-SQuAD, LibriSQA, SLUE-SQA-5, and DRCD.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Currently, there are many works related to SQA. <cite class=\"ltx_cite ltx_citemacro_citet\">Chuang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib6\" title=\"\">2019</a>)</cite> propose a pre-trained model called SpeechBERT for the E2E SQA task. Through the training stage called initial phonetic spatial joint embedding for audio words, it aligns the generated audio embeddings with the text embeddings produced by BERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib7\" title=\"\">2019</a>)</cite> within the same hidden space. <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite> introduce GSQA, which enables the SQA system to perform abstractive reasoning. They first utilize HuBERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Hsu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib15\" title=\"\">2021</a>)</cite> to convert the input speech into discrete units, and then employ a sequence-to-sequence SQA model finetuned from the text QA model LongT5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib13\" title=\"\">2022</a>)</cite> to generate answers in the form of discrete units. <cite class=\"ltx_cite ltx_citemacro_citet\">Lin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib25\" title=\"\">2024</a>)</cite> focus on open-domain SQA in scenarios whose paired speech-text data is unavailable. They propose SpeechDPR, which utilizes a bi-encoder retriever framework and learns a sentence-level semantic representation space by extracting knowledge from a combined model of automatic speech recognition (ASR) and text retrieval. <cite class=\"ltx_cite ltx_citemacro_citet\">Johnson et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib16\" title=\"\">2024</a>)</cite> introduce a retriever that employs deep Q-learning to bypass irrelevant audio segments in longer audio files, thereby enhancing the efficiency of SQA. The latter two articles are related to retriever, which is similar to our paper; however, they have limitations: the performance of the former is inferior to that of the pipeline model, and the latter poorly adapts to the high-dimensional, complex feature space of audio, easily falls into local optima during training due to unbalanced exploration and exploitation.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "audio",
+                    "speech",
+                    "model",
+                    "segments",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since the inception of GPT, RAG has advanced rapidly <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib41\" title=\"\">2025</a>)</cite>, while research on speech RAG has been comparatively limited. <cite class=\"ltx_cite ltx_citemacro_citet\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib38\" title=\"\">2024</a>)</cite> utilize RAG for spoken language understanding (SLU). They first employ a pre-trained ASR encoder to extract acoustic features. Next, they perform a similarity calculation to identify audio-text label pairs in the training set that are similar, subsequently incorporating this label information into the SLU decoder through a cross-attention mechanism. <cite class=\"ltx_cite ltx_citemacro_citet\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib36\" title=\"\">2024</a>)</cite> propose a joint speech and language model based on RAG, which enhances performance on the named entity recognition task. They compute the similarity between the input speech query embeddings and the entity embeddings in the database to extract the K entities most relevant to the query, using these entities as additional inputs to the model. Currently, there is no SRAG model designed for long-form SQA task.</p>\n\n",
+                "matched_terms": [
+                    "into",
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Consider the SQA task, where questions are presented in text format and contexts are delivered in speech format. Let <math alttext=\"X=\\{x_{1},x_{2},\\dots,x_{t}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>x</mi><mi>t</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">X=\\{x_{1},x_{2},\\dots,x_{t}\\}</annotation></semantics></math> denote the speech context, represented as a sequence of <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> frames. Let <math alttext=\"Z=\\{z_{1},z_{2},\\dots,z_{m}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>Z</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>z</mi><mi>m</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Z=\\{z_{1},z_{2},\\dots,z_{m}\\}</annotation></semantics></math> denote the question text, represented as a sequence of <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m4\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> tokens, where each token <math alttext=\"z_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m5\" intent=\":literal\"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">z_{i}</annotation></semantics></math> belongs to a vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m6\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> (i.e., <math alttext=\"z_{i}\\in V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m7\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>&#8712;</mo><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">z_{i}\\in V</annotation></semantics></math>). Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the architecture of a typical E2E audio-text contrastive model, such as CLAP <cite class=\"ltx_cite ltx_citemacro_citep\">(Wu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib37\" title=\"\">2023</a>)</cite>. This model employs a speech encoder <math alttext=\"A(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>A</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">A(\\cdot)</annotation></semantics></math> and a text encoder <math alttext=\"B(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m9\" intent=\":literal\"><semantics><mrow><mi>B</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">B(\\cdot)</annotation></semantics></math> to extract acoustic features and textual features, respectively. The similarity <math alttext=\"S\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m10\" intent=\":literal\"><semantics><mi>S</mi><annotation encoding=\"application/x-tex\">S</annotation></semantics></math> between the two feature representations is then quantified using cosine similarity. The formula is as follows, where <math alttext=\"||.||\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p1.m11\" intent=\":literal\"><semantics><mrow><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo><mo lspace=\"0.167em\" rspace=\"0.167em\">.</mo><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo></mrow><annotation encoding=\"application/x-tex\">||.||</annotation></semantics></math> denotes the L2 norm.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Contrastive learning models of this type focus on deriving sentence-level features. Two common methods exist for this purpose. The first introduces a trainable <span class=\"ltx_text ltx_font_typewriter\">CLS</span> token during encoding; the representation corresponding to this token is then used as the global sentence feature. The second method computes the average of all token-level features (of sequence length <math alttext=\"n\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p3.m1\" intent=\":literal\"><semantics><mi>n</mi><annotation encoding=\"application/x-tex\">n</annotation></semantics></math>) to produce a single feature vector. Both methods are equally applicable to extracting features from entire audio segments.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "segments"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, the model learns to minimize the negative log-likelihood (NLL) loss between the representations of paired questions and contexts. This NLL loss comprises two symmetric components: one for retrieving the context given the question, and the other for retrieving the question given the context. The specific formulation is as follows:</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F3\" title=\"Figure 3 &#8227; Overview &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the specific architecture of CLSR. The left half features a non-autoregressive attention encoder-decoder (AED) framework based on CIF <cite class=\"ltx_cite ltx_citemacro_citep\">(Dong and Xu <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib8\" title=\"\">2020</a>)</cite>. It takes the speech context <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math> as input and produces the corresponding token probability distribution <math alttext=\"D\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>D</mi><annotation encoding=\"application/x-tex\">D</annotation></semantics></math>, <math alttext=\"D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mi>n</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}</annotation></semantics></math>. Both the speech encoder and decoder adopt the SAN-M <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib10\" title=\"\">2020</a>)</cite> structure, which is a specialized Transformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Vaswani et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib35\" title=\"\">2017</a>)</cite> layer that integrates a self-attention mechanism with deep feed-forward sequential memory networks (DFSMN). Initially, the framework uses the speech encoder to extract acoustic features <math alttext=\"H^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m4\" intent=\":literal\"><semantics><msup><mi>H</mi><mi>s</mi></msup><annotation encoding=\"application/x-tex\">H^{s}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Then, as shown in the following formula, it predicts the corresponding token distribution through the speech decoder and a fully connected layer. In addition, following <cite class=\"ltx_cite ltx_citemacro_citet\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite>, we use a sampler to optimize the training process of this framework. The sampler does not contain any learnable parameters and is designed to enhance the context modeling capability of the decoder by sampling text features into <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p3.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math>. It will be elaborated on in subsequent chapter.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "subsequent",
+                    "into",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The right half of CLSR is a Transformer-based text encoder that receives either text embeddings or text-like embeddings as input and output corresponding text representations. We obtain the sentence-level representation by inserting the <span class=\"ltx_text ltx_font_typewriter\">CLS</span> token. When aligning the text question with the speech context, we input the text-like embeddings <math alttext=\"E^{Y^{{}^{\\prime}}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p6.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><msup><mi>Y</mi><msup><mi/><mo>&#8242;</mo></msup></msup></msup><annotation encoding=\"application/x-tex\">E^{Y^{{}^{\\prime}}}</annotation></semantics></math> of the context and the text embeddings <math alttext=\"E^{Z}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p6.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>Z</mi></msup><annotation encoding=\"application/x-tex\">E^{Z}</annotation></semantics></math> of the question into the text encoder to obtain their respective sentence-level representations. We then use cosine similarity to evaluate the similarity between them.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "into",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Next, we proceed to the second round of training and initiate sampling. We first compare the ASR output <math alttext=\"Y^{asr}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m4\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{asr}</annotation></semantics></math> with the ground-truth context <math alttext=\"Y^{con}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m5\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{con}</annotation></semantics></math> to identify tokens containing transcription errors and their respective positions. Then merge the correct embeddings of erroneous tokens from <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m6\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math> (the embeddings of <math alttext=\"Y^{con}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m7\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{con}</annotation></semantics></math>) into the acoustic features <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m8\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math> through selective replacement, generating semantic features <math alttext=\"E^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m9\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>s</mi></msup><annotation encoding=\"application/x-tex\">E^{s}</annotation></semantics></math>. This process is formalized as:</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Regarding the real text embeddings <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p7.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math>, <cite class=\"ltx_cite ltx_citemacro_citet\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> uses the embedding layer of the speech decoder to derive them. However, in our proposed model, this layer is not trained, and its weights may not effectively represent the text embedding space. Consequently, we use the weights of the linear layer, which is used to generate the probability distribution of the tokens, to calculate <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p7.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct experiments on four datasets: Spoken-SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite>, LibriSQA <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib42\" title=\"\">2024</a>)</cite>, SLUE-SQA-5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Shon et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib33\" title=\"\">2022</a>)</cite>, and DRCD. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T1\" title=\"Table 1 &#8227; Configuration &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> displays detailed information about these datasets. <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite> use Google text-to-speech (TTS) system to generate the spoken versions of the articles in SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Rajpurkar <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib29\" title=\"\">2016</a>)</cite>. Given that SQuAD is a many-to-one dataset, where multiple questions correspond to the same context, it is unsuitable for training text-speech retrievers. So, we filter the original Spoken-SQuAD dataset to ensure that each question corresponds one-to-one with its context; the filtered dataset is referred to as Spoken SQuAD*. LibriSQA is adapted from the ASR dataset LibriSpeech <cite class=\"ltx_cite ltx_citemacro_citep\">(Panayotov et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib27\" title=\"\">2015</a>)</cite>. The authors input the textual document of each speech segment from LibriSpeech into ChatGPT and request the generation of corresponding text question-answer pairs. We use the first part of LibriSQA, which presents questions without options, and the answers are complete sentences. SLUE-SQA-5 is adapted from five text QA datasets, and both the questions and contexts consist of authentic audio recordings. DRCD <cite class=\"ltx_cite ltx_citemacro_citep\">(Shao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib30\" title=\"\">2018</a>)</cite> is originally a Chinese QA dataset. Similar to SQuAD, it is also a many-to-one dataset. We first filter it into a one-to-one dataset and then use the TTS model <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib22\" title=\"\">2020</a>)</cite> to synthesize the speech versions of each question-context pair for its training set. <cite class=\"ltx_cite ltx_citemacro_citet\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib19\" title=\"\">2018</a>)</cite> offer spoken version of DRCD&#8217;s development set, which we use for testing.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "speech",
+                    "context",
+                    "model",
+                    "into"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use 220M Paraformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> and BGE-base <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib3\" title=\"\">2024</a>)</cite> to build CLSR. BGE is frozen during joint training. We consider two models as baseline: one is the E2E text-speech contrastive model like Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and the other is the cascaded model that first uses ASR model to convert speech into text, followed by a text QA task. For the former, we choose CLAP and SpeechDPR for comparison. For the latter, we use Whisper <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite> as the ASR module and BGE-base as the text QA module. The Whisper&#8217;s size is 244M. In the experiment, word error rate (WER) is used to measure the ASR performance, and top-k question-to-context and context-to-question retrieval recall are used to assess retrieval performance. We establish the experimental environment based on Funasr <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib9\" title=\"\">2023</a>)</cite> and ModelScope. The <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> of the loss is set to <math alttext=\"\\frac{1}{3}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m3\" intent=\":literal\"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding=\"application/x-tex\">\\frac{1}{3}</annotation></semantics></math>. We train the model until convergence, consistently using the Adam optimizer with a learning rate of 5e-5.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "into",
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T2\" title=\"Table 2 &#8227; Main Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows the comparison results of CLSR and other models across four datasets. We additionally provide the results of using BGE for clean text question-context retrieval. In terms of E2E text-to-speech contrastive models, the results of CLSR are significantly better than those of CLAP and SpeechDPR. We found that CLAP cannot learn the relevance between text questions and speech contexts effectively on four datasets, suggesting that CLAP is not well-suited for text-to-speech content alignment. In fact, CLAP is more appropriate for sound and text alignment.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Compared to conventional E2E contrastive models that directly perform text-to-speech or speech-to-speech alignment, CLSR utilizes text-like representations to alleviate the differences between speech and text modalities. It first maps speech representations into text-like representations and then aligns these text-like representations with actual text representations (or aligns text-like representations with other text-like representations) within the text modality. Leveraging the robust performance of text contrastive models, this approach enhances the alignment between speech and text (or between speech and speech), thereby facilitating more accurate pairing with the context most relevant to the question.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "into",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When conducting a comparative analysis of CLSR and Whisper+BGE, we find that their retrieval performances on three English datasets are quite similar; however, CLSR demonstrates certain advantages. In terms of transcription ability, CLSR significantly outperforms Whisper+BGE. This indicates that the joint training of CLSR effectively optimizes both the ASR module and the contrastive learning module. Given that Whisper&#8217;s performance in Chinese speech recognition is not exceptional, we have opted not to train Whisper on DRCD*.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate the effectiveness of the quantizer and sampler in CLSR, as well as the potential for multi-stage training to improve model performance. We conduct a series of ablation experiments on Spoken-SQuAD. The results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T3\" title=\"Table 3 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The first two rows of the results show the value of the quantizer. When the quantizer is not utilized, the model may achieve a lower WER; however, its comparative learning ability significantly diminishes. The top-10 retrieval recall rate of &#8220;CLSR w/o VQ&#8221; is only comparable to the top-1 retrieval recall rate of &#8220;CLSR w/ VQ&#8221;. The results in the sixth and seventh rows show the effectiveness of the sampler. After introducing the sampler, CLSR not only improves retrieval ability, but also improves ASR performance.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "improve",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Before joint training, we can pre-train the ASR module and the BGE module of CLSR separately. In the experiment, we use 460 hours of clean LibriSpeech data to pre-train Paraformer, and use Spoken-SQuAD&#8217;s clean text question-context pairs to train BGE. Comparing the second and fourth rows of the experimental results, it is not difficult to find that pre-training the BGE is beneficial; incorporating the pre-trained BGE during joint training enhances various retrieval metrics of the CLSR. In addition, through the comparison between the fourth and sixth rows, it can be found that pre-training Paraformer can improve the model&#8217;s transcription performance while also slightly improving its retrieval ability. It should be noted that in order to improve the training speed of the model, we froze BGE, which has strong retrieval performance, during joint training. Therefore, we can freeze the ASR module after joint training and train BGE for a few epochs separately, which is called post-train in the table. It is hoped that this approach can make BGE better adapt to the text-like representation provided by the ASR module. Unfortunately, post-train can only slightly improve the performance of the model, as evidenced by rows 2 and 3, 4 and 5, 7 and 8 in the table. In short, through ablation experiments, we have shown that both quantizers and samplers are inseparable for CLSR, and that pre-training the ASR module and BGE module of CLSR is of significant importance.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "improve",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to further demonstrate the superiority of the proposed model over the traditional E2E speech-related contrastive model, which consists of two encoders, we construct a new baseline: ParaBGE, to compare the retrieval capability with CLSR. ParaBGE is composed of the speech encoder from Paraformer and the text encoder from BGE. The sizes of each module in both models are identical to those in CLSR. The experimental results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T4\" title=\"Table 4 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. All retrieval metrics of CLSR far exceed ParaBGE, indicating that CLSR has a stronger question-context alignment ability. Although ParaBGE can optimize parameters towards the direction of aligning question and context representation during training, its performance is not ideal. As we mentioned earlier, such model heavily rely on pre-training with large-scale corpora. However, high-quality speech-text pairs are already very scarce, so for E2E speech related retrieval models, it is difficult to achieve excellent results. However, CLSR alleviates the modal differences between speech and text by using text-like representation as a bridge, shifting the alignment of speech to text alignment. With the powerful generalization ability of text contrastive learning models, it can achieve excellent retrieval capabilities comparable to cascade models and text contrastive models without the need for long-term, large-scale pre-training.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "context",
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate our model for real-world long audio SQA&#8212;enabling downstream LALMs to simplify inputs and enhance inference speed and accuracy&#8212;we conduct SQA tasks on a modified SLUE-SQA-5 dataset using CLSR and Qwen-Audio. To simulate long-context inference, we replace the contextual audio in 500 randomly selected test instances with full documents from the Spoken Wikipedia corpus <cite class=\"ltx_cite ltx_citemacro_citep\">(K&#246;hn, Stegen, and Baumann <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib17\" title=\"\">2016</a>)</cite>, each averaging &#160;30 minutes in length.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "simplify",
+                    "model",
+                    "long"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Without CLSR, Qwen-Audio directly generates answers from the input speech document and text question. With CLSR, we first segment the speech document into 40-second intervals, assess each segment&#8217;s similarity to the text question, and select the most relevant one as Qwen-Audio&#8217;s contextual input. Prior to testing, both Qwen-Audio and CLSR were trained using the original training subset of SLUE-SQA-5. The results of the testing are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T5\" title=\"Table 5 &#8227; Long-form SQA Evaluation &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Following the application of CLSR for long audio reduction, there is a notable enhancement in Qwen-Audio&#8217;s exact match (EM) and macro-F1 scores for SQA, alongside a tenfold reduction in inference time. These findings underscore the significance of CLSR in the preprocessing of long audio, demonstrating its capacity to not only enhance the inference accuracy of downstream LALM but also to substantially decrease inference time.</p>\n\n",
+                "matched_terms": [
+                    "audio",
+                    "speech",
+                    "into",
+                    "long",
+                    "lalm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduce CLSR, an E2E contrastive language-speech retriever designed to distill lengthy speech recordings into a limited number of clips that are most pertinent to a given query. By employing a text-like representation as an intermediary state, CLSR exhibits strong capability of cross-modal question-context alignment. Experimental findings demonstrate that CLSR&#8217;s retrieval performance significantly outstrips that of existing E2E speech-related retrievers and is competitive with both cascaded models and text-based retrievers.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "into",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR functions as an E2E model, providing a more rapid inference speed in comparison to pipeline models. The speed is a critical runtime metric for a RAG retriever, which must efficiently interface with downstream LALM for long audio inference. We assess the inference speed of CLSR relative to Whisper+BGE across three datasets, with the results detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T6\" title=\"Table 6 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>. While CLSR demonstrates a slight enhancement in transcription and retrieval performance compared to Whisper+BGE, it significantly outperforms in terms of inference speed, indicating that CLSR is more suitable as a RAG retriever.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "audio",
+                    "model",
+                    "long",
+                    "lalm"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate the performance of the Whisper+BGE pipeline following fine-tuning with noisy data, we transcribe the training data using a trained Whisper model and subsequently provide it to BGE for pre-training. The results of this experimentation are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T7\" title=\"Table 7 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, where the fine-tuned Whisper+BGE is referred to as Whisper+BGE*. The findings suggest that Whisper+BGE* yields only a marginal improvement in retrieval capability on the LibriSQA dataset, while performance declines on the other two datasets. CLSR continues to demonstrate a superior ability in retrieving speech content.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "speech",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We select two representative cases from the LibriSQA inference results and visualize the similarity distributions of CLSR and ParaBGE when aligning textual questions with speech contexts in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.F7\" title=\"Figure 7 &#8227; Case Study: Structural Superiority of CLSR over Traditional End-to-End Dual-Encoder Retrievers. &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, which demonstrates CLSR&#8217;s architectural superiority over traditional dual-encoder retrievers. As shown, CLSR achieves precise alignment between semantically related audio-text segments (e.g., matching &#8220;mary&#8221; in Case 1 and &#8220;humble grass&#8221; in Case 2), whereas ParaBGE exhibits uniformly distributed similarity scores without capturing token-level correspondences. This granular alignment enables CLSR to identify context segments more relevant to queries, enhancing retrieval accuracy.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "segments",
+                    "context",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR&#8217;s unique architecture facilitates such granular alignment: It first utilizes the CIF module to project acoustic features from time steps to token positions; then uses VQ-based refinement to convert these features into text-like representations; finally, in text space, leverages pre-trained text retrieval model&#8217;s power to align text-like representations with ordinary text representations token by token. Since text-like representations retain acoustic-feature similarity, this achieves fine-grained alignment between acoustic and text representations. This architectural superiority is absent in ParaBGE and similar dual-encoder retrievers.</p>\n\n",
+                "matched_terms": [
+                    "retrieval",
+                    "into"
+                ]
+            }
+        ]
+    },
+    "Sx3.F2": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x2.png",
+        "caption": "Figure 2: The architecture of typical E2E speech-text contrastive model.",
+        "informative_terms_identified": [
+            "speechtext",
+            "contrastive",
+            "model",
+            "typical",
+            "e2e",
+            "architecture"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Consider the SQA task, where questions are presented in text format and contexts are delivered in speech format. Let <math alttext=\"X=\\{x_{1},x_{2},\\dots,x_{t}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>x</mi><mi>t</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">X=\\{x_{1},x_{2},\\dots,x_{t}\\}</annotation></semantics></math> denote the speech context, represented as a sequence of <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> frames. Let <math alttext=\"Z=\\{z_{1},z_{2},\\dots,z_{m}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>Z</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>z</mi><mi>m</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Z=\\{z_{1},z_{2},\\dots,z_{m}\\}</annotation></semantics></math> denote the question text, represented as a sequence of <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m4\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> tokens, where each token <math alttext=\"z_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m5\" intent=\":literal\"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">z_{i}</annotation></semantics></math> belongs to a vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m6\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> (i.e., <math alttext=\"z_{i}\\in V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m7\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>&#8712;</mo><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">z_{i}\\in V</annotation></semantics></math>). Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the architecture of a typical E2E audio-text contrastive model, such as CLAP <cite class=\"ltx_cite ltx_citemacro_citep\">(Wu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib37\" title=\"\">2023</a>)</cite>. This model employs a speech encoder <math alttext=\"A(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>A</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">A(\\cdot)</annotation></semantics></math> and a text encoder <math alttext=\"B(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m9\" intent=\":literal\"><semantics><mrow><mi>B</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">B(\\cdot)</annotation></semantics></math> to extract acoustic features and textual features, respectively. The similarity <math alttext=\"S\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m10\" intent=\":literal\"><semantics><mi>S</mi><annotation encoding=\"application/x-tex\">S</annotation></semantics></math> between the two feature representations is then quantified using cosine similarity. The formula is as follows, where <math alttext=\"||.||\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p1.m11\" intent=\":literal\"><semantics><mrow><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo><mo lspace=\"0.167em\" rspace=\"0.167em\">.</mo><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo></mrow><annotation encoding=\"application/x-tex\">||.||</annotation></semantics></math> denotes the L2 norm.</p>\n\n",
+            "<p class=\"ltx_p\">We use 220M Paraformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> and BGE-base <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib3\" title=\"\">2024</a>)</cite> to build CLSR. BGE is frozen during joint training. We consider two models as baseline: one is the E2E text-speech contrastive model like Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and the other is the cascaded model that first uses ASR model to convert speech into text, followed by a text QA task. For the former, we choose CLAP and SpeechDPR for comparison. For the latter, we use Whisper <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite> as the ASR module and BGE-base as the text QA module. The Whisper&#8217;s size is 244M. In the experiment, word error rate (WER) is used to measure the ASR performance, and top-k question-to-context and context-to-question retrieval recall are used to assess retrieval performance. We establish the experimental environment based on Funasr <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib9\" title=\"\">2023</a>)</cite> and ModelScope. The <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> of the loss is set to <math alttext=\"\\frac{1}{3}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m3\" intent=\":literal\"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding=\"application/x-tex\">\\frac{1}{3}</annotation></semantics></math>. We train the model until convergence, consistently using the Adam optimizer with a learning rate of 5e-5.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Significant progress has been made in spoken question answering (SQA) in recent years. However, many existing methods, including large audio language models, struggle with processing long audio. Follow the success of retrieval augmented generation, a speech-related retriever shows promising in help preprocessing long-form speech. But the performance of existing speech-related retrievers is lacking. To address this challenge, we propose CLSR, an end-to-end contrastive language-speech retriever that efficiently extracts question-relevant segments from long audio recordings for downstream SQA task. Unlike conventional speech-text contrastive models, CLSR incorporates an intermediate step that converts acoustic features into text-like representations prior to alignment, thereby more effectively bridging the gap between modalities. Experimental results across four cross-modal retrieval datasets demonstrate that CLSR surpasses both end-to-end speech related retrievers and pipeline approaches combining speech recognition with text retrieval, providing a robust foundation for advancing practical long-form SQA applications.</p>\n\n",
+                "matched_terms": [
+                    "speechtext",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we propose CLSR, an end-to-end (E2E) contrastive language-speech retriever designed to distill lengthy speech recordings into a selection of audio clips that are most pertinent to a given query. These audio clips are used for subsequent LALM inference. Unlike conventional E2E speech-text contrastive learning models, CLSR does not endeavor to align acoustic representations and text representations directly. Instead, it first converts acoustic representations into text-like representations, which are then aligned with actual text representations. The extraction of text-like representations primarily employs continuous integrate-and-fire (CIF) to map acoustic representations from temporal steps to token numbers, followed by the application of a vector quantizer (VQ) based adaptor to refine these acoustic representations into text-like forms. We conduct a comparative analysis of CLSR against standard E2E speech-text retrievers and pipeline retrievers, which integrate speech-to-text models with text contrastive learning models, across four datasets: Spoken-SQuAD, LibriSQA, SLUE-SQA-5, and DRCD. The experimental findings demonstrate that CLSR exhibits superior retrieval performance, suggesting that the use of text-like representations as an intermediary between acoustic and text representations enables CLSR to more effectively discern the similarities and distinctions between these two modalities, thereby enhancing the accuracy of pairing speech with text or speech with speech. The contributions of this paper are as follows:</p>\n\n",
+                "matched_terms": [
+                    "speechtext",
+                    "contrastive",
+                    "e2e"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Currently, there are many works related to SQA. <cite class=\"ltx_cite ltx_citemacro_citet\">Chuang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib6\" title=\"\">2019</a>)</cite> propose a pre-trained model called SpeechBERT for the E2E SQA task. Through the training stage called initial phonetic spatial joint embedding for audio words, it aligns the generated audio embeddings with the text embeddings produced by BERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib7\" title=\"\">2019</a>)</cite> within the same hidden space. <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite> introduce GSQA, which enables the SQA system to perform abstractive reasoning. They first utilize HuBERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Hsu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib15\" title=\"\">2021</a>)</cite> to convert the input speech into discrete units, and then employ a sequence-to-sequence SQA model finetuned from the text QA model LongT5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib13\" title=\"\">2022</a>)</cite> to generate answers in the form of discrete units. <cite class=\"ltx_cite ltx_citemacro_citet\">Lin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib25\" title=\"\">2024</a>)</cite> focus on open-domain SQA in scenarios whose paired speech-text data is unavailable. They propose SpeechDPR, which utilizes a bi-encoder retriever framework and learns a sentence-level semantic representation space by extracting knowledge from a combined model of automatic speech recognition (ASR) and text retrieval. <cite class=\"ltx_cite ltx_citemacro_citet\">Johnson et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib16\" title=\"\">2024</a>)</cite> introduce a retriever that employs deep Q-learning to bypass irrelevant audio segments in longer audio files, thereby enhancing the efficiency of SQA. The latter two articles are related to retriever, which is similar to our paper; however, they have limitations: the performance of the former is inferior to that of the pipeline model, and the latter poorly adapts to the high-dimensional, complex feature space of audio, easily falls into local optima during training due to unbalanced exploration and exploitation.</p>\n\n",
+                "matched_terms": [
+                    "speechtext",
+                    "model",
+                    "e2e"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T2\" title=\"Table 2 &#8227; Main Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows the comparison results of CLSR and other models across four datasets. We additionally provide the results of using BGE for clean text question-context retrieval. In terms of E2E text-to-speech contrastive models, the results of CLSR are significantly better than those of CLAP and SpeechDPR. We found that CLAP cannot learn the relevance between text questions and speech contexts effectively on four datasets, suggesting that CLAP is not well-suited for text-to-speech content alignment. In fact, CLAP is more appropriate for sound and text alignment.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "e2e"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SpeechDPR is committed to using text-less data for training. Although they use ASR models and text QA models for knowledge distillation, the scarcity of data hampers its ability to achieve optimal performance. It is worth noting that we do not conduct large-scale pre-training prior to training CLSR. All leading contrastive learning models, such as BGE, have undergone extensive pre-training, which enhances their retrieval capabilities. Nevertheless, CLSR still achieves results that are second only to BGE in clean text retrieval and even surpasses BGE&#8217;s performance on Spoken-SQuAD*, highlighting the advantages of CLSR&#8217;s architecture.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Compared to conventional E2E contrastive models that directly perform text-to-speech or speech-to-speech alignment, CLSR utilizes text-like representations to alleviate the differences between speech and text modalities. It first maps speech representations into text-like representations and then aligns these text-like representations with actual text representations (or aligns text-like representations with other text-like representations) within the text modality. Leveraging the robust performance of text contrastive models, this approach enhances the alignment between speech and text (or between speech and speech), thereby facilitating more accurate pairing with the context most relevant to the question.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "e2e"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to further demonstrate the superiority of the proposed model over the traditional E2E speech-related contrastive model, which consists of two encoders, we construct a new baseline: ParaBGE, to compare the retrieval capability with CLSR. ParaBGE is composed of the speech encoder from Paraformer and the text encoder from BGE. The sizes of each module in both models are identical to those in CLSR. The experimental results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T4\" title=\"Table 4 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. All retrieval metrics of CLSR far exceed ParaBGE, indicating that CLSR has a stronger question-context alignment ability. Although ParaBGE can optimize parameters towards the direction of aligning question and context representation during training, its performance is not ideal. As we mentioned earlier, such model heavily rely on pre-training with large-scale corpora. However, high-quality speech-text pairs are already very scarce, so for E2E speech related retrieval models, it is difficult to achieve excellent results. However, CLSR alleviates the modal differences between speech and text by using text-like representation as a bridge, shifting the alignment of speech to text alignment. With the powerful generalization ability of text contrastive learning models, it can achieve excellent retrieval capabilities comparable to cascade models and text contrastive models without the need for long-term, large-scale pre-training.</p>\n\n",
+                "matched_terms": [
+                    "speechtext",
+                    "contrastive",
+                    "e2e",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduce CLSR, an E2E contrastive language-speech retriever designed to distill lengthy speech recordings into a limited number of clips that are most pertinent to a given query. By employing a text-like representation as an intermediary state, CLSR exhibits strong capability of cross-modal question-context alignment. Experimental findings demonstrate that CLSR&#8217;s retrieval performance significantly outstrips that of existing E2E speech-related retrievers and is competitive with both cascaded models and text-based retrievers.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "e2e"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR functions as an E2E model, providing a more rapid inference speed in comparison to pipeline models. The speed is a critical runtime metric for a RAG retriever, which must efficiently interface with downstream LALM for long audio inference. We assess the inference speed of CLSR relative to Whisper+BGE across three datasets, with the results detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T6\" title=\"Table 6 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>. While CLSR demonstrates a slight enhancement in transcription and retrieval performance compared to Whisper+BGE, it significantly outperforms in terms of inference speed, indicating that CLSR is more suitable as a RAG retriever.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "e2e"
+                ]
+            }
+        ]
+    },
+    "Sx3.F3": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x3.png",
+        "caption": "Figure 3: The architecture of proposed model, CLSR. The red line is only used during training.",
+        "informative_terms_identified": [
+            "model",
+            "red",
+            "only",
+            "during",
+            "line",
+            "clsr",
+            "architecture",
+            "training"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F3\" title=\"Figure 3 &#8227; Overview &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the specific architecture of CLSR. The left half features a non-autoregressive attention encoder-decoder (AED) framework based on CIF <cite class=\"ltx_cite ltx_citemacro_citep\">(Dong and Xu <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib8\" title=\"\">2020</a>)</cite>. It takes the speech context <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math> as input and produces the corresponding token probability distribution <math alttext=\"D\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>D</mi><annotation encoding=\"application/x-tex\">D</annotation></semantics></math>, <math alttext=\"D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mi>n</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}</annotation></semantics></math>. Both the speech encoder and decoder adopt the SAN-M <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib10\" title=\"\">2020</a>)</cite> structure, which is a specialized Transformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Vaswani et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib35\" title=\"\">2017</a>)</cite> layer that integrates a self-attention mechanism with deep feed-forward sequential memory networks (DFSMN). Initially, the framework uses the speech encoder to extract acoustic features <math alttext=\"H^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m4\" intent=\":literal\"><semantics><msup><mi>H</mi><mi>s</mi></msup><annotation encoding=\"application/x-tex\">H^{s}</annotation></semantics></math>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Currently, there are many works related to SQA. <cite class=\"ltx_cite ltx_citemacro_citet\">Chuang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib6\" title=\"\">2019</a>)</cite> propose a pre-trained model called SpeechBERT for the E2E SQA task. Through the training stage called initial phonetic spatial joint embedding for audio words, it aligns the generated audio embeddings with the text embeddings produced by BERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib7\" title=\"\">2019</a>)</cite> within the same hidden space. <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite> introduce GSQA, which enables the SQA system to perform abstractive reasoning. They first utilize HuBERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Hsu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib15\" title=\"\">2021</a>)</cite> to convert the input speech into discrete units, and then employ a sequence-to-sequence SQA model finetuned from the text QA model LongT5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib13\" title=\"\">2022</a>)</cite> to generate answers in the form of discrete units. <cite class=\"ltx_cite ltx_citemacro_citet\">Lin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib25\" title=\"\">2024</a>)</cite> focus on open-domain SQA in scenarios whose paired speech-text data is unavailable. They propose SpeechDPR, which utilizes a bi-encoder retriever framework and learns a sentence-level semantic representation space by extracting knowledge from a combined model of automatic speech recognition (ASR) and text retrieval. <cite class=\"ltx_cite ltx_citemacro_citet\">Johnson et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib16\" title=\"\">2024</a>)</cite> introduce a retriever that employs deep Q-learning to bypass irrelevant audio segments in longer audio files, thereby enhancing the efficiency of SQA. The latter two articles are related to retriever, which is similar to our paper; however, they have limitations: the performance of the former is inferior to that of the pipeline model, and the latter poorly adapts to the high-dimensional, complex feature space of audio, easily falls into local optima during training due to unbalanced exploration and exploitation.</p>\n\n",
+                "matched_terms": [
+                    "during",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since the inception of GPT, RAG has advanced rapidly <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib41\" title=\"\">2025</a>)</cite>, while research on speech RAG has been comparatively limited. <cite class=\"ltx_cite ltx_citemacro_citet\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib38\" title=\"\">2024</a>)</cite> utilize RAG for spoken language understanding (SLU). They first employ a pre-trained ASR encoder to extract acoustic features. Next, they perform a similarity calculation to identify audio-text label pairs in the training set that are similar, subsequently incorporating this label information into the SLU decoder through a cross-attention mechanism. <cite class=\"ltx_cite ltx_citemacro_citet\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib36\" title=\"\">2024</a>)</cite> propose a joint speech and language model based on RAG, which enhances performance on the named entity recognition task. They compute the similarity between the input speech query embeddings and the entity embeddings in the database to extract the K entities most relevant to the query, using these entities as additional inputs to the model. Currently, there is no SRAG model designed for long-form SQA task.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Consider the SQA task, where questions are presented in text format and contexts are delivered in speech format. Let <math alttext=\"X=\\{x_{1},x_{2},\\dots,x_{t}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>x</mi><mi>t</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">X=\\{x_{1},x_{2},\\dots,x_{t}\\}</annotation></semantics></math> denote the speech context, represented as a sequence of <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> frames. Let <math alttext=\"Z=\\{z_{1},z_{2},\\dots,z_{m}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>Z</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>z</mi><mi>m</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Z=\\{z_{1},z_{2},\\dots,z_{m}\\}</annotation></semantics></math> denote the question text, represented as a sequence of <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m4\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> tokens, where each token <math alttext=\"z_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m5\" intent=\":literal\"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">z_{i}</annotation></semantics></math> belongs to a vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m6\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> (i.e., <math alttext=\"z_{i}\\in V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m7\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>&#8712;</mo><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">z_{i}\\in V</annotation></semantics></math>). Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the architecture of a typical E2E audio-text contrastive model, such as CLAP <cite class=\"ltx_cite ltx_citemacro_citep\">(Wu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib37\" title=\"\">2023</a>)</cite>. This model employs a speech encoder <math alttext=\"A(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>A</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">A(\\cdot)</annotation></semantics></math> and a text encoder <math alttext=\"B(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m9\" intent=\":literal\"><semantics><mrow><mi>B</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">B(\\cdot)</annotation></semantics></math> to extract acoustic features and textual features, respectively. The similarity <math alttext=\"S\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m10\" intent=\":literal\"><semantics><mi>S</mi><annotation encoding=\"application/x-tex\">S</annotation></semantics></math> between the two feature representations is then quantified using cosine similarity. The formula is as follows, where <math alttext=\"||.||\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p1.m11\" intent=\":literal\"><semantics><mrow><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo><mo lspace=\"0.167em\" rspace=\"0.167em\">.</mo><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo></mrow><annotation encoding=\"application/x-tex\">||.||</annotation></semantics></math> denotes the L2 norm.</p>\n\n",
+                "matched_terms": [
+                    "architecture",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, the model learns to minimize the negative log-likelihood (NLL) loss between the representations of paired questions and contexts. This NLL loss comprises two symmetric components: one for retrieving the context given the question, and the other for retrieving the question given the context. The specific formulation is as follows:</p>\n\n",
+                "matched_terms": [
+                    "during",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enhance the capacity of the selected non autoregressive AED framework to model token probability distributions, we introduce a training optimization module called the sampler. When the sampler is enabled, the training process of the framework consists of two rounds. In the first round, we do not utilize the sampler; instead, we directly employ the acoustic features <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math> obtained from the CIF module to predict the probability distribution of tokens. By applying <math alttext=\"argmax\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m2\" intent=\":literal\"><semantics><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>m</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">argmax</annotation></semantics></math>, we can derive the transcription result <math alttext=\"Y^{asr}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m3\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{asr}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">It is important to note that during the initial training phase, no gradient backpropagation is performed, and <math alttext=\"Y^{asr}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p6.m1\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{asr}</annotation></semantics></math> is solely utilized to determine the sampling number for the sampler. <math alttext=\"D^{{}^{\\prime}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p6.m2\" intent=\":literal\"><semantics><msup><mi>D</mi><msup><mi/><mo>&#8242;</mo></msup></msup><annotation encoding=\"application/x-tex\">D^{{}^{\\prime}}</annotation></semantics></math> obtained in the second phase is then used to calculate the ASR loss.</p>\n\n",
+                "matched_terms": [
+                    "during",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The adopted framework calculates three loss functions during training: cross-entropy (CE), mean absolute error (MAE), and minimum word error rate (MWER) loss. CE and MWER are used to optimize the model&#8217;s transcription ability, while MAE facilitates convergence of the CIF. According to <cite class=\"ltx_cite ltx_citemacro_citet\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite>, the loss function for the ASR part is:</p>\n\n",
+                "matched_terms": [
+                    "during",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct experiments on four datasets: Spoken-SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite>, LibriSQA <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib42\" title=\"\">2024</a>)</cite>, SLUE-SQA-5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Shon et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib33\" title=\"\">2022</a>)</cite>, and DRCD. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T1\" title=\"Table 1 &#8227; Configuration &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> displays detailed information about these datasets. <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite> use Google text-to-speech (TTS) system to generate the spoken versions of the articles in SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Rajpurkar <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib29\" title=\"\">2016</a>)</cite>. Given that SQuAD is a many-to-one dataset, where multiple questions correspond to the same context, it is unsuitable for training text-speech retrievers. So, we filter the original Spoken-SQuAD dataset to ensure that each question corresponds one-to-one with its context; the filtered dataset is referred to as Spoken SQuAD*. LibriSQA is adapted from the ASR dataset LibriSpeech <cite class=\"ltx_cite ltx_citemacro_citep\">(Panayotov et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib27\" title=\"\">2015</a>)</cite>. The authors input the textual document of each speech segment from LibriSpeech into ChatGPT and request the generation of corresponding text question-answer pairs. We use the first part of LibriSQA, which presents questions without options, and the answers are complete sentences. SLUE-SQA-5 is adapted from five text QA datasets, and both the questions and contexts consist of authentic audio recordings. DRCD <cite class=\"ltx_cite ltx_citemacro_citep\">(Shao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib30\" title=\"\">2018</a>)</cite> is originally a Chinese QA dataset. Similar to SQuAD, it is also a many-to-one dataset. We first filter it into a one-to-one dataset and then use the TTS model <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib22\" title=\"\">2020</a>)</cite> to synthesize the speech versions of each question-context pair for its training set. <cite class=\"ltx_cite ltx_citemacro_citet\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib19\" title=\"\">2018</a>)</cite> offer spoken version of DRCD&#8217;s development set, which we use for testing.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use 220M Paraformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> and BGE-base <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib3\" title=\"\">2024</a>)</cite> to build CLSR. BGE is frozen during joint training. We consider two models as baseline: one is the E2E text-speech contrastive model like Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and the other is the cascaded model that first uses ASR model to convert speech into text, followed by a text QA task. For the former, we choose CLAP and SpeechDPR for comparison. For the latter, we use Whisper <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite> as the ASR module and BGE-base as the text QA module. The Whisper&#8217;s size is 244M. In the experiment, word error rate (WER) is used to measure the ASR performance, and top-k question-to-context and context-to-question retrieval recall are used to assess retrieval performance. We establish the experimental environment based on Funasr <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib9\" title=\"\">2023</a>)</cite> and ModelScope. The <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> of the loss is set to <math alttext=\"\\frac{1}{3}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m3\" intent=\":literal\"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding=\"application/x-tex\">\\frac{1}{3}</annotation></semantics></math>. We train the model until convergence, consistently using the Adam optimizer with a learning rate of 5e-5.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "during",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SpeechDPR is committed to using text-less data for training. Although they use ASR models and text QA models for knowledge distillation, the scarcity of data hampers its ability to achieve optimal performance. It is worth noting that we do not conduct large-scale pre-training prior to training CLSR. All leading contrastive learning models, such as BGE, have undergone extensive pre-training, which enhances their retrieval capabilities. Nevertheless, CLSR still achieves results that are second only to BGE in clean text retrieval and even surpasses BGE&#8217;s performance on Spoken-SQuAD*, highlighting the advantages of CLSR&#8217;s architecture.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "architecture",
+                    "only",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When conducting a comparative analysis of CLSR and Whisper+BGE, we find that their retrieval performances on three English datasets are quite similar; however, CLSR demonstrates certain advantages. In terms of transcription ability, CLSR significantly outperforms Whisper+BGE. This indicates that the joint training of CLSR effectively optimizes both the ASR module and the contrastive learning module. Given that Whisper&#8217;s performance in Chinese speech recognition is not exceptional, we have opted not to train Whisper on DRCD*.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate the effectiveness of the quantizer and sampler in CLSR, as well as the potential for multi-stage training to improve model performance. We conduct a series of ablation experiments on Spoken-SQuAD. The results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T3\" title=\"Table 3 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The first two rows of the results show the value of the quantizer. When the quantizer is not utilized, the model may achieve a lower WER; however, its comparative learning ability significantly diminishes. The top-10 retrieval recall rate of &#8220;CLSR w/o VQ&#8221; is only comparable to the top-1 retrieval recall rate of &#8220;CLSR w/ VQ&#8221;. The results in the sixth and seventh rows show the effectiveness of the sampler. After introducing the sampler, CLSR not only improves retrieval ability, but also improves ASR performance.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "model",
+                    "only",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Before joint training, we can pre-train the ASR module and the BGE module of CLSR separately. In the experiment, we use 460 hours of clean LibriSpeech data to pre-train Paraformer, and use Spoken-SQuAD&#8217;s clean text question-context pairs to train BGE. Comparing the second and fourth rows of the experimental results, it is not difficult to find that pre-training the BGE is beneficial; incorporating the pre-trained BGE during joint training enhances various retrieval metrics of the CLSR. In addition, through the comparison between the fourth and sixth rows, it can be found that pre-training Paraformer can improve the model&#8217;s transcription performance while also slightly improving its retrieval ability. It should be noted that in order to improve the training speed of the model, we froze BGE, which has strong retrieval performance, during joint training. Therefore, we can freeze the ASR module after joint training and train BGE for a few epochs separately, which is called post-train in the table. It is hoped that this approach can make BGE better adapt to the text-like representation provided by the ASR module. Unfortunately, post-train can only slightly improve the performance of the model, as evidenced by rows 2 and 3, 4 and 5, 7 and 8 in the table. In short, through ablation experiments, we have shown that both quantizers and samplers are inseparable for CLSR, and that pre-training the ASR module and BGE module of CLSR is of significant importance.</p>\n\n",
+                "matched_terms": [
+                    "model",
+                    "only",
+                    "during",
+                    "clsr",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to further demonstrate the superiority of the proposed model over the traditional E2E speech-related contrastive model, which consists of two encoders, we construct a new baseline: ParaBGE, to compare the retrieval capability with CLSR. ParaBGE is composed of the speech encoder from Paraformer and the text encoder from BGE. The sizes of each module in both models are identical to those in CLSR. The experimental results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T4\" title=\"Table 4 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. All retrieval metrics of CLSR far exceed ParaBGE, indicating that CLSR has a stronger question-context alignment ability. Although ParaBGE can optimize parameters towards the direction of aligning question and context representation during training, its performance is not ideal. As we mentioned earlier, such model heavily rely on pre-training with large-scale corpora. However, high-quality speech-text pairs are already very scarce, so for E2E speech related retrieval models, it is difficult to achieve excellent results. However, CLSR alleviates the modal differences between speech and text by using text-like representation as a bridge, shifting the alignment of speech to text alignment. With the powerful generalization ability of text contrastive learning models, it can achieve excellent retrieval capabilities comparable to cascade models and text contrastive models without the need for long-term, large-scale pre-training.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "during",
+                    "model",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate our model for real-world long audio SQA&#8212;enabling downstream LALMs to simplify inputs and enhance inference speed and accuracy&#8212;we conduct SQA tasks on a modified SLUE-SQA-5 dataset using CLSR and Qwen-Audio. To simulate long-context inference, we replace the contextual audio in 500 randomly selected test instances with full documents from the Spoken Wikipedia corpus <cite class=\"ltx_cite ltx_citemacro_citep\">(K&#246;hn, Stegen, and Baumann <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib17\" title=\"\">2016</a>)</cite>, each averaging &#160;30 minutes in length.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Without CLSR, Qwen-Audio directly generates answers from the input speech document and text question. With CLSR, we first segment the speech document into 40-second intervals, assess each segment&#8217;s similarity to the text question, and select the most relevant one as Qwen-Audio&#8217;s contextual input. Prior to testing, both Qwen-Audio and CLSR were trained using the original training subset of SLUE-SQA-5. The results of the testing are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T5\" title=\"Table 5 &#8227; Long-form SQA Evaluation &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Following the application of CLSR for long audio reduction, there is a notable enhancement in Qwen-Audio&#8217;s exact match (EM) and macro-F1 scores for SQA, alongside a tenfold reduction in inference time. These findings underscore the significance of CLSR in the preprocessing of long audio, demonstrating its capacity to not only enhance the inference accuracy of downstream LALM but also to substantially decrease inference time.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "only",
+                    "training"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR functions as an E2E model, providing a more rapid inference speed in comparison to pipeline models. The speed is a critical runtime metric for a RAG retriever, which must efficiently interface with downstream LALM for long audio inference. We assess the inference speed of CLSR relative to Whisper+BGE across three datasets, with the results detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T6\" title=\"Table 6 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>. While CLSR demonstrates a slight enhancement in transcription and retrieval performance compared to Whisper+BGE, it significantly outperforms in terms of inference speed, indicating that CLSR is more suitable as a RAG retriever.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate the performance of the Whisper+BGE pipeline following fine-tuning with noisy data, we transcribe the training data using a trained Whisper model and subsequently provide it to BGE for pre-training. The results of this experimentation are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T7\" title=\"Table 7 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, where the fine-tuned Whisper+BGE is referred to as Whisper+BGE*. The findings suggest that Whisper+BGE* yields only a marginal improvement in retrieval capability on the LibriSQA dataset, while performance declines on the other two datasets. CLSR continues to demonstrate a superior ability in retrieving speech content.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "model",
+                    "only",
+                    "training"
+                ]
+            }
+        ]
+    },
+    "Sx3.F4": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x4.png",
+        "caption": "Figure 4: The explanation of CIF workflow. The gray box on the right shows an example of CIF, where α={0.8,0.3,0.4,0.4,0.1}\\alpha=\\{0.8,0.3,0.4,0.4,0.1\\} and the threshold β\\beta=1.",
+        "informative_terms_identified": [
+            "box",
+            "example",
+            "where",
+            "α0803040401alpha0803040401",
+            "gray",
+            "threshold",
+            "workflow",
+            "explanation",
+            "βbeta1",
+            "cif"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F4\" title=\"Figure 4 &#8227; Continuous Integrate-and-Fire &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">4</span></a> explains the workflow of the CIF. Through convolution operations and linear mapping, it calculates the weight distribution <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math>, <math alttext=\"\\alpha=\\{\\alpha_{1},\\alpha_{2},\\alpha_{3},&#8230;,\\alpha_{t}\\mid\\alpha_{i}\\in[0,1]\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m2\" intent=\":literal\"><semantics><mrow><mi>&#945;</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><mrow><msub><mi>&#945;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#945;</mi><mn>2</mn></msub><mo>,</mo><msub><mi>&#945;</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>&#945;</mi><mi>t</mi></msub></mrow><mo fence=\"true\" lspace=\"0em\" rspace=\"0em\">&#8739;</mo><mrow><msub><mi>&#945;</mi><mi>i</mi></msub><mo>&#8712;</mo><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow></mrow><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\alpha=\\{\\alpha_{1},\\alpha_{2},\\alpha_{3},&#8230;,\\alpha_{t}\\mid\\alpha_{i}\\in[0,1]\\}</annotation></semantics></math>. Each <math alttext=\"\\alpha_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m3\" intent=\":literal\"><semantics><msub><mi>&#945;</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">\\alpha_{i}</annotation></semantics></math> shows the valid information contained in relevant <math alttext=\"h_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m4\" intent=\":literal\"><semantics><msub><mi>h</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">h_{i}</annotation></semantics></math> of the acoustic feature <math alttext=\"H_{1:t}^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx3.p1.m5\" intent=\":literal\"><semantics><msubsup><mi>H</mi><mrow><mn>1</mn><mo lspace=\"0.278em\" rspace=\"0.278em\">:</mo><mi>t</mi></mrow><mi>s</mi></msubsup><annotation encoding=\"application/x-tex\">H_{1:t}^{s}</annotation></semantics></math>.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">We also use NLL loss to optimize the model&#8217;s ability in aligning the question representation with the context representation. The overall loss function can be expressed as follows, where <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> are parameters that control the proportions of the CIF loss and the contrastive loss, with <math alttext=\"\\alpha\\in(0,1)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m3\" intent=\":literal\"><semantics><mrow><mi>&#945;</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\alpha\\in(0,1)</annotation></semantics></math> and <math alttext=\"\\beta\\in(0,1)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m4\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\beta\\in(0,1)</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "where",
+                    "cif"
+                ]
+            }
+        ]
+    },
+    "Sx3.F5": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x5.png",
+        "caption": "Figure 5: The mapping process of the adaptor.",
+        "informative_terms_identified": [
+            "adaptor",
+            "mapping",
+            "process"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">The quantized token representation <math alttext=\"q_{i}^{\\text{st}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p7.m1\" intent=\":literal\"><semantics><msubsup><mi>q</mi><mi>i</mi><mtext>st</mtext></msubsup><annotation encoding=\"application/x-tex\">q_{i}^{\\text{st}}</annotation></semantics></math> are collected into a matrix <math alttext=\"Q^{st}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p7.m2\" intent=\":literal\"><semantics><msup><mi>Q</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msup><annotation encoding=\"application/x-tex\">Q^{st}</annotation></semantics></math>. Next, we map <math alttext=\"Q^{st}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p7.m3\" intent=\":literal\"><semantics><msup><mi>Q</mi><mrow><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>t</mi></mrow></msup><annotation encoding=\"application/x-tex\">Q^{st}</annotation></semantics></math> to the embedding layer of the text encoder. The specific operation, illustrated in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F5\" title=\"Figure 5 &#8227; Adaptor &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>, involves matrix multiplication with the embedding layer weights <math alttext=\"W^{te}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p7.m4\" intent=\":literal\"><semantics><msup><mi>W</mi><mrow><mi>t</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>e</mi></mrow></msup><annotation encoding=\"application/x-tex\">W^{te}</annotation></semantics></math>:</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">After obtaining the probability distribution <math alttext=\"D\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m1\" intent=\":literal\"><semantics><mi>D</mi><annotation encoding=\"application/x-tex\">D</annotation></semantics></math> of the tokens, we use an adaptor to map it to the text-like embedding <math alttext=\"E^{Y^{\\prime}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><msup><mi>Y</mi><mo>&#8242;</mo></msup></msup><annotation encoding=\"application/x-tex\">E^{Y^{\\prime}}</annotation></semantics></math>. The adaptation involves two steps: quantization and mapping. The quantization converts each token&#8217;s probability distribution into the index of the highest-probability token in vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m3\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math>. Following <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib32\" title=\"\">2023b</a>)</cite>, we first select the token index <math alttext=\"q_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m4\" intent=\":literal\"><semantics><msub><mi>q</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">q_{i}</annotation></semantics></math> with the highest probability from each distribution <math alttext=\"d_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m5\" intent=\":literal\"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">d_{i}</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "adaptor",
+                    "mapping"
+                ]
+            }
+        ]
+    },
+    "A1.F7": {
+        "source_file": "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering",
+        "image_url": "https://arxiv.org/html/2511.09282v1/x6.png",
+        "caption": "Figure 7: Two comparative case studies between CLSR and ParaBGE. Each case displays two heatmaps with the textual question on the horizontal axis and the speech context’s transcription on the vertical axis. The left and right heatmaps correspond to CLSR and ParaBGE, respectively. These heatmaps visualize the cosine similarity scores computed by each model between individual speech frames in the context and word-level tokens in the question, where darker hues indicate higher similarity.",
+        "informative_terms_identified": [
+            "question",
+            "individual",
+            "similarity",
+            "scores",
+            "correspond",
+            "parabge",
+            "clsr",
+            "heatmaps",
+            "between",
+            "tokens",
+            "computed",
+            "context",
+            "model",
+            "transcription",
+            "studies",
+            "case",
+            "where",
+            "higher",
+            "cosine",
+            "darker",
+            "hues",
+            "textual",
+            "frames",
+            "wordlevel",
+            "context’s",
+            "indicate",
+            "visualize",
+            "speech",
+            "axis",
+            "horizontal",
+            "comparative",
+            "two",
+            "vertical"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">We select two representative cases from the LibriSQA inference results and visualize the similarity distributions of CLSR and ParaBGE when aligning textual questions with speech contexts in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.F7\" title=\"Figure 7 &#8227; Case Study: Structural Superiority of CLSR over Traditional End-to-End Dual-Encoder Retrievers. &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, which demonstrates CLSR&#8217;s architectural superiority over traditional dual-encoder retrievers. As shown, CLSR achieves precise alignment between semantically related audio-text segments (e.g., matching &#8220;mary&#8221; in Case 1 and &#8220;humble grass&#8221; in Case 2), whereas ParaBGE exhibits uniformly distributed similarity scores without capturing token-level correspondences. This granular alignment enables CLSR to identify context segments more relevant to queries, enhancing retrieval accuracy.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Significant progress has been made in spoken question answering (SQA) in recent years. However, many existing methods, including large audio language models, struggle with processing long audio. Follow the success of retrieval augmented generation, a speech-related retriever shows promising in help preprocessing long-form speech. But the performance of existing speech-related retrievers is lacking. To address this challenge, we propose CLSR, an end-to-end contrastive language-speech retriever that efficiently extracts question-relevant segments from long audio recordings for downstream SQA task. Unlike conventional speech-text contrastive models, CLSR incorporates an intermediate step that converts acoustic features into text-like representations prior to alignment, thereby more effectively bridging the gap between modalities. Experimental results across four cross-modal retrieval datasets demonstrate that CLSR surpasses both end-to-end speech related retrievers and pipeline approaches combining speech recognition with text retrieval, providing a robust foundation for advancing practical long-form SQA applications.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "question",
+                    "speech",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The question answering (QA) task requires the model to find the answer to a question from a given context. When the answer is a specific segment within the context, the task is classified as extractive QA; conversely, if the answer cannot be directly derived from the context and necessitates additional reasoning by the model, it is termed abstractive QA <cite class=\"ltx_cite ltx_citemacro_citep\">(Shih et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite>. In the realm of spoken question answering, the context is presented in audio format <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite>, and certain complex SQA tasks also require the questions to be delivered in audio format <cite class=\"ltx_cite ltx_citemacro_citep\">(Shon et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib33\" title=\"\">2022</a>)</cite>. Despite advancements in SQA methodologies <cite class=\"ltx_cite ltx_citemacro_citep\">(Lee, Chen, and Lee <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib18\" title=\"\">2019</a>; You et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib40\" title=\"\">2022</a>)</cite>, the majority of existing SQA models are limited to processing short audio segments (under one minute). However, many real-world dialogue scenarios, such as meetings, lectures, and online discussions, often involve voice recordings that exceed ten minutes, posing challenges for current SQA techniques.</p>\n\n",
+                "matched_terms": [
+                    "question",
+                    "context",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The development of large language models (LLMs) is advancing rapidly. Notable examples, such as GPT <cite class=\"ltx_cite ltx_citemacro_citep\">(Brown <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib2\" title=\"\">2020</a>)</cite> and LLaMA <cite class=\"ltx_cite ltx_citemacro_citep\">(Touvron et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib34\" title=\"\">2023</a>)</cite>, among others <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib24\" title=\"\">2023</a>; Yao, Li, and Zhao <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib39\" title=\"\">2024</a>)</cite>, have demonstrated significant success across various traditional natural language processing (NLP) tasks, including question answering. In the speech domain, numerous large audio language models (LALMs) have emerged, showcasing remarkable capabilities in speech comprehension <cite class=\"ltx_cite ltx_citemacro_citep\">(Chu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib5\" title=\"\">2023</a>; Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite>. The retrieval-augmented generation (RAG) paradigm <cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib20\" title=\"\">2020</a>)</cite> enhances LLMs&#8217; natural language understanding by integrating external knowledge <cite class=\"ltx_cite ltx_citemacro_citep\">(Gupta, Ranjan, and Singh <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib14\" title=\"\">2024</a>)</cite>. Specifically, RAG employs a retriever to assess the similarity between user queries and segments within a knowledge database, selecting the top-k most relevant segments as supplementary context for the LLM. This approach enables the LLM to better comprehend queries and generate more accurate responses. Currently, RAG is commonly used for long-context reasoning tasks <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib23\" title=\"\">2025</a>; Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib12\" title=\"\">2025</a>)</cite>. For example, in question-answering tasks that involve lengthy input contexts like full articles, RAG works by identifying and retrieving the most pertinent context segments. This process minimizes the inclusion of irrelevant information, which can otherwise introduce errors into the answer and reduce inference speed. Given the effectiveness of RAG in text-based long-context QA, a pertinent question arises for long-form SQA: Can RAG be similarly employed to extract problem-relevant segments from audio inputs to serve as context for subsequent LALM processing?</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "speech",
+                    "context",
+                    "similarity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we propose CLSR, an end-to-end (E2E) contrastive language-speech retriever designed to distill lengthy speech recordings into a selection of audio clips that are most pertinent to a given query. These audio clips are used for subsequent LALM inference. Unlike conventional E2E speech-text contrastive learning models, CLSR does not endeavor to align acoustic representations and text representations directly. Instead, it first converts acoustic representations into text-like representations, which are then aligned with actual text representations. The extraction of text-like representations primarily employs continuous integrate-and-fire (CIF) to map acoustic representations from temporal steps to token numbers, followed by the application of a vector quantizer (VQ) based adaptor to refine these acoustic representations into text-like forms. We conduct a comparative analysis of CLSR against standard E2E speech-text retrievers and pipeline retrievers, which integrate speech-to-text models with text contrastive learning models, across four datasets: Spoken-SQuAD, LibriSQA, SLUE-SQA-5, and DRCD. The experimental findings demonstrate that CLSR exhibits superior retrieval performance, suggesting that the use of text-like representations as an intermediary between acoustic and text representations enables CLSR to more effectively discern the similarities and distinctions between these two modalities, thereby enhancing the accuracy of pairing speech with text or speech with speech. The contributions of this paper are as follows:</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "speech",
+                    "comparative",
+                    "clsr",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The CLSR demonstrates superior performance compared to both E2E and cascade speech retrieval systems on four datasets: Spoken-SQuAD, LibriSQA, SLUE-SQA-5, and DRCD.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Currently, there are many works related to SQA. <cite class=\"ltx_cite ltx_citemacro_citet\">Chuang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib6\" title=\"\">2019</a>)</cite> propose a pre-trained model called SpeechBERT for the E2E SQA task. Through the training stage called initial phonetic spatial joint embedding for audio words, it aligns the generated audio embeddings with the text embeddings produced by BERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib7\" title=\"\">2019</a>)</cite> within the same hidden space. <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib31\" title=\"\">2023a</a>)</cite> introduce GSQA, which enables the SQA system to perform abstractive reasoning. They first utilize HuBERT <cite class=\"ltx_cite ltx_citemacro_citep\">(Hsu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib15\" title=\"\">2021</a>)</cite> to convert the input speech into discrete units, and then employ a sequence-to-sequence SQA model finetuned from the text QA model LongT5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Guo et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib13\" title=\"\">2022</a>)</cite> to generate answers in the form of discrete units. <cite class=\"ltx_cite ltx_citemacro_citet\">Lin et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib25\" title=\"\">2024</a>)</cite> focus on open-domain SQA in scenarios whose paired speech-text data is unavailable. They propose SpeechDPR, which utilizes a bi-encoder retriever framework and learns a sentence-level semantic representation space by extracting knowledge from a combined model of automatic speech recognition (ASR) and text retrieval. <cite class=\"ltx_cite ltx_citemacro_citet\">Johnson et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib16\" title=\"\">2024</a>)</cite> introduce a retriever that employs deep Q-learning to bypass irrelevant audio segments in longer audio files, thereby enhancing the efficiency of SQA. The latter two articles are related to retriever, which is similar to our paper; however, they have limitations: the performance of the former is inferior to that of the pipeline model, and the latter poorly adapts to the high-dimensional, complex feature space of audio, easily falls into local optima during training due to unbalanced exploration and exploitation.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "two",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Since the inception of GPT, RAG has advanced rapidly <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib41\" title=\"\">2025</a>)</cite>, while research on speech RAG has been comparatively limited. <cite class=\"ltx_cite ltx_citemacro_citet\">Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib38\" title=\"\">2024</a>)</cite> utilize RAG for spoken language understanding (SLU). They first employ a pre-trained ASR encoder to extract acoustic features. Next, they perform a similarity calculation to identify audio-text label pairs in the training set that are similar, subsequently incorporating this label information into the SLU decoder through a cross-attention mechanism. <cite class=\"ltx_cite ltx_citemacro_citet\">Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib36\" title=\"\">2024</a>)</cite> propose a joint speech and language model based on RAG, which enhances performance on the named entity recognition task. They compute the similarity between the input speech query embeddings and the entity embeddings in the database to extract the K entities most relevant to the query, using these entities as additional inputs to the model. Currently, there is no SRAG model designed for long-form SQA task.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "speech",
+                    "similarity",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Consider the SQA task, where questions are presented in text format and contexts are delivered in speech format. Let <math alttext=\"X=\\{x_{1},x_{2},\\dots,x_{t}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m1\" intent=\":literal\"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>x</mi><mi>t</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">X=\\{x_{1},x_{2},\\dots,x_{t}\\}</annotation></semantics></math> denote the speech context, represented as a sequence of <math alttext=\"t\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m2\" intent=\":literal\"><semantics><mi>t</mi><annotation encoding=\"application/x-tex\">t</annotation></semantics></math> frames. Let <math alttext=\"Z=\\{z_{1},z_{2},\\dots,z_{m}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m3\" intent=\":literal\"><semantics><mrow><mi>Z</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>z</mi><mi>m</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">Z=\\{z_{1},z_{2},\\dots,z_{m}\\}</annotation></semantics></math> denote the question text, represented as a sequence of <math alttext=\"m\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m4\" intent=\":literal\"><semantics><mi>m</mi><annotation encoding=\"application/x-tex\">m</annotation></semantics></math> tokens, where each token <math alttext=\"z_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m5\" intent=\":literal\"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">z_{i}</annotation></semantics></math> belongs to a vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m6\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math> (i.e., <math alttext=\"z_{i}\\in V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m7\" intent=\":literal\"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>&#8712;</mo><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">z_{i}\\in V</annotation></semantics></math>). Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> illustrates the architecture of a typical E2E audio-text contrastive model, such as CLAP <cite class=\"ltx_cite ltx_citemacro_citep\">(Wu et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib37\" title=\"\">2023</a>)</cite>. This model employs a speech encoder <math alttext=\"A(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m8\" intent=\":literal\"><semantics><mrow><mi>A</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">A(\\cdot)</annotation></semantics></math> and a text encoder <math alttext=\"B(\\cdot)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m9\" intent=\":literal\"><semantics><mrow><mi>B</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mrow><mo stretchy=\"false\">(</mo><mo lspace=\"0em\" rspace=\"0em\">&#8901;</mo><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">B(\\cdot)</annotation></semantics></math> to extract acoustic features and textual features, respectively. The similarity <math alttext=\"S\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx1.p1.m10\" intent=\":literal\"><semantics><mi>S</mi><annotation encoding=\"application/x-tex\">S</annotation></semantics></math> between the two feature representations is then quantified using cosine similarity. The formula is as follows, where <math alttext=\"||.||\" class=\"ltx_math_unparsed\" display=\"inline\" id=\"Sx3.SSx1.p1.m11\" intent=\":literal\"><semantics><mrow><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo><mo lspace=\"0.167em\" rspace=\"0.167em\">.</mo><mo fence=\"false\" rspace=\"0.167em\" stretchy=\"false\">|</mo><mo fence=\"false\" stretchy=\"false\">|</mo></mrow><annotation encoding=\"application/x-tex\">||.||</annotation></semantics></math> denotes the L2 norm.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "tokens",
+                    "where",
+                    "speech",
+                    "two",
+                    "context",
+                    "cosine",
+                    "model",
+                    "similarity",
+                    "textual",
+                    "frames"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, the model learns to minimize the negative log-likelihood (NLL) loss between the representations of paired questions and contexts. This NLL loss comprises two symmetric components: one for retrieving the context given the question, and the other for retrieving the question given the context. The specific formulation is as follows:</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "context",
+                    "model",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F3\" title=\"Figure 3 &#8227; Overview &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows the specific architecture of CLSR. The left half features a non-autoregressive attention encoder-decoder (AED) framework based on CIF <cite class=\"ltx_cite ltx_citemacro_citep\">(Dong and Xu <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib8\" title=\"\">2020</a>)</cite>. It takes the speech context <math alttext=\"X\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m1\" intent=\":literal\"><semantics><mi>X</mi><annotation encoding=\"application/x-tex\">X</annotation></semantics></math> as input and produces the corresponding token probability distribution <math alttext=\"D\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m2\" intent=\":literal\"><semantics><mi>D</mi><annotation encoding=\"application/x-tex\">D</annotation></semantics></math>, <math alttext=\"D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m3\" intent=\":literal\"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy=\"false\">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>d</mi><mi>n</mi></msub><mo stretchy=\"false\">}</mo></mrow></mrow><annotation encoding=\"application/x-tex\">D=\\{d_{1},d_{2},d_{3},&#8230;,d_{n}\\}</annotation></semantics></math>. Both the speech encoder and decoder adopt the SAN-M <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib10\" title=\"\">2020</a>)</cite> structure, which is a specialized Transformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Vaswani et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib35\" title=\"\">2017</a>)</cite> layer that integrates a self-attention mechanism with deep feed-forward sequential memory networks (DFSMN). Initially, the framework uses the speech encoder to extract acoustic features <math alttext=\"H^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p1.m4\" intent=\":literal\"><semantics><msup><mi>H</mi><mi>s</mi></msup><annotation encoding=\"application/x-tex\">H^{s}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "context",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Then, as shown in the following formula, it predicts the corresponding token distribution through the speech decoder and a fully connected layer. In addition, following <cite class=\"ltx_cite ltx_citemacro_citet\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite>, we use a sampler to optimize the training process of this framework. The sampler does not contain any learnable parameters and is designed to enhance the context modeling capability of the decoder by sampling text features into <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p3.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math>. It will be elaborated on in subsequent chapter.</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The right half of CLSR is a Transformer-based text encoder that receives either text embeddings or text-like embeddings as input and output corresponding text representations. We obtain the sentence-level representation by inserting the <span class=\"ltx_text ltx_font_typewriter\">CLS</span> token. When aligning the text question with the speech context, we input the text-like embeddings <math alttext=\"E^{Y^{{}^{\\prime}}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p6.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><msup><mi>Y</mi><msup><mi/><mo>&#8242;</mo></msup></msup></msup><annotation encoding=\"application/x-tex\">E^{Y^{{}^{\\prime}}}</annotation></semantics></math> of the context and the text embeddings <math alttext=\"E^{Z}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx2.p6.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>Z</mi></msup><annotation encoding=\"application/x-tex\">E^{Z}</annotation></semantics></math> of the question into the text encoder to obtain their respective sentence-level representations. We then use cosine similarity to evaluate the similarity between them.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "speech",
+                    "context",
+                    "cosine",
+                    "clsr",
+                    "similarity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To enhance the capacity of the selected non autoregressive AED framework to model token probability distributions, we introduce a training optimization module called the sampler. When the sampler is enabled, the training process of the framework consists of two rounds. In the first round, we do not utilize the sampler; instead, we directly employ the acoustic features <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math> obtained from the CIF module to predict the probability distribution of tokens. By applying <math alttext=\"argmax\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m2\" intent=\":literal\"><semantics><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>g</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>m</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>x</mi></mrow><annotation encoding=\"application/x-tex\">argmax</annotation></semantics></math>, we can derive the transcription result <math alttext=\"Y^{asr}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m3\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{asr}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "transcription",
+                    "tokens",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Next, we proceed to the second round of training and initiate sampling. We first compare the ASR output <math alttext=\"Y^{asr}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m4\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>a</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>s</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>r</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{asr}</annotation></semantics></math> with the ground-truth context <math alttext=\"Y^{con}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m5\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{con}</annotation></semantics></math> to identify tokens containing transcription errors and their respective positions. Then merge the correct embeddings of erroneous tokens from <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m6\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math> (the embeddings of <math alttext=\"Y^{con}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m7\" intent=\":literal\"><semantics><msup><mi>Y</mi><mrow><mi>c</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>o</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>n</mi></mrow></msup><annotation encoding=\"application/x-tex\">Y^{con}</annotation></semantics></math>) into the acoustic features <math alttext=\"E^{a}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m8\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>a</mi></msup><annotation encoding=\"application/x-tex\">E^{a}</annotation></semantics></math> through selective replacement, generating semantic features <math alttext=\"E^{s}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p1.m9\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>s</mi></msup><annotation encoding=\"application/x-tex\">E^{s}</annotation></semantics></math>. This process is formalized as:</p>\n\n",
+                "matched_terms": [
+                    "context",
+                    "transcription",
+                    "tokens"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Regarding the real text embeddings <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p7.m1\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math>, <cite class=\"ltx_cite ltx_citemacro_citet\">Gao et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> uses the embedding layer of the speech decoder to derive them. However, in our proposed model, this layer is not trained, and its weights may not effectively represent the text embedding space. Consequently, we use the weights of the linear layer, which is used to generate the probability distribution of the tokens, to calculate <math alttext=\"E^{c}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx4.p7.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><mi>c</mi></msup><annotation encoding=\"application/x-tex\">E^{c}</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "tokens",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">After obtaining the probability distribution <math alttext=\"D\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m1\" intent=\":literal\"><semantics><mi>D</mi><annotation encoding=\"application/x-tex\">D</annotation></semantics></math> of the tokens, we use an adaptor to map it to the text-like embedding <math alttext=\"E^{Y^{\\prime}}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m2\" intent=\":literal\"><semantics><msup><mi>E</mi><msup><mi>Y</mi><mo>&#8242;</mo></msup></msup><annotation encoding=\"application/x-tex\">E^{Y^{\\prime}}</annotation></semantics></math>. The adaptation involves two steps: quantization and mapping. The quantization converts each token&#8217;s probability distribution into the index of the highest-probability token in vocabulary <math alttext=\"V\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m3\" intent=\":literal\"><semantics><mi>V</mi><annotation encoding=\"application/x-tex\">V</annotation></semantics></math>. Following <cite class=\"ltx_cite ltx_citemacro_citet\">Shih et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib32\" title=\"\">2023b</a>)</cite>, we first select the token index <math alttext=\"q_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m4\" intent=\":literal\"><semantics><msub><mi>q</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">q_{i}</annotation></semantics></math> with the highest probability from each distribution <math alttext=\"d_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx5.p1.m5\" intent=\":literal\"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">d_{i}</annotation></semantics></math>:</p>\n\n",
+                "matched_terms": [
+                    "two",
+                    "tokens"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We also use NLL loss to optimize the model&#8217;s ability in aligning the question representation with the context representation. The overall loss function can be expressed as follows, where <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> are parameters that control the proportions of the CIF loss and the contrastive loss, with <math alttext=\"\\alpha\\in(0,1)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m3\" intent=\":literal\"><semantics><mrow><mi>&#945;</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\alpha\\in(0,1)</annotation></semantics></math> and <math alttext=\"\\beta\\in(0,1)\" class=\"ltx_Math\" display=\"inline\" id=\"Sx3.SSx6.p2.m4\" intent=\":literal\"><semantics><mrow><mi>&#946;</mi><mo>&#8712;</mo><mrow><mo stretchy=\"false\">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></mrow><annotation encoding=\"application/x-tex\">\\beta\\in(0,1)</annotation></semantics></math>.</p>\n\n",
+                "matched_terms": [
+                    "question",
+                    "context",
+                    "where"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct experiments on four datasets: Spoken-SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite>, LibriSQA <cite class=\"ltx_cite ltx_citemacro_citep\">(Zhao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib42\" title=\"\">2024</a>)</cite>, SLUE-SQA-5 <cite class=\"ltx_cite ltx_citemacro_citep\">(Shon et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib33\" title=\"\">2022</a>)</cite>, and DRCD. Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T1\" title=\"Table 1 &#8227; Configuration &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> displays detailed information about these datasets. <cite class=\"ltx_cite ltx_citemacro_citet\">Li et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib21\" title=\"\">2018</a>)</cite> use Google text-to-speech (TTS) system to generate the spoken versions of the articles in SQuAD <cite class=\"ltx_cite ltx_citemacro_citep\">(Rajpurkar <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib29\" title=\"\">2016</a>)</cite>. Given that SQuAD is a many-to-one dataset, where multiple questions correspond to the same context, it is unsuitable for training text-speech retrievers. So, we filter the original Spoken-SQuAD dataset to ensure that each question corresponds one-to-one with its context; the filtered dataset is referred to as Spoken SQuAD*. LibriSQA is adapted from the ASR dataset LibriSpeech <cite class=\"ltx_cite ltx_citemacro_citep\">(Panayotov et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib27\" title=\"\">2015</a>)</cite>. The authors input the textual document of each speech segment from LibriSpeech into ChatGPT and request the generation of corresponding text question-answer pairs. We use the first part of LibriSQA, which presents questions without options, and the answers are complete sentences. SLUE-SQA-5 is adapted from five text QA datasets, and both the questions and contexts consist of authentic audio recordings. DRCD <cite class=\"ltx_cite ltx_citemacro_citep\">(Shao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib30\" title=\"\">2018</a>)</cite> is originally a Chinese QA dataset. Similar to SQuAD, it is also a many-to-one dataset. We first filter it into a one-to-one dataset and then use the TTS model <cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib22\" title=\"\">2020</a>)</cite> to synthesize the speech versions of each question-context pair for its training set. <cite class=\"ltx_cite ltx_citemacro_citet\">Lee et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib19\" title=\"\">2018</a>)</cite> offer spoken version of DRCD&#8217;s development set, which we use for testing.</p>\n\n",
+                "matched_terms": [
+                    "question",
+                    "where",
+                    "speech",
+                    "context",
+                    "model",
+                    "correspond",
+                    "textual"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use 220M Paraformer <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib11\" title=\"\">2022</a>)</cite> and BGE-base <cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib3\" title=\"\">2024</a>)</cite> to build CLSR. BGE is frozen during joint training. We consider two models as baseline: one is the E2E text-speech contrastive model like Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx3.F2\" title=\"Figure 2 &#8227; Preliminary &#8227; Method &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a>, and the other is the cascaded model that first uses ASR model to convert speech into text, followed by a text QA task. For the former, we choose CLAP and SpeechDPR for comparison. For the latter, we use Whisper <cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib28\" title=\"\">2023</a>)</cite> as the ASR module and BGE-base as the text QA module. The Whisper&#8217;s size is 244M. In the experiment, word error rate (WER) is used to measure the ASR performance, and top-k question-to-context and context-to-question retrieval recall are used to assess retrieval performance. We establish the experimental environment based on Funasr <cite class=\"ltx_cite ltx_citemacro_citep\">(Gao et&#160;al. <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib9\" title=\"\">2023</a>)</cite> and ModelScope. The <math alttext=\"\\alpha\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m1\" intent=\":literal\"><semantics><mi>&#945;</mi><annotation encoding=\"application/x-tex\">\\alpha</annotation></semantics></math> and <math alttext=\"\\beta\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m2\" intent=\":literal\"><semantics><mi>&#946;</mi><annotation encoding=\"application/x-tex\">\\beta</annotation></semantics></math> of the loss is set to <math alttext=\"\\frac{1}{3}\" class=\"ltx_Math\" display=\"inline\" id=\"Sx4.SSx1.p2.m3\" intent=\":literal\"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding=\"application/x-tex\">\\frac{1}{3}</annotation></semantics></math>. We train the model until convergence, consistently using the Adam optimizer with a learning rate of 5e-5.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "speech",
+                    "two",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T2\" title=\"Table 2 &#8227; Main Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows the comparison results of CLSR and other models across four datasets. We additionally provide the results of using BGE for clean text question-context retrieval. In terms of E2E text-to-speech contrastive models, the results of CLSR are significantly better than those of CLAP and SpeechDPR. We found that CLAP cannot learn the relevance between text questions and speech contexts effectively on four datasets, suggesting that CLAP is not well-suited for text-to-speech content alignment. In fact, CLAP is more appropriate for sound and text alignment.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "speech",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Compared to conventional E2E contrastive models that directly perform text-to-speech or speech-to-speech alignment, CLSR utilizes text-like representations to alleviate the differences between speech and text modalities. It first maps speech representations into text-like representations and then aligns these text-like representations with actual text representations (or aligns text-like representations with other text-like representations) within the text modality. Leveraging the robust performance of text contrastive models, this approach enhances the alignment between speech and text (or between speech and speech), thereby facilitating more accurate pairing with the context most relevant to the question.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "speech",
+                    "context",
+                    "clsr"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">When conducting a comparative analysis of CLSR and Whisper+BGE, we find that their retrieval performances on three English datasets are quite similar; however, CLSR demonstrates certain advantages. In terms of transcription ability, CLSR significantly outperforms Whisper+BGE. This indicates that the joint training of CLSR effectively optimizes both the ASR module and the contrastive learning module. Given that Whisper&#8217;s performance in Chinese speech recognition is not exceptional, we have opted not to train Whisper on DRCD*.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "transcription",
+                    "comparative",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To demonstrate the effectiveness of the quantizer and sampler in CLSR, as well as the potential for multi-stage training to improve model performance. We conduct a series of ablation experiments on Spoken-SQuAD. The results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T3\" title=\"Table 3 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>. The first two rows of the results show the value of the quantizer. When the quantizer is not utilized, the model may achieve a lower WER; however, its comparative learning ability significantly diminishes. The top-10 retrieval recall rate of &#8220;CLSR w/o VQ&#8221; is only comparable to the top-1 retrieval recall rate of &#8220;CLSR w/ VQ&#8221;. The results in the sixth and seventh rows show the effectiveness of the sampler. After introducing the sampler, CLSR not only improves retrieval ability, but also improves ASR performance.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "two",
+                    "comparative",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Before joint training, we can pre-train the ASR module and the BGE module of CLSR separately. In the experiment, we use 460 hours of clean LibriSpeech data to pre-train Paraformer, and use Spoken-SQuAD&#8217;s clean text question-context pairs to train BGE. Comparing the second and fourth rows of the experimental results, it is not difficult to find that pre-training the BGE is beneficial; incorporating the pre-trained BGE during joint training enhances various retrieval metrics of the CLSR. In addition, through the comparison between the fourth and sixth rows, it can be found that pre-training Paraformer can improve the model&#8217;s transcription performance while also slightly improving its retrieval ability. It should be noted that in order to improve the training speed of the model, we froze BGE, which has strong retrieval performance, during joint training. Therefore, we can freeze the ASR module after joint training and train BGE for a few epochs separately, which is called post-train in the table. It is hoped that this approach can make BGE better adapt to the text-like representation provided by the ASR module. Unfortunately, post-train can only slightly improve the performance of the model, as evidenced by rows 2 and 3, 4 and 5, 7 and 8 in the table. In short, through ablation experiments, we have shown that both quantizers and samplers are inseparable for CLSR, and that pre-training the ASR module and BGE module of CLSR is of significant importance.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "transcription",
+                    "model",
+                    "between"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To assess transcription error impact on CLSR&#8217;s retrieval ability, we evaluate it on Spoken-SQuAD (results in Figure <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.F6\" title=\"Figure 6 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>). Lower WER correlates with higher recall rates. Crucially, a WER of &#160;16.75% marks a threshold: recall drops significantly above this value.</p>\n\n",
+                "matched_terms": [
+                    "transcription",
+                    "higher"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In order to further demonstrate the superiority of the proposed model over the traditional E2E speech-related contrastive model, which consists of two encoders, we construct a new baseline: ParaBGE, to compare the retrieval capability with CLSR. ParaBGE is composed of the speech encoder from Paraformer and the text encoder from BGE. The sizes of each module in both models are identical to those in CLSR. The experimental results are shown in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T4\" title=\"Table 4 &#8227; Ablation Result &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">4</span></a>. All retrieval metrics of CLSR far exceed ParaBGE, indicating that CLSR has a stronger question-context alignment ability. Although ParaBGE can optimize parameters towards the direction of aligning question and context representation during training, its performance is not ideal. As we mentioned earlier, such model heavily rely on pre-training with large-scale corpora. However, high-quality speech-text pairs are already very scarce, so for E2E speech related retrieval models, it is difficult to achieve excellent results. However, CLSR alleviates the modal differences between speech and text by using text-like representation as a bridge, shifting the alignment of speech to text alignment. With the powerful generalization ability of text contrastive learning models, it can achieve excellent retrieval capabilities comparable to cascade models and text contrastive models without the need for long-term, large-scale pre-training.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "question",
+                    "speech",
+                    "context",
+                    "model",
+                    "clsr",
+                    "two",
+                    "parabge"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To validate our model for real-world long audio SQA&#8212;enabling downstream LALMs to simplify inputs and enhance inference speed and accuracy&#8212;we conduct SQA tasks on a modified SLUE-SQA-5 dataset using CLSR and Qwen-Audio. To simulate long-context inference, we replace the contextual audio in 500 randomly selected test instances with full documents from the Spoken Wikipedia corpus <cite class=\"ltx_cite ltx_citemacro_citep\">(K&#246;hn, Stegen, and Baumann <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#bib.bib17\" title=\"\">2016</a>)</cite>, each averaging &#160;30 minutes in length.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Without CLSR, Qwen-Audio directly generates answers from the input speech document and text question. With CLSR, we first segment the speech document into 40-second intervals, assess each segment&#8217;s similarity to the text question, and select the most relevant one as Qwen-Audio&#8217;s contextual input. Prior to testing, both Qwen-Audio and CLSR were trained using the original training subset of SLUE-SQA-5. The results of the testing are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#Sx4.T5\" title=\"Table 5 &#8227; Long-form SQA Evaluation &#8227; Experiment &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">5</span></a>. Following the application of CLSR for long audio reduction, there is a notable enhancement in Qwen-Audio&#8217;s exact match (EM) and macro-F1 scores for SQA, alongside a tenfold reduction in inference time. These findings underscore the significance of CLSR in the preprocessing of long audio, demonstrating its capacity to not only enhance the inference accuracy of downstream LALM but also to substantially decrease inference time.</p>\n\n",
+                "matched_terms": [
+                    "question",
+                    "speech",
+                    "scores",
+                    "clsr",
+                    "similarity"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this paper, we introduce CLSR, an E2E contrastive language-speech retriever designed to distill lengthy speech recordings into a limited number of clips that are most pertinent to a given query. By employing a text-like representation as an intermediary state, CLSR exhibits strong capability of cross-modal question-context alignment. Experimental findings demonstrate that CLSR&#8217;s retrieval performance significantly outstrips that of existing E2E speech-related retrievers and is competitive with both cascaded models and text-based retrievers.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR functions as an E2E model, providing a more rapid inference speed in comparison to pipeline models. The speed is a critical runtime metric for a RAG retriever, which must efficiently interface with downstream LALM for long audio inference. We assess the inference speed of CLSR relative to Whisper+BGE across three datasets, with the results detailed in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T6\" title=\"Table 6 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">6</span></a>. While CLSR demonstrates a slight enhancement in transcription and retrieval performance compared to Whisper+BGE, it significantly outperforms in terms of inference speed, indicating that CLSR is more suitable as a RAG retriever.</p>\n\n",
+                "matched_terms": [
+                    "clsr",
+                    "transcription",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To evaluate the performance of the Whisper+BGE pipeline following fine-tuning with noisy data, we transcribe the training data using a trained Whisper model and subsequently provide it to BGE for pre-training. The results of this experimentation are presented in Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.09282v1#A1.T7\" title=\"Table 7 &#8227; Does CLSR have an advantage over Whisper+BGE pipeline during runtime? &#8227; Appendix A Appendix &#8227; End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, where the fine-tuned Whisper+BGE is referred to as Whisper+BGE*. The findings suggest that Whisper+BGE* yields only a marginal improvement in retrieval capability on the LibriSQA dataset, while performance declines on the other two datasets. CLSR continues to demonstrate a superior ability in retrieving speech content.</p>\n\n",
+                "matched_terms": [
+                    "where",
+                    "speech",
+                    "model",
+                    "clsr",
+                    "two"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CLSR&#8217;s unique architecture facilitates such granular alignment: It first utilizes the CIF module to project acoustic features from time steps to token positions; then uses VQ-based refinement to convert these features into text-like representations; finally, in text space, leverages pre-trained text retrieval model&#8217;s power to align text-like representations with ordinary text representations token by token. Since text-like representations retain acoustic-feature similarity, this achieves fine-grained alignment between acoustic and text representations. This architectural superiority is absent in ParaBGE and similar dual-encoder retrievers.</p>\n\n",
+                "matched_terms": [
+                    "between",
+                    "similarity",
+                    "parabge"
+                ]
+            }
+        ]
+    }
+}

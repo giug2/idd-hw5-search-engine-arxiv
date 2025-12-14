@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${document.results['File Sorgente']}">Dettaglio Figura</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
+
+    <h1 th:text="${document.results['File Sorgente']}">Titolo Figura</h1>
+    
+    <!-- Sezione Immagine Principale -->
+    <div class="figure-container" th:if="${document.results['URL Immagine'] != null and document.results['URL Immagine'] != ''}">
+        <img th:src="${document.results['URL Immagine']}" 
+             alt="" 
+             class="figure-image"
+             onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23999%22 text-anchor=%22middle%22>Immagine non disponibile</text></svg>';">
+    </div>
+    
+    <!-- Didascalia Figura -->
+    <div class="caption-container" th:if="${document.results['Caption'] != null}">
+        <span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
+    </div>
+
+    <!-- URL Immagine (Link diretto) -->
+    <div class="detail-section" th:if="${document.results['URL Immagine'] != null and document.results['URL Immagine'] != ''}">
+        <h3>Link</h3>
+        <a th:href="${document.results['URL Immagine']}" target="_blank" th:text="${document.results['URL Immagine']}">URL</a>
+    </div>
+
+    <!-- Termini Informativi -->
+    <div class="detail-section" th:if="${document.results['Termini Informativi'] != null and document.results['Termini Informativi'] != ''}">
+        <h3>Termini Chiave</h3>
+        <div class="terms-list">
+            <span class="term-tag" th:each="term : ${#strings.arraySplit(document.results['Termini Informativi'], ',')}" th:text="${#strings.trim(term)}">termine</span>
+        </div>
+    </div>
+
+    <!-- Paragrafi Citanti -->
+    <div class="detail-section" th:if="${document.results['Paragrafi Citanti'] != null and document.results['Paragrafi Citanti'] != ''}">
+        <h3>Paragrafi che Citano la Figura</h3>
+        <div class="paragraph-box" th:utext="${document.results['Paragrafi Citanti']}">Paragrafi</div>
+    </div>
+
+    <!-- Paragrafi Contestuali -->
+    <div class="detail-section" th:if="${document.results['Paragrafi Contestuali'] != null and document.results['Paragrafi Contestuali'] != ''}">
+        <h3>Paragrafi Contestualmente Rilevanti</h3>
+        <div class="paragraph-box" th:utext="${document.results['Paragrafi Contestuali']}">Paragrafi contestuali</div>
+    </div>
+
+</div>
+
+</body>
+</html>

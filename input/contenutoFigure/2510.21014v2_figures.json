@@ -1,0 +1,230 @@
+{
+    "S2.F1": {
+        "source_file": "REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING",
+        "image_url": "https://arxiv.org/html/2510.21014v2/powerpoint_image1.png",
+        "caption": "Fig. 1: Left: Dataset Building Method. Right: Metric-estimator model’s architecture, based on Semi-Supervised Learning Representations (SSLR), followed by a concatenation, a Transformer encoder layer, and a linear layer.",
+        "informative_terms_identified": [
+            "based",
+            "semisupervised",
+            "transformer",
+            "encoder",
+            "layer",
+            "followed",
+            "metricestimator",
+            "linear",
+            "dataset",
+            "model’s",
+            "learning",
+            "representations",
+            "architecture",
+            "concatenation",
+            "sslr",
+            "building",
+            "method"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Source separation is a crucial pre-processing step for various speech processing tasks, such as automatic speech recognition (ASR).\nTraditionally, the evaluation metrics for speech separation rely on the matched reference audios and corresponding transcriptions to assess audio quality and intelligibility.\nHowever, they cannot be used to evaluate real-world mixtures for which no reference exists.\nThis paper introduces a text-free reference-free evaluation framework based on self-supervised learning (SSL) representations.\nThe proposed framework utilize the mixture and separated tracks to predict jointly audio quality, through the Scale Invariant Signal to Noise Ratio (SI-SNR) metric, and speech intelligibility through the Word Error Rate (WER) metric.\nWe conducted experiments on the WHAMR! dataset, which shows a WER estimation with a mean absolute error (MAE) of 17% and a Pearson correlation coefficient (PCC) of 0.77; and SI-SNR estimation with an MAE of 1.38 and PCC of 0.95.\nWe further demonstrate the robustness of our estimator by using various SSL representations.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "learning",
+                    "representations",
+                    "dataset"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Previous techniques have been proposed to estimate SI-SNR in speech separation and serve as baselines in this study <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib7\" title=\"\">7</a>]</cite> <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib8\" title=\"\">8</a>]</cite>. In addition, unsupervised quality estimation for speech enhancement has been explored&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib9\" title=\"\">9</a>]</cite>. This method evaluates a single output of a general enhancement system. Furthermore, a method for predicting the WER for general speech was introduced&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib10\" title=\"\">10</a>]</cite>. However, this method does not specifically predict WER based on learned relationships between representations of noisy audio and enhanced outputs. To the best of our knowledge, this work is the first to predict WER specifically in the context of speech separation.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "representations",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">The key contributions of this paper are as follows</span>: We introduce the first text-free, reference-free WER estimator\nfor speech-separated signals, We leverage self-supervised learning representations (SSLR) to create an improved SI-SNR estimator compared to existing baselines, We generalize our findings by training a set of joint estimators that predict WER and SISNR, indicating that this method can predict joint quality and Intelligibility scores.</p>\n\n",
+                "matched_terms": [
+                    "learning",
+                    "sslr",
+                    "representations",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Here we go through three related metric estimators baselines.\nIn the SI-SNR baseline <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib8\" title=\"\">8</a>]</cite>, an approach utilizing SSLR models to predict SI-SNR was introduced. This method concatenated temporally the mixture and the two separate audio tracks before feeding them in to the SSLR&#8217;s feature extractor. In contrast, our method extracts features from each audio track separately and learns the relationships between the representations in each time bin before making predictions about the metric. Moreover, the baseline is dependent on fine-tuning of the entire SSL model, which consists of millions of parameters, whereas our method does not require full fine-tuning. This allows us to preserve the knowledge from unsupervised training while only requiring light training.</p>\n\n",
+                "matched_terms": [
+                    "sslr",
+                    "representations",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The estimator model performs multi-output regression to estimate a target metric, depending on the training task.\nIt uses a SSL encoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib17\" title=\"\">17</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib18\" title=\"\">18</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib19\" title=\"\">19</a>]</cite> to extract <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> features of dimension <math alttext=\"D_{SSL}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><msub><mi>D</mi><mrow><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>L</mi></mrow></msub><annotation encoding=\"application/x-tex\">D_{SSL}</annotation></semantics></math> from the mixture <math alttext=\"Y\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m3\" intent=\":literal\"><semantics><mi>Y</mi><annotation encoding=\"application/x-tex\">Y</annotation></semantics></math> and the two separated tracks <math alttext=\"\\hat{S_{1}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m4\" intent=\":literal\"><semantics><mover accent=\"true\"><msub><mi>S</mi><mn>1</mn></msub><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S_{1}}</annotation></semantics></math> and <math alttext=\"\\hat{S_{2}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m5\" intent=\":literal\"><semantics><mover accent=\"true\"><msub><mi>S</mi><mn>2</mn></msub><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S_{2}}</annotation></semantics></math>, then concatenates the features along the feature axis and outputs an array of size <math alttext=\"(T,3\\times D_{SSL})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m6\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>T</mi><mo>,</mo><mrow><mn>3</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mrow><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>L</mi></mrow></msub></mrow><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(T,3\\times D_{SSL})</annotation></semantics></math>.\nThen, the array is processed by a transformer encoder layer, mean pooled across the time dimension, followed by a linear layer, to predict three continuous values: metric value for source 1, source 2, and their average.\nThe model is trained with a mean squared error (MSE) loss and is evaluated using MAE, and Pearson&#8217;s correlation.\nThis architecture supports reference-free estimation for any signal-level metrics or downstream model value.</p>\n\n",
+                "matched_terms": [
+                    "encoder",
+                    "layer",
+                    "followed",
+                    "architecture",
+                    "transformer",
+                    "linear"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">During training, the entire network undergoes a 10,000 step warm-up period. Following the warm-up, two different learning rate schedulers are implemented to prevent overfitting. The Self-Supervised Learning model is trained using a linearly decreasing learning rate, starting at 1e-5. Meanwhile, the parameters that are trained from scratch begin with a learning rate of 1e-4 after the warm-up stage, following the same linear decreasing schedule. An Adam optimizer is used, with a batch size of 12.</p>\n\n",
+                "matched_terms": [
+                    "learning",
+                    "linear"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In terms of WER estimation, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#S4.T2\" title=\"Table 2 &#8227; 4.3 Generalization to New Data &#8227; 4 Experiments &#8227; REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that our method that lightly trains the FE achieves better results than the baseline without using the Text hypothesis. Our method achieves an MAE of 0.17 and a PCC of 0.775 for the single metrics estimation, and an MAE of 0.14 and PCC of 0.824 for the average metrics estimation, while the baseline achieves an MAE of 0.15 and PCC of 0.746 using an additional ASR model and text embedder for the evaluation. Moreover, our estimation method with freezing the FE achieves competitive results to the baseline, which also uses frozen models, but more pretrained models in inference. We achieve our best results by utilizing Hubert representations. In the generalization experiment using new data from the Real-M dataset, our method exceeded the baseline across all metrics.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "representations",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For the SI-SNR estimation task, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#S6.T3\" title=\"Table 3 &#8227; 6 Conclusion &#8227; REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> shows that our method performs better than the SOTA baseline. For all the SSLRs, our methods perform better in terms of PCC and MAE.\nEven when using frozen SSL representations, our method outperforms the baseline, which was using a pre-trained SSL extractor, on both MAE and PCC.\nOur best performances are obtained using WavLM representations.</p>\n\n",
+                "matched_terms": [
+                    "representations",
+                    "method"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper presents a novel text-free reference-free model designed to estimate separately two metrics: WER and SI-SNR from the outputs of a speech separation system.\nWe proposed a new architecture leveraging self-supervised learning representations that outperformed significantly previous baselines without text nor audio references.\nWe craft our own training dataset from WHAMR! and three different speech separation systems, designed to offer a balanced distribution of WER and SISNR metrics, then train and evaluate our proposed framework on it.\nThe proposed framework demonstrates state of the art performances with different SSL representations, with and without finetuning of the encoder.\nFurthermore, we show our model can generalize to real mixtures when evaluated on the REAL-M dataset, and can work to estimate jointly both the WER and the SI-SNR.\n</p>\n\n",
+                "matched_terms": [
+                    "encoder",
+                    "dataset",
+                    "learning",
+                    "representations",
+                    "architecture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work has certain limitations, on the speech separation systems, the evaluation data and the applications.\nFirst, our proposed model used the same dataset to train as the speech separation models (the WHAMR! set), and the same set of speech separation models was used to generate the training and the testing data, limiting the potential generalization on new speech separation systems.\nSecond, we adopted a uniform distribution of the scores in the training data, which may not be best suited to align with the out-of-domain data, and we use a unique model to extract all transcripts for the WER evaluation (Whisper).\nFinally, the proposed metric estimator is based on self-supervised learning (SSL) systems, which typically requires large GPUs for inference, thus it will not be easy to use during training, only for evaluation.</p>\n\n",
+                "matched_terms": [
+                    "based",
+                    "learning",
+                    "dataset"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING",
+        "image_url": "https://arxiv.org/html/2510.21014v2/wer_percentage_bins_bar_plot.png",
+        "caption": "Fig. 2: Average WER BIN distribution (percentage) for each mixture across dataset splits",
+        "informative_terms_identified": [
+            "percentage",
+            "splits",
+            "mixture",
+            "average",
+            "across",
+            "dataset",
+            "wer",
+            "bin",
+            "distribution"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Source separation is a crucial pre-processing step for various speech processing tasks, such as automatic speech recognition (ASR).\nTraditionally, the evaluation metrics for speech separation rely on the matched reference audios and corresponding transcriptions to assess audio quality and intelligibility.\nHowever, they cannot be used to evaluate real-world mixtures for which no reference exists.\nThis paper introduces a text-free reference-free evaluation framework based on self-supervised learning (SSL) representations.\nThe proposed framework utilize the mixture and separated tracks to predict jointly audio quality, through the Scale Invariant Signal to Noise Ratio (SI-SNR) metric, and speech intelligibility through the Word Error Rate (WER) metric.\nWe conducted experiments on the WHAMR! dataset, which shows a WER estimation with a mean absolute error (MAE) of 17% and a Pearson correlation coefficient (PCC) of 0.77; and SI-SNR estimation with an MAE of 1.38 and PCC of 0.95.\nWe further demonstrate the robustness of our estimator by using various SSL representations.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "wer",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Here we go through three related metric estimators baselines.\nIn the SI-SNR baseline <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib8\" title=\"\">8</a>]</cite>, an approach utilizing SSLR models to predict SI-SNR was introduced. This method concatenated temporally the mixture and the two separate audio tracks before feeding them in to the SSLR&#8217;s feature extractor. In contrast, our method extracts features from each audio track separately and learns the relationships between the representations in each time bin before making predictions about the metric. Moreover, the baseline is dependent on fine-tuning of the entire SSL model, which consists of millions of parameters, whereas our method does not require full fine-tuning. This allows us to preserve the knowledge from unsupervised training while only requiring light training.</p>\n\n",
+                "matched_terms": [
+                    "bin",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This section describes our automatic WER estimator method, as well as its extensions as an SI-SNR estimator and a joint estimator, applied to speech separation.\nFirst, we used multiple speech separation systems to extract pairs of separated audios from mixtures.\nSecond, we compute the metrics from the extracted audios. The SI-SNR is computed directly and the WER from Whisper V3-Large&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib12\" title=\"\">12</a>]</cite> predictions, using the Nemo toolkit<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib13\" title=\"\">13</a>]</cite> for text normalization.\nThird, the metric estimator model is trained on the triplets of audio (mixture and 2 outputs) to predict the corresponding metrics.</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The estimator model performs multi-output regression to estimate a target metric, depending on the training task.\nIt uses a SSL encoder&#160;<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib17\" title=\"\">17</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib18\" title=\"\">18</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib19\" title=\"\">19</a>]</cite> to extract <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m1\" intent=\":literal\"><semantics><mi>T</mi><annotation encoding=\"application/x-tex\">T</annotation></semantics></math> features of dimension <math alttext=\"D_{SSL}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m2\" intent=\":literal\"><semantics><msub><mi>D</mi><mrow><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>L</mi></mrow></msub><annotation encoding=\"application/x-tex\">D_{SSL}</annotation></semantics></math> from the mixture <math alttext=\"Y\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m3\" intent=\":literal\"><semantics><mi>Y</mi><annotation encoding=\"application/x-tex\">Y</annotation></semantics></math> and the two separated tracks <math alttext=\"\\hat{S_{1}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m4\" intent=\":literal\"><semantics><mover accent=\"true\"><msub><mi>S</mi><mn>1</mn></msub><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S_{1}}</annotation></semantics></math> and <math alttext=\"\\hat{S_{2}}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m5\" intent=\":literal\"><semantics><mover accent=\"true\"><msub><mi>S</mi><mn>2</mn></msub><mo>^</mo></mover><annotation encoding=\"application/x-tex\">\\hat{S_{2}}</annotation></semantics></math>, then concatenates the features along the feature axis and outputs an array of size <math alttext=\"(T,3\\times D_{SSL})\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p1.m6\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>T</mi><mo>,</mo><mrow><mn>3</mn><mo lspace=\"0.222em\" rspace=\"0.222em\">&#215;</mo><msub><mi>D</mi><mrow><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>S</mi><mo lspace=\"0em\" rspace=\"0em\">&#8203;</mo><mi>L</mi></mrow></msub></mrow><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(T,3\\times D_{SSL})</annotation></semantics></math>.\nThen, the array is processed by a transformer encoder layer, mean pooled across the time dimension, followed by a linear layer, to predict three continuous values: metric value for source 1, source 2, and their average.\nThe model is trained with a mean squared error (MSE) loss and is evaluated using MAE, and Pearson&#8217;s correlation.\nThis architecture supports reference-free estimation for any signal-level metrics or downstream model value.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "average",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the reverberant max version of WHAMR! <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib16\" title=\"\">16</a>]</cite> which is a far-field speech separation corpus designed to simulate real-world noisy and reverberant conditions. Each mixture comprises two overlapping speakers with additive environmental noise and reverberation applied through simulated room impulse responses. Additionaly, we use\nREAL-M<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib7\" title=\"\">7</a>]</cite>, a real-life speech source separation dataset for two-speaker mixtures.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The WHAMR! train and validation splits were used to train and validate both the speech separation models and the metric estimators. The performances of our models were evaluated on the WHAMR! test split and the Real M dataset</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "splits"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We use the SS systems to create a dataset of Metrics. To ensure a balanced label distribution, we selected three checkpoints from the beginning, middle, and end epochs for dataset generation. ASR was calculated using Whisper V3-Large<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib12\" title=\"\">12</a>]</cite>, and text normalization was carried out with the NeMo toolkit<cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib13\" title=\"\">13</a>]</cite>. Additionally, the SISNR was computed using only the reference audio.\nThe distribution of the dataset is described in Table I and Figure 2.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "distribution"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">For each sample, the input to the estimator comprised three-channel audio, consisting of the mixture signal along with the two separated sources. Metric scores, computed using ground-truth references, were employed as regression targets. Initially, estimators were trained separately for the SI-SNR and WER prediction tasks, following the same architecture and data processing pipeline outlined in Section <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#S3.SS2\" title=\"3.2 Metric estimator Architecture &#8227; 3 Methods &#8227; REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING\"><span class=\"ltx_text ltx_ref_tag\">3.2</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In another experiment, we jointly estimated SI-SNR, and WER. To stabilize the training process and ensure consistent scaling across data samples, all labels were min-max normalized to fall within the range of <math alttext=\"[0,1]\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS2.SSS2.p1.m1\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1]</annotation></semantics></math>. This normalization was applied globally, utilizing the minimum and maximum values observed in both the training and validation sets.</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To assess generalization, we evaluated the trained WER estimator on the REAL-M data set <cite class=\"ltx_cite ltx_citemacro_cite\">[<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#bib.bib7\" title=\"\">7</a>]</cite>, which is a real mixture data set that contains reverberation and noise. REAL-M is for evaluation only, and therefore will be separated using our pretrained models on WHAMR!.</p>\n\n",
+                "matched_terms": [
+                    "wer",
+                    "mixture"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In terms of WER estimation, Table <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2510.21014v2#S4.T2\" title=\"Table 2 &#8227; 4.3 Generalization to New Data &#8227; 4 Experiments &#8227; REFESS-QI: REFERENCE-FREE EVALUATION FOR SPEECH SEPARATION WITH JOINT QUALITY AND INTELLIGIBILITY SCORING\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> shows that our method that lightly trains the FE achieves better results than the baseline without using the Text hypothesis. Our method achieves an MAE of 0.17 and a PCC of 0.775 for the single metrics estimation, and an MAE of 0.14 and PCC of 0.824 for the average metrics estimation, while the baseline achieves an MAE of 0.15 and PCC of 0.746 using an additional ASR model and text embedder for the evaluation. Moreover, our estimation method with freezing the FE achieves competitive results to the baseline, which also uses frozen models, but more pretrained models in inference. We achieve our best results by utilizing Hubert representations. In the generalization experiment using new data from the Real-M dataset, our method exceeded the baseline across all metrics.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "average",
+                    "wer",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This paper presents a novel text-free reference-free model designed to estimate separately two metrics: WER and SI-SNR from the outputs of a speech separation system.\nWe proposed a new architecture leveraging self-supervised learning representations that outperformed significantly previous baselines without text nor audio references.\nWe craft our own training dataset from WHAMR! and three different speech separation systems, designed to offer a balanced distribution of WER and SISNR metrics, then train and evaluate our proposed framework on it.\nThe proposed framework demonstrates state of the art performances with different SSL representations, with and without finetuning of the encoder.\nFurthermore, we show our model can generalize to real mixtures when evaluated on the REAL-M dataset, and can work to estimate jointly both the WER and the SI-SNR.\n</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "distribution",
+                    "wer"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">This work has certain limitations, on the speech separation systems, the evaluation data and the applications.\nFirst, our proposed model used the same dataset to train as the speech separation models (the WHAMR! set), and the same set of speech separation models was used to generate the training and the testing data, limiting the potential generalization on new speech separation systems.\nSecond, we adopted a uniform distribution of the scores in the training data, which may not be best suited to align with the out-of-domain data, and we use a unique model to extract all transcripts for the WER evaluation (Whisper).\nFinally, the proposed metric estimator is based on self-supervised learning (SSL) systems, which typically requires large GPUs for inference, thus it will not be easy to use during training, only for evaluation.</p>\n\n",
+                "matched_terms": [
+                    "dataset",
+                    "distribution",
+                    "wer"
+                ]
+            }
+        ]
+    }
+}

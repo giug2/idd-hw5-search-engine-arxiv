@@ -1,0 +1,217 @@
+{
+    "S2.F1": {
+        "source_file": "PromptSep: Generative Audio Separation via Multimodal Prompting",
+        "image_url": "https://arxiv.org/html/2511.04623v1/x1.png",
+        "caption": "Fig. 1: The model architecture of PromptSep. Text and vocal imitation inputs can be used separately or combined.",
+        "informative_terms_identified": [
+            "vocal",
+            "combined",
+            "text",
+            "model",
+            "inputs",
+            "promptsep",
+            "architecture",
+            "separately",
+            "imitation"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 2.1 Separation Condition &#8227; 2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, PromptSep takes an audio mixture as the primary input, along with two conditions: (1) a textual description of the separation target; and (2) a vocal imitation recording of the separation target. Both conditions can be used separately or jointly. Based on these inputs, the model outputs an audio track containing the sources specified by the conditions. In the following subsections, we introduce the construction of these conditions and the model architecture of PromptSep.</span>\n</p>\n\n",
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Sound Event</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; We train our model using an internal large collection of licensed sound effect datasets and publicly available, CC-licensed general audio corpora. Each sound is accompanied with multiple versions of captions varying in length.\nAs described in Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2\" style=\"font-size:90%;\" title=\"2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we combine the captions with the text operator templates to form the final text input. </span>\n  <span class=\"ltx_text\" style=\"font-size:90%;--ltx-fg-color:#000000;\">Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2.F1\" title=\"Figure 1 &#8227; 2.1 Separation Condition &#8227; 2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\"><span class=\"ltx_text ltx_ref_tag\">1</span></a> shows example final text input.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"/>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Recent breakthroughs in language-queried audio source separation (LASS) have shown that generative models can achieve higher separation audio quality than traditional masking-based approaches. However, two key limitations restrict their practical use: (1) users often require operations beyond separation, such as sound removal; and (2) relying solely on text prompts can be unintuitive for specifying sound sources. In this paper, we propose PromptSep to extend LASS into a broader framework for general-purpose sound separation. PromptSep leverages a conditional diffusion model enhanced with elaborated data simulation to enable both audio extraction and sound removal. To move beyond text-only queries, we incorporate vocal imitation as an additional and more intuitive conditioning modality for our model, by incorporating Sketch2Sound as a data augmentation strategy. Both objective and subjective evaluations on multiple benchmarks demonstrate that PromptSep achieves state-of-the-art performance in sound removal and vocal-imitation-guided source separation, while maintaining competitive results on language-queried source separation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To address the above limitations, we propose PromptSep, a latent diffusion model for open-vocabulary target audio source separation with multimodal cues.\nSpecifically, we first extend the standard extraction-only separation process with </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">removal</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> operator.\nSecond, we incorporate </span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">vocal imitation</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> as another conditioning signal beyond text prompts, where users can mimic the target sound to guide the separation target. This makes the system align better with how humans naturally describe sounds. To achieve this, we explore how to augment vocal imitation data by leveraging existing sound effect generation models&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garcia2025sketch2sound</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, datasets&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2019vim</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and modules&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wen2025user</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. With PromptSep, users can perform either sound extraction or removal by leveraging either a textual description or a vocal imitation as a query. Vocal imitation alleviates the need to locate audio samples when the textual description is ambiguous.\nOur contributions are three-fold:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We incorporate vocal imitation as an additional query modality via data augmentation and conditional modules, offering a more intuitive source control than text.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Text Prompt</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; The textual description of sounds varies in complexity. They may consist of just one keyword identifying the sound, or a long sentence containing multiple sound attributes. Consequently, text prompts can range from a single word to several sentences. To prepare the model for such a condition, we include text prompts of different lengths and descriptive styles for the same sounds during training, simulating the user inputs in real-world scenarios.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "inputs",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Vocal Imitation</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; As mentioned in Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S1\" style=\"font-size:90%;\" title=\"1 Introduction &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, certain sounds (e.g., &#8220;distortion&#8221; and &#8220;buzzing&#8221;) can be too abstract to describe accurately using text alone, or too ambiguous for the model to only identify the single candidate. To enable more flexible and intuitive sound specification, we introduce an additional guidance modality for separation: vocal imitation. PromptSep can be conditioned on reference audio samples in which a user vocally imitates a target sound, thereby guiding the separation process. This approach provides a more natural and accessible way for users to describe the sounds.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">While a few datasets, such as VimSketch&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kim2019vim</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, contain pairs of corresponding vocal imitation and sound effect samples,\nthese pairs are not temporally aligned, and thus cannot serve as a good vocal imitation condition to identify the target sound in a mixture.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To address this, we leverage the sound effect generation model Sketch2Sound&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garcia2025sketch2sound</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for data augmentation.\nIt can generate sound effect audio samples that match textual descriptions and are temporally aligned with vocal imitation prompts.\nUsing around 12K real vocal imitation samples and their corresponding sound labels from the VimSketch dataset, we use Sketch2Sound to generate around 87K temporally aligned sound effect samples as training data for PromptSep. To better simulate real-world conditions, we apply time-shift and pitch-shift augmentations as imitation variances. We also add ambient noise, from 4.36 hours of static noise data collections&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kinoshita2013reverb</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">eaton2016estimation</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chen2021structure</span><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, to enhance the model generalization capability.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "promptsep",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We note that the Sketch2Sound training data does not require paired vocal imitations and sound effects.\nInstead, it relies on RMS and pitch curves to guide sound generation, without using actual imitation samples.\nThis leads to a possible exploration: whether curve-based features (RMS and pitch) or actual vocal-imitation raw waveform inputs provide more effective conditioning for audio separation. In Section&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S4\" style=\"font-size:90%;\" title=\"4 Results &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we address this through ablation studies.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "inputs"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We implement PromptSep using a latent diffusion model via diffusion Transformer (DiT) with three input types (text, vocal imitation, and audio mixture), following the specifications of&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garcia2025sketch2sound</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">evans2024fast</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">evans2024long</span><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nIt contains three main components: (1) a pretrained variational autoencoder (VAE), following the architecture of Descript Audio Codec (DAC)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kumar2023high</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, compresses 44.1 kHz mono audio samples into a sequence of continuous 128-dimensional embeddings at a temporal resolution of 40 Hz; (2) a pretrained FLAN-T5 encoder&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">raffel2019exploring</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> encodes all text prompts; and (3) a DiT model is trained to generate new sequence of embeddings, which are decoded back to waveform via the VAE decoder to reconstruct target separated audio.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "architecture",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">For conditioning both the mixture and the vocal imitation samples,\nwe adopt an in-place addition mechanism following&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garcia2025sketch2sound</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024music</span>, <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wen2025user</span><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> as they have the same latent dimensionality as the separated audio. Specifically, we apply a single MLP layer respectively to mixture and vocal imitation, and add the resulting embeddings to the noisy latent as input to DiT.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">During training, we randomly drop condition signals for classifier-free guidance (CFG), with the drop rate </span>\n  <math alttext=\"10\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p4.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mn mathsize=\"0.900em\">10</mn>\n        <mo mathsize=\"0.900em\">%</mo>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">10\\%</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for text and mixture, but </span>\n  <math alttext=\"90\\%\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p4.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mn mathsize=\"0.900em\">90</mn>\n        <mo mathsize=\"0.900em\">%</mo>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">90\\%</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for vocal imitation, as it gets easier to overfit through our experiments. We use a </span>\n  <math alttext=\"v\" class=\"ltx_Math\" display=\"inline\" id=\"S2.SS2.p4.m3\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">v</mi>\n      <annotation encoding=\"application/x-tex\">v</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">-prediction framework for training and diffusion probabilistic models (DPM) solvers&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">lu2025dpm</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for sampling. During inference, we set the CFG scale to 1.0.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Vocal Imitation</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; We curate a new dataset, VimSketchGen, consisting of </span>\n  <math alttext=\"87,171\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m1\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mn mathsize=\"0.900em\">87</mn>\n        <mo mathsize=\"0.900em\">,</mo>\n        <mn mathsize=\"0.900em\">171</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">87,171</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> pairs of aligned vocal imitations and sound effects.\nThis dataset originally contains </span>\n  <math alttext=\"12,453\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mn mathsize=\"0.900em\">12</mn>\n        <mo mathsize=\"0.900em\">,</mo>\n        <mn mathsize=\"0.900em\">453</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">12,453</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> vocal imitations sourced from the VimSketch dataset, and each of them is paired with </span>\n  <math alttext=\"7\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m3\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">7</mn>\n      <annotation encoding=\"application/x-tex\">7</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> corresponding sound effects generated using Sketch2Sound, with different median filter sizes </span>\n  <math alttext=\"\\in\\{0,3,6,9,12,15,19\\}\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p2.m4\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mi/>\n        <mo mathsize=\"0.900em\">&#8712;</mo>\n        <mrow>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">{</mo>\n          <mn mathsize=\"0.900em\">0</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">3</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">6</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">9</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">12</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">15</mn>\n          <mo mathsize=\"0.900em\">,</mo>\n          <mn mathsize=\"0.900em\">19</mn>\n          <mo maxsize=\"0.900em\" minsize=\"0.900em\">}</mo>\n        </mrow>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">\\in\\{0,3,6,9,12,15,19\\}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nAll audio samples in VimSketchGen are 8-second stereo tracks sampled at 44.1 kHz. We will release this dataset to support more tasks in audio research.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Training Specification</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; The input of PromptSep is a 10-second audio mixture by randomly combining </span>\n  <math alttext=\"2\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m1\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">2</mn>\n      <annotation encoding=\"application/x-tex\">2</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> to </span>\n  <math alttext=\"5\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m2\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">5</mn>\n      <annotation encoding=\"application/x-tex\">5</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> sound events from different categories\n. The mixing signal-to-noise ratio (SNR) is uniformly sampled between </span>\n  <math alttext=\"-3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m3\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mo mathsize=\"0.900em\">&#8722;</mo>\n        <mn mathsize=\"0.900em\">3</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">-3</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <math alttext=\"10\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS1.p3.m4\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">10</mn>\n      <annotation encoding=\"application/x-tex\">10</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> dB. A random subset of sound events in the mixture is selected as the separation target, with the only exception that if the vocal imitation is chosen as condition, its corresponding sound event alone is used as the target.\n</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;--ltx-fg-color:#000000;\">During training, the model is always conditioned on either text or vocal imitation, but not both simultaneously. While both conditions can be provided at inference time, their combined effect is not explored in this work and is left for future investigation.\n</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"/>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "combined",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">VimSketchGen-Mix</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">&#8196; We use a subset of the VimSketchGen test split, containing </span>\n  <math alttext=\"2000\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m1\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">2000</mn>\n      <annotation encoding=\"application/x-tex\">2000</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> sound event samples with their vocal imitation pairs. Each target sound is mixed with 1 to 3 interference sounds randomly selected from the AudioSet test set&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gemmeke2017audio</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, using a SNR sampled between </span>\n  <math alttext=\"-3\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m2\" intent=\":literal\">\n    <semantics>\n      <mrow>\n        <mo mathsize=\"0.900em\">&#8722;</mo>\n        <mn mathsize=\"0.900em\">3</mn>\n      </mrow>\n      <annotation encoding=\"application/x-tex\">-3</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and </span>\n  <math alttext=\"10\" class=\"ltx_Math\" display=\"inline\" id=\"S3.SS2.p5.m3\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">10</mn>\n      <annotation encoding=\"application/x-tex\">10</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> dB.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We compare our model against two generative language-queried audio separation models: FlowSep&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yuan2025flowsep</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and SoloAudio&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wang2025soloaudio</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nFlowSep performs separation in the latent space of a Mel-spectrogram VAE using flow matching, and reconstructs audio using a vocoder.\nIt employs FLAN-T5 for text conditioning.\nSoloAudio, on the other hand, applies a modified DiT architecture in the VAE latent space and uses CLAP&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2023large</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for text embeddings.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "text",
+                    "architecture",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2.T1\" style=\"font-size:90%;\" title=\"Table 1 &#8227; 2.2 Model Architecture &#8227; 2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> presents the results for the language-queried target sound extraction setup. Each model is provided with a text description of the target sounds and evaluated on its ability to extract the sounds from a mixture. We compare PromptSep against two baselines on four benchmarks. Due to the page limitation, we aggregate results from AudioCaps and ESC50 as ACESC using a weighted sum over their metrics, proportional to the number of samples in each dataset.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "promptsep",
+                    "text",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">PromptSep achieves the best performance on nearly all metrics on ASFX, with the exception of CLAPScore, where SoloAudio surpasses us by 0.01. This highlights the strong generalization of our model, as ASFX is the only out-of-domain test set for all three models. FlowSep, trained on AudioSet, WavCaps, and VGGSound, which share similar quality and sources with AudioCaps and ESC50, obtains the best L2 Mel distance, F1 decision error, and CLAPScore</span>\n  <math alttext=\"{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m1\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">A</mi>\n      <annotation encoding=\"application/x-tex\">{A}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on ACESC. SoloAudio, trained primarily on FreeSound, achieves the best results on FSD. All of AudioCaps, ESC50, and FSD are out-of-domain for PromptSep, but it yields competitive performance: achieving or nearly matching the best scores in FAD, SDRi, F1, CLAPScore, and CLAPScore</span>\n  <math alttext=\"{A}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS1.p2.m2\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">A</mi>\n      <annotation encoding=\"application/x-tex\">{A}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> on ACESC, and in SDRi on FSD. These results further demonstrate the strong generalization ability of PromptSep.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "promptsep",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Beyond the standard extraction setup, PromptSep also supports the sound removal. While our baselines were not explicitly trained with removal operations, they have been exposed to large-scale textual descriptions and may have implicitly learned some removal capability. Therefore, we also include their results for comparison.\nAs presented in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.2 Model Architecture &#8227; 2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, PromptSep outperforms the baselines across all datasets and metrics, with the exception of the L2 Mel distance on ACESC. These highlight the strong performance of our model in language-queried target sound removal.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "promptsep",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To further account for the limitations of baselines on sound removal, we design an alternative setup. Instead of directly removing the target sound, models are prompted to extract the remaining sounds by providing combined text descriptions of all non-target events, as an equivalent operation. Results under this configuration are shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.2 Model Architecture &#8227; 2 Method &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> (gray rows, with models marked by *). PromptSep continues to achieve most of the best scores, even compared against FlowSep* and SoloAudio*. This further demonstrates the strong performance of our model in sound removal.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "promptsep",
+                    "text",
+                    "combined",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We randomly select 100 samples from ASFX test set as it is the only out-of-domain benchmark for all three models. The same mixtures and text descriptions are used across both the extraction and removal setups to ensure consistency. The total number of participants is 100, with each of samples are rated by at least 4 participants.\nResults are shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S3.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 3.4 Objective Metrics &#8227; 3 Experiments &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nPromptSep achieves the highest scores in both REL and OVL across both setups, demonstrating its strong performance in accurately separating target sounds and maintaining high audio quality.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "promptsep",
+                    "text"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To the best of our knowledge, no existing system supports vocal imitations as a conditioning input for open-domain source separation.\nWe evaluate our model on the VimSketchGen-Mix with no baseline.\nResults are presented in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.04623v1#S4.T4\" style=\"font-size:90%;\" title=\"Table 4 &#8227; 4.2 Language-queried Target Sound Removal &#8227; 4 Results &#8227; PromptSep: Generative Audio Separation via Multimodal Prompting\">\n    <span class=\"ltx_text ltx_ref_tag\">4</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, where our model achieves an SDRi of </span>\n  <math alttext=\"9.99\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">9.99</mn>\n      <annotation encoding=\"application/x-tex\">9.99</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> dB, an L2 multi-resolution Mel-spectrogram distance of </span>\n  <math alttext=\"0.92\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m2\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">0.92</mn>\n      <annotation encoding=\"application/x-tex\">0.92</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, an F1 Decision Error of </span>\n  <math alttext=\"0.95\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m3\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">0.95</mn>\n      <annotation encoding=\"application/x-tex\">0.95</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a CLAPScore</span>\n  <math alttext=\"{}_{\\text{A}}\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m4\" intent=\":literal\">\n    <semantics>\n      <msub>\n        <mi/>\n        <mtext mathsize=\"0.900em\">A</mtext>\n      </msub>\n      <annotation encoding=\"application/x-tex\">{}_{\\text{A}}</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> of </span>\n  <math alttext=\"0.87\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m5\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">0.87</mn>\n      <annotation encoding=\"application/x-tex\">0.87</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and a FAD score of </span>\n  <math alttext=\"2.19\" class=\"ltx_Math\" display=\"inline\" id=\"S4.SS4.p1.m6\" intent=\":literal\">\n    <semantics>\n      <mn mathsize=\"0.900em\">2.19</mn>\n      <annotation encoding=\"application/x-tex\">2.19</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nThese results indicate strong separation performance and demonstrate that vocal imitation is an effective conditioning signal for source separation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We also evaluate a variant of our model that uses only pitch and RMS features extracted from the vocal imitation as the conditioning input, this setup is trained using the same median filter strategy as in </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">garcia2025sketch2sound</span>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, with the median filter size fixed to 8 during inference. While the pitch and RMS-based conditioning yields reasonably strong separation performance, it consistently under-performs the full vocal imitation condition across all evaluation metrics.\nWe attribute this to the complexity of the mixtures, where overlapping sounds are common; in such cases, the raw vocal imitation provides richer information than the limited pitch and RMS features alone.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "imitation",
+                    "model"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">PromptSep offers a unified framework for sound extraction and removal that overcomes key limitations of existing LASS systems.\nOur approach supports both sound extraction and removal within a single model.\nFurthermore, the integration of vocal imitation as a query modality addresses the ambiguity and limitations of text prompts, offering a more intuitive interface for users.\nThrough comprehensive evaluations, PromptSep demonstrates SOTA performance in sound removal and vocal-imitation-guided separation, while remaining competitive in standard LASS settings.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vocal",
+                    "text",
+                    "model",
+                    "promptsep",
+                    "imitation"
+                ]
+            }
+        ]
+    }
+}

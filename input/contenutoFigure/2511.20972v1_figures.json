@@ -1,0 +1,339 @@
+{
+    "S2.F1": {
+        "source_file": "SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational Roleplay Applications",
+        "image_url": "https://arxiv.org/html/2511.20972v1/figs/demo.png",
+        "caption": "Figure 1: Web interface of SingingSDS. (A) User audio input via microphone or file upload. (B) Visualization of ASR transcription, LLM-generated response, and SVS-generated singing. (C) Evaluation results. (D) Configurable interface for selecting characters, models, voices, and melodies.",
+        "informative_terms_identified": [
+            "transcription",
+            "llmgenerated",
+            "input",
+            "user",
+            "singingsds",
+            "audio",
+            "interface",
+            "voices",
+            "selecting",
+            "evaluation",
+            "file",
+            "web",
+            "models",
+            "upload",
+            "results",
+            "melodies",
+            "microphone",
+            "asr",
+            "response",
+            "svsgenerated",
+            "characters",
+            "visualization",
+            "singing",
+            "configurable",
+            "via"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">With recent advances in automatic speech recognition (ASR), large language models (LLMs), and text-to-speech (TTS) technologies, spoken dialogue systems (SDS) have become widely accessible.\nHowever, most existing SDS are limited to conventional spoken responses.\nWe present <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, a cascaded SDS that responds through singing rather than speaking, fostering more affective, memorable, and pleasurable interactions in character-based roleplay and interactive entertainment scenarios. SingingSDS employs a modular ASR-LLM-SVS pipeline and supports a wide range of configurations across character personas, ASR and LLM backends, SVS models, melody sources, and voice profiles, tailored to different needs in terms of latency, quality, and musical style.\nSingingSDS is available as a plug-and-play web demo, featuring modular, open-source code that supports customization and extension.\nDemo: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/spaces/espnet/SingingSDS\" title=\"\">https://huggingface.co/spaces/espnet/SingingSDS</a>. Code: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/SingingSDS/SingingSDS\" title=\"\">https://github.com/SingingSDS/SingingSDS</a>. Video: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe\" title=\"\">https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe</a>.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "asr",
+                    "singingsds",
+                    "singing",
+                    "web"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Singing, as a communicative modality, combines linguistic content with melody and rhythm, offering enhanced memorability and pleasure compared to speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">haiduk2020song</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gold2019musical</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zatorre2013perception</span>)</cite>, which can enrich interactive entertainment experiences. Despite significant progress in singing voice synthesis (SVS) and song generation models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yuan2025yue</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024muskits-espnet</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tang2024singomd</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2024visinger2+</span>)</cite>, these systems are essentially non-interactive: largely operate on predefined lyrics, lacking mechanisms for dynamic responses to user input.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "input",
+                    "singing",
+                    "user"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address this gap, we introduce <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, the first open-source system supporting speech-in, singing-out roleplay interactions for entertainment and character-driven scenarios.\nSingingSDS integrates automatic speech recognition (ASR), character-consistent response generation using large language models (LLMs), melody control with optional structural constraints, and singing voice synthesis (SVS).\nThe system is modular and configurable, including 5 ASR models, 7 LLMs, our released bilingual (Chinese-Japanese) and monolingual (Chinese-only) SVS models, and 5 melody control settings, resulting in 350 possible system configurations.\nWe conduct systematic assessment of both audio quality and user perception, supporting reproducible research on interactive singing dialogue. The system is fully open-sourced and provides an interactive web demo and a command-line interface for the creation and evaluation of speech-to-singing dialogues with fictional characters. These features support reproducible research and structured experimentation with interactive singing dialogues.</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "asr",
+                    "singingsds",
+                    "user",
+                    "response",
+                    "evaluation",
+                    "characters",
+                    "interface",
+                    "audio",
+                    "web",
+                    "singing",
+                    "configurable"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SingingSDS establishes a foundation for investigating singing as an interactive response modality beyond conventional spoken dialogue. The system has potential applications in VR concerts and other virtual performances, interactive music games and theme park attractions, and live streaming with audience participation. Through singing responses, SingingSDS can enhance these applications, offering more memorable and enjoyable user experiences, while also providing a platform for empirical studies of singing-based dialogue.</p>\n\n",
+                "matched_terms": [
+                    "response",
+                    "singingsds",
+                    "singing",
+                    "user"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In parallel, SVS has progressed significantly in recent years with the development of neural models such as TokSing&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>)</cite>,\nDiffSinger&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022diffsinger</span>)</cite>, and VISinger2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2022visinger2</span>)</cite>, which enable high-fidelity singing generation by modeling pitch, duration, and timbre.\nDespite the progress in both SDS and SVS, to the best of our knowledge, no prior work has integrated singing voice synthesis into an interactive spoken dialogue system.\nOur work presents the first attempt to bridge these two domains, enabling an LLM-based dialogue agent to sing its responses to the user via SVS techniques.\n</p>\n\n",
+                "matched_terms": [
+                    "models",
+                    "via",
+                    "singing",
+                    "user"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">One of the key challenges in equipping LLM-based spoken dialogue systems with singing capabilities lies in evaluation. While various metrics have been proposed to assess synthesized speech and singing quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">utmos</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">umbert2015expression</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tang2024singmos</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shi2025versa</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shi2024versaversatileevaluationtoolkit</span>)</cite>, existing tools often fail to account for the entertainment value conveyed through singing or speech.</p>\n\n",
+                "matched_terms": [
+                    "singing",
+                    "evaluation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our experiments, model-based metrics such as Meta AudioBox Aesthetics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tjandra2025meta</span>)</cite> did not consistently align with human preferences, and in some cases favored randomly generated, inharmonic note sequences over well-structured melodies. To better capture the aspects of engagement and enjoyability, we conducted human evaluations focusing on perceived enjoyment. Additionally, we report coarse melodic statistics, such as the large jump ratio, to quantify pitch dynamics in the generated singing outputs. Together, these complementary metrics offer a more holistic perspective on melody-conditioned dialogue generation (<span class=\"ltx_ERROR undefined\">\\appendixref</span>apd:metrics).</p>\n\n",
+                "matched_terms": [
+                    "melodies",
+                    "singing"
+                ]
+            }
+        ]
+    },
+    "S3.fig3": {
+        "source_file": "SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational Roleplay Applications",
+        "image_url": "https://arxiv.org/html/2511.20972v1/figs/alignment_example.png",
+        "caption": "Figure 2: Comparison of (a) the baseline spoken dialogue system with (b) our proposed extension to support singing dialogue.",
+        "informative_terms_identified": [
+            "comparison",
+            "baseline",
+            "extension",
+            "singing",
+            "dialogue",
+            "support",
+            "system",
+            "spoken"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">With recent advances in automatic speech recognition (ASR), large language models (LLMs), and text-to-speech (TTS) technologies, spoken dialogue systems (SDS) have become widely accessible.\nHowever, most existing SDS are limited to conventional spoken responses.\nWe present <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, a cascaded SDS that responds through singing rather than speaking, fostering more affective, memorable, and pleasurable interactions in character-based roleplay and interactive entertainment scenarios. SingingSDS employs a modular ASR-LLM-SVS pipeline and supports a wide range of configurations across character personas, ASR and LLM backends, SVS models, melody sources, and voice profiles, tailored to different needs in terms of latency, quality, and musical style.\nSingingSDS is available as a plug-and-play web demo, featuring modular, open-source code that supports customization and extension.\nDemo: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/spaces/espnet/SingingSDS\" title=\"\">https://huggingface.co/spaces/espnet/SingingSDS</a>. Code: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/SingingSDS/SingingSDS\" title=\"\">https://github.com/SingingSDS/SingingSDS</a>. Video: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe\" title=\"\">https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe</a>.</p>\n\n",
+                "matched_terms": [
+                    "extension",
+                    "spoken",
+                    "singing",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Spoken dialogue systems (SDS) have seen rapid advancements in recent years&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2025salmonn</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ding2025kimi</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2025qwen2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">arora2025espnet</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">li2025baichuan</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gao2025lucy</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kyutai2024moshi</span>)</cite>, with increasing focus on role-play, character embodiment, and immersive interaction&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huang2025step</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2025omnicharacter</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chiang2025audio</span>)</cite>.\nSuch systems have demonstrated their potential in enhancing user engagement through dynamic and emotionally expressive conversations, as exemplified by character-driven applications like Neuro-sama&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">neurosama2024twitch</span>)</cite>, Cotomo&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cotomo</span>)</cite>, and interactive experiences such as Turtle Talk with Crush&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">disneyworld2025turtle</span>)</cite>.\nHowever, conventional SDS outputs are typically limited to standard speech, which constrains the potential for richer, aesthetically engaging experiences.</p>\n\n",
+                "matched_terms": [
+                    "spoken",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address this gap, we introduce <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, the first open-source system supporting speech-in, singing-out roleplay interactions for entertainment and character-driven scenarios.\nSingingSDS integrates automatic speech recognition (ASR), character-consistent response generation using large language models (LLMs), melody control with optional structural constraints, and singing voice synthesis (SVS).\nThe system is modular and configurable, including 5 ASR models, 7 LLMs, our released bilingual (Chinese-Japanese) and monolingual (Chinese-only) SVS models, and 5 melody control settings, resulting in 350 possible system configurations.\nWe conduct systematic assessment of both audio quality and user perception, supporting reproducible research on interactive singing dialogue. The system is fully open-sourced and provides an interactive web demo and a command-line interface for the creation and evaluation of speech-to-singing dialogues with fictional characters. These features support reproducible research and structured experimentation with interactive singing dialogues.</p>\n\n",
+                "matched_terms": [
+                    "support",
+                    "system",
+                    "singing",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SingingSDS establishes a foundation for investigating singing as an interactive response modality beyond conventional spoken dialogue. The system has potential applications in VR concerts and other virtual performances, interactive music games and theme park attractions, and live streaming with audience participation. Through singing responses, SingingSDS can enhance these applications, offering more memorable and enjoyable user experiences, while also providing a platform for empirical studies of singing-based dialogue.</p>\n\n",
+                "matched_terms": [
+                    "spoken",
+                    "system",
+                    "singing",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In parallel, SVS has progressed significantly in recent years with the development of neural models such as TokSing&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>)</cite>,\nDiffSinger&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022diffsinger</span>)</cite>, and VISinger2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2022visinger2</span>)</cite>, which enable high-fidelity singing generation by modeling pitch, duration, and timbre.\nDespite the progress in both SDS and SVS, to the best of our knowledge, no prior work has integrated singing voice synthesis into an interactive spoken dialogue system.\nOur work presents the first attempt to bridge these two domains, enabling an LLM-based dialogue agent to sing its responses to the user via SVS techniques.\n</p>\n\n",
+                "matched_terms": [
+                    "spoken",
+                    "system",
+                    "singing",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">One of the key challenges in equipping LLM-based spoken dialogue systems with singing capabilities lies in evaluation. While various metrics have been proposed to assess synthesized speech and singing quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">utmos</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">umbert2015expression</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tang2024singmos</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shi2025versa</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">shi2024versaversatileevaluationtoolkit</span>)</cite>, existing tools often fail to account for the entertainment value conveyed through singing or speech.</p>\n\n",
+                "matched_terms": [
+                    "spoken",
+                    "singing",
+                    "dialogue"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our experiments, model-based metrics such as Meta AudioBox Aesthetics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tjandra2025meta</span>)</cite> did not consistently align with human preferences, and in some cases favored randomly generated, inharmonic note sequences over well-structured melodies. To better capture the aspects of engagement and enjoyability, we conducted human evaluations focusing on perceived enjoyment. Additionally, we report coarse melodic statistics, such as the large jump ratio, to quantify pitch dynamics in the generated singing outputs. Together, these complementary metrics offer a more holistic perspective on melody-conditioned dialogue generation (<span class=\"ltx_ERROR undefined\">\\appendixref</span>apd:metrics).</p>\n\n",
+                "matched_terms": [
+                    "singing",
+                    "dialogue"
+                ]
+            }
+        ]
+    },
+    "S3.F4": {
+        "source_file": "SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational Roleplay Applications",
+        "image_url": "https://arxiv.org/html/2511.20972v1/figs/alignment_example.png",
+        "caption": "Figure 4: Illustration of melody alignment strategies on a two-bar phrase from the KiSing dataset. The melody is shared across all rows. The top row shows the original lyrics from the dataset. The middle row displays the alignment under sample-pitch, where each syllable is mapped one-to-one to a note. The bottom row corresponds to sample-lyric, where original multi-note syllables are preserved to match the source phrasing. A dash “–” indicates that the preceding syllable is sustained over the current note (i.e., extended phonation).",
+        "informative_terms_identified": [
+            "onetoone",
+            "phrase",
+            "note",
+            "across",
+            "phrasing",
+            "twobar",
+            "lyrics",
+            "shared",
+            "samplepitch",
+            "dash",
+            "preceding",
+            "middle",
+            "current",
+            "preserved",
+            "kising",
+            "indicates",
+            "melody",
+            "syllable",
+            "match",
+            "mapped",
+            "sustained",
+            "syllables",
+            "original",
+            "over",
+            "dataset",
+            "phonation",
+            "alignment",
+            "source",
+            "multinote",
+            "rows",
+            "extended",
+            "samplelyric",
+            "under",
+            "“–”",
+            "strategies",
+            "from",
+            "where",
+            "row",
+            "corresponds"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">With recent advances in automatic speech recognition (ASR), large language models (LLMs), and text-to-speech (TTS) technologies, spoken dialogue systems (SDS) have become widely accessible.\nHowever, most existing SDS are limited to conventional spoken responses.\nWe present <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, a cascaded SDS that responds through singing rather than speaking, fostering more affective, memorable, and pleasurable interactions in character-based roleplay and interactive entertainment scenarios. SingingSDS employs a modular ASR-LLM-SVS pipeline and supports a wide range of configurations across character personas, ASR and LLM backends, SVS models, melody sources, and voice profiles, tailored to different needs in terms of latency, quality, and musical style.\nSingingSDS is available as a plug-and-play web demo, featuring modular, open-source code that supports customization and extension.\nDemo: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/spaces/espnet/SingingSDS\" title=\"\">https://huggingface.co/spaces/espnet/SingingSDS</a>. Code: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/SingingSDS/SingingSDS\" title=\"\">https://github.com/SingingSDS/SingingSDS</a>. Video: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe\" title=\"\">https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe</a>.</p>\n\n",
+                "matched_terms": [
+                    "melody",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Singing, as a communicative modality, combines linguistic content with melody and rhythm, offering enhanced memorability and pleasure compared to speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">haiduk2020song</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gold2019musical</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zatorre2013perception</span>)</cite>, which can enrich interactive entertainment experiences. Despite significant progress in singing voice synthesis (SVS) and song generation models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yuan2025yue</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024muskits-espnet</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tang2024singomd</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2024visinger2+</span>)</cite>, these systems are essentially non-interactive: largely operate on predefined lyrics, lacking mechanisms for dynamic responses to user input.</p>\n\n",
+                "matched_terms": [
+                    "melody",
+                    "lyrics"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In our experiments, model-based metrics such as Meta AudioBox Aesthetics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tjandra2025meta</span>)</cite> did not consistently align with human preferences, and in some cases favored randomly generated, inharmonic note sequences over well-structured melodies. To better capture the aspects of engagement and enjoyability, we conducted human evaluations focusing on perceived enjoyment. Additionally, we report coarse melodic statistics, such as the large jump ratio, to quantify pitch dynamics in the generated singing outputs. Together, these complementary metrics offer a more holistic perspective on melody-conditioned dialogue generation (<span class=\"ltx_ERROR undefined\">\\appendixref</span>apd:metrics).</p>\n\n",
+                "matched_terms": [
+                    "note",
+                    "over"
+                ]
+            }
+        ]
+    },
+    "S3.F5": {
+        "source_file": "SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational Roleplay Applications",
+        "image_url": "https://arxiv.org/html/2511.20972v1/figs/package_structure.png",
+        "caption": "Figure 5: Modular architecture of our system. Each module (ASR, LLM, SVS, melody, character behavior) is encapsulated as a standalone component and connected through a central interface. A Gradio-based UI and YAML configuration templates facilitate rapid deployment and customization.",
+        "informative_terms_identified": [
+            "behavior",
+            "component",
+            "interface",
+            "rapid",
+            "templates",
+            "svs",
+            "melody",
+            "module",
+            "encapsulated",
+            "system",
+            "yaml",
+            "modular",
+            "configuration",
+            "deployment",
+            "gradiobased",
+            "llm",
+            "connected",
+            "customization",
+            "standalone",
+            "central",
+            "asr",
+            "facilitate",
+            "character",
+            "through",
+            "architecture"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">With recent advances in automatic speech recognition (ASR), large language models (LLMs), and text-to-speech (TTS) technologies, spoken dialogue systems (SDS) have become widely accessible.\nHowever, most existing SDS are limited to conventional spoken responses.\nWe present <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, a cascaded SDS that responds through singing rather than speaking, fostering more affective, memorable, and pleasurable interactions in character-based roleplay and interactive entertainment scenarios. SingingSDS employs a modular ASR-LLM-SVS pipeline and supports a wide range of configurations across character personas, ASR and LLM backends, SVS models, melody sources, and voice profiles, tailored to different needs in terms of latency, quality, and musical style.\nSingingSDS is available as a plug-and-play web demo, featuring modular, open-source code that supports customization and extension.\nDemo: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://huggingface.co/spaces/espnet/SingingSDS\" title=\"\">https://huggingface.co/spaces/espnet/SingingSDS</a>. Code: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://github.com/SingingSDS/SingingSDS\" title=\"\">https://github.com/SingingSDS/SingingSDS</a>. Video: <a class=\"ltx_ref ltx_url ltx_font_typewriter\" href=\"https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe\" title=\"\">https://youtube.com/playlist?list=PLZpUJJbwp2WvtPBenG5D3h09qKIrt24ui&amp;si=7CSLWAYWcfkTEdqe</a>.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "modular",
+                    "character",
+                    "through",
+                    "svs",
+                    "llm",
+                    "melody",
+                    "customization"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Spoken dialogue systems (SDS) have seen rapid advancements in recent years&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2025salmonn</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">ding2025kimi</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">xu2025qwen2</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">arora2025espnet</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">li2025baichuan</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gao2025lucy</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">kyutai2024moshi</span>)</cite>, with increasing focus on role-play, character embodiment, and immersive interaction&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">huang2025step</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2025omnicharacter</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">chiang2025audio</span>)</cite>.\nSuch systems have demonstrated their potential in enhancing user engagement through dynamic and emotionally expressive conversations, as exemplified by character-driven applications like Neuro-sama&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">neurosama2024twitch</span>)</cite>, Cotomo&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">cotomo</span>)</cite>, and interactive experiences such as Turtle Talk with Crush&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">disneyworld2025turtle</span>)</cite>.\nHowever, conventional SDS outputs are typically limited to standard speech, which constrains the potential for richer, aesthetically engaging experiences.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "rapid",
+                    "character"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Singing, as a communicative modality, combines linguistic content with melody and rhythm, offering enhanced memorability and pleasure compared to speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">haiduk2020song</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">gold2019musical</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zatorre2013perception</span>)</cite>, which can enrich interactive entertainment experiences. Despite significant progress in singing voice synthesis (SVS) and song generation models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yuan2025yue</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024muskits-espnet</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">tang2024singomd</span>; <span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">yu2024visinger2+</span>)</cite>, these systems are essentially non-interactive: largely operate on predefined lyrics, lacking mechanisms for dynamic responses to user input.</p>\n\n",
+                "matched_terms": [
+                    "melody",
+                    "svs"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">To address this gap, we introduce <span class=\"ltx_text ltx_font_bold\">SingingSDS</span>, the first open-source system supporting speech-in, singing-out roleplay interactions for entertainment and character-driven scenarios.\nSingingSDS integrates automatic speech recognition (ASR), character-consistent response generation using large language models (LLMs), melody control with optional structural constraints, and singing voice synthesis (SVS).\nThe system is modular and configurable, including 5 ASR models, 7 LLMs, our released bilingual (Chinese-Japanese) and monolingual (Chinese-only) SVS models, and 5 melody control settings, resulting in 350 possible system configurations.\nWe conduct systematic assessment of both audio quality and user perception, supporting reproducible research on interactive singing dialogue. The system is fully open-sourced and provides an interactive web demo and a command-line interface for the creation and evaluation of speech-to-singing dialogues with fictional characters. These features support reproducible research and structured experimentation with interactive singing dialogues.</p>\n\n",
+                "matched_terms": [
+                    "asr",
+                    "modular",
+                    "svs",
+                    "melody",
+                    "interface",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">SingingSDS establishes a foundation for investigating singing as an interactive response modality beyond conventional spoken dialogue. The system has potential applications in VR concerts and other virtual performances, interactive music games and theme park attractions, and live streaming with audience participation. Through singing responses, SingingSDS can enhance these applications, offering more memorable and enjoyable user experiences, while also providing a platform for empirical studies of singing-based dialogue.</p>\n\n",
+                "matched_terms": [
+                    "through",
+                    "system"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In parallel, SVS has progressed significantly in recent years with the development of neural models such as TokSing&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">wu2024toksing</span>)</cite>,\nDiffSinger&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">liu2022diffsinger</span>)</cite>, and VISinger2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(<span class=\"ltx_ref ltx_missing_citation ltx_ref_self\">zhang2022visinger2</span>)</cite>, which enable high-fidelity singing generation by modeling pitch, duration, and timbre.\nDespite the progress in both SDS and SVS, to the best of our knowledge, no prior work has integrated singing voice synthesis into an interactive spoken dialogue system.\nOur work presents the first attempt to bridge these two domains, enabling an LLM-based dialogue agent to sing its responses to the user via SVS techniques.\n</p>\n\n",
+                "matched_terms": [
+                    "system",
+                    "svs"
+                ]
+            }
+        ]
+    }
+}

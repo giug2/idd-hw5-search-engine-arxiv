@@ -1,0 +1,558 @@
+{
+    "S2.F1": {
+        "source_file": "Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation",
+        "image_url": "https://arxiv.org/html/2511.16757v1/iclr2026/figure/framework-3.png",
+        "caption": "Figure 1: Audio-language pretraining objective studied in this work: contrastive and captioning.",
+        "informative_terms_identified": [
+            "work",
+            "pretraining",
+            "studied",
+            "contrastive",
+            "audiolanguage",
+            "captioning",
+            "objective"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">Audio&#8211;language pretraining learns audio representations by establishing correspondence between audio signals and natural language descriptions. The core objective is to leverage text as structured semantic supervision, enabling models to capture diverse information across speech, music, and environmental sounds within a unified framework.\nAudio&#8211;language models typically employ a two-tower architecture: an audio encoder <math alttext=\"f_{\\text{a}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p1.m1\" intent=\":literal\"><semantics><msub><mi>f</mi><mtext>a</mtext></msub><annotation encoding=\"application/x-tex\">f_{\\text{a}}</annotation></semantics></math> that maps raw audio signals into contextual representations, and a text component <math alttext=\"f_{\\text{t}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p1.m2\" intent=\":literal\"><semantics><msub><mi>f</mi><mtext>t</mtext></msub><annotation encoding=\"application/x-tex\">f_{\\text{t}}</annotation></semantics></math> whose design depends on the training objective.\nAs shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S2.F1\" title=\"Figure 1 &#8227; 2 Language-audio Pretraining &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, we explore two complementary paradigms that differ fundamentally in how they establish audio-text correspondence, contrastive and captioning objective. These approaches represent discriminative and generative perspectives on audio-language alignment, respectively.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Audio-language pretraining holds promise for general-purpose audio understanding, yet remains underexplored compared to its vision counterpart. While vision-language models like CLIP serve as widely adopted foundations, existing audio-language models primarily excel at retrieval tasks with limited adoption as general-purpose encoders.\nWe identify three key barriers: limited large-scale audio-text corpora, insufficient caption diversity, and lack of systematic exploration and evaluation.\nTo this end, we introduce CaptionStew, a 10.7M caption dataset aggregating diverse open-source audio-text corpora across multiple domains and captioning styles.\nUsing this resource, we conduct the first comprehensive evaluation comparing contrastive and captioning objectives for audio representation learning across speech, music, and environmental sound tasks.\nOur results demonstrate that audio-language pretraining yields competitive, transferable representations. Through systematic data-scaling experiments, we reveal complementary objective strengths: contrastive learning achieves superior data efficiency at smaller scales, while captioning demonstrates better scalability on language-involved audio understanding tasks. We also find that common supervised initialization practices provide diminishing returns at scale, challenging current approaches.\nThese findings establish audio-language pretraining as a viable pathway toward general-purpose audio representations, guiding future research. To accelerate progress, we release data preparation recipes, training protocols, and pretrained models, paving the way toward universal audio understanding.\n</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage",
+                    "captioning",
+                    "objective"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Representation learning has long been central to audio processing<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>In this work, audio processing refers to audio understanding, speech analysis and music understanding, while excluding automatic speech recognition</span></span></span>, with substantial progress over the past decades.\nEarly advances relied on supervised learning, where models trained on labeled corpora were adapted to related downstream tasks or transferred across domains&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib50\" title=\"\">2020</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib15\" title=\"\">2022a</a>; Snyder et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib84\" title=\"\">2018</a>; Desplanques et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib24\" title=\"\">2020</a>)</cite>.\nMore recently, self-supervised learning (SSL) has emerged as the promising paradigm.\nBy pretraining on large-scale unlabeled audio with contrastive objectives or masked modeling&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib40\" title=\"\">2022a</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib17\" title=\"\">2023</a>; Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib5\" title=\"\">2020</a>; Hsu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib46\" title=\"\">2021</a>; Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib57\" title=\"\">2024</a>)</cite>, the resulting models learn rich structural knowledge of audio signals, consistently enhancing performance across many speech and audio benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib96\" title=\"\">2021</a>; Turian et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>; Yuan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib98\" title=\"\">2023</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The success of vision&#8211;language pretraining underscores this promise.\nModels like CLIP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib75\" title=\"\">2021</a>)</cite> and AIM-v2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Fini et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib33\" title=\"\">2025</a>)</cite> not only power vision&#8211;language tasks but also produce representations that benefit a broad range of vision tasks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib60\" title=\"\">2023</a>; Minderer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib68\" title=\"\">2022</a>; Crowson et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib23\" title=\"\">2022</a>)</cite>.\nIn contrast, audio&#8211;language models have not yet achieved comparable advancements.\nWhile existing models such as CLAP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>)</cite> excel at audio&#8211;text retrieval, their representations have seen limited adoption for broader audio understanding tasks, suggesting fundamental gaps in current approaches.\nWe identify three key challenges that have constrained progress.\nFirst, large-scale, web-mined image&#8211;text corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Schuhmann et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib83\" title=\"\">2022</a>; Gadre et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib35\" title=\"\">2023</a>)</cite> contain billions of pairs, but no comparable resource exists for audio.\nCurrent audio caption datasets barely exceed one million pairs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>; Mei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib66\" title=\"\">2024</a>; Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>)</cite>, often relying on captions synthesized or augmented by large language models, fundamentally limiting the scaling potential of audio&#8211;language models.\nSecond, widely used audio caption corpora focus predominantly on identifying what is presenting in the audio, while lacking coverage of the rich hierarchy of acoustic attributes that define specific audio signals.\nFor instance, captions rarely characterize speaker characteristics (voice timbre, speaking style), musical attributes (harmonic structure, rhythmic patterns), or environmental acoustics (reverberation, background ambiance).\nThis imbalanced focus limits the model&#8217;s ability to learn representations that capture the full spectrum of audio semantics.\nThird, prior work has primarily focused on contrastive learning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib91\" title=\"\">2022</a>)</cite> and evaluated on audio&#8211;text retrieval.\nSystematic studies on alternative pretraining objectives (e.g., captioning) and comprehensive evaluations across a wide suite of audio understanding tasks remain scarce, limiting our understanding of what drives effective audio&#8211;language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "captioning",
+                    "pretraining",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we revisit audio&#8211;language pretraining with the goal of reestablishing its viability as a pathway toward general-purpose audio representation learning. Our contributions are:</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce <span class=\"ltx_text ltx_font_bold\">CaptionStew</span>, a large-scale aggregation of diverse open-source audio&#8211;text datasets spanning multiple domains and captioning styles, addressing the data scarcity and diversity limitations in current audio-language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We provide the first comprehensive evaluation of audio-language pretraining across diverse tasks and protocols, demonstrating that audio&#8211;language pretraining produces competitive, transferable representations across speech, music, and environmental audio domains.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct the first systematic comparison of contrastive learning and captioning objectives for audio representation learning, revealing that contrastive learning exhibits superior data efficiency while captioning demonstrates better scalability.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Contrastive Objective</span> is proven to be a robust representation learning method&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib19\" title=\"\">2020b</a>; Radford et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib75\" title=\"\">2021</a>; Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib5\" title=\"\">2020</a>)</cite> and have been a dominant approach for audio-language pretraining&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib91\" title=\"\">2022</a>)</cite>.\nThis approach aligns audio and text representations in a shared embedding space by maximizing similarity between paired samples while minimizing similarity between mismatched pairs.\nGiven a batch of paired samples <math alttext=\"\\{(a_{i},t_{i})\\}_{i=1}^{N}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p2.m1\" intent=\":literal\"><semantics><msubsup><mrow><mo stretchy=\"false\">{</mo><mrow><mo stretchy=\"false\">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>t</mi><mi>i</mi></msub><mo stretchy=\"false\">)</mo></mrow><mo stretchy=\"false\">}</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><annotation encoding=\"application/x-tex\">\\{(a_{i},t_{i})\\}_{i=1}^{N}</annotation></semantics></math>, the audio encoder produces frame- (or patch-) level representations that are pooled and projected to audio embeddings <math alttext=\"\\mathbf{z}^{a}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p2.m2\" intent=\":literal\"><semantics><msubsup><mi>&#119859;</mi><mi>i</mi><mi>a</mi></msubsup><annotation encoding=\"application/x-tex\">\\mathbf{z}^{a}_{i}</annotation></semantics></math>, while the text encoder <math alttext=\"f_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p2.m3\" intent=\":literal\"><semantics><msub><mi>f</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">f_{t}</annotation></semantics></math> generates corresponding text embeddings <math alttext=\"\\mathbf{z}^{t}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p2.m4\" intent=\":literal\"><semantics><msubsup><mi>&#119859;</mi><mi>i</mi><mi>t</mi></msubsup><annotation encoding=\"application/x-tex\">\\mathbf{z}^{t}_{i}</annotation></semantics></math>.\nThe symmetric InfoNCE loss&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Oord et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib73\" title=\"\">2018</a>)</cite> is applied to optimize both modalities:</p>\n\n",
+                "matched_terms": [
+                    "objective",
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Captioning Objective</span> takes a generative approach to audio-language alignment, learning representations by generating textual descriptions from audio.\nWe argue that captioning presents a promising alternative for audio-language pretraining, offering denser token-level supervision compared to contrastive learning and better alignment with recent trends toward general audio understanding systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib27\" title=\"\">2025</a>; Goel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib38\" title=\"\">2025</a>)</cite>, yet remains underexplored in prior literature.\nGiven an audio signal <math alttext=\"a_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m1\" intent=\":literal\"><semantics><msub><mi>a</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">a_{i}</annotation></semantics></math>, the encoder <math alttext=\"f_{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m2\" intent=\":literal\"><semantics><msub><mi>f</mi><mi>a</mi></msub><annotation encoding=\"application/x-tex\">f_{a}</annotation></semantics></math> produces contextual representations <math alttext=\"\\mathbf{Z}^{a}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m3\" intent=\":literal\"><semantics><msubsup><mi>&#119833;</mi><mi>i</mi><mi>a</mi></msubsup><annotation encoding=\"application/x-tex\">\\mathbf{Z}^{a}_{i}</annotation></semantics></math>, which are fed into a transformer decoder <math alttext=\"g_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m4\" intent=\":literal\"><semantics><msub><mi>g</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">g_{t}</annotation></semantics></math> through cross-attention. Inspired by CapPa&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tschannen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib88\" title=\"\">2023</a>)</cite>, we alternate between two decoding modes&#8212;autoregressive and parallel prediction&#8212;to enhance audio encoder representation learning.\nIn the autoregressive decoding, the decoder generates caption tokens <math alttext=\"(y_{1},\\ldots,y_{T})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>y</mi><mi>T</mi></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(y_{1},\\ldots,y_{T})</annotation></semantics></math> sequentially, with each token conditioned on the audio representation and previously generated tokens. Training follows the teacher-forcing approach with a cross-entropy loss:</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage",
+                    "captioning",
+                    "objective"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The audio encoder uses a Zipformer-M architecture&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yao et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib97\" title=\"\">2024</a>)</cite>, chosen for its efficiency on long sequences and fast convergence.\nZipformer employs six encoder blocks in a U-Net structure that processes sequences at multiple resolutions to capture fine- and coarse-grained temporal information.\nAlthough originally designed for automatic speech recognition, our preliminary experiments confirm Zipformer as a competitive backbone across audio classification tasks (see Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.SS3\" title=\"A.3 Zipformer Model &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">A.3</span></a>).\nFor contrastive pretraining, the text encoder follows BERT-base architecture (12 layers 768 hidden dimensions)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib25\" title=\"\">2019</a>)</cite>.\nFor captioning pretraining, the text decoder adopts the BART-base decoder architecture (6 layers, 768 hidden dimensions)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib54\" title=\"\">2020</a>)</cite>.\nWe use twice as many encoder layers as decoder layers to ensure comparable training speed across objectives.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Following prior works in audio-language pretraining&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; Mei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib66\" title=\"\">2024</a>; Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>)</cite>, we experiment with two scenarios: training from scratch or initialized from pretrained checkpoints.\nThe audio encoder initializes from a Zipformer-based audio event classifier trained on AudioSet&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gemmeke et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib36\" title=\"\">2017</a>)</cite> with an mAP of 0.46, while text components use corresponding publicly available checkpoints.\nAll models are trained on 8 Tesla V100 GPUs with an effective batch size of 640 seconds of audio per GPU.\nTraining runs for 600k steps from scratch (14 days wall-clock time) or 200k steps if initialized from pretrained checkpoint.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio-language Alignments</span>\nfollow the LiT protocol&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zhai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib100\" title=\"\">2022</a>)</cite>, adapting pretrained text components to align with frozen audio representations.\nFor retrieval, we pair audio encoders with pretrained RoBERTa-base text encoder&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib62\" title=\"\">2019</a>)</cite>.\nFor captioning, we use pretrained BART-base decoders&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib54\" title=\"\">2020</a>)</cite>, and only finetune cross-attention layers as we observed more stable training.\nBoth setups finetune on corresponding datasets&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Diwan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib28\" title=\"\">2025</a>; Agostinelli et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib2\" title=\"\">2023</a>)</cite> while keeping audio encoders frozen.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Recognizing the broad adoption and effectiveness of pretrained audio event classifiers in transfer learning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Alonso-Jim&#233;nez et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib3\" title=\"\">2023</a>; Cappellazzo et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib11\" title=\"\">2024</a>)</cite>, audio-language modeling&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>)</cite> and general audio understanding&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib42\" title=\"\">2024</a>; Ghosh et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib37\" title=\"\">2024</a>; Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib27\" title=\"\">2025</a>)</cite>, we select our pretrained Zipformer-based audio event classifier (described in Sec.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.SS1\" title=\"4.1 Implementation Details &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">4.1</span></a>) as the primary baseline.\nIn addition, we compare against representative self-supervised learning (SSL) models, each pretrained under different paradigms and specialized for particular audio domains. BEATs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib17\" title=\"\">2023</a>)</cite> is an audio SSL model trained with an iterative masked acoustic token prediction framework. Wav2vec 2.0&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib5\" title=\"\">2020</a>)</cite> learns speech representation by distinguishing target quantized latent representations from disctrators. MERT&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib57\" title=\"\">2024</a>)</cite> is a music SSL model trained with masked acoustic modeling, learning to capture acoustic cues and structural information of music.\nTogether, these baselines provide a broad comparative context for studying audio&#8211;language pretraining toward general-purpose audio representation.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Contrastive vs. Captioning Objectives.</span>\nThe two pretraining paradigms exhibit complementary strengths across evaluation protocols.\nOn linear probing tasks, contrastive learning consistently outperforms captioning, particularly excelling at audio event classification and speaker identification.\nHowever, it is worth noting that this gap narrows substantially when the classifier learns to aggregate information across frames through multi-head attention pooling (Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.SS5\" title=\"A.5 Main Results (cont.) &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">A.5</span></a>).\nThis observation reflects the objectives&#8217; inherent designs: contrastive learning explicitly optimizes for linearly separable clip-level representations, while captioning relies on cross-attention mechanisms over frame-level representations for text sequence generation.\nThis finding aligns with recent work highlighting how downstream module choices significantly impact the assessment of audio representation quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zaiem et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib99\" title=\"\">2023</a>)</cite>.\nFor language-involved tasks, both objectives demonstrate competitive performance, with captioning showing slight advantages in open-form question answering across multiple domains.\nThis suggests captioning&#8217;s potential for language-involved audio understanding tasks, aligning with recent trends toward generative audio understanding systems.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "captioning",
+                    "pretraining",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Impact of Supervised Initialization.</span> Initializing from supervised pretraining (AS SL) provides substantial benefits across most tasks, with notable improvements on audio event classification, sound event detection and audio-text retreival.\nThe gains are particularly pronounced for contrastive objectives, suggesting that discriminative pretraining provides useful inductive biases for contrastive learning.\nHowever, these benefits diminish (or disappear entirely) when the attributes required for downstream tasks diverge from AudioSet&#8217;s ontology.\nOn speaker identification and music tagging, scratch-trained models often match or exceed initialized variants, indicating that AudioSet&#8217;s focus on distinguishing between sound categories may bias representations toward event-level semantics rather than the acoustic attributes (voice timbre, speaking style) or musical structure (genre, harmony, rhythm) essential for these tasks.\nThese findings challenge common initialization practices for audio-language pretraining and suggest the need for tailored pretraining strategies when targeting general-purpose audio representation learning.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Competitive Performance Across Domains.</span> Our audio-language representations achieve strong transferability across diverse audio domains.\nCompared to supervised baselines (Zipformer-AEC), our overall best-performing model (Contrastive-init) demonstrate superior performance on speaker identification, music understanding and audio-text retrieval while maintaining competitiveness on audio-event classification.\nAgainst domain-specialized SSL methods (BEATs, wav2vec2, MERT), our approach consistently shows competitive performance.\nThis consistent cross-domain performance validates our hypothesis that diverse caption aggregation enables broadly transferable representations, establishing audio-language pretraining as a viable path toward learning general-purpose audio representation.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Scaling Patterns.</span> Most tasks demonstrate consistent performance improvements with increased data scale, validating the potential of large-scale audio-language pretraining.\nHowever, notable exceptions emerge that reveal fundamental limitations of current approaches.\nSound event detection, particularly for models initialized with AudioSet pretraining, exhibits a reverse scaling trend where performance degrades with more caption data.\nThis suggests a potential conflict between natural language supervision&#8211;which typically describes audio characteristics and attributes&#8211;and temporal localization tasks requiring precise event boundaries.\nAdditionally, emotion recognition and instrument classification show weaker scaling gains compared to other tasks, likely reflecting limited caption diversity for these specific attributes in existing corpora, which we will discussed in Sec.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.SS6\" title=\"4.6 Dataset Analysis &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">4.6</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Contrastive vs. Captioning Scaling. </span>\nContrastive learning consistently outperforms captioning at varying data scales, particularly under less data and on discriminative tasks such as audio event classification.\nHowever, captioning demonstrates slightly better scaling properties, with distinct patterns emerging across task categories.\nor language-involved tasks&#8211;especially captioning and question answering&#8211;captioning matches or surpasses contrastive learning at our current 10M-pair scale.\nOn linear probing benchmarks, the gap remains substantial, with scaling trends suggesting captioning would require hundreds of millions of pairs to achieve parity with contrastive methods.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Impact of Initialization at Scale.</span>\nAudioSet initialization provides immediate performance gains but introduces diminishing returns at larger scales. Both contrastive learning and captioning show decreasing benefits from initialization as data scale increases, with scratch and initialized models achieving matched performance at larger scales on some tasks.\nThis suggests that pretrained initialization effectively bootstraps learning at small scales but may constrain the model&#8217;s ability to adapt to the broader semantic space covered by large-scale caption data, potentially due to mismatch between AudioSet&#8217;s ontology and diverse audio descriptions.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, these findings reveal complementary behaviors: contrastive pretraining achieves superior data efficiency at current scales, while captioning shows better scalability, especially for language-involved tasks.\nImportantly, the diminishing returns of initialization at scale indicate that large-scale caption data can provide sufficient semantic supervision independent of domain-specific pretraining, challenging current practices of audio-language pretraining and opening possibilities for learning general-purpose representations from diverse text descriptions alone.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These findings highlight that simply combining datasets doesn&#8217;t guarantee improved linguistic diversity, revealing broader limitations in current audio-language pretraining approaches.\nAlso, the constrained diversity in certain aspect may partially explain weaker scaling behavior observed for certain tasks, as models encounter repetitive linguistic patterns despite increased data volume, aligning with vision-language findings on caption diversity&#8217;s importance for representation quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Santurkar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib82\" title=\"\">2023</a>; Chan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib12\" title=\"\">2022</a>)</cite>.\nThis analysis motivates developing enhanced aggregation pipeline and more diverse caption generation methods to better capture the full spectrum of information in audio signals, thereby fully realizing the potential of large-scale audio-language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio&#8211;Language Pretraining.</span>\nAudio-language models have emerged as a promising approach for learning cross-modal representations. Most existing work focuses on contrastive learning objectives that align audio and text in shared embedding spaces&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib91\" title=\"\">2022</a>)</cite>. Recent extensions have explored combinations with other objectives&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib93\" title=\"\">2023</a>; Zhu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib101\" title=\"\">2024</a>; Niizumi et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib71\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib72\" title=\"\">2025</a>)</cite>.\nThe field has also witnessed rapid evolution in datasets, transitioning from traditional human-annotated corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>; Agostinelli et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib2\" title=\"\">2023</a>)</cite> to recently constructed LLM-augmented collections&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib66\" title=\"\">2024</a>; Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib18\" title=\"\">2025</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib86\" title=\"\">Sun et&#160;al., </a>)</cite> and domain-specific resources covering speech characteristics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Diwan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib28\" title=\"\">2025</a>)</cite>, and musical attributes&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Roy et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib79\" title=\"\">2025</a>)</cite>.\nOur work contributes by providing the first systematic comparison between contrastive and captioning objectives, along with comprehensive evaluation toward general-purpose audio representation.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Universal Audio Understanding.</span>\nThe evaluation of audio understanding has evolved from task-specific classification benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib96\" title=\"\">2021</a>; Turian et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>; Yuan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib98\" title=\"\">2023</a>)</cite> toward more comprehensive assessment frameworks.\nRecent developments have emphasized LLM-based audio understanding systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ghosh et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib37\" title=\"\">2024</a>; Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib42\" title=\"\">2024</a>; Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib27\" title=\"\">2025</a>; Goel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib38\" title=\"\">2025</a>; Chu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib20\" title=\"\">2024</a>; Tang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib87\" title=\"\">2024</a>)</cite> that can handle open-form queries and complex reasoning tasks.\nThis shift has driven the development of corresponding evaluation benchmarks that assess models&#8217; abilities across diverse audio understanding scenarios, including question answering, reasoning, and multi-step audio analysis&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sakshi et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib80\" title=\"\">2025</a>; Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib95\" title=\"\">2024b</a>; Huang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib47\" title=\"\">2025</a>; Ma et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib64\" title=\"\">2025</a>)</cite>.\nOur work contributes to this trend by providing the first comprehensive evaluation of audio-language pretraining across discriminative tasks, audio-language alignment, and open-form question answering, thereby bridging the gap between traditional representation learning evaluation and modern universal audio understanding.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We revisited audio-language pretraining to advance general-purpose audio representation learning. We introduced CaptionStew, a large-scale aggregation of diverse audio caption datasets, and through comprehensive evaluation across tasks, demonstrated that audio-language pretraining produces competitive representations across speech, music, and environmental domains. Our systematic comparison revealed complementary strengths of two audio-language pretraining objectives: contrastive learning excels in data efficiency, while captioning shows better scalability for language-involved tasks.\nData-scaling experiments highlighted diminishing returns of supervised initialization, challenging common practices, while dataset analysis revealed linguistic diversity limitation in current datasets. These findings establish audio-language pretraining as a viable pathway toward universal audio understanding.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "contrastive",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While this work provides valuable empirical insights for audio-language pretraining, we acknowledge several important limitations that present opportunities for future research.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited Technical Novelty.</span> Our work primarily combines existing techniques&#8212;contrastive learning, captioning objectives, and dataset aggregation&#8212;rather than introducing fundamentally new methods. The mixed autoregressive/parallel training approach is adapted from vision-language work (CapPa), and our architectural choices follow standard practices.\nWe acknowledge that the technical contributions are largely empirical rather than methodological.\nHowever, this aligns with our primary goal of systematically evaluating audio-language pretraining&#8217;s potential for general-purpose representation learning.\nThe field currently lacks comprehensive comparative studies across objectives, evaluation protocols, and training factors.\nOur systematic analysis reveals important insights about scaling behaviors and initialization effects that have practical implications for practitioners, even if the underlying techniques are not novel.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "captioning",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited Model and Data Scalability.</span> Our experiments are constrained to 10M audio-text pairs and relatively modest model sizes compared to state-of-the-art vision-language systems that leverage billions of samples and much larger architectures. This scale limitation may not fully reflect the potential of audio-language pretraining, particularly for the captioning objective which our results suggest benefits from larger-scale training. Additionally, we do not explore recent advances in large language model integration or more sophisticated architectural designs that could improve performance. These constraints stem from computational resource limitations and our focus on controlled comparisons rather than pushing absolute performance boundaries. Future work with larger scales may reveal different scaling dynamics and stronger evidence for general-purpose capabilities.</p>\n\n",
+                "matched_terms": [
+                    "work",
+                    "pretraining",
+                    "audiolanguage",
+                    "captioning",
+                    "objective"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CaptionStew aggregates eight open-source audio caption datasets to address data scarcity and limited diversity in current audio-language pretraining. The constituent datasets span environmental sounds, music, and expressive speech, with fundamentally different captioning approaches&#8212;from crowdsourced human annotation to expert curation to various LLM-based generation pipelines.\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T5\" title=\"Table 5 &#8227; A.2 Sourced Datasets for CaptionStew &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T6\" title=\"Table 6 &#8227; A.2 Sourced Datasets for CaptionStew &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> detail each dataset&#8217;s characteristics and provide example captions that illustrate the diverse descriptive styles, ranging from concise event descriptions to detailed multi-sentence narratives with fine-grained acoustic and contextual information.\nDuring aggregation, we filter audio samples longer than one minute for computational efficiency and remove samples that overlap with common audio understanding benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>; Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Agostinelli et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib2\" title=\"\">2023</a>; Fonseca et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib34\" title=\"\">2021</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib14\" title=\"\">2020a</a>; Salamon et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib81\" title=\"\">2014</a>)</cite> to prevent data leakage. This approach preserves the unique characteristics of each source while creating a unified corpus that captures broader semantic coverage than individual datasets.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although Zipformer was originally designed for automatic speech recognition, we conducted preliminary experiments to validate its effectiveness as a general audio encoder across diverse domains.\nAs in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T7\" title=\"Table 7 &#8227; A.3 Zipformer Model &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, our initial studies confirmed that Zipformer achieves competitive performance on environmental sound classification, music understanding, and speaker-related tasks, demonstrating its suitability as a unified backbone for multi-domain audio representation learning. This cross-domain efficacy makes it an appropriate choice for our audio-language pretraining experiments that span speech, music, and environmental audio.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table 9 presents linear probing results when using multi-head attention pooling instead of mean pooling.\nWith learned attention pooling, the performance gap between contrastive and captioning objectives narrows substantially, particularly evident on speaker identification where captioning-scratch achieves 72.86% compared to 46.67% with mean pooling (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Main Results &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).\nThis demonstrates that captioning models benefit significantly from adaptive pooling mechanisms, while contrastive learning&#8217;s explicit optimization for clip-level representations shows less sensitivity to pooling strategy.\nThese results underscore the critical importance of appropriate downstream module selection when evaluating different pretraining paradigms, as the choice of pooling mechanism can dramatically influence conclusions about objective effectiveness.\nThe improved performance across all methods with attention pooling also suggests that frame-level representations from both objectives contain rich information that can be better exploited through learned aggregation. SOTA results and SSL baseline results in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Main Results &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T9\" title=\"Table 9 &#8227; A.5 Main Results (cont.) &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a> are quoted collectively from &#160;<cite class=\"ltx_cite ltx_citemacro_citet\">Niizumi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib72\" title=\"\">2025</a>); Turian et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>); Li &amp; Li (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib56\" title=\"\">2022</a>); Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib90\" title=\"\">2022</a>); Bharadwaj et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib8\" title=\"\">2025</a>); Gong et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib41\" title=\"\">2022b</a>); Lanzend&#246;rfer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib51\" title=\"\">2025</a>); Bai et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>); Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib95\" title=\"\">2024b</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "pretraining",
+                    "contrastive",
+                    "objective"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Aside from learning representations, we also compare against state-of-the-art audio-text retrieval models to assess our approach&#8217;s performance on the specific task it was designed for. Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T10\" title=\"Table 10 &#8227; A.6 Additional Results &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">10</span></a> presents retrieval results for our best-performing model (Contrastive-init) against state-of-the-art\naudio-text retrieval model&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>)</cite>.\nOur model achieving comparable or superior results on benchmarks in various audio domains, with particularly strong performance on speech and music retrieval.\nThe results indicate that our general-purpose audio-language pretraining approach can compete with specialized retrieval models while offering broader applicability across diverse usage scenarios.</p>\n\n",
+                "matched_terms": [
+                    "pretraining",
+                    "audiolanguage"
+                ]
+            }
+        ]
+    },
+    "S4.F2": {
+        "source_file": "Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation",
+        "image_url": "https://arxiv.org/html/2511.16757v1/iclr2026/figure/scaling_MAP.png",
+        "caption": "Figure 2: Data scaling behavior of contrastive vs. captioning objectives across representative tasks.",
+        "informative_terms_identified": [
+            "data",
+            "contrastive",
+            "representative",
+            "tasks",
+            "behavior",
+            "scaling",
+            "across",
+            "objectives",
+            "captioning"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">To understand the scalability of audio&#8211;language pretraining, we conduct controlled experiments using CaptionStew subsets at 400K, 1M, 4M, and 10M (whole corpus) audio-text pairs. Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.F2\" title=\"Figure 2 &#8227; 4.4 Main Results &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">2</span></a> reveals distinct scaling patterns across objectives and evaluation protocols.</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">Audio-language pretraining holds promise for general-purpose audio understanding, yet remains underexplored compared to its vision counterpart. While vision-language models like CLIP serve as widely adopted foundations, existing audio-language models primarily excel at retrieval tasks with limited adoption as general-purpose encoders.\nWe identify three key barriers: limited large-scale audio-text corpora, insufficient caption diversity, and lack of systematic exploration and evaluation.\nTo this end, we introduce CaptionStew, a 10.7M caption dataset aggregating diverse open-source audio-text corpora across multiple domains and captioning styles.\nUsing this resource, we conduct the first comprehensive evaluation comparing contrastive and captioning objectives for audio representation learning across speech, music, and environmental sound tasks.\nOur results demonstrate that audio-language pretraining yields competitive, transferable representations. Through systematic data-scaling experiments, we reveal complementary objective strengths: contrastive learning achieves superior data efficiency at smaller scales, while captioning demonstrates better scalability on language-involved audio understanding tasks. We also find that common supervised initialization practices provide diminishing returns at scale, challenging current approaches.\nThese findings establish audio-language pretraining as a viable pathway toward general-purpose audio representations, guiding future research. To accelerate progress, we release data preparation recipes, training protocols, and pretrained models, paving the way toward universal audio understanding.\n</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "objectives",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Representation learning has long been central to audio processing<span class=\"ltx_note ltx_role_footnote\" id=\"footnote1\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_note_outer\"><span class=\"ltx_note_content\"><sup class=\"ltx_note_mark\">1</sup><span class=\"ltx_tag ltx_tag_note\">1</span>In this work, audio processing refers to audio understanding, speech analysis and music understanding, while excluding automatic speech recognition</span></span></span>, with substantial progress over the past decades.\nEarly advances relied on supervised learning, where models trained on labeled corpora were adapted to related downstream tasks or transferred across domains&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib50\" title=\"\">2020</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib15\" title=\"\">2022a</a>; Snyder et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib84\" title=\"\">2018</a>; Desplanques et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib24\" title=\"\">2020</a>)</cite>.\nMore recently, self-supervised learning (SSL) has emerged as the promising paradigm.\nBy pretraining on large-scale unlabeled audio with contrastive objectives or masked modeling&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib40\" title=\"\">2022a</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib17\" title=\"\">2023</a>; Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib5\" title=\"\">2020</a>; Hsu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib46\" title=\"\">2021</a>; Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib57\" title=\"\">2024</a>)</cite>, the resulting models learn rich structural knowledge of audio signals, consistently enhancing performance across many speech and audio benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib96\" title=\"\">2021</a>; Turian et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>; Yuan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib98\" title=\"\">2023</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "objectives",
+                    "contrastive",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">While these techniques have achieved remarkable success, a fundamental limitation persists: existing methods are primarily designed to excel on specific tasks.\nThis domain specificity stems from explicit inductive biases embedded in model architectures and training objectives.\nModels optimized for environmental sounds usually underperform capturing speaker characteristics or paralinguistic information in speech, and vice versa&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Turian et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>)</cite>.\nAchieving general-purpose audio representations that transfer robustly across diverse audio modalities remains a challenging and actively pursued goal in the field.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "objectives",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The success of vision&#8211;language pretraining underscores this promise.\nModels like CLIP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib75\" title=\"\">2021</a>)</cite> and AIM-v2&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Fini et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib33\" title=\"\">2025</a>)</cite> not only power vision&#8211;language tasks but also produce representations that benefit a broad range of vision tasks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Liu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib60\" title=\"\">2023</a>; Minderer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib68\" title=\"\">2022</a>; Crowson et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib23\" title=\"\">2022</a>)</cite>.\nIn contrast, audio&#8211;language models have not yet achieved comparable advancements.\nWhile existing models such as CLAP&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>)</cite> excel at audio&#8211;text retrieval, their representations have seen limited adoption for broader audio understanding tasks, suggesting fundamental gaps in current approaches.\nWe identify three key challenges that have constrained progress.\nFirst, large-scale, web-mined image&#8211;text corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Schuhmann et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib83\" title=\"\">2022</a>; Gadre et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib35\" title=\"\">2023</a>)</cite> contain billions of pairs, but no comparable resource exists for audio.\nCurrent audio caption datasets barely exceed one million pairs&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>; Mei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib66\" title=\"\">2024</a>; Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>)</cite>, often relying on captions synthesized or augmented by large language models, fundamentally limiting the scaling potential of audio&#8211;language models.\nSecond, widely used audio caption corpora focus predominantly on identifying what is presenting in the audio, while lacking coverage of the rich hierarchy of acoustic attributes that define specific audio signals.\nFor instance, captions rarely characterize speaker characteristics (voice timbre, speaking style), musical attributes (harmonic structure, rhythmic patterns), or environmental acoustics (reverberation, background ambiance).\nThis imbalanced focus limits the model&#8217;s ability to learn representations that capture the full spectrum of audio semantics.\nThird, prior work has primarily focused on contrastive learning&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib91\" title=\"\">2022</a>)</cite> and evaluated on audio&#8211;text retrieval.\nSystematic studies on alternative pretraining objectives (e.g., captioning) and comprehensive evaluations across a wide suite of audio understanding tasks remain scarce, limiting our understanding of what drives effective audio&#8211;language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "scaling",
+                    "objectives",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We introduce <span class=\"ltx_text ltx_font_bold\">CaptionStew</span>, a large-scale aggregation of diverse open-source audio&#8211;text datasets spanning multiple domains and captioning styles, addressing the data scarcity and diversity limitations in current audio-language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We provide the first comprehensive evaluation of audio-language pretraining across diverse tasks and protocols, demonstrating that audio&#8211;language pretraining produces competitive, transferable representations across speech, music, and environmental audio domains.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We conduct the first systematic comparison of contrastive learning and captioning objectives for audio representation learning, revealing that contrastive learning exhibits superior data efficiency while captioning demonstrates better scalability.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "objectives",
+                    "contrastive",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We analyze key training factors including data scaling effects and supervised pretraining initialization, showing that while AudioSet pretraining provides general benefits, its effects diminish for tasks unrelated to audio event classification and at larger data scales, challenging common practices in the field.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "data",
+                    "scaling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Audio&#8211;language pretraining learns audio representations by establishing correspondence between audio signals and natural language descriptions. The core objective is to leverage text as structured semantic supervision, enabling models to capture diverse information across speech, music, and environmental sounds within a unified framework.\nAudio&#8211;language models typically employ a two-tower architecture: an audio encoder <math alttext=\"f_{\\text{a}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p1.m1\" intent=\":literal\"><semantics><msub><mi>f</mi><mtext>a</mtext></msub><annotation encoding=\"application/x-tex\">f_{\\text{a}}</annotation></semantics></math> that maps raw audio signals into contextual representations, and a text component <math alttext=\"f_{\\text{t}}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p1.m2\" intent=\":literal\"><semantics><msub><mi>f</mi><mtext>t</mtext></msub><annotation encoding=\"application/x-tex\">f_{\\text{t}}</annotation></semantics></math> whose design depends on the training objective.\nAs shown in Figure&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S2.F1\" title=\"Figure 1 &#8227; 2 Language-audio Pretraining &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">1</span></a>, we explore two complementary paradigms that differ fundamentally in how they establish audio-text correspondence, contrastive and captioning objective. These approaches represent discriminative and generative perspectives on audio-language alignment, respectively.</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "contrastive",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Captioning Objective</span> takes a generative approach to audio-language alignment, learning representations by generating textual descriptions from audio.\nWe argue that captioning presents a promising alternative for audio-language pretraining, offering denser token-level supervision compared to contrastive learning and better alignment with recent trends toward general audio understanding systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib27\" title=\"\">2025</a>; Goel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib38\" title=\"\">2025</a>)</cite>, yet remains underexplored in prior literature.\nGiven an audio signal <math alttext=\"a_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m1\" intent=\":literal\"><semantics><msub><mi>a</mi><mi>i</mi></msub><annotation encoding=\"application/x-tex\">a_{i}</annotation></semantics></math>, the encoder <math alttext=\"f_{a}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m2\" intent=\":literal\"><semantics><msub><mi>f</mi><mi>a</mi></msub><annotation encoding=\"application/x-tex\">f_{a}</annotation></semantics></math> produces contextual representations <math alttext=\"\\mathbf{Z}^{a}_{i}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m3\" intent=\":literal\"><semantics><msubsup><mi>&#119833;</mi><mi>i</mi><mi>a</mi></msubsup><annotation encoding=\"application/x-tex\">\\mathbf{Z}^{a}_{i}</annotation></semantics></math>, which are fed into a transformer decoder <math alttext=\"g_{t}\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m4\" intent=\":literal\"><semantics><msub><mi>g</mi><mi>t</mi></msub><annotation encoding=\"application/x-tex\">g_{t}</annotation></semantics></math> through cross-attention. Inspired by CapPa&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Tschannen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib88\" title=\"\">2023</a>)</cite>, we alternate between two decoding modes&#8212;autoregressive and parallel prediction&#8212;to enhance audio encoder representation learning.\nIn the autoregressive decoding, the decoder generates caption tokens <math alttext=\"(y_{1},\\ldots,y_{T})\" class=\"ltx_Math\" display=\"inline\" id=\"S2.p3.m5\" intent=\":literal\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant=\"normal\">&#8230;</mi><mo>,</mo><msub><mi>y</mi><mi>T</mi></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(y_{1},\\ldots,y_{T})</annotation></semantics></math> sequentially, with each token conditioned on the audio representation and previously generated tokens. Training follows the teacher-forcing approach with a cross-entropy loss:</p>\n\n",
+                "matched_terms": [
+                    "captioning",
+                    "contrastive"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">The audio encoder uses a Zipformer-M architecture&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yao et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib97\" title=\"\">2024</a>)</cite>, chosen for its efficiency on long sequences and fast convergence.\nZipformer employs six encoder blocks in a U-Net structure that processes sequences at multiple resolutions to capture fine- and coarse-grained temporal information.\nAlthough originally designed for automatic speech recognition, our preliminary experiments confirm Zipformer as a competitive backbone across audio classification tasks (see Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.SS3\" title=\"A.3 Zipformer Model &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">A.3</span></a>).\nFor contrastive pretraining, the text encoder follows BERT-base architecture (12 layers 768 hidden dimensions)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Devlin et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib25\" title=\"\">2019</a>)</cite>.\nFor captioning pretraining, the text decoder adopts the BART-base decoder architecture (6 layers, 768 hidden dimensions)&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lewis et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib54\" title=\"\">2020</a>)</cite>.\nWe use twice as many encoder layers as decoder layers to ensure comparable training speed across objectives.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "objectives",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Linear Probing</span> trains simple linear classifiers on frozen representations.\nFor classification tasks, we experiment with two pooling mechanisms&#8212;mean pooling and multi-head attention pooling&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Lee et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib53\" title=\"\">2019</a>)</cite>&#8212;to obtain clip-level representations.\nWe evaluate across a diverse set of tasks across audio domains, including audio event classification&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Fonseca et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib34\" title=\"\">2021</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib14\" title=\"\">2020a</a>)</cite>, sound event detection&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hershey et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib45\" title=\"\">2021</a>)</cite>, speaker-related tasks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Chung et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib21\" title=\"\">2018</a>; Cao et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib10\" title=\"\">2014</a>)</cite>, and music classification&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Law et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib52\" title=\"\">2010</a>; Engel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib32\" title=\"\">2017</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Contrastive vs. Captioning Objectives.</span>\nThe two pretraining paradigms exhibit complementary strengths across evaluation protocols.\nOn linear probing tasks, contrastive learning consistently outperforms captioning, particularly excelling at audio event classification and speaker identification.\nHowever, it is worth noting that this gap narrows substantially when the classifier learns to aggregate information across frames through multi-head attention pooling (Appendix&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.SS5\" title=\"A.5 Main Results (cont.) &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">A.5</span></a>).\nThis observation reflects the objectives&#8217; inherent designs: contrastive learning explicitly optimizes for linearly separable clip-level representations, while captioning relies on cross-attention mechanisms over frame-level representations for text sequence generation.\nThis finding aligns with recent work highlighting how downstream module choices significantly impact the assessment of audio representation quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Zaiem et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib99\" title=\"\">2023</a>)</cite>.\nFor language-involved tasks, both objectives demonstrate competitive performance, with captioning showing slight advantages in open-form question answering across multiple domains.\nThis suggests captioning&#8217;s potential for language-involved audio understanding tasks, aligning with recent trends toward generative audio understanding systems.</p>\n\n",
+                "matched_terms": [
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "objectives",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Impact of Supervised Initialization.</span> Initializing from supervised pretraining (AS SL) provides substantial benefits across most tasks, with notable improvements on audio event classification, sound event detection and audio-text retreival.\nThe gains are particularly pronounced for contrastive objectives, suggesting that discriminative pretraining provides useful inductive biases for contrastive learning.\nHowever, these benefits diminish (or disappear entirely) when the attributes required for downstream tasks diverge from AudioSet&#8217;s ontology.\nOn speaker identification and music tagging, scratch-trained models often match or exceed initialized variants, indicating that AudioSet&#8217;s focus on distinguishing between sound categories may bias representations toward event-level semantics rather than the acoustic attributes (voice timbre, speaking style) or musical structure (genre, harmony, rhythm) essential for these tasks.\nThese findings challenge common initialization practices for audio-language pretraining and suggest the need for tailored pretraining strategies when targeting general-purpose audio representation learning.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "objectives",
+                    "contrastive",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Scaling Patterns.</span> Most tasks demonstrate consistent performance improvements with increased data scale, validating the potential of large-scale audio-language pretraining.\nHowever, notable exceptions emerge that reveal fundamental limitations of current approaches.\nSound event detection, particularly for models initialized with AudioSet pretraining, exhibits a reverse scaling trend where performance degrades with more caption data.\nThis suggests a potential conflict between natural language supervision&#8211;which typically describes audio characteristics and attributes&#8211;and temporal localization tasks requiring precise event boundaries.\nAdditionally, emotion recognition and instrument classification show weaker scaling gains compared to other tasks, likely reflecting limited caption diversity for these specific attributes in existing corpora, which we will discussed in Sec.&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.SS6\" title=\"4.6 Dataset Analysis &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">4.6</span></a>.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "data",
+                    "scaling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Contrastive vs. Captioning Scaling. </span>\nContrastive learning consistently outperforms captioning at varying data scales, particularly under less data and on discriminative tasks such as audio event classification.\nHowever, captioning demonstrates slightly better scaling properties, with distinct patterns emerging across task categories.\nor language-involved tasks&#8211;especially captioning and question answering&#8211;captioning matches or surpasses contrastive learning at our current 10M-pair scale.\nOn linear probing benchmarks, the gap remains substantial, with scaling trends suggesting captioning would require hundreds of millions of pairs to achieve parity with contrastive methods.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "scaling",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Impact of Initialization at Scale.</span>\nAudioSet initialization provides immediate performance gains but introduces diminishing returns at larger scales. Both contrastive learning and captioning show decreasing benefits from initialization as data scale increases, with scratch and initialized models achieving matched performance at larger scales on some tasks.\nThis suggests that pretrained initialization effectively bootstraps learning at small scales but may constrain the model&#8217;s ability to adapt to the broader semantic space covered by large-scale caption data, potentially due to mismatch between AudioSet&#8217;s ontology and diverse audio descriptions.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "data",
+                    "contrastive",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Overall, these findings reveal complementary behaviors: contrastive pretraining achieves superior data efficiency at current scales, while captioning shows better scalability, especially for language-involved tasks.\nImportantly, the diminishing returns of initialization at scale indicate that large-scale caption data can provide sufficient semantic supervision independent of domain-specific pretraining, challenging current practices of audio-language pretraining and opening possibilities for learning general-purpose representations from diverse text descriptions alone.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "data",
+                    "contrastive",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">These findings highlight that simply combining datasets doesn&#8217;t guarantee improved linguistic diversity, revealing broader limitations in current audio-language pretraining approaches.\nAlso, the constrained diversity in certain aspect may partially explain weaker scaling behavior observed for certain tasks, as models encounter repetitive linguistic patterns despite increased data volume, aligning with vision-language findings on caption diversity&#8217;s importance for representation quality&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Santurkar et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib82\" title=\"\">2023</a>; Chan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib12\" title=\"\">2022</a>)</cite>.\nThis analysis motivates developing enhanced aggregation pipeline and more diverse caption generation methods to better capture the full spectrum of information in audio signals, thereby fully realizing the potential of large-scale audio-language pretraining.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "behavior",
+                    "data",
+                    "scaling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio Representation Learning.</span>\nThe ultimate goal of audio representation learning is developing a single model suitable for diverse audio understanding tasks.\nSupervised models trained on labeled datasets have been fundamental to the field, including audio event classifiers&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Hershey et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib44\" title=\"\">2017</a>; Cramer et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib22\" title=\"\">2019</a>; Kong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib50\" title=\"\">2020</a>; Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib39\" title=\"\">2021</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib15\" title=\"\">2022a</a>; Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib26\" title=\"\">2024</a>)</cite>, speech recognition systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Radford et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib76\" title=\"\">2023</a>)</cite> and speaker recognition models&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Snyder et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib84\" title=\"\">2018</a>; Desplanques et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib24\" title=\"\">2020</a>)</cite>.\nThese approaches remain widely adopted due to their strong performance on target tasks. In parallel, self-supervised learning methods have emerged as a complementary approach, offering advances across speech&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib5\" title=\"\">2020</a>; Hsu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib46\" title=\"\">2021</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib16\" title=\"\">2022b</a>; Baevski et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib6\" title=\"\">2022</a>)</cite>, audio&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib40\" title=\"\">2022a</a>; Huang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib48\" title=\"\">2022</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib17\" title=\"\">2023</a>; Li &amp; Li, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib56\" title=\"\">2022</a>)</cite>, and music&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Li et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib57\" title=\"\">2024</a>; Zhu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib102\" title=\"\">2025</a>)</cite> without requiring labeled data.\nWhile these methods show improved generalization within their target domains, achieving truly general-purpose audio representations remains challenging.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "data",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Audio&#8211;Language Pretraining.</span>\nAudio-language models have emerged as a promising approach for learning cross-modal representations. Most existing work focuses on contrastive learning objectives that align audio and text in shared embedding spaces&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Elizalde et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib31\" title=\"\">2023</a>; Wu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib92\" title=\"\">2023</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib91\" title=\"\">2022</a>)</cite>. Recent extensions have explored combinations with other objectives&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Xu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib93\" title=\"\">2023</a>; Zhu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib101\" title=\"\">2024</a>; Niizumi et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib71\" title=\"\">2024</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib72\" title=\"\">2025</a>)</cite>.\nThe field has also witnessed rapid evolution in datasets, transitioning from traditional human-annotated corpora&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>; Agostinelli et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib2\" title=\"\">2023</a>)</cite> to recently constructed LLM-augmented collections&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Mei et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib66\" title=\"\">2024</a>; Bai et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib18\" title=\"\">2025</a>; <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib86\" title=\"\">Sun et&#160;al., </a>)</cite> and domain-specific resources covering speech characteristics&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Diwan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib28\" title=\"\">2025</a>)</cite>, and musical attributes&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Roy et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib79\" title=\"\">2025</a>)</cite>.\nOur work contributes by providing the first systematic comparison between contrastive and captioning objectives, along with comprehensive evaluation toward general-purpose audio representation.</p>\n\n",
+                "matched_terms": [
+                    "objectives",
+                    "contrastive",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Universal Audio Understanding.</span>\nThe evaluation of audio understanding has evolved from task-specific classification benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib96\" title=\"\">2021</a>; Turian et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>; Yuan et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib98\" title=\"\">2023</a>)</cite> toward more comprehensive assessment frameworks.\nRecent developments have emphasized LLM-based audio understanding systems&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Ghosh et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib37\" title=\"\">2024</a>; Gong et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib42\" title=\"\">2024</a>; Dinkel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib27\" title=\"\">2025</a>; Goel et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib38\" title=\"\">2025</a>; Chu et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib20\" title=\"\">2024</a>; Tang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib87\" title=\"\">2024</a>)</cite> that can handle open-form queries and complex reasoning tasks.\nThis shift has driven the development of corresponding evaluation benchmarks that assess models&#8217; abilities across diverse audio understanding scenarios, including question answering, reasoning, and multi-step audio analysis&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Sakshi et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib80\" title=\"\">2025</a>; Yang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib95\" title=\"\">2024b</a>; Huang et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib47\" title=\"\">2025</a>; Ma et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib64\" title=\"\">2025</a>)</cite>.\nOur work contributes to this trend by providing the first comprehensive evaluation of audio-language pretraining across discriminative tasks, audio-language alignment, and open-form question answering, thereby bridging the gap between traditional representation learning evaluation and modern universal audio understanding.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We revisited audio-language pretraining to advance general-purpose audio representation learning. We introduced CaptionStew, a large-scale aggregation of diverse audio caption datasets, and through comprehensive evaluation across tasks, demonstrated that audio-language pretraining produces competitive representations across speech, music, and environmental domains. Our systematic comparison revealed complementary strengths of two audio-language pretraining objectives: contrastive learning excels in data efficiency, while captioning shows better scalability for language-involved tasks.\nData-scaling experiments highlighted diminishing returns of supervised initialization, challenging common practices, while dataset analysis revealed linguistic diversity limitation in current datasets. These findings establish audio-language pretraining as a viable pathway toward universal audio understanding.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "contrastive",
+                    "tasks",
+                    "across",
+                    "objectives",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited Technical Novelty.</span> Our work primarily combines existing techniques&#8212;contrastive learning, captioning objectives, and dataset aggregation&#8212;rather than introducing fundamentally new methods. The mixed autoregressive/parallel training approach is adapted from vision-language work (CapPa), and our architectural choices follow standard practices.\nWe acknowledge that the technical contributions are largely empirical rather than methodological.\nHowever, this aligns with our primary goal of systematically evaluating audio-language pretraining&#8217;s potential for general-purpose representation learning.\nThe field currently lacks comprehensive comparative studies across objectives, evaluation protocols, and training factors.\nOur systematic analysis reveals important insights about scaling behaviors and initialization effects that have practical implications for practitioners, even if the underlying techniques are not novel.</p>\n\n",
+                "matched_terms": [
+                    "across",
+                    "objectives",
+                    "captioning",
+                    "scaling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\"><span class=\"ltx_text ltx_font_bold\">Limited Model and Data Scalability.</span> Our experiments are constrained to 10M audio-text pairs and relatively modest model sizes compared to state-of-the-art vision-language systems that leverage billions of samples and much larger architectures. This scale limitation may not fully reflect the potential of audio-language pretraining, particularly for the captioning objective which our results suggest benefits from larger-scale training. Additionally, we do not explore recent advances in large language model integration or more sophisticated architectural designs that could improve performance. These constraints stem from computational resource limitations and our focus on controlled comparisons rather than pushing absolute performance boundaries. Future work with larger scales may reveal different scaling dynamics and stronger evidence for general-purpose capabilities.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "captioning",
+                    "scaling"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">CaptionStew aggregates eight open-source audio caption datasets to address data scarcity and limited diversity in current audio-language pretraining. The constituent datasets span environmental sounds, music, and expressive speech, with fundamentally different captioning approaches&#8212;from crowdsourced human annotation to expert curation to various LLM-based generation pipelines.\nTable&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T5\" title=\"Table 5 &#8227; A.2 Sourced Datasets for CaptionStew &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">5</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T6\" title=\"Table 6 &#8227; A.2 Sourced Datasets for CaptionStew &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">6</span></a> detail each dataset&#8217;s characteristics and provide example captions that illustrate the diverse descriptive styles, ranging from concise event descriptions to detailed multi-sentence narratives with fine-grained acoustic and contextual information.\nDuring aggregation, we filter audio samples longer than one minute for computational efficiency and remove samples that overlap with common audio understanding benchmarks&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Drossos et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib29\" title=\"\">2020</a>; Kim et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib49\" title=\"\">2019</a>; Agostinelli et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib2\" title=\"\">2023</a>; Fonseca et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib34\" title=\"\">2021</a>; Chen et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib14\" title=\"\">2020a</a>; Salamon et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib81\" title=\"\">2014</a>)</cite> to prevent data leakage. This approach preserves the unique characteristics of each source while creating a unified corpus that captures broader semantic coverage than individual datasets.</p>\n\n",
+                "matched_terms": [
+                    "data",
+                    "captioning"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">In this work, we adopt the Zipformer-M architecture&#160;<cite class=\"ltx_cite ltx_citemacro_citep\">(Yao et&#160;al., <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib97\" title=\"\">2024</a>)</cite> as the audio encoder, chosen for its memory efficiency on long sequences and strong performance across audio tasks. The architecture employs a U-Net-inspired design with six Transformer stages that process sequences at multiple temporal resolutions. The stages operate at progressively decreasing then increasing frame rates (50, 25, 12.5, 6.25, 12.5, and 25 Hz), with residual and upsampling connections between stages to capture both fine-grained and long-range temporal patterns.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">We implement the original 2,2,3,4,3,2 block configuration, where each number indicates the blocks per stage. After processing through all stages, outputs are fused at 25 Hz to produce frame-level embeddings. The model incorporates several architectural improvements from the original work: BiasNorm for gradient stability over long sequences, Swoosh activation functions for better convergence, and compatibility with the ScaledAdam optimizer. The resulting embeddings are 768-dimensional and used consistently across all downstream evaluation tasks.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Although Zipformer was originally designed for automatic speech recognition, we conducted preliminary experiments to validate its effectiveness as a general audio encoder across diverse domains.\nAs in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T7\" title=\"Table 7 &#8227; A.3 Zipformer Model &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">7</span></a>, our initial studies confirmed that Zipformer achieves competitive performance on environmental sound classification, music understanding, and speaker-related tasks, demonstrating its suitability as a unified backbone for multi-domain audio representation learning. This cross-domain efficacy makes it an appropriate choice for our audio-language pretraining experiments that span speech, music, and environmental audio.</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "across"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">Table 9 presents linear probing results when using multi-head attention pooling instead of mean pooling.\nWith learned attention pooling, the performance gap between contrastive and captioning objectives narrows substantially, particularly evident on speaker identification where captioning-scratch achieves 72.86% compared to 46.67% with mean pooling (Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Main Results &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a>).\nThis demonstrates that captioning models benefit significantly from adaptive pooling mechanisms, while contrastive learning&#8217;s explicit optimization for clip-level representations shows less sensitivity to pooling strategy.\nThese results underscore the critical importance of appropriate downstream module selection when evaluating different pretraining paradigms, as the choice of pooling mechanism can dramatically influence conclusions about objective effectiveness.\nThe improved performance across all methods with attention pooling also suggests that frame-level representations from both objectives contain rich information that can be better exploited through learned aggregation. SOTA results and SSL baseline results in Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#S4.T3\" title=\"Table 3 &#8227; 4.4 Main Results &#8227; 4 Experimental Setup &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">3</span></a> and Table&#160;<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#A1.T9\" title=\"Table 9 &#8227; A.5 Main Results (cont.) &#8227; Appendix A Appendix &#8227; Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation\"><span class=\"ltx_text ltx_ref_tag\">9</span></a> are quoted collectively from &#160;<cite class=\"ltx_cite ltx_citemacro_citet\">Niizumi et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib72\" title=\"\">2025</a>); Turian et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib89\" title=\"\">2022</a>); Li &amp; Li (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib56\" title=\"\">2022</a>); Wang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib90\" title=\"\">2022</a>); Bharadwaj et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib8\" title=\"\">2025</a>); Gong et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib41\" title=\"\">2022b</a>); Lanzend&#246;rfer et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib51\" title=\"\">2025</a>); Bai et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib7\" title=\"\">2025</a>); Yang et&#160;al. (<a class=\"ltx_ref\" href=\"https://arxiv.org/html/2511.16757v1#bib.bib95\" title=\"\">2024b</a>)</cite>.</p>\n\n",
+                "matched_terms": [
+                    "objectives",
+                    "contrastive",
+                    "captioning",
+                    "across"
+                ]
+            }
+        ]
+    },
+    "A1.F4": {
+        "source_file": "Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation",
+        "image_url": "https://arxiv.org/html/2511.16757v1/iclr2026/figure/zipformer.png",
+        "caption": "Figure 4: Model diagram of Zipformer.",
+        "informative_terms_identified": [
+            "zipformer",
+            "model",
+            "diagram"
+        ],
+        "citing_paragraphs": [],
+        "contextual_paragraphs": []
+    }
+}

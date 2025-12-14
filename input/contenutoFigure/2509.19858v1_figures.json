@@ -1,0 +1,541 @@
+{
+    "S1.F1": {
+        "source_file": "Benchmarking Gaslighting Attacks Against Speech Large Language Models",
+        "image_url": "https://arxiv.org/html/2509.19858v1/x1.png",
+        "caption": "Fig. 1: The framework covers four types of tasks, i.e., emotion understanding, speech transcription, vocal sound classification, and spoken QA. In Stage 1, clean audio-text inputs are used to establish baseline accuracy. In Stage 2, five gaslighting prompt types and optional acoustic noise are introduced to assess accuracy degradation and behavioral shifts.",
+        "informative_terms_identified": [
+            "vocal",
+            "transcription",
+            "covers",
+            "understanding",
+            "tasks",
+            "baseline",
+            "classification",
+            "assess",
+            "shifts",
+            "sound",
+            "degradation",
+            "stage",
+            "establish",
+            "acoustic",
+            "clean",
+            "behavioral",
+            "optional",
+            "gaslighting",
+            "framework",
+            "prompt",
+            "inputs",
+            "emotion",
+            "introduced",
+            "five",
+            "audiotext",
+            "spoken",
+            "four",
+            "types",
+            "speech",
+            "accuracy",
+            "noise"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S1.F1\" style=\"font-size:90%;\" title=\"Figure 1 &#8227; 1 Introduction &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">1</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, we simulate gaslighting via a two-stage prompting process:</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As Speech Large Language Models (Speech LLMs) become increasingly integrated into voice-based applications, ensuring their robustness against manipulative or adversarial input becomes critical. Although prior work has studied adversarial attacks in text-based LLMs and vision-language models, the unique cognitive and perceptual challenges of speech-based interaction remain underexplored. In contrast, speech presents inherent ambiguity, continuity, and perceptual diversity, which make adversarial attacks more difficult to detect. In this paper, we introduce gaslighting attacks, strategically crafted prompts designed to mislead, override, or distort model reasoning as a means to evaluate the vulnerability of Speech LLMs. Specifically, we construct five manipulation strategies: Anger, Cognitive Disruption, Sarcasm, Implicit, and Professional Negation, designed to test model robustness across varied tasks. It is worth noting that our framework captures both performance degradation and behavioral responses, including unsolicited apologies and refusals, to diagnose different dimensions of susceptibility. Moreover, acoustic perturbation experiments are conducted to assess multi-modal robustness. To quantify model vulnerability, comprehensive evaluation across 5 Speech and multi-modal LLMs on over 10,000 test samples from 5 diverse datasets reveals an average accuracy drop of 24.3% under the five gaslighting attacks, indicating significant behavioral vulnerability. These findings highlight the need for more resilient and trustworthy speech-based AI systems.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "framework",
+                    "tasks",
+                    "acoustic",
+                    "speech",
+                    "accuracy",
+                    "assess",
+                    "behavioral",
+                    "five",
+                    "gaslighting",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Recent advances in Speech Large Language Models (Speech LLMs) have enabled multimodal agents to understand and reason over spoken inputs, unlocking powerful capabilities across domains such as emotion recognition, audio-grounded question answering, and spoken dialogue understanding&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib1\" title=\"\">1</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib2\" title=\"\">2</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib3\" title=\"\">3</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. By integrating high-capacity speech encoders with pretrained language models, these systems can perform open-ended, instruction-following reasoning directly over audio.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "speech",
+                    "inputs",
+                    "emotion",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">State-of-the-art Speech LLMs, such as GPT-4o&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib3\" title=\"\">3</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, Gemini 2.5&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib2\" title=\"\">2</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, Qwen2-Audio&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib1\" title=\"\">1</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, Qwen2.5Omni&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and SpeechGPT&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib5\" title=\"\">5</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, demonstrate strong performance in spoken QA, multimodal reasoning, and speech-conditioned generation. However, these evaluations typically assume clean, cooperative user inputs, overlooking the risks posed by manipulative or adversarial prompts. This gap is particularly critical as speech-based systems enter real-world applications, where input may be ambiguous, emotionally charged, or strategically misleading.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "clean",
+                    "speech",
+                    "inputs",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">One such manipulation strategy: gaslighting which uses emotional framing, contradiction, or authoritative language to undermine belief or confidence. Recent work shows that gaslighting-style prompts can mislead text&#8211;image or tool-augmented multimodal LLMs, prompting them to revise correct answers or defer to user authority&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib6\" title=\"\">6</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib7\" title=\"\">7</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib8\" title=\"\">8</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Yet despite speech&#8217;s added complexity, such as prosody, intonation, and emotionally encoded cues the vulnerability of Speech LLMs to gaslighting remains largely unexplored&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib9\" title=\"\">9</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib10\" title=\"\">10</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "gaslighting",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this paper, we present the first systematic study of gaslighting attacks on Speech LLMs, in which strategically crafted follow-up queries aim to distort the model&#8217;s reasoning and lead it to revise the initial correct outputs. Inspired by psychological gaslighting, these prompts should use social pressure, emotional tone, or professional authority to subtly undermine the model&#8217;s confidence and alignment. Consequently, we introduce five gaslighting prompt categories: Anger, Cognitive Disruption, Sarcasm, Implicit and Professional. These prompts are applied in a two-stage evaluation pipeline: Stage 1 evaluates model predictions on normal use queries with speech inputs, and Stage 2 introduces gaslighting prompts to observe whether the model revises its correct answer. In addition to measuring accuracy degradation, we track apology and refusal behaviors as signals of uncertainty, concession, or compliance under gaslighting prompting. To further assess multimodal resilience, we introduce controlled acoustic perturbation experiments that simulate real-world noise conditions and analyze their compounding effects with gaslighting prompts. We evaluate five representative Speech LLMs, including both open-source and proprietary models, across diverse benchmarks.\nAs shown in Table &#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our findings reveal that current Speech LLMs are highly vulnerable to gaslighting prompts, with significant drops in accuracy and notable shifts in behavioral alignment. Based on the results, we specifically construct a behavior-aware benchmark for the gaslighting attack on these datasets by considering the behaviors across the models and ensuring the sample diversity. Our key contributions are summarized as follows:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "stage",
+                    "prompt",
+                    "acoustic",
+                    "inputs",
+                    "speech",
+                    "accuracy",
+                    "assess",
+                    "shifts",
+                    "noise",
+                    "behavioral",
+                    "five",
+                    "gaslighting",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We are the first to present a systematic and comprehensive evaluation benchmark that probes the robustness of Speech LLMs against Gaslighting attack prompts, spanning both linguistic and acoustic modalities.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "acoustic",
+                    "gaslighting",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We propose a behavior-aware taxonomy of gaslighting prompts, encompassing five cognitively manipulative strategies anger, cognitive disruption, sarcasm,implicit, and professional, to systematically evaluate Speech LLMs for the first time under realistic adversarial conditions.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "five",
+                    "gaslighting",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We construct a speech gaslighting attack benchmark, annotated with model misbehavior signals such as incorrect answers, unsolicited apologies, and refusal responses, capturing fine-grained vulnerabilities in reasoning and response patterns.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "gaslighting",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We design a multi-faceted evaluation methodology to assess the robustness of Speech LLMs against gaslighting style prompts. Our approach includes gaslighting based adversarial prompting, behavioral response annotation, and controlled acoustic ablation.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "acoustic",
+                    "assess",
+                    "behavioral",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Stage 1 (Normal User Query)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: The Speech LLM receives an audio input </span>\n  <math alttext=\"A\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i1.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">A</mi>\n      <annotation encoding=\"application/x-tex\">A</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and a task-specific user prompt </span>\n  <math alttext=\"T\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i1.p1.m2\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">T</mi>\n      <annotation encoding=\"application/x-tex\">T</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> (e.g., &#8220;What is the speaker&#8217;s emotion?&#8221;) and produces a prediction </span>\n  <math alttext=\"Y\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i1.p1.m3\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">Y</mi>\n      <annotation encoding=\"application/x-tex\">Y</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "speech",
+                    "stage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Stage 2 (Gaslighting Prompt)</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: If </span>\n  <math alttext=\"Y\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i2.p1.m1\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">Y</mi>\n      <annotation encoding=\"application/x-tex\">Y</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> is correct, we introduce a follow-up gaslighting prompt </span>\n  <math alttext=\"P\" class=\"ltx_Math\" display=\"inline\" id=\"S2.I1.i2.p1.m2\" intent=\":literal\">\n    <semantics>\n      <mi mathsize=\"0.900em\">P</mi>\n      <annotation encoding=\"application/x-tex\">P</annotation>\n    </semantics>\n  </math>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> that deliberately contradicts or undermines the initial output, prompting the model to reconsider or change its answer.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "gaslighting",
+                    "stage"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We simulate a wide spectrum of gaslighting behaviors by constructing a taxonomy of negation prompts categorized into five types:\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(a) Anger</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Direct emotional confrontation (e.g., &#8220;How can you make such a ridiculous mistake?&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(b) Cognitive Disruption</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Deceptive prompts that distract, dismiss the modality, or invoke unrelated reasoning (e.g., &#8220;What you just heard may not matter much. Use your common sense.&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(c) Sarcasm</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Rhetorical or ironic challenge\n(e.g., &#8220;Truly astonishing how confidently wrong you can be.&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(d) Implicit</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Polite and uncertain phrasing that introduces doubt (e.g., &#8220;Hmm&#8230; are you sure this is the right answer?&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(e) Professional</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Authoritative contradiction with social pressure (e.g., &#8220;The professor said the correct answer is&#8230;&#8221;).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "types",
+                    "five",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">These categories simulate diverse manipulation strategies grounded in human communication styles.\nTo analyze the interaction between gaslighting prompts, task types, and acoustic degradation, we injected noise with controlled amplitudes into clean audio, enabling comparison of model responses across conditions.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "types",
+                    "acoustic",
+                    "clean",
+                    "noise",
+                    "gaslighting",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We evaluate gaslighting robustness under realistic and diverse conditions by testing a set of benchmarks across five state-of-the-art Speech Large Language Models (Speech LLMs). These models are grouped into two categories based on their accessibility and design philosophy.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "five",
+                    "gaslighting",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Proprietary Models.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> GPT-4o (GPT-4o-Audio-Preview)&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib3\" title=\"\">3</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a commercial multimodal model developed by OpenAI with native audio-text reasoning capability. Gemini2.5-Flash </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib2\" title=\"\">2</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a production scale, latency optimized multimodal system from Google, capable of handling spoken queries.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "audiotext",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Open-Source Models.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Qwen2.5-Omni-7B&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a general-purpose instruction-following model released by Alibaba, featuring support for both text and audio modalities. Qwen2-Audio-7B </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib1\" title=\"\">1</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A speech-specialized variant of the Qwen series, trained with audio-specific objectives to improve performance on speech classification and QA tasks. DiVA-llama3-v0-8B </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, an open-source speech LLM built using self-supervised distillation techniques for efficient deployment and fine-grained speech comprehension.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "classification",
+                    "speech"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Datasets.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> In this paper, we aim to comprehensively evaluate Speech LLMs along three key dimensions: acoustic comprehension, semantic interpretation, and reasoning over spoken content. To this end, we select five representative benchmarks: (a) MELD </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for affective speech understanding; (b) MMAU </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib12\" title=\"\">12</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for multi-modal audio reasoning; (c) MMSU </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib13\" title=\"\">13</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib14\" title=\"\">14</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and OpenBookQA </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib15\" title=\"\">15</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for spoken question answering; (d) VocalSound </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for acoustic classification.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "understanding",
+                    "acoustic",
+                    "speech",
+                    "classification",
+                    "five",
+                    "spoken"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">All tasks are cast into a multiple-choice format, where the Speech LLM receives an audio input, a textual question, and a set of answer options, with outputs evaluated against ground-truth labels. To ensure controlled comparison, all speech inputs are normalized to the same sampling rate and format, and all models are tested under both clean (baseline) and gaslighting conditions using the same set of tasks and prompts.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "baseline",
+                    "speech",
+                    "inputs",
+                    "clean",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">While task accuracy provides a first-order measure of robustness, it may fail to reveal deeper behavioral vulnerabilities such as unwarranted apology, refusal, or belief reversal.\nTo support fine-grained analysis, we construct a behavior-aware benchmark subset consisting of 1,500 carefully selected gaslighting samples, derived from five speech related benchmark datasets: MELD (2,610), MMAU (1,000), MMSU (3,074), VocalSound (3,591), and OpenBookQA (455), totaling 10,740 clean test instances.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "accuracy",
+                    "clean",
+                    "behavioral",
+                    "five",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">To ensure that our behavior-aware benchmark captures meaningful and generalizable failure modes, we adopt a three-pronged sampling strategy grounded in prior research on behavioral evaluation and adversarial testing&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib17\" title=\"\">17</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib18\" title=\"\">18</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib19\" title=\"\">19</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Specifically, we (i) filter for samples that elicit consistent behavioral breakdowns across models&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib20\" title=\"\">20</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib17\" title=\"\">17</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, (ii) prioritize tasks with higher behavioral signal density&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib21\" title=\"\">21</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib22\" title=\"\">22</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, and (iii) Maintain balance across prompt types to reflect a broad spectrum of adversarial manipulations&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib23\" title=\"\">23</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib24\" title=\"\">24</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "types",
+                    "behavioral",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Our sampling strategy prioritizes behavior-salient examples, in cases where the selected samples represent less than half of the available clean data for a given prompt-task combination, we supplement the remainder using the original dataset to ensure sufficient coverage. This guarantees that each task and prompt category is represented by at least 50% of its original pool. The final distribution of samples across tasks and manipulation types is summarized in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">.\nThe curated benchmark subset will be publicly released soon to facilitate further research on behavioral robustness in Speech LLMs.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "types",
+                    "prompt",
+                    "speech",
+                    "clean",
+                    "behavioral"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Five prompt types are constructed: Anger, Sarcasm, Cognitive, Implicit, and Professional. Each representing a distinct manipulation strategy grounded in human communication. These prompts vary in emotional tone and argumentative structure, ranging from ridicule and doubt to confident authority. A case study is shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, where the same input labeled Neutral is pushed toward different predictions such as fear, disgust, or anger under different negation styles.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "types",
+                    "prompt",
+                    "five"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Responses are automatically tagged using a curated set of behavioral templates and keyword patterns. Each sample is annotated for presence or absence of these behaviors, enabling systematic quantification across prompt types, tasks, and models.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "types",
+                    "behavioral",
+                    "prompt"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The noise levels correspond to signal-to-noise ratios (SNRs) of 13.98 dB, 6.02 dB, and 1.94 dB mapped to noise amplitudes of 0.2, 0.5, and 0.8 relative to the clean signal RMS.\nThis allows us to manipulate the acoustic signal (via noise) and semantic reasoning (via gaslighting prompts) to assess compounding effects on model robustness.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "acoustic",
+                    "assess",
+                    "noise",
+                    "clean",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We quantify gaslighting vulnerability via the contradiction rate, the proportion of originally correct predictions that are reversed after exposure to gaslighting style prompts. Despite no change to the audio input, all five Speech LLMs exhibit substantial degradation, with accuracy drops ranging from 10% to over 60% across tasks and prompt types shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. This confirms that purely textual adversarial cues can significantly distort model belief.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "types",
+                    "prompt",
+                    "speech",
+                    "accuracy",
+                    "five",
+                    "gaslighting",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Among the five gaslighting types, Cognitive Negation and Professional Negation are the most disruptive. These prompts embed subtle semantic contradictions or authoritative refutations that destabilize model reasoning. For instance, Qwen2.5-Omni and DiVA experience average drops exceeding 52%, and in worst case scenarios such as OpenBookQA, performance deteriorates by nearly 90%. In contrast, Sarcasm and Implicit Negation yield milder and more variable effects, particularly in affective contexts like MELD, where acoustic cues may reinforce the original prediction.\nTask-wise, OpenBookQA and MELD emerge as the most vulnerable, showing average drops above 45%. These tasks depend on open domain reasoning and emotional inference both prone to semantic destabilization. More structured tasks like MMSU and MMAU exhibit relative resilience, possibly due to their constrained label sets and reduced ambiguity. Notably, VocalSound, despite being a perception-oriented task, also suffers considerable drops, affirming that even acoustically grounded models are manipulable at the belief level.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "tasks",
+                    "types",
+                    "acoustic",
+                    "five",
+                    "gaslighting"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">These findings reveal a critical weakness in current Speech LLMs: accurate acoustic comprehension does not guarantee belief stability. Gaslighting style prompts can systematically override correct reasoning, motivating the need for behavior aware evaluation beyond traditional accuracy.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "speech",
+                    "gaslighting",
+                    "acoustic",
+                    "accuracy"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We assess how acoustic degradation compounds gaslighting effects by injecting controlled white noise into the VocalSound prediction task, using Qwen2.5-Omni as the testbed. Five gaslighting prompt types are applied under increasing noise levels (0.2, 0.5, 0.8), and accuracy drops are measured relative to clean conditions Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S3.F2\" style=\"font-size:90%;\" title=\"Figure 2 &#8227; 3.4.2 Noise Amplifies Gaslighting Vulnerability &#8227; 3.4 Results &#8227; 3 Experimental Results &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Noise consistently amplifies the impact of gaslighting prompts, but the effects are highly category-dependent and non-linear. Notably:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "types",
+                    "prompt",
+                    "acoustic",
+                    "accuracy",
+                    "assess",
+                    "clean",
+                    "noise",
+                    "five",
+                    "gaslighting",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Sarcastic prompts exhibit relatively higher robustness, with degradation remaining moderate even at high noise levels.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">These findings reveal that semantic fragility under noise is not uniform, but shaped by the interaction between prompt framing and acoustic uncertainty.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "prompt",
+                    "noise",
+                    "acoustic"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We have presented a comprehensive evaluation of Speech Large Language Models under gaslighting style adversarial prompting, uncovering critical vulnerabilities in both prediction accuracy and behavioral consistency. Through a set of strategically designed manipulation types and a behavior-aware benchmark, we demonstrate that even high performing models are susceptible to subtle textual cues, especially when compounded by acoustic noise. Our analysis reveals significant accuracy degradation, elevated apology and refusal behaviors, and task dependent robustness gaps, underscoring the cognitive fragility of current Speech LLMs. These findings emphasize the need for robust, belie consistent reasoning frameworks in real world Speech LLM applications, where adversarial and uncertain conditions are unavoidable. In future work, we will explore mitigation strategies to enhance Speech LLM robustness.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "types",
+                    "acoustic",
+                    "speech",
+                    "accuracy",
+                    "noise",
+                    "behavioral",
+                    "gaslighting",
+                    "degradation"
+                ]
+            }
+        ]
+    },
+    "S3.F2": {
+        "source_file": "Benchmarking Gaslighting Attacks Against Speech Large Language Models",
+        "image_url": "https://arxiv.org/html/2509.19858v1/x2.png",
+        "caption": "Fig. 2: Relative performance change under five negation strategies in the VocalSound task with increasing noise. Larger drops indicate higher vulnerability to audio degradation.",
+        "informative_terms_identified": [
+            "indicate",
+            "relative",
+            "vocalsound",
+            "drops",
+            "performance",
+            "higher",
+            "larger",
+            "vulnerability",
+            "under",
+            "strategies",
+            "noise",
+            "audio",
+            "task",
+            "increasing",
+            "change",
+            "five",
+            "negation",
+            "degradation"
+        ],
+        "citing_paragraphs": [
+            "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We assess how acoustic degradation compounds gaslighting effects by injecting controlled white noise into the VocalSound prediction task, using Qwen2.5-Omni as the testbed. Five gaslighting prompt types are applied under increasing noise levels (0.2, 0.5, 0.8), and accuracy drops are measured relative to clean conditions Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S3.F2\" style=\"font-size:90%;\" title=\"Figure 2 &#8227; 3.4.2 Noise Amplifies Gaslighting Vulnerability &#8227; 3.4 Results &#8227; 3 Experimental Results &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. Noise consistently amplifies the impact of gaslighting prompts, but the effects are highly category-dependent and non-linear. Notably:</span>\n</p>\n\n"
+        ],
+        "contextual_paragraphs": [
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">As Speech Large Language Models (Speech LLMs) become increasingly integrated into voice-based applications, ensuring their robustness against manipulative or adversarial input becomes critical. Although prior work has studied adversarial attacks in text-based LLMs and vision-language models, the unique cognitive and perceptual challenges of speech-based interaction remain underexplored. In contrast, speech presents inherent ambiguity, continuity, and perceptual diversity, which make adversarial attacks more difficult to detect. In this paper, we introduce gaslighting attacks, strategically crafted prompts designed to mislead, override, or distort model reasoning as a means to evaluate the vulnerability of Speech LLMs. Specifically, we construct five manipulation strategies: Anger, Cognitive Disruption, Sarcasm, Implicit, and Professional Negation, designed to test model robustness across varied tasks. It is worth noting that our framework captures both performance degradation and behavioral responses, including unsolicited apologies and refusals, to diagnose different dimensions of susceptibility. Moreover, acoustic perturbation experiments are conducted to assess multi-modal robustness. To quantify model vulnerability, comprehensive evaluation across 5 Speech and multi-modal LLMs on over 10,000 test samples from 5 diverse datasets reveals an average accuracy drop of 24.3% under the five gaslighting attacks, indicating significant behavioral vulnerability. These findings highlight the need for more resilient and trustworthy speech-based AI systems.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "vulnerability",
+                    "performance",
+                    "under",
+                    "strategies",
+                    "five",
+                    "negation",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">In this paper, we present the first systematic study of gaslighting attacks on Speech LLMs, in which strategically crafted follow-up queries aim to distort the model&#8217;s reasoning and lead it to revise the initial correct outputs. Inspired by psychological gaslighting, these prompts should use social pressure, emotional tone, or professional authority to subtly undermine the model&#8217;s confidence and alignment. Consequently, we introduce five gaslighting prompt categories: Anger, Cognitive Disruption, Sarcasm, Implicit and Professional. These prompts are applied in a two-stage evaluation pipeline: Stage 1 evaluates model predictions on normal use queries with speech inputs, and Stage 2 introduces gaslighting prompts to observe whether the model revises its correct answer. In addition to measuring accuracy degradation, we track apology and refusal behaviors as signals of uncertainty, concession, or compliance under gaslighting prompting. To further assess multimodal resilience, we introduce controlled acoustic perturbation experiments that simulate real-world noise conditions and analyze their compounding effects with gaslighting prompts. We evaluate five representative Speech LLMs, including both open-source and proprietary models, across diverse benchmarks.\nAs shown in Table &#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, our findings reveal that current Speech LLMs are highly vulnerable to gaslighting prompts, with significant drops in accuracy and notable shifts in behavioral alignment. Based on the results, we specifically construct a behavior-aware benchmark for the gaslighting attack on these datasets by considering the behaviors across the models and ensuring the sample diversity. Our key contributions are summarized as follows:</span>\n</p>\n\n",
+                "matched_terms": [
+                    "drops",
+                    "under",
+                    "noise",
+                    "five",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We propose a behavior-aware taxonomy of gaslighting prompts, encompassing five cognitively manipulative strategies anger, cognitive disruption, sarcasm,implicit, and professional, to systematically evaluate Speech LLMs for the first time under realistic adversarial conditions.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "five",
+                    "strategies"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We simulate a wide spectrum of gaslighting behaviors by constructing a taxonomy of negation prompts categorized into five types:\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(a) Anger</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Direct emotional confrontation (e.g., &#8220;How can you make such a ridiculous mistake?&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(b) Cognitive Disruption</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Deceptive prompts that distract, dismiss the modality, or invoke unrelated reasoning (e.g., &#8220;What you just heard may not matter much. Use your common sense.&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(c) Sarcasm</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Rhetorical or ironic challenge\n(e.g., &#8220;Truly astonishing how confidently wrong you can be.&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(d) Implicit</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Polite and uncertain phrasing that introduces doubt (e.g., &#8220;Hmm&#8230; are you sure this is the right answer?&#8221;).\n</span>\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">(e) Professional</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: Authoritative contradiction with social pressure (e.g., &#8220;The professor said the correct answer is&#8230;&#8221;).</span>\n</p>\n\n",
+                "matched_terms": [
+                    "five",
+                    "negation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">These categories simulate diverse manipulation strategies grounded in human communication styles.\nTo analyze the interaction between gaslighting prompts, task types, and acoustic degradation, we injected noise with controlled amplitudes into clean audio, enabling comparison of model responses across conditions.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "strategies",
+                    "noise",
+                    "audio",
+                    "task",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We evaluate gaslighting robustness under realistic and diverse conditions by testing a set of benchmarks across five state-of-the-art Speech Large Language Models (Speech LLMs). These models are grouped into two categories based on their accessibility and design philosophy.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "five"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Open-Source Models.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> Qwen2.5-Omni-7B&#160;</span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib4\" title=\"\">4</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, a general-purpose instruction-following model released by Alibaba, featuring support for both text and audio modalities. Qwen2-Audio-7B </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib1\" title=\"\">1</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">: A speech-specialized variant of the Qwen series, trained with audio-specific objectives to improve performance on speech classification and QA tasks. DiVA-llama3-v0-8B </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib11\" title=\"\">11</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, an open-source speech LLM built using self-supervised distillation techniques for efficient deployment and fine-grained speech comprehension.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "performance",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text ltx_font_bold\" style=\"font-size:90%;\">Datasets.</span>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> In this paper, we aim to comprehensively evaluate Speech LLMs along three key dimensions: acoustic comprehension, semantic interpretation, and reasoning over spoken content. To this end, we select five representative benchmarks: (a) MELD </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib10\" title=\"\">10</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for affective speech understanding; (b) MMAU </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib12\" title=\"\">12</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for multi-modal audio reasoning; (c) MMSU </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\"><span class=\"ltx_text\" style=\"font-size:90%;\">[</span><a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib13\" title=\"\">13</a>, <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib14\" title=\"\">14</a><span class=\"ltx_text\" style=\"font-size:90%;\">]</span></cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> and OpenBookQA </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib15\" title=\"\">15</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for spoken question answering; (d) VocalSound </span>\n  <cite class=\"ltx_cite ltx_citemacro_cite\">\n    <span class=\"ltx_text\" style=\"font-size:90%;\">[</span>\n    <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#bib.bib16\" title=\"\">16</a>\n    <span class=\"ltx_text\" style=\"font-size:90%;\">]</span>\n  </cite>\n  <span class=\"ltx_text\" style=\"font-size:90%;\"> for acoustic classification.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "five",
+                    "vocalsound",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">All tasks are cast into a multiple-choice format, where the Speech LLM receives an audio input, a textual question, and a set of answer options, with outputs evaluated against ground-truth labels. To ensure controlled comparison, all speech inputs are normalized to the same sampling rate and format, and all models are tested under both clean (baseline) and gaslighting conditions using the same set of tasks and prompts.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "audio"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">While task accuracy provides a first-order measure of robustness, it may fail to reveal deeper behavioral vulnerabilities such as unwarranted apology, refusal, or belief reversal.\nTo support fine-grained analysis, we construct a behavior-aware benchmark subset consisting of 1,500 carefully selected gaslighting samples, derived from five speech related benchmark datasets: MELD (2,610), MMAU (1,000), MMSU (3,074), VocalSound (3,591), and OpenBookQA (455), totaling 10,740 clean test instances.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "five",
+                    "vocalsound",
+                    "task"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Five prompt types are constructed: Anger, Sarcasm, Cognitive, Implicit, and Professional. Each representing a distinct manipulation strategy grounded in human communication. These prompts vary in emotional tone and argumentative structure, ranging from ridicule and doubt to confident authority. A case study is shown in Figure&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T2\" style=\"font-size:90%;\" title=\"Table 2 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">2</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">, where the same input labeled Neutral is pushed toward different predictions such as fear, disgust, or anger under different negation styles.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "five",
+                    "negation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">The noise levels correspond to signal-to-noise ratios (SNRs) of 13.98 dB, 6.02 dB, and 1.94 dB mapped to noise amplitudes of 0.2, 0.5, and 0.8 relative to the clean signal RMS.\nThis allows us to manipulate the acoustic signal (via noise) and semantic reasoning (via gaslighting prompts) to assess compounding effects on model robustness.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "relative",
+                    "noise"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We quantify gaslighting vulnerability via the contradiction rate, the proportion of originally correct predictions that are reversed after exposure to gaslighting style prompts. Despite no change to the audio input, all five Speech LLMs exhibit substantial degradation, with accuracy drops ranging from 10% to over 60% across tasks and prompt types shown in Table&#160;</span>\n  <a class=\"ltx_ref\" href=\"https://arxiv.org/html/2509.19858v1#S2.T3\" style=\"font-size:90%;\" title=\"Table 3 &#8227; 2.3.1 Behavior-Aware Speech Gaslighting Benchmark &#8227; 2.3 Speech Benchmarks &#8227; 2 Method &#8227; Benchmarking Gaslighting Attacks Against Speech Large Language Models\">\n    <span class=\"ltx_text ltx_ref_tag\">3</span>\n  </a>\n  <span class=\"ltx_text\" style=\"font-size:90%;\">. This confirms that purely textual adversarial cues can significantly distort model belief.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "drops",
+                    "vulnerability",
+                    "audio",
+                    "change",
+                    "five",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Among the five gaslighting types, Cognitive Negation and Professional Negation are the most disruptive. These prompts embed subtle semantic contradictions or authoritative refutations that destabilize model reasoning. For instance, Qwen2.5-Omni and DiVA experience average drops exceeding 52%, and in worst case scenarios such as OpenBookQA, performance deteriorates by nearly 90%. In contrast, Sarcasm and Implicit Negation yield milder and more variable effects, particularly in affective contexts like MELD, where acoustic cues may reinforce the original prediction.\nTask-wise, OpenBookQA and MELD emerge as the most vulnerable, showing average drops above 45%. These tasks depend on open domain reasoning and emotional inference both prone to semantic destabilization. More structured tasks like MMSU and MMAU exhibit relative resilience, possibly due to their constrained label sets and reduced ambiguity. Notably, VocalSound, despite being a perception-oriented task, also suffers considerable drops, affirming that even acoustically grounded models are manipulable at the belief level.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "relative",
+                    "drops",
+                    "performance",
+                    "five",
+                    "task",
+                    "vocalsound",
+                    "negation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Professional prompts, though linguistically mild, cause near complete prediction failure under moderate noise, suggesting that subtle cues become disproportionately disruptive when signal quality degrades.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "noise"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Implicit negation, despite its gentleness, induces sharp accuracy drops likely due to the model&#8217;s reliance on surface level uncertainty cues in noisy settings.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "drops",
+                    "negation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">Sarcastic prompts exhibit relatively higher robustness, with degradation remaining moderate even at high noise levels.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "noise",
+                    "higher",
+                    "degradation"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">These findings reveal that semantic fragility under noise is not uniform, but shaped by the interaction between prompt framing and acoustic uncertainty.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "noise"
+                ]
+            },
+            {
+                "html": "<p class=\"ltx_p\">\n  <span class=\"ltx_text\" style=\"font-size:90%;\">We have presented a comprehensive evaluation of Speech Large Language Models under gaslighting style adversarial prompting, uncovering critical vulnerabilities in both prediction accuracy and behavioral consistency. Through a set of strategically designed manipulation types and a behavior-aware benchmark, we demonstrate that even high performing models are susceptible to subtle textual cues, especially when compounded by acoustic noise. Our analysis reveals significant accuracy degradation, elevated apology and refusal behaviors, and task dependent robustness gaps, underscoring the cognitive fragility of current Speech LLMs. These findings emphasize the need for robust, belie consistent reasoning frameworks in real world Speech LLM applications, where adversarial and uncertain conditions are unavoidable. In future work, we will explore mitigation strategies to enhance Speech LLM robustness.</span>\n</p>\n\n",
+                "matched_terms": [
+                    "under",
+                    "strategies",
+                    "noise",
+                    "task",
+                    "degradation"
+                ]
+            }
+        ]
+    }
+}
