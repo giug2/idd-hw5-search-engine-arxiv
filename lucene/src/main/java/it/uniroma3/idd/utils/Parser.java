@@ -5,15 +5,16 @@ import it.uniroma3.idd.model.Article;
 import it.uniroma3.idd.model.ContextualParagraph;
 import it.uniroma3.idd.model.Figure;
 import it.uniroma3.idd.model.Table;
-
+import org.jsoup.nodes.Element;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import java.util.regex.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +31,108 @@ public class Parser {
     public Parser(LuceneConfig luceneConfig) {
         this.luceneConfig = luceneConfig;
     }
+
+    private String extractPublicationDate(Document document) {
+        // ===== arXiv: meta citation_date =====
+        Element metaDate = document.selectFirst(
+            "meta[name=citation_date], meta[name=citation_publication_date]"
+        );
+        if (metaDate != null) {
+            return normalizeArxivDate(metaDate.attr("content"));
+        }
+
+        // ===== arXiv: DC.Date =====
+        metaDate = document.selectFirst("meta[name=DC.Date]");
+        if (metaDate != null) {
+            return normalizeArxivDate(metaDate.attr("content"));
+        }
+
+        // ===== arXiv: testo Submitted on =====
+        Element submitted = document.selectFirst("div.ltx_dates, span.ltx_date");
+        if (submitted != null) {
+            return parseSubmittedDate(submitted.text());
+        }
+
+        // ===== PubMed (come prima) =====
+        Element pubDate = document.selectFirst("pub-date[pub-type=epub]");
+        if (pubDate == null)
+            pubDate = document.selectFirst("pub-date[pub-type=ppub]");
+        if (pubDate == null)
+            pubDate = document.selectFirst("pub-date");
+
+        if (pubDate != null) {
+            String year = pubDate.select("year").text();
+            String month = pubDate.select("month").text();
+            String day = pubDate.select("day").text();
+
+            if (!year.isEmpty()) {
+                return year +
+                    (!month.isEmpty() ? "-" + normalizeMonth(month) : "") +
+                    (!day.isEmpty() ? "-" + day : "");
+            }
+        }
+
+        return "Unknown Date";
+    }
+
+    private String normalizeArxivDate(String date) {
+        // 2019/06/12 → 2019-06-12
+        // 2018-04-21 → 2018-04-21
+        return date.trim().replace("/", "-");
+    }
+
+    private String parseSubmittedDate(String text) {
+        // "Submitted on 12 Jun 2019"
+        Pattern p = Pattern.compile("(\\d{1,2})\\s+([A-Za-z]+)\\s+(\\d{4})");
+        Matcher m = p.matcher(text);
+        if (m.find()) {
+            String day = m.group(1);
+            String month = normalizeMonth(m.group(2));
+            String year = m.group(3);
+            return year + "-" + month + "-" + (day.length() == 1 ? "0" + day : day);
+        }
+        return "Unknown Date";
+    }
+
+    private String normalizeMonth(String month) {
+        if (month == null || month.isEmpty()) return "";
+
+        month = month.toLowerCase().trim();
+
+        switch (month) {
+            case "jan":
+            case "january": return "01";
+            case "feb":
+            case "february": return "02";
+            case "mar":
+            case "march": return "03";
+            case "apr":
+            case "april": return "04";
+            case "may": return "05";
+            case "jun":
+            case "june": return "06";
+            case "jul":
+            case "july": return "07";
+            case "aug":
+            case "august": return "08";
+            case "sep":
+            case "september": return "09";
+            case "oct":
+            case "october": return "10";
+            case "nov":
+            case "november": return "11";
+            case "dec":
+            case "december": return "12";
+            default:
+                // numeric month
+                if (month.matches("\\d+")) {
+                    return month.length() == 1 ? "0" + month : month;
+                }
+                return "";
+        }
+    }
+
+
 
     public List<Article> articleParser() {
         // Log the configured articles path for diagnostics
@@ -99,23 +202,9 @@ public class Parser {
                 }
                 
                 // Date - per ora manteniamo il formato PubMed, arXiv spesso non ha date esplicite
-                String publicationDate = "Unknown Date";
-                org.jsoup.nodes.Element pubDateElement = document.select("pub-date").first();
-                if (pubDateElement != null) {
-                    String year = pubDateElement.select("year").text();
-                    String month = pubDateElement.select("month").text();
-                    String day = pubDateElement.select("day").text();
-                    
-                    if (!year.isEmpty()) {
-                        publicationDate = year;
-                        if (!month.isEmpty()) {
-                            publicationDate += "-" + (month.length() == 1 ? "0" + month : month);
-                            if (!day.isEmpty()) {
-                                publicationDate += "-" + (day.length() == 1 ? "0" + day : day);
-                            }
-                        }
-                    }
-                }
+                String publicationDate = extractPublicationDate(document);
+                
+                System.out.println(file.getName() + " → " + publicationDate);
 
                 // Paragraphs (Body) - supporta sia arXiv che PubMed
                 List<String> paragraphs = new ArrayList<>();
