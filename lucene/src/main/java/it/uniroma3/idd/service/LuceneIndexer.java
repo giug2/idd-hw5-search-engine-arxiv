@@ -55,9 +55,7 @@ public class LuceneIndexer {
                 indexTables(luceneConfig.getTableDirectory(), Codec.getDefault());
                 indexFigures(luceneConfig.getFigureDirectory(), Codec.getDefault());
             }
-            System.out.println("Index initialized, publishing event.");
             eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // lancio l'evento "completeIndexing"
-            System.out.println("IndexingComplete event published.");
         } catch (Exception e) {
             throw new RuntimeException("Error initializing the index", e);
         }
@@ -220,9 +218,6 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
 
         writer.commit();
         writer.close();
-        System.out.println("==========================================");
-        System.out.println("Indicizzazione delle figure completata");
-        System.out.println("Figure indicizzate: " + figures.size());
         System.out.println("==========================================");
     }
 

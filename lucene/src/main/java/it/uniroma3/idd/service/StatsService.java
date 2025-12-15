@@ -20,7 +20,7 @@ public class StatsService {
              DirectoryReader reader = DirectoryReader.open(directory)) {
 
             int numDocs = reader.numDocs();
-            System.out.println("Numero di documenti indicizzati: " + numDocs);
+            System.out.println("Numero di elementi indicizzati: " + numDocs);
             System.out.println("\nConteggio dei termini per ciascun campo:\n");
 
             Map<String, Long> globalTermCounts = new HashMap<>();
