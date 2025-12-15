@@ -22,7 +22,7 @@ public class IndexListener implements ApplicationListener<IndexingCompleteEvent>
     public void onApplicationEvent(@NonNull IndexingCompleteEvent event) {
         System.err.println("\n\n=========== INIZIO SEZIONE STATISTICHE===========\n");
         StatsService statistiche = new StatsService();
-        statistiche.statsIndex(Paths.get(luceneConfig.getIndexDirectory()), Paths.get(luceneConfig.getTableDirectory()));
+        statistiche.statsIndex(Paths.get(luceneConfig.getIndexDirectory()), Paths.get(luceneConfig.getTableDirectory()), Paths.get(luceneConfig.getFigureDirectory()));
         System.err.println("\n-=========== FINE SEZIONE STATISTICHE ===========\n\n");
     }
 }
