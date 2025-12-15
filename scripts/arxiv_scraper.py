@@ -1,228 +1,163 @@
 '''
-Programma per recuperare articoli scientifici da https://arxiv.org
-In particolare si recuperano articoli: 
-  - disponibili in formato HTML 
-  - che contengono specifiche parole chiave nel titolo o nell'abstract.
+Scraper per articoli scientifici da https://arxiv.org
+Scarica articoli in formato HTML con protezione anti-recaptcha.
+
+Uso: python arxiv_scraper.py "text to speech" 500
 '''
 
-'''
-python arxiv_scraper.py "text to speech" 500
-'''
-
-
-# Importazione delle librerie necessarie
-import os
-import sys
-import time
-import requests
+import os, sys, time, random, re, requests
 from lxml import etree
 
-BATCH_SIZE = 25  # Numero massimo di articoli da scaricare per ogni batch
+# Configurazione
+BATCH_SIZE = 25
+DELAY = (1.0, 3.0)  # min, max delay tra richieste
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
+BLOCKED_PATTERNS = ['recaptcha', 'captcha', 'unusual traffic', 'rate limit', 'too many requests', 
+                    'access denied', 'blocked', 'please verify', 'robot', 'automated access']
 
-# Ottieni il percorso assoluto della directory in cui si trova lo script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers')
 
 
-def download_articles(query, k):
-    
-    """
-    Funzione che scarica k articoli da arXiv basandosi sulla query fornita.
-    
-    Args:
-        query: Parole chiave per la ricerca
-        k: Numero totale di articoli da scaricare
-        
-    Returns:
-        dict: Dizionario con statistiche del download
-    """
-    
-    total_downloaded = 0
-    total_processed = 0
-    total_skipped = 0
-    total_errors = 0
+def is_blocked(content):
+    """Verifica se la pagina è un recaptcha o pagina di blocco."""
+    text = content.decode('utf-8', errors='ignore').lower() if isinstance(content, bytes) else str(content).lower()
+    return any(p in text for p in BLOCKED_PATTERNS)
 
-    # Se k è minore o uguale a BATCH_SIZE, scarica tutto in una volta.
-    if k <= BATCH_SIZE:
-        stats = fetch_articles(query, 0, k, BATCH_SIZE)
-        total_downloaded = stats['downloaded']
-        total_processed = stats['processed']
-        total_skipped = stats['skipped']
-        total_errors = stats['errors']
-    
-    # Altrimenti divide il lavoro in più batch per rispettare i limiti del server.
-    else:
-        for i in range(0, k, BATCH_SIZE):
-            stats = fetch_articles(query, i, min(BATCH_SIZE, k - i), BATCH_SIZE)
-            total_downloaded += stats['downloaded']
-            total_processed += stats['processed']
-            total_skipped += stats['skipped']
-            total_errors += stats['errors']
-            if stats['downloaded'] == 0:
-                print(f"Nessun articolo trovato nel batch {i + 1}-{i + min(BATCH_SIZE, k - i)}")
-    
-    return {
-        'requested': k,
-        'processed': total_processed,
-        'downloaded': total_downloaded,
-        'skipped': total_skipped,
-        'errors': total_errors
-    }
+
+def safe_request(url, retries=3):
+    """Richiesta HTTP con retry e validazione anti-blocco."""
+    for attempt in range(retries):
+        try:
+            if attempt > 0:
+                time.sleep(DELAY[0] * (2 ** attempt) + random.random())
+            
+            resp = requests.get(url, headers=HEADERS, timeout=30)
+            
+            if resp.status_code in (429, 403, 503):
+                print(f"    HTTP {resp.status_code}, retry...")
+                continue
+            
+            resp.raise_for_status()
+            
+            if is_blocked(resp.content):
+                print(f"    Pagina bloccata rilevata, retry...")
+                continue
+            
+            return resp
+        except requests.RequestException as e:
+            print(f"    Errore: {e}")
+    return None
 
 
 def fetch_articles(query, start, k, batch_size):
+    """Recupera e scarica articoli da arXiv."""
+    url = f"https://arxiv.org/search/?query={'+'.join(query.split())}&searchtype=all&source=header&size={batch_size}&order=-announced_date_first&start={start}"
     
-    """
-    Funzione che recupera e scarica articoli da arXiv.
+    print(f"Recupero risultati per '{query}'...")
+    resp = safe_request(url)
+    if not resp:
+        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
     
-    Args:
-        query: Parole chiave per la ricerca
-        start: Indice di partenza per la paginazione dei risultati
-        k: Numero di articoli da scaricare in questo batch
-        batch_size: Dimensione massima del batch per la richiesta
+    root = etree.HTML(resp.content)
+    articles = root.xpath("//p[@class='list-title is-inline-block']/a/@href") if root is not None else []
+    
+    if not articles:
+        print("Nessun articolo trovato")
+        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 0}
+    
+    print(f"Trovati {len(articles)} articoli")
+    stats = {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 0}
+    
+    for idx, article_url in enumerate(articles[:k]):
+        # Valida URL arXiv
+        if 'arxiv.org' not in article_url or not re.search(r'/abs/|/pdf/|\d{4}\.\d{4,5}', article_url):
+            stats['skipped'] += 1
+            continue
         
-    Returns:
-        dict: Dizionario con statistiche (downloaded, processed, skipped)
-    """
-
-    try:
-        # Codifica della query per l'utilizzo nell'URL (sostituisce spazi con '+')
-        query2 = '+'.join(query.split())
-        url = f"https://arxiv.org/search/?query={query2}&searchtype=all&source=header&size={batch_size}&order=-announced_date_first&start={start}"
-        print(f"Recupero risultati di ricerca per '{query}'")
-
-        # Invio della richiesta GET alla pagina di ricerca di arXiv
-        response = requests.get(url)
-        response.raise_for_status()  # Verifica che non ci siano errori nella richiesta
-        print(f"Risultati di ricerca recuperati con successo per '{query}'")
-
-        # Analisi del contenuto HTML della risposta
-        root = etree.HTML(response.content)
+        print(f"\n[{idx+1+start}] {article_url}")
+        stats['processed'] += 1
+        time.sleep(random.uniform(*DELAY))
         
-        if root is None:
-            print("Errore: Impossibile analizzare il contenuto HTML della pagina di ricerca.")
-            return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
-
-        # Contatori per le statistiche
-        downloads = 0
-        processed = 0
-        skipped = 0
-        errors = 0
-
-        # Estrazione degli URL degli articoli dalla pagina dei risultati usando XPath
-        articles = root.xpath("//p[@class='list-title is-inline-block']/a/@href")
-
-        # Iterazione su tutti gli URL degli articoli trovati nei risultati di ricerca
-        for idx, article_url in enumerate(articles):
-            # Controlla se abbiamo già elaborato abbastanza articoli per questo batch
-            if processed >= k:
-                print("Limite del batch raggiunto.")
-                break
-
-            print(f"Elaborazione articolo {idx + 1 + start}: {article_url}")
-            processed += 1
-
-            try:
-                # Recupero della pagina dell'articolo
-                article_response = requests.get(article_url)
-                article_response.raise_for_status()
-
-                # Analisi del contenuto HTML della pagina dell'articolo
-                article_root = etree.HTML(article_response.content)
-
-                # Verifica se esiste il link per scaricare la versione HTML (LateXML)
-                if article_root.xpath("//*[@id='latexml-download-link']"):
-                    # Ottiene l'URL per scaricare il file HTML
-                    href = article_root.xpath("//*[@id='latexml-download-link']/@href")[0]
-                    html_response = requests.get(href)
-                    html_response.raise_for_status()
-
-                    # Salva il contenuto HTML in un file
-                    file_name = f"{OUTPUT_DIR}/{os.path.basename(href)}.html"
-                    with open(file_name, 'wb') as f:
-                        f.write(html_response.content)
-                    print(f"└── File HTML scaricato e salvato: {file_name}")
-
-                    downloads += 1 
-                else:
-                    print(f"└── Nessun HTML scaricabile trovato per l'articolo: {article_url}")
-                    skipped += 1
-            except requests.RequestException as e:
-                print(f"Errore nel recupero dell'articolo {article_url}: {e}")
-                errors += 1
-            except Exception as e:
-                print(f"Errore nell'elaborazione dell'articolo {article_url}: {e}")
-                errors += 1
-
-        print(f"Batch completato. Totale download riusciti in questo batch: {downloads}")
-        return {'downloaded': downloads, 'processed': processed, 'skipped': skipped, 'errors': errors}
-    except requests.RequestException as e:
-        print(f"Errore nel recupero dei risultati di ricerca: {e}")
-        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
-    except Exception as e:
-        print(f"Si è verificato un errore imprevisto: {e}")
-        return {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 1}
+        # Recupera pagina articolo
+        article_resp = safe_request(article_url)
+        if not article_resp:
+            stats['errors'] += 1
+            continue
+        
+        article_root = etree.HTML(article_resp.content)
+        html_links = article_root.xpath("//*[@id='latexml-download-link']/@href") if article_root is not None else []
+        
+        if not html_links:
+            print("  No HTML disponibile")
+            stats['skipped'] += 1
+            continue
+        
+        time.sleep(random.uniform(*DELAY))
+        
+        # Scarica HTML del paper
+        html_resp = safe_request(html_links[0])
+        if not html_resp or len(html_resp.content) < 500:
+            stats['errors'] += 1
+            continue
+        
+        # Verifica che sia un paper valido
+        text = html_resp.content.decode('utf-8', errors='ignore').lower()
+        if is_blocked(html_resp.content) or not any(x in text for x in ['<html', 'latexml', 'article']):
+            print("  Contenuto non valido")
+            stats['errors'] += 1
+            continue
+        
+        # Salva file
+        file_name = f"{OUTPUT_DIR}/{os.path.basename(html_links[0])}.html"
+        with open(file_name, 'wb') as f:
+            f.write(html_resp.content)
+        print(f"  Salvato: {file_name}")
+        stats['downloaded'] += 1
+    
+    print(f"\nBatch: {stats['downloaded']} scaricati, {stats['skipped']} saltati, {stats['errors']} errori")
+    return stats
 
 
-# Funzione main
+def download_articles(query, k):
+    """Scarica k articoli suddividendo in batch."""
+    totals = {'downloaded': 0, 'processed': 0, 'skipped': 0, 'errors': 0}
+    
+    for i in range(0, k, BATCH_SIZE):
+        batch_k = min(BATCH_SIZE, k - i)
+        stats = fetch_articles(query, i, batch_k, BATCH_SIZE)
+        for key in totals:
+            totals[key] += stats[key]
+    
+    return {'requested': k, **totals}
+
+
 if __name__ == '__main__':
-
-    # Condizione per verificare che sia stato fornito il numero corretto di argomenti
     if len(sys.argv) != 3:
-        print('Sintassi corretta: python arxiv_scraper.py <query> <k>')
+        print('Uso: python arxiv_scraper.py <query> <k>')
         sys.exit(1)
-
+    
     query = sys.argv[1]
-
     try:
-        k = int(sys.argv[2])  # Verifica che k sia un intero positivo
-        if k <= 0:
-            raise ValueError
-    except ValueError:
-        print("Errore: 'k' deve essere un numero intero positivo.")
+        k = int(sys.argv[2])
+        assert k > 0
+    except:
+        print("Errore: 'k' deve essere un intero positivo.")
         sys.exit(1)
-
-    # Verifica che la directory 'papers' esista
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
-
+    
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    
     start_time = time.time()
-
-    # Esegue il download e raccoglie le statistiche
     stats = download_articles(query, k)
+    elapsed = time.time() - start_time
     
-    end_time = time.time()
-    total_time = end_time - start_time
-
-    # Calcolo dimensione cartella
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(OUTPUT_DIR):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
-    stats['total_size_mb'] = total_size / (1024 * 1024)
-
-    downloaded = stats['downloaded']
-    errors = stats['errors']
+    # Calcola dimensione cartella
+    total_size = sum(os.path.getsize(os.path.join(dp, f)) 
+                     for dp, _, files in os.walk(OUTPUT_DIR) 
+                     for f in files if not os.path.islink(os.path.join(dp, f)))
     
-    # Stampa le statistiche finali
-    print("\n==============================")
-    print("     STATISTICHE FINALI")
-    print("==============================")
-
-    print(f"Tempo totale: {total_time:.2f} sec")
-    if downloaded > 0:
-        print(f"Tempo medio per articolo: {total_time / downloaded:.2f} sec")
-        
-    print(f"Articoli trovati (esearch): {stats['processed']}")
-    print(f"Articoli scaricati: {downloaded}")
-    print(f"Errori: {errors}")
-
-    if stats:
-        print(f"Dimensione totale cartella: {stats['total_size_mb']:.2f} MB")
-    else:
-        print("Nessun file HTML trovato, impossibile calcolare statistiche.")
-
-    print("\nCOMPLETATO! Articoli salvati in:", OUTPUT_DIR)
-    print("==============================\n")
+    print(f"\n{'='*30}\n     STATISTICHE FINALI\n{'='*30}")
+    print(f"Tempo: {elapsed:.2f}s" + (f" ({elapsed/stats['downloaded']:.2f}s/articolo)" if stats['downloaded'] else ""))
+    print(f"Processati: {stats['processed']} | Scaricati: {stats['downloaded']} | Errori: {stats['errors']}")
+    print(f"Dimensione: {total_size/(1024*1024):.2f} MB")
+    print(f"\nSalvati in: {OUTPUT_DIR}\n{'='*30}")
