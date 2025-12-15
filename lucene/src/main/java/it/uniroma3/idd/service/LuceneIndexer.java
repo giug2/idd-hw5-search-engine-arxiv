@@ -84,7 +84,7 @@ public class LuceneIndexer {
             doc.add(new TextField("authors", String.join(" ", article.getAuthors()), TextField.Store.YES));
             doc.add(new TextField("paragraphs", String.join(" ", article.getParagraphs()), TextField.Store.YES));
             doc.add(new TextField("articleAbstract", article.getArticleAbstract(), TextField.Store.YES));
-            doc.add(new TextField("publicationDate", article.getPublicationDate(), TextField.Store.YES));
+            doc.add(new TextField("publicationDate", article.getPublicationDate(), Field.Store.YES));
             writer.addDocument(doc);
         }
 
