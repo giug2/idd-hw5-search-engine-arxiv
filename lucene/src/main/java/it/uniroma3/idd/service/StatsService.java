@@ -3,170 +3,63 @@ package it.uniroma3.idd.service;
 import org.apache.lucene.index.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.BytesRef; // Import necessario per l'iteratore
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Service
 public class StatsService {
-    public void statsIndex(Path articlesPath, Path tablesPath, Path figuresPath) {
 
-        System.out.println("---------- documenti");
-        /*----------------------------------statistiche file----------------------------------*/
-        try (Directory directory = FSDirectory.open(articlesPath);
-             IndexReader reader = DirectoryReader.open(directory)) {
+    public void statsIndex(Path indexPath, String indexName) {
+        System.out.println("--- STATISTICHE INDICE: " + indexName.toUpperCase() + " ---");
 
-            int numFile = reader.numDocs();
-            System.out.println("Numero di documenti indicizzati: " + numFile);
-            System.out.println("\nConteggio dei termini per ciascun campo:");
+        try (Directory directory = FSDirectory.open(indexPath);
+             DirectoryReader reader = DirectoryReader.open(directory)) {
 
-            for (LeafReaderContext leafContext : reader.leaves()) {
-                LeafReader leafReader = leafContext.reader();
+            int numDocs = reader.numDocs();
+            System.out.println("Numero di documenti indicizzati: " + numDocs);
+            System.out.println("\nConteggio dei termini per ciascun campo:\n");
 
-                for (FieldInfo fieldInfo : leafReader.getFieldInfos()) {
-                    String fieldName = fieldInfo.name;
+            Map<String, Long> globalTermCounts = new HashMap<>();
+
+            // Itera su tutti i segmenti (Lucene 10 non permette un singolo LeafReader aggregato)
+            for (LeafReaderContext leafCtx : reader.leaves()) {
+
+                LeafReader leafReader = leafCtx.reader();
+                FieldInfos fieldInfos = leafReader.getFieldInfos();
+
+                for (FieldInfo fi : fieldInfos) {
+                    String fieldName = fi.name;
+
                     Terms terms = leafReader.terms(fieldName);
+                    if (terms == null)
+                        continue;
 
-                    if (terms != null) {
-                        TermsEnum termsEnum = terms.iterator();
-                        int termCount = 0;
-
-                        while (termsEnum.next() != null) {
-                            termCount++;
-                        }
-
-                        System.out.println("- Campo: " + fieldName +
-                                " - Termini indicizzati: " + termCount);
-                    } else {
-                        System.out.println("- Campo: " + fieldName +
-                                " - Nessun termine trovato.");
+                    long count = 0;
+                    TermsEnum te = terms.iterator();
+                    while (te.next() != null) {
+                        count++;
                     }
+                    globalTermCounts.merge(fieldName, count, Long::sum);
+                }
+            }
+
+            // Output delle statistiche aggregate
+            if (globalTermCounts.isEmpty()) {
+                System.out.println("Nessun termine trovato.");
+            } else {
+                for (Map.Entry<String, Long> entry : globalTermCounts.entrySet()) {
+                    System.out.println("- Campo: " + entry.getKey()
+                            + " - Termini unici (totale): " + entry.getValue());
                 }
             }
 
         } catch (IOException e) {
-            System.err.println("Errore durante la lettura dell'indice: " + e.getMessage());
-            e.printStackTrace();
+            System.err.println("Errore durante la lettura dell'indice " + indexName + ": " + e.getMessage());
         }
-
-        /*----------------------------------statistiche tabelle----------------------------------*/
-        System.out.println("\n---------- Tabelle ----------");
-
-        try (Directory directory = FSDirectory.open(tablesPath);
-             IndexReader reader = DirectoryReader.open(directory)) {
-
-            int numTables = reader.numDocs();
-            System.out.println("Numero totale di tabelle trovate: " + numTables);
-            System.out.println("\nConteggio dei termini per ciascun campo:");
-
-            // Mappa per accumulare i totali da tutti i segmenti (così non si ripetono le stampe)
-            Map<String, Long> fieldTermCounts = new HashMap<>();
-
-            // 1. Accumulo dei dati
-            for (LeafReaderContext leafContext : reader.leaves()) {
-                LeafReader leafReader = leafContext.reader();
-
-                for (FieldInfo fieldInfo : leafReader.getFieldInfos()) {
-                    String fieldName = fieldInfo.name;
-                    Terms terms = leafReader.terms(fieldName);
-
-                    long segmentCount = 0;
-                    if (terms != null) {
-                        // Contiamo i termini esattamente come fai sopra
-                        TermsEnum termsEnum = terms.iterator();
-                        while (termsEnum.next() != null) {
-                            segmentCount++;
-                        }
-                    }
-                    
-                    // Sommo al totale esistente per quel campo
-                    fieldTermCounts.put(fieldName, fieldTermCounts.getOrDefault(fieldName, 0L) + segmentCount);
-                }
-            }
-
-            // 2. Stampa dei risultati (Stesso stile della sezione articoli)
-            for (Map.Entry<String, Long> entry : fieldTermCounts.entrySet()) {
-                String fieldName = entry.getKey();
-                long count = entry.getValue();
-
-                if (count > 0) {
-                    System.out.println("- Campo: " + fieldName + " - Termini indicizzati: " + count);
-                } else {
-                    System.out.println("- Campo: " + fieldName + " - Nessun termine trovato.");
-                }
-            }
-
-        } catch (IOException e) {
-            System.err.println("Errore durante la lettura dell'indice delle tabelle: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        /*----------------------------------statistiche figure----------------------------------*/
-        System.out.println("\n---------- Figure ----------");
-
-        try (Directory directory = FSDirectory.open(figuresPath);
-             IndexReader reader = DirectoryReader.open(directory)) {
-
-            int numFigures = reader.numDocs();
-            System.out.println("Numero totale di figure trovate: " + numFigures);
-            System.out.println("\nConteggio dei termini per ciascun campo:");
-
-            // Mappa per accumulare i totali da tutti i segmenti
-            Map<String, Long> fieldTermCounts = new HashMap<>();
-
-            // 1. Accumulo dei dati
-            for (LeafReaderContext leafContext : reader.leaves()) {
-                LeafReader leafReader = leafContext.reader();
-
-                for (FieldInfo fieldInfo : leafReader.getFieldInfos()) {
-                    String fieldName = fieldInfo.name;
-                    Terms terms = leafReader.terms(fieldName);
-
-                    long segmentCount = 0;
-                    if (terms != null) {
-                        TermsEnum termsEnum = terms.iterator();
-                        while (termsEnum.next() != null) {
-                            segmentCount++;
-                        }
-                    }
-
-                    // Sommo al totale esistente per quel campo
-                    fieldTermCounts.put(fieldName, fieldTermCounts.getOrDefault(fieldName, 0L) + segmentCount);
-                }
-            }
-
-            // 2. Stampa dei risultati
-            for (Map.Entry<String, Long> entry : fieldTermCounts.entrySet()) {
-                String fieldName = entry.getKey();
-                long count = entry.getValue();
-
-                if (count > 0) {
-                    System.out.println("- Campo: " + fieldName + " - Termini indicizzati: " + count);
-                } else {
-                    System.out.println("- Campo: " + fieldName + " - Nessun termine trovato.");
-                }
-            }
-
-        } catch (IOException e) {
-            System.err.println("Errore durante la lettura dell'indice delle figure: " + e.getMessage());
-            e.printStackTrace();
-        }
+        System.out.println("----------------------------------------\n");
     }
 }
-
-/*
-tabella di conversione termini tabelle 
-
-json                                -->      variabile java             -->      campo lucene
-
-(Chiave dell'oggetto) S3.T1	        -->      tableId	                -->      id
-source_file	                        -->      sourceFile	                -->      sourceFilename
-caption	                            -->      caption	                -->      caption
-informative_terms_identified	    -->      informativeTerms	        -->      informative_terms
-citing_paragraphs	                -->      citingParagraphs	        -->      citing_paragraphs
-contextual_paragraphs	            -->      contextualParagraphs	    -->      contextual_paragraphs
-*/

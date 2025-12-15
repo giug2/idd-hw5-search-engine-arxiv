@@ -24,10 +24,6 @@ public class LuceneConfig {
     private boolean queryExplain;
 
     @Getter
-    @Value("${lucene.index.directory}")
-    private String indexDirectory;
-
-    @Getter
     @Value("${lucene.index.initialize}")
     private boolean shouldInitializeIndex;
 
@@ -46,6 +42,10 @@ public class LuceneConfig {
     @Getter
     @Value("${data.figures.path}")
     private String figuresPath;
+
+    @Getter
+    @Value("${lucene.index.directory}")
+    private String indexDirectory;
 
     @Getter
     @Value("${lucene.index_table.directory}")
