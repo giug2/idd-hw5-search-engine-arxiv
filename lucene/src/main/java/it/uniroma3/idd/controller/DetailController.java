@@ -83,6 +83,7 @@ public class DetailController {
         Map<String, String> results = new HashMap<>();
 
         switch (indexKey.toLowerCase()) {
+            
             case "articoli":
                 title = doc.get("title");
                 authors = doc.get("authors");

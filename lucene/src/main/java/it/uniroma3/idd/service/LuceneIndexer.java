@@ -94,77 +94,72 @@ public class LuceneIndexer {
 
 
 public void indexTables(String Pathdir, Codec codec) throws Exception {
-        Path path = Paths.get(Pathdir);
-        Directory dir = FSDirectory.open(path);
+    Path path = Paths.get(Pathdir);
+    Directory dir = FSDirectory.open(path);
 
-        IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
-        config.setCodec(codec);
+    IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
+    config.setCodec(codec);
+    // IMPORTANTE: Usa CREATE per sovrascrivere l'indice ed evitare duplicati ogni riavvio
+    config.setOpenMode(IndexWriterConfig.OpenMode.CREATE); 
 
-        IndexWriter writer = new IndexWriter(dir, config);
+    IndexWriter writer = new IndexWriter(dir, config);
 
-        // 1. Recupera la lista di oggetti Table dal parser
-        List<Table> tables = parser.tableParser();
+    List<Table> tables = parser.tableParser();
 
-        for (Table table : tables) {
-            Document doc = new Document();
+    for (Table table : tables) {
+        Document doc = new Document();
 
-            // --- CAMPI IDENTIFICATIVI (StringField -> Ricerca Esatta) ---
+        // --- ID e SORGENTE ---
+        doc.add(new StringField("id", table.getId(), Field.Store.YES));
+        
+        String sourceFile = table.getSourceFilename() != null ? table.getSourceFilename() : "Unknown";
+        doc.add(new StringField("sourceFilename", sourceFile, Field.Store.YES));
 
-            // ID univoco (es. "2509.16375v1_S4.T1")
-            doc.add(new StringField("id", table.getId(), Field.Store.YES));
+        // --- TESTO PULITO (Full Text Search) ---
+        
+        // Caption
+        String caption = table.getCaption() != null ? table.getCaption() : "";
+        doc.add(new TextField("caption", caption, Field.Store.YES));
 
-            // NUOVO CAMPO: ID/Nome del file sorgente (es. "Titolo Articolo" o "2509.16375v1")
-            String sourceFile = table.getSourceFilename() != null ? table.getSourceFilename() : "Unknown";
-            doc.add(new StringField("sourceFilename", sourceFile, Field.Store.YES));
-
-
-            // --- CAMPI TESTUALI (TextField -> Ricerca Full-Text Analizzata) ---
-
-            // Caption
-            String caption = table.getCaption() != null ? table.getCaption() : "";
-            doc.add(new TextField("caption", caption, Field.Store.YES));
-
-            // Body Cleaned (Testo puro della tabella)
-            String bodyCleaned = table.getBodyCleaned() != null ? table.getBodyCleaned() : "";
-            doc.add(new TextField("body", bodyCleaned, Field.Store.YES));
+        // Body (ATTENZIONE QUI):
+        // Nel nuovo JSON, "body" è già il testo pulito. 
+        // Quindi usiamo table.getBody() per riempire il campo Lucene "body".
+        // Non serve più getBodyCleaned() se il JSON è già pulito.
+        String bodyText = table.getBody() != null ? table.getBody() : "";
+        doc.add(new TextField("body", bodyText, Field.Store.YES));
 
 
-            // --- GESTIONE LISTE (Join in stringa unica per Lucene) ---
+        // --- LISTE ---
+        String termsString = table.getInformativeTerms() != null ? String.join(", ", table.getInformativeTerms()) : "";
+        doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
 
-            // Informative Terms (ex "terms")
-            String termsString = table.getInformativeTerms() != null ? String.join(", ", table.getInformativeTerms()) : "";
-            doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
+        String citingString = table.getCitingParagraphs() != null ? String.join(" ", table.getCitingParagraphs()) : "";
+        doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
 
-            // Citing Paragraphs (ex "mentions")
-            String citingString = table.getCitingParagraphs() != null ? String.join(" ", table.getCitingParagraphs()) : "";
-            doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
-
-            // Contextual Paragraphs (Lista di Oggetti -> Stringa unica)
-            // Dobbiamo estrarre il campo 'html' da ogni oggetto ContextualParagraph
-            StringBuilder contextSb = new StringBuilder();
-            if (table.getContextualParagraphs() != null) {
-                for (var cp : table.getContextualParagraphs()) {
-                    if (cp.getHtml() != null) {
-                        contextSb.append(cp.getHtml()).append(" ");
-                    }
+        StringBuilder contextSb = new StringBuilder();
+        if (table.getContextualParagraphs() != null) {
+            for (var cp : table.getContextualParagraphs()) {
+                if (cp.getHtml() != null) { // Nota: qui usi .getHtml(), assicurati che ContextualParagraph abbia questo metodo
+                    contextSb.append(cp.getHtml()).append(" ");
                 }
             }
-            doc.add(new TextField("contextual_paragraphs", contextSb.toString().trim(), Field.Store.YES));
-
-
-            // --- CAMPI DI STORAGE (StoredField -> Solo visualizzazione) ---
-
-            // HTML Table (Raw Body)
-            String htmlBody = table.getBody() != null ? table.getBody() : "";
-            doc.add(new StoredField("html_table", htmlBody));
-
-            writer.addDocument(doc);
         }
+        doc.add(new TextField("contextual_paragraphs", contextSb.toString().trim(), Field.Store.YES));
 
-        writer.commit();
-        writer.close();
 
+        // --- HTML GREZZO (Solo per visualizzazione) ---
+        
+        // HTML Table (ATTENZIONE QUI):
+        // Usiamo il NUOVO getter che punta al campo JSON "html_code"
+        String htmlContent = table.getHtmlCode() != null ? table.getHtmlCode() : "";
+        doc.add(new StoredField("html_table", htmlContent));
+
+        writer.addDocument(doc);
     }
+
+    writer.commit();
+    writer.close();
+}
 
     /**
      * Indicizza le figure estratte dagli articoli.

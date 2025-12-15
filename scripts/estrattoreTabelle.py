@@ -43,7 +43,8 @@ def get_node_text(node):
     """
     Estrae tutto il testo visibile da un nodo e dai suoi figli, pulito.
     """
-    return "".join(node.itertext()).strip()
+    # MODIFICA IMPORTANTE: Aggiunto spazio " " nel join per evitare parole incollate
+    return " ".join(node.itertext()).strip()
 
 def get_node_html(node):
     """
@@ -232,15 +233,15 @@ if __name__ == '__main__':
     # 3. Definisci i percorsi relativi alla radice del progetto
     
     #    INPUT: Cartella 'input/papers' nella root del progetto (livello superiore rispetto allo script)
-    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'papers')                                                                           #percorso della cartella di input (file HTML)
+    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'papers')                                                                                   #percorso della cartella di input (file HTML)
     
     #    OUTPUT: Cartella 'input/contenutoTabelle' nella root del progetto
-    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'contenutoTabelle')                                                                #Cartella dove salvare i JSON risultanti
+    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'contenutoTabelle')                                                                         #Cartella dove salvare i JSON risultanti
 
     # NUOVA FEATURE: Numero massimo di file da processare.
     # Imposta un numero intero (es. 1, 5, 20) per limitare l'esecuzione.
     # Imposta su None (o 0 o un numero negativo) per processare TUTTI i file nella cartella.
-    NUM_FILES_TO_PROCESS = None                                                                                                       #numero di file di cui eseguire il parcing
+    NUM_FILES_TO_PROCESS = None                                                                                                                      #numero di file di cui eseguire il parcing
     
     # -----------------------------------------------------
     # LOGICA DI ESECUZIONE SU CARTELLA
@@ -282,28 +283,3 @@ if __name__ == '__main__':
             process_single_file(full_path, output_dir=OUTPUT_DIRECTORY)
 
         print("\n--- Processo su cartella completato ---")
-
-
-#    struttura del json generato:
-#
-#    id della tabella 1 :{
-#        "source_file": "Titolo del file HTML o nome del file",                                         NUOVO CAMPO: Identificativo del file di origine
-#        "caption": "Testo della didascalia",
-#        "body": "Testo pulito della tabella",                                                          AGGIORNATO: contiene solo testo pulito (ottimo per ricerca)
-#        "html_code": "<table>...</table>",                                                             NUOVO CAMPO: codice html grezzo della tabella
-#        "informative_terms_identified": ["termine1", "termine2", ...],                                 parole chiave individuate
-#        "citing_paragraphs": [                                                                         lista dei paragrafi che citano la tabella
-#            "<p>Paragrafo che cita la tabella</p>",
-#            ...
-#        ],
-#        "contextual_paragraphs": [                                                                     lista dei paragrafi contestuali che non citano esplicitamente la tabella ma ne contengono i termini chiave individuati
-#            {
-#                "html": "<p>Paragrafo contestuale</p>",                                                codice html grezzo del paragrafo
-#                "matched_terms": ["termine1", "termine2"]                                              parole chiave individuate nel paragrafo e corrispondenti alla tabella
-#            },
-#        ]
-#
-#        id della tabella 2 :{
-#            ........
-#        }
-#    }
