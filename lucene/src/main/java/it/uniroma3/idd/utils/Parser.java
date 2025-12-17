@@ -1,26 +1,28 @@
 package it.uniroma3.idd.utils;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.model.Article;
 import it.uniroma3.idd.model.ContextualParagraph;
 import it.uniroma3.idd.model.Figure;
 import it.uniroma3.idd.model.Table;
-import org.jsoup.nodes.Element;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.regex.*;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Iterator;
 
 @Component
 public class Parser {
@@ -309,6 +311,7 @@ public class Parser {
                     
                     // Creazione Oggetto Table (Ordine argomenti aggiornato per includere htmlCode)
                     // NOTA: L'ordine qui sotto deve coincidere con i campi annotati da Lombok @AllArgsConstructor in Table.java
+                    
                     Table table = new Table(
                         uniqueId,           // id
                         sourceFilename,     // sourceFilename

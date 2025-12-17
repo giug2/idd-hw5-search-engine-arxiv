@@ -3,19 +3,16 @@ package it.uniroma3.idd.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import org.apache.lucene.document.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.ui.Model;
-
-import org.apache.lucene.document.Document;
-
 
 import it.uniroma3.idd.dto.GetDocumentResponse;
 import it.uniroma3.idd.service.Searcher;
-import org.springframework.stereotype.Controller;
 
 @Controller
 public class DetailController {
@@ -103,6 +100,11 @@ public class DetailController {
                 results.put("ID Articolo Padre", doc.get("sourceFilename")); 
                 results.put("Menzioni", doc.get("citing_paragraphs")); 
                 results.put("Termini Chiave", doc.get("informative_terms")); 
+
+//                System.out.println("=================================================================================================================");
+//                System.out.println("CODICE HTML DI " +doc.get("sourceFilename")+":");
+//                System.out.println(doc.get("html_table"));
+//                System.out.println("=================================================================================================================");
                 break;
 
             case "figure":

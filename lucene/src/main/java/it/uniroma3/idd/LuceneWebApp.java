@@ -16,7 +16,8 @@ public class LuceneWebApp {
 //mvn clean install
 
 /*possibili input tabelle:
-caption comparison
-VoiceLDM AND 17.2 (output solo 1 tabella)
+caption prompt optimization
+
+misogyny
 
 */

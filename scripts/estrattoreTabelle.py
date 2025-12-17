@@ -3,18 +3,32 @@ import os
 import string
 from lxml import etree, html
 
+# --- IMPORTAZIONE NLTK ---
+import nltk
+from nltk.corpus import stopwords
+
+# Scarica le risorse necessarie (silenziosamente se già presenti)
+nltk.download("stopwords", quiet=True)
+
 # ---------------------------------------------------------
-# CONFIGURAZIONE STOP WORDS
+# CONFIGURAZIONE STOP WORDS (SOLO LIBRERIA)
 # ---------------------------------------------------------
-# Lista base di parole da ignorare (articoli, preposizioni, ecc.) per l'inglese (e italiano base).
-# Espandibile a piacere o sostituibile con librerie come NLTK/Spacy per maggiore precisione.
-STOP_WORDS = {
-    'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by',
-    'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'these', 'those', 'it', 'we',
-    'can', 'may', 'should', 'table', 'figure', 'section', 'eq', 'et', 'al', 'shown', 'using',
-    'il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'uno', 'una', 'di', 'a', 'da', 'in', 'con', 'su', 'per',
-    'tra', 'fra', 'è', 'sono'
-}
+# Non ci sono più parole inserite manualmente.
+# Carichiamo i set direttamente dalla libreria NLTK.
+
+# 1. Stop words Inglesi (per i paper scientifici)
+english_sw = set(stopwords.words("english"))
+
+# 2. Stop words Italiane (per sostituire la tua lista manuale di articoli/preposizioni)
+italian_sw = set(stopwords.words("italian"))
+
+# 3. Unione dei due set
+STOP_WORDS = english_sw.union(italian_sw)
+
+# Nota: Se vuoi escludere anche termini tecnici come "table", "figure", "section",
+# ora dovrai aggiungerli qui oppure accettare che vengano estratti come termini.
+# Al momento il filtro è puramente basato sulla libreria NLTK.
+
 
 def extract_informative_terms(text):
     """
@@ -43,7 +57,7 @@ def get_node_text(node):
     """
     Estrae tutto il testo visibile da un nodo e dai suoi figli, pulito.
     """
-    # MODIFICA IMPORTANTE: Aggiunto spazio " " nel join per evitare parole incollate
+    # Aggiunto spazio " " nel join per evitare parole incollate
     return " ".join(node.itertext()).strip()
 
 def get_node_html(node):
@@ -79,7 +93,6 @@ def process_single_file(html_path, output_dir='output'):
     print(f"--- Elaborazione file: {filename} ---")
 
     # Parsing HTML
-    # Aggiunto try-except per evitare che un file corrotto blocchi l'intero processo della cartella
     try:
         with open(html_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
@@ -92,8 +105,7 @@ def process_single_file(html_path, output_dir='output'):
     # Struttura dati finale
     extracted_data = {}
 
-    # --- MODIFICA 1: Estrazione del Titolo/Nome File ---
-    # Cerchiamo il titolo del documento HTML per usarlo come riferimento d'origine
+    # --- Estrazione del Titolo/Nome File ---
     title_nodes = root.xpath("//title")
     source_identifier = filename # Default: nome del file
     if title_nodes:
@@ -101,60 +113,50 @@ def process_single_file(html_path, output_dir='output'):
         if page_title:
             source_identifier = page_title
 
-    # --- MODIFICA LOGICA DI RICERCA ---
-    # 1. Trova tutte le tabelle. Invece di cercare il contenitore esterno, cerchiamo direttamente il tag <table>
-    #    che ha la classe 'ltx_tabular'. Questo trova la tabella ovunque essa sia.
+    # --- Ricerca Tabelle ---
+    # Cerca prima tabelle con classe specifica 'ltx_tabular'
     found_tables_nodes = root.xpath("//table[contains(@class, 'ltx_tabular')]")
     
     if not found_tables_nodes:
-        # Se ancora non trova nulla, prova un fallback generico su qualsiasi tag <table>
+        # Fallback generico
         found_tables_nodes = root.xpath("//table")
         
         if not found_tables_nodes:
             print(f"Nessuna tabella trovata nel file {filename}. Genero JSON vuoto.")
-            # RIMOSSO IL RETURN: Il codice prosegue per salvare un file JSON vuoto {}
 
-    # Trova tutti i paragrafi del documento una sola volta per efficienza
-    # MODIFICA: Escludiamo i paragrafi che sono DENTRO qualsiasi tabella (ancestor::table)
+    # Trova tutti i paragrafi del documento (escludendo quelli dentro le tabelle)
     all_paragraphs = root.xpath("//p[not(ancestor::table)]")
 
     for table_node in found_tables_nodes:
         
         # --- IDENTIFICAZIONE ID E WRAPPER ---
-        # La tabella vera e propria è 'table_node'.
-        # Ma l'ID e la Caption spesso sono nel genitore (es. <figure id="S1.T1">)
         table_id = table_node.get('id')
-        wrapper_node = table_node # Di base, il wrapper è la tabella stessa
+        wrapper_node = table_node 
 
-        # Se la tabella non ha ID, guardiamo il genitore (ancestor) più vicino che abbia un ID
+        # Se la tabella non ha ID, guardiamo il genitore
         if not table_id:
             parent_wrapper = table_node.xpath("./ancestor::*[@id][1]")
             if parent_wrapper:
                 wrapper_node = parent_wrapper[0]
                 table_id = wrapper_node.get('id')
         
-        # Se ancora nessun ID, saltiamo la tabella perché non referenziabile
+        # Se ancora nessun ID, saltiamo la tabella
         if not table_id:
             continue
 
         print(f" -> Trovata tabella ID: {table_id}")
 
         # --- A. Estrazione Caption ---
-        # Cerchiamo la caption nel wrapper (che potrebbe essere la figure o la table stessa)
         caption_node = wrapper_node.xpath(".//figcaption")
         caption_text = ""
         if caption_node:
             caption_text = get_node_text(caption_node[0])
 
-        # --- B. Estrazione Corpo Tabella (HTML e Testo Pulito) ---
-        # Qui usiamo direttamente il nodo tabella trovato
+        # --- B. Estrazione Corpo Tabella ---
         table_body_html = get_node_html(table_node)
-        
-        # MODIFICA: Estraiamo anche il testo pulito per la ricerca (rimuovendo i tag HTML)
-        table_body_text_content = get_node_text(table_node) # Serve per estrarre i termini e per il campo 'body'
+        table_body_text_content = get_node_text(table_node) 
 
         # --- C. Analisi Termini Informativi ---
-        # Uniamo testo caption e testo interno della tabella per trovare le keywords
         source_text_for_terms = caption_text + " " + table_body_text_content
         target_terms = extract_informative_terms(source_text_for_terms)
         
@@ -166,8 +168,7 @@ def process_single_file(html_path, output_dir='output'):
             p_text = get_node_text(p)
             p_html = get_node_html(p)
             
-            # 1. Controllo Citazione Esplicita (Citing Paragraphs)
-            # Cerca un link (<a>) che punta all'ID della tabella corrente
+            # 1. Controllo Citazione Esplicita
             refs = p.xpath(f".//a[contains(@href, '#{table_id}')]")
             
             is_citing = False
@@ -175,28 +176,24 @@ def process_single_file(html_path, output_dir='output'):
                 citing_paragraphs.append(p_html)
                 is_citing = True
             
-            # 2. Controllo Termini (Contextual Paragraphs)
+            # 2. Controllo Termini (Contesto)
             if not is_citing:
-                # Estraiamo i termini dal paragrafo
                 p_terms = extract_informative_terms(p_text)
-                
-                # Calcoliamo l'intersezione
                 common_terms = target_terms.intersection(p_terms)
                 
-                # SOGLIA: Consideriamo il paragrafo rilevante se condivide almeno N termini
+                # SOGLIA: almeno 2 termini in comune
                 if len(common_terms) >= 2: 
                     contextual_paragraphs.append({
                         "html": p_html,
-                        "matched_terms": list(common_terms) # Utile per debug
+                        "matched_terms": list(common_terms)
                     })
 
         # --- E. Salvataggio Dati Tabella ---
-        # MODIFICA: Aggiornata la struttura per includere 'html_code' e usare 'body' per il testo pulito
         extracted_data[table_id] = {
             "source_file": source_identifier,
             "caption": caption_text,
-            "body": table_body_text_content,       # ORA contiene solo il testo pulito (ottimo per ricerca)
-            "html_code": table_body_html,          # NUOVO CAMPO: contiene l'HTML grezzo (per visualizzazione)
+            "body": table_body_text_content,       
+            "html_code": table_body_html,          
             "informative_terms_identified": list(target_terms),
             "citing_paragraphs": citing_paragraphs,
             "contextual_paragraphs": contextual_paragraphs
@@ -215,33 +212,91 @@ def process_single_file(html_path, output_dir='output'):
     print(f"Salvataggio completato: {output_path}")
 
 # ---------------------------------------------------------
+# STATISTICHE
+# ---------------------------------------------------------
+def summarize_tables(output_folder):
+    """
+    Legge tutti i file JSON nella cartella di output e stampa statistiche aggregate.
+    """
+    if not os.path.exists(output_folder):
+        print("Cartella di output non trovata, impossibile generare statistiche.")
+        return
+
+    files = [f for f in os.listdir(output_folder) if f.endswith(".json")]
+
+    summary = {
+        "total_articles": len(files),
+        "total_tables": 0,
+        "field_counts": {}
+    }
+
+    # Campi da monitorare
+    fields = [
+        "source_file", 
+        "caption", 
+        "body", 
+        "html_code", 
+        "informative_terms_identified", 
+        "citing_paragraphs", 
+        "contextual_paragraphs"
+    ]
+    
+    for field in fields:
+        summary["field_counts"][field] = 0
+
+    for f in files:
+        file_path = os.path.join(output_folder, f)
+        try:
+            with open(file_path, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+                tables = data.values() 
+                
+                summary["total_tables"] += len(tables)
+
+                for table in tables:
+                    for field in fields:
+                        value = table.get(field)
+                        if value:
+                            # Considera liste/stringhe non vuote come "piene"
+                            if isinstance(value, (list, dict, str)):
+                                if len(value) > 0:
+                                    summary["field_counts"][field] += 1
+                            else:
+                                summary["field_counts"][field] += 1
+        except Exception as e:
+            print(f"Errore nella lettura delle statistiche per {f}: {e}")
+
+    # Stampa risultati
+    print("\n" + "="*30)
+    print("       SUMMARY ESTRAZIONE       ")
+    print("="*30)
+    print(f"Articoli processati: {summary['total_articles']}")
+    print(f"Tabelle estratte:    {summary['total_tables']}")
+    print("-" * 30)
+    print("Tabelle con campi popolati:")
+    for field, count in summary["field_counts"].items():
+        print(f"  {field:<30}: {count}")
+    print("="*30 + "\n")
+
+    return summary
+
+# ---------------------------------------------------------
 # ESECUZIONE
 # ---------------------------------------------------------
 if __name__ == '__main__':
     # -----------------------------------------------------
-    # CONFIGURAZIONE DINAMICA PATH (Gerarchia Progetto)
+    # CONFIGURAZIONE DINAMICA PATH
     # -----------------------------------------------------
     
-    # 1. Identifica la cartella dove si trova QUESTO script (es. .../Progetto/script)
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-    # 2. Identifica la cartella genitore (es. .../Progetto)
-    #    Saliamo di un livello rispetto a 'script' usando dirname
-    #    NOTA: dirname accetta un solo argomento.
     PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
-    # 3. Definisci i percorsi relativi alla radice del progetto
-    
-    #    INPUT: Cartella 'input/papers' nella root del progetto (livello superiore rispetto allo script)
-    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'papers')                                                                                   #percorso della cartella di input (file HTML)
-    
-    #    OUTPUT: Cartella 'input/contenutoTabelle' nella root del progetto
-    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'contenutoTabelle')                                                                         #Cartella dove salvare i JSON risultanti
+    # Definisci i percorsi relativi alla radice del progetto
+    SOURCE_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'papers') 
+    OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, 'input', 'contenutoTabelle') 
 
-    # NUOVA FEATURE: Numero massimo di file da processare.
-    # Imposta un numero intero (es. 1, 5, 20) per limitare l'esecuzione.
-    # Imposta su None (o 0 o un numero negativo) per processare TUTTI i file nella cartella.
-    NUM_FILES_TO_PROCESS = None                                                                                                                      #numero di file di cui eseguire il parcing
+    # NUOVA FEATURE: Numero massimo di file da processare (None = tutti)
+    NUM_FILES_TO_PROCESS = None 
     
     # -----------------------------------------------------
     # LOGICA DI ESECUZIONE SU CARTELLA
@@ -261,7 +316,7 @@ if __name__ == '__main__':
         # 1. Recupera tutti i file nella cartella che finiscono con .html
         all_files = [f for f in os.listdir(SOURCE_DIRECTORY) if f.endswith(".html")]
         
-        # Ordiniamo i file per avere un'esecuzione deterministica (es. alfabetica)
+        # Ordiniamo i file
         all_files.sort()
         
         total_found = len(all_files)
@@ -283,3 +338,6 @@ if __name__ == '__main__':
             process_single_file(full_path, output_dir=OUTPUT_DIRECTORY)
 
         print("\n--- Processo su cartella completato ---")
+        
+        # --- STAMPA STATISTICHE FINALI ---
+        summarize_tables(OUTPUT_DIRECTORY)
