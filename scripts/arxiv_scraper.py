@@ -10,13 +10,13 @@ from lxml import etree
 
 # Configurazione
 BATCH_SIZE = 25
-DELAY = (1.0, 3.0)  # min, max delay tra richieste
+DELAY = (0.5, 1.5)  # min, max delay tra richieste
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 BLOCKED_PATTERNS = ['recaptcha', 'captcha', 'unusual traffic', 'rate limit', 'too many requests', 
                     'access denied', 'blocked', 'please verify', 'robot', 'automated access']
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers')
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers/pippo')
 
 
 def is_blocked(content):

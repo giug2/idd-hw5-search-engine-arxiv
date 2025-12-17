@@ -2,6 +2,7 @@ import json
 import os
 import string
 import re
+import time
 from lxml import etree
 
 # ---------------------------------------------------------
@@ -121,10 +122,19 @@ def process_figures_from_file(html_path, output_dir='output_figures'):
     - Paragrafi che contengono termini informativi presenti nella caption
     """
     
+    # Statistiche per questo file
+    file_stats = {
+        'num_figures': 0,
+        'with_caption': 0,
+        'with_terms': 0,
+        'citing_paragraphs': 0,
+        'contextual_paragraphs': 0
+    }
+    
     # Verifica esistenza file
     if not os.path.exists(html_path):
         print(f"Errore: Il file {html_path} non esiste.")
-        return
+        return file_stats
 
     filename = os.path.basename(html_path)
     article_id = filename.replace('.html', '')
@@ -138,7 +148,7 @@ def process_figures_from_file(html_path, output_dir='output_figures'):
         root = etree.HTML(html_content)
     except Exception as e:
         print(f"Errore nella lettura/parsing del file {filename}: {e}")
-        return
+        return file_stats
     
     # Struttura dati finale
     extracted_data = {}
@@ -247,6 +257,15 @@ def process_figures_from_file(html_path, output_dir='output_figures'):
             "citing_paragraphs": citing_paragraphs,
             "contextual_paragraphs": contextual_paragraphs
         }
+        
+        # Aggiornamento statistiche file
+        file_stats['num_figures'] += 1
+        if caption_text:
+            file_stats['with_caption'] += 1
+        if caption_terms:
+            file_stats['with_terms'] += 1
+        file_stats['citing_paragraphs'] += len(citing_paragraphs)
+        file_stats['contextual_paragraphs'] += len(contextual_paragraphs)
 
     # Salvataggio su JSON
     if not os.path.exists(output_dir):
@@ -259,6 +278,7 @@ def process_figures_from_file(html_path, output_dir='output_figures'):
         json.dump(extracted_data, f, indent=4, ensure_ascii=False)
         
     print(f"Salvataggio completato: {output_path} ({len(extracted_data)} figure estratte)")
+    return file_stats
 
 
 # ---------------------------------------------------------
@@ -319,11 +339,61 @@ if __name__ == '__main__':
             print("Nessun limite impostato: verranno processati tutti i file.")
 
         # 3. Ciclo di elaborazione
+        
+        # Statistiche
+        stats = {
+            'total_files_processed': 0,
+            'total_figures_extracted': 0,
+            'files_with_figures': 0,
+            'files_without_figures': 0,
+            'start_time': time.time(),
+            'total_captions': 0,
+            'total_informative_terms_sets': 0,
+            'total_citing_paragraphs': 0,
+            'total_contextual_paragraphs': 0
+        }
+
         for i, filename in enumerate(files_to_process, 1):
             full_path = os.path.join(SOURCE_DIRECTORY, filename)
             
             print(f"\n[{i}/{len(files_to_process)}] Inizio elaborazione...")
-            process_figures_from_file(full_path, output_dir=OUTPUT_DIRECTORY)
+            file_stats = process_figures_from_file(full_path, output_dir=OUTPUT_DIRECTORY)
+            num_figures = file_stats['num_figures']
+            
+            # Aggiornamento statistiche
+            stats['total_files_processed'] += 1
+            stats['total_figures_extracted'] += num_figures
+            if num_figures > 0:
+                stats['files_with_figures'] += 1
+            else:
+                stats['files_without_figures'] += 1
+            
+            stats['total_captions'] += file_stats['with_caption']
+            stats['total_informative_terms_sets'] += file_stats['with_terms']
+            stats['total_citing_paragraphs'] += file_stats['citing_paragraphs']
+            stats['total_contextual_paragraphs'] += file_stats['contextual_paragraphs']
+
+        # Calcolo statistiche finali
+        end_time = time.time()
+        execution_time = end_time - stats['start_time']
+        avg_figures = 0
+        if stats['total_files_processed'] > 0:
+            avg_figures = stats['total_figures_extracted'] / stats['total_files_processed']
+
+        print("\n" + "="*60)
+        print("STATISTICHE")
+        print("="*60)
+        print(f"Tempo totale esecuzione:      {execution_time:.2f} secondi")
+        print(f"Articoli processati:       {stats['total_files_processed']}")
+        print(f"Immagini estratte:       {stats['total_figures_extracted']}")
+        print(f"Articoli con immagini:              {stats['files_with_figures']}")
+        print(f"Articoli senza immagini:            {stats['files_without_figures']}")
+        print("-" * 60)
+        print(f"Figure con caption:           {stats['total_captions']}")
+        print(f"Figure con termini inform.:   {stats['total_informative_terms_sets']}")
+        print(f"Paragrafi citanti totali:     {stats['total_citing_paragraphs']}")
+        print(f"Paragrafi contestuali tot.:   {stats['total_contextual_paragraphs']}")
+        print("="*60)
 
         print("\n--- Processo estrazione figure completato ---")
 
