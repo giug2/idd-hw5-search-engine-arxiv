@@ -15,7 +15,10 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.BooleanClause;
+import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.PrefixQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
@@ -156,6 +159,12 @@ public class Searcher {
         //index:target della ricerca (file, tabella, immagine)
         //campoScelto: di default a null
 
+        // Gestione speciale per la ricerca per data (solo per articoli)
+        // Sintassi: date:2025, date:2025-08, date:2025-08-12
+        if (testoRicerca.toLowerCase().contains("date:")) {
+            return buildDateQuery(testoRicerca, index, campoScelto);
+        }
+
         // Se campoScelto NON è nullo, l'utente vuole usare la sintassi completa (es. "title:term")
         if (campoScelto != null && !campoScelto.isEmpty()) {
             
@@ -192,6 +201,83 @@ public class Searcher {
         // L'utilizzo dell'istanza risolve l'errore di tipizzazione
         MultiFieldQueryParser multiParser = new MultiFieldQueryParser(defaultFields, analyzer);
         return multiParser.parse(testoRicerca);
+    }
+
+    /**
+     * Costruisce una query per la ricerca per data.
+     * Supporta:
+     * - date:2025 (tutti i documenti del 2025)
+     * - date:2025-08 (tutti i documenti di agosto 2025)
+     * - date:2025-08-12 (documenti esattamente del 12 agosto 2025)
+     * 
+     * Può essere combinata con altre query: "neural network AND date:2025"
+     */
+    private Query buildDateQuery(String testoRicerca, String index, String campoScelto) throws ParseException {
+        // Pattern per estrarre date:YYYY[-MM[-DD]]
+        java.util.regex.Pattern datePattern = java.util.regex.Pattern.compile(
+            "date:(\\d{4})(?:-(\\d{2}))?(?:-(\\d{2}))?", 
+            java.util.regex.Pattern.CASE_INSENSITIVE
+        );
+        java.util.regex.Matcher matcher = datePattern.matcher(testoRicerca);
+        
+        if (!matcher.find()) {
+            throw new ParseException("Formato data non valido. Usa: date:YYYY, date:YYYY-MM o date:YYYY-MM-DD");
+        }
+        
+        String year = matcher.group(1);
+        String month = matcher.group(2);
+        String day = matcher.group(3);
+        
+        // Costruisce il prefisso della data
+        String datePrefix;
+        if (day != null) {
+            datePrefix = year + "-" + month + "-" + day; // Ricerca esatta per giorno
+        } else if (month != null) {
+            datePrefix = year + "-" + month; // Tutti i documenti del mese
+        } else {
+            datePrefix = year; // Tutti i documenti dell'anno
+        }
+        
+        // Crea PrefixQuery per publicationDate
+        Query dateQuery = new PrefixQuery(new Term("publicationDate", datePrefix));
+        
+        // Rimuovi la parte date:... dalla query per vedere se ci sono altri termini
+        String remainingQuery = testoRicerca.replaceAll("(?i)date:\\d{4}(?:-\\d{2})?(?:-\\d{2})?", "").trim();
+        
+        // Rimuovi eventuali AND/OR rimasti all'inizio o alla fine
+        remainingQuery = remainingQuery.replaceAll("^(AND|OR)\\s+", "").replaceAll("\\s+(AND|OR)$", "").trim();
+        
+        if (remainingQuery.isEmpty()) {
+            // Solo ricerca per data
+            return dateQuery;
+        }
+        
+        // Combina ricerca per data con altri termini
+        String[] defaultFields;
+        switch (index.toLowerCase()) {
+            case "articoli":
+                defaultFields = new String[]{"title", "authors", "articleAbstract", "paragraphs"};
+                break;
+            case "tabelle":
+                defaultFields = new String[]{"caption", "body", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                break;
+            case "figure":
+                defaultFields = new String[]{"caption", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                break;
+            default:
+                defaultFields = new String[]{"title"};
+                break;
+        }
+        
+        MultiFieldQueryParser multiParser = new MultiFieldQueryParser(defaultFields, analyzer);
+        Query textQuery = multiParser.parse(remainingQuery);
+        
+        // Combina le due query con AND
+        BooleanQuery.Builder builder = new BooleanQuery.Builder();
+        builder.add(dateQuery, BooleanClause.Occur.MUST);
+        builder.add(textQuery, BooleanClause.Occur.MUST);
+        
+        return builder.build();
     }
 
 

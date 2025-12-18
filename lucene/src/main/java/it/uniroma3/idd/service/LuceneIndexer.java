@@ -82,7 +82,8 @@ public class LuceneIndexer {
             doc.add(new TextField("authors", String.join(" ", article.getAuthors()), TextField.Store.YES));
             doc.add(new TextField("paragraphs", String.join(" ", article.getParagraphs()), TextField.Store.YES));
             doc.add(new TextField("articleAbstract", article.getArticleAbstract(), TextField.Store.YES));
-            doc.add(new TextField("publicationDate", article.getPublicationDate(), Field.Store.YES));
+            // StringField per la data: non tokenizzata, ricercabile con PrefixQuery
+            doc.add(new StringField("publicationDate", article.getPublicationDate(), Field.Store.YES));
             writer.addDocument(doc);
         }
 

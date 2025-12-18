@@ -52,7 +52,10 @@ public class Parser {
         // ===== arXiv: testo Submitted on =====
         Element submitted = document.selectFirst("div.ltx_dates, span.ltx_date");
         if (submitted != null) {
-            return parseSubmittedDate(submitted.text());
+            String parsed = parseSubmittedDate(submitted.text());
+            if (!parsed.equals("Unknown Date")) {
+                return parsed;
+            }
         }
 
         // ===== PubMed (come prima) =====
@@ -74,6 +77,30 @@ public class Parser {
             }
         }
 
+        // ===== Fallback: commento HTML "Generated on" di LaTeXML =====
+        // Formato: <!--Generated on Tue Aug 12 22:39:29 2025 by LaTeXML-->
+        String html = document.html();
+        String parsed = parseGeneratedOnComment(html);
+        if (!parsed.equals("Unknown Date")) {
+            return parsed;
+        }
+
+        return "Unknown Date";
+    }
+
+    private String parseGeneratedOnComment(String html) {
+        // Cerca: <!--Generated on Day Mon DD HH:MM:SS YYYY by LaTeXML-->
+        // Esempio: <!--Generated on Tue Aug 12 22:39:29 2025 by LaTeXML-->
+        Pattern p = Pattern.compile("Generated on \\w+ (\\w+)\\s+(\\d{1,2}) [\\d:]+ (\\d{4}) by LaTeXML");
+        Matcher m = p.matcher(html);
+        if (m.find()) {
+            String month = normalizeMonth(m.group(1));
+            String day = m.group(2);
+            String year = m.group(3);
+            if (!month.isEmpty()) {
+                return year + "-" + month + "-" + (day.length() == 1 ? "0" + day : day);
+            }
+        }
         return "Unknown Date";
     }
 
