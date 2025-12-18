@@ -131,7 +131,7 @@ def download_articles(query, k):
     
     return {'requested': k, **totals}
 
-
+# -------- MAIN ---------
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Uso: python arxiv_scraper.py <query> <k>')
