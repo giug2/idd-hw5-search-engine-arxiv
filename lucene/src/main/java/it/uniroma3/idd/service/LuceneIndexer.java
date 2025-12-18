@@ -129,9 +129,6 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
 
 
         // --- LISTE ---
-        String termsString = table.getInformativeTerms() != null ? String.join(", ", table.getInformativeTerms()) : "";
-        doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
-
         String citingString = table.getCitingParagraphs() != null ? String.join(" ", table.getCitingParagraphs()) : "";
         doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
 
@@ -192,9 +189,6 @@ public void indexTables(String Pathdir, Codec codec) throws Exception {
             doc.add(new TextField("caption", caption, Field.Store.YES));
 
             // --- GESTIONE LISTE ---
-            String termsString = figure.getInformativeTerms() != null ? String.join(", ", figure.getInformativeTerms()) : "";
-            doc.add(new TextField("informative_terms", termsString, Field.Store.YES));
-
             String citingString = figure.getCitingParagraphs() != null ? String.join(" ", figure.getCitingParagraphs()) : "";
             doc.add(new TextField("citing_paragraphs", citingString, Field.Store.YES));
 

@@ -162,7 +162,6 @@ public class Parser {
     }
 
 
-
     public List<Article> articleParser() {
         // Log the configured articles path for diagnostics
         System.out.println("Configured articles path: " + luceneConfig.getArticlesPath());
@@ -256,6 +255,7 @@ public class Parser {
         return articles;
     }
 
+
     public List<Table> tableParser() {
         // Usiamo il getter per il path configurato nelle properties
         File dir = new File(luceneConfig.getTablesPath());
@@ -323,7 +323,6 @@ public class Parser {
 
                     // Estrazione Liste
                     List<String> mentions = extractStringList(tableData, "citing_paragraphs");
-                    List<String> terms = extractStringList(tableData, "informative_terms_identified");
                     
                     // Estrazione Contesto (Solo HTML)
                     // Usiamo il metodo helper specifico per appiattire la struttura complessa
@@ -345,7 +344,6 @@ public class Parser {
                         caption,            // caption
                         bodyText,           // body (TESTO PULITO per ricerca)
                         htmlCode,           // htmlCode (HTML GREZZO per visualizzazione)
-                        terms,              // informativeTerms
                         mentions,           // citingParagraphs
                         cpList              // contextualParagraphs
                     );
@@ -459,8 +457,6 @@ public class Parser {
                     String sourceFilename = figureData.path("source_file").asText(paperId);
                     String imageUrl = figureData.path("image_url").asText("");
                     String caption = figureData.path("caption").asText("");
-
-                    List<String> terms = extractStringList(figureData, "informative_terms_identified");
                     List<String> citingParagraphs = extractStringList(figureData, "citing_paragraphs");
                     List<String> contextParagraphs = extractContextFromComplexList(figureData, "contextual_paragraphs");
 
@@ -475,7 +471,6 @@ public class Parser {
                         sourceFilename,
                         imageUrl,
                         caption,
-                        terms,
                         citingParagraphs,
                         cpList
                     );

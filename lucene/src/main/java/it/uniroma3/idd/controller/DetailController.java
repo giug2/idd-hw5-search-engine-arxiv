@@ -99,7 +99,6 @@ public class DetailController {
                 results.put("Contesto", doc.get("contextual_paragraphs"));
                 results.put("ID Articolo Padre", doc.get("sourceFilename")); 
                 results.put("Menzioni", doc.get("citing_paragraphs")); 
-                results.put("Termini Chiave", doc.get("informative_terms")); 
 
 //                System.out.println("=================================================================================================================");
 //                System.out.println("CODICE HTML DI " +doc.get("sourceFilename")+":");
@@ -111,7 +110,6 @@ public class DetailController {
                 title = "Figura: " + doc.get("caption");
                 results.put("URL Immagine", doc.get("imageUrl"));
                 results.put("Caption", doc.get("caption"));
-                results.put("Termini Informativi", doc.get("informative_terms"));
                 results.put("Paragrafi Citanti", doc.get("citing_paragraphs"));
                 results.put("Paragrafi Contestuali", doc.get("contextual_paragraphs"));
                 results.put("File Sorgente", doc.get("sourceFilename"));

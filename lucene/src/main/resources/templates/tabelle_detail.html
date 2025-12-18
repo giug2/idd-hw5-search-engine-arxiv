@@ -28,14 +28,6 @@
         <p th:text="${document.results['ID Articolo Padre']}">Sorgente</p>
     </div>
 
-    <!-- Termini Informativi -->
-    <div class="detail-section" th:if="${document.results['Termini Chiave'] != null and document.results['Termini Chiave'] != ''}">
-        <h3>Termini Chiave</h3>
-        <div class="terms-list">
-            <span class="term-tag" th:each="term : ${#strings.arraySplit(document.results['Termini Chiave'], ',')}" th:text="${#strings.trim(term)}">termine</span>
-        </div>
-    </div>
-
     <!-- Paragrafi Citanti -->
     <div class="detail-section" th:if="${document.results['Menzioni'] != null and document.results['Menzioni'] != ''}">
         <h3>Paragrafi che Citano la Tabella</h3>

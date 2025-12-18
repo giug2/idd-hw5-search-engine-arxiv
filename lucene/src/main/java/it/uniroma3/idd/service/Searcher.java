@@ -184,10 +184,10 @@ public class Searcher {
                 defaultFields = new String[]{"title", "authors", "articleAbstract", "paragraphs"};
                 break;
             case "tabelle":
-                defaultFields = new String[]{"caption", "body", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                defaultFields = new String[]{"caption", "body", "citing_paragraphs", "contextual_paragraphs"};
                 break;
             case "figure":
-                defaultFields = new String[]{"caption", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                defaultFields = new String[]{"caption", "citing_paragraphs", "contextual_paragraphs"};
                 break;
             default:
                 defaultFields = new String[]{}; 
@@ -259,10 +259,10 @@ public class Searcher {
                 defaultFields = new String[]{"title", "authors", "articleAbstract", "paragraphs"};
                 break;
             case "tabelle":
-                defaultFields = new String[]{"caption", "body", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                defaultFields = new String[]{"caption", "body", "citing_paragraphs", "contextual_paragraphs"};
                 break;
             case "figure":
-                defaultFields = new String[]{"caption", "informative_terms", "citing_paragraphs", "contextual_paragraphs"};
+                defaultFields = new String[]{"caption", "citing_paragraphs", "contextual_paragraphs"};
                 break;
             default:
                 defaultFields = new String[]{"title"};

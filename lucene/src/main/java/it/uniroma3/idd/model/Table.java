@@ -30,9 +30,6 @@ public class Table {
     @JsonProperty("html_code")
     private String htmlCode; // HTML Grezzo
 
-    @JsonProperty("informative_terms_identified")
-    private List<String> informativeTerms;
-
     @JsonProperty("citing_paragraphs")
     private List<String> citingParagraphs;
 
@@ -48,7 +45,6 @@ public class Table {
         StringBuilder sb = new StringBuilder();
         if (caption != null) sb.append(caption).append(" ");
         if (body != null) sb.append(body).append(" "); 
-        if (informativeTerms != null) sb.append(String.join(" ", informativeTerms)).append(" ");
         
         if (citingParagraphs != null) {
             for (String p : citingParagraphs) {

@@ -31,14 +31,6 @@
         <a th:href="${document.results['URL Immagine']}" target="_blank" th:text="${document.results['URL Immagine']}">URL</a>
     </div>
 
-    <!-- Termini Informativi -->
-    <div class="detail-section" th:if="${document.results['Termini Informativi'] != null and document.results['Termini Informativi'] != ''}">
-        <h3>Termini Chiave</h3>
-        <div class="terms-list">
-            <span class="term-tag" th:each="term : ${#strings.arraySplit(document.results['Termini Informativi'], ',')}" th:text="${#strings.trim(term)}">termine</span>
-        </div>
-    </div>
-
     <!-- Paragrafi Citanti -->
     <div class="detail-section" th:if="${document.results['Paragrafi Citanti'] != null and document.results['Paragrafi Citanti'] != ''}">
         <h3>Paragrafi che Citano la Figura</h3>
