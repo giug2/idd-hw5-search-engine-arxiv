@@ -12,29 +12,35 @@
 
     <h1 th:text="${document.results['ID Articolo Padre']}">Titolo Tabella</h1>
     
-    <!-- Sezione Tabella Principale -->
     <div class="table-container" th:if="${document.results['HTML Tabella'] != null and document.results['HTML Tabella'] != ''}">
          <div th:utext="${document.results['HTML Tabella']}"></div>
     </div>
     
-    <!-- Didascalia Tabella -->
     <div class="caption-container" th:if="${document.results['Caption'] != null}">
         <span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
     </div>
 
-    <!-- File Sorgente -->
     <div class="detail-section" th:if="${document.results['ID Articolo Padre'] != null}">
         <h3>Articolo di Origine</h3>
-        <p th:text="${document.results['ID Articolo Padre']}">Sorgente</p>
+        
+        <div th:if="${document.results['ArticleID'] != null}">
+            <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
+                class="article-link"
+                style="text-decoration: none; font-weight: bold;">
+                Vai all'articolo: <span th:text="${document.results['ID Articolo Padre']}">Nome Articolo</span>
+            </a>
+        </div>
+
+        <div th:if="${document.results['ArticleID'] == null}">
+            <p th:text="${document.results['ID Articolo Padre']}">Sorgente</p>
+        </div>
     </div>
 
-    <!-- Paragrafi Citanti -->
     <div class="detail-section" th:if="${document.results['Menzioni'] != null and document.results['Menzioni'] != ''}">
         <h3>Paragrafi che Citano la Tabella</h3>
         <div class="paragraph-box" th:utext="${document.results['Menzioni']}">Paragrafi</div>
     </div>
 
-    <!-- Paragrafi Contestuali -->
     <div class="detail-section" th:if="${document.results['Contesto'] != null and document.results['Contesto'] != ''}">
         <h3>Paragrafi Contestualmente Rilevanti</h3>
         <div class="paragraph-box" th:utext="${document.results['Contesto']}">Paragrafi contestuali</div>

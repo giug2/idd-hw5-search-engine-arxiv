@@ -19,17 +19,15 @@ public class DetailController {
 
     private final Searcher searcher;
 
-
     @Autowired
     public DetailController(Searcher searcher) {
         this.searcher = searcher;
     }
 
-
     /**
      * Gestisce la visualizzazione dei dettagli per Articoli, Tabelle, Immagini, ecc.
      * URL: /dettaglio/{indexKey}/{id} (Esempio: /dettaglio/articoli/12345)
-     * * @param indexKey Identificatore dell'indice ("articoli", "tabelle", ecc.)
+     * @param indexKey Identificatore dell'indice ("articoli", "tabelle", ecc.)
      * @param id ID univoco del documento (campo "id" in Lucene)
      */
     @GetMapping("/dettaglio/{indexKey}/{id}")
@@ -67,7 +65,6 @@ public class DetailController {
         }
     }
 
-
     /**
      * Mappa il Documento Lucene al DTO GetDocumentResponse, gestendo i campi specifici
      * in modo scalabile (switch basato sulla chiave dell'indice).
@@ -84,8 +81,8 @@ public class DetailController {
             case "articoli":
                 title = doc.get("title");
                 authors = doc.get("authors");
-                String articleId = doc.get("id");
-                String rawHtmlUrl = "/raw_articles/" + articleId;
+                String rawArticleId = doc.get("id");
+                String rawHtmlUrl = "/raw_articles/" + rawArticleId;
                 results.put("URL Articolo Originale", rawHtmlUrl);
                 results.put("Abstract", doc.get("articleAbstract"));
                 results.put("Testo", doc.get("paragraphs"));
@@ -100,10 +97,18 @@ public class DetailController {
                 results.put("ID Articolo Padre", doc.get("sourceFilename")); 
                 results.put("Menzioni", doc.get("citing_paragraphs")); 
 
-//                System.out.println("=================================================================================================================");
-//                System.out.println("CODICE HTML DI " +doc.get("sourceFilename")+":");
-//                System.out.println(doc.get("html_table"));
-//                System.out.println("=================================================================================================================");
+                // estrazione dell'id del file genitore
+                String tableId = doc.get("id"); 
+                if (tableId != null && tableId.contains("_")) {
+                    // Prende tutto quello che c'è prima di "_"
+                    String extractedArticleId = tableId.substring(0, tableId.indexOf("_"));
+                    
+                    if (!extractedArticleId.endsWith(".html")) {
+                        extractedArticleId += ".html";
+                    }
+                    // salvo l'id pulito per usarlo nel link HTML
+                    results.put("ArticleID", extractedArticleId);
+                }
                 break;
 
             case "figure":
@@ -114,11 +119,10 @@ public class DetailController {
                 results.put("Paragrafi Contestuali", doc.get("contextual_paragraphs"));
                 results.put("File Sorgente", doc.get("sourceFilename"));
                 
-                // Estrazione ID Articolo per il link
+                // Logica analoga già presente per le figure
                 String figureId = doc.get("id");
                 if (figureId != null && figureId.contains("_")) {
                     String extractedArticleId = figureId.substring(0, figureId.indexOf("_"));
-                    // Aggiungi l'estensione .html se non presente, poiché l'ID dell'articolo nel parser include l'estensione
                     if (!extractedArticleId.endsWith(".html")) {
                         extractedArticleId += ".html";
                     }

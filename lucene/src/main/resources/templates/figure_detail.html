@@ -35,6 +35,7 @@
     <div class="detail-section" th:if="${document.results['ArticleID'] != null}">
         <h3>Articolo di Riferimento</h3>
         <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
+            class="article-link"
            th:text="'Vai all\'articolo: ' + ${document.results['File Sorgente']}">
            Vai all'articolo
         </a>
