@@ -113,6 +113,17 @@ public class DetailController {
                 results.put("Paragrafi Citanti", doc.get("citing_paragraphs"));
                 results.put("Paragrafi Contestuali", doc.get("contextual_paragraphs"));
                 results.put("File Sorgente", doc.get("sourceFilename"));
+                
+                // Estrazione ID Articolo per il link
+                String figureId = doc.get("id");
+                if (figureId != null && figureId.contains("_")) {
+                    String extractedArticleId = figureId.substring(0, figureId.indexOf("_"));
+                    // Aggiungi l'estensione .html se non presente, poiché l'ID dell'articolo nel parser include l'estensione
+                    if (!extractedArticleId.endsWith(".html")) {
+                        extractedArticleId += ".html";
+                    }
+                    results.put("ArticleID", extractedArticleId);
+                }
                 break;
     
             default:

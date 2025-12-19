@@ -31,6 +31,15 @@
         <a th:href="${document.results['URL Immagine']}" target="_blank" th:text="${document.results['URL Immagine']}">URL</a>
     </div>
 
+    <!-- Link all'Articolo -->
+    <div class="detail-section" th:if="${document.results['ArticleID'] != null}">
+        <h3>Articolo di Riferimento</h3>
+        <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
+           th:text="'Vai all\'articolo: ' + ${document.results['File Sorgente']}">
+           Vai all'articolo
+        </a>
+    </div>
+
     <!-- Paragrafi Citanti -->
     <div class="detail-section" th:if="${document.results['Paragrafi Citanti'] != null and document.results['Paragrafi Citanti'] != ''}">
         <h3>Paragrafi che Citano la Figura</h3>
