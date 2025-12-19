@@ -299,8 +299,8 @@ public class Searcher {
                 
                 String abst = doc.get("articleAbstract");
                 snippet = (abst != null) ? abst.substring(0, Math.min(abst.length(), 150)) + "..." : "Abstract non disponibile.";
-                // Link diretto al file HTML originale
-                urlDettaglio = "/raw_articles/" + id;
+                // Link alla pagina di dettaglio dell'articolo
+                urlDettaglio = "/dettaglio/articoli/" + id;
             } else if ("tabelle".equals(indexKey)) { 
                 titolo = doc.get("caption");
                 String context = doc.get("contextual_paragraphs");

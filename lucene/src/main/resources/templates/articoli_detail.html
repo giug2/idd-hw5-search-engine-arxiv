@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${document.title}">Dettaglio Articolo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
+
+    <h1 th:text="${document.title}">Titolo Articolo</h1>
+    
+    <!-- Informazioni Generali -->
+    <div class="article-meta">
+        <p><strong>ID Articolo:</strong> <span th:text="${document.id}"></span></p>
+        <p th:if="${document.authors != null and document.authors != 'N/A'}">
+            <strong>Autori:</strong> <span th:text="${document.authors}"></span>
+        </p>
+        <p th:if="${document.results.containsKey('Data di Pubblicazione') and document.results.get('Data di Pubblicazione') != null}">
+            <strong>Data di Pubblicazione:</strong> <span th:text="${document.results.get('Data di Pubblicazione')}"></span>
+        </p>
+    </div>
+
+    <!-- Link al File Originale -->
+    <div class="detail-section" th:if="${document.results.containsKey('URL Articolo Originale')}">
+        <h3>Link Articolo Originale</h3>
+        <a th:href="${document.results.get('URL Articolo Originale')}" 
+           target="_blank" 
+           class="article-link">
+            Visualizza Articolo HTML Originale →
+        </a>
+    </div>
+
+    <!-- Abstract -->
+    <div class="detail-section" th:if="${document.results.containsKey('Abstract') and document.results.get('Abstract') != null}">
+        <h3>Abstract</h3>
+        <div class="paragraph-box" th:utext="${document.results.get('Abstract')}">Contenuto dell'abstract...</div>
+    </div>
+
+    <!-- Testo dell'Articolo -->
+    <div class="detail-section" th:if="${document.results.containsKey('Testo') and document.results.get('Testo') != null}">
+        <h3>Contenuto dell'Articolo</h3>
+        <div class="paragraph-box article-text" th:utext="${document.results.get('Testo')}">Testo completo...</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="detail-footer">
+        <p>Dati recuperati dall'indice Lucene: <strong th:text="${indexKey.toUpperCase()}"></strong></p>
+    </div>
+
+</div>
+
+</body>
+</html>
