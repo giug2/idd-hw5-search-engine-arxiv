@@ -12,9 +12,9 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.HashMap;
 import java.util.Map;
+
 
 @Configuration
 public class LuceneConfig {
@@ -31,6 +31,7 @@ public class LuceneConfig {
     @Value("${lucene.searcher.tresholdMultiplier}")
     private float treasholdMultiplier;
 
+    // PATH INPUT
     @Getter
     @Value("${data.articles.path}")
     private String articlesPath;
@@ -43,6 +44,7 @@ public class LuceneConfig {
     @Value("${data.figures.path}")
     private String figuresPath;
 
+    // PATH INDEX
     @Getter
     @Value("${lucene.index.directory}")
     private String indexDirectory;
@@ -54,6 +56,7 @@ public class LuceneConfig {
     @Getter
     @Value("${lucene.index_figure.directory}")
     private String figureDirectory;
+
 
     @Bean
     public Analyzer customAnalyzer() {
@@ -67,6 +70,7 @@ public class LuceneConfig {
         };
     }
 
+
     @Bean
     public Analyzer perFieldAnalyzer() {
         Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
@@ -79,6 +83,20 @@ public class LuceneConfig {
         perFieldAnalyzers.put("authors", simple);
         perFieldAnalyzers.put("paragraphs", standard);
         perFieldAnalyzers.put("articleAbstract", standard);
+
+        // Tables
+        perFieldAnalyzers.put("caption", simple);
+        perFieldAnalyzers.put("body", whitespace);
+        perFieldAnalyzers.put("mentions", standard);
+        perFieldAnalyzers.put("context_paragraphs", standard);
+
+        // Images
+        perFieldAnalyzers.put("alt", simple);
+        perFieldAnalyzers.put("src", simple);
+        perFieldAnalyzers.put("mentions", standard);
+        perFieldAnalyzers.put("context_paragraphs", standard);
+        perFieldAnalyzers.put("saved_path", simple);
+        perFieldAnalyzers.put("fileName", simple);
 
         return new PerFieldAnalyzerWrapper(customAnalyzer(), perFieldAnalyzers);
     }

@@ -2,8 +2,8 @@ package it.uniroma3.idd.model;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
-
 import java.util.List;
+
 
 public class Article {
 
@@ -19,6 +19,7 @@ public class Article {
     private String articleAbstract;
     private String publicationDate;
 
+
     // Constructor
     public Article(String id, String title, List<String> authors, List<String> paragraphs, String articleAbstract, String publicationDate) {
         this.id = id;
@@ -28,6 +29,7 @@ public class Article {
         this.articleAbstract = articleAbstract;
         this.publicationDate = publicationDate;
     }
+
 
     // Getters and Setters
     public String getId() {

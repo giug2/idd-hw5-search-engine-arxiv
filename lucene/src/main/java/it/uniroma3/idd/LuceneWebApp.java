@@ -3,6 +3,7 @@ package it.uniroma3.idd;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class LuceneWebApp {
 
@@ -12,12 +13,3 @@ public class LuceneWebApp {
 }
 
 // mvn spring-boot:run
-
-//mvn clean install
-
-/*possibili input tabelle:
-caption prompt optimization
-
-misogyny
-
-*/

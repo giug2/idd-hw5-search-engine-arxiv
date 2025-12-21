@@ -5,16 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor // Genera automaticamente il costruttore con TUTTI i campi
+@AllArgsConstructor 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Table {
 
-    // --- Metadati ---
     private String id; 
 
     // --- Dati JSON ---
@@ -38,9 +37,6 @@ public class Table {
 
     // --- RIMOSSO IL COSTRUTTORE MANUALE (Ci pensa Lombok) ---
 
-    /**
-     * Metodo di utilità per la ricerca (questo resta, non è un costruttore)
-     */
     public String getAllSearchableText() {
         StringBuilder sb = new StringBuilder();
         if (caption != null) sb.append(caption).append(" ");

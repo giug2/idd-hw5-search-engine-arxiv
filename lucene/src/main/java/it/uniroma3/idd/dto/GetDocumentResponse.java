@@ -2,8 +2,8 @@ package it.uniroma3.idd.dto;
 
 import lombok.*;
 import org.apache.lucene.document.Document;
-
 import java.util.Map;
+
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class GetDocumentResponse {
@@ -25,7 +25,4 @@ public class GetDocumentResponse {
                 Map.of("snippet", snippet, "snippetField", snippetField)
         );
     }
-
-
-
 }

@@ -2,7 +2,6 @@ package it.uniroma3.idd.controller;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.lucene.document.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,9 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import it.uniroma3.idd.dto.GetDocumentResponse;
 import it.uniroma3.idd.service.Searcher;
+
 
 @Controller
 public class DetailController {
@@ -23,6 +22,7 @@ public class DetailController {
     public DetailController(Searcher searcher) {
         this.searcher = searcher;
     }
+
 
     /**
      * Gestisce la visualizzazione dei dettagli per Articoli, Tabelle, Immagini, ecc.
@@ -37,22 +37,16 @@ public class DetailController {
             @RequestParam(name = "articleId", required = false) String articleId, 
             Model model) {
         
-        System.out.println("DEBUG: Richiesta dettaglio Articolo. ID ricevuto: '" + id + 
-                   "', Indice: " + indexKey);
         try {
-            
             Document luceneDoc = searcher.getDocumentById(id, indexKey);
-
             if (luceneDoc == null) {
                 model.addAttribute("error", "Documento non trovato con ID: " + id + " nell'indice: " + indexKey);
                 return "error_page"; 
             }
             
             GetDocumentResponse responseDTO = mapDocumentToResponse(luceneDoc, indexKey);
-            
             model.addAttribute("document", responseDTO);
             model.addAttribute("indexKey", indexKey);
-
             return indexKey + "_detail"; 
             
         } catch (IllegalArgumentException e) {
@@ -64,6 +58,7 @@ public class DetailController {
             return "error_page";
         }
     }
+
 
     /**
      * Mappa il Documento Lucene al DTO GetDocumentResponse, gestendo i campi specifici
@@ -129,12 +124,9 @@ public class DetailController {
                     results.put("ArticleID", extractedArticleId);
                 }
                 break;
-    
             default:
                 results.put("Raw Data", doc.toString()); 
         }   
-
         return new GetDocumentResponse(id, title, authors, results);
     }
-    
 }

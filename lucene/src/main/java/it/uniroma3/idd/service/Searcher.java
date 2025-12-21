@@ -1,5 +1,9 @@
 package it.uniroma3.idd.service;
 
+import it.uniroma3.idd.evaluation.*;
+import it.uniroma3.idd.config.LuceneConfig;
+import it.uniroma3.idd.dto.SearchResult;
+import it.uniroma3.idd.event.IndexingCompleteEvent;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -7,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -28,20 +31,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
-
-import it.uniroma3.idd.config.LuceneConfig;
-import it.uniroma3.idd.dto.SearchResult;
-import it.uniroma3.idd.event.IndexingCompleteEvent;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
+
 @Service
 public class Searcher {
+
     private final Path indexPath;
     private final Analyzer analyzer;
 
     private final Map<String, IndexSearcher> searcherMap = new HashMap<>();
     private final Map<String, DirectoryReader> readerMap = new HashMap<>();
+
 
     @Value("#{${lucene.indices.map}}")
     private Map<String, String> indexPaths; 
@@ -52,91 +54,56 @@ public class Searcher {
         this.analyzer = perFieldAnalyzer;
     }
 
-    @PostConstruct
-    public void init()throws IOException {
-        System.out.println("Inizializzazione searcher");
 
-        for (Map.Entry<String, String> entry : indexPaths.entrySet()) {
-            String indexKey = entry.getKey();
-            String path = entry.getValue();
-            
-            try {
-                DirectoryReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(path)));
-                IndexSearcher searcher = new IndexSearcher(reader);
-                
-                readerMap.put(indexKey, reader);
-                searcherMap.put(indexKey, searcher);
-                System.out.println("-> Caricato indice: " + indexKey + " da: " + path);
-            } catch (IOException e) {
-                System.err.println("Errore nel caricamento dell'indice '" + indexKey + "' dal percorso: " + path + ". " + e.getMessage());
-            }
+    // ===== UTILS ======
+    public void evaluateAndPrintPerQuery(String queryText, List<SearchResult> results, String indice, int k) {
+        Map<String, Integer> relevanceMap = new HashMap<>();
+        List<String> ranking = new ArrayList<>();
+
+        for (SearchResult result : results) {
+            int rel = ResultRelevanceEvaluator.evaluate(queryText, result, null).value;
+            relevanceMap.put(result.getIdUnivoco(), rel);
+            ranking.add(result.getIdUnivoco());
         }
+
+        double ndcg = EvaluationMetrics.ndcg(ranking, relevanceMap, k);
+        double rr = EvaluationMetrics.reciprocalRank(ranking, relevanceMap);
+
+        System.out.println("=====================================");
+        System.out.println("Query: \"" + queryText + "\"");
+        System.out.println("Indice: " + indice);
+        System.out.println("Results: " + results.size());
+        System.out.printf("NDCG@%d = %.3f%n", k, ndcg);
+        System.out.printf("RR      = %.3f%n", rr);
+        System.out.println("=====================================");
     }
 
-    @PreDestroy
-    public void destroy() {
-        System.out.println("Chiusura di tutti i DirectoryReader...");
-        for (DirectoryReader reader : readerMap.values()) {
-            try {
-                reader.close();
-            } catch (IOException e) {
-                System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
-            }
+    // metodo di supporto per la ricerca dettagliata di un documento 
+    public Document getDocumentById(String id, String indexKey) throws IOException {
+        IndexSearcher targetSearcher = searcherMap.get(indexKey);
+        if (targetSearcher == null) {
+            throw new IllegalArgumentException("Indice non valido o non caricato: " + indexKey);
         }
-    }
-
-    /**
-     * Ricarica tutti gli indici dopo che l'indicizzazione è completata.
-     * Questo metodo viene chiamato automaticamente quando viene pubblicato l'evento IndexingCompleteEvent.
-     */
-    @EventListener
-    public void onIndexingComplete(IndexingCompleteEvent event) {
-        System.out.println("Ricaricamento indici dopo indicizzazione...");
         
-        // Chiudi prima i reader esistenti
-        for (DirectoryReader reader : readerMap.values()) {
-            try {
-                reader.close();
-            } catch (IOException e) {
-                System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
-            }
-        }
-        readerMap.clear();
-        searcherMap.clear();
+        Query idQuery = new TermQuery(new Term("id", id));
         
-        // Ricarica gli indici
-        for (Map.Entry<String, String> entry : indexPaths.entrySet()) {
-            String indexKey = entry.getKey();
-            String path = entry.getValue();
-            
-            try {
-                DirectoryReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(path)));
-                IndexSearcher searcher = new IndexSearcher(reader);
-                
-                readerMap.put(indexKey, reader);
-                searcherMap.put(indexKey, searcher);
-                System.out.println("-> Ricaricato indice: " + indexKey + " da: " + path + " (docs: " + reader.numDocs() + ")");
-            } catch (IOException e) {
-                System.err.println("Errore nel ricaricamento dell'indice '" + indexKey + "': " + e.getMessage());
-            }
+        TopDocs hits = targetSearcher.search(idQuery, 1);
+
+        if (hits.scoreDocs.length > 0) {
+            return targetSearcher.storedFields().document(hits.scoreDocs[0].doc);
         }
-        System.out.println("Indici ricaricati con successo!");
+        return null;
     }
 
 
-    //!===============================================================================
-    //!                         FUNZIONE DI RICERCA PRINCIPALE
-    //!===============================================================================
+
+    // FUNZIONE DI RICERCA PRINCIPALE
     public Map<String, List<SearchResult>> search(String queryText, List<String> indicesScelti, String campoScelto) throws Exception {
-
-        //field: campo di ricerca title, ecc
-        //querytext: termine cercato
 
         Map<String, List<SearchResult>> risultatiFinali = new HashMap<>();
 
         for (String currentIndex : indicesScelti) {
             IndexSearcher currentSearcher = searcherMap.get(currentIndex);
-
 
             if (currentSearcher == null) {
                 System.err.println("nessun risultato trovato per '" + queryText + "' tra: " + currentIndex);
@@ -145,14 +112,19 @@ public class Searcher {
 
             Query query = buildQuery(queryText, currentIndex, campoScelto);
             TopDocs hits = currentSearcher.search(query, 10);
-            risultatiFinali.put(currentIndex, mapHitsToDTO(hits, currentSearcher, currentIndex));
-        }
 
+            // Mappa i risultati da TopDocs a DTO
+            List<SearchResult> currentResults = mapHitsToDTO(hits, currentSearcher, currentIndex);
+            // Salva i risultati nella mappa finale
+            risultatiFinali.put(currentIndex, currentResults);
+            // Valuta e stampa la query usando la lista corretta
+            evaluateAndPrintPerQuery(queryText, currentResults, currentIndex, 10);
+        }
         return risultatiFinali;
     }
 
 
-    //!metodo di supporto che costruisce una query specifica per il caso di utilizzo
+    // Metodo di supporto che costruisce una query specifica per il caso di utilizzo
     private Query buildQuery(String testoRicerca, String index, String campoScelto) throws ParseException {
 
         //testoRicerca: effettiva ricerca dell'utente
@@ -209,7 +181,6 @@ public class Searcher {
      * - date:2025 (tutti i documenti del 2025)
      * - date:2025-08 (tutti i documenti di agosto 2025)
      * - date:2025-08-12 (documenti esattamente del 12 agosto 2025)
-     * 
      * Può essere combinata con altre query: "neural network AND date:2025"
      */
     private Query buildDateQuery(String testoRicerca, String index, String campoScelto) throws ParseException {
@@ -240,10 +211,8 @@ public class Searcher {
         
         // Crea PrefixQuery per publicationDate
         Query dateQuery = new PrefixQuery(new Term("publicationDate", datePrefix));
-        
         // Rimuovi la parte date:... dalla query per vedere se ci sono altri termini
         String remainingQuery = testoRicerca.replaceAll("(?i)date:\\d{4}(?:-\\d{2})?(?:-\\d{2})?", "").trim();
-        
         // Rimuovi eventuali AND/OR rimasti all'inizio o alla fine
         remainingQuery = remainingQuery.replaceAll("^(AND|OR)\\s+", "").replaceAll("\\s+(AND|OR)$", "").trim();
         
@@ -281,9 +250,7 @@ public class Searcher {
     }
 
 
-    // -------------------------------------------------------------------------
     // HELPER: MAPPATURA RISULTATI (Hits -> DTO)
-    // -------------------------------------------------------------------------
     private List<SearchResult> mapHitsToDTO(TopDocs hits, IndexSearcher searcher, String indexKey) throws IOException {
         List<SearchResult> results = new ArrayList<>();
         
@@ -299,7 +266,6 @@ public class Searcher {
                 
                 String abst = doc.get("articleAbstract");
                 snippet = (abst != null) ? abst.substring(0, Math.min(abst.length(), 150)) + "..." : "Abstract non disponibile.";
-                // Link alla pagina di dettaglio dell'articolo
                 urlDettaglio = "/dettaglio/articoli/" + id;
             } else if ("tabelle".equals(indexKey)) { 
                 titolo = doc.get("caption");
@@ -317,64 +283,8 @@ public class Searcher {
                 snippet = "Dettagli non ancora mappati per questo tipo di indice.";
                 urlDettaglio = "/dettaglio/" + indexKey + "/" + id;
             }
-
             results.add(new SearchResult(indexKey.toUpperCase(), id, titolo, snippet, score, urlDettaglio));
         }
         return results;
-    }
-
-
-    
-    // metodo di supporto per la ricerca dettagliata di un documento 
-    public Document getDocumentById(String id, String indexKey) throws IOException {
-        IndexSearcher targetSearcher = searcherMap.get(indexKey);
-        if (targetSearcher == null) {
-            throw new IllegalArgumentException("Indice non valido o non caricato: " + indexKey);
-        }
-        
-        Query idQuery = new TermQuery(new Term("id", id));
-        
-        TopDocs hits = targetSearcher.search(idQuery, 1);
-
-        if (hits.scoreDocs.length > 0) {
-            return targetSearcher.storedFields().document(hits.scoreDocs[0].doc);
-        }
-        return null;
-    }
-
-
-
-
-
-
-
-
-
-
-    //!=============== METODI DEPRECATI ===============
-
-    public List<Document> searchDocuments(String field, String queryText) throws Exception {
-        List<Document> resultsList = new ArrayList<>();
-
-        try (DirectoryReader reader = DirectoryReader.open(FSDirectory.open(indexPath))) {
-            IndexSearcher searcher = new IndexSearcher(reader);
-
-            Query query;
-            QueryParser parser;
-            
-            parser = new QueryParser(field, analyzer);
-            query = parser.parse(queryText);
-
-            // Esegui la ricerca (top 10 risultati)
-            TopDocs results = searcher.search(query, 10);
-            ScoreDoc[] hits = results.scoreDocs;
-
-            for (ScoreDoc hit : hits) {
-                Document doc = searcher.storedFields().document(hit.doc);
-                resultsList.add(doc);
-            }
-        }
-
-        return resultsList;
     }
 }

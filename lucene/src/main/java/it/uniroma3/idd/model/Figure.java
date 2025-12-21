@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -14,8 +14,6 @@ public class Figure {
 
     // ID univoco della figura (es. "2510.12175v3_Sx3.F1")
     private String id;
-
-    // --- Dati estratti dal JSON ---
 
     // Nome/titolo del file sorgente
     @JsonProperty("source_file")
@@ -37,9 +35,7 @@ public class Figure {
     @JsonProperty("contextual_paragraphs")
     private List<ContextualParagraph> contextualParagraphs;
 
-    /**
-     * Costruttore completo per compatibilità con il Parser
-     */
+
     public Figure(String id, String sourceFilename, String imageUrl, String caption,
                   List<String> citingParagraphs,
                   List<ContextualParagraph> contextualParagraphs) {
@@ -51,9 +47,7 @@ public class Figure {
         this.contextualParagraphs = contextualParagraphs;
     }
 
-    /**
-     * Metodo di utilità per ottenere tutto il testo ricercabile in un'unica stringa.
-     */
+
     public String getAllSearchableText() {
         StringBuilder sb = new StringBuilder();
         if (caption != null) sb.append(caption).append(" ");

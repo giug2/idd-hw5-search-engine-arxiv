@@ -35,14 +35,12 @@ public class IndexListener implements ApplicationListener<IndexingCompleteEvent>
         statsService.statsIndex(articlesIndexPath, "ARTICOLI"); 
 
         // Ottiene il Path per l'indice delle Tabelle
-        // Usa il nuovo campo 'tableDirectory' della configurazione
         Path tablesIndexPath = Paths.get(luceneConfig.getTableDirectory());
         
         // Esegue le statistiche per le Tabelle
         statsService.statsIndex(tablesIndexPath, "TABELLE");
 
         // Ottiene il Path per l'indice delle Immagini
-        // Usa il nuovo campo 'imageDirectory' della configurazione
         Path imageIndexPath = Paths.get(luceneConfig.getFigureDirectory());
         
         // Esegue le statistiche per le Tabelle
