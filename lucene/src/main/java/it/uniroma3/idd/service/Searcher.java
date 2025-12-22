@@ -166,7 +166,7 @@ public class Searcher {
             Query query = buildQuery(queryText, currentIndex, campoScelto);
             TopDocs hits = currentSearcher.search(query, 10);
 
-             long endTime = System.currentTimeMillis();
+            long endTime = System.currentTimeMillis();
             long duration = endTime - startTime;
 
             //stampo le metriche tramite l'apposito servizio

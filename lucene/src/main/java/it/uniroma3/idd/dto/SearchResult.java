@@ -16,5 +16,4 @@ public class SearchResult {
     private String snippet; 
     private float score; 
     private String urlDettaglio; 
-
 }
