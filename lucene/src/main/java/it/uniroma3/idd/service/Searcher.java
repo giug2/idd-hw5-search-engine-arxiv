@@ -3,6 +3,7 @@ package it.uniroma3.idd.service;
 import it.uniroma3.idd.evaluation.*;
 import it.uniroma3.idd.config.LuceneConfig;
 import it.uniroma3.idd.dto.SearchResult;
+import it.uniroma3.idd.service.MetricService;
 import it.uniroma3.idd.event.IndexingCompleteEvent;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -41,6 +42,8 @@ public class Searcher {
     private final Path indexPath;
     private final Analyzer analyzer;
 
+    private final MetricService metricService; 
+
     private final Map<String, IndexSearcher> searcherMap = new HashMap<>();
     private final Map<String, DirectoryReader> readerMap = new HashMap<>();
 
@@ -49,9 +52,10 @@ public class Searcher {
     private Map<String, String> indexPaths; 
 
     @Autowired
-    public Searcher(LuceneConfig luceneConfig, Analyzer perFieldAnalyzer) {
+    public Searcher(LuceneConfig luceneConfig, Analyzer perFieldAnalyzer, MetricService metricService) {
         this.indexPath = Paths.get(luceneConfig.getIndexDirectory());
         this.analyzer = perFieldAnalyzer;
+        this.metricService = metricService;
     }
 
 
@@ -126,28 +130,6 @@ public class Searcher {
 
 
     // ===== UTILS ======
-    public void evaluateAndPrintPerQuery(String queryText, List<SearchResult> results, String indice, int k) {
-        Map<String, Integer> relevanceMap = new HashMap<>();
-        List<String> ranking = new ArrayList<>();
-
-        for (SearchResult result : results) {
-            int rel = ResultRelevanceEvaluator.evaluate(queryText, result, null).value;
-            relevanceMap.put(result.getIdUnivoco(), rel);
-            ranking.add(result.getIdUnivoco());
-        }
-
-        double ndcg = EvaluationMetrics.ndcg(ranking, relevanceMap, k);
-        double rr = EvaluationMetrics.reciprocalRank(ranking, relevanceMap);
-
-        System.out.println("=====================================");
-        System.out.println("Query: \"" + queryText + "\"");
-        System.out.println("Indice: " + indice);
-        System.out.println("Results: " + results.size());
-        System.out.printf("NDCG@%d = %.3f%n", k, ndcg);
-        System.out.printf("RR      = %.3f%n", rr);
-        System.out.println("=====================================");
-    }
-
     // metodo di supporto per la ricerca dettagliata di un documento 
     public Document getDocumentById(String id, String indexKey) throws IOException {
         IndexSearcher targetSearcher = searcherMap.get(indexKey);
@@ -168,11 +150,11 @@ public class Searcher {
 
 
     // FUNZIONE DI RICERCA PRINCIPALE
-    public Map<String, List<SearchResult>> search(String queryText, List<String> indicesScelti, String campoScelto) throws Exception {
+    public Map<String, List<SearchResult>> search(String queryText, List<String> indiceScelti, String campoScelto) throws Exception {
 
         Map<String, List<SearchResult>> risultatiFinali = new HashMap<>();
 
-        for (String currentIndex : indicesScelti) {
+        for (String currentIndex : indiceScelti) {
             IndexSearcher currentSearcher = searcherMap.get(currentIndex);
 
             if (currentSearcher == null) {
@@ -180,15 +162,20 @@ public class Searcher {
                 continue; 
             }
 
+            long startTime = System.currentTimeMillis();
             Query query = buildQuery(queryText, currentIndex, campoScelto);
             TopDocs hits = currentSearcher.search(query, 10);
+
+             long endTime = System.currentTimeMillis();
+            long duration = endTime - startTime;
+
+            //stampo le metriche tramite l'apposito servizio
+            metricService.evaluateSearch(hits, queryText, currentIndex, duration, currentSearcher);
 
             // Mappa i risultati da TopDocs a DTO
             List<SearchResult> currentResults = mapHitsToDTO(hits, currentSearcher, currentIndex);
             // Salva i risultati nella mappa finale
             risultatiFinali.put(currentIndex, currentResults);
-            // Valuta e stampa la query usando la lista corretta
-            evaluateAndPrintPerQuery(queryText, currentResults, currentIndex, 10);
         }
         return risultatiFinali;
     }
