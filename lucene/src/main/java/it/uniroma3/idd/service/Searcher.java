@@ -55,6 +55,76 @@ public class Searcher {
     }
 
 
+    @PostConstruct
+    public void init()throws IOException {
+        System.out.println("Inizializzazione searcher");
+
+        for (Map.Entry<String, String> entry : indexPaths.entrySet()) {
+            String indexKey = entry.getKey();
+            String path = entry.getValue();
+            
+            try {
+                DirectoryReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(path)));
+                IndexSearcher searcher = new IndexSearcher(reader);
+                
+                readerMap.put(indexKey, reader);
+                searcherMap.put(indexKey, searcher);
+                System.out.println("-> Caricato indice: " + indexKey + " da: " + path);
+            } catch (IOException e) {
+                System.err.println("Errore nel caricamento dell'indice '" + indexKey + "' dal percorso: " + path + ". " + e.getMessage());
+            }
+        }
+    }
+
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Chiusura di tutti i DirectoryReader...");
+        for (DirectoryReader reader : readerMap.values()) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
+            }
+        }
+    }
+
+
+    @EventListener
+    public void onIndexingComplete(IndexingCompleteEvent event) {
+        System.out.println("Ricaricamento indici dopo indicizzazione...");
+        
+        // Chiudi prima i reader esistenti
+        for (DirectoryReader reader : readerMap.values()) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.err.println("Errore durante la chiusura del reader: " + e.getMessage());
+            }
+        }
+        readerMap.clear();
+        searcherMap.clear();
+        
+        // Ricarica gli indici
+        for (Map.Entry<String, String> entry : indexPaths.entrySet()) {
+            String indexKey = entry.getKey();
+            String path = entry.getValue();
+            
+            try {
+                DirectoryReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(path)));
+                IndexSearcher searcher = new IndexSearcher(reader);
+                
+                readerMap.put(indexKey, reader);
+                searcherMap.put(indexKey, searcher);
+                System.out.println("-> Ricaricato indice: " + indexKey + " da: " + path + " (docs: " + reader.numDocs() + ")");
+            } catch (IOException e) {
+                System.err.println("Errore nel ricaricamento dell'indice '" + indexKey + "': " + e.getMessage());
+            }
+        }
+        System.out.println("Indici ricaricati con successo!");
+    }
+
+
     // ===== UTILS ======
     public void evaluateAndPrintPerQuery(String queryText, List<SearchResult> results, String indice, int k) {
         Map<String, Integer> relevanceMap = new HashMap<>();

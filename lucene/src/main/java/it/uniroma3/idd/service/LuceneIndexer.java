@@ -113,7 +113,6 @@ public class LuceneIndexer {
             doc.add(new StringField("publicationDate", article.getPublicationDate(), Field.Store.YES));
             writer.addDocument(doc);
         }
-
         writer.commit();
         writer.close();
     }

@@ -212,9 +212,6 @@ public class Parser {
         System.out.println("Articles directory absolute path: " + dir.getAbsolutePath());
         System.out.println("Number of files in the directory: " + files.length);
 
-        for (File f : files) {
-            System.out.println(" - found file: " + f.getName());
-        }
         List<Article> articles = new ArrayList<>();
 
         for (File file : files) {

@@ -85,6 +85,69 @@ public class SearchController {
     }
 
 
+    @GetMapping("/view/{fileName:.+}")
+    public String viewArticle(@PathVariable String fileName, Model model) {
+        try {
+            Path filePath = Paths.get(luceneConfig.getArticlesPath()).resolve(fileName).normalize();
+            File file = filePath.toFile();
+            
+            if (!file.exists()) {
+                model.addAttribute("error", "File non trovato: " + fileName);
+                return "index";
+            }
+
+            Document document = Jsoup.parse(file, "UTF-8");
+            
+            // Extract fields using the same logic as Parser.java
+            String title = document.select("article-title").first() != null ? document.select("article-title").first().text() : "No Title Found";
+            
+            List<String> authors = new ArrayList<>();
+            document.select("contrib[contrib-type=author] name").forEach(nameElement -> {
+                String surname = nameElement.select("surname").text();
+                String givenNames = nameElement.select("given-names").text();
+                authors.add(givenNames + " " + surname);
+            });
+            
+            String articleAbstract = document.select("abstract p").first() != null ? document.select("abstract p").text() : "No Abstract Found";
+            
+            // Date extraction
+            String publicationDate = "Unknown Date";
+            org.jsoup.nodes.Element pubDateElement = document.select("pub-date").first();
+            if (pubDateElement != null) {
+                String year = pubDateElement.select("year").text();
+                String month = pubDateElement.select("month").text();
+                String day = pubDateElement.select("day").text();
+                
+                if (!year.isEmpty()) {
+                    publicationDate = year;
+                    if (!month.isEmpty()) {
+                        publicationDate += "-" + (month.length() == 1 ? "0" + month : month);
+                        if (!day.isEmpty()) {
+                            publicationDate += "-" + (day.length() == 1 ? "0" + day : day);
+                        }
+                    }
+                }
+            }
+
+            List<String> paragraphs = new ArrayList<>();
+            document.select("body p").forEach(paragraph -> paragraphs.add(paragraph.text()));
+
+            model.addAttribute("fileName", fileName);
+            model.addAttribute("title", title);
+            model.addAttribute("authors", authors);
+            model.addAttribute("articleAbstract", articleAbstract);
+            model.addAttribute("publicationDate", publicationDate);
+            model.addAttribute("paragraphs", paragraphs);
+            
+            return "article";
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore durante la lettura del file: " + e.getMessage());
+            return "index";
+        }
+    }
+
+
     @GetMapping("/file/{fileName:.+}")
     @ResponseBody
     public org.springframework.core.io.Resource serveFile(@PathVariable String fileName) {

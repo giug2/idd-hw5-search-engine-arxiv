@@ -84,20 +84,6 @@ public class LuceneConfig {
         perFieldAnalyzers.put("paragraphs", standard);
         perFieldAnalyzers.put("articleAbstract", standard);
 
-        // Tables
-        perFieldAnalyzers.put("caption", simple);
-        perFieldAnalyzers.put("body", whitespace);
-        perFieldAnalyzers.put("mentions", standard);
-        perFieldAnalyzers.put("context_paragraphs", standard);
-
-        // Images
-        perFieldAnalyzers.put("alt", simple);
-        perFieldAnalyzers.put("src", simple);
-        perFieldAnalyzers.put("mentions", standard);
-        perFieldAnalyzers.put("context_paragraphs", standard);
-        perFieldAnalyzers.put("saved_path", simple);
-        perFieldAnalyzers.put("fileName", simple);
-
         return new PerFieldAnalyzerWrapper(customAnalyzer(), perFieldAnalyzers);
     }
 }
