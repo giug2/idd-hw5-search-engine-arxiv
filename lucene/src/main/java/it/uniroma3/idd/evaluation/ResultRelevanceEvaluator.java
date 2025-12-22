@@ -26,7 +26,7 @@ public class ResultRelevanceEvaluator {
         String tipo = indexKey.toLowerCase();
 
         String titolo = "";
-        String contenutoSpecifico = ""; // Qui mettiamo solo i dati "core" dell'oggetto
+        String contenutoSpecifico = ""; 
         double soglia;
 
         switch (tipo) {
@@ -38,14 +38,12 @@ public class ResultRelevanceEvaluator {
                 break;
             case "tabelle":
                 titolo = Optional.ofNullable(doc.get("caption")).orElse("");
-                // Usiamo solo il body della tabella. Rimosso il contesto dell'articolo.
                 contenutoSpecifico = Optional.ofNullable(doc.get("body")).orElse("") + " " +
                                      Optional.ofNullable(doc.get("contextual_paragraphs")).orElse("");;
                 soglia = 0.60; 
                 break;
             case "figure":
             case "immagini":
-                // Le figure hanno solo la didascalia. Se non c'è qui, non è rilevante.
                 titolo = Optional.ofNullable(doc.get("caption")).orElse("");
                 contenutoSpecifico = Optional.ofNullable(doc.get("contextual_paragraphs")).orElse("");; 
                 soglia = 0.60; 
@@ -64,7 +62,6 @@ public class ResultRelevanceEvaluator {
         if (!contenutoSpecifico.isEmpty() && partialMatch(contenutoSpecifico, queryTokens, soglia)) {
             return RelevanceLevel.RELEVANT;
         }
-
         return RelevanceLevel.NOT_RELEVANT;
     }
 

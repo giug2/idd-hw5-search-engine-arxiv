@@ -6,15 +6,37 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+
 # --- CONFIGURAZIONE ---
-URL_PAGINA = "http://localhost:8080" # Assicurati che il tuo server Spring Boot sia attivo
-FILE_OUTPUT = "report_ricerca_completo.txt"
+URL_PAGINA = "http://localhost:8080" 
+FILE_OUTPUT = "output/report_ricerca_completo.txt"
 
 TEST_CASES = [
-    {"query": "title:speech", "filtri": ["articoli"]},
-    {"query": "caption:asr", "filtri": ["tabelle"]},
-    {"query": "machine learning", "filtri": ["articoli", "figure"]},
-    {"query": "llm", "filtri": ["articoli", "tabelle", "figure"]}
+    # ARTICOLI
+    {"query": "title:dataset", "filtri": ["articoli"]},
+    {"query": "date:2025-08-12", "filtri": ["articoli"]},
+    {"query": "authors:Yang", "filtri": ["articoli"]},
+    {"query": "articleAbstract:AI-assisted AND authors:Yang", "filtri": ["articoli"]},
+    # TABELLE
+    {"query": "caption:Multimodal Text Generation", "filtri": ["tabelle"]},
+    {"query": "body:Gemini-2.5 Pro", "filtri": ["tabelle"]},
+    {"query": "body:Gemini-2.5 Flash OR caption:Text Generation", "filtri": ["tabelle"]},
+    # IMMAGINI
+    {"query": "caption:timestamp fields", "filtri": ["figure"]},
+    {"query": "caption:multimodal fusion", "filtri": ["figure"]},
+    {"query": "citing_paragraphs:audio modality", "filtri": ["figure"]},
+    # ARTICOLI E TABELLE
+    {"query": "timestamp fields", "filtri": ["articoli", "tabelle"]},
+    {"query": "multimodal fusion", "filtri": ["articoli", "tabelle"]},
+    # ARTICOLI E IMMAGINI
+    {"query": "Gemini-2.5 Pro", "filtri": ["articoli", "figure"]},
+    {"query": "AI-assisted", "filtri": ["articoli", "figure"]},
+    # TABELLE E IMMAGINI
+    {"query": "large language models", "filtri": ["figure", "tabelle"]},
+    {"query": "machine learning", "filtri": ["figure", "tabelle"]},
+    # ARTICOLI, TABELLE E IMMAGINI
+    {"query": "impact of large language models on healthcare", "filtri": ["articoli", "tabelle", "figure"]},
+    {"query": "remove speaker identity from source audio", "filtri": ["articoli", "tabelle", "figure"]}
 ]
 
 def esegui_test():
