@@ -2,7 +2,7 @@ package it.uniroma3.idd.service;
 
 import it.uniroma3.idd.evaluation.*;
 import it.uniroma3.idd.config.LuceneConfig;
-import it.uniroma3.idd.dto.SearchResult;
+import it.uniroma3.idd.dto.*;
 import it.uniroma3.idd.service.MetricService;
 import it.uniroma3.idd.event.IndexingCompleteEvent;
 import java.io.IOException;
@@ -150,15 +150,15 @@ public class Searcher {
 
 
     // FUNZIONE DI RICERCA PRINCIPALE
-    public Map<String, List<SearchResult>> search(String queryText, List<String> indiceScelti, String campoScelto) throws Exception {
-
+    public SearchResponse search(String queryText, List<String> indiceScelti, String campoScelto) throws Exception {
+        SearchResponse response = new SearchResponse();
         Map<String, List<SearchResult>> risultatiFinali = new HashMap<>();
 
         for (String currentIndex : indiceScelti) {
             IndexSearcher currentSearcher = searcherMap.get(currentIndex);
 
             if (currentSearcher == null) {
-                System.err.println("nessun risultato trovato per '" + queryText + "' tra: " + currentIndex);
+                System.err.println("Nessun searcher trovato per l'indice: " + currentIndex);
                 continue; 
             }
 
@@ -169,15 +169,19 @@ public class Searcher {
             long endTime = System.currentTimeMillis();
             long duration = endTime - startTime;
 
-            //stampo le metriche tramite l'apposito servizio
-            metricService.evaluateSearch(hits, queryText, currentIndex, duration, currentSearcher);
+            // Chiamata singola al servizio metriche: salva il risultato nell'oggetto m
+            SearchMetrics m = metricService.evaluateSearch(hits, queryText, currentIndex, duration, currentSearcher);
+            
+            // Aggiungi le metriche alla risposta
+            response.getMetrichePerIndice().put(currentIndex, m);
 
-            // Mappa i risultati da TopDocs a DTO
+            // Mappa i risultati
             List<SearchResult> currentResults = mapHitsToDTO(hits, currentSearcher, currentIndex);
-            // Salva i risultati nella mappa finale
             risultatiFinali.put(currentIndex, currentResults);
         }
-        return risultatiFinali;
+        
+        response.setRisultati(risultatiFinali);
+        return response;
     }
 
 

@@ -1,5 +1,8 @@
 package it.uniroma3.idd.controller;
 
+import it.uniroma3.idd.config.LuceneConfig;
+import it.uniroma3.idd.dto.*;
+import it.uniroma3.idd.service.Searcher;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,9 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.lucene.queryparser.classic.ParseException;
-import it.uniroma3.idd.config.LuceneConfig;
-import it.uniroma3.idd.dto.SearchResult;
-import it.uniroma3.idd.service.Searcher;
 
 
 @Controller
@@ -67,10 +67,10 @@ public class SearchController {
         // per la ricerca combinata (se la query contiene solo 'parola').
         String campo = null;                                                                                                                                //TODO gestione campo?
 
-
         try {
-            Map<String, List<SearchResult>> risultati = searcher.search(query.trim(), indicesScelti, campo);
-            model.addAttribute("risultatiTotali", risultati); 
+            SearchResponse response = searcher.search(query.trim(), indicesScelti, campo);
+            model.addAttribute("risultatiTotali", response.getRisultati()); 
+            model.addAttribute("metriche", response.getMetrichePerIndice()); 
             model.addAttribute("query", query);
             model.addAttribute("indicesScelti", indicesScelti);
         } catch (ParseException e) {
