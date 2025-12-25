@@ -59,7 +59,7 @@ def esegui_test():
                 f.write(f"INDICI SELEZIONATI: {', '.join(filtri)}\n")
                 f.write("-" * 50 + "\n")
                 
-                # 1. Gestione Checkbox (basata sull'attributo value dell'HTML)
+                # Gestione Checkbox (basata sull'attributo value dell'HTML)
                 for tipo in ["articoli", "tabelle", "figure"]:
                     checkbox = driver.find_element(By.XPATH, f"//input[@value='{tipo}']")
                     if tipo in filtri and not checkbox.is_selected():
@@ -67,7 +67,7 @@ def esegui_test():
                     elif tipo not in filtri and checkbox.is_selected():
                         checkbox.click()
 
-                # 2. Inserimento Query e Invio
+                # Inserimento Query e Invio
                 input_query = driver.find_element(By.ID, "query")
                 input_query.clear()
                 input_query.send_keys(query)
@@ -77,7 +77,7 @@ def esegui_test():
                 wait = WebDriverWait(driver, 10)
                 wait.until(EC.presence_of_element_located((By.CLASS_NAME, "results-container")))
 
-                # 3. Estrazione Risultati
+                # Estrazione Risultati
                 f.write("RISULTATI:\n")
                 colonne = driver.find_elements(By.CLASS_NAME, "result-list-column")
                 for colonna in colonne:
@@ -90,7 +90,7 @@ def esegui_test():
                         score = item.find_element(By.CLASS_NAME, "score").text
                         f.write(f"    - {titolo} {score}\n")
 
-                # 4. Estrazione Metriche (dal div nascosto #metrics-container)
+                # Estrazione Metriche (dal div nascosto #metrics-container)
                 f.write("\nMETRICHE PRESTAZIONALI:\n")
                 # Cerchiamo tutti i blocchi dentro metrics-container
                 metrics_blocks = driver.find_elements(By.CSS_SELECTOR, "#metrics-container > div")
@@ -117,7 +117,7 @@ def esegui_test():
         finally:
             driver.quit()
 
-    print(f"\n✅ Tutto dade! Report generato: {FILE_OUTPUT}")
+    print(f"\nTutto dade! Report generato: {FILE_OUTPUT}")
 
 if __name__ == "__main__":
     esegui_test()
