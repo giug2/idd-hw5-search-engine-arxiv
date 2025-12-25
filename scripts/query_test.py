@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+# pip install selenium
+# pip install webdriver-manager
 
 # --- CONFIGURAZIONE ---
 URL_PAGINA = "http://localhost:8080" 
