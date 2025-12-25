@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${document.results['File Sorgente']}">Dettaglio Figura</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/details.css}">
 </head>
 <body>
 
@@ -51,6 +51,11 @@
     <div class="detail-section" th:if="${document.results['Paragrafi Contestuali'] != null and document.results['Paragrafi Contestuali'] != ''}">
         <h3>Paragrafi Contestualmente Rilevanti</h3>
         <div class="paragraph-box" th:utext="${document.results['Paragrafi Contestuali']}">Paragrafi contestuali</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="detail-footer">
+        <p>Dati recuperati dall'indice Lucene: <strong th:text="${indexKey.toUpperCase()}"></strong></p>
     </div>
 
 </div>

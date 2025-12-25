@@ -1,0 +1,137 @@
+/* =====================
+   VARIABILI E LAYOUT
+===================== */
+:root {
+    --primary-blue: #003366;    /* Blu scuro per i bordi */
+    --electric-blue: #0070f3;  /* Blu elettrico per bottoni */
+    --border-light: #d1d5db;
+}
+
+body {
+    background: #f4f7f9;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Titolo Pagina */
+h1 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* =====================
+   IL BOX "TUTTO INCLUSO" (COME DA FOTO)
+===================== */
+/* Questo selettore raggruppa il titolo e il contenuto in un'unica card */
+.article-meta, 
+.detail-section,
+.caption-container {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-left: 10px solid var(--primary-blue); /* Bordo laterale marcato */
+    border-radius: 12px;
+    padding: 15px 20px; /* Ridotto lo spazio interno come richiesto */
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titoli ora dentro il box ma stilizzati in alto */
+h3, .article-meta h3, .detail-section h3 {
+    margin: 0 0 12px 0; /* Spazio ridotto tra titolo e testo */
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary-blue);
+}
+
+/* =====================
+   ALTEZZE FISSE E SCROLL
+===================== */
+/* Solo per i box con testo lungo */
+.detail-section:has(.paragraph-box),
+.detail-section:has(.article-text) {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.paragraph-box, .article-text {
+    border: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* =====================
+   LINK E BOTTONI
+===================== */
+/* Stile bottone solo per i link di azione diretti */
+.article-link, 
+.back-link,
+.detail-section > a,
+.article-meta > a {
+    align-self: flex-start; /* Non occupa tutta la larghezza */
+    background-color: var(--electric-blue);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 112, 243, 0.2);
+}
+
+.article-link:hover, .back-link:hover {
+    background-color: var(--primary-blue);
+}
+
+/* Link dentro i paragrafi: rimangono testuali */
+.paragraph-box a, .article-text a {
+    color: var(--electric-blue);
+    text-decoration: underline;
+    background: none;
+    padding: 0;
+}
+
+/* =====================
+   TABELLE E IMMAGINI
+===================== */
+.figure-container, .table-container {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-left: 10px solid var(--primary-blue);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.figure-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th {
+    background: var(--primary-blue);
+    color: white;
+    padding: 10px;
+}
+
+/* Scrollbar sottile */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: var(--electric-blue); border-radius: 10px; }
