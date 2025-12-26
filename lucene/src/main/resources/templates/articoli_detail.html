@@ -34,19 +34,19 @@
     </div>
 
     <!-- Abstract -->
+    <h3>Abstract</h3>
     <div class="detail-section" th:if="${document.results.containsKey('Abstract') and document.results.get('Abstract') != null}">
-        <h3>Abstract</h3>
         <div class="paragraph-box" th:utext="${document.results.get('Abstract')}">Contenuto dell'abstract...</div>
     </div>
 
     <!-- Testo dell'Articolo -->
+    <h3>Contenuto dell'Articolo</h3>
     <div class="detail-section" th:if="${document.results.containsKey('Testo') and document.results.get('Testo') != null}">
-        <h3>Contenuto dell'Articolo</h3>
         <div class="paragraph-box article-text" th:utext="${document.results.get('Testo')}">Testo completo...</div>
     </div>
 
     <!-- Footer -->
-    <div class="detail-footer">
+    <div style="text-align: right; font-size: 0.8em;">
         <p>Dati recuperati dall'indice Lucene: <strong th:text="${indexKey.toUpperCase()}"></strong></p>
     </div>
 

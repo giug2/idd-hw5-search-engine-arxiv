@@ -22,7 +22,7 @@
     
     <!-- Didascalia Figura -->
     <div class="caption-container" th:if="${document.results['Caption'] != null}">
-        <span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
+        <strong>Caption:</strong><span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
     </div>
 
     <!-- URL Immagine (Link diretto) -->
@@ -42,19 +42,19 @@
     </div>
 
     <!-- Paragrafi Citanti -->
+    <h3>Paragrafi che Citano la Figura</h3>
     <div class="detail-section" th:if="${document.results['Paragrafi Citanti'] != null and document.results['Paragrafi Citanti'] != ''}">
-        <h3>Paragrafi che Citano la Figura</h3>
         <div class="paragraph-box" th:utext="${document.results['Paragrafi Citanti']}">Paragrafi</div>
     </div>
 
     <!-- Paragrafi Contestuali -->
+    <h3>Paragrafi Contestualmente Rilevanti</h3>
     <div class="detail-section" th:if="${document.results['Paragrafi Contestuali'] != null and document.results['Paragrafi Contestuali'] != ''}">
-        <h3>Paragrafi Contestualmente Rilevanti</h3>
         <div class="paragraph-box" th:utext="${document.results['Paragrafi Contestuali']}">Paragrafi contestuali</div>
     </div>
 
     <!-- Footer -->
-    <div class="detail-footer">
+    <div style="text-align: right; font-size: 0.8em;">
         <p>Dati recuperati dall'indice Lucene: <strong th:text="${indexKey.toUpperCase()}"></strong></p>
     </div>
 

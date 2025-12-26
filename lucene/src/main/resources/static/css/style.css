@@ -1,133 +1,411 @@
-/* =====================
-   THEME & BASE
-===================== */
-:root {
-    --primary: #003366;       /* Blu scuro (titoli e bordi) */
-    --accent: #0070f3;        /* Blu elettrico (pulsanti e link) */
-    --bg: #f4f7f9;
-    --primary-light: #eff6ff; 
-    --border: #d1d5db;
-}
-
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+/* Stile base per la pagina */
+body { 
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: var(--bg);
+    padding: 0;
+    background-color: #f8f9fa; /* Sfondo molto chiaro */
+    color: #343a40; /* Testo scuro */
+    line-height: 1.6;
 }
 
-.container {
-    max-width: 1200px;
+/* Contenitore principale */
+.container { 
+    max-width: 1300px; /* Aumentato da 1000px a 1300px */
     margin: 40px auto;
-    background: white;
-    padding: 32px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border-left: 8px solid var(--primary); /* Richiamo stile dettagli */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================
-   TITOLI
-===================== */
-.page-title {
-    color: var(--accent) !important; /* Forza il blu elettrico */
-    border-bottom: 3px solid var(--primary);
-    padding-bottom: 12px;
-    font-weight: 800;
+/* Titolo principale */
+h1 { 
+    color: #007bff; /* Blu primario */
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 2.2em;
 }
 
-h2, h3, h4 {
-    color: var(--primary);
+/* Elementi del Form */
+.form-group { 
+    margin-bottom: 25px; 
 }
 
-/* =====================
-   CHECKBOXES (Forza Blu)
-===================== */
-.index-checkboxes input[type="checkbox"] {
-    cursor: pointer;
-    /* Cambia il colore del segno di spunta nelle checkbox */
-    accent-color: var(--accent) !important; 
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
+/* Campo di input della Query */
+#query {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box; /* Importante per padding */
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+}
+
+#query:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Guida sintassi Lucene */
+.sintax-guide { 
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 0.9em;
+    padding-left: 10px;
+    border-left: 3px solid #e9ecef;
+}
+
+.sintax-guide ul {
+    margin: 5px 0 0;
+    padding-left: 20px;
+}
+
+/* Checkbox Indici */
+.index-checkboxes { 
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa; /* Leggermente grigio */
+    margin-top: 20px;
+}
+
+.index-checkboxes h4 { 
+    color: #495057;
+    margin-top: 0;
+    border-bottom: 1px dashed #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .index-checkboxes label {
-    font-weight: 600;
-    color: var(--primary);
+    font-weight: 500;
+    margin-right: 25px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 
-/* =====================
-   BUTTON "ESEGUI RICERCA" (Forza Blu)
-===================== */
-.btn-primary, button[type="submit"] {
-    background-color: var(--accent) !important; /* Forza blu elettrico */
-    color: white !important;
-    padding: 12px 40px;
+/* Pulsante Cerca */
+button[type="submit"] {
+    padding: 12px 35px;
+    background-color: #28a745; /* Verde brillante */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     font-size: 1.1em;
-    font-weight: 700;
-    border: none !important;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary) !important; /* Diventa blu scuro al passaggio */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.3);
-}
-
-/* =====================
-   RISULTATI E SCORE
-===================== */
-.result-item a {
-    color: var(--accent) !important;
     font-weight: 600;
-    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Verde leggermente più scuro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Separatore */
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Messaggi di Errore */
+.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Contenitore dei Risultati */
+.results-container { 
+    margin-top: 35px; 
+}
+
+/* Lista dei Risultati per Categoria (Articoli, Tabelle) */
+.result-list { 
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #f0f7ff; /* Sfondo azzurro chiaro per evidenziare */
+}
+
+.result-list h3 { 
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #b3d9ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Ripristina la riga per gli elementi interni alla colonna */
+.result-item { 
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.result-item:last-child {
+    border-bottom: none; /* Rimuovi la linea dall'ultimo elemento */
+}
+
+.result-item h4 { 
+    margin: 0; 
+    font-size: 1.2em;
+}
+
+.result-item a { 
+    color: #0056b3; 
+    text-decoration: none; 
 }
 
 .result-item a:hover {
-    color: var(--primary) !important;
+    text-decoration: underline;
+    color: #007bff;
+}
+
+/* Punteggio di Rilevanza */
+.score { 
+    font-weight: 600;
+    color: #28a745; /* Verde per enfasi */
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.results-grid {
+    display: grid;
+    /* Definisce 3 colonne uguali per Articoli, Tabelle, Immagini */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; /* Spazio tra le colonne */
+    margin-top: 20px;
+}
+
+.result-list-column { 
+    /* Eredita lo stile di result-list ma ottimizzato per la griglia */
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f0f7ff;
+    height: 100%; /* Assicura che la colonna si estenda verticalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Stile per ciascuna colonna di risultati (result-list-column) */
+.result-list-column { 
+    /* Eredita lo stile di result-list ma ottimizzato per la griglia */
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f0f7ff;
+    height: 100%; /* Assicura che la colonna si estenda verticalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-list-column h3 { 
+    font-size: 1.2em;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #007bff;
+    text-align: center;
+}
+
+/* Stili per i termini chiave (tags) */
+.terms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.term-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.term-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Stili per le sezioni di dettaglio */
+.detail-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.detail-section h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.paragraph-box {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    line-height: 1.7;
+}
+
+/* Separatore tra i paragrafi all'interno del box */
+.paragraph-box p {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.paragraph-box p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
     text-decoration: underline;
 }
 
-.score {
-    color: var(--primary) !important; /* Score non più verde */
+.figure-container {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.figure-image {
+    max-width: 100%;
+    max-height: 70vh; /* Limita l'altezza per evitare che occupi tutto lo schermo */
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+/* Stili per le didascalie (Figure e Tabelle) */
+.caption-container {
+    text-align: center;
+    margin: 10px auto 30px auto;
+    font-style: italic;
+    color: #555;
+    max-width: 90%;
+}
+
+.caption-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
     font-weight: bold;
-    background: var(--primary-light);
-    padding: 2px 8px;
-    border-radius: 5px;
+}
+
+/* Stili specifici per la tabella */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0; /* Rimosso margine inferiore perché è nel container */
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Stili per la pagina dettaglio articoli */
+.article-meta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.article-meta p {
+    margin: 8px 0;
+}
+
+.article-meta strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.article-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.article-link:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+}
+
+.article-text {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.detail-footer {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+    text-align: right;
     font-size: 0.85em;
-}
-
-/* =====================
-   SINTAX GUIDE
-===================== */
-.sintax-guide {
-    background: var(--primary-light);
-    border-left: 5px solid var(--accent);
-    color: #4b5563;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-code {
-    background: #e5eefc;
-    color: var(--primary);
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-/* =====================
-   ERRORI
-===================== */
-.error {
-    background-color: #fef2f2 !important;
-    color: #b91c1c !important;
-    border: 1px solid #fecaca !important;
-    padding: 15px;
-    border-radius: 8px;
+    color: #6c757d;
 }

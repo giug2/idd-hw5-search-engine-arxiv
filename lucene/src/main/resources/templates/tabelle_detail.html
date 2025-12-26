@@ -17,12 +17,11 @@
     </div>
     
     <div class="caption-container" th:if="${document.results['Caption'] != null}">
-        <span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
+        <strong>Caption:</strong><span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
     </div>
 
-    <div class="detail-section" th:if="${document.results['ID Articolo Padre'] != null}">
-        <h3>Articolo di Origine</h3>
-        
+    <h3>Articolo di Origine</h3>
+    <div class="detail-section" th:if="${document.results['ID Articolo Padre'] != null}">      
         <div th:if="${document.results['ArticleID'] != null}">
             <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
                 class="article-link"
@@ -36,18 +35,18 @@
         </div>
     </div>
 
+    <h3>Paragrafi che Citano la Tabella</h3>
     <div class="detail-section" th:if="${document.results['Menzioni'] != null and document.results['Menzioni'] != ''}">
-        <h3>Paragrafi che Citano la Tabella</h3>
         <div class="paragraph-box" th:utext="${document.results['Menzioni']}">Paragrafi</div>
     </div>
 
+    <h3>Paragrafi Contestualmente Rilevanti</h3>
     <div class="detail-section" th:if="${document.results['Contesto'] != null and document.results['Contesto'] != ''}">
-        <h3>Paragrafi Contestualmente Rilevanti</h3>
         <div class="paragraph-box" th:utext="${document.results['Contesto']}">Paragrafi contestuali</div>
     </div>
 
     <!-- Footer -->
-    <div class="detail-footer">
+    <div style="text-align: right; font-size: 0.8em;">
         <p>Dati recuperati dall'indice Lucene: <strong th:text="${indexKey.toUpperCase()}"></strong></p>
     </div>
 
