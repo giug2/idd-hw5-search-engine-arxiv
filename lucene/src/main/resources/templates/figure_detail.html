@@ -11,6 +11,21 @@
     <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
 
     <h1 th:text="${document.results['File Sorgente']}">Titolo Figura</h1>
+
+    <!-- Didascalia Figura -->
+    <div class="caption-container" th:if="${document.results['Caption'] != null}">
+        <p><strong>ID Figura:</strong>
+            <span th:text="${document.results['ID figura']}">Contenuto Didascalia</span></p>
+
+        <!-- Articolo collegato (dentro la caption) -->
+        <p><strong>Articolo di Riferimento:</strong>
+            <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
+                class="article-link"
+            th:text="'Vai all\'articolo'">
+            Vai all'articolo
+            </a>
+        </p>
+    </div>
     
     <!-- Sezione Immagine Principale -->
     <div class="figure-container" th:if="${document.results['URL Immagine'] != null and document.results['URL Immagine'] != ''}">
@@ -19,36 +34,24 @@
              class="figure-image"
              onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23999%22 text-anchor=%22middle%22>Immagine non disponibile</text></svg>';">
     </div>
-    
-    <!-- Didascalia Figura -->
+
+    <!-- URL e Didascalia Figura -->
     <div class="caption-container" th:if="${document.results['Caption'] != null}">
-        <strong>Caption:</strong><span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
-    </div>
-
-    <!-- URL Immagine (Link diretto) -->
-    <div class="detail-section" th:if="${document.results['URL Immagine'] != null and document.results['URL Immagine'] != ''}">
-        <h3>Link</h3>
+        <p><strong>Link diretto figura:</strong>
         <a th:href="${document.results['URL Immagine']}" target="_blank" th:text="${document.results['URL Immagine']}">URL</a>
+        <p><strong>Caption:</strong>
+            <span th:text="${document.results['Caption']}">Contenuto Didascalia</span></p>
     </div>
 
-    <!-- Link all'Articolo -->
-    <div class="detail-section" th:if="${document.results['ArticleID'] != null}">
-        <h3>Articolo di Riferimento</h3>
-        <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
-            class="article-link"
-           th:text="'Vai all\'articolo: ' + ${document.results['File Sorgente']}">
-           Vai all'articolo
-        </a>
-    </div>
-
+    <h2>Paragrafi di contesto</h2>
     <!-- Paragrafi Citanti -->
-    <h3>Paragrafi che Citano la Figura</h3>
+    <h3>Menzioni della figura</h3>
     <div class="detail-section" th:if="${document.results['Paragrafi Citanti'] != null and document.results['Paragrafi Citanti'] != ''}">
         <div class="paragraph-box" th:utext="${document.results['Paragrafi Citanti']}">Paragrafi</div>
     </div>
 
     <!-- Paragrafi Contestuali -->
-    <h3>Paragrafi Contestualmente Rilevanti</h3>
+    <h3>Paragrafi correlati alla caption</h3>
     <div class="detail-section" th:if="${document.results['Paragrafi Contestuali'] != null and document.results['Paragrafi Contestuali'] != ''}">
         <div class="paragraph-box" th:utext="${document.results['Paragrafi Contestuali']}">Paragrafi contestuali</div>
     </div>

@@ -11,36 +11,35 @@
     <a th:href="@{/}" class="back-link">← Torna alla Ricerca</a>
 
     <h1 th:text="${document.results['ID Articolo Padre']}">Titolo Tabella</h1>
+
+    <div class="caption-container" th:if="${document.results['Caption'] != null}">
+        <p><strong>ID Tabella:</strong>
+            <span th:text="${document.results['ID tabella']}">Contenuto Didascalia</span></p>
+
+        <p><strong>Caption:</strong>
+            <span th:text="${document.results['Caption']}">Contenuto Didascalia</span></p>
+
+        <!-- Articolo collegato (dentro la caption) -->
+        <p><strong>Articolo di Riferimento:</strong>
+            <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
+                class="article-link"
+            th:text="'Vai all\'articolo'">
+            Vai all'articolo
+            </a>
+        </p>
+    </div>
     
     <div class="table-container" th:if="${document.results['HTML Tabella'] != null and document.results['HTML Tabella'] != ''}">
          <div th:utext="${document.results['HTML Tabella']}"></div>
     </div>
-    
-    <div class="caption-container" th:if="${document.results['Caption'] != null}">
-        <strong>Caption:</strong><span th:text="${document.results['Caption']}">Contenuto Didascalia</span>
-    </div>
 
-    <h3>Articolo di Origine</h3>
-    <div class="detail-section" th:if="${document.results['ID Articolo Padre'] != null}">      
-        <div th:if="${document.results['ArticleID'] != null}">
-            <a th:href="@{/dettaglio/articoli/{id}(id=${document.results['ArticleID']})}" 
-                class="article-link"
-                style="text-decoration: none; font-weight: bold;">
-                Vai all'articolo: <span th:text="${document.results['ID Articolo Padre']}">Nome Articolo</span>
-            </a>
-        </div>
-
-        <div th:if="${document.results['ArticleID'] == null}">
-            <p th:text="${document.results['ID Articolo Padre']}">Sorgente</p>
-        </div>
-    </div>
-
-    <h3>Paragrafi che Citano la Tabella</h3>
+    <h2>Paragrafi di contesto</h2>
+    <h3>Menzioni della tabella</h3>
     <div class="detail-section" th:if="${document.results['Menzioni'] != null and document.results['Menzioni'] != ''}">
         <div class="paragraph-box" th:utext="${document.results['Menzioni']}">Paragrafi</div>
     </div>
 
-    <h3>Paragrafi Contestualmente Rilevanti</h3>
+    <h3>Paragrafi correlati al body/alla caption</h3>
     <div class="detail-section" th:if="${document.results['Contesto'] != null and document.results['Contesto'] != ''}">
         <div class="paragraph-box" th:utext="${document.results['Contesto']}">Paragrafi contestuali</div>
     </div>

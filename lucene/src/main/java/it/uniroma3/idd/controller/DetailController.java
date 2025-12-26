@@ -86,6 +86,7 @@ public class DetailController {
                 
             case "tabelle":
                 title = "Tabella: " + doc.get("caption");
+                results.put("ID tabella", doc.get("id")); 
                 results.put("HTML Tabella", doc.get("html_table")); 
                 results.put("Caption", doc.get("caption"));
                 results.put("Contesto", doc.get("contextual_paragraphs"));
@@ -108,6 +109,7 @@ public class DetailController {
 
             case "figure":
                 title = "Figura: " + doc.get("caption");
+                results.put("ID figura", doc.get("id"));
                 results.put("URL Immagine", doc.get("imageUrl"));
                 results.put("Caption", doc.get("caption"));
                 results.put("Paragrafi Citanti", doc.get("citing_paragraphs"));
