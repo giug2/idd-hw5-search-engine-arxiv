@@ -1,0 +1,174 @@
+=== REPORT TEST LUCENE: RISULTATI E METRICHE ===
+
+QUERY: 'title:dataset'
+INDICI SELEZIONATI: articoli
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [ARTICOLI] -> Tempo: 36ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'date:2025-08-12'
+INDICI SELEZIONATI: articoli
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [ARTICOLI] -> Tempo: 38ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'authors:Yang'
+INDICI SELEZIONATI: articoli
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [ARTICOLI] -> Tempo: 1ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'articleAbstract:AI-assisted AND authors:Yang'
+INDICI SELEZIONATI: articoli
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [ARTICOLI] -> Tempo: 27ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'caption:Multimodal Text Generation'
+INDICI SELEZIONATI: tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [TABELLE] -> Tempo: 29ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'body:Gemini-2.5 Pro'
+INDICI SELEZIONATI: tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [TABELLE] -> Tempo: 2ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+
+============================================================
+
+QUERY: 'body:Gemini-2.5 Flash OR caption:Text Generation'
+INDICI SELEZIONATI: tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [TABELLE] -> Tempo: 7ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+
+============================================================
+
+QUERY: 'caption:timestamp fields'
+INDICI SELEZIONATI: figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 4ms | Precision: 0.2 | RR: 0.25 | NDCG: 0.468450520161077
+
+============================================================
+
+QUERY: 'caption:multimodal fusion'
+INDICI SELEZIONATI: figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 3ms | Precision: 0.9 | RR: 1.0 | NDCG: 0.9770153702993121
+
+============================================================
+
+QUERY: 'citing_paragraphs:audio modality'
+INDICI SELEZIONATI: figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 5ms | Precision: 0.2 | RR: 0.3333333333333333 | NDCG: 0.5437713091520254
+
+============================================================
+
+QUERY: 'timestamp fields'
+INDICI SELEZIONATI: articoli, tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [TABELLE] -> Tempo: 14ms | Precision: 0.8 | RR: 1.0 | NDCG: 0.9466454870600813
+  [ARTICOLI] -> Tempo: 3ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
+QUERY: 'multimodal fusion'
+INDICI SELEZIONATI: articoli, tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [TABELLE] -> Tempo: 10ms | Precision: 0.7 | RR: 0.5 | NDCG: 0.796670591535181
+  [ARTICOLI] -> Tempo: 3ms | Precision: 1.0 | RR: 1.0 | NDCG: 0.9909331158293705
+
+============================================================
+
+QUERY: 'Gemini-2.5 Pro'
+INDICI SELEZIONATI: articoli, figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 7ms | Precision: 1.0 | RR: 1.0 | NDCG: 0.7704339355522924
+  [ARTICOLI] -> Tempo: 2ms | Precision: 0.2 | RR: 1.0 | NDCG: 1.0
+
+============================================================
+
+QUERY: 'AI-assisted'
+INDICI SELEZIONATI: articoli, figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 4ms | Precision: 0.7 | RR: 1.0 | NDCG: 1.0
+  [ARTICOLI] -> Tempo: 4ms | Precision: 0.2 | RR: 1.0 | NDCG: 1.0
+
+============================================================
+
+QUERY: 'large language models'
+INDICI SELEZIONATI: figure, tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 10ms | Precision: 1.0 | RR: 1.0 | NDCG: 0.9223512400120039
+  [TABELLE] -> Tempo: 12ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+
+============================================================
+
+QUERY: 'machine learning'
+INDICI SELEZIONATI: figure, tabelle
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 7ms | Precision: 0.8 | RR: 1.0 | NDCG: 0.9918291064614978
+  [TABELLE] -> Tempo: 3ms | Precision: 0.7 | RR: 1.0 | NDCG: 0.895183044469731
+
+============================================================
+
+QUERY: 'impact of large language models on healthcare'
+INDICI SELEZIONATI: articoli, tabelle, figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 11ms | Precision: 0.9 | RR: 1.0 | NDCG: 0.9770153702993121
+  [TABELLE] -> Tempo: 19ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+  [ARTICOLI] -> Tempo: 6ms | Precision: 0.1 | RR: 0.3333333333333333 | NDCG: 0.5
+
+============================================================
+
+QUERY: 'remove speaker identity from source audio'
+INDICI SELEZIONATI: articoli, tabelle, figure
+--------------------------------------------------
+
+METRICHE PRESTAZIONALI:
+  [FIGURE] -> Tempo: 9ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+  [TABELLE] -> Tempo: 16ms | Precision: 1.0 | RR: 1.0 | NDCG: 1.0
+  [ARTICOLI] -> Tempo: 3ms | Precision: 0.0 | RR: 0.0 | NDCG: 0.0
+
+============================================================
+
