@@ -18,7 +18,7 @@ Il progetto è sviluppato con:
 - Spring Boot 3.3.5 - framework principale per la configurazione e l’avvio dell’applicazione.
 
 ## 🖥️ Output e Statistiche
-La cartella images/ contiene le statistiche riguardanti le estarzioni e le indicizzazioni.  
+La cartella images/ contiene le statistiche riguardanti le estarzioni e le indicizzazioni e le metriche IR.  
 La cartella output/ conviene i risultati delle query di test che sono state lanciate.
 
 ## 🖊️ Autori
