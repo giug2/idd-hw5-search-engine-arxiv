@@ -6,3 +6,5 @@ Screenshot che mostrano le statistiche delle operazioni di download ed estrazion
 Contiene la visualizzazione dello stato di indicizzazione sul motore di ricerca.
 ## Interfaccia Utente (UI)
 Contiene screenshot della UI.
+## Metriche
+Contiene screenshot della latenza media e delle metriche IR medie ottenute nella fase di test.
