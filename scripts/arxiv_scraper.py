@@ -16,7 +16,7 @@ BLOCKED_PATTERNS = ['recaptcha', 'captcha', 'unusual traffic', 'rate limit', 'to
                     'access denied', 'blocked', 'please verify', 'robot', 'automated access']
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers/pippo')
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, '../input/papers')
 
 
 def is_blocked(content):
